@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Regex Tester - Free Online Tool | AI Toolbox</title>
+<meta name="description" content="Test regex patterns in real-time with highlighted matches">
+<meta name="keywords" content="regex tester, regular expression, regex match, pattern matching">
+<link rel="canonical" href="https://tools.talang.fun/en/tools/regex-tester.html">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/regex-tester.html">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/regex-tester.html">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/regex-tester.html">
+<meta property="og:title" content="Regex Tester - Free Online Tool | AI Toolbox">
+<meta property="og:description" content="Test regex patterns in real-time with highlighted matches">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/en/tools/regex-tester.html">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Regex Tester", "description": "Test regex patterns in real-time with highlighted matches", "url": "https://tools.talang.fun/en/tools/regex-tester.html", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/en/" class="logo"><span class="logo-icon">🛠️</span>AI Toolbox</a>
+    <nav class="nav">
+      <a href="/en/">Home</a>
+      <a href="/en/#tools">All Tools</a>
+      <a href="/en/about.html">About</a>
+      <a href="https://tools.talang.fun/tools/regex-tester.html" class="lang-switch">中文</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">/.*/</div>
+  <h1>Regex Tester</h1>
+  <p>Test regex patterns in real-time with highlighted matches</p>
+</div>
+<div class="tool-panel">
+<div class="input-row"><label style="min-width:60px">Pattern:</label><input type="text" id="pattern" placeholder="\d+" style="flex:1"><input type="text" id="flags" placeholder="gi" style="width:80px"></div><textarea id="text" placeholder="Enter text to match against..."></textarea><div id="result" style="margin-top:12px;padding:16px;background:var(--bg);border-radius:8px;border:1px solid var(--border);min-height:80px;white-space:pre-wrap;word-break:break-all;font-family:Consolas,monospace;font-size:13px"></div><div id="matches" style="margin-top:8px;color:var(--text-dim);font-size:13px"></div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>About this tool</h2>
+  <p>Test regular expressions in real-time. Enter your pattern and text, all matches are highlighted. Supports g/i/m/s/u flags.</p><p>Perfect for learning regex, debugging scrapers, and writing form validation.</p>
+</article>
+<section class="related"><h3>Related Tools</h3><div class="tools-grid"><a href="/en/tools/json-formatter.html" class="tool-card"><div class="icon">{ }</div><h3>JSON Formatter</h3><p>Beautify, minify, and validate JSON with precise error location</p></a><a href="/en/tools/url-encoder.html" class="tool-card"><div class="icon">🔗</div><h3>URL Encoder/Decoder</h3><p>Encode/decode URLs, handle special characters and Unicode</p></a></div></section>
+<script src="/assets/js/regex-tester.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI Toolbox · Free online AI & developer tools · <a href='/en/about.html'>About</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('Copied!'));
+}
+</script>
+</body>
+</html>

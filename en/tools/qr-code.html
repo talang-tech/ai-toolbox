@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QR Code Generator - Free Online Tool | AI Toolbox</title>
+<meta name="description" content="Generate QR codes from text/URL, downloadable as PNG">
+<meta name="keywords" content="qr code generator, qrcode, qr generator, qr code maker">
+<link rel="canonical" href="https://tools.talang.fun/en/tools/qr-code.html">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/qr-code.html">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/qr-code.html">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/qr-code.html">
+<meta property="og:title" content="QR Code Generator - Free Online Tool | AI Toolbox">
+<meta property="og:description" content="Generate QR codes from text/URL, downloadable as PNG">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/en/tools/qr-code.html">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "QR Code Generator", "description": "Generate QR codes from text/URL, downloadable as PNG", "url": "https://tools.talang.fun/en/tools/qr-code.html", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/en/" class="logo"><span class="logo-icon">🛠️</span>AI Toolbox</a>
+    <nav class="nav">
+      <a href="/en/">Home</a>
+      <a href="/en/#tools">All Tools</a>
+      <a href="/en/about.html">About</a>
+      <a href="https://tools.talang.fun/tools/qr-code.html" class="lang-switch">中文</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">📱</div>
+  <h1>QR Code Generator</h1>
+  <p>Generate QR codes from text/URL, downloadable as PNG</p>
+</div>
+<div class="tool-panel">
+<textarea id="input" placeholder="Enter text or URL..." style="min-height:100px">https://tools.talang.fun</textarea><div class="input-row" style="margin-top:12px"><label>Size:</label><input type="number" id="size" value="300" min="100" max="1000" style="width:100px"><label>EC:</label><select id="ec" style="width:100px"><option>L</option><option>M</option><option selected>Q</option><option>H</option></select><button class="btn" id="genBtn">Generate</button></div><div id="qrcode" style="margin-top:20px;text-align:center;background:white;padding:20px;border-radius:8px;display:inline-block"></div><div><button class="btn btn-secondary" id="downloadBtn" style="margin-top:12px;display:none">⬇️ Download PNG</button></div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>About this tool</h2>
+  <p>Generate QR codes from any text, URL, WiFi credentials, etc. Adjustable size and error correction level, downloadable as PNG.</p><p>Pure frontend implementation (qrcode.js), data is never uploaded.</p>
+</article>
+<section class="related"><h3>Related Tools</h3><div class="tools-grid"><a href="/en/tools/base64.html" class="tool-card"><div class="icon">🔣</div><h3>Base64 Encoder/Decoder</h3><p>Encode/decode Base64 strings and files, UTF-8 safe</p></a><a href="/en/tools/url-encoder.html" class="tool-card"><div class="icon">🔗</div><h3>URL Encoder/Decoder</h3><p>Encode/decode URLs, handle special characters and Unicode</p></a></div></section>
+<script src="/assets/js/qr-code.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI Toolbox · Free online AI & developer tools · <a href='/en/about.html'>About</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('Copied!'));
+}
+</script>
+</body>
+</html>

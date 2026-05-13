@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>字数统计 - 免费在线工具 | AI 工具盒子</title>
+<meta name="description" content="实时统计字符、单词、行数和段落数">
+<meta name="keywords" content="字数统计,字符统计,word counter,文本统计,中文字数">
+<link rel="canonical" href="https://tools.talang.fun/tools/word-counter.html">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/word-counter.html">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/word-counter.html">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/word-counter.html">
+<meta property="og:title" content="字数统计 - 免费在线工具 | AI 工具盒子">
+<meta property="og:description" content="实时统计字符、单词、行数和段落数">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/word-counter.html">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "字数统计", "description": "实时统计字符、单词、行数和段落数", "url": "https://tools.talang.fun/tools/word-counter.html", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/about.html">关于</a>
+      <a href="https://tools.talang.fun/en/tools/word-counter.html" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">📊</div>
+  <h1>字数统计</h1>
+  <p>实时统计字符、单词、行数和段落数</p>
+</div>
+<div class="tool-panel">
+<textarea id="input" placeholder="在此输入或粘贴文本..."></textarea><div class="stats" id="stats"></div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>免费的在线字数统计工具，实时统计文本的字符数（含/不含空格）、字数、行数、段落数。支持中英文混合文本，常用于公众号、论文、报告写作前的字数控制。</p><p>所有计算在你的浏览器本地完成，文本不会上传到任何服务器。</p>
+</article>
+<section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/case-converter.html" class="tool-card"><div class="icon">🔠</div><h3>大小写转换</h3><p>大写、小写、首字母大写、驼峰、蛇形等格式转换</p></a><a href="/tools/text-diff.html" class="tool-card"><div class="icon">🔍</div><h3>文本对比</h3><p>对比两段文本的差异，逐行高亮显示</p></a></div></section>
+<script src="/assets/js/word-counter.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about.html'>关于</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+</script>
+</body>
+</html>

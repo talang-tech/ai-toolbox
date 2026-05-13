@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>关于 - AI 工具盒子</title>
+<meta name="description" content="关于 AI 工具盒子 - 一个免费、隐私优先、完全在浏览器中运行的在线工具集合。">
+<meta name="keywords" content="关于,AI 工具盒子">
+<link rel="canonical" href="https://tools.talang.fun/about.html">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/about.html">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/about.html">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/about.html">
+<meta property="og:title" content="关于 - AI 工具盒子">
+<meta property="og:description" content="关于 AI 工具盒子 - 一个免费、隐私优先、完全在浏览器中运行的在线工具集合。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/about.html">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/about.html">关于</a>
+      <a href="https://tools.talang.fun/en/about.html" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<article class="article">
+  <h1>关于 AI 工具盒子</h1>
+  <p><strong>AI 工具盒子</strong> 是一个持续成长的免费在线工具集，专注极速、隐私和实用。</p>
+  <h2>🔒 隐私优先</h2>
+  <p>所有工具都在<strong>你的浏览器本地</strong>运行。我们不会上传你的数据到任何服务器。无追踪、无注册、无废话。</p>
+  <h2>⚡ 极速轻量</h2>
+  <p>整站采用纯静态 HTML 构建 —— 无框架、无臃肿，页面加载速度低于 200ms。</p>
+  <h2>🌍 开源</h2>
+  <p>整个项目在 <a href="https://github.com/talang-tech/ai-toolbox">GitHub</a> 上开源。欢迎贡献代码！</p>
+  <h2>📬 联系</h2>
+  <p>有反馈或工具建议？欢迎在 GitHub 上提 Issue。</p>
+</article>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about.html'>关于</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+</script>
+</body>
+</html>

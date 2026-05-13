@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JSON 格式化 - 免费在线工具 | AI 工具盒子</title>
+<meta name="description" content="JSON 美化、压缩、校验，错误位置精准定位">
+<meta name="keywords" content="JSON 格式化,JSON 美化,JSON 校验,JSON 压缩,JSON parser">
+<link rel="canonical" href="https://tools.talang.fun/tools/json-formatter.html">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/json-formatter.html">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/json-formatter.html">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/json-formatter.html">
+<meta property="og:title" content="JSON 格式化 - 免费在线工具 | AI 工具盒子">
+<meta property="og:description" content="JSON 美化、压缩、校验，错误位置精准定位">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/json-formatter.html">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "JSON 格式化", "description": "JSON 美化、压缩、校验，错误位置精准定位", "url": "https://tools.talang.fun/tools/json-formatter.html", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/about.html">关于</a>
+      <a href="https://tools.talang.fun/en/tools/json-formatter.html" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">{ }</div>
+  <h1>JSON 格式化</h1>
+  <p>JSON 美化、压缩、校验，错误位置精准定位</p>
+</div>
+<div class="tool-panel">
+<textarea id="input" placeholder="粘贴 JSON 数据..."></textarea><div class="btn-group" style="margin-top:12px"><button class="btn" id="formatBtn">美化（缩进 2 空格）</button><button class="btn" id="format4Btn">美化（缩进 4 空格）</button><button class="btn" id="minifyBtn">压缩为单行</button><button class="btn btn-secondary" id="validateBtn">校验</button></div><textarea id="output" readonly placeholder="结果..." style="margin-top:12px;min-height:300px"></textarea><div id="msg" style="margin-top:8px;font-size:13px"></div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>开发者最常用的工具之一。粘贴 JSON 即可一键格式化（美化）、压缩成单行，或校验是否合法。如有错误，会精准告诉你出错位置和原因。</p><p>支持嵌套对象和数组，所有处理在浏览器本地完成。</p>
+</article>
+<section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/base64.html" class="tool-card"><div class="icon">🔣</div><h3>Base64 编解码</h3><p>Base64 字符串和文件互转，UTF-8 安全</p></a><a href="/tools/url-encoder.html" class="tool-card"><div class="icon">🔗</div><h3>URL 编解码</h3><p>URL 编码与解码，处理特殊字符和中文</p></a></div></section>
+<script src="/assets/js/json-formatter.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about.html'>关于</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+</script>
+</body>
+</html>

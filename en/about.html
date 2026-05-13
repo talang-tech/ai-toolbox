@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About - AI Toolbox</title>
+<meta name="description" content="About AI Toolbox - a collection of free, privacy-first online tools that run entirely in your browser.">
+<meta name="keywords" content="about, ai toolbox">
+<link rel="canonical" href="https://tools.talang.fun/en/about.html">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/about.html">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/about.html">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/about.html">
+<meta property="og:title" content="About - AI Toolbox">
+<meta property="og:description" content="About AI Toolbox - a collection of free, privacy-first online tools that run entirely in your browser.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/en/about.html">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/en/" class="logo"><span class="logo-icon">🛠️</span>AI Toolbox</a>
+    <nav class="nav">
+      <a href="/en/">Home</a>
+      <a href="/en/#tools">All Tools</a>
+      <a href="/en/about.html">About</a>
+      <a href="https://tools.talang.fun/about.html" class="lang-switch">中文</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<article class="article">
+  <h1>About AI Toolbox</h1>
+  <p><strong>AI Toolbox</strong> is a growing collection of free, fast, privacy-first online tools.</p>
+  <h2>🔒 Privacy First</h2>
+  <p>All tools run <strong>entirely in your browser</strong>. We don't upload your data to any server. No tracking, no signup, no nonsense.</p>
+  <h2>⚡ Fast & Lightweight</h2>
+  <p>The site is built as static HTML — no frameworks, no bloat. Pages load in under 200ms.</p>
+  <h2>🌍 Open Source</h2>
+  <p>The whole project is open source on <a href="https://github.com/talang-tech/ai-toolbox">GitHub</a>. Contributions welcome!</p>
+  <h2>📬 Contact</h2>
+  <p>Have feedback or a tool request? Open an issue on GitHub.</p>
+</article>
+</main>
+<footer class="site-footer">
+  © 2026 AI Toolbox · Free online AI & developer tools · <a href='/en/about.html'>About</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('Copied!'));
+}
+</script>
+</body>
+</html>

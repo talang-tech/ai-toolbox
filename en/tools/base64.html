@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Base64 Encoder/Decoder - Free Online Tool | AI Toolbox</title>
+<meta name="description" content="Encode/decode Base64 strings and files, UTF-8 safe">
+<meta name="keywords" content="base64 encoder, base64 decoder, base64 converter, base64 to text">
+<link rel="canonical" href="https://tools.talang.fun/en/tools/base64.html">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/base64.html">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/base64.html">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/base64.html">
+<meta property="og:title" content="Base64 Encoder/Decoder - Free Online Tool | AI Toolbox">
+<meta property="og:description" content="Encode/decode Base64 strings and files, UTF-8 safe">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/en/tools/base64.html">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Base64 Encoder/Decoder", "description": "Encode/decode Base64 strings and files, UTF-8 safe", "url": "https://tools.talang.fun/en/tools/base64.html", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/en/" class="logo"><span class="logo-icon">🛠️</span>AI Toolbox</a>
+    <nav class="nav">
+      <a href="/en/">Home</a>
+      <a href="/en/#tools">All Tools</a>
+      <a href="/en/about.html">About</a>
+      <a href="https://tools.talang.fun/tools/base64.html" class="lang-switch">中文</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🔣</div>
+  <h1>Base64 Encoder/Decoder</h1>
+  <p>Encode/decode Base64 strings and files, UTF-8 safe</p>
+</div>
+<div class="tool-panel">
+<textarea id="input" placeholder="Enter text or Base64 string..."></textarea><div class="btn-group" style="margin-top:12px"><button class="btn" id="encodeBtn">Encode →</button><button class="btn" id="decodeBtn">← Decode</button><button class="btn btn-secondary" id="clearBtn">Clear</button></div><textarea id="output" readonly placeholder="Result..." style="margin-top:12px"></textarea><button class="btn btn-secondary" id="copyBtn" style="margin-top:8px">📋 Copy</button>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>About this tool</h2>
+  <p>Base64 is an encoding scheme that represents binary data using ASCII characters, commonly used to transmit binary data through text-based protocols (email, JSON, URLs).</p><p>This tool supports UTF-8 (including Chinese characters) and works in both directions.</p>
+</article>
+<section class="related"><h3>Related Tools</h3><div class="tools-grid"><a href="/en/tools/url-encoder.html" class="tool-card"><div class="icon">🔗</div><h3>URL Encoder/Decoder</h3><p>Encode/decode URLs, handle special characters and Unicode</p></a><a href="/en/tools/json-formatter.html" class="tool-card"><div class="icon">{ }</div><h3>JSON Formatter</h3><p>Beautify, minify, and validate JSON with precise error location</p></a></div></section>
+<script src="/assets/js/base64.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI Toolbox · Free online AI & developer tools · <a href='/en/about.html'>About</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('Copied!'));
+}
+</script>
+</body>
+</html>

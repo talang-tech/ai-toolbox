@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JSON Formatter - Free Online Tool | AI Toolbox</title>
+<meta name="description" content="Beautify, minify, and validate JSON with precise error location">
+<meta name="keywords" content="JSON formatter, JSON beautifier, JSON validator, JSON minifier, JSON parser">
+<link rel="canonical" href="https://tools.talang.fun/en/tools/json-formatter.html">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/json-formatter.html">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/json-formatter.html">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/json-formatter.html">
+<meta property="og:title" content="JSON Formatter - Free Online Tool | AI Toolbox">
+<meta property="og:description" content="Beautify, minify, and validate JSON with precise error location">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/en/tools/json-formatter.html">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "JSON Formatter", "description": "Beautify, minify, and validate JSON with precise error location", "url": "https://tools.talang.fun/en/tools/json-formatter.html", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/en/" class="logo"><span class="logo-icon">🛠️</span>AI Toolbox</a>
+    <nav class="nav">
+      <a href="/en/">Home</a>
+      <a href="/en/#tools">All Tools</a>
+      <a href="/en/about.html">About</a>
+      <a href="https://tools.talang.fun/tools/json-formatter.html" class="lang-switch">中文</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">{ }</div>
+  <h1>JSON Formatter</h1>
+  <p>Beautify, minify, and validate JSON with precise error location</p>
+</div>
+<div class="tool-panel">
+<textarea id="input" placeholder="Paste JSON here..."></textarea><div class="btn-group" style="margin-top:12px"><button class="btn" id="formatBtn">Beautify (2-space)</button><button class="btn" id="format4Btn">Beautify (4-space)</button><button class="btn" id="minifyBtn">Minify</button><button class="btn btn-secondary" id="validateBtn">Validate</button></div><textarea id="output" readonly placeholder="Result..." style="margin-top:12px;min-height:300px"></textarea><div id="msg" style="margin-top:8px;font-size:13px"></div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>About this tool</h2>
+  <p>One of the most-used developer tools. Paste your JSON to format (beautify), minify into one line, or validate. Errors are reported with precise location and reason.</p><p>Handles nested objects and arrays. All processing happens locally in your browser.</p>
+</article>
+<section class="related"><h3>Related Tools</h3><div class="tools-grid"><a href="/en/tools/base64.html" class="tool-card"><div class="icon">🔣</div><h3>Base64 Encoder/Decoder</h3><p>Encode/decode Base64 strings and files, UTF-8 safe</p></a><a href="/en/tools/url-encoder.html" class="tool-card"><div class="icon">🔗</div><h3>URL Encoder/Decoder</h3><p>Encode/decode URLs, handle special characters and Unicode</p></a></div></section>
+<script src="/assets/js/json-formatter.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI Toolbox · Free online AI & developer tools · <a href='/en/about.html'>About</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('Copied!'));
+}
+</script>
+</body>
+</html>

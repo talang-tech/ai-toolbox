@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hash Generator - Free Online Tool | AI Toolbox</title>
+<meta name="description" content="Generate MD5, SHA-1, SHA-256, SHA-512 hash values">
+<meta name="keywords" content="md5, sha1, sha256, sha512, hash generator, checksum">
+<link rel="canonical" href="https://tools.talang.fun/en/tools/hash-generator.html">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/hash-generator.html">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/hash-generator.html">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/hash-generator.html">
+<meta property="og:title" content="Hash Generator - Free Online Tool | AI Toolbox">
+<meta property="og:description" content="Generate MD5, SHA-1, SHA-256, SHA-512 hash values">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/en/tools/hash-generator.html">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Hash Generator", "description": "Generate MD5, SHA-1, SHA-256, SHA-512 hash values", "url": "https://tools.talang.fun/en/tools/hash-generator.html", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/en/" class="logo"><span class="logo-icon">🛠️</span>AI Toolbox</a>
+    <nav class="nav">
+      <a href="/en/">Home</a>
+      <a href="/en/#tools">All Tools</a>
+      <a href="/en/about.html">About</a>
+      <a href="https://tools.talang.fun/tools/hash-generator.html" class="lang-switch">中文</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🔐</div>
+  <h1>Hash Generator</h1>
+  <p>Generate MD5, SHA-1, SHA-256, SHA-512 hash values</p>
+</div>
+<div class="tool-panel">
+<textarea id="input" placeholder="Enter text to hash..."></textarea><div id="results" style="margin-top:16px"></div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>About this tool</h2>
+  <p>Compute various hash values (MD5, SHA-1, SHA-256, SHA-512) for text. Useful for: file integrity verification, password storage, digital signatures.</p><p>Uses native Web Crypto API (MD5 implemented in pure JS). All computation is local.</p>
+</article>
+<section class="related"><h3>Related Tools</h3><div class="tools-grid"><a href="/en/tools/base64.html" class="tool-card"><div class="icon">🔣</div><h3>Base64 Encoder/Decoder</h3><p>Encode/decode Base64 strings and files, UTF-8 safe</p></a><a href="/en/tools/password-generator.html" class="tool-card"><div class="icon">🔑</div><h3>Password Generator</h3><p>Generate strong random passwords with customizable length and character types</p></a></div></section>
+<script src="/assets/js/hash-generator.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI Toolbox · Free online AI & developer tools · <a href='/en/about.html'>About</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('Copied!'));
+}
+</script>
+</body>
+</html>

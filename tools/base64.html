@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Base64 编解码 - 免费在线工具 | AI 工具盒子</title>
+<meta name="description" content="Base64 字符串和文件互转，UTF-8 安全">
+<meta name="keywords" content="Base64,Base64 编码,Base64 解码,base64 转换">
+<link rel="canonical" href="https://tools.talang.fun/tools/base64.html">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/base64.html">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/base64.html">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/base64.html">
+<meta property="og:title" content="Base64 编解码 - 免费在线工具 | AI 工具盒子">
+<meta property="og:description" content="Base64 字符串和文件互转，UTF-8 安全">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/base64.html">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Base64 编解码", "description": "Base64 字符串和文件互转，UTF-8 安全", "url": "https://tools.talang.fun/tools/base64.html", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/about.html">关于</a>
+      <a href="https://tools.talang.fun/en/tools/base64.html" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🔣</div>
+  <h1>Base64 编解码</h1>
+  <p>Base64 字符串和文件互转，UTF-8 安全</p>
+</div>
+<div class="tool-panel">
+<textarea id="input" placeholder="输入文本或 Base64 字符串..."></textarea><div class="btn-group" style="margin-top:12px"><button class="btn" id="encodeBtn">编码 →</button><button class="btn" id="decodeBtn">← 解码</button><button class="btn btn-secondary" id="clearBtn">清空</button></div><textarea id="output" readonly placeholder="结果..." style="margin-top:12px"></textarea><button class="btn btn-secondary" id="copyBtn" style="margin-top:8px">📋 复制</button>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>Base64 是一种将二进制数据用 ASCII 字符表示的编码方式，常用于在文本协议（如邮件、JSON、URL）中传输二进制数据。</p><p>本工具支持 UTF-8 中文字符，可双向转换。</p>
+</article>
+<section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/url-encoder.html" class="tool-card"><div class="icon">🔗</div><h3>URL 编解码</h3><p>URL 编码与解码，处理特殊字符和中文</p></a><a href="/tools/json-formatter.html" class="tool-card"><div class="icon">{ }</div><h3>JSON 格式化</h3><p>JSON 美化、压缩、校验，错误位置精准定位</p></a></div></section>
+<script src="/assets/js/base64.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about.html'>关于</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+</script>
+</body>
+</html>

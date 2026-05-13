@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>二维码生成器 - 免费在线工具 | AI 工具盒子</title>
+<meta name="description" content="将文本/URL 生成二维码，支持下载 PNG">
+<meta name="keywords" content="二维码生成,QR code,二维码下载">
+<link rel="canonical" href="https://tools.talang.fun/tools/qr-code.html">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/qr-code.html">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/qr-code.html">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/qr-code.html">
+<meta property="og:title" content="二维码生成器 - 免费在线工具 | AI 工具盒子">
+<meta property="og:description" content="将文本/URL 生成二维码，支持下载 PNG">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/qr-code.html">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "二维码生成器", "description": "将文本/URL 生成二维码，支持下载 PNG", "url": "https://tools.talang.fun/tools/qr-code.html", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/about.html">关于</a>
+      <a href="https://tools.talang.fun/en/tools/qr-code.html" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">📱</div>
+  <h1>二维码生成器</h1>
+  <p>将文本/URL 生成二维码，支持下载 PNG</p>
+</div>
+<div class="tool-panel">
+<textarea id="input" placeholder="输入文本或 URL..." style="min-height:100px">https://tools.talang.fun</textarea><div class="input-row" style="margin-top:12px"><label>尺寸:</label><input type="number" id="size" value="300" min="100" max="1000" style="width:100px"><label>纠错:</label><select id="ec" style="width:100px"><option>L</option><option>M</option><option selected>Q</option><option>H</option></select><button class="btn" id="genBtn">生成</button></div><div id="qrcode" style="margin-top:20px;text-align:center;background:white;padding:20px;border-radius:8px;display:inline-block"></div><div><button class="btn btn-secondary" id="downloadBtn" style="margin-top:12px;display:none">⬇️ 下载 PNG</button></div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>将任意文本、URL、WiFi 信息等生成二维码。支持调整尺寸和纠错级别，可下载 PNG。</p><p>纯前端实现（基于 qrcode.js），数据不会上传。</p>
+</article>
+<section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/base64.html" class="tool-card"><div class="icon">🔣</div><h3>Base64 编解码</h3><p>Base64 字符串和文件互转，UTF-8 安全</p></a><a href="/tools/url-encoder.html" class="tool-card"><div class="icon">🔗</div><h3>URL 编解码</h3><p>URL 编码与解码，处理特殊字符和中文</p></a></div></section>
+<script src="/assets/js/qr-code.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about.html'>关于</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+</script>
+</body>
+</html>

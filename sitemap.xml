@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://tools.talang.fun/</loc><lastmod>2026-05-13</lastmod><priority>1.0</priority></url>
+  <url><loc>https://tools.talang.fun/en/</loc><lastmod>2026-05-13</lastmod><priority>1.0</priority></url>
+  <url><loc>https://tools.talang.fun/about.html</loc><lastmod>2026-05-13</lastmod><priority>0.5</priority></url>
+  <url><loc>https://tools.talang.fun/en/about.html</loc><lastmod>2026-05-13</lastmod><priority>0.5</priority></url>
+  <url><loc>https://tools.talang.fun/tools/word-counter.html</loc><lastmod>2026-05-13</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/en/tools/word-counter.html</loc><lastmod>2026-05-13</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/tools/case-converter.html</loc><lastmod>2026-05-13</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/en/tools/case-converter.html</loc><lastmod>2026-05-13</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/tools/text-diff.html</loc><lastmod>2026-05-13</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/en/tools/text-diff.html</loc><lastmod>2026-05-13</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/tools/json-formatter.html</loc><lastmod>2026-05-13</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/en/tools/json-formatter.html</loc><lastmod>2026-05-13</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/tools/regex-tester.html</loc><lastmod>2026-05-13</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/en/tools/regex-tester.html</loc><lastmod>2026-05-13</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/tools/base64.html</loc><lastmod>2026-05-13</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/en/tools/base64.html</loc><lastmod>2026-05-13</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/tools/url-encoder.html</loc><lastmod>2026-05-13</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/en/tools/url-encoder.html</loc><lastmod>2026-05-13</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/tools/hash-generator.html</loc><lastmod>2026-05-13</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/en/tools/hash-generator.html</loc><lastmod>2026-05-13</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/tools/password-generator.html</loc><lastmod>2026-05-13</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/en/tools/password-generator.html</loc><lastmod>2026-05-13</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/tools/uuid-generator.html</loc><lastmod>2026-05-13</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/en/tools/uuid-generator.html</loc><lastmod>2026-05-13</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/tools/qr-code.html</loc><lastmod>2026-05-13</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/en/tools/qr-code.html</loc><lastmod>2026-05-13</lastmod><priority>0.8</priority></url>
+</urlset>
