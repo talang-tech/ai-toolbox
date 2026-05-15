@@ -17,6 +17,8 @@
 <meta name="twitter:card" content="summary">
 <link rel="stylesheet" href="/assets/css/style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
 
 </head>
 <body>
@@ -26,7 +28,8 @@
     <nav class="nav">
       <a href="/en/">Home</a>
       <a href="/en/#tools">All Tools</a>
-      <a href="/en/about.html">About</a>
+      <a href="/en/blog/">Blog</a>
+      <a href="/en/about">About</a>
       <a href="https://tools.talang.fun/" class="lang-switch">中文</a>
     </nav>
   </div>
@@ -43,52 +46,167 @@
 <section class="category">
   <h2>📝 Text Tools</h2>
   <div class="tools-grid">
-    <a href="/en/tools/word-counter.html" class="tool-card" data-name="word counter" data-desc="real-time character, word, line, and paragraph counter">
+    <a href="/en/tools/word-counter" class="tool-card" data-name="word counter" data-desc="real-time character, word, line, and paragraph counter">
       <div class="icon">📊</div>
       <h3>Word Counter</h3>
       <p>Real-time character, word, line, and paragraph counter</p>
     </a>
-    <a href="/en/tools/case-converter.html" class="tool-card" data-name="case converter" data-desc="convert text between uppercase, lowercase, camelcase, snake_case, etc.">
+    <a href="/en/tools/case-converter" class="tool-card" data-name="case converter" data-desc="convert text between uppercase, lowercase, camelcase, snake_case, etc.">
       <div class="icon">🔠</div>
       <h3>Case Converter</h3>
       <p>Convert text between uppercase, lowercase, camelCase, snake_case, etc.</p>
     </a>
-    <a href="/en/tools/text-diff.html" class="tool-card" data-name="text diff" data-desc="compare two pieces of text, highlight differences line by line">
+    <a href="/en/tools/text-diff" class="tool-card" data-name="text diff" data-desc="compare two pieces of text, highlight differences line by line">
       <div class="icon">🔍</div>
       <h3>Text Diff</h3>
       <p>Compare two pieces of text, highlight differences line by line</p>
+    </a>
+    <a href="/en/tools/text-dedup" class="tool-card" data-name="text deduplicator" data-desc="remove duplicate lines, count lines removed and percentage">
+      <div class="icon">🧹</div>
+      <h3>Text Deduplicator</h3>
+      <p>Remove duplicate lines, count lines removed and percentage</p>
+    </a>
+    <a href="/en/tools/lorem-cn" class="tool-card" data-name="chinese lorem ipsum" data-desc="generate chinese placeholder text in 4 styles">
+      <div class="icon">📜</div>
+      <h3>Chinese Lorem Ipsum</h3>
+      <p>Generate Chinese placeholder text in 4 styles</p>
+    </a>
+    <a href="/en/tools/remove-lines" class="tool-card" data-name="remove empty lines" data-desc="remove empty lines, trim whitespace, remove consecutive spaces">
+      <div class="icon">🧹</div>
+      <h3>Remove Empty Lines</h3>
+      <p>Remove empty lines, trim whitespace, remove consecutive spaces</p>
     </a>
   </div>
 </section>
 <section class="category">
   <h2>💻 Developer Tools</h2>
   <div class="tools-grid">
-    <a href="/en/tools/json-formatter.html" class="tool-card" data-name="json formatter" data-desc="beautify, minify, and validate json with precise error location">
+    <a href="/en/tools/json-formatter" class="tool-card" data-name="json formatter" data-desc="beautify, minify, and validate json with precise error location">
       <div class="icon">{ }</div>
       <h3>JSON Formatter</h3>
       <p>Beautify, minify, and validate JSON with precise error location</p>
     </a>
-    <a href="/en/tools/regex-tester.html" class="tool-card" data-name="regex tester" data-desc="test regex patterns in real-time with highlighted matches">
+    <a href="/en/tools/regex-tester" class="tool-card" data-name="regex tester" data-desc="test regex patterns in real-time with highlighted matches">
       <div class="icon">/.*/</div>
       <h3>Regex Tester</h3>
       <p>Test regex patterns in real-time with highlighted matches</p>
+    </a>
+    <a href="/en/tools/timestamp" class="tool-card" data-name="unix timestamp converter" data-desc="convert between unix timestamps (seconds/ms) and human-readable dates">
+      <div class="icon">⏱️</div>
+      <h3>Unix Timestamp Converter</h3>
+      <p>Convert between Unix timestamps (seconds/ms) and human-readable dates</p>
+    </a>
+    <a href="/en/tools/base-converter" class="tool-card" data-name="base converter" data-desc="real-time conversion between binary, octal, decimal, hexadecimal">
+      <div class="icon">🔢</div>
+      <h3>Base Converter</h3>
+      <p>Real-time conversion between binary, octal, decimal, hexadecimal</p>
+    </a>
+    <a href="/en/tools/jwt-decoder" class="tool-card" data-name="jwt decoder" data-desc="decode json web token header and payload, fully client-side, no upload">
+      <div class="icon">🔐</div>
+      <h3>JWT Decoder</h3>
+      <p>Decode JSON Web Token header and payload, fully client-side, no upload</p>
+    </a>
+    <a href="/en/tools/json-csv" class="tool-card" data-name="json ↔ csv converter" data-desc="bidirectional json array ↔ csv table conversion, supports complex values with commas/quotes">
+      <div class="icon">🔄</div>
+      <h3>JSON ↔ CSV Converter</h3>
+      <p>Bidirectional JSON array ↔ CSV table conversion, supports complex values with commas/quotes</p>
+    </a>
+    <a href="/en/tools/color-converter" class="tool-card" data-name="color converter" data-desc="hex ↔ rgb color conversion with live preview">
+      <div class="icon">🎨</div>
+      <h3>Color Converter</h3>
+      <p>Hex ↔ RGB color conversion with live preview</p>
+    </a>
+    <a href="/en/tools/html-entity" class="tool-card" data-name="html entity encoder/decoder" data-desc="encode/decode html entities: &lt; ↔ <, &copy; ↔ ©">
+      <div class="icon">🏷️</div>
+      <h3>HTML Entity Encoder/Decoder</h3>
+      <p>Encode/decode HTML entities: &lt; ↔ <, &copy; ↔ ©</p>
+    </a>
+    <a href="/en/tools/jsonpath" class="tool-card" data-name="jsonpath extractor" data-desc="extract data from json using $.path syntax">
+      <div class="icon">🔍</div>
+      <h3>JSONPath Extractor</h3>
+      <p>Extract data from JSON using $.path syntax</p>
+    </a>
+    <a href="/en/tools/url-parser" class="tool-card" data-name="url parser" data-desc="parse url into protocol, host, path, and parameter table">
+      <div class="icon">🔗</div>
+      <h3>URL Parser</h3>
+      <p>Parse URL into protocol, host, path, and parameter table</p>
+    </a>
+    <a href="/en/tools/markdown-preview" class="tool-card" data-name="markdown live preview" data-desc="write md on left, live preview on right">
+      <div class="icon">📝</div>
+      <h3>Markdown Live Preview</h3>
+      <p>Write MD on left, live preview on right</p>
+    </a>
+    <a href="/en/tools/qr-decode" class="tool-card" data-name="qr code decoder" data-desc="upload qr code image to decode content">
+      <div class="icon">📸</div>
+      <h3>QR Code Decoder</h3>
+      <p>Upload QR code image to decode content</p>
+    </a>
+    <a href="/en/tools/cron-parser" class="tool-card" data-name="cron parser" data-desc="*/5 * * * * → show next 5 run times">
+      <div class="icon">⏰</div>
+      <h3>Cron Parser</h3>
+      <p>*/5 * * * * → show next 5 run times</p>
+    </a>
+    <a href="/en/tools/ip-subnet" class="tool-card" data-name="ip subnet calculator" data-desc="cidr address → network, broadcast, mask, usable host range">
+      <div class="icon">🌐</div>
+      <h3>IP Subnet Calculator</h3>
+      <p>CIDR address → network, broadcast, mask, usable host range</p>
+    </a>
+    <a href="/en/tools/sql-formatter" class="tool-card" data-name="sql formatter" data-desc="online sql formatter and beautifier. format sql queries with proper indentation, keyword casing, and line breaks. support mysql, postgresql, sql server, and more.">
+      <div class="icon">🔧</div>
+      <h3>SQL Formatter</h3>
+      <p>Online SQL formatter and beautifier. Format SQL queries with proper indentation, keyword casing, and line breaks. Support MySQL, PostgreSQL, SQL Server, and more.</p>
+    </a>
+    <a href="/en/tools/base64-image" class="tool-card" data-name="base64 image encoder" data-desc="convert images to base64 data urls online. embed images directly in css, html, and javascript. support jpg, png, gif, svg, and webp formats.">
+      <div class="icon">🔧</div>
+      <h3>Base64 Image Encoder</h3>
+      <p>Convert images to Base64 Data URLs online. Embed images directly in CSS, HTML, and JavaScript. Support JPG, PNG, GIF, SVG, and WebP formats.</p>
+    </a>
+    <a href="/en/tools/timestamp-converter" class="tool-card" data-name="timestamp converter" data-desc="convert unix timestamps to human-readable dates and vice versa. support seconds, milliseconds, and microseconds. multiple timezones support.">
+      <div class="icon">🔧</div>
+      <h3>Timestamp Converter</h3>
+      <p>Convert Unix timestamps to human-readable dates and vice versa. Support seconds, milliseconds, and microseconds. Multiple timezones support.</p>
+    </a>
+    <a href="/en/tools/html-encoder" class="tool-card" data-name="html encoder" data-desc="encode and decode html special characters. prevent xss attacks, display code examples, and safely embed html in text content.">
+      <div class="icon">🔧</div>
+      <h3>HTML Encoder</h3>
+      <p>Encode and decode HTML special characters. Prevent XSS attacks, display code examples, and safely embed HTML in text content.</p>
+    </a>
+  </div>
+</section>
+<section class="category">
+  <h2>📋 JSON Tools</h2>
+  <div class="tools-grid">
+    <a href="/en/tools/json-to-ts" class="tool-card" data-name="json to typescript" data-desc="convert json data to typescript interface definitions with one click. support optional fields, type inference, and camelcase conversion.">
+      <div class="icon">📊</div>
+      <h3>JSON to TypeScript</h3>
+      <p>Convert JSON data to TypeScript interface definitions with one click. Support optional fields, type inference, and camelCase conversion.</p>
+    </a>
+    <a href="/en/tools/json-to-go" class="tool-card" data-name="json to go" data-desc="convert json to go struct definitions with proper tags. support omitempty, inline, and custom naming conventions.">
+      <div class="icon">📊</div>
+      <h3>JSON to Go</h3>
+      <p>Convert JSON to Go struct definitions with proper tags. Support omitempty, inline, and custom naming conventions.</p>
+    </a>
+    <a href="/en/tools/json-to-yaml" class="tool-card" data-name="json ↔ yaml" data-desc="convert json to yaml and yaml to json instantly. preserve data types, formatting options, and live preview of both formats side by side.">
+      <div class="icon">📊</div>
+      <h3>JSON ↔ YAML</h3>
+      <p>Convert JSON to YAML and YAML to JSON instantly. Preserve data types, formatting options, and live preview of both formats side by side.</p>
     </a>
   </div>
 </section>
 <section class="category">
   <h2>🔐 Encoding & Conversion</h2>
   <div class="tools-grid">
-    <a href="/en/tools/base64.html" class="tool-card" data-name="base64 encoder/decoder" data-desc="encode/decode base64 strings and files, utf-8 safe">
+    <a href="/en/tools/base64" class="tool-card" data-name="base64 encoder/decoder" data-desc="encode/decode base64 strings and files, utf-8 safe">
       <div class="icon">🔣</div>
       <h3>Base64 Encoder/Decoder</h3>
       <p>Encode/decode Base64 strings and files, UTF-8 safe</p>
     </a>
-    <a href="/en/tools/url-encoder.html" class="tool-card" data-name="url encoder/decoder" data-desc="encode/decode urls, handle special characters and unicode">
+    <a href="/en/tools/url-encoder" class="tool-card" data-name="url encoder/decoder" data-desc="encode/decode urls, handle special characters and unicode">
       <div class="icon">🔗</div>
       <h3>URL Encoder/Decoder</h3>
       <p>Encode/decode URLs, handle special characters and Unicode</p>
     </a>
-    <a href="/en/tools/hash-generator.html" class="tool-card" data-name="hash generator" data-desc="generate md5, sha-1, sha-256, sha-512 hash values">
+    <a href="/en/tools/hash-generator" class="tool-card" data-name="hash generator" data-desc="generate md5, sha-1, sha-256, sha-512 hash values">
       <div class="icon">🔐</div>
       <h3>Hash Generator</h3>
       <p>Generate MD5, SHA-1, SHA-256, SHA-512 hash values</p>
@@ -98,20 +216,35 @@
 <section class="category">
   <h2>✨ Generators</h2>
   <div class="tools-grid">
-    <a href="/en/tools/password-generator.html" class="tool-card" data-name="password generator" data-desc="generate strong random passwords with customizable length and character types">
+    <a href="/en/tools/password-generator" class="tool-card" data-name="password generator" data-desc="generate strong random passwords with customizable length and character types">
       <div class="icon">🔑</div>
       <h3>Password Generator</h3>
       <p>Generate strong random passwords with customizable length and character types</p>
     </a>
-    <a href="/en/tools/uuid-generator.html" class="tool-card" data-name="uuid generator" data-desc="generate uuid v4 / v7 (standard format)">
+    <a href="/en/tools/uuid-generator" class="tool-card" data-name="uuid generator" data-desc="generate uuid v4 / v7 (standard format)">
       <div class="icon">🆔</div>
       <h3>UUID Generator</h3>
       <p>Generate UUID v4 / v7 (standard format)</p>
     </a>
-    <a href="/en/tools/qr-code.html" class="tool-card" data-name="qr code generator" data-desc="generate qr codes from text/url, downloadable as png">
+    <a href="/en/tools/qr-code" class="tool-card" data-name="qr code generator" data-desc="generate qr codes from text/url, downloadable as png">
       <div class="icon">📱</div>
       <h3>QR Code Generator</h3>
       <p>Generate QR codes from text/URL, downloadable as PNG</p>
+    </a>
+    <a href="/en/tools/random-string" class="tool-card" data-name="random string generator" data-desc="generate passwords/random strings with custom length and charset">
+      <div class="icon">🎲</div>
+      <h3>Random String Generator</h3>
+      <p>Generate passwords/random strings with custom length and charset</p>
+    </a>
+  </div>
+</section>
+<section class="category">
+  <h2>🖼️ Image Tools</h2>
+  <div class="tools-grid">
+    <a href="/en/tools/image-compress" class="tool-card" data-name="image compressor" data-desc="batch compress jpg/png/webp images with quality preserved">
+      <div class="icon">🗜️</div>
+      <h3>Image Compressor</h3>
+      <p>Batch compress JPG/PNG/WebP images with quality preserved</p>
     </a>
   </div>
 </section>
@@ -132,7 +265,7 @@ input.addEventListener('input', () => {
 </script>
 </main>
 <footer class="site-footer">
-  © 2026 AI Toolbox · Free online AI & developer tools · <a href='/en/about.html'>About</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+  © 2026 AI Toolbox · Free online AI & developer tools · <a href='/en/about'>About</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
 </footer>
 <div id="toast" class="toast"></div>
 <script>

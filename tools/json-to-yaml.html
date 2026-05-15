@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JSON ↔ YAML 互转 - JSON ↔ YAML 互转 | 在线工具 | AI 工具盒子</title>
+<meta name="description" content="免费在线JSON ↔ YAML 互转工具，JSON 与 YAML 格式相互转换。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="json转yaml,yaml转json,json yaml互转,yaml转换">
+<link rel="canonical" href="https://tools.talang.fun/tools/json-to-yaml">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/json-to-yaml">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/json-to-yaml">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/json-to-yaml">
+<meta property="og:title" content="JSON ↔ YAML 互转 - JSON ↔ YAML 互转 | 在线工具 | AI 工具盒子">
+<meta property="og:description" content="免费在线JSON ↔ YAML 互转工具，JSON 与 YAML 格式相互转换。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/json-to-yaml">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "JSON ↔ YAML 互转", "description": "免费在线JSON ↔ YAML 互转工具，JSON 与 YAML 格式相互转换。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/json-to-yaml", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "JSON 与 YAML 格式相互转换", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="https://tools.talang.fun/en/tools/json-to-yaml" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">📊</div>
+  <h1>JSON ↔ YAML 互转</h1>
+  <p>JSON 与 YAML 格式相互转换</p>
+</div>
+<div class="tool-panel">
+<textarea id="input" style="min-height:250px" placeholder="输入..."></textarea><div class="btn-group" style="margin-top:12px"><button class="btn" id="process">处理</button></div><textarea id="output" style="min-height:250px;margin-top:12px" readonly placeholder="结果..."></textarea>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>JSON 与 YAML 双向转换工具。保留数据类型、格式化缩进、错误提示。配置文件开发者的好帮手。</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>双向转换：JSON ↔ YAML</li><li>保留数字、布尔值、null</li><li>带缩进选项的美化输出</li><li>压缩/紧凑输出</li><li>语法错误检测和报告</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">为什么要在 JSON 和 YAML 之间转换？</h3><p>JSON 非常适合 API 和机器，YAML 更适合配置文件和人类阅读。当你需要两者的优势时就需要转换。</p><h3 style="margin-top:20px;margin-bottom:8px">支持所有 YAML 特性吗？</h3><p>我们支持最常用的 YAML 特性。锚点和别名等高级功能的支持可能有限。</p></section>
+
+<script src="/assets/tools/_utils.js" defer></script>
+    <script src="/assets/tools/json-to-yaml.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>程序员必备：二进制、八进制、十进制、十六进制完全指南 | AI 工具盒子</title>
+<meta name="description" content="为什么计算机用二进制？十六进制为什么是程序员的好朋友？各进制之间如何转换？本文详解进制背后的原理和实用技巧。">
+<meta name="keywords" content="进制转换,二进制,十六进制,八进制,程序员">
+<link rel="canonical" href="https://tools.talang.fun/blog/10-bases">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/blog/10-bases">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/blog/10-bases">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/blog/10-bases">
+<meta property="og:title" content="程序员必备：二进制、八进制、十进制、十六进制完全指南 | AI 工具盒子">
+<meta property="og:description" content="为什么计算机用二进制？十六进制为什么是程序员的好朋友？各进制之间如何转换？本文详解进制背后的原理和实用技巧。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/blog/10-bases">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "程序员必备：二进制、八进制、十进制、十六进制完全指南", "description": "为什么计算机用二进制？十六进制为什么是程序员的好朋友？各进制之间如何转换？本文详解进制背后的原理和实用技巧。", "author": {"@type": "Organization", "name": "AI 工具盒子"}, "datePublished": "2026-05-14", "url": "https://tools.talang.fun/blog/10-bases"}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="https://tools.talang.fun/en/blog/10-bases" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<article class="article">
+  <p style="margin-bottom:8px"><a href="/blog/" style="color:var(--muted)">← 返回博客</a></p>
+  <h1>程序员必备：二进制、八进制、十进制、十六进制完全指南</h1>
+  <p style="color:var(--muted);margin-bottom:24px">2026-05-14 · 5 分钟阅读</p>
+  <h1>程序员必备：二进制、八进制、十进制、十六进制完全指南</h1>
+<p>作为程序员，每天都在和各种进制打交道，但真正理解背后原理的人并不多。</p>
+<h2>为什么计算机用二进制？</h2>
+<p>计算机由数字电路组成，电路只有"通"和"断"两种状态，对应 0 和 1。</p>
+<p>这就是二进制成为计算机基础语言的根本原因：<strong>最简单的物理实现</strong>。</p>
+<h2>进制基础</h2>
+<h3>什么是进制？</h3>
+<p>进制就是进位制。N 进制就是"逢 N 进一"。</p>
+<table><thead><tr>
+<th>进制</th>
+<th>基数</th>
+<th>符号集</th>
+<th>前缀表示法</th>
+<th>典型场景</th>
+</tr></thead><tbody>
+<tr>
+<td>二进制</td>
+<td>2</td>
+<td>0, 1</td>
+<td><code>0b</code></td>
+<td>机器码、位运算、标志位</td>
+</tr>
+<tr>
+<td>八进制</td>
+<td>8</td>
+<td>0-7</td>
+<td><code>0</code> / <code>0o</code></td>
+<td>Linux 文件权限</td>
+</tr>
+<tr>
+<td>十进制</td>
+<td>10</td>
+<td>0-9</td>
+<td>(无)</td>
+<td>人类日常计算</td>
+</tr>
+<tr>
+<td>十六进制</td>
+<td>16</td>
+<td>0-9, A-F</td>
+<td><code>0x</code></td>
+<td>内存地址、颜色值、哈希值</td>
+</tr>
+</tbody></table>
+<h2>为什么程序员偏爱十六进制？</h2>
+<p><strong>原因 1：二进制到十六进制的转换非常方便</strong></p>
+<p>4 位二进制 = 1 位十六进制，完美对齐：</p>
+<pre><code class="lang-">
+二进制    十六进制
+0000  →  0
+0001  →  1
+...
+1110  →  E
+1111  →  F
+</code></pre>
+<p>因此，一个 32 位的二进制数，可以用 8 位十六进制简洁表示。</p>
+<p><strong>原因 2：直观性</strong></p>
+<ul>
+<li><code>0b11111010011010110010110001000000</code> = 4294967040 ❌ 无法一眼看懂</li>
+<li><code>0xFACEB000</code> ✅ 程序员一眼就懂</li>
+</ul>
+<p>这就是为什么内存地址、颜色值、哈希值全部使用十六进制。</p>
+<h2>各进制间转换方法</h2>
+<h3>十进制 → 二进制：除 2 取余法</h3>
+<p>以 42 为例：</p>
+<pre><code class="lang-">
+42 ÷ 2 = 21  余 0
+21 ÷ 2 = 10  余 1
+10 ÷ 2 = 5   余 0
+ 5 ÷ 2 = 2   余 1
+ 2 ÷ 2 = 1   余 0
+ 1 ÷ 2 = 0   余 1
+</code></pre>
+<p><strong>从下往上</strong> 读余数：<code>101010</code></p>
+<p>✅ 验证：<code>32 + 8 + 2 = 42</code></p>
+<h3>二进制 → 十进制：位权展开法</h3>
+<p><code>101010₂</code> = 1×2⁵ + 0×2⁴ + 1×2³ + 0×2² + 1×2¹ + 0×2⁰ = 32 + 8 + 2 = 42₁₀</p>
+<h3>二进制 ↔ 十六进制：4 位分组法</h3>
+<p>二进制 → 十六进制：从右往左每 4 位一组，分别转换</p>
+<pre><code class="lang-">
+101010 = 0010 1010
+         ↓    ↓
+         2    A
+</code></pre>
+<p>结果 = <code>0x2A</code></p>
+<p>十六进制 → 二进制：每一位展开成 4 位</p>
+<pre><code class="lang-">
+0xFACE = 1111 1010 1100 1110
+</code></pre>
+<h3>快速转换技巧</h3>
+<p><strong>背诵 2 的幂</strong></p>
+<pre><code class="lang-">
+2⁰ = 1      2⁵ = 32     2¹⁰ = 1024
+2¹ = 2      2⁶ = 64     2¹⁶ = 65536
+2² = 4      2⁷ = 128    2²⁰ = 1048576
+2³ = 8      2⁸ = 256    2³² = 4294967296
+2⁴ = 16     2⁹ = 512
+</code></pre>
+<p>记住了这些，看到二进制数可以瞬间算出来。</p>
+<h2>程序员的进制日常</h2>
+<h3>场景 1：颜色值</h3>
+<p>CSS 中的十六进制颜色：</p>
+<pre><code class="lang-">
+#FF0000  = 红色 (R=255, G=0, B=0)
+#00FF00  = 绿色
+#0000FF  = 蓝色
+#FFFFFF  = 白色
+#808080  = 灰色
+</code></pre>
+<p>每两位对应一个颜色通道（00=0，FF=255）。</p>
+<h3>场景 2：Linux 文件权限</h3>
+<pre><code class="lang-">
+rwx r-x r--  =  7 5 4 （八进制）
+</code></pre>
+<p>每三位二进制 = 一位八进制：</p>
+<ul>
+<li>r (读) = 4 = 100</li>
+<li>w (写) = 2 = 010</li>
+<li>x (执行) = 1 = 001</li>
+</ul>
+<p>所以 <code>chmod 755</code> 是程序员每天都在敲的命令。</p>
+<h3>场景 3：位运算</h3>
+<pre><code class="lang-python">
+flags = 0b1010  # 第 1、3 位是 1
+flags |= 0b0100  # 设置第 2 位
+flags &amp;= ~0b1000 # 清除第 3 位
+</code></pre>
+<p>在底层开发、性能优化中，位运算每天都会用到。</p>
+<h3>场景 4：内存地址</h3>
+<pre><code class="lang-">
+0x7ffee6b8c8a0  # 典型的 64 位内存地址
+</code></pre>
+<p>十六进制让 64 位地址只用 16 个字符就能表示。</p>
+<h2>常见误区</h2>
+<p><strong>误区 1：十六进制是"编程专用"，没必要学</strong></p>
+<p>❌ 错。十六进制是程序员的母语，不会十六进制就不会看懂底层代码。</p>
+<p><strong>误区 2：进制转换用工具就行，不用自己会算</strong></p>
+<p>✅ 工具可以用，但<strong>理解原理让你能瞬间估算</strong>。看到 <code>0x1000</code> 应该立刻反应出是 4096，而不是等工具转换。</p>
+<p><strong>误区 3：八进制已经淘汰了</strong></p>
+<p>❌ 还没有。文件权限 <code>chmod 755</code> 每天都在用。</p>
+<h2>快速心算练习</h2>
+<p>试试看，你能多快得出答案？</p>
+<ol>
+<li><code>0xFF</code> = ?</li>
+<li><code>0x1000</code> = ?</li>
+<li><code>64</code> = 2 的几次方?</li>
+<li><code>0b1111</code> = ?</li>
+<li><code>#00FFFF</code> 是什么颜色?</li>
+</ol>
+<p><details></p>
+<p><summary>点击查看答案</summary></p>
+<ol>
+<li>255</li>
+<li>4096</li>
+<li>6 次方</li>
+<li>15</li>
+<li>青色 (Cyan)</li>
+</ol>
+<p></details></p>
+<h2>在线工具</h2>
+<p>使用我们的 <a href="/tools/base-converter">进制转换工具</a>，支持二进制、八进制、十进制、十六进制之间的任意转换。</p>
+<h2>总结</h2>
+<p>进制是程序员的基础素养：</p>
+<ul>
+<li>✅ <strong>二进制</strong>：理解机器如何工作</li>
+<li>✅ <strong>十六进制</strong>：每天打交道的语言</li>
+<li>✅ <strong>八进制</strong>：文件权限专用</li>
+<li>✅ <strong>十进制</strong>：写给人类看的</li>
+</ul>
+<p>理解了进制，你看计算机的世界会更清晰。</p>
+<hr>
+<p>下次看到 <code>0xDEADBEEF</code> 或 <code>0xC0FFEE</code>，你就知道这不是乱码，而是程序员的浪漫！</p>
+</article>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+</script>
+</body>
+</html>

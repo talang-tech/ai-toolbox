@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Regex from Zero to Pro - 30 Essential Patterns + Debugging Tips | AI Toolbox</title>
+<meta name="description" content="Master regular expressions with this complete guide - core syntax, 30 real-world patterns (email, URL, IP, password, etc.), common pitfalls, and debugging techniques.">
+<meta name="keywords" content="regex, regular expression, regex tutorial, regex patterns, email regex, URL regex, regex cheatsheet">
+<link rel="canonical" href="https://tools.talang.fun/en/blog/regex-cheatsheet">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/blog/regex-cheatsheet">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/blog/regex-cheatsheet">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/blog/regex-cheatsheet">
+<meta property="og:title" content="Regex from Zero to Pro - 30 Essential Patterns + Debugging Tips | AI Toolbox">
+<meta property="og:description" content="Master regular expressions with this complete guide - core syntax, 30 real-world patterns (email, URL, IP, password, etc.), common pitfalls, and debugging techniques.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/en/blog/regex-cheatsheet">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Regex from Zero to Pro - 30 Essential Patterns + Debugging Tips", "description": "Master regular expressions with this complete guide - core syntax, 30 real-world patterns (email, URL, IP, password, etc.), common pitfalls, and debugging techniques.", "author": {"@type": "Organization", "name": "AI Toolbox"}, "datePublished": "2026-05-09", "url": "https://tools.talang.fun/en/blog/regex-cheatsheet"}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/en/" class="logo"><span class="logo-icon">🛠️</span>AI Toolbox</a>
+    <nav class="nav">
+      <a href="/en/">Home</a>
+      <a href="/en/#tools">All Tools</a>
+      <a href="/en/blog/">Blog</a>
+      <a href="/en/about">About</a>
+      <a href="https://tools.talang.fun/blog/regex-cheatsheet" class="lang-switch">中文</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<article class="article">
+  <p style="margin-bottom:8px"><a href="/en/blog/" style="color:var(--muted)">← Back to blog</a></p>
+  <h1>Regex from Zero to Pro - 30 Essential Patterns + Debugging Tips</h1>
+  <p style="color:var(--muted);margin-bottom:24px">2026-05-09 · 14 min read</p>
+  <p>Regular expressions are an essential skill — and a notorious headache. This guide covers it all in one shot:</p>
+<ol>
+<li>Core syntax in 7 minutes</li>
+<li>30 most-used real-world patterns</li>
+<li>6 common pitfalls</li>
+<li>Debugging and performance tips</li>
+</ol>
+<p>By the end, you'll write 90% of the regex you need at work.</p>
+<h2>1. Core Syntax in 7 Minutes</h2>
+<h3>Character classes</h3>
+<table><thead><tr>
+<th>Pattern</th>
+<th>Meaning</th>
+</tr></thead><tbody>
+<tr>
+<td><code>.</code></td>
+<td>Any char (except newline)</td>
+</tr>
+<tr>
+<td><code>\d</code></td>
+<td>Digit (0-9)</td>
+</tr>
+<tr>
+<td><code>\D</code></td>
+<td>Non-digit</td>
+</tr>
+<tr>
+<td><code>\w</code></td>
+<td>Word char (letters/digits/_)</td>
+</tr>
+<tr>
+<td><code>\W</code></td>
+<td>Non-word char</td>
+</tr>
+<tr>
+<td><code>\s</code></td>
+<td>Whitespace (space, tab, newline)</td>
+</tr>
+<tr>
+<td><code>\S</code></td>
+<td>Non-whitespace</td>
+</tr>
+<tr>
+<td><code>[abc]</code></td>
+<td>a or b or c</td>
+</tr>
+<tr>
+<td><code>[^abc]</code></td>
+<td>Not a/b/c</td>
+</tr>
+<tr>
+<td><code>[a-z]</code></td>
+<td>a through z</td>
+</tr>
+<tr>
+<td><code>[a-zA-Z0-9]</code></td>
+<td>Any letter or digit</td>
+</tr>
+</tbody></table>
+<h3>Quantifiers</h3>
+<table><thead><tr>
+<th>Pattern</th>
+<th>Meaning</th>
+</tr></thead><tbody>
+<tr>
+<td><code>*</code></td>
+<td>0 or more</td>
+</tr>
+<tr>
+<td><code>+</code></td>
+<td>1 or more</td>
+</tr>
+<tr>
+<td><code>?</code></td>
+<td>0 or 1</td>
+</tr>
+<tr>
+<td><code>{n}</code></td>
+<td>Exactly n</td>
+</tr>
+<tr>
+<td><code>{n,}</code></td>
+<td>At least n</td>
+</tr>
+<tr>
+<td><code>{n,m}</code></td>
+<td>n to m</td>
+</tr>
+</tbody></table>
+<p><strong>Greedy vs lazy</strong>: default is greedy (match as much as possible). Add <code>?</code> after quantifier to be lazy:</p>
+<pre><code class="lang-">
+"abc&lt;1&gt;&lt;2&gt;"   &lt;.+&gt;   matches &lt;1&gt;&lt;2&gt;   (greedy)
+"abc&lt;1&gt;&lt;2&gt;"   &lt;.+?&gt;  matches &lt;1&gt;      (lazy)
+</code></pre>
+<h3>Anchors</h3>
+<table><thead><tr>
+<th>Pattern</th>
+<th>Meaning</th>
+</tr></thead><tbody>
+<tr>
+<td><code>^</code></td>
+<td>Start of string</td>
+</tr>
+<tr>
+<td><code>$</code></td>
+<td>End of string</td>
+</tr>
+<tr>
+<td><code>\b</code></td>
+<td>Word boundary</td>
+</tr>
+<tr>
+<td><code>\B</code></td>
+<td>Non-word boundary</td>
+</tr>
+</tbody></table>
+<h3>Groups & capture</h3>
+<table><thead><tr>
+<th>Pattern</th>
+<th>Meaning</th>
+</tr></thead><tbody>
+<tr>
+<td><code>(abc)</code></td>
+<td>Capture group</td>
+</tr>
+<tr>
+<td><code>(?:abc)</code></td>
+<td>Non-capture group</td>
+</tr>
+<tr>
+<td><code>(?<name>abc)</code></td>
+<td>Named capture</td>
+</tr>
+<tr>
+<td><code>\1</code>, <code>\2</code></td>
+<td>Backreference</td>
+</tr>
+<tr>
+<td>`(a\</td>
+<td>b)`</td>
+<td>OR</td>
+</tr>
+</tbody></table>
+<h3>Lookaround</h3>
+<table><thead><tr>
+<th>Pattern</th>
+<th>Meaning</th>
+</tr></thead><tbody>
+<tr>
+<td><code>(?=...)</code></td>
+<td>Lookahead — must be followed by</td>
+</tr>
+<tr>
+<td><code>(?!...)</code></td>
+<td>Negative lookahead</td>
+</tr>
+<tr>
+<td><code>(?<=...)</code></td>
+<td>Lookbehind</td>
+</tr>
+<tr>
+<td><code>(?<!...)</code></td>
+<td>Negative lookbehind</td>
+</tr>
+</tbody></table>
+<p>Example: match digits followed by "px" (without consuming "px"):</p>
+<pre><code class="lang-">
+\d+(?=px)        matches "12" in "12px"
+</code></pre>
+<h3>Flags</h3>
+<table><thead><tr>
+<th>Flag</th>
+<th>Meaning</th>
+</tr></thead><tbody>
+<tr>
+<td><code>i</code></td>
+<td>Case-insensitive</td>
+</tr>
+<tr>
+<td><code>g</code></td>
+<td>Global (don't stop at first match)</td>
+</tr>
+<tr>
+<td><code>m</code></td>
+<td>Multiline (<code>^</code>/<code>$</code> match each line)</td>
+</tr>
+<tr>
+<td><code>s</code></td>
+<td>Dotall (<code>.</code> matches newlines)</td>
+</tr>
+<tr>
+<td><code>u</code></td>
+<td>Unicode mode</td>
+</tr>
+</tbody></table>
+<h2>2. 30 Essential Patterns</h2>
+<h3>Validation</h3>
+<pre><code class="lang-">
+Email (basic)         ^[\w.-]+@[\w.-]+\.[a-zA-Z]{2,}$
+Email (stricter)      ^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$
+URL                   ^https?:\/\/[\w.-]+(\:\d+)?(\/[\w./?=#&amp;-]*)?$
+IPv4                  ^(?:(?:25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(?:25[0-5]|2[0-4]\d|[01]?\d\d?)$
+IPv6 (simple)         ^[0-9a-fA-F:]+$
+US phone              ^\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}$
+Strong password (8+)  ^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\w]).{8,}$
+Date YYYY-MM-DD       ^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$
+Time HH:MM:SS         ^([01]\d|2[0-3]):[0-5]\d:[0-5]\d$
+Credit card (Visa)    ^4\d{12}(\d{3})?$
+UUID                  ^[0-9a-f]{8}-[0-9a-f]{4}-[1-7][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$
+Hex color             ^#(?:[0-9a-fA-F]{3}){1,2}$
+US ZIP                ^\d{5}(-\d{4})?$
+</code></pre>
+<h3>Extraction</h3>
+<pre><code class="lang-">
+Domain from URL       https?:\/\/([^\/]+)
+JSON string value     "(\\.|[^"])*"
+HTML tag              &lt;\/?(\w+)[^&gt;]*&gt;
+CSS hex color         #(?:[0-9a-fA-F]{3}){1,2}\b
+Email (extract)       [\w.-]+@[\w.-]+\.[a-zA-Z]{2,}
+Chinese chars         [\u4e00-\u9fa5]+
+Emoji                 [\u{1F600}-\u{1F64F}]   (needs u flag)
+URL query params      [?&amp;]([^=&amp;]+)=([^&amp;]*)
+Markdown code block   ```[\s\S]*?```
+</code></pre>
+<h3>Substitution</h3>
+<pre><code class="lang-">
+Collapse whitespace      \s+               →  " "
+camelCase → snake_case   ([A-Z])           →  _$1   then lower
+snake_case → camelCase   _([a-z])          →  $1.toUpperCase()
+Thousands separator      (\d)(?=(\d{3})+$) →  $1,
+Strip HTML tags          &lt;[^&gt;]+&gt;           →  ""
+Trim                     ^\s+|\s+$         →  ""
+Strip C-style comments   \/\*[\s\S]*?\*\/  →  ""
+Strip line comments      \/\/.*$           →  ""  (m flag)
+Collapse repeated chars  (.)\1+            →  "$1"
+</code></pre>
+<h2>3. 6 Common Pitfalls</h2>
+<h3>Pitfall 1: <code>.</code> doesn't match newlines</h3>
+<pre><code class="lang-">
+"line1\nline2"   line1.line2     ❌ no match
+                 line1[\s\S]line2  ✅
+                 or use s flag: /line1.line2/s  ✅
+</code></pre>
+<h3>Pitfall 2: Forgetting to escape</h3>
+<p><code>.</code> <code>*</code> <code>+</code> <code>?</code> <code>(</code> <code>)</code> <code>[</code> <code>]</code> <code>{</code> <code>}</code> <code>\</code> <code>|</code> <code>^</code> <code>$</code> need escaping:</p>
+<pre><code class="lang-">
+Match "1.0":   ❌ 1.0       (matches "1x0" too)
+               ✅ 1\.0
+</code></pre>
+<h3>Pitfall 3: Greedy backtracking explosion</h3>
+<pre><code class="lang-">
+"&lt;a href='1'&gt;&lt;a href='2'&gt;"
+&lt;a href='.*'&gt;   ❌ matches whole string (greedy)
+&lt;a href='.*?'&gt;  ✅ matches first
+</code></pre>
+<h3>Pitfall 4: <code>^</code> and <code>$</code> differ in multiline</h3>
+<pre><code class="lang-">
+"line1\nline2"
+/^line2/        ❌ no match (^ is start of string)
+/^line2/m       ✅ matches (multiline: ^ is start of line)
+</code></pre>
+<h3>Pitfall 5: Parsing HTML with regex</h3>
+<p><strong>Don't.</strong> HTML isn't a regular language — nesting can't be expressed in regex. Use a DOM parser (cheerio, BeautifulSoup, etc.).</p>
+<p>The famous <a href="https://stackoverflow.com/a/1732454">Stack Overflow answer</a> on this is required reading.</p>
+<h3>Pitfall 6: Catastrophic backtracking (ReDoS)</h3>
+<pre><code class="lang-">
+Regex (a+)+$  on "aaaaaaaaaaaaaaab" → seconds, sometimes hangs
+</code></pre>
+<p>Avoid <strong>nested quantifiers</strong>. Known-vulnerable libraries (older <code>validator.js</code>) have CVEs.</p>
+<h2>4. Debugging and Performance</h2>
+<h3>1. Use visualizers</h3>
+<ul>
+<li><a href="https://regex101.com">regex101.com</a>: live highlighting, token explanations</li>
+<li><a href="https://regexper.com">regexper.com</a>: railroad diagram of your regex</li>
+<li><a href="https://www.debuggex.com">debuggex.com</a>: visualize matching steps</li>
+</ul>
+<p>👉 Or <a href="/en/tools/regex-tester.html">AI Toolbox Regex Tester</a>: runs locally, no upload.</p>
+<h3>2. Verbose / extended mode</h3>
+<p>Python's <code>re.X</code> flag allows multiline regex with comments:</p>
+<pre><code class="lang-python">
+re.compile(r"""
+    ^
+    [\w.-]+        # username
+    @
+    [\w.-]+        # domain
+    \.
+    [a-zA-Z]{2,}   # TLD
+    $
+""", re.X)
+</code></pre>
+<h3>3. Performance testing</h3>
+<p>If your regex is slow on long strings, suspect backtracking. Try:</p>
+<ul>
+<li>Greedy → lazy</li>
+<li><code>.*</code> → more specific char class</li>
+<li><strong>Atomic groups</strong> <code>(?>...)</code> (where supported)</li>
+<li>Switch to a parser or multi-step processing</li>
+</ul>
+<h2>5. Language Differences</h2>
+<table><thead><tr>
+<th>Feature</th>
+<th>JS</th>
+<th>Python</th>
+<th>Java</th>
+<th>Go (RE2)</th>
+</tr></thead><tbody>
+<tr>
+<td>Backreferences</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>Lookbehind</td>
+<td>✅ (fixed and variable)</td>
+<td>✅ (3.7+ variable)</td>
+<td>✅</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>Verbose mode</td>
+<td>❌</td>
+<td>✅</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>Unicode default</td>
+<td>needs <code>u</code> flag</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Named capture</td>
+<td><code>(?<name>)</code></td>
+<td><code>(?P<name>)</code></td>
+<td><code>(?<name>)</code></td>
+<td><code>(?P<name>)</code></td>
+</tr>
+<tr>
+<td>ReDoS-immune</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>✅ (linear time)</td>
+</tr>
+</tbody></table>
+<p><strong>Go uses RE2, no backreferences or lookaround, but linear-time guaranteed</strong>. To avoid ReDoS, consider RE2 (also has a <a href="https://github.com/uhop/node-re2">Node.js binding</a>).</p>
+<h2>6. Learning Path</h2>
+<ol>
+<li><strong>Start by building</strong>: <a href="/en/tools/regex-tester.html">AI Toolbox Regex Tester</a></li>
+<li><strong>Deep book</strong>: <em>Mastering Regular Expressions</em> by Jeffrey Friedl</li>
+<li><strong>Build a snippet library</strong>: save the 30 patterns above for reuse</li>
+</ol>
+<h2>TL;DR</h2>
+<ul>
+<li>Core: <strong>char classes + quantifiers + anchors + groups</strong></li>
+<li>30 patterns cover 90% of cases</li>
+<li>6 pitfalls: <code>.</code> not newline, no escape, greedy backtrack, <code>^$</code> modes, don't parse HTML, ReDoS</li>
+<li>Use visualizers, use RE2 to prevent ReDoS</li>
+</ul>
+<p><strong>Practice now</strong>: <a href="/en/tools/regex-tester.html">AI Toolbox Regex Tester</a></p>
+</article>
+</main>
+<footer class="site-footer">
+  © 2026 AI Toolbox · Free online AI & developer tools · <a href='/en/about'>About</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('Copied!'));
+}
+</script>
+</body>
+</html>

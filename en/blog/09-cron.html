@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Complete Cron Expression Guide: From Beginner to Pro | AI Toolbox</title>
+<meta name="description" content="Cron expressions are the language of scheduled tasks. This guide explains 5/6/7 field syntax with examples covering 99% of use cases.">
+<meta name="keywords" content="cron expression,cron tutorial,scheduled tasks,cron syntax,crontab">
+<link rel="canonical" href="https://tools.talang.fun/en/blog/09-cron">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/blog/09-cron">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/blog/09-cron">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/blog/09-cron">
+<meta property="og:title" content="Complete Cron Expression Guide: From Beginner to Pro | AI Toolbox">
+<meta property="og:description" content="Cron expressions are the language of scheduled tasks. This guide explains 5/6/7 field syntax with examples covering 99% of use cases.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/en/blog/09-cron">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Complete Cron Expression Guide: From Beginner to Pro", "description": "Cron expressions are the language of scheduled tasks. This guide explains 5/6/7 field syntax with examples covering 99% of use cases.", "author": {"@type": "Organization", "name": "AI Toolbox"}, "datePublished": "2026-05-14", "url": "https://tools.talang.fun/en/blog/09-cron"}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/en/" class="logo"><span class="logo-icon">🛠️</span>AI Toolbox</a>
+    <nav class="nav">
+      <a href="/en/">Home</a>
+      <a href="/en/#tools">All Tools</a>
+      <a href="/en/blog/">Blog</a>
+      <a href="/en/about">About</a>
+      <a href="https://tools.talang.fun/blog/09-cron" class="lang-switch">中文</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<article class="article">
+  <p style="margin-bottom:8px"><a href="/en/blog/" style="color:var(--muted)">← Back to blog</a></p>
+  <h1>Complete Cron Expression Guide: From Beginner to Pro</h1>
+  <p style="color:var(--muted);margin-bottom:24px">2026-05-14 · 5 min read</p>
+  <h1>Complete Cron Expression Guide: From Beginner to Pro</h1>
+<p>Cron expressions are the universal language of scheduled tasks. From Linux crontab to Kubernetes CronJob, from GitHub Actions to AWS CloudWatch Events, nearly every scheduling system uses Cron syntax.</p>
+<h2>Cron Field Structure</h2>
+<p>The most common is the <strong>5-field</strong> format:</p>
+<pre><code class="lang-">
+* * * * *
+│ │ │ │ │
+│ │ │ │ └─── Day of week (0-6, 0=Sunday)
+│ │ │ └───── Month (1-12)
+│ │ └─────── Day of month (1-31)
+│ └───────── Hour (0-23)
+└─────────── Minute (0-59)
+</code></pre>
+<p>Some systems (Quartz, AWS) use <strong>6 fields</strong> (adding seconds) or <strong>7 fields</strong> (adding year). This guide focuses on the universal 5-field format.</p>
+<h2>Special Character Meanings</h2>
+<table><thead><tr>
+<th>Character</th>
+<th>Meaning</th>
+<th>Example</th>
+</tr></thead><tbody>
+<tr>
+<td><code>*</code></td>
+<td>Any value</td>
+<td><code><em> </em> <em> </em> *</code> = Every minute</td>
+</tr>
+<tr>
+<td><code>,</code></td>
+<td>List multiple values</td>
+<td><code>0,30 <em> </em> <em> </em></code> = At minute 0 and 30 of every hour</td>
+</tr>
+<tr>
+<td><code>-</code></td>
+<td>Range</td>
+<td><code>0 9-18 <em> </em> *</code> = Hourly from 9 AM to 6 PM</td>
+</tr>
+<tr>
+<td><code>/</code></td>
+<td>Step</td>
+<td><code><em>/5 </em> <em> </em> *</code> = Every 5 minutes</td>
+</tr>
+</tbody></table>
+<h2>Common Scenario Examples</h2>
+<h3>Minute-level Tasks</h3>
+<pre><code class="lang-">
+* * * * *          # Every minute
+*/5 * * * *        # Every 5 minutes
+0,30 * * * *       # Every half hour (at 0 and 30 min)
+15,45 * * * *      # At 15 and 45 min past every hour
+</code></pre>
+<h3>Hour-level Tasks</h3>
+<pre><code class="lang-">
+0 * * * *          # Every hour on the hour
+0 */6 * * *        # Every 6 hours (0, 6, 12, 18)
+0 9-18 * * *       # Hourly from 9 AM to 6 PM
+30 2 * * *         # 2:30 AM daily
+</code></pre>
+<h3>Daily Tasks</h3>
+<pre><code class="lang-">
+0 2 * * *          # 2 AM daily
+0 2 * * 1-5        # 2 AM on weekdays (Mon-Fri)
+0 2 * * 0,6        # 2 AM on weekends (Sat-Sun)
+0 2,14 * * *       # 2 AM and 2 PM daily
+</code></pre>
+<h3>Weekly Tasks</h3>
+<pre><code class="lang-">
+0 3 * * 1          # 3 AM every Monday
+0 3 * * 5          # 3 AM every Friday
+0 9 * * 1,3,5      # 9 AM Monday, Wednesday, Friday
+</code></pre>
+<h3>Monthly Tasks</h3>
+<pre><code class="lang-">
+0 4 1 * *          # 4 AM on the 1st of every month
+0 4 1,15 * *       # 4 AM on the 1st and 15th
+30 4 L * *         # 4:30 AM on the last day of month (L syntax required)
+</code></pre>
+<h3>Complex Combinations</h3>
+<pre><code class="lang-">
+0 */2 1-10 * *     # Every 2 hours on days 1-10 of month
+*/30 9-17 * * 1-5  # Every 30 min from 9 AM-5 PM on weekdays
+0 2 * * 1#2        # 2 AM on the 2nd Monday of month (# syntax required)
+</code></pre>
+<h2>Classic Cron Pitfalls</h2>
+<p><strong>Pitfall 1: Day of month and day of week are OR</strong></p>
+<pre><code class="lang-">
+0 2 15 * 5    # ❗ NOT "15th AND Friday" — it's "15th OR Friday"!
+</code></pre>
+<p>This is the most common Cron mistake. When you specify both day of month and day of week, the condition is <strong>OR</strong> (either satisfies), not AND.</p>
+<p>For "15th AND Friday only", add additional checking in your script.</p>
+<p><strong>Pitfall 2: Timezone issues</strong></p>
+<p>Cron uses the system local timezone. Your server might NOT be in your local timezone!</p>
+<pre><code class="lang-bash">
+date  # Check system timezone
+</code></pre>
+<p>Be especially careful with timezone in container environments.</p>
+<p><strong>Pitfall 3: Step doesn't necessarily start at 0</strong></p>
+<pre><code class="lang-">
+*/5 * * * *    # 0,5,10,15,...55 minutes ✅
+1-59/5 * * * * # 1,6,11,...56 minutes ❗
+</code></pre>
+<p><strong>Pitfall 4: Month day count variations</strong></p>
+<pre><code class="lang-">
+0 2 */15 * *   # Every 15 days, but February only has 28 days
+                 # Day 30/31 might not exist in the following month
+</code></pre>
+<p><strong>Pitfall 5: Output and logging</strong></p>
+<p>Cron task stdout/stderr default to email, but many systems don't have mail configured.</p>
+<p>✅ Best practice: Redirect output to logs</p>
+<pre><code class="lang-">
+0 2 * * * /path/to/script.sh &gt;&gt; /var/log/cron/script.log 2&gt;&amp;1
+</code></pre>
+<h2>Debugging Techniques</h2>
+<h3>Verify Expressions</h3>
+<p>Use our <a href="/tools/cron-parser">Cron Parser tool</a> — enter an expression and immediately see the next 5 execution times to quickly verify correctness.</p>
+<h3>Test Scripts</h3>
+<p>Add timestamp logging at the beginning of scripts:</p>
+<pre><code class="lang-bash">
+echo "$(date): Script started" &gt;&gt; /tmp/test.log
+</code></pre>
+<h3>Environment Variable Issues</h3>
+<p>Cron has a very limited PATH during execution. Common issue:</p>
+<p>❌ Error: <code>command not found</code></p>
+<p>✅ Solution: Set complete PATH at script beginning, or use absolute paths</p>
+<pre><code class="lang-bash">
+#!/bin/bash
+export PATH="/usr/local/bin:/usr/bin:/bin"
+</code></pre>
+<h2>Implementation Differences</h2>
+<table><thead><tr>
+<th>Implementation</th>
+<th>Fields</th>
+<th>Special Syntax</th>
+</tr></thead><tbody>
+<tr>
+<td>Linux crontab</td>
+<td>5</td>
+<td>Basic syntax</td>
+</tr>
+<tr>
+<td>Vixie Cron</td>
+<td>5</td>
+<td>@reboot, @yearly, etc.</td>
+</tr>
+<tr>
+<td>Quartz</td>
+<td>6-7</td>
+<td>L, W, #</td>
+</tr>
+<tr>
+<td>Kubernetes CronJob</td>
+<td>5</td>
+<td>Basic syntax</td>
+</tr>
+<tr>
+<td>GitHub Actions</td>
+<td>5</td>
+<td>Standard POSIX</td>
+</tr>
+<tr>
+<td>AWS CloudWatch</td>
+<td>6</td>
+<td>L, W, #</td>
+</tr>
+</tbody></table>
+<h2>Common Shortcuts</h2>
+<pre><code class="lang-">
+@reboot    # Run once at startup
+@yearly    # Once a year (0 0 1 1 *)
+@monthly   # Once a month (0 0 1 * *)
+@weekly    # Once a week (0 0 * * 0)
+@daily     # Once a day (0 0 * * *)
+@hourly    # Once an hour (0 * * * *)
+</code></pre>
+<h2>Online Tool</h2>
+<p>Use our <a href="/tools/cron-parser">Cron Parser tool</a> to see the next 5 execution times instantly — the perfect tool for debugging Cron.</p>
+<hr>
+<p>Master cron expressions, and you master the core language of automation!</p>
+</article>
+</main>
+<footer class="site-footer">
+  © 2026 AI Toolbox · Free online AI & developer tools · <a href='/en/about'>About</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('Copied!'));
+}
+</script>
+</body>
+</html>

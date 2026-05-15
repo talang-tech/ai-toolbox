@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>随机字符串生成 - 随机字符串生成 | 自定义长度字符集 | AI 工具盒子</title>
+<meta name="description" content="免费在线随机字符串生成工具，自定义长度和字符集生成密码/随机字符串。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="随机字符串生成,随机密码,api key生成,随机字符串">
+<link rel="canonical" href="https://tools.talang.fun/tools/random-string">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/random-string">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/random-string">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/random-string">
+<meta property="og:title" content="随机字符串生成 - 随机字符串生成 | 自定义长度字符集 | AI 工具盒子">
+<meta property="og:description" content="免费在线随机字符串生成工具，自定义长度和字符集生成密码/随机字符串。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/random-string">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "随机字符串生成", "description": "免费在线随机字符串生成工具，自定义长度和字符集生成密码/随机字符串。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/random-string", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "自定义长度和字符集生成密码/随机字符串", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="https://tools.talang.fun/en/tools/random-string" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🎲</div>
+  <h1>随机字符串生成</h1>
+  <p>自定义长度和字符集生成密码/随机字符串</p>
+</div>
+<div class="tool-panel">
+<div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap"><label>长度:</label><input type="number" id="rsgLength" value="32" min="1" max="512" style="width:100px;padding:8px;border:1px solid var(--border);border-radius:6px;background:var(--bg);color:var(--text)"><label>字符集:</label><label style="display:flex;align-items:center;gap:6px"><input type="checkbox" id="rsgUpper" checked>大写</label><label style="display:flex;align-items:center;gap:6px"><input type="checkbox" id="rsgLower" checked>小写</label><label style="display:flex;align-items:center;gap:6px"><input type="checkbox" id="rsgNumber" checked>数字</label><label style="display:flex;align-items:center;gap:6px"><input type="checkbox" id="rsgSpecial">特殊</label><button class="btn" id="rsgGen">生成</button></div><div style="margin-top:16px"><textarea id="rsgOutput" readonly style="min-height:100px;font-family:monospace;font-size:14px"></textarea><button class="btn btn-secondary" id="rsgCopy" style="margin-top:8px">复制</button></div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>生成安全的随机字符串，用于密码、API Key、Token、文件名等。</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>自定义长度（1-512位）</li><li>可选大小写字母</li><li>可选数字</li><li>可选特殊符号</li><li>排除易混淆字符选项</li><li>一键复制</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">和密码生成器有什么区别？</h3><p>这个工具更通用，适合生成 API Key、Token、文件名等各种随机字符串。</p><h3 style="margin-top:20px;margin-bottom:8px">生成的是真随机吗？</h3><p>使用浏览器的 crypto.getRandomValues()，是密码学安全的随机数。</p><h3 style="margin-top:20px;margin-bottom:8px">可以生成包含中文的吗？</h3><p>目前只支持 ASCII 字符集。</p></section>
+<section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/password-generator" class="tool-card"><div class="icon">🔑</div><h3>密码生成器</h3><p>生成强随机密码，可自定义长度和字符类型</p></a><a href="/tools/uuid-generator" class="tool-card"><div class="icon">🆔</div><h3>UUID 生成器</h3><p>生成 UUID v4 / v7（标准格式）</p></a><a href="/tools/hash-generator" class="tool-card"><div class="icon">🔐</div><h3>哈希生成器</h3><p>生成 MD5、SHA-1、SHA-256、SHA-512 哈希值</p></a></div></section>
+<script src="/assets/tools/_utils.js" defer></script>
+    <script src="/assets/tools/random-string.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+</script>
+</body>
+</html>

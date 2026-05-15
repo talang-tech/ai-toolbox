@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>图片 Base64 编码 - 图片 Base64 编码 | 在线工具 | AI 工具盒子</title>
+<meta name="description" content="免费在线图片 Base64 编码工具，将图片转换为 Base64 Data URL。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="图片base64,base64图片,图片转base64,data url,图片编码">
+<link rel="canonical" href="https://tools.talang.fun/tools/base64-image">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/base64-image">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/base64-image">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/base64-image">
+<meta property="og:title" content="图片 Base64 编码 - 图片 Base64 编码 | 在线工具 | AI 工具盒子">
+<meta property="og:description" content="免费在线图片 Base64 编码工具，将图片转换为 Base64 Data URL。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/base64-image">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "图片 Base64 编码", "description": "免费在线图片 Base64 编码工具，将图片转换为 Base64 Data URL。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/base64-image", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "将图片转换为 Base64 Data URL", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="https://tools.talang.fun/en/tools/base64-image" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🔧</div>
+  <h1>图片 Base64 编码</h1>
+  <p>将图片转换为 Base64 Data URL</p>
+</div>
+<div class="tool-panel">
+<textarea id="input" style="min-height:250px" placeholder="输入..."></textarea><div class="btn-group" style="margin-top:12px"><button class="btn" id="process">处理</button></div><textarea id="output" style="min-height:250px;margin-top:12px" readonly placeholder="结果..."></textarea>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>在线将图片转换为 Base64 Data URL，可直接嵌入 CSS、HTML 中，无需额外 HTTP 请求。支持 JPG、PNG、GIF、SVG、WebP 格式。</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>转换 JPG、PNG、GIF、SVG、WebP 为 Base64</li><li>拖拽上传</li><li>预览编码后的图片</li><li>复制为 Data URL、CSS background 或 HTML img 标签</li><li>显示文件大小和压缩信息</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">Base64 图片有什么好处？</h3><p>Base64 图片消除了 HTTP 请求，非常适合小图标和缩略图。它们直接嵌入代码中，简化了部署流程。</p><h3 style="margin-top:20px;margin-bottom:8px">文件大小开销是多少？</h3><p>Base64 编码会使文件大小增加约 33%。仅适用于小图片（<10KB）。大图片应保留为单独文件。</p></section>
+
+<script src="/assets/tools/_utils.js" defer></script>
+    <script src="/assets/tools/base64-image.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JWT 完全指南：原理、使用场景与安全最佳实践 | AI 工具盒子</title>
+<meta name="description" content="JWT 是什么？Header、Payload、Signature 三部分分别是什么意思？JWT 常见误区和 Cookie/Session 有什么区别？本文详细解答。">
+<meta name="keywords" content="jwt详解,jwt原理,jwt教程,json web token,jwt安全">
+<link rel="canonical" href="https://tools.talang.fun/blog/08-jwt">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/blog/08-jwt">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/blog/08-jwt">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/blog/08-jwt">
+<meta property="og:title" content="JWT 完全指南：原理、使用场景与安全最佳实践 | AI 工具盒子">
+<meta property="og:description" content="JWT 是什么？Header、Payload、Signature 三部分分别是什么意思？JWT 常见误区和 Cookie/Session 有什么区别？本文详细解答。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/blog/08-jwt">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "JWT 完全指南：原理、使用场景与安全最佳实践", "description": "JWT 是什么？Header、Payload、Signature 三部分分别是什么意思？JWT 常见误区和 Cookie/Session 有什么区别？本文详细解答。", "author": {"@type": "Organization", "name": "AI 工具盒子"}, "datePublished": "2026-05-14", "url": "https://tools.talang.fun/blog/08-jwt"}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="https://tools.talang.fun/en/blog/08-jwt" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<article class="article">
+  <p style="margin-bottom:8px"><a href="/blog/" style="color:var(--muted)">← 返回博客</a></p>
+  <h1>JWT 完全指南：原理、使用场景与安全最佳实践</h1>
+  <p style="color:var(--muted);margin-bottom:24px">2026-05-14 · 5 分钟阅读</p>
+  <h1>JWT 完全指南：原理、使用场景与安全最佳实践</h1>
+<p>如果你做过后端开发或 API 对接，JWT 一定不陌生。作为目前最流行的跨域认证方案，JWT 已经成为现代 Web 应用的标配。但很多开发者真的理解 JWT 吗？</p>
+<h2>什么是 JWT？</h2>
+<p>JWT（JSON Web Token）是一种开放标准（RFC 7519），用于在各方之间安全地传输信息作为 JSON 对象。</p>
+<p>JWT 的典型结构是一串用 Base64 编码的字符串，由三部分组成，用点号分隔：</p>
+<pre><code class="lang-">
+xxxxx.yyyyy.zzzzz
+</code></pre>
+<p>分别是：</p>
+<ol>
+<li><strong>Header</strong>（头部）</li>
+<li><strong>Payload</strong>（载荷）</li>
+<li><strong>Signature</strong>（签名）</li>
+</ol>
+<h2>JWT 三部分详解</h2>
+<h3>1. Header</h3>
+<p>Header 通常由两部分组成：令牌类型（typ）和使用的签名算法（alg）。</p>
+<pre><code class="lang-json">
+{
+  "alg": "HS256",
+  "typ": "JWT"
+}
+</code></pre>
+<p>常用签名算法：</p>
+<ul>
+<li><strong>HS256</strong> (HMAC-SHA256)：对称加密，用同一个密钥签名和验证</li>
+<li><strong>RS256</strong> (RSA-SHA256)：非对称加密，用私钥签名，公钥验证</li>
+<li><strong>ES256</strong> (ECDSA-SHA256)：椭圆曲线数字签名算法</li>
+</ul>
+<h3>2. Payload</h3>
+<p>Payload 包含声明（claims），即关于实体（通常是用户）和附加数据的声明。</p>
+<p>三种声明类型：</p>
+<ul>
+<li><strong>注册声明</strong>（Registered claims）：预定义的声明，可选但推荐使用</li>
+</ul>
+<p>  - <code>iss</code> (issuer)：签发者</p>
+<p>  - <code>exp</code> (expiration time)：过期时间</p>
+<p>  - <code>sub</code> (subject)：主题</p>
+<p>  - <code>aud</code> (audience)：受众</p>
+<p>  - <code>iat</code> (issued at)：签发时间</p>
+<ul>
+<li><strong>公共声明</strong>（Public claims）：自定义，建议在 IANA 注册或使用带命名空间</li>
+<li><strong>私有声明</strong>（Private claims）：应用自定义</li>
+</ul>
+<p>一个典型的 Payload：</p>
+<pre><code class="lang-json">
+{
+  "sub": "1234567890",
+  "name": "张三",
+  "role": "admin",
+  "iat": 1620000000,
+  "exp": 1620086400
+}
+</code></pre>
+<p><strong>重要提醒：</strong> <strong>Payload 只是 Base64 编码，</strong>不是加密<strong>！任何人拿到 JWT 都可以解码看到 Payload 内容。</strong>不要在 Payload 中存放敏感信息（密码、信用卡号等）。</p>
+<h3>3. Signature</h3>
+<p>Signature 是对编码后的 Header + 编码后的 Payload + 密钥，使用 Header 中指定的算法进行签名得到的。</p>
+<p>以 HS256 算法为例：</p>
+<pre><code class="lang-javascript">
+HMACSHA256(
+  base64UrlEncode(header) + "." +
+  base64UrlEncode(payload),
+  secret_key
+)
+</code></pre>
+<p>签名的作用：<strong>验证消息没有被篡改</strong>。如果有人修改了 Header 或 Payload，重新计算的签名就会和原签名不一致。</p>
+<h2>JWT vs Session/Cookie</h2>
+<table><thead><tr>
+<th>特性</th>
+<th>JWT</th>
+<th>Session/Cookie</th>
+</tr></thead><tbody>
+<tr>
+<td>存储位置</td>
+<td>客户端（LocalStorage/内存）</td>
+<td>服务端</td>
+</tr>
+<tr>
+<td>扩展性</td>
+<td>好（无状态）</td>
+<td>差（有状态）</td>
+</tr>
+<tr>
+<td>跨域支持</td>
+<td>原生支持</td>
+<td>受限于同源策略</td>
+</tr>
+<tr>
+<td>CSRF 防护</td>
+<td>天然免疫</td>
+<td>需要额外防护</td>
+</tr>
+<tr>
+<td>过期控制</td>
+<td>相对困难</td>
+<td>服务端直接删除</td>
+</tr>
+<tr>
+<td>数据体积</td>
+<td>较大（数百字节）</td>
+<td>极小（Session ID）</td>
+</tr>
+</tbody></table>
+<p>**选择依据：</p>
+<ul>
+<li>✅ 选 JWT：跨域 API、移动端 API、微服务架构</li>
+<li>✅ 选 Session：传统 Web 应用、金融级安全要求、需要随时吊销</li>
+</ul>
+<h2>JWT 常见使用场景</h2>
+<h3>场景 1：用户认证</h3>
+<p>用户登录成功后，服务端签发 JWT，后续请求携带 JWT，服务端验证签名即可确认用户身份。</p>
+<pre><code class="lang-">
+Authorization: Bearer &lt;token&gt;
+</code></pre>
+<h3>场景 2：信息交换</h3>
+<p>服务之间安全传递信息。比如微服务 A 调用微服务 B，携带 JWT 证明身份。</p>
+<h3>场景 3：一次性令牌</h3>
+<p>密码重置链接、邮件验证链接等，JWT 自带过期时间，服务端验证签名即可。</p>
+<h2>JWT 安全最佳实践</h2>
+<h3>1. 永远不要在 Payload 中放敏感信息</h3>
+<p>Base64 不是加密！任何人都可以解码。</p>
+<h3>2. 设置合理的过期时间</h3>
+<pre><code class="lang-json">
+{
+  "exp": Math.floor(Date.now() / 1000) + 3600  // 1 小时过期
+}
+</code></pre>
+<p>短期 Token + Refresh Token 是最佳实践。</p>
+<h3>3. 使用 HTTPS</h3>
+<p>JWT 在传输过程中如果被截获，攻击者可以直接使用。必须在 HTTPS 环境下传输。</p>
+<h3>4. 选择合适的签名算法</h3>
+<ul>
+<li>单服务场景：HS256 足够（性能好）</li>
+<li>多服务/第三方验证场景：RS256（只有签发方有私钥）</li>
+</ul>
+<h3>5. 不要将 JWT 存入 LocalStorage（前端</h3>
+<p>LocalStorage 容易受到 XSS 攻击。</p>
+<p>✅ 推荐：</p>
+<ul>
+<li>内存存储（SPA 应用</li>
+<li>HttpOnly Cookie（传统 Web 应用）</li>
+</ul>
+<h3>6. 实现 Token 吊销机制</h3>
+<p>JWT 是无状态的，签发后无法直接吊销。常用方案：</p>
+<ul>
+<li>短过期时间</li>
+<li>维护吊销黑名单（Redis）</li>
+<li>版本号机制</li>
+</ul>
+<h2>JWT 常见误区</h2>
+<p>**误区 1：JWT 是加密的，很安全</p>
+<p>❌ 错误。JWT 只是编码 + 签名，<strong>不是加密</strong>。内容是明文可见的。</p>
+<p>**误区 2：JWT 比 Session 更安全</p>
+<p>❌ 不一定。各有优劣，取决于具体实现。Session 配合 HttpOnly + Secure Cookie 同样安全。</p>
+<p>**误区 3：JWT 应该存到 LocalStorage</p>
+<p>❌ LocalStorage 无法防御 XSS。推荐 HttpOnly Cookie。</p>
+<h2>在线工具</h2>
+<p>使用我们的 <a href="/tools/jwt">JWT 解码工具</a>，可以快速解码 JWT 的 Header 和 Payload，查看过期时间、签发者等信息。</p>
+<h2>总结</h2>
+<p>JWT 是一个强大但简单的标准。理解了三部分结构，理解了签名不是加密，理解了适用场景，你就能用好 JWT。</p>
+<p>记住三个核心原则：</p>
+<ol>
+<li>**JWT 不是加密</li>
+<li>**设置过期时间</li>
+<li>**用 HTTPS 传输</li>
+</ol>
+<hr>
+<p>下次使用 JWT 时，别忘了用我们的工具解码看看里面是什么！</p>
+</article>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+</script>
+</body>
+</html>

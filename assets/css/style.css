@@ -269,8 +269,57 @@ textarea:focus, input:focus, select:focus {
 }
 .article h1 { margin-bottom: 16px; }
 .article h2 { margin: 24px 0 12px; font-size: 20px; }
-.article p, .article ul { margin-bottom: 12px; color: var(--text-dim); }
-.article ul { padding-left: 24px; }
+.article p, .article ul, .article ol { margin-bottom: 12px; color: var(--text-dim); }
+.article ul, .article ol { padding-left: 24px; }
+.article ol { list-style: decimal; }
+.article ul { list-style: disc; }
+.article li { margin-bottom: 4px; }
+.article blockquote {
+  border-left: 3px solid var(--accent);
+  padding: 8px 16px;
+  margin: 16px 0;
+  background: rgba(99,102,241,0.05);
+  color: var(--text-dim);
+  border-radius: 0 8px 8px 0;
+}
+.article hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 24px 0;
+}
+.article pre {
+  background: #0b1020;
+  border: 1px solid var(--border);
+  padding: 14px 16px;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 12px 0;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.article pre code { background: transparent; padding: 0; color: #e5e7eb; }
+.article table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 16px 0;
+  font-size: 14px;
+  display: block;
+  overflow-x: auto;
+}
+.article table th, .article table td {
+  border: 1px solid var(--border);
+  padding: 8px 12px;
+  text-align: left;
+  vertical-align: top;
+}
+.article table thead th {
+  background: rgba(99,102,241,0.1);
+  font-weight: 600;
+  color: var(--text);
+}
+.article table tbody tr:nth-child(even) { background: rgba(255,255,255,0.02); }
+.article a { color: var(--accent); }
+.article a:hover { color: var(--accent-hover); text-decoration: underline; }
 .article code {
   background: var(--bg);
   padding: 2px 6px;

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QR Code Decoder - QR Code Decoder | Upload Image to Parse QR Content | AI Toolbox</title>
+<meta name="description" content="Free online qr code decoder. Upload QR code image to decode content. Fast, secure, and works in your browser without downloading.">
+<meta name="keywords" content="qr code decoder,qr scanner,qr code reader,decode qr">
+<link rel="canonical" href="https://tools.talang.fun/en/tools/qr-decode">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/qr-decode">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/qr-decode">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/qr-decode">
+<meta property="og:title" content="QR Code Decoder - QR Code Decoder | Upload Image to Parse QR Content | AI Toolbox">
+<meta property="og:description" content="Free online qr code decoder. Upload QR code image to decode content. Fast, secure, and works in your browser without downloading.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/en/tools/qr-decode">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "QR Code Decoder", "description": "Free online qr code decoder. Upload QR code image to decode content. Fast, secure, and works in your browser without downloading.", "url": "https://tools.talang.fun/en/tools/qr-decode", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "Upload QR code image to decode content", "inLanguage": "en", "author": {"@type": "Organization", "name": "AI Toolbox"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/en/" class="logo"><span class="logo-icon">🛠️</span>AI Toolbox</a>
+    <nav class="nav">
+      <a href="/en/">Home</a>
+      <a href="/en/#tools">All Tools</a>
+      <a href="/en/blog/">Blog</a>
+      <a href="/en/about">About</a>
+      <a href="https://tools.talang.fun/tools/qr-decode" class="lang-switch">中文</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">📸</div>
+  <h1>QR Code Decoder</h1>
+  <p>Upload QR code image to decode content</p>
+</div>
+<div class="tool-panel">
+<div style="text-align:center;padding:20px"><div id="qdInput" style="border:2px dashed var(--border);border-radius:12px;padding:40px;cursor:pointer;margin-bottom:16px"><div style="font-size:48px;margin-bottom:8px">📸</div><p>Click or drag to upload QR code image</p><p style="color:var(--text-dim);font-size:13px">JPG, PNG supported</p><input type="file" id="qdFile" accept="image/*" style="display:none"></div></div><div><label>Result:</label><textarea id="qdOutput" readonly style="min-height:120px;margin-top:8px"></textarea><button class="btn btn-secondary" id="qdCopy" style="margin-top:8px">Copy Result</button></div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>About this tool</h2>
+  <p>Detect and decode QR codes from image files. Supports JPG, PNG, etc. All processing happens locally in browser.</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>Key Features</h2><ul><li>Upload image to decode QR code</li><li>JPG/PNG/GIF format support</li><li>Multiple QR codes recognition</li><li>One-click copy decoded result</li><li>Pure frontend no upload</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>Frequently Asked Questions</h2><h3 style="margin-top:20px;margin-bottom:8px">What image formats are supported?</h3><p>JPG, PNG, GIF and other common image formats.</p><h3 style="margin-top:20px;margin-bottom:8px">Are images uploaded to server?</h3><p>No. Image decoding happens entirely in your browser.</p><h3 style="margin-top:20px;margin-bottom:8px">Can it read damaged QR codes?</h3><p>Damaged codes within error correction tolerance can be read.</p></section>
+<section class="related"><h3>Related Tools</h3><div class="tools-grid"><a href="/en/tools/qr-code" class="tool-card"><div class="icon">📱</div><h3>QR Code Generator</h3><p>Generate QR codes from text/URL, downloadable as PNG</p></a><a href="/en/tools/base64" class="tool-card"><div class="icon">🔣</div><h3>Base64 Encoder/Decoder</h3><p>Encode/decode Base64 strings and files, UTF-8 safe</p></a></div></section>
+<script src="/assets/tools/_utils.js" defer></script>
+    <script src="/assets/tools/qr-decode.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI Toolbox · Free online AI & developer tools · <a href='/en/about'>About</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('Copied!'));
+}
+</script>
+</body>
+</html>

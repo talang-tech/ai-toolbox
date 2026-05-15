@@ -1,11 +1,44 @@
 {
   "categories": {
-    "order": ["text", "dev", "encode", "generate"],
+    "order": [
+      "text",
+      "dev",
+      "json",
+      "encode",
+      "generate",
+      "image"
+    ],
     "items": {
-      "text":     {"icon": "📝", "name_zh": "文本工具",   "name_en": "Text Tools"},
-      "dev":      {"icon": "💻", "name_zh": "开发者工具", "name_en": "Developer Tools"},
-      "encode":   {"icon": "🔐", "name_zh": "编码与转换", "name_en": "Encoding & Conversion"},
-      "generate": {"icon": "✨", "name_zh": "生成器",     "name_en": "Generators"}
+      "text": {
+        "icon": "📝",
+        "name_zh": "文本工具",
+        "name_en": "Text Tools"
+      },
+      "dev": {
+        "icon": "💻",
+        "name_zh": "开发者工具",
+        "name_en": "Developer Tools"
+      },
+      "encode": {
+        "icon": "🔐",
+        "name_zh": "编码与转换",
+        "name_en": "Encoding & Conversion"
+      },
+      "generate": {
+        "icon": "✨",
+        "name_zh": "生成器",
+        "name_en": "Generators"
+      },
+      "json": {
+        "icon": "📋",
+        "name_zh": "JSON 工具",
+        "name_en": "JSON Tools"
+      },
+      "image": {
+        "icon": "🖼️",
+        "name_zh": "图片工具",
+        "name_en": "Image Tools"
+      }
     }
   },
   "tools": [
@@ -23,7 +56,54 @@
       "long_en": "<p>Free online word counter — real-time statistics for characters (with/without spaces), words, lines, and paragraphs. Supports mixed Chinese and English text. Perfect for essay writing, blog posts, and social media character limits (Twitter/X, etc).</p><p>All counting happens locally in your browser. Your text is never uploaded.</p>",
       "ui_zh": "<textarea id=\"input\" placeholder=\"在此输入或粘贴文本...\"></textarea><div class=\"stats\" id=\"stats\"></div>",
       "ui_en": "<textarea id=\"input\" placeholder=\"Type or paste text here...\"></textarea><div class=\"stats\" id=\"stats\"></div>",
-      "related": ["case-converter", "text-diff"]
+      "related": [
+        "case-converter",
+        "text-diff"
+      ],
+      "seo_title_zh": "在线字数统计 | 字符/单词/行数统计",
+      "seo_title_en": "Online Word Counter | Character/Word/Line Count",
+      "features_zh": [
+        "实时统计中文汉字、英文单词、字符数",
+        "统计行数、段落数",
+        "支持中英文混合统计",
+        "支持大文本粘贴",
+        "浏览器本地处理，数据不上传"
+      ],
+      "features_en": [
+        "Real-time count of Chinese characters, English words",
+        "Count lines and paragraphs",
+        "Support mixed Chinese and English",
+        "Large text paste support",
+        "Browser local processing, no data upload"
+      ],
+      "faq_zh": [
+        [
+          "空格算字符吗？",
+          "空格算字符。连续多个空格也会计入总字符数。"
+        ],
+        [
+          "标点符号算字数吗？",
+          "标点符号在字符统计中会被计算，在字数统计中通常不算。"
+        ],
+        [
+          "支持多大的文本？",
+          "支持任意大小的文本，浏览器内存允许的情况下都可以处理。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "Are spaces counted as characters?",
+          "Yes, spaces are counted as characters. Multiple consecutive spaces are also counted."
+        ],
+        [
+          "Are punctuation marks counted?",
+          "Punctuation is counted in character count, but usually not in word count."
+        ],
+        [
+          "How large text is supported?",
+          "Any size text that fits in browser memory can be processed."
+        ]
+      ]
     },
     {
       "slug": "case-converter",
@@ -39,7 +119,48 @@
       "long_en": "<p>One-click convert text between formats: UPPERCASE, lowercase, Title Case, Sentence case, camelCase, snake_case, kebab-case, CONSTANT_CASE.</p><p>Essential for developers naming variables and writing documentation.</p>",
       "ui_zh": "<textarea id=\"input\" placeholder=\"输入文本...\"></textarea><div class=\"btn-group\" style=\"margin-top:12px\"><button class=\"btn\" data-mode=\"upper\">全部大写</button><button class=\"btn\" data-mode=\"lower\">全部小写</button><button class=\"btn\" data-mode=\"title\">单词首字母大写</button><button class=\"btn\" data-mode=\"sentence\">句子首字母大写</button><button class=\"btn\" data-mode=\"camel\">camelCase</button><button class=\"btn\" data-mode=\"snake\">snake_case</button><button class=\"btn\" data-mode=\"kebab\">kebab-case</button><button class=\"btn\" data-mode=\"const\">CONSTANT_CASE</button></div><textarea id=\"output\" readonly placeholder=\"结果将显示在这里...\" style=\"margin-top:12px\"></textarea><button class=\"btn btn-secondary\" id=\"copyBtn\" style=\"margin-top:8px\">📋 复制结果</button>",
       "ui_en": "<textarea id=\"input\" placeholder=\"Enter text...\"></textarea><div class=\"btn-group\" style=\"margin-top:12px\"><button class=\"btn\" data-mode=\"upper\">UPPERCASE</button><button class=\"btn\" data-mode=\"lower\">lowercase</button><button class=\"btn\" data-mode=\"title\">Title Case</button><button class=\"btn\" data-mode=\"sentence\">Sentence case</button><button class=\"btn\" data-mode=\"camel\">camelCase</button><button class=\"btn\" data-mode=\"snake\">snake_case</button><button class=\"btn\" data-mode=\"kebab\">kebab-case</button><button class=\"btn\" data-mode=\"const\">CONSTANT_CASE</button></div><textarea id=\"output\" readonly placeholder=\"Result appears here...\" style=\"margin-top:12px\"></textarea><button class=\"btn btn-secondary\" id=\"copyBtn\" style=\"margin-top:8px\">📋 Copy Result</button>",
-      "related": ["word-counter", "text-diff"]
+      "related": [
+        "word-counter",
+        "text-diff"
+      ],
+      "seo_title_zh": "大小写转换 | 驼峰/蛇形/首字母大写",
+      "seo_title_en": "Case Converter | Camel/Snake/Title Case",
+      "features_zh": [
+        "一键转大写 UPPERCASE",
+        "一键转小写 lowercase",
+        "首字母大写 Title Case",
+        "驼峰命名 camelCase",
+        "蛇形命名 snake_case",
+        "全角/半角字符转换"
+      ],
+      "features_en": [
+        "Convert to UPPERCASE",
+        "Convert to lowercase",
+        "Title Case conversion",
+        "camelCase conversion",
+        "snake_case conversion",
+        "Full-width/half-width character conversion"
+      ],
+      "faq_zh": [
+        [
+          "什么是驼峰命名法？",
+          "驼峰命名法是变量名的一种写法，第一个单词小写，后续单词首字母大写，如：userName。"
+        ],
+        [
+          "什么是蛇形命名法？",
+          "蛇形命名法用下划线分隔单词，全小写，如：user_name。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "What is camelCase?",
+          "camelCase is a naming convention where the first word is lowercase and subsequent words start with uppercase, e.g.: userName."
+        ],
+        [
+          "What is snake_case?",
+          "snake_case uses underscores to separate words, all lowercase, e.g.: user_name."
+        ]
+      ]
     },
     {
       "slug": "text-diff",
@@ -55,7 +176,56 @@
       "long_en": "<p>Compare two pieces of text. Green = added lines, red = removed lines. Useful for comparing document versions, checking AI rewrites, or spotting code differences quickly.</p>",
       "ui_zh": "<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:12px\"><textarea id=\"left\" placeholder=\"原文本...\"></textarea><textarea id=\"right\" placeholder=\"新文本...\"></textarea></div><button class=\"btn\" id=\"compareBtn\" style=\"margin-top:12px\">对比差异</button><pre id=\"diff\" style=\"background:var(--bg);padding:16px;border-radius:8px;margin-top:12px;overflow:auto;font-family:Consolas,monospace;font-size:13px;line-height:1.6;border:1px solid var(--border)\"></pre>",
       "ui_en": "<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:12px\"><textarea id=\"left\" placeholder=\"Original text...\"></textarea><textarea id=\"right\" placeholder=\"New text...\"></textarea></div><button class=\"btn\" id=\"compareBtn\" style=\"margin-top:12px\">Compare</button><pre id=\"diff\" style=\"background:var(--bg);padding:16px;border-radius:8px;margin-top:12px;overflow:auto;font-family:Consolas,monospace;font-size:13px;line-height:1.6;border:1px solid var(--border)\"></pre>",
-      "related": ["word-counter", "case-converter"]
+      "related": [
+        "word-counter",
+        "case-converter"
+      ],
+      "seo_title_zh": "文本对比 | 在线 diff 差异对比工具",
+      "seo_title_en": "Text Diff | Online diff comparison tool",
+      "features_zh": [
+        "两段文本逐行对比",
+        "新增/删除/修改高亮显示",
+        "字符级差异高亮",
+        "支持大文件",
+        "并排对比视图",
+        "浏览器本地处理"
+      ],
+      "features_en": [
+        "Line-by-line comparison of two texts",
+        "Add/delete/modify highlighting",
+        "Character-level diff highlighting",
+        "Large file support",
+        "Side-by-side comparison view",
+        "Browser local processing"
+      ],
+      "faq_zh": [
+        [
+          "支持多大的文件？",
+          "只要浏览器内存允许，可以对比几 MB 的文本文件。"
+        ],
+        [
+          "数据会上传吗？",
+          "不会。所有对比都在浏览器本地完成，数据不会离开您的设备。"
+        ],
+        [
+          "可以对比代码吗？",
+          "可以，特别适合对比代码差异。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "How large files are supported?",
+          "As long as browser memory allows, several MB text files can be compared."
+        ],
+        [
+          "Is data uploaded?",
+          "No. All comparison happens locally in your browser, data never leaves your device."
+        ],
+        [
+          "Can it compare code?",
+          "Yes, especially suitable for comparing code differences."
+        ]
+      ]
     },
     {
       "slug": "json-formatter",
@@ -71,7 +241,56 @@
       "long_en": "<p>One of the most-used developer tools. Paste your JSON to format (beautify), minify into one line, or validate. Errors are reported with precise location and reason.</p><p>Handles nested objects and arrays. All processing happens locally in your browser.</p>",
       "ui_zh": "<textarea id=\"input\" placeholder=\"粘贴 JSON 数据...\"></textarea><div class=\"btn-group\" style=\"margin-top:12px\"><button class=\"btn\" id=\"formatBtn\">美化（缩进 2 空格）</button><button class=\"btn\" id=\"format4Btn\">美化（缩进 4 空格）</button><button class=\"btn\" id=\"minifyBtn\">压缩为单行</button><button class=\"btn btn-secondary\" id=\"validateBtn\">校验</button></div><textarea id=\"output\" readonly placeholder=\"结果...\" style=\"margin-top:12px;min-height:300px\"></textarea><div id=\"msg\" style=\"margin-top:8px;font-size:13px\"></div>",
       "ui_en": "<textarea id=\"input\" placeholder=\"Paste JSON here...\"></textarea><div class=\"btn-group\" style=\"margin-top:12px\"><button class=\"btn\" id=\"formatBtn\">Beautify (2-space)</button><button class=\"btn\" id=\"format4Btn\">Beautify (4-space)</button><button class=\"btn\" id=\"minifyBtn\">Minify</button><button class=\"btn btn-secondary\" id=\"validateBtn\">Validate</button></div><textarea id=\"output\" readonly placeholder=\"Result...\" style=\"margin-top:12px;min-height:300px\"></textarea><div id=\"msg\" style=\"margin-top:8px;font-size:13px\"></div>",
-      "related": ["base64", "url-encoder"]
+      "related": [
+        "base64",
+        "url-encoder"
+      ],
+      "seo_title_zh": "JSON 格式化 | 在线 JSON 美化/压缩/校验",
+      "seo_title_en": "JSON Formatter | Online JSON Beautify/Minify/Validate",
+      "features_zh": [
+        "JSON 一键美化格式化",
+        "JSON 压缩去空格",
+        "JSON 语法校验，错误位置高亮",
+        "JSON 树状视图折叠展开",
+        "支持大文件解析",
+        "自动修复常见语法错误"
+      ],
+      "features_en": [
+        "One-click JSON beautify/format",
+        "JSON minify/remove whitespace",
+        "JSON syntax validation with error highlighting",
+        "JSON tree view with collapse/expand",
+        "Large file parsing support",
+        "Auto-fix common syntax errors"
+      ],
+      "faq_zh": [
+        [
+          "JSON 和 JS 对象有什么区别？",
+          "JSON 是纯文本格式，键名必须双引号；JS 对象是语言结构，键名可以省略引号。"
+        ],
+        [
+          "最大支持多大的 JSON？",
+          "只要浏览器内存允许，可以处理几十 MB 的 JSON 文件。"
+        ],
+        [
+          "数据会上传到服务器吗？",
+          "不会。所有处理都在您的浏览器本地完成，数据不会上传。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "What's the difference between JSON and JS object?",
+          "JSON is a text format requiring double quotes for keys; JS object is a language structure where keys can omit quotes."
+        ],
+        [
+          "What's the maximum JSON size supported?",
+          "As long as browser memory allows, files of dozens of MB can be processed."
+        ],
+        [
+          "Is data uploaded to server?",
+          "No. All processing happens locally in your browser."
+        ]
+      ]
     },
     {
       "slug": "regex-tester",
@@ -87,7 +306,56 @@
       "long_en": "<p>Test regular expressions in real-time. Enter your pattern and text, all matches are highlighted. Supports g/i/m/s/u flags.</p><p>Perfect for learning regex, debugging scrapers, and writing form validation.</p>",
       "ui_zh": "<div class=\"input-row\"><label style=\"min-width:60px\">正则:</label><input type=\"text\" id=\"pattern\" placeholder=\"\\d+\" style=\"flex:1\"><input type=\"text\" id=\"flags\" placeholder=\"gi\" style=\"width:80px\"></div><textarea id=\"text\" placeholder=\"在此输入要匹配的文本...\"></textarea><div id=\"result\" style=\"margin-top:12px;padding:16px;background:var(--bg);border-radius:8px;border:1px solid var(--border);min-height:80px;white-space:pre-wrap;word-break:break-all;font-family:Consolas,monospace;font-size:13px\"></div><div id=\"matches\" style=\"margin-top:8px;color:var(--text-dim);font-size:13px\"></div>",
       "ui_en": "<div class=\"input-row\"><label style=\"min-width:60px\">Pattern:</label><input type=\"text\" id=\"pattern\" placeholder=\"\\d+\" style=\"flex:1\"><input type=\"text\" id=\"flags\" placeholder=\"gi\" style=\"width:80px\"></div><textarea id=\"text\" placeholder=\"Enter text to match against...\"></textarea><div id=\"result\" style=\"margin-top:12px;padding:16px;background:var(--bg);border-radius:8px;border:1px solid var(--border);min-height:80px;white-space:pre-wrap;word-break:break-all;font-family:Consolas,monospace;font-size:13px\"></div><div id=\"matches\" style=\"margin-top:8px;color:var(--text-dim);font-size:13px\"></div>",
-      "related": ["json-formatter", "url-encoder"]
+      "related": [
+        "json-formatter",
+        "url-encoder"
+      ],
+      "seo_title_zh": "正则表达式测试 | 在线正则匹配/替换/调试",
+      "seo_title_en": "Regex Tester | Online Match/Replace/Debug",
+      "features_zh": [
+        "实时正则匹配测试",
+        "正则替换功能",
+        "语法高亮显示",
+        "匹配结果高亮",
+        "捕获组提取",
+        "常用正则参考"
+      ],
+      "features_en": [
+        "Real-time regex matching test",
+        "Regex replace function",
+        "Syntax highlighting",
+        "Match result highlighting",
+        "Capture group extraction",
+        "Common regex reference"
+      ],
+      "faq_zh": [
+        [
+          "正则表达式区分大小写吗？",
+          "默认区分，可以用 i 修饰符忽略大小写。"
+        ],
+        [
+          "如何匹配任意字符？",
+          "用 . 可以匹配除换行符外的任意字符。加 s 修饰符可以包含换行符。"
+        ],
+        [
+          "贪婪和非贪婪有什么区别？",
+          "贪婪匹配尽可能多的字符，非贪婪（?）匹配尽可能少的字符。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "Is regex case-sensitive?",
+          "Yes by default. Use i flag to ignore case."
+        ],
+        [
+          "How to match any character?",
+          "Use . to match any character except newline. Add s flag to include newlines."
+        ],
+        [
+          "What's the difference between greedy and non-greedy?",
+          "Greedy matches as much as possible; non-greedy (with ?) matches as little as possible."
+        ]
+      ]
     },
     {
       "slug": "base64",
@@ -103,7 +371,56 @@
       "long_en": "<p>Base64 is an encoding scheme that represents binary data using ASCII characters, commonly used to transmit binary data through text-based protocols (email, JSON, URLs).</p><p>This tool supports UTF-8 (including Chinese characters) and works in both directions.</p>",
       "ui_zh": "<textarea id=\"input\" placeholder=\"输入文本或 Base64 字符串...\"></textarea><div class=\"btn-group\" style=\"margin-top:12px\"><button class=\"btn\" id=\"encodeBtn\">编码 →</button><button class=\"btn\" id=\"decodeBtn\">← 解码</button><button class=\"btn btn-secondary\" id=\"clearBtn\">清空</button></div><textarea id=\"output\" readonly placeholder=\"结果...\" style=\"margin-top:12px\"></textarea><button class=\"btn btn-secondary\" id=\"copyBtn\" style=\"margin-top:8px\">📋 复制</button>",
       "ui_en": "<textarea id=\"input\" placeholder=\"Enter text or Base64 string...\"></textarea><div class=\"btn-group\" style=\"margin-top:12px\"><button class=\"btn\" id=\"encodeBtn\">Encode →</button><button class=\"btn\" id=\"decodeBtn\">← Decode</button><button class=\"btn btn-secondary\" id=\"clearBtn\">Clear</button></div><textarea id=\"output\" readonly placeholder=\"Result...\" style=\"margin-top:12px\"></textarea><button class=\"btn btn-secondary\" id=\"copyBtn\" style=\"margin-top:8px\">📋 Copy</button>",
-      "related": ["url-encoder", "json-formatter"]
+      "related": [
+        "url-encoder",
+        "json-formatter"
+      ],
+      "seo_title_zh": "Base64 编码解码 | 图片/文件 Base64 转换",
+      "seo_title_en": "Base64 Encoder Decoder | Image/File Base64 Converter",
+      "features_zh": [
+        "文本 Base64 编码",
+        "文本 Base64 解码",
+        "图片文件 Base64 编码",
+        "任意文件 Base64 编码",
+        "UTF-8 中文支持",
+        "支持 Data URL 格式"
+      ],
+      "features_en": [
+        "Text Base64 encoding",
+        "Text Base64 decoding",
+        "Image file Base64 encoding",
+        "Any file Base64 encoding",
+        "UTF-8 Chinese support",
+        "Data URL format support"
+      ],
+      "faq_zh": [
+        [
+          "Base64 编码后体积变大多少？",
+          "Base64 编码后体积会增加约 33%，因为每 3 字节编码成 4 个 ASCII 字符。"
+        ],
+        [
+          "为什么要用 Base64？",
+          "主要用于在文本协议中传输二进制数据，如在 JSON、HTML、URL 中嵌入图片。"
+        ],
+        [
+          "Base64 是加密吗？",
+          "不是加密，只是编码。任何人都可以解码还原原始数据。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "How much does Base64 increase size?",
+          "Base64 encoding increases size by about 33% as 3 bytes become 4 ASCII characters."
+        ],
+        [
+          "Why use Base64?",
+          "Mainly for transmitting binary data in text protocols, e.g., embedding images in JSON, HTML, URLs."
+        ],
+        [
+          "Is Base64 encryption?",
+          "No. Base64 is just encoding. Anyone can decode to get original data."
+        ]
+      ]
     },
     {
       "slug": "url-encoder",
@@ -119,7 +436,54 @@
       "long_en": "<p>URL encoding (Percent Encoding) converts special characters in a URL to %XX format, ensuring the URL is correctly transmitted and parsed.</p><p>Useful for: URLs with non-ASCII characters, API calls, form submissions.</p>",
       "ui_zh": "<textarea id=\"input\" placeholder=\"输入要编码或解码的 URL...\"></textarea><div class=\"btn-group\" style=\"margin-top:12px\"><button class=\"btn\" id=\"encodeBtn\">编码 →</button><button class=\"btn\" id=\"decodeBtn\">← 解码</button></div><textarea id=\"output\" readonly placeholder=\"结果...\" style=\"margin-top:12px\"></textarea><button class=\"btn btn-secondary\" id=\"copyBtn\" style=\"margin-top:8px\">📋 复制</button>",
       "ui_en": "<textarea id=\"input\" placeholder=\"Enter URL to encode or decode...\"></textarea><div class=\"btn-group\" style=\"margin-top:12px\"><button class=\"btn\" id=\"encodeBtn\">Encode →</button><button class=\"btn\" id=\"decodeBtn\">← Decode</button></div><textarea id=\"output\" readonly placeholder=\"Result...\" style=\"margin-top:12px\"></textarea><button class=\"btn btn-secondary\" id=\"copyBtn\" style=\"margin-top:8px\">📋 Copy</button>",
-      "related": ["base64", "json-formatter"]
+      "related": [
+        "base64",
+        "json-formatter"
+      ],
+      "seo_title_zh": "URL 编码解码 | 百分号编码在线转换",
+      "seo_title_en": "URL Encoder Decoder | Percent Encoding Online",
+      "features_zh": [
+        "URL 编码（百分号编码）",
+        "URL 解码",
+        "支持 UTF-8 中文",
+        "RFC 3986 标准",
+        "一键复制结果"
+      ],
+      "features_en": [
+        "URL encoding (percent encoding)",
+        "URL decoding",
+        "UTF-8 Chinese support",
+        "RFC 3986 standard",
+        "One-click copy result"
+      ],
+      "faq_zh": [
+        [
+          "为什么 URL 需要编码？",
+          "URL 只能包含 ASCII 字符，非 ASCII 字符和特殊符号需要编码才能正确传输。"
+        ],
+        [
+          "空格编码成 + 还是 %20？",
+          "标准是 %20，application/x-www-form-urlencoded 格式中空格用 +。"
+        ],
+        [
+          "encodeURI 和 encodeURIComponent 有什么区别？",
+          "encodeURI 不编码 :/?#[]@!$&'()*+,;= 这些 URI 保留字符。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "Why encode URLs?",
+          "URLs can only contain ASCII characters. Non-ASCII and special symbols need encoding for proper transmission."
+        ],
+        [
+          "Space encoded as + or %20?",
+          "%20 is standard. + is used in application/x-www-form-urlencoded format."
+        ],
+        [
+          "What's the difference between encodeURI and encodeURIComponent?",
+          "encodeURI doesn't encode URI reserved characters like :/?#[]@!$&'()*+,;=."
+        ]
+      ]
     },
     {
       "slug": "hash-generator",
@@ -135,7 +499,56 @@
       "long_en": "<p>Compute various hash values (MD5, SHA-1, SHA-256, SHA-512) for text. Useful for: file integrity verification, password storage, digital signatures.</p><p>Uses native Web Crypto API (MD5 implemented in pure JS). All computation is local.</p>",
       "ui_zh": "<textarea id=\"input\" placeholder=\"输入要计算哈希的文本...\"></textarea><div id=\"results\" style=\"margin-top:16px\"></div>",
       "ui_en": "<textarea id=\"input\" placeholder=\"Enter text to hash...\"></textarea><div id=\"results\" style=\"margin-top:16px\"></div>",
-      "related": ["base64", "password-generator"]
+      "related": [
+        "base64",
+        "password-generator"
+      ],
+      "seo_title_zh": "哈希生成器 | MD5/SHA1/SHA256/SHA512 在线计算",
+      "seo_title_en": "Hash Generator | MD5/SHA1/SHA256/SHA512 Online",
+      "features_zh": [
+        "MD5 哈希计算",
+        "SHA-1 哈希计算",
+        "SHA-256 哈希计算",
+        "SHA-512 哈希计算",
+        "实时计算",
+        "文件哈希支持"
+      ],
+      "features_en": [
+        "MD5 hash calculation",
+        "SHA-1 hash calculation",
+        "SHA-256 hash calculation",
+        "SHA-512 hash calculation",
+        "Real-time computation",
+        "File hash support"
+      ],
+      "faq_zh": [
+        [
+          "MD5 还安全吗？",
+          "MD5 已被破解，不适合密码存储，但文件校验仍广泛使用。"
+        ],
+        [
+          "哈希是加密吗？",
+          "不是。哈希是单向摘要，无法还原原始数据。加密是双向的，可以解密。"
+        ],
+        [
+          "什么是哈希碰撞？",
+          "两个不同的输入产生相同的哈希值。好的哈希算法碰撞概率极低。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "Is MD5 still secure?",
+          "MD5 is cryptographically broken, not suitable for passwords, but still widely used for file checksums."
+        ],
+        [
+          "Is hashing encryption?",
+          "No. Hashing is one-way digest, original data cannot be recovered. Encryption is two-way and decryptable."
+        ],
+        [
+          "What is hash collision?",
+          "Two different inputs producing the same hash. Good hash algorithms have extremely low collision probability."
+        ]
+      ]
     },
     {
       "slug": "password-generator",
@@ -151,7 +564,56 @@
       "long_en": "<p>Generate truly random passwords using the browser's cryptographically secure random number generator (crypto.getRandomValues).</p><p>Customize length (4-128), and whether to include uppercase, lowercase, numbers, and special characters. Generated passwords are never uploaded or stored.</p>",
       "ui_zh": "<div class=\"input-row\"><label>长度:</label><input type=\"number\" id=\"length\" value=\"16\" min=\"4\" max=\"128\" style=\"width:100px\"></div><div class=\"input-row\"><label><input type=\"checkbox\" id=\"upper\" checked> 大写字母</label><label><input type=\"checkbox\" id=\"lower\" checked> 小写字母</label><label><input type=\"checkbox\" id=\"number\" checked> 数字</label><label><input type=\"checkbox\" id=\"symbol\" checked> 特殊符号</label></div><div class=\"input-row\"><label><input type=\"checkbox\" id=\"exclude\"> 排除易混淆字符 (0Oo1Il)</label></div><button class=\"btn\" id=\"genBtn\">🎲 生成密码</button><input type=\"text\" id=\"output\" readonly style=\"margin-top:16px;font-size:18px;font-family:Consolas,monospace\"><div class=\"btn-group\" style=\"margin-top:8px\"><button class=\"btn btn-secondary\" id=\"copyBtn\">📋 复制</button><span id=\"strength\" style=\"margin-left:auto;align-self:center;font-size:13px\"></span></div>",
       "ui_en": "<div class=\"input-row\"><label>Length:</label><input type=\"number\" id=\"length\" value=\"16\" min=\"4\" max=\"128\" style=\"width:100px\"></div><div class=\"input-row\"><label><input type=\"checkbox\" id=\"upper\" checked> Uppercase</label><label><input type=\"checkbox\" id=\"lower\" checked> Lowercase</label><label><input type=\"checkbox\" id=\"number\" checked> Numbers</label><label><input type=\"checkbox\" id=\"symbol\" checked> Symbols</label></div><div class=\"input-row\"><label><input type=\"checkbox\" id=\"exclude\"> Exclude similar characters (0Oo1Il)</label></div><button class=\"btn\" id=\"genBtn\">🎲 Generate</button><input type=\"text\" id=\"output\" readonly style=\"margin-top:16px;font-size:18px;font-family:Consolas,monospace\"><div class=\"btn-group\" style=\"margin-top:8px\"><button class=\"btn btn-secondary\" id=\"copyBtn\">📋 Copy</button><span id=\"strength\" style=\"margin-left:auto;align-self:center;font-size:13px\"></span></div>",
-      "related": ["hash-generator", "uuid-generator"]
+      "related": [
+        "hash-generator",
+        "uuid-generator"
+      ],
+      "seo_title_zh": "随机密码生成器 | 强密码在线生成",
+      "seo_title_en": "Random Password Generator | Strong Password Online",
+      "features_zh": [
+        "自定义密码长度（4-128位）",
+        "可选择大小写字母",
+        "可选择数字",
+        "可选择特殊符号",
+        "排除易混淆字符选项",
+        "一键复制到剪贴板"
+      ],
+      "features_en": [
+        "Custom password length (4-128 chars)",
+        "Uppercase/lowercase options",
+        "Numbers option",
+        "Special symbols option",
+        "Exclude ambiguous characters option",
+        "One-click copy to clipboard"
+      ],
+      "faq_zh": [
+        [
+          "什么样的密码才算安全？",
+          "建议至少 12 位，包含大小写字母、数字、特殊符号的组合。"
+        ],
+        [
+          "为什么要排除易混淆字符？",
+          "像 0 和 O、1 和 l、I 这样的字符在某些字体下难以区分，排除后更容易输入。"
+        ],
+        [
+          "生成的密码会被记录吗？",
+          "不会。所有密码都在您的浏览器本地随机生成，不会上传到服务器。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "What makes a password secure?",
+          "At least 12 characters with mix of uppercase, lowercase, numbers, and special symbols."
+        ],
+        [
+          "Why exclude ambiguous characters?",
+          "Characters like 0/O, 1/l/I can be hard to distinguish in some fonts. Excluding them makes typing easier."
+        ],
+        [
+          "Are generated passwords logged?",
+          "No. All passwords are generated locally in your browser and never uploaded."
+        ]
+      ]
     },
     {
       "slug": "uuid-generator",
@@ -167,7 +629,54 @@
       "long_en": "<p>UUID (Universally Unique Identifier) is a 128-bit identifier with extremely low collision probability, commonly used as database primary keys and distributed system IDs.</p><p>Supports v4 (fully random) and v7 (timestamp-based, sortable). Generate multiple at once.</p>",
       "ui_zh": "<div class=\"input-row\"><label>版本:</label><select id=\"version\" style=\"width:120px\"><option value=\"4\">v4 (随机)</option><option value=\"7\">v7 (时间序)</option></select><label>数量:</label><input type=\"number\" id=\"count\" value=\"5\" min=\"1\" max=\"100\" style=\"width:80px\"><button class=\"btn\" id=\"genBtn\">生成</button></div><textarea id=\"output\" readonly style=\"min-height:200px\"></textarea><button class=\"btn btn-secondary\" id=\"copyBtn\" style=\"margin-top:8px\">📋 复制</button>",
       "ui_en": "<div class=\"input-row\"><label>Version:</label><select id=\"version\" style=\"width:120px\"><option value=\"4\">v4 (random)</option><option value=\"7\">v7 (time-ordered)</option></select><label>Count:</label><input type=\"number\" id=\"count\" value=\"5\" min=\"1\" max=\"100\" style=\"width:80px\"><button class=\"btn\" id=\"genBtn\">Generate</button></div><textarea id=\"output\" readonly style=\"min-height:200px\"></textarea><button class=\"btn btn-secondary\" id=\"copyBtn\" style=\"margin-top:8px\">📋 Copy</button>",
-      "related": ["password-generator", "hash-generator"]
+      "related": [
+        "password-generator",
+        "hash-generator"
+      ],
+      "seo_title_zh": "UUID 生成器 | UUID v4/v7 在线生成",
+      "seo_title_en": "UUID Generator | UUID v4/v7 Online",
+      "features_zh": [
+        "生成 UUID v4（随机）",
+        "生成 UUID v7（时间排序）",
+        "批量生成多个 UUID",
+        "一键复制全部",
+        "大小写格式选择"
+      ],
+      "features_en": [
+        "Generate UUID v4 (random)",
+        "Generate UUID v7 (time-ordered)",
+        "Bulk generate multiple UUIDs",
+        "One-click copy all",
+        "Case format selection"
+      ],
+      "faq_zh": [
+        [
+          "UUID v4 和 v7 有什么区别？",
+          "v4 是完全随机的；v7 包含时间戳前缀，可按生成时间排序，适合数据库主键。"
+        ],
+        [
+          "UUID 会重复吗？",
+          "理论上存在重复可能，但概率极低，实际使用中可以忽略不计。"
+        ],
+        [
+          "UUID 长度是多少？",
+          "标准 UUID 是 36 个字符（包含 4 个连字符），32 个十六进制数字。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "What's the difference between UUID v4 and v7?",
+          "v4 is completely random; v7 has timestamp prefix and can be sorted by creation time, good for database keys."
+        ],
+        [
+          "Can UUIDs collide?",
+          "Theoretically possible but extremely unlikely, negligible in practice."
+        ],
+        [
+          "How long is a UUID?",
+          "Standard UUID is 36 characters (including 4 hyphens), 32 hex digits."
+        ]
+      ]
     },
     {
       "slug": "qr-code",
@@ -183,7 +692,1622 @@
       "long_en": "<p>Generate QR codes from any text, URL, WiFi credentials, etc. Adjustable size and error correction level, downloadable as PNG.</p><p>Pure frontend implementation (qrcode.js), data is never uploaded.</p>",
       "ui_zh": "<textarea id=\"input\" placeholder=\"输入文本或 URL...\" style=\"min-height:100px\">https://tools.talang.fun</textarea><div class=\"input-row\" style=\"margin-top:12px\"><label>尺寸:</label><input type=\"number\" id=\"size\" value=\"300\" min=\"100\" max=\"1000\" style=\"width:100px\"><label>纠错:</label><select id=\"ec\" style=\"width:100px\"><option>L</option><option>M</option><option selected>Q</option><option>H</option></select><button class=\"btn\" id=\"genBtn\">生成</button></div><div id=\"qrcode\" style=\"margin-top:20px;text-align:center;background:white;padding:20px;border-radius:8px;display:inline-block\"></div><div><button class=\"btn btn-secondary\" id=\"downloadBtn\" style=\"margin-top:12px;display:none\">⬇️ 下载 PNG</button></div>",
       "ui_en": "<textarea id=\"input\" placeholder=\"Enter text or URL...\" style=\"min-height:100px\">https://tools.talang.fun</textarea><div class=\"input-row\" style=\"margin-top:12px\"><label>Size:</label><input type=\"number\" id=\"size\" value=\"300\" min=\"100\" max=\"1000\" style=\"width:100px\"><label>EC:</label><select id=\"ec\" style=\"width:100px\"><option>L</option><option>M</option><option selected>Q</option><option>H</option></select><button class=\"btn\" id=\"genBtn\">Generate</button></div><div id=\"qrcode\" style=\"margin-top:20px;text-align:center;background:white;padding:20px;border-radius:8px;display:inline-block\"></div><div><button class=\"btn btn-secondary\" id=\"downloadBtn\" style=\"margin-top:12px;display:none\">⬇️ Download PNG</button></div>",
-      "related": ["base64", "url-encoder"]
+      "related": [
+        "base64",
+        "url-encoder"
+      ],
+      "seo_title_zh": "二维码生成器 | 在线生成 QR Code PNG",
+      "seo_title_en": "QR Code Generator | Generate QR Code PNG Online",
+      "features_zh": [
+        "任意文本/URL 生成二维码",
+        "自定义二维码大小",
+        "支持下载 PNG 图片",
+        "纠错级别选择",
+        "实时预览",
+        "中文编码支持"
+      ],
+      "features_en": [
+        "Generate QR code from any text/URL",
+        "Custom QR code size",
+        "Download as PNG image",
+        "Error correction level selection",
+        "Real-time preview",
+        "Chinese encoding support"
+      ],
+      "faq_zh": [
+        [
+          "二维码最多能存多少字符？",
+          "版本 40 的二维码最多存 7089 个数字或 4296 个字母数字字符，中文约 1800 字。"
+        ],
+        [
+          "什么是纠错级别？",
+          "L(7%)、M(15%)、Q(25%)、H(30%) 四个级别，越高越能承受污损遮挡。"
+        ],
+        [
+          "生成的二维码会过期吗？",
+          "不会。二维码内容是静态的，永久有效。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "How much data can a QR code store?",
+          "Version 40 QR code can store up to 7089 numeric or 4296 alphanumeric characters, ~1800 Chinese characters."
+        ],
+        [
+          "What is error correction level?",
+          "L(7%), M(15%), Q(25%), H(30%) - higher level tolerates more damage/obscuration."
+        ],
+        [
+          "Do generated QR codes expire?",
+          "No. QR code content is static and permanent."
+        ]
+      ]
+    },
+    {
+      "slug": "timestamp",
+      "icon": "⏱️",
+      "category": "dev",
+      "name_zh": "Unix 时间戳转换",
+      "name_en": "Unix Timestamp Converter",
+      "short_zh": "秒级/毫秒级 Unix 时间戳与北京时间互转",
+      "short_en": "Convert between Unix timestamps (seconds/ms) and human-readable dates",
+      "long_zh": "<p>Unix 时间戳是从 1970-01-01 00:00:00 UTC 至今的秒数或毫秒数，是编程中最常用的时间表示方式。</p><p>本工具支持：秒级、毫秒级自动识别，北京时间、UTC、ISO 8601 格式转换。</p>",
+      "long_en": "<p>Unix timestamp is the number of seconds (or milliseconds) since 1970-01-01 00:00:00 UTC, the most common time representation in programming.</p><p>Supports: auto-detect seconds/ms, Beijing Time, UTC, ISO 8601 format conversion.</p>",
+      "keywords_zh": "时间戳转换,unix时间戳,北京时间转换,13位时间戳,10位时间戳",
+      "keywords_en": "unix timestamp converter,epoch time,milliseconds to date,timestamp to date,time converter",
+      "ui_zh": "<div><label>时间戳 (秒或毫秒):</label><div style=\"display:flex;align-items:center\"><input type=\"text\" id=\"tsInput\" placeholder=\"1715548800\"><button class=\"btn\" id=\"tsNow\">现在</button></div></div><div style=\"margin-top:16px\"><label>日期选择:</label><input type=\"datetime-local\" id=\"tsDate\" step=\"1\"></div><div style=\"margin-top:16px\"><label>Unix (秒):</label><div class=\"input-row\"><input type=\"text\" id=\"tsUnix\" readonly></div></div><div style=\"margin-top:8px\"><label>Unix (毫秒):</label><div class=\"input-row\"><input type=\"text\" id=\"tsMs\" readonly></div></div><div style=\"margin-top:8px\"><label>ISO 8601:</label><div class=\"input-row\"><input type=\"text\" id=\"tsIso\" readonly></div></div><div style=\"margin-top:8px\"><label>可读时间:</label><div class=\"input-row\"><input type=\"text\" id=\"tsHuman\" readonly></div></div>",
+      "ui_en": "<div><label>Timestamp (seconds or ms):</label><div style=\"display:flex;align-items:center\"><input type=\"text\" id=\"tsInput\" placeholder=\"1715548800\"><button class=\"btn\" id=\"tsNow\">Now</button></div></div><div style=\"margin-top:16px\"><label>Date picker:</label><input type=\"datetime-local\" id=\"tsDate\" step=\"1\"></div><div style=\"margin-top:16px\"><label>Unix (seconds):</label><div class=\"input-row\"><input type=\"text\" id=\"tsUnix\" readonly></div></div><div style=\"margin-top:8px\"><label>Unix (ms):</label><div class=\"input-row\"><input type=\"text\" id=\"tsMs\" readonly></div></div><div style=\"margin-top:8px\"><label>ISO 8601:</label><div class=\"input-row\"><input type=\"text\" id=\"tsIso\" readonly></div></div><div style=\"margin-top:8px\"><label>Human-readable:</label><div class=\"input-row\"><input type=\"text\" id=\"tsHuman\" readonly></div></div>",
+      "related": [
+        "base64",
+        "jwt-decoder",
+        "uuid-generator"
+      ],
+      "seo_title_zh": "Unix 时间戳转换 | 10位/13位时间戳在线转换",
+      "seo_title_en": "Unix Timestamp Converter | 10/13-bit Online Conversion",
+      "features_zh": [
+        "10位秒级时间戳转换",
+        "13位毫秒级时间戳转换",
+        "实时显示当前时间戳",
+        "北京时间/UTC 时间显示",
+        "ISO 8601 格式支持",
+        "毫秒级精度"
+      ],
+      "features_en": [
+        "10-bit second timestamp conversion",
+        "13-bit millisecond timestamp conversion",
+        "Real-time current timestamp display",
+        "Local time / UTC display",
+        "ISO 8601 format support",
+        "Millisecond precision"
+      ],
+      "faq_zh": [
+        [
+          "什么是 Unix 时间戳？",
+          "Unix 时间戳是从 1970年1月1日 UTC 00:00:00 到现在的秒数（或毫秒数）。"
+        ],
+        [
+          "为什么有的是 10 位有的是 13 位？",
+          "10 位是秒级精度，13 位是毫秒级精度。"
+        ],
+        [
+          "2038 年问题是什么？",
+          "32 位有符号整数在 2038 年 1 月 19 日会溢出。现在大部分系统已经用 64 位时间戳。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "What is Unix timestamp?",
+          "Unix timestamp is the number of seconds (or milliseconds) since Jan 1, 1970 UTC 00:00:00."
+        ],
+        [
+          "Why 10 digits vs 13 digits?",
+          "10 digits = second precision, 13 digits = millisecond precision."
+        ],
+        [
+          "What is the Year 2038 problem?",
+          "32-bit signed integers will overflow on Jan 19, 2038. Most systems now use 64-bit timestamps."
+        ]
+      ]
+    },
+    {
+      "slug": "base-converter",
+      "icon": "🔢",
+      "category": "dev",
+      "name_zh": "进制转换",
+      "name_en": "Base Converter",
+      "short_zh": "二进制、八进制、十进制、十六进制实时互转",
+      "short_en": "Real-time conversion between binary, octal, decimal, hexadecimal",
+      "long_zh": "<p>进制转换是编程和计算机科学基础中的基础。本工具支持 2/8/10/16 进制之间双向实时转换。</p><p>输入任何一个，其他三个自动同步更新，支持大数（BigInt）。</p>",
+      "long_en": "<p>Base conversion is fundamental in programming and computer science. This tool supports bidirectional real-time conversion between 2/8/10/16 bases.</p><p>Type in any value, the other three update automatically. BigInt support for large numbers.</p>",
+      "keywords_zh": "进制转换,二进制转十进制,十六进制转十进制,base64进制转换,在线进制转换",
+      "keywords_en": "base converter,binary to decimal,hex to decimal,octal to binary,online base converter",
+      "ui_zh": "<div><label>二进制 (2):</label><div class=\"input-row\"><input type=\"text\" id=\"binInput\" placeholder=\"101010\"></div></div><div style=\"margin-top:12px\"><label>八进制 (8):</label><div class=\"input-row\"><input type=\"text\" id=\"octInput\" placeholder=\"52\"></div></div><div style=\"margin-top:12px\"><label>十进制 (10):</label><div class=\"input-row\"><input type=\"text\" id=\"decInput\" placeholder=\"42\"></div></div><div style=\"margin-top:12px\"><label>十六进制 (16):</label><div class=\"input-row\"><input type=\"text\" id=\"hexInput\" placeholder=\"2a\"></div></div>",
+      "ui_en": "<div><label>Binary (base 2):</label><div class=\"input-row\"><input type=\"text\" id=\"binInput\" placeholder=\"101010\"></div></div><div style=\"margin-top:12px\"><label>Octal (base 8):</label><div class=\"input-row\"><input type=\"text\" id=\"octInput\" placeholder=\"52\"></div></div><div style=\"margin-top:12px\"><label>Decimal (base 10):</label><div class=\"input-row\"><input type=\"text\" id=\"decInput\" placeholder=\"42\"></div></div><div style=\"margin-top:12px\"><label>Hexadecimal (base 16):</label><div class=\"input-row\"><input type=\"text\" id=\"hexInput\" placeholder=\"2a\"></div></div>",
+      "related": [
+        "timestamp",
+        "jwt-decoder"
+      ],
+      "seo_title_zh": "进制转换 | 二进制/八进制/十进制/十六进制在线互转",
+      "seo_title_en": "Base Converter | Binary/Octal/Decimal/Hex Online Conversion",
+      "features_zh": [
+        "二进制 ↔ 十进制 ↔ 十六进制",
+        "八进制转换支持",
+        "大数字支持",
+        "实时同步转换",
+        "一键复制任意格式"
+      ],
+      "features_en": [
+        "Binary ↔ Decimal ↔ Hexadecimal",
+        "Octal conversion support",
+        "Large number support",
+        "Real-time synchronized conversion",
+        "One-click copy any format"
+      ],
+      "faq_zh": [
+        [
+          "为什么十六进制用 A-F 表示？",
+          "用一个字符表示 10-15，比数字更紧凑，是程序员的通用表示法。"
+        ],
+        [
+          "支持多大的数字？",
+          "支持 JavaScript 最大安全整数范围（约 16 位十进制）。"
+        ],
+        [
+          "负数怎么转换？",
+          "目前支持无符号整数转换，负数请用二进制补码计算。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "Why hex uses A-F?",
+          "Using one character to represent 10-15 is more compact and standard among programmers."
+        ],
+        [
+          "How large numbers are supported?",
+          "JavaScript safe integer range (~16 decimal digits)."
+        ],
+        [
+          "How to convert negative numbers?",
+          "Currently supports unsigned integers. Use two's complement for negatives."
+        ]
+      ]
+    },
+    {
+      "slug": "jwt-decoder",
+      "icon": "🔐",
+      "category": "dev",
+      "name_zh": "JWT 在线解码",
+      "name_en": "JWT Decoder",
+      "short_zh": "解码 JSON Web Token Header 和 Payload，纯前端处理不上传",
+      "short_en": "Decode JSON Web Token header and payload, fully client-side, no upload",
+      "long_zh": "<p>JWT（JSON Web Token）是现代 API 最常用的认证方式。本工具支持纯前端解码 JWT 的 Header 和 Payload，自动显示过期时间。</p><p>⚠️ 安全提示：JWT 只是编码不是加密，不要在公共网络明文传输敏感信息。</p>",
+      "long_en": "<p>JWT (JSON Web Token) is the most common auth method for modern APIs. This tool decodes JWT header and payload entirely client-side, auto-detects expiry.</p><p>⚠️ Security: JWT is encoded, not encrypted. Never transmit secrets in plaintext over public networks.</p>",
+      "keywords_zh": "jwt解码,jwt在线解析,json web token,jwt验证,base64url解码",
+      "keywords_en": "jwt decoder,jwt parser,json web token,jwt verify,base64url decode",
+      "ui_zh": "<div><label>输入 JWT:</label><textarea id=\"jwtInput\" style=\"min-height:100px;font-family:monospace;font-size:12px\"></textarea><div style=\"margin-top:6px\"><button class=\"btn btn-secondary\" id=\"jwtClear\">清空</button> <span id=\"jwtValid\">—</span></div></div><div style=\"margin-top:16px\"><label>Header:</label><textarea id=\"jwtHeader\" readonly style=\"min-height:100px;font-family:monospace;font-size:12px;background:#0b1020\"></textarea></div><div style=\"margin-top:12px\"><label>Payload:</label><textarea id=\"jwtPayload\" readonly style=\"min-height:140px;font-family:monospace;font-size:12px;background:#0b1020\"></textarea></div>",
+      "ui_en": "<div><label>JWT Input:</label><textarea id=\"jwtInput\" style=\"min-height:100px;font-family:monospace;font-size:12px\"></textarea><div style=\"margin-top:6px\"><button class=\"btn btn-secondary\" id=\"jwtClear\">Clear</button> <span id=\"jwtValid\">—</span></div></div><div style=\"margin-top:16px\"><label>Header:</label><textarea id=\"jwtHeader\" readonly style=\"min-height:100px;font-family:monospace;font-size:12px;background:#0b1020\"></textarea></div><div style=\"margin-top:12px\"><label>Payload:</label><textarea id=\"jwtPayload\" readonly style=\"min-height:140px;font-family:monospace;font-size:12px;background:#0b1020\"></textarea></div>",
+      "related": [
+        "base64",
+        "json-formatter",
+        "hash-generator"
+      ],
+      "seo_title_zh": "JWT 在线解码 | JSON Web Token 解析验证",
+      "seo_title_en": "JWT Decoder Online | JSON Web Token Parse & Verify",
+      "features_zh": [
+        "JWT Header 解析",
+        "JWT Payload 解析",
+        "自动格式化 JSON",
+        "过期时间显示",
+        "签发时间显示",
+        "纯前端处理"
+      ],
+      "features_en": [
+        "JWT Header parsing",
+        "JWT Payload parsing",
+        "Auto JSON formatting",
+        "Expiration time display",
+        "Issued-at time display",
+        "Pure frontend processing"
+      ],
+      "faq_zh": [
+        [
+          "JWT 三个部分是什么？",
+          "Header（头部）、Payload（载荷）、Signature（签名），用点分隔。"
+        ],
+        [
+          "可以解码 JWT 签名吗？",
+          "签名部分是二进制哈希，无法解码，但可以验证完整性。"
+        ],
+        [
+          "JWT 是加密的吗？",
+          "不是。JWT 只是 Base64 编码，任何人都可以解码看到内容。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "What are the 3 parts of JWT?",
+          "Header, Payload, Signature, separated by dots."
+        ],
+        [
+          "Can the JWT signature be decoded?",
+          "The signature is binary hash and cannot be decoded, but it can be verified for integrity."
+        ],
+        [
+          "Is JWT encrypted?",
+          "No. JWT is just Base64 encoded, anyone can decode and read its content."
+        ]
+      ]
+    },
+    {
+      "slug": "json-csv",
+      "icon": "🔄",
+      "category": "dev",
+      "name_zh": "JSON ↔ CSV 转换",
+      "name_en": "JSON ↔ CSV Converter",
+      "short_zh": "JSON 数组与 CSV 表格格式双向转换，支持含逗号/引号的复杂内容",
+      "short_en": "Bidirectional JSON array ↔ CSV table conversion, supports complex values with commas/quotes",
+      "long_zh": "<p>JSON 和 CSV 是数据处理中最常用的两种格式。本工具支持：JSON 数组对象转 CSV 表格、CSV 表格转 JSON 数组。</p><p>正确处理字段内的逗号、引号、换行符等复杂情况。</p>",
+      "long_en": "<p>JSON and CSV are the two most common formats in data processing. This tool supports: JSON array of objects to CSV table, CSV table to JSON array.</p><p>Properly handles complex values with commas, quotes, and newlines inside fields.</p>",
+      "keywords_zh": "json转csv,csv转json,json to csv,csv to json,在线转换",
+      "keywords_en": "json to csv,csv to json,csv to json converter,json csv converter,csv to json online",
+      "ui_zh": "<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:16px\"><div><label>JSON:</label><textarea id=\"jsonCsvJson\" style=\"min-height:260px;font-family:monospace;font-size:12px\">[{\"name\":\"Alice\",\"age\":30},{\"name\":\"Bob\",\"age\":25}]</textarea><button class=\"btn\" id=\"toCsvBtn\" style=\"margin-top:8px\">→ 转 CSV</button></div><div><label>CSV:</label><textarea id=\"jsonCsvCsv\" style=\"min-height:260px;font-family:monospace;font-size:12px\">name,age\nAlice,30\nBob,25</textarea><button class=\"btn\" id=\"toJsonBtn\" style=\"margin-top:8px\">→ 转 JSON</button></div></div><div id=\"jsonCsvMsg\" style=\"margin-top:8px\"></div>",
+      "ui_en": "<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:16px\"><div><label>JSON:</label><textarea id=\"jsonCsvJson\" style=\"min-height:260px;font-family:monospace;font-size:12px\">[{\"name\":\"Alice\",\"age\":30},{\"name\":\"Bob\",\"age\":25}]</textarea><button class=\"btn\" id=\"toCsvBtn\" style=\"margin-top:8px\">→ to CSV</button></div><div><label>CSV:</label><textarea id=\"jsonCsvCsv\" style=\"min-height:260px;font-family:monospace;font-size:12px\">name,age\nAlice,30\nBob,25</textarea><button class=\"btn\" id=\"toJsonBtn\" style=\"margin-top:8px\">→ to JSON</button></div></div><div id=\"jsonCsvMsg\" style=\"margin-top:8px\"></div>",
+      "related": [
+        "json-formatter",
+        "base64"
+      ],
+      "seo_title_zh": "JSON CSV 转换 | 在线 JSON 和 CSV 互转",
+      "seo_title_en": "JSON CSV Converter | Online JSON to CSV and CSV to JSON",
+      "features_zh": [
+        "JSON 数组转 CSV 表格",
+        "CSV 表格转 JSON 数组",
+        "支持含逗号/引号的复杂内容",
+        "自动检测表头",
+        "支持嵌套对象扁平化",
+        "一键复制结果"
+      ],
+      "features_en": [
+        "JSON array to CSV table conversion",
+        "CSV table to JSON array conversion",
+        "Support complex content with commas/quotes",
+        "Auto detect headers",
+        "Nested object flattening",
+        "One-click copy result"
+      ],
+      "faq_zh": [
+        [
+          "支持嵌套的 JSON 吗？",
+          "支持，会自动扁平化嵌套对象。"
+        ],
+        [
+          "CSV 中的逗号怎么处理？",
+          "包含逗号的字段会自动用双引号包裹。"
+        ],
+        [
+          "最大支持多少行？",
+          "只要浏览器内存允许，可以处理几万行数据。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "Is nested JSON supported?",
+          "Yes, nested objects are automatically flattened."
+        ],
+        [
+          "How are commas in CSV handled?",
+          "Fields containing commas are automatically wrapped in double quotes."
+        ],
+        [
+          "How many rows are supported?",
+          "As long as browser memory allows, tens of thousands of rows can be processed."
+        ]
+      ]
+    },
+    {
+      "slug": "color-converter",
+      "icon": "🎨",
+      "category": "dev",
+      "name_zh": "颜色转换",
+      "name_en": "Color Converter",
+      "short_zh": "Hex 十六进制颜色码与 RGB 互转，实时预览",
+      "short_en": "Hex ↔ RGB color conversion with live preview",
+      "long_zh": "<p>网页设计师和前端开发日常必备工具。输入 Hex 颜色码（#fff 或 #ffffff 格式），自动转 RGB；或输入 R/G/B 数值自动转 Hex。</p><p>实时预览颜色效果，一键复制。</p>",
+      "long_en": "<p>Essential tool for web designers and frontend devs. Enter Hex color (#fff or #ffffff format) to auto-convert to RGB, or enter R/G/B values to auto-convert to Hex.</p><p>Live color preview, one-click copy.</p>",
+      "keywords_zh": "颜色转换,hex转rgb,rgb转hex,颜色代码,网页颜色",
+      "keywords_en": "color converter,hex to rgb,rgb to hex,color picker,web color codes",
+      "ui_zh": "<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:24px\"><div><label>Hex 十六进制:</label><div class=\"input-row\"><input type=\"text\" id=\"colorHex\" placeholder=\"#6366f1\"></div><div style=\"margin-top:16px\"><label>R (红 0-255):</label><input type=\"range\" id=\"colorR\" min=\"0\" max=\"255\" step=\"1\" value=\"99\" style=\"width:100%\"> <span id=\"colorRVal\" style=\"display:inline-block;width:40px\">99</span></div><div style=\"margin-top:8px\"><label>G (绿 0-255):</label><input type=\"range\" id=\"colorG\" min=\"0\" max=\"255\" step=\"1\" value=\"102\" style=\"width:100%\"> <span id=\"colorGVal\" style=\"display:inline-block;width:40px\">102</span></div><div style=\"margin-top:8px\"><label>B (蓝 0-255):</label><input type=\"range\" id=\"colorB\" min=\"0\" max=\"255\" step=\"1\" value=\"241\" style=\"width:100%\"> <span id=\"colorBVal\" style=\"display:inline-block;width:40px\">241</span></div><div style=\"margin-top:16px\"><button class=\"btn\" id=\"colorSwap\">复制 Hex</button></div></div><div style=\"display:flex;align-items:center;justify-content:center\"><div id=\"colorPreview\" style=\"width:180px;height:180px;border-radius:16px;border:2px solid var(--border);display:flex;align-items:center;justify-content:center;color:white;font-weight:600;font-size:14px;text-shadow:0 1px 2px rgba(0,0,0,0.5);box-shadow:0 8px 32px rgba(0,0,0,0.2)\">—</div></div></div>",
+      "ui_en": "<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:24px\"><div><label>Hex:</label><div class=\"input-row\"><input type=\"text\" id=\"colorHex\" placeholder=\"#6366f1\"></div><div style=\"margin-top:16px\"><label>R (Red 0-255):</label><input type=\"range\" id=\"colorR\" min=\"0\" max=\"255\" step=\"1\" value=\"99\" style=\"width:100%\"> <span id=\"colorRVal\" style=\"display:inline-block;width:40px\">99</span></div><div style=\"margin-top:8px\"><label>G (Green 0-255):</label><input type=\"range\" id=\"colorG\" min=\"0\" max=\"255\" step=\"1\" value=\"102\" style=\"width:100%\"> <span id=\"colorGVal\" style=\"display:inline-block;width:40px\">102</span></div><div style=\"margin-top:8px\"><label>B (Blue 0-255):</label><input type=\"range\" id=\"colorB\" min=\"0\" max=\"255\" step=\"1\" value=\"241\" style=\"width:100%\"> <span id=\"colorBVal\" style=\"display:inline-block;width:40px\">241</span></div><div style=\"margin-top:16px\"><button class=\"btn\" id=\"colorSwap\">Copy Hex</button></div></div><div style=\"display:flex;align-items:center;justify-content:center\"><div id=\"colorPreview\" style=\"width:180px;height:180px;border-radius:16px;border:2px solid var(--border);display:flex;align-items:center;justify-content:center;color:white;font-weight:600;font-size:14px;text-shadow:0 1px 2px rgba(0,0,0,0.5);box-shadow:0 8px 32px rgba(0,0,0,0.2)\">—</div></div></div>",
+      "related": [],
+      "seo_title_zh": "颜色转换 | HEX/RGB/HSL 在线互转",
+      "seo_title_en": "Color Converter | HEX/RGB/HSL Online Conversion",
+      "features_zh": [
+        "HEX 十六进制转 RGB",
+        "RGB 转 HEX 十六进制",
+        "RGB 转 HSL",
+        "实时颜色预览",
+        "透明度支持",
+        "颜色拾取器"
+      ],
+      "features_en": [
+        "HEX hexadecimal to RGB",
+        "RGB to HEX hexadecimal",
+        "RGB to HSL",
+        "Real-time color preview",
+        "Opacity support",
+        "Color picker"
+      ],
+      "faq_zh": [
+        [
+          "#000000 和 #000 是一样的吗？",
+          "是的，#RGB 格式是 #RRGGBB 的简写，每个字符重复两次。"
+        ],
+        [
+          "什么是 HSL？",
+          "Hue(色相 0-360°), Saturation(饱和度 0-100%), Lightness(亮度 0-100%)。"
+        ],
+        [
+          "透明度怎么表示？",
+          "HEX 用 #RRGGBBAA 表示，RGB 用 rgba(r, g, b, a) 表示。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "Are #000000 and #000 the same?",
+          "Yes, #RGB format is shorthand for #RRGGBB where each character repeats twice."
+        ],
+        [
+          "What is HSL?",
+          "Hue (0-360°), Saturation (0-100%), Lightness (0-100%)."
+        ],
+        [
+          "How to represent opacity?",
+          "HEX uses #RRGGBBAA, RGB uses rgba(r, g, b, a)."
+        ]
+      ]
+    },
+    {
+      "slug": "text-dedup",
+      "icon": "🧹",
+      "category": "text",
+      "name_zh": "文本去重",
+      "name_en": "Text Deduplicator",
+      "short_zh": "移除重复行，统计移除数量和百分比",
+      "short_en": "Remove duplicate lines, count lines removed and percentage",
+      "long_zh": "<p>整理数据、清洗列表、去重邮件/手机号/URL 时的必备工具。支持：忽略大小写、忽略空行、去除两端空白。</p><p>实时统计：原行数、去重后行数、移除行数和百分比。</p>",
+      "long_en": "<p>Essential for data cleaning, list deduplication, removing duplicate emails/phone numbers/URLs. Supports: case-insensitive, ignore empty lines, trim whitespace.</p><p>Real-time stats: original lines, lines after dedup, count and percentage removed.</p>",
+      "keywords_zh": "文本去重,删除重复行,在线去重,列表去重,重复行移除",
+      "keywords_en": "text deduplication,remove duplicate lines,online deduplicator,list deduplicate,remove duplicates",
+      "ui_zh": "<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:16px\"><div><label>输入:</label><textarea id=\"dedupInput\" style=\"min-height:280px\"></textarea></div><div><label>输出:</label><textarea id=\"dedupOutput\" readonly style=\"min-height:280px\"></textarea></div></div><div style=\"margin-top:12px;display:flex;gap:12px;align-items:center;flex-wrap:wrap\"><label><input type=\"checkbox\" id=\"dedupCase\" checked> 忽略大小写</label><label><input type=\"checkbox\" id=\"dedupEmpty\" checked> 忽略空行</label><label><input type=\"checkbox\" id=\"dedupTrim\" checked> 去两端空白</label><span id=\"dedupStats\" style=\"margin-left:auto;color:var(--muted)\">—</span><button class=\"btn\" id=\"dedupCopy\">复制结果</button></div>",
+      "ui_en": "<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:16px\"><div><label>Input:</label><textarea id=\"dedupInput\" style=\"min-height:280px\"></textarea></div><div><label>Output:</label><textarea id=\"dedupOutput\" readonly style=\"min-height:280px\"></textarea></div></div><div style=\"margin-top:12px;display:flex;gap:12px;align-items:center;flex-wrap:wrap\"><label><input type=\"checkbox\" id=\"dedupCase\" checked> Case-insensitive</label><label><input type=\"checkbox\" id=\"dedupEmpty\" checked> Ignore empty lines</label><label><input type=\"checkbox\" id=\"dedupTrim\" checked> Trim whitespace</label><span id=\"dedupStats\" style=\"margin-left:auto;color:var(--muted)\">—</span><button class=\"btn\" id=\"dedupCopy\">Copy Result</button></div>",
+      "related": [
+        "word-counter",
+        "case-converter",
+        "text-diff"
+      ],
+      "seo_title_zh": "文本去重 | 在线去除重复行统计",
+      "seo_title_en": "Text Deduplicator | Remove Duplicate Lines Online",
+      "features_zh": [
+        "一键去除重复行",
+        "统计移除数量和百分比",
+        "保留原有顺序",
+        "大小写敏感选项",
+        "大文本支持",
+        "浏览器本地处理"
+      ],
+      "features_en": [
+        "One-click remove duplicate lines",
+        "Count removed number and percentage",
+        "Preserve original order",
+        "Case sensitive option",
+        "Large text support",
+        "Browser local processing"
+      ],
+      "faq_zh": [
+        [
+          "会改变原来的顺序吗？",
+          "不会，保留第一次出现的顺序。"
+        ],
+        [
+          "大小写不同算重复吗？",
+          "默认算不同行，可以勾选大小写敏感选项。"
+        ],
+        [
+          "支持多大的文本？",
+          "只要浏览器内存允许，可以处理几十万行文本。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "Does it change original order?",
+          "No, preserves first-occurrence order."
+        ],
+        [
+          "Is different case considered duplicate?",
+          "Default treats as different. Case sensitivity option available."
+        ],
+        [
+          "How large text is supported?",
+          "Hundreds of thousands of lines as browser memory permits."
+        ]
+      ]
+    },
+    {
+      "slug": "html-entity",
+      "icon": "🏷️",
+      "category": "dev",
+      "name_zh": "HTML 实体编解码",
+      "name_en": "HTML Entity Encoder/Decoder",
+      "short_zh": "&lt; 与 < 互转，支持常用命名实体和数字实体",
+      "short_en": "Encode/decode HTML entities: &lt; ↔ <, &copy; ↔ ©",
+      "long_zh": "<p>将 HTML 特殊字符转换为实体编码，或将实体编码还原为原字符。支持常用命名实体、十六进制和十进制数字实体。</p>",
+      "long_en": "<p>Convert HTML special characters to entity encoding, or decode entities back to original characters. Supports named entities, hex and decimal numeric entities.</p>",
+      "keywords_zh": "html实体,html编码,html解码,&lt;转义,html转义",
+      "keywords_en": "html entity encoder,html escape,html unescape,html entity decoder",
+      "ui_zh": "<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:16px\"><div><label>输入:</label><textarea id=\"heInput\" style=\"min-height:200px\"></textarea></div><div><label>输出:</label><textarea id=\"heOutput\" readonly style=\"min-height:200px\"></textarea></div></div><div style=\"margin-top:12px;display:flex;gap:12px\"><button class=\"btn\" id=\"heEncode\">编码 Encode</button><button class=\"btn\" id=\"heDecode\">解码 Decode</button><button class=\"btn btn-secondary\" id=\"heCopy\">复制结果</button></div>",
+      "ui_en": "<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:16px\"><div><label>Input:</label><textarea id=\"heInput\" style=\"min-height:200px\"></textarea></div><div><label>Output:</label><textarea id=\"heOutput\" readonly style=\"min-height:200px\"></textarea></div></div><div style=\"margin-top:12px;display:flex;gap:12px\"><button class=\"btn\" id=\"heEncode\">Encode</button><button class=\"btn\" id=\"heDecode\">Decode</button><button class=\"btn btn-secondary\" id=\"heCopy\">Copy Result</button></div>",
+      "related": [
+        "url-encoder",
+        "base64",
+        "json-formatter"
+      ],
+      "seo_title_zh": "HTML 实体编解码 | HTML 特殊字符转义",
+      "seo_title_en": "HTML Entity Encoder Decoder | HTML Special Character Escape",
+      "features_zh": [
+        "HTML 特殊字符编码",
+        "HTML 实体解码",
+        "支持命名实体（&amp;）",
+        "支持数字实体（&#38;）",
+        "支持 Unicode 字符",
+        "XML 兼容"
+      ],
+      "features_en": [
+        "HTML special character encoding",
+        "HTML entity decoding",
+        "Named entities support (&amp;)",
+        "Numeric entities support (&#38;)",
+        "Unicode character support",
+        "XML compatible"
+      ],
+      "faq_zh": [
+        [
+          "为什么 HTML 要转义字符？",
+          "< > & \" ' 这些字符在 HTML 中有特殊含义，转义后才能正确显示。"
+        ],
+        [
+          "命名实体和数字实体有什么区别？",
+          "命名实体如 &lt; 可读性好；数字实体如 &#60; 覆盖范围更广。"
+        ],
+        [
+          "中文需要转义吗？",
+          "UTF-8 编码下中文一般不需要转义。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "Why escape HTML characters?",
+          "< > & \" ' have special meaning in HTML and must be escaped to display correctly."
+        ],
+        [
+          "What's the difference between named and numeric entities?",
+          "Named entities like &lt; are readable; numeric entities like &#60; have wider coverage."
+        ],
+        [
+          "Do Chinese characters need escaping?",
+          "Generally not needed in UTF-8 encoding."
+        ]
+      ]
+    },
+    {
+      "slug": "jsonpath",
+      "icon": "🔍",
+      "category": "dev",
+      "name_zh": "JSONPath 提取",
+      "name_en": "JSONPath Extractor",
+      "short_zh": "用 $.path 语法快速从 JSON 中提取需要的数据",
+      "short_en": "Extract data from JSON using $.path syntax",
+      "long_zh": "<p>JSONPath 是 JSON 数据的「XPath」，用路径表达式从复杂 JSON 中提取嵌套字段、数组元素。</p><p>支持：$ 根节点、.key 取属性、[0] 取下标、[*] 取全部、条件过滤等</p>",
+      "long_en": "<p>JSONPath is like XPath for JSON - use path expressions to extract nested fields and array elements from complex JSON structures.</p>",
+      "keywords_zh": "jsonpath,json路径提取,json提取,json字段提取,jmespath",
+      "keywords_en": "jsonpath extractor,json path,json extract,json field extract",
+      "ui_zh": "<div><label>JSON 数据:</label><textarea id=\"jpJson\" style=\"min-height:180px;font-family:monospace\">{\"user\":{\"name\":\"Alice\",\"age\":30,\"emails\":[\"a@b.com\",\"c@d.com\"]}}</textarea></div><div style=\"margin-top:12px\"><label>JSONPath (如 $.user.emails[0]):</label><div style=\"display:flex;gap:12px;align-items:center;margin-top:8px\"><input type=\"text\" id=\"jpPath\" value=\"$.user.emails[0]\" style=\"flex:1\"><button class=\"btn\" id=\"jpExtract\">提取 Extract</button></div></div><div style=\"margin-top:16px\"><label>结果:</label><textarea id=\"jpOutput\" readonly style=\"min-height:180px;font-family:monospace;background:var(--bg)\"></textarea></div><div style=\"margin-top:8px\"><button class=\"btn btn-secondary\" id=\"jpCopy\">复制结果</button></div>",
+      "ui_en": "<div><label>JSON data:</label><textarea id=\"jpJson\" style=\"min-height:180px;font-family:monospace\">{\"user\":{\"name\":\"Alice\",\"age\":30,\"emails\":[\"a@b.com\",\"c@d.com\"]}}</textarea></div><div style=\"margin-top:12px\"><label>JSONPath (e.g. $.user.emails[0]):</label><div style=\"display:flex;gap:12px;align-items:center;margin-top:8px\"><input type=\"text\" id=\"jpPath\" value=\"$.user.emails[0]\" style=\"flex:1\"><button class=\"btn\" id=\"jpExtract\">Extract</button></div></div><div style=\"margin-top:16px\"><label>Result:</label><textarea id=\"jpOutput\" readonly style=\"min-height:180px;font-family:monospace;background:var(--bg)\"></textarea></div><div style=\"margin-top:8px\"><button class=\"btn btn-secondary\" id=\"jpCopy\">Copy Result</button></div>",
+      "related": [
+        "json-formatter",
+        "json-csv"
+      ],
+      "seo_title_zh": "JSONPath 提取 | 在线 JSON 路径查询工具",
+      "seo_title_en": "JSONPath Extractor | Online JSON Path Query Tool",
+      "features_zh": [
+        "$ 根路径语法支持",
+        "点表示法和括号表示法",
+        "条件过滤表达式",
+        "数组切片和索引",
+        "通配符支持",
+        "实时提取预览"
+      ],
+      "features_en": [
+        "$ root path syntax support",
+        "Dot and bracket notation",
+        "Filter expression support",
+        "Array slicing and indexing",
+        "Wildcard support",
+        "Real-time extraction preview"
+      ],
+      "faq_zh": [
+        [
+          "JSONPath 和 XPath 有什么关系？",
+          "JSONPath 是 JSON 版的 XPath，语法风格类似但更简单。"
+        ],
+        [
+          "支持过滤表达式吗？",
+          "支持 ?() 条件过滤，如 $.items[?(@.price > 100)]。"
+        ],
+        [
+          "可以提取嵌套很深的字段吗？",
+          "可以，JSONPath 支持任意层级的嵌套。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "What's the relation between JSONPath and XPath?",
+          "JSONPath is XPath for JSON, similar syntax but simpler."
+        ],
+        [
+          "Are filter expressions supported?",
+          "Yes, ?() filter expressions are supported, e.g., $.items[?(@.price > 100)]."
+        ],
+        [
+          "Can it extract deeply nested fields?",
+          "Yes, JSONPath supports any nesting level."
+        ]
+      ]
+    },
+    {
+      "slug": "url-parser",
+      "icon": "🔗",
+      "category": "dev",
+      "name_zh": "URL 参数解析",
+      "name_en": "URL Parser",
+      "short_zh": "拆解 URL 显示协议主机路径参数表",
+      "short_en": "Parse URL into protocol, host, path, and parameter table",
+      "long_zh": "<p>将完整的 URL 拆解显示各个组成部分：协议、主机、端口、路径、查询参数、哈希值。</p>",
+      "long_en": "<p>Break down a full URL into its components: protocol, host, port, path, query parameters, hash.</p>",
+      "keywords_zh": "url解析,url参数提取,url拆解,query string,url参数",
+      "keywords_en": "url parser,url parameter extractor,query string parser",
+      "ui_zh": "<div><label>URL:</label><div style=\"display:flex;gap:12px;align-items:center;margin-top:8px\"><input type=\"text\" id=\"upInput\" value=\"https://tools.talang.fun/tools?q=test&lang=zh\" style=\"flex:1\"><button class=\"btn\" id=\"upParse\">解析</button></div></div><div style=\"margin-top:16px;\" id=\"upOutput\"></div><div style=\"margin-top:8px\"><button class=\"btn btn-secondary\" id=\"upCopy\">复制结果</button></div>",
+      "ui_en": "<div><label>URL:</label><div style=\"display:flex;gap:12px;align-items:center;margin-top:8px\"><input type=\"text\" id=\"upInput\" value=\"https://tools.talang.fun/tools?q=test&lang=zh\" style=\"flex:1\"><button class=\"btn\" id=\"upParse\">Parse</button></div></div><div style=\"margin-top:16px;\" id=\"upOutput\"></div><div style=\"margin-top:8px\"><button class=\"btn btn-secondary\" id=\"upCopy\">Copy Result</button></div>",
+      "related": [
+        "url-encoder",
+        "json-formatter",
+        "base64"
+      ],
+      "seo_title_zh": "URL 参数解析 | 拆解网址协议主机路径参数",
+      "seo_title_en": "URL Parser | Breakdown Scheme Host Path Query Params",
+      "features_zh": [
+        "协议识别 (http/https)",
+        "域名/主机提取",
+        "端口号识别",
+        "路径拆解",
+        "查询参数表格化显示",
+        "哈希片段提取"
+      ],
+      "features_en": [
+        "Scheme recognition (http/https)",
+        "Domain/host extraction",
+        "Port number recognition",
+        "Path breakdown",
+        "Query params table display",
+        "Hash fragment extraction"
+      ],
+      "faq_zh": [
+        [
+          "什么是 URL 编码？",
+          "URL 中特殊字符用 % 加两位十六进制表示，确保正确传输。"
+        ],
+        [
+          "查询参数顺序会影响解析吗？",
+          "不影响，参数是无序的键值对。"
+        ],
+        [
+          "支持 IPv6 地址吗？",
+          "支持标准 IPv6 格式的 URL。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "What is URL encoding?",
+          "Special characters in URLs are represented as % plus two hex digits to ensure proper transmission."
+        ],
+        [
+          "Does query param order matter?",
+          "No, params are unordered key-value pairs."
+        ],
+        [
+          "Are IPv6 addresses supported?",
+          "Yes, standard IPv6 format URLs are supported."
+        ]
+      ]
+    },
+    {
+      "slug": "markdown-preview",
+      "icon": "📝",
+      "category": "dev",
+      "name_zh": "Markdown 实时预览",
+      "name_en": "Markdown Live Preview",
+      "short_zh": "左边写 MD 右边实时预览渲染效果",
+      "short_en": "Write MD on left, live preview on right",
+      "long_zh": "<p>支持基本 Markdown 语法：标题、粗体斜体、列表、代码块、引用、链接、图片。</p>",
+      "long_en": "<p>Supports basic Markdown: headers, bold/italic, lists, code blocks, quotes, links, images.</p>",
+      "keywords_zh": "markdown预览,md预览,markdown在线,markdown渲染",
+      "keywords_en": "markdown preview,md preview,online markdown,markdown render",
+      "ui_zh": "<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:16px\"><div><label>Markdown 源码:</label><textarea id=\"mdInput\" style=\"min-height:500px;font-family:monospace;font-size:13px\"># 标题\n\n## 二级标题\n\n这是**粗体**和*斜体*。\n\n### 列表\n\n- 项目一\n- 项目二\n- 项目三\n\n### 代码\n\n```python\nprint('hello')\n```\n\n### 链接\n\n[访问 AI 工具盒子](https://tools.talang.fun)</textarea></div><div><label>预览:</label><div id=\"mdPreview\" style=\"min-height:500px;padding:16px;border:1px solid var(--border);border-radius:8px;background:white;color:#111\"></div></div></div>",
+      "ui_en": "<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:16px\"><div><label>Markdown source:</label><textarea id=\"mdInput\" style=\"min-height:500px;font-family:monospace;font-size:13px\"># Title\n\n## Heading 2\n\nThis is **bold** and *italic*.\n\n### List\n\n- Item one\n- Item two\n- Item three\n\n### Code block\n\n```python\nprint('hello')\n```\n\n### Link\n\n[Visit AI Toolbox](https://tools.talang.fun)</textarea></div><div><label>Preview:</label><div id=\"mdPreview\" style=\"min-height:500px;padding:16px;border:1px solid var(--border);border-radius:8px;background:white;color:#111\"></div></div></div>",
+      "related": [
+        "word-counter",
+        "case-converter",
+        "json-formatter"
+      ],
+      "seo_title_zh": "Markdown 实时预览 | 在线 MD 渲染编辑器",
+      "seo_title_en": "Markdown Live Preview | Online MD Render Editor",
+      "features_zh": [
+        "Markdown 语法实时渲染",
+        "常用 Markdown 语法支持",
+        "标题/粗体/斜体/列表",
+        "代码块高亮",
+        "链接/图片支持",
+        "引用/表格支持"
+      ],
+      "features_en": [
+        "Real-time Markdown rendering",
+        "Common Markdown syntax support",
+        "Headings/bold/italic/lists",
+        "Code block highlighting",
+        "Link/image support",
+        "Quote/table support"
+      ],
+      "faq_zh": [
+        [
+          "支持 GitHub Flavored Markdown 吗？",
+          "支持大部分 GFM 语法，包括表格、任务列表等。"
+        ],
+        [
+          "内容会被保存吗？",
+          "不会，所有内容只在浏览器内存中，刷新即丢失。"
+        ],
+        [
+          "支持导出 HTML 吗？",
+          "目前是预览模式，导出功能可以后续添加。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "Is GitHub Flavored Markdown supported?",
+          "Most GFM syntax is supported including tables, task lists, etc."
+        ],
+        [
+          "Is content saved?",
+          "No, everything stays in browser memory and is lost on refresh."
+        ],
+        [
+          "Can it export HTML?",
+          "Currently preview mode only. Export can be added later."
+        ]
+      ]
+    },
+    {
+      "slug": "qr-decode",
+      "icon": "📸",
+      "category": "dev",
+      "name_zh": "二维码解码",
+      "name_en": "QR Code Decoder",
+      "short_zh": "上传二维码图片解码内容",
+      "short_en": "Upload QR code image to decode content",
+      "long_zh": "<p>从图片文件中识别并解码二维码内容。支持 JPG、PNG 等常见格式，所有处理在浏览器本地完成。</p>",
+      "long_en": "<p>Detect and decode QR codes from image files. Supports JPG, PNG, etc. All processing happens locally in browser.</p>",
+      "keywords_zh": "二维码解码,二维码识别,扫二维码,qr解码",
+      "keywords_en": "qr code decoder,qr scanner,qr code reader,decode qr",
+      "ui_zh": "<div style=\"text-align:center;padding:20px\"><div id=\"qdInput\" style=\"border:2px dashed var(--border);border-radius:12px;padding:40px;cursor:pointer;margin-bottom:16px\"><div style=\"font-size:48px;margin-bottom:8px\">📸</div><p>点击或拖拽上传二维码图片</p><p style=\"color:var(--text-dim);font-size:13px\">支持 JPG、PNG 格式</p><input type=\"file\" id=\"qdFile\" accept=\"image/*\" style=\"display:none\"></div></div><div><label>解码结果:</label><textarea id=\"qdOutput\" readonly style=\"min-height:120px;margin-top:8px\"></textarea><button class=\"btn btn-secondary\" id=\"qdCopy\" style=\"margin-top:8px\">复制结果</button></div>",
+      "ui_en": "<div style=\"text-align:center;padding:20px\"><div id=\"qdInput\" style=\"border:2px dashed var(--border);border-radius:12px;padding:40px;cursor:pointer;margin-bottom:16px\"><div style=\"font-size:48px;margin-bottom:8px\">📸</div><p>Click or drag to upload QR code image</p><p style=\"color:var(--text-dim);font-size:13px\">JPG, PNG supported</p><input type=\"file\" id=\"qdFile\" accept=\"image/*\" style=\"display:none\"></div></div><div><label>Result:</label><textarea id=\"qdOutput\" readonly style=\"min-height:120px;margin-top:8px\"></textarea><button class=\"btn btn-secondary\" id=\"qdCopy\" style=\"margin-top:8px\">Copy Result</button></div>",
+      "related": [
+        "qr-code",
+        "base64"
+      ],
+      "seo_title_zh": "二维码解码 | 上传图片解析二维码内容",
+      "seo_title_en": "QR Code Decoder | Upload Image to Parse QR Content",
+      "features_zh": [
+        "上传图片解码二维码",
+        "支持 JPG/PNG/GIF 格式",
+        "支持多二维码识别",
+        "一键复制解码结果",
+        "纯前端处理不上传"
+      ],
+      "features_en": [
+        "Upload image to decode QR code",
+        "JPG/PNG/GIF format support",
+        "Multiple QR codes recognition",
+        "One-click copy decoded result",
+        "Pure frontend no upload"
+      ],
+      "faq_zh": [
+        [
+          "支持哪些图片格式？",
+          "支持 JPG、PNG、GIF 等常见图片格式。"
+        ],
+        [
+          "图片会上传到服务器吗？",
+          "不会。图片解码完全在浏览器本地完成。"
+        ],
+        [
+          "能识别破损的二维码吗？",
+          "纠错级别允许范围内的污损可以识别。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "What image formats are supported?",
+          "JPG, PNG, GIF and other common image formats."
+        ],
+        [
+          "Are images uploaded to server?",
+          "No. Image decoding happens entirely in your browser."
+        ],
+        [
+          "Can it read damaged QR codes?",
+          "Damaged codes within error correction tolerance can be read."
+        ]
+      ]
+    },
+    {
+      "slug": "cron-parser",
+      "icon": "⏰",
+      "category": "dev",
+      "name_zh": "Cron 表达式解析",
+      "name_en": "Cron Parser",
+      "short_zh": "*/5 * * * * → 显示接下来 5 次执行时间",
+      "short_en": "*/5 * * * * → show next 5 run times",
+      "long_zh": "<p>解析 Cron 定时任务表达式，显示接下来 5 次执行时间。支持 5 字段标准格式。</p>",
+      "long_en": "<p>Parse Cron schedule expressions and show the next 5 execution times. Standard 5-field format.</p>",
+      "keywords_zh": "cron表达式,cron解析,cron schedule,定时任务",
+      "keywords_en": "cron expression,cron parser,cron schedule,cron generator",
+      "ui_zh": "<div><label>Cron 表达式 (5 字段):</label><div style=\"display:flex;gap:12px;align-items:center;margin-top:8px\"><input type=\"text\" id=\"ceInput\" value=\"*/5 * * * *\" style=\"flex:1;font-family:monospace\"><button class=\"btn\" id=\"ceParse\">解析</button></div></div><div id=\"ceOutput\" style=\"margin-top:16px;\"></div>",
+      "ui_en": "<div><label>Cron expression (5 fields):</label><div style=\"display:flex;gap:12px;align-items:center;margin-top:8px\"><input type=\"text\" id=\"ceInput\" value=\"*/5 * * * *\" style=\"flex:1;font-family:monospace\"><button class=\"btn\" id=\"ceParse\">Parse</button></div></div><div id=\"ceOutput\" style=\"margin-top:16px;\"></div>",
+      "related": [
+        "timestamp",
+        "uuid-generator"
+      ],
+      "seo_title_zh": "Cron 表达式解析 | 显示下次执行时间",
+      "seo_title_en": "Cron Parser | Show Next Execution Times",
+      "features_zh": [
+        "标准 5 字段 Cron 语法解析",
+        "显示接下来 5 次执行时间",
+        "支持 * / - , 运算符",
+        "时区支持",
+        "语法验证提示"
+      ],
+      "features_en": [
+        "Standard 5-field Cron syntax parsing",
+        "Show next 5 execution times",
+        "* / - , operators support",
+        "Timezone support",
+        "Syntax validation hints"
+      ],
+      "faq_zh": [
+        [
+          "Cron 5 个字段分别是什么？",
+          "分钟 小时 日期 月份 星期。"
+        ],
+        [
+          "日期和星期同时指定是 AND 还是 OR？",
+          "是 OR（或）的关系，满足任一条件即执行。"
+        ],
+        [
+          "支持 Quartz 的 6 字段格式吗？",
+          "目前支持标准 5 字段 crontab 格式。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "What are the 5 Cron fields?",
+          "Minute Hour Day Month Weekday."
+        ],
+        [
+          "Are day and weekday AND or OR?",
+          "OR relationship, executes when either condition is met."
+        ],
+        [
+          "Is Quartz 6-field format supported?",
+          "Standard 5-field crontab format is supported."
+        ]
+      ]
+    },
+    {
+      "slug": "ip-subnet",
+      "icon": "🌐",
+      "category": "dev",
+      "name_zh": "IP 子网计算器",
+      "name_en": "IP Subnet Calculator",
+      "short_zh": "CIDR 地址计算网络/广播/掩码/可用主机范围",
+      "short_en": "CIDR address → network, broadcast, mask, usable host range",
+      "long_zh": "<p>输入 IP 地址和 CIDR 前缀长度，计算子网掩码、网络地址、广播地址、可用主机范围和主机总数。</p>",
+      "long_en": "<p>Enter IP address with CIDR prefix, calculate subnet mask, network address, broadcast address, usable host range and total hosts.</p>",
+      "keywords_zh": "子网计算器,cidr,ip地址,子网掩码,网络地址",
+      "keywords_en": "subnet calculator,cidr,ip address,subnet mask,network address",
+      "ui_zh": "<div><label>IP 地址 / CIDR:</label><div style=\"display:flex;gap:12px;align-items:center;margin-top:8px\"><input type=\"text\" id=\"ipCidr\" value=\"192.168.1.0/24\" style=\"flex:1;font-family:monospace\"><button class=\"btn\" id=\"ipCalc\">计算</button></div></div><div id=\"ipOutput\" style=\"margin-top:16px;\"></div>",
+      "ui_en": "<div><label>IP Address / CIDR:</label><div style=\"display:flex;gap:12px;align-items:center;margin-top:8px\"><input type=\"text\" id=\"ipCidr\" value=\"192.168.1.0/24\" style=\"flex:1;font-family:monospace\"><button class=\"btn\" id=\"ipCalc\">Calculate</button></div></div><div id=\"ipOutput\" style=\"margin-top:16px;\"></div>",
+      "related": [
+        "base64",
+        "url-encoder"
+      ],
+      "seo_title_zh": "IP 子网计算器 | CIDR 网络地址广播地址计算",
+      "seo_title_en": "IP Subnet Calculator | CIDR Network Broadcast Address Calc",
+      "features_zh": [
+        "CIDR 地址解析",
+        "网络地址计算",
+        "广播地址计算",
+        "可用主机范围",
+        "子网掩码显示",
+        "可用主机数量"
+      ],
+      "features_en": [
+        "CIDR address resolution",
+        "Network address calculation",
+        "Broadcast address calculation",
+        "Usable host range",
+        "Subnet mask display",
+        "Usable host count"
+      ],
+      "faq_zh": [
+        [
+          "什么是 CIDR？",
+          "无类别域间路由，用 IP/前缀长度表示子网，如 192.168.1.0/24。"
+        ],
+        [
+          "/24 有多少可用 IP？",
+          "256 个总地址，去掉网络地址和广播地址，可用 254 个。"
+        ],
+        [
+          "支持 IPv6 吗？",
+          "目前支持 IPv4，IPv6 可以后续添加。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "What is CIDR?",
+          "Classless Inter-Domain Routing, using IP/prefix-length notation like 192.168.1.0/24."
+        ],
+        [
+          "How many usable IPs in /24?",
+          "256 total addresses, minus network and broadcast = 254 usable."
+        ],
+        [
+          "Is IPv6 supported?",
+          "IPv4 currently supported, IPv6 can be added later."
+        ]
+      ]
+    },
+    {
+      "slug": "lorem-cn",
+      "icon": "📜",
+      "category": "text",
+      "name_zh": "中文占位文本生成",
+      "name_en": "Chinese Lorem Ipsum",
+      "short_zh": "生成古文、新闻、散文、科技四种风格的中文占位文本",
+      "short_en": "Generate Chinese placeholder text in 4 styles",
+      "long_zh": "<p>生成中文占位文本，用于排版原型、UI 设计填充。支持 4 种风格：古文经典、新闻报道、现代散文、科技文章。</p>",
+      "long_en": "<p>Generate Chinese placeholder text for mockups and UI design. 4 styles: classic literature, news report, modern essay, tech article.</p>",
+      "keywords_zh": "中文占位文本,lorem ipsum,中文乱数假文,lorem ipsum 中文",
+      "keywords_en": "chinese lorem ipsum,lorem ipsum cn,placeholder text,假文生成",
+      "ui_zh": "<div style=\"display:flex;gap:16px;align-items:center;flex-wrap:wrap\"><label>风格:</label><select id=\"loremType\" style=\"padding:8px;border:1px solid var(--border);border-radius:6px;background:var(--bg);color:var(--text)\"><option value=\"classic\">古文经典</option><option value=\"news\">新闻报道</option><option value=\"essay\">现代散文</option><option value=\"tech\">科技文章</option></select><label>字数:</label><input type=\"number\" id=\"loremCount\" value=\"500\" min=\"10\" max=\"10000\" style=\"width:100px;padding:8px;border:1px solid var(--border);border-radius:6px;background:var(--bg);color:var(--text)\"><button class=\"btn\" id=\"loremGen\">生成</button></div><div style=\"margin-top:16px\"><textarea id=\"loremOutput\" style=\"min-height:400px;line-height:1.8\"></textarea><button class=\"btn btn-secondary\" id=\"loremCopy\" style=\"margin-top:8px\">复制</button></div>",
+      "ui_en": "<div style=\"display:flex;gap:16px;align-items:center;flex-wrap:wrap\"><label>Style:</label><select id=\"loremType\" style=\"padding:8px;border:1px solid var(--border);border-radius:6px;background:var(--bg);color:var(--text)\"><option value=\"classic\">Classic</option><option value=\"news\">News Report</option><option value=\"essay\">Modern Essay</option><option value=\"tech\">Tech Article</option></select><label>Characters:</label><input type=\"number\" id=\"loremCount\" value=\"500\" min=\"10\" max=\"10000\" style=\"width:100px;padding:8px;border:1px solid var(--border);border-radius:6px;background:var(--bg);color:var(--text)\"><button class=\"btn\" id=\"loremGen\">Generate</button></div><div style=\"margin-top:16px\"><textarea id=\"loremOutput\" style=\"min-height:400px;line-height:1.8\"></textarea><button class=\"btn btn-secondary\" id=\"loremCopy\" style=\"margin-top:8px\">Copy</button></div>",
+      "related": [
+        "word-counter",
+        "case-converter",
+        "text-dedup"
+      ],
+      "seo_title_zh": "中文占位文本生成 | 古文/新闻/散文/科技风格",
+      "seo_title_en": "Chinese Lorem Ipsum | Classic/News/Essay/Tech Styles",
+      "features_zh": [
+        "古文经典风格",
+        "新闻报道风格",
+        "现代散文风格",
+        "科技文章风格",
+        "自定义字数（10-10000字）",
+        "一键复制"
+      ],
+      "features_en": [
+        "Classic literature style",
+        "News report style",
+        "Modern essay style",
+        "Tech article style",
+        "Custom character count (10-10000)",
+        "One-click copy"
+      ],
+      "faq_zh": [
+        [
+          "文本来源是什么？",
+          "古文风格来自经典古籍，其他风格为算法生成的无意义占位文本。"
+        ],
+        [
+          "可以生成英文 Lorem 吗？",
+          "这个工具是中文专用，英文 Lorem 可以后续添加。"
+        ],
+        [
+          "最大支持多少字？",
+          "建议 10000 字以内，浏览器性能允许情况下可更多。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "Where does the text come from?",
+          "Classic style from ancient texts, others are algorithm-generated meaningless placeholder text."
+        ],
+        [
+          "Can it generate English Lorem?",
+          "This tool is Chinese-only. English Lorem can be added later."
+        ],
+        [
+          "Max character count?",
+          "Recommended within 10000 chars, more allowed if browser performance permits."
+        ]
+      ]
+    },
+    {
+      "slug": "random-string",
+      "icon": "🎲",
+      "category": "generate",
+      "name_zh": "随机字符串生成",
+      "name_en": "Random String Generator",
+      "short_zh": "自定义长度和字符集生成密码/随机字符串",
+      "short_en": "Generate passwords/random strings with custom length and charset",
+      "long_zh": "<p>生成安全的随机字符串，用于密码、API Key、Token、文件名等。</p>",
+      "long_en": "<p>Generate secure random strings for passwords, API keys, tokens, filenames, etc.</p>",
+      "keywords_zh": "随机字符串生成,随机密码,api key生成,随机字符串",
+      "keywords_en": "random string generator,password generator,api key generator,random text",
+      "ui_zh": "<div style=\"display:flex;gap:16px;align-items:center;flex-wrap:wrap\"><label>长度:</label><input type=\"number\" id=\"rsgLength\" value=\"32\" min=\"1\" max=\"512\" style=\"width:100px;padding:8px;border:1px solid var(--border);border-radius:6px;background:var(--bg);color:var(--text)\"><label>字符集:</label><label style=\"display:flex;align-items:center;gap:6px\"><input type=\"checkbox\" id=\"rsgUpper\" checked>大写</label><label style=\"display:flex;align-items:center;gap:6px\"><input type=\"checkbox\" id=\"rsgLower\" checked>小写</label><label style=\"display:flex;align-items:center;gap:6px\"><input type=\"checkbox\" id=\"rsgNumber\" checked>数字</label><label style=\"display:flex;align-items:center;gap:6px\"><input type=\"checkbox\" id=\"rsgSpecial\">特殊</label><button class=\"btn\" id=\"rsgGen\">生成</button></div><div style=\"margin-top:16px\"><textarea id=\"rsgOutput\" readonly style=\"min-height:100px;font-family:monospace;font-size:14px\"></textarea><button class=\"btn btn-secondary\" id=\"rsgCopy\" style=\"margin-top:8px\">复制</button></div>",
+      "ui_en": "<div style=\"display:flex;gap:16px;align-items:center;flex-wrap:wrap\"><label>Length:</label><input type=\"number\" id=\"rsgLength\" value=\"32\" min=\"1\" max=\"512\" style=\"width:100px;padding:8px;border:1px solid var(--border);border-radius:6px;background:var(--bg);color:var(--text)\"><label>Charset:</label><label style=\"display:flex;align-items:center;gap:6px\"><input type=\"checkbox\" id=\"rsgUpper\" checked>Upper</label><label style=\"display:flex;align-items:center;gap:6px\"><input type=\"checkbox\" id=\"rsgLower\" checked>Lower</label><label style=\"display:flex;align-items:center;gap:6px\"><input type=\"checkbox\" id=\"rsgNumber\" checked>Numbers</label><label style=\"display:flex;align-items:center;gap:6px\"><input type=\"checkbox\" id=\"rsgSpecial\">Special</label><button class=\"btn\" id=\"rsgGen\">Generate</button></div><div style=\"margin-top:16px\"><textarea id=\"rsgOutput\" readonly style=\"min-height:100px;font-family:monospace;font-size:14px\"></textarea><button class=\"btn btn-secondary\" id=\"rsgCopy\" style=\"margin-top:8px\">Copy</button></div>",
+      "related": [
+        "password-generator",
+        "uuid-generator",
+        "hash-generator"
+      ],
+      "seo_title_zh": "随机字符串生成 | 自定义长度字符集",
+      "seo_title_en": "Random String Generator | Custom Length & Charset",
+      "features_zh": [
+        "自定义长度（1-512位）",
+        "可选大小写字母",
+        "可选数字",
+        "可选特殊符号",
+        "排除易混淆字符选项",
+        "一键复制"
+      ],
+      "features_en": [
+        "Custom length (1-512 chars)",
+        "Uppercase/lowercase options",
+        "Numbers option",
+        "Special symbols option",
+        "Exclude ambiguous chars option",
+        "One-click copy"
+      ],
+      "faq_zh": [
+        [
+          "和密码生成器有什么区别？",
+          "这个工具更通用，适合生成 API Key、Token、文件名等各种随机字符串。"
+        ],
+        [
+          "生成的是真随机吗？",
+          "使用浏览器的 crypto.getRandomValues()，是密码学安全的随机数。"
+        ],
+        [
+          "可以生成包含中文的吗？",
+          "目前只支持 ASCII 字符集。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "What's the difference from password generator?",
+          "This is more general, suitable for API keys, tokens, filenames and various random strings."
+        ],
+        [
+          "Is it truly random?",
+          "Uses browser crypto.getRandomValues() - cryptographically secure random."
+        ],
+        [
+          "Can it include Chinese characters?",
+          "ASCII charset only for now."
+        ]
+      ]
+    },
+    {
+      "slug": "remove-lines",
+      "icon": "🧹",
+      "category": "text",
+      "name_zh": "空行清理",
+      "name_en": "Remove Empty Lines",
+      "short_zh": "移除空行、去前后空格、去多余空格",
+      "short_en": "Remove empty lines, trim whitespace, remove consecutive spaces",
+      "long_zh": "<p>清理文本中的空行、首尾空格、多余空格。常用于：整理复制的代码、清理从 PDF 导出的文本、去除日志中的无用空行。</p>",
+      "long_en": "<p>Clean up empty lines, leading/trailing whitespace, extra spaces. Useful for: formatting copied code, cleaning PDF exports, removing useless blank lines from logs.</p>",
+      "keywords_zh": "去空行,去空格,文本清理,移除空行,去除多余空格",
+      "keywords_en": "remove empty lines,trim whitespace,clean text,remove blank lines",
+      "ui_zh": "<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:16px\"><div><label>输入:</label><textarea id=\"rlInput\" style=\"min-height:300px\"></textarea></div><div><label>输出:</label><textarea id=\"rlOutput\" readonly style=\"min-height:300px\"></textarea></div></div><div style=\"margin-top:12px;display:flex;gap:12px;align-items:center;flex-wrap:wrap\"><label><input type=\"checkbox\" id=\"rlEmpty\" checked>移除空行</label><label><input type=\"checkbox\" id=\"rlBlank\" checked>移除只含空格的行</label><label><input type=\"checkbox\" id=\"rlLeading\" checked>去行首空格</label><label><input type=\"checkbox\" id=\"rlTrailing\" checked>去行尾空格</label><label><input type=\"checkbox\" id=\"rlConsecutive\">去多余空格</label><button class=\"btn\" id=\"rlProcess\">处理</button><button class=\"btn btn-secondary\" id=\"rlCopy\">复制</button></div>",
+      "ui_en": "<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:16px\"><div><label>Input:</label><textarea id=\"rlInput\" style=\"min-height:300px\"></textarea></div><div><label>Output:</label><textarea id=\"rlOutput\" readonly style=\"min-height:300px\"></textarea></div></div><div style=\"margin-top:12px;display:flex;gap:12px;align-items:center;flex-wrap:wrap\"><label><input type=\"checkbox\" id=\"rlEmpty\" checked>Remove empty lines</label><label><input type=\"checkbox\" id=\"rlBlank\" checked>Remove whitespace-only lines</label><label><input type=\"checkbox\" id=\"rlLeading\" checked>Trim leading</label><label><input type=\"checkbox\" id=\"rlTrailing\" checked>Trim trailing</label><label><input type=\"checkbox\" id=\"rlConsecutive\">Remove consecutive spaces</label><button class=\"btn\" id=\"rlProcess\">Process</button><button class=\"btn btn-secondary\" id=\"rlCopy\">Copy</button></div>",
+      "related": [
+        "text-dedup",
+        "word-counter",
+        "case-converter"
+      ],
+      "seo_title_zh": "空行清理 | 去前后空格/多余空格工具",
+      "seo_title_en": "Remove Empty Lines | Trim Whitespace/Clean Extra Spaces",
+      "features_zh": [
+        "删除所有空行",
+        "删除只含空格的行",
+        "去行首空格",
+        "去行尾空格",
+        "删除连续多余空格",
+        "保留原换行格式"
+      ],
+      "features_en": [
+        "Remove all empty lines",
+        "Remove whitespace-only lines",
+        "Trim leading spaces",
+        "Trim trailing spaces",
+        "Remove consecutive extra spaces",
+        "Preserve line break format"
+      ],
+      "faq_zh": [
+        [
+          "Tab 键会被处理吗？",
+          "Tab 同样会被当作空格处理。",
+          "会改变原有的换行吗？",
+          "不会，只删除不需要的空白，保留原有的换行结构。"
+        ],
+        [
+          "支持大文件吗？",
+          "只要浏览器内存允许，支持任意大小的文本。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "Are tabs handled?",
+          "Yes, tabs are treated as spaces."
+        ],
+        [
+          "Will line breaks be changed?",
+          "No. Only unnecessary whitespace is removed, line break structure preserved."
+        ],
+        [
+          "Are large files supported?",
+          "Any text size as browser memory permits."
+        ]
+      ]
+    },
+    {
+      "slug": "json-to-ts",
+      "name": "JSON to TypeScript",
+      "name_zh": "JSON 转 TypeScript",
+      "category": "json",
+      "description": "Convert JSON data to TypeScript interface definitions with one click. Support optional fields, type inference, and camelCase conversion.",
+      "description_zh": "一键将 JSON 数据转换为 TypeScript 接口定义，支持自动类型推断、可选字段识别、驼峰命名转换。",
+      "features": [
+        "Auto type inference (string, number, boolean, array, object)",
+        "Support nested objects and arrays",
+        "Optional field detection (null → Type | null)",
+        "CamelCase and PascalCase conversion",
+        "Export interface or type alias"
+      ],
+      "features_zh": [
+        "自动类型推断（string、number、boolean、array、object）",
+        "支持嵌套对象和数组",
+        "可选字段检测（null → Type | null）",
+        "驼峰命名和帕斯卡命名转换",
+        "导出 interface 或 type alias"
+      ],
+      "faq": [
+        {
+          "q": "Why use JSON to TypeScript converter?",
+          "a": "Writing TypeScript interfaces manually is error-prone and time-consuming. This tool generates accurate type definitions instantly from your JSON data."
+        },
+        {
+          "q": "Does it handle nested objects?",
+          "a": "Yes! The converter fully supports nested objects, arrays of objects, and deeply nested structures, generating complete interface hierarchies."
+        }
+      ],
+      "faq_zh": [
+        [
+          "为什么需要 JSON 转 TypeScript 工具？",
+          "手动编写 TypeScript 接口容易出错且耗时。本工具可从 JSON 数据即时生成准确的类型定义，提高开发效率。"
+        ],
+        [
+          "支持嵌套对象吗？",
+          "完全支持！转换器支持嵌套对象、对象数组和深层嵌套结构，生成完整的接口层级结构。"
+        ]
+      ],
+      "name_en": "JSON to TypeScript",
+      "icon": "📊",
+      "short_zh": "一键将 JSON 转换为 TypeScript 接口定义",
+      "short_en": "Convert JSON data to TypeScript interface definitions with one click. Support optional fields, type inference, and camelCase conversion.",
+      "long_zh": "<p>在线将 JSON 数据转换为 TypeScript 接口类型定义。支持自动类型推断、可选字段识别、驼峰命名转换。程序员写代码必备工具。</p>",
+      "long_en": "<p>Convert JSON data to TypeScript interface definitions with one click. Support optional fields, type inference, and camelCase conversion.</p>",
+      "keywords_zh": "json转typescript,json转ts,typescript接口生成,interface生成",
+      "keywords_en": "JSON to TypeScript,online tool",
+      "ui_zh": "<textarea id=\"input\" style=\"min-height:250px\" placeholder=\"输入...\"></textarea><div class=\"btn-group\" style=\"margin-top:12px\"><button class=\"btn\" id=\"process\">处理</button></div><textarea id=\"output\" style=\"min-height:250px;margin-top:12px\" readonly placeholder=\"结果...\"></textarea>",
+      "ui_en": "<textarea id=\"input\" style=\"min-height:250px\" placeholder=\"输入...\"></textarea><div class=\"btn-group\" style=\"margin-top:12px\"><button class=\"btn\" id=\"process\">处理</button></div><textarea id=\"output\" style=\"min-height:250px;margin-top:12px\" readonly placeholder=\"结果...\"></textarea>",
+      "related": [],
+      "seo_title_zh": "JSON 转 TypeScript | 在线工具",
+      "seo_title_en": "JSON to TypeScript | Online Tool",
+      "features_en": [],
+      "faq_en": [
+        [
+          "Is data uploaded?",
+          "No, all processing happens locally in your browser."
+        ],
+        [
+          "Are large files supported?",
+          "Yes, as long as browser memory allows."
+        ]
+      ]
+    },
+    {
+      "slug": "sql-formatter",
+      "name": "SQL Formatter",
+      "name_zh": "SQL 格式化",
+      "category": "dev",
+      "description": "Online SQL formatter and beautifier. Format SQL queries with proper indentation, keyword casing, and line breaks. Support MySQL, PostgreSQL, SQL Server, and more.",
+      "description_zh": "在线 SQL 格式化和美化工具。通过正确的缩进、关键字大小写和换行美化 SQL 查询语句。支持 MySQL、PostgreSQL、SQL Server 等多种数据库。",
+      "features": [
+        "Format SELECT, INSERT, UPDATE, DELETE queries",
+        "Support MySQL, PostgreSQL, SQL Server, SQLite syntax",
+        "Keyword uppercase/lowercase options",
+        "Compact and expanded formatting modes",
+        "Real-time syntax validation"
+      ],
+      "features_zh": [
+        "格式化 SELECT、INSERT、UPDATE、DELETE 语句",
+        "支持 MySQL、PostgreSQL、SQL Server、SQLite 语法",
+        "关键字大写/小写选项",
+        "紧凑模式和展开模式",
+        "实时语法验证"
+      ],
+      "faq": [
+        {
+          "q": "Which SQL dialects are supported?",
+          "a": "Our formatter supports all major SQL dialects including MySQL, PostgreSQL, SQL Server, Oracle, SQLite, and ANSI SQL standard."
+        },
+        {
+          "q": "Can I minify SQL?",
+          "a": "Yes! Use the compact mode to remove whitespace and comments, perfect for production-ready SQL scripts."
+        }
+      ],
+      "faq_zh": [
+        [
+          "支持哪些 SQL 方言？",
+          "支持所有主流 SQL 方言，包括 MySQL、PostgreSQL、SQL Server、Oracle、SQLite 和 ANSI SQL 标准。"
+        ],
+        [
+          "可以压缩 SQL 吗？",
+          "可以！使用紧凑模式可删除空格和注释，适用于生产环境的 SQL 脚本。"
+        ]
+      ],
+      "name_en": "SQL Formatter",
+      "icon": "🔧",
+      "short_zh": "在线格式化 SQL 查询语句，美化 SQL 代码",
+      "short_en": "Online SQL formatter and beautifier. Format SQL queries with proper indentation, keyword casing, and line breaks. Support MySQL, PostgreSQL, SQL Server, and more.",
+      "long_zh": "<p>免费在线 SQL 格式化工具。支持 MySQL、PostgreSQL、SQL Server、Oracle 等多种数据库语法。一键美化 SQL 代码，支持大小写转换、缩进调整、紧凑模式。</p>",
+      "long_en": "<p>Online SQL formatter and beautifier. Format SQL queries with proper indentation, keyword casing, and line breaks. Support MySQL, PostgreSQL, SQL Server, and more.</p>",
+      "keywords_zh": "sql格式化,sql美化,在线sql格式化,sql format,sql代码美化",
+      "keywords_en": "SQL Formatter,online tool",
+      "ui_zh": "<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:16px\"><div><textarea id=\"input\" style=\"min-height:400px;font-family:monospace;font-size:13px\" placeholder=\"输入...\"></textarea></div><div><textarea id=\"output\" style=\"min-height:400px;font-family:monospace;font-size:13px\" readonly placeholder=\"结果...\"></textarea></div></div>",
+      "ui_en": "<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:16px\"><div><textarea id=\"input\" style=\"min-height:400px;font-family:monospace;font-size:13px\" placeholder=\"输入...\"></textarea></div><div><textarea id=\"output\" style=\"min-height:400px;font-family:monospace;font-size:13px\" readonly placeholder=\"结果...\"></textarea></div></div>",
+      "related": [],
+      "seo_title_zh": "SQL 格式化 | 在线工具",
+      "seo_title_en": "SQL Formatter | Online Tool",
+      "features_en": [],
+      "faq_en": [
+        [
+          "Is data uploaded?",
+          "No, all processing happens locally in your browser."
+        ],
+        [
+          "Are large files supported?",
+          "Yes, as long as browser memory allows."
+        ]
+      ]
+    },
+    {
+      "slug": "base64-image",
+      "name": "Base64 Image Encoder",
+      "name_zh": "图片 Base64 编码",
+      "category": "dev",
+      "description": "Convert images to Base64 Data URLs online. Embed images directly in CSS, HTML, and JavaScript. Support JPG, PNG, GIF, SVG, and WebP formats.",
+      "description_zh": "在线将图片转换为 Base64 Data URL。可直接嵌入 CSS、HTML 和 JavaScript 中。支持 JPG、PNG、GIF、SVG、WebP 格式。",
+      "features": [
+        "Convert JPG, PNG, GIF, SVG, WebP to Base64",
+        "Drag and drop upload",
+        "Preview encoded image",
+        "Copy as Data URL, CSS background, or HTML img",
+        "File size and compression info"
+      ],
+      "features_zh": [
+        "转换 JPG、PNG、GIF、SVG、WebP 为 Base64",
+        "拖拽上传",
+        "预览编码后的图片",
+        "复制为 Data URL、CSS background 或 HTML img 标签",
+        "显示文件大小和压缩信息"
+      ],
+      "faq": [
+        {
+          "q": "What are the benefits of Base64 images?",
+          "a": "Base64 images eliminate HTTP requests, making them ideal for small icons and thumbnails. They embed directly in code, simplifying deployment."
+        },
+        {
+          "q": "What's the file size overhead?",
+          "a": "Base64 encoding increases file size by ~33%. Use it for small images (<10KB). Larger images should remain as separate files."
+        }
+      ],
+      "faq_zh": [
+        [
+          "Base64 图片有什么好处？",
+          "Base64 图片消除了 HTTP 请求，非常适合小图标和缩略图。它们直接嵌入代码中，简化了部署流程。"
+        ],
+        [
+          "文件大小开销是多少？",
+          "Base64 编码会使文件大小增加约 33%。仅适用于小图片（<10KB）。大图片应保留为单独文件。"
+        ]
+      ],
+      "name_en": "Base64 Image Encoder",
+      "icon": "🔧",
+      "short_zh": "将图片转换为 Base64 Data URL",
+      "short_en": "Convert images to Base64 Data URLs online. Embed images directly in CSS, HTML, and JavaScript. Support JPG, PNG, GIF, SVG, and WebP formats.",
+      "long_zh": "<p>在线将图片转换为 Base64 Data URL，可直接嵌入 CSS、HTML 中，无需额外 HTTP 请求。支持 JPG、PNG、GIF、SVG、WebP 格式。</p>",
+      "long_en": "<p>Convert images to Base64 Data URLs online. Embed images directly in CSS, HTML, and JavaScript. Support JPG, PNG, GIF, SVG, and WebP formats.</p>",
+      "keywords_zh": "图片base64,base64图片,图片转base64,data url,图片编码",
+      "keywords_en": "Base64 Image Encoder,online tool",
+      "ui_zh": "<textarea id=\"input\" style=\"min-height:250px\" placeholder=\"输入...\"></textarea><div class=\"btn-group\" style=\"margin-top:12px\"><button class=\"btn\" id=\"process\">处理</button></div><textarea id=\"output\" style=\"min-height:250px;margin-top:12px\" readonly placeholder=\"结果...\"></textarea>",
+      "ui_en": "<textarea id=\"input\" style=\"min-height:250px\" placeholder=\"输入...\"></textarea><div class=\"btn-group\" style=\"margin-top:12px\"><button class=\"btn\" id=\"process\">处理</button></div><textarea id=\"output\" style=\"min-height:250px;margin-top:12px\" readonly placeholder=\"结果...\"></textarea>",
+      "related": [],
+      "seo_title_zh": "图片 Base64 编码 | 在线工具",
+      "seo_title_en": "Base64 Image Encoder | Online Tool",
+      "features_en": [],
+      "faq_en": [
+        [
+          "Is data uploaded?",
+          "No, all processing happens locally in your browser."
+        ],
+        [
+          "Are large files supported?",
+          "Yes, as long as browser memory allows."
+        ]
+      ]
+    },
+    {
+      "slug": "json-to-go",
+      "name": "JSON to Go",
+      "name_zh": "JSON 转 Go Struct",
+      "category": "json",
+      "description": "Convert JSON to Go struct definitions with proper tags. Support omitempty, inline, and custom naming conventions.",
+      "description_zh": "将 JSON 转换为带正确标签的 Go Struct 定义。支持 omitempty、内联和自定义命名约定。",
+      "features": [
+        "Generate Go structs with json tags",
+        "Support nested objects and arrays",
+        "omitempty and inline tag options",
+        "PascalCase field names",
+        "Type inference for all JSON types"
+      ],
+      "features_zh": [
+        "生成带 json 标签的 Go 结构体",
+        "支持嵌套对象和数组",
+        "omitempty 和 inline 标签选项",
+        "帕斯卡命名字段",
+        "所有 JSON 类型的自动推断"
+      ],
+      "faq": [
+        {
+          "q": "How are field names determined?",
+          "a": "JSON keys are converted to PascalCase automatically. We handle special characters, numbers, and common Go naming conventions."
+        },
+        {
+          "q": "Does it handle empty fields?",
+          "a": "Yes! Null values become pointers with omitempty tags, allowing proper JSON serialization without empty fields."
+        }
+      ],
+      "faq_zh": [
+        [
+          "字段名是如何确定的？",
+          "JSON 键会自动转换为 PascalCase。我们会处理特殊字符、数字和常见的 Go 命名约定。"
+        ],
+        [
+          "能处理空字段吗？",
+          "可以！null 值会变成带 omitempty 标签的指针类型，实现正确的 JSON 序列化而不包含空字段。"
+        ]
+      ],
+      "name_en": "JSON to Go",
+      "icon": "📊",
+      "short_zh": "在线将 JSON 转换为 Go 结构体定义",
+      "short_en": "Convert JSON to Go struct definitions with proper tags. Support omitempty, inline, and custom naming conventions.",
+      "long_zh": "<p>将 JSON 数据自动转换为 Go (Golang) Struct 结构体定义，支持 omitempty 标签、驼峰命名转换。Go 开发者必备工具。</p>",
+      "long_en": "<p>Convert JSON to Go struct definitions with proper tags. Support omitempty, inline, and custom naming conventions.</p>",
+      "keywords_zh": "json转go,go struct生成,golang结构体,json转结构体",
+      "keywords_en": "JSON to Go,online tool",
+      "ui_zh": "<textarea id=\"input\" style=\"min-height:250px\" placeholder=\"输入...\"></textarea><div class=\"btn-group\" style=\"margin-top:12px\"><button class=\"btn\" id=\"process\">处理</button></div><textarea id=\"output\" style=\"min-height:250px;margin-top:12px\" readonly placeholder=\"结果...\"></textarea>",
+      "ui_en": "<textarea id=\"input\" style=\"min-height:250px\" placeholder=\"输入...\"></textarea><div class=\"btn-group\" style=\"margin-top:12px\"><button class=\"btn\" id=\"process\">处理</button></div><textarea id=\"output\" style=\"min-height:250px;margin-top:12px\" readonly placeholder=\"结果...\"></textarea>",
+      "related": [],
+      "seo_title_zh": "JSON 转 Go Struct | 在线工具",
+      "seo_title_en": "JSON to Go | Online Tool",
+      "features_en": [],
+      "faq_en": [
+        [
+          "Is data uploaded?",
+          "No, all processing happens locally in your browser."
+        ],
+        [
+          "Are large files supported?",
+          "Yes, as long as browser memory allows."
+        ]
+      ]
+    },
+    {
+      "slug": "timestamp-converter",
+      "name": "Timestamp Converter",
+      "name_zh": "时间戳转换",
+      "category": "dev",
+      "description": "Convert Unix timestamps to human-readable dates and vice versa. Support seconds, milliseconds, and microseconds. Multiple timezones support.",
+      "description_zh": "Unix 时间戳与可读日期相互转换。支持秒、毫秒和微秒。多时区支持。",
+      "features": [
+        "Timestamp ↔ DateTime conversion",
+        "Support seconds, milliseconds, microseconds",
+        "Multiple timezone support (UTC, local, custom)",
+        "ISO 8601 and RFC 3339 formats",
+        "Current timestamp display"
+      ],
+      "features_zh": [
+        "时间戳 ↔ 日期时间互转",
+        "支持秒、毫秒、微秒",
+        "多时区支持（UTC、本地、自定义）",
+        "ISO 8601 和 RFC 3339 格式",
+        "实时显示当前时间戳"
+      ],
+      "faq": [
+        {
+          "q": "What is a Unix timestamp?",
+          "a": "Unix timestamp is the number of seconds (or milliseconds) since January 1, 1970 UTC. It's a standard way to represent time in computers."
+        },
+        {
+          "q": "Why 1970?",
+          "a": "January 1, 1970 (UTC) is the Unix epoch - the starting point for Unix time. It was chosen for practical reasons in early Unix development."
+        }
+      ],
+      "faq_zh": [
+        [
+          "什么是 Unix 时间戳？",
+          "Unix 时间戳是自 1970 年 1 月 1 日 UTC 以来的秒数（或毫秒数）。是计算机中表示时间的标准方式。"
+        ],
+        [
+          "为什么从 1970 年开始？",
+          "1970 年 1 月 1 日 UTC 是 Unix 纪元 - Unix 时间的起点。这是早期 Unix 开发中出于实际原因选择的。"
+        ]
+      ],
+      "name_en": "Timestamp Converter",
+      "icon": "🔧",
+      "short_zh": "Unix 时间戳与日期时间相互转换",
+      "short_en": "Convert Unix timestamps to human-readable dates and vice versa. Support seconds, milliseconds, and microseconds. Multiple timezones support.",
+      "long_zh": "<p>Unix 时间戳与可读日期时间相互转换工具。支持秒、毫秒、微秒三种精度，多时区支持，ISO 8601 格式输出。</p>",
+      "long_en": "<p>Convert Unix timestamps to human-readable dates and vice versa. Support seconds, milliseconds, and microseconds. Multiple timezones support.</p>",
+      "keywords_zh": "时间戳转换,unix时间戳,时间戳转日期,时间戳转换器",
+      "keywords_en": "Timestamp Converter,online tool",
+      "ui_zh": "<textarea id=\"input\" style=\"min-height:200px\" placeholder=\"输入...\"></textarea><div class=\"btn-group\" style=\"margin-top:12px\"><button class=\"btn\" id=\"process\">转换</button></div><textarea id=\"output\" style=\"min-height:200px;margin-top:12px\" readonly placeholder=\"结果...\"></textarea>",
+      "ui_en": "<textarea id=\"input\" style=\"min-height:200px\" placeholder=\"输入...\"></textarea><div class=\"btn-group\" style=\"margin-top:12px\"><button class=\"btn\" id=\"process\">转换</button></div><textarea id=\"output\" style=\"min-height:200px;margin-top:12px\" readonly placeholder=\"结果...\"></textarea>",
+      "related": [],
+      "seo_title_zh": "时间戳转换 | 在线工具",
+      "seo_title_en": "Timestamp Converter | Online Tool",
+      "features_en": [],
+      "faq_en": [
+        [
+          "Is data uploaded?",
+          "No, all processing happens locally in your browser."
+        ],
+        [
+          "Are large files supported?",
+          "Yes, as long as browser memory allows."
+        ]
+      ]
+    },
+    {
+      "slug": "json-to-yaml",
+      "name": "JSON ↔ YAML",
+      "name_zh": "JSON ↔ YAML 互转",
+      "category": "json",
+      "description": "Convert JSON to YAML and YAML to JSON instantly. Preserve data types, formatting options, and live preview of both formats side by side.",
+      "description_zh": "即时转换 JSON 到 YAML 和 YAML 到 JSON。保留数据类型、格式化选项、并排实时预览两种格式。",
+      "features": [
+        "Bidirectional conversion: JSON ↔ YAML",
+        "Preserve numbers, booleans, nulls",
+        "Pretty print with indentation options",
+        "Minify/compact output",
+        "Syntax error detection and reporting"
+      ],
+      "features_zh": [
+        "双向转换：JSON ↔ YAML",
+        "保留数字、布尔值、null",
+        "带缩进选项的美化输出",
+        "压缩/紧凑输出",
+        "语法错误检测和报告"
+      ],
+      "faq": [
+        {
+          "q": "Why convert between JSON and YAML?",
+          "a": "JSON is great for APIs and machines, YAML is better for config files and humans. Convert when you need the best of both worlds."
+        },
+        {
+          "q": "Are all YAML features supported?",
+          "a": "We support the most commonly used YAML features. Advanced features like anchors and aliases may have limited support."
+        }
+      ],
+      "faq_zh": [
+        [
+          "为什么要在 JSON 和 YAML 之间转换？",
+          "JSON 非常适合 API 和机器，YAML 更适合配置文件和人类阅读。当你需要两者的优势时就需要转换。"
+        ],
+        [
+          "支持所有 YAML 特性吗？",
+          "我们支持最常用的 YAML 特性。锚点和别名等高级功能的支持可能有限。"
+        ]
+      ],
+      "name_en": "JSON ↔ YAML",
+      "icon": "📊",
+      "short_zh": "JSON 与 YAML 格式相互转换",
+      "short_en": "Convert JSON to YAML and YAML to JSON instantly. Preserve data types, formatting options, and live preview of both formats side by side.",
+      "long_zh": "<p>JSON 与 YAML 双向转换工具。保留数据类型、格式化缩进、错误提示。配置文件开发者的好帮手。</p>",
+      "long_en": "<p>Convert JSON to YAML and YAML to JSON instantly. Preserve data types, formatting options, and live preview of both formats side by side.</p>",
+      "keywords_zh": "json转yaml,yaml转json,json yaml互转,yaml转换",
+      "keywords_en": "JSON ↔ YAML,online tool",
+      "ui_zh": "<textarea id=\"input\" style=\"min-height:250px\" placeholder=\"输入...\"></textarea><div class=\"btn-group\" style=\"margin-top:12px\"><button class=\"btn\" id=\"process\">处理</button></div><textarea id=\"output\" style=\"min-height:250px;margin-top:12px\" readonly placeholder=\"结果...\"></textarea>",
+      "ui_en": "<textarea id=\"input\" style=\"min-height:250px\" placeholder=\"输入...\"></textarea><div class=\"btn-group\" style=\"margin-top:12px\"><button class=\"btn\" id=\"process\">处理</button></div><textarea id=\"output\" style=\"min-height:250px;margin-top:12px\" readonly placeholder=\"结果...\"></textarea>",
+      "related": [],
+      "seo_title_zh": "JSON ↔ YAML 互转 | 在线工具",
+      "seo_title_en": "JSON ↔ YAML | Online Tool",
+      "features_en": [],
+      "faq_en": [
+        [
+          "Is data uploaded?",
+          "No, all processing happens locally in your browser."
+        ],
+        [
+          "Are large files supported?",
+          "Yes, as long as browser memory allows."
+        ]
+      ]
+    },
+    {
+      "slug": "html-encoder",
+      "name": "HTML Encoder",
+      "name_zh": "HTML 转义编码",
+      "category": "dev",
+      "description": "Encode and decode HTML special characters. Prevent XSS attacks, display code examples, and safely embed HTML in text content.",
+      "description_zh": "HTML 特殊字符编码和解码。防止 XSS 攻击、显示代码示例、安全地在文本内容中嵌入 HTML。",
+      "features": [
+        "HTML entity encoding and decoding",
+        "Support &, <, >, \", ', and special chars",
+        "Named and numeric entity options",
+        "XSS protection encoding",
+        "Real-time preview"
+      ],
+      "features_zh": [
+        "HTML 实体编码和解码",
+        "支持 &、<、>、\"、' 和特殊字符",
+        "命名和数字实体选项",
+        "XSS 防护编码",
+        "实时预览"
+      ],
+      "faq": [
+        {
+          "q": "Why encode HTML characters?",
+          "a": "Encoding prevents HTML injection/XSS attacks when displaying user input. It also lets you show code examples without the browser rendering them."
+        },
+        {
+          "q": "What characters are encoded?",
+          "a": "The critical 5 are: &, <, >, \", '. We also optionally encode extended ASCII, Unicode, and other special characters."
+        }
+      ],
+      "faq_zh": [
+        [
+          "为什么要编码 HTML 字符？",
+          "编码可防止显示用户输入时的 HTML 注入/XSS 攻击。也可以让你显示代码示例而不被浏览器渲染。"
+        ],
+        [
+          "哪些字符会被编码？",
+          "关键的 5 个是：&、<、>、\"、'。我们还可选编码扩展 ASCII、Unicode 和其他特殊字符。"
+        ]
+      ],
+      "name_en": "HTML Encoder",
+      "icon": "🔧",
+      "short_zh": "HTML 特殊字符转义与反转义",
+      "short_en": "Encode and decode HTML special characters. Prevent XSS attacks, display code examples, and safely embed HTML in text content.",
+      "long_zh": "<p>HTML 特殊字符编码解码工具。防止 XSS 注入，安全显示用户输入内容。支持 &、<、>、\"、' 等字符的转义与反转义。</p>",
+      "long_en": "<p>Encode and decode HTML special characters. Prevent XSS attacks, display code examples, and safely embed HTML in text content.</p>",
+      "keywords_zh": "html转义,html编码,html实体编码,xss防护,html escape",
+      "keywords_en": "HTML Encoder,online tool",
+      "ui_zh": "<textarea id=\"input\" style=\"min-height:250px\" placeholder=\"输入...\"></textarea><div class=\"btn-group\" style=\"margin-top:12px\"><button class=\"btn\" id=\"process\">处理</button></div><textarea id=\"output\" style=\"min-height:250px;margin-top:12px\" readonly placeholder=\"结果...\"></textarea>",
+      "ui_en": "<textarea id=\"input\" style=\"min-height:250px\" placeholder=\"输入...\"></textarea><div class=\"btn-group\" style=\"margin-top:12px\"><button class=\"btn\" id=\"process\">处理</button></div><textarea id=\"output\" style=\"min-height:250px;margin-top:12px\" readonly placeholder=\"结果...\"></textarea>",
+      "related": [],
+      "seo_title_zh": "HTML 转义编码 | 在线工具",
+      "seo_title_en": "HTML Encoder | Online Tool",
+      "features_en": [],
+      "faq_en": [
+        [
+          "Is data uploaded?",
+          "No, all processing happens locally in your browser."
+        ],
+        [
+          "Are large files supported?",
+          "Yes, as long as browser memory allows."
+        ]
+      ]
+    },
+    {
+      "slug": "image-compress",
+      "category": "image",
+      "icon": "🗜️",
+      "name_zh": "图片压缩",
+      "name_en": "Image Compressor",
+      "short_zh": "批量压缩 JPG/PNG/WebP 图片，保持画质减小体积",
+      "short_en": "Batch compress JPG/PNG/WebP images with quality preserved",
+      "long_zh": "\n<p>免费在线图片压缩工具，纯前端实现，所有处理都在浏览器本地完成，图片不会上传到服务器，保护您的隐私安全。</p>\n<p><strong>功能特点：</strong></p>\n<ul>\n<li>✅ 支持批量上传多张图片</li>\n<li>✅ 拖拽上传，操作简单</li>\n<li>✅ 可调节压缩质量 (0-100%)</li>\n<li>✅ 支持转换输出格式 (JPG/PNG/WebP)</li>\n<li>✅ 可设置最大宽高，自动缩放</li>\n<li>✅ 实时显示压缩率和文件大小</li>\n<li>✅ 100% 浏览器本地处理，数据不上传</li>\n</ul>\n<p>适用于：网站图片优化、邮件附件、减小存储空间、快速分享等场景。</p>\n",
+      "long_en": "\n<p>Free online image compressor, pure frontend implementation. All processing is done locally in your browser, images are never uploaded to any server, protecting your privacy.</p>\n<p><strong>Features:</strong></p>\n<ul>\n<li>✅ Batch upload multiple images</li>\n<li>✅ Drag and drop upload, easy to use</li>\n<li>✅ Adjustable compression quality (0-100%)</li>\n<li>✅ Support output format conversion (JPG/PNG/WebP)</li>\n<li>✅ Set max width/height, auto resize</li>\n<li>✅ Real-time compression ratio and file size</li>\n<li>✅ 100% browser local processing, no data upload</li>\n</ul>\n<p>Perfect for: website image optimization, email attachments, reducing storage, quick sharing, and more scenarios.</p>\n",
+      "keywords_zh": "图片压缩,在线压缩图片,jpg压缩,png压缩,webp压缩,图片压缩在线",
+      "keywords_en": "image compressor,compress image,jpg compressor,png compressor,webp compress,online image compressor",
+      "ui_zh": "\n<div class=\"file-tool-container\" style=\"max-width:800px;margin:0 auto;\">\n    <div id=\"drop-zone\" style=\"border:2px dashed var(--border);border-radius:12px;padding:40px;text-align:center;cursor:pointer;transition:all 0.3s;margin-bottom:20px;\">\n        <div style=\"font-size:48px;margin-bottom:12px;\">📁</div>\n        <p style=\"font-size:16px;line-height:1.8;\">点击或拖拽图片到这里<br><small>支持 JPG, PNG, WebP, GIF（单文件最大 50MB）</small></p>\n        <input type=\"file\" id=\"file-input\" accept=\"image/*\" multiple style=\"display:none;\">\n    </div>\n    \n    <div id=\"file-list\" style=\"margin-bottom:20px;max-height:300px;overflow-y:auto;\"></div>\n    \n    <div class=\"options-panel\" style=\"background:var(--bg-light);padding:20px;border-radius:8px;margin-bottom:20px;\">\n        <h4 style=\"margin-top:0;margin-bottom:16px;\">⚙️ 压缩设置</h4>\n        <div style=\"display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;\">\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">压缩质量</label>\n                <div style=\"display:flex;align-items:center;gap:12px;\">\n                    <input type=\"range\" id=\"quality\" min=\"10\" max=\"100\" value=\"80\" style=\"flex:1;\">\n                    <span id=\"quality-value\" style=\"font-weight:600;min-width:40px;\">80%</span>\n                </div>\n            </div>\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">输出格式</label>\n                <select id=\"format\" style=\"width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n                    <option value=\"auto\">保持原格式</option>\n                    <option value=\"jpeg\">JPEG</option>\n                    <option value=\"png\">PNG</option>\n                    <option value=\"webp\">WebP</option>\n                </select>\n            </div>\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">最大宽度 (px)</label>\n                <input type=\"number\" id=\"max-width\" value=\"0\" placeholder=\"0=不限制\" style=\"width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n            </div>\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">最大高度 (px)</label>\n                <input type=\"number\" id=\"max-height\" value=\"0\" placeholder=\"0=不限制\" style=\"width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n            </div>\n        </div>\n    </div>\n    \n    <div style=\"text-align:center;margin-bottom:20px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;\">\n        <button id=\"process-btn\" class=\"btn btn-primary\" style=\"padding:12px 32px;font-size:16px;\">🗜️ 开始压缩</button>\n        <button id=\"download-btn\" class=\"btn btn-secondary\" style=\"padding:12px 32px;font-size:16px;\">📥 下载全部</button>\n    </div>\n    \n    <div id=\"progress\"></div>\n    <div id=\"result\"></div>\n</div>\n",
+      "ui_en": "\n<div class=\"file-tool-container\" style=\"max-width:800px;margin:0 auto;\">\n    <div id=\"drop-zone\" style=\"border:2px dashed var(--border);border-radius:12px;padding:40px;text-align:center;cursor:pointer;transition:all 0.3s;margin-bottom:20px;\">\n        <div style=\"font-size:48px;margin-bottom:12px;\">📁</div>\n        <p style=\"font-size:16px;line-height:1.8;\">Click or drag images here<br><small>Supports JPG, PNG, WebP, GIF (max 50MB each)</small></p>\n        <input type=\"file\" id=\"file-input\" accept=\"image/*\" multiple style=\"display:none;\">\n    </div>\n    \n    <div id=\"file-list\" style=\"margin-bottom:20px;max-height:300px;overflow-y:auto;\"></div>\n    \n    <div class=\"options-panel\" style=\"background:var(--bg-light);padding:20px;border-radius:8px;margin-bottom:20px;\">\n        <h4 style=\"margin-top:0;margin-bottom:16px;\">⚙️ Compression Settings</h4>\n        <div style=\"display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;\">\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">Quality</label>\n                <div style=\"display:flex;align-items:center;gap:12px;\">\n                    <input type=\"range\" id=\"quality\" min=\"10\" max=\"100\" value=\"80\" style=\"flex:1;\">\n                    <span id=\"quality-value\" style=\"font-weight:600;min-width:40px;\">80%</span>\n                </div>\n            </div>\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">Output Format</label>\n                <select id=\"format\" style=\"width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n                    <option value=\"auto\">Keep Original</option>\n                    <option value=\"jpeg\">JPEG</option>\n                    <option value=\"png\">PNG</option>\n                    <option value=\"webp\">WebP</option>\n                </select>\n            </div>\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">Max Width (px)</label>\n                <input type=\"number\" id=\"max-width\" value=\"0\" placeholder=\"0=No limit\" style=\"width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n            </div>\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">Max Height (px)</label>\n                <input type=\"number\" id=\"max-height\" value=\"0\" placeholder=\"0=No limit\" style=\"width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n            </div>\n        </div>\n    </div>\n    \n    <div style=\"text-align:center;margin-bottom:20px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;\">\n        <button id=\"process-btn\" class=\"btn btn-primary\" style=\"padding:12px 32px;font-size:16px;\">🗜️ Start Compress</button>\n        <button id=\"download-btn\" class=\"btn btn-secondary\" style=\"padding:12px 32px;font-size:16px;\">📥 Download All</button>\n    </div>\n    \n    <div id=\"progress\"></div>\n    <div id=\"result\"></div>\n</div>\n",
+      "related": [
+        "image-convert",
+        "image-crop",
+        "image-watermark"
+      ],
+      "seo_title_zh": "在线图片压缩 - JPG/PNG/WebP 批量压缩",
+      "seo_title_en": "Online Image Compressor - Batch JPG/PNG/WebP Compress",
+      "features_zh": [
+        "批量压缩多张图片",
+        "拖拽上传，操作简单",
+        "可调节压缩质量",
+        "支持格式转换",
+        "限制最大尺寸",
+        "100% 浏览器本地处理"
+      ],
+      "features_en": [
+        "Batch compress multiple images",
+        "Drag and drop upload",
+        "Adjustable compression quality",
+        "Format conversion support",
+        "Max dimension limits",
+        "100% browser local processing"
+      ],
+      "faq_zh": [
+        [
+          "图片会上传到服务器吗？",
+          "不会。所有压缩操作都在您的浏览器本地完成，图片数据不会离开您的设备，完全保护隐私安全。"
+        ],
+        [
+          "支持哪些图片格式？",
+          "支持 JPG、PNG、WebP、GIF 等常见格式，可以转换输出格式。"
+        ],
+        [
+          "压缩后的图片质量怎么样？",
+          "可以根据需要调整压缩质量。80%质量通常肉眼看不出区别但体积能减少 50-70%。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "Are images uploaded to servers?",
+          "No. All compression is done locally in your browser. Image data never leaves your device, completely privacy-safe."
+        ],
+        [
+          "What image formats are supported?",
+          "Supports JPG, PNG, WebP, GIF and other common formats. Output format conversion is available."
+        ],
+        [
+          "How is the compressed image quality?",
+          "Quality can be adjusted as needed. 80% quality usually reduces size by 50-70% with no visible difference."
+        ]
+      ]
     }
   ]
 }

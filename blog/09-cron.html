@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cron 表达式完全指南：从入门到精通 | AI 工具盒子</title>
+<meta name="description" content="Cron 表达式是 Linux 定时任务的语言。本文详解 5 字段/6 字段/7 字段语法，配合实例覆盖 99% 的使用场景。">
+<meta name="keywords" content="cron表达式,cron教程,定时任务,cron语法,crontab">
+<link rel="canonical" href="https://tools.talang.fun/blog/09-cron">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/blog/09-cron">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/blog/09-cron">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/blog/09-cron">
+<meta property="og:title" content="Cron 表达式完全指南：从入门到精通 | AI 工具盒子">
+<meta property="og:description" content="Cron 表达式是 Linux 定时任务的语言。本文详解 5 字段/6 字段/7 字段语法，配合实例覆盖 99% 的使用场景。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/blog/09-cron">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Cron 表达式完全指南：从入门到精通", "description": "Cron 表达式是 Linux 定时任务的语言。本文详解 5 字段/6 字段/7 字段语法，配合实例覆盖 99% 的使用场景。", "author": {"@type": "Organization", "name": "AI 工具盒子"}, "datePublished": "2026-05-14", "url": "https://tools.talang.fun/blog/09-cron"}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="https://tools.talang.fun/en/blog/09-cron" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<article class="article">
+  <p style="margin-bottom:8px"><a href="/blog/" style="color:var(--muted)">← 返回博客</a></p>
+  <h1>Cron 表达式完全指南：从入门到精通</h1>
+  <p style="color:var(--muted);margin-bottom:24px">2026-05-14 · 5 分钟阅读</p>
+  <h1>Cron 表达式完全指南：从入门到精通</h1>
+<p>Cron 表达式是定时任务的通用语言，从 Linux 的 crontab 到 Kubernetes 的 CronJob，从 GitHub Actions 到 AWS CloudWatch Events，几乎所有定时调度系统都使用 Cron 语法。</p>
+<h2>Cron 的字段结构</h2>
+<p>最常见的是<strong>5 字段</strong>格式：</p>
+<pre><code class="lang-">
+* * * * *
+│ │ │ │ │
+│ │ │ │ └─── 星期 (0-6，0=周日)
+│ │ │ └───── 月份 (1-12)
+│ │ └─────── 日期 (1-31)
+│ └───────── 小时 (0-23)
+└─────────── 分钟 (0-59)
+</code></pre>
+<p>部分系统（Quartz、AWS）使用<strong>6 字段</strong>（加秒）或<strong>7 字段</strong>（加年）。本文聚焦最通用的 5 字段格式。</p>
+<h2>特殊符号含义</h2>
+<table><thead><tr>
+<th>符号</th>
+<th>含义</th>
+<th>示例</th>
+</tr></thead><tbody>
+<tr>
+<td><code>*</code></td>
+<td>任意值</td>
+<td><code><em> </em> <em> </em> *</code> = 每分钟</td>
+</tr>
+<tr>
+<td><code>,</code></td>
+<td>枚举多个值</td>
+<td><code>0,30 <em> </em> <em> </em></code> = 每小时第 0 和 30 分钟</td>
+</tr>
+<tr>
+<td><code>-</code></td>
+<td>范围</td>
+<td><code>0 9-18 <em> </em> *</code> = 9 点到 18 点的每小时第 0 分钟</td>
+</tr>
+<tr>
+<td><code>/</code></td>
+<td>步长</td>
+<td><code><em>/5 </em> <em> </em> *</code> = 每 5 分钟</td>
+</tr>
+</tbody></table>
+<h2>常见场景实例</h2>
+<h3>分钟级任务</h3>
+<pre><code class="lang-">
+* * * * *          # 每分钟
+*/5 * * * *        # 每 5 分钟
+0,30 * * * *       # 每半小时（0 和 30 分）
+15,45 * * * *      # 每小时第 15 和 45 分
+</code></pre>
+<h3>小时级任务</h3>
+<pre><code class="lang-">
+0 * * * *          # 每小时整点
+0 */6 * * *        # 每 6 小时（0, 6, 12, 18 点）
+0 9-18 * * *       # 工作日 9 点到 18 点，每小时整点
+30 2 * * *         # 每天凌晨 2:30
+</code></pre>
+<h3>每日任务</h3>
+<pre><code class="lang-">
+0 2 * * *          # 每天凌晨 2 点
+0 2 * * 1-5        # 每周一到周五凌晨 2 点（工作日）
+0 2 * * 0,6        # 每周六、周日凌晨 2 点（周末）
+0 2,14 * * *       # 每天 2 点和 14 点
+</code></pre>
+<h3>每周任务</h3>
+<pre><code class="lang-">
+0 3 * * 1          # 每周一凌晨 3 点
+0 3 * * 5          # 每周五凌晨 3 点
+0 9 * * 1,3,5      # 周一、周三、周五早上 9 点
+</code></pre>
+<h3>每月任务</h3>
+<pre><code class="lang-">
+0 4 1 * *          # 每月 1 号凌晨 4 点
+0 4 1,15 * *       # 每月 1 号和 15 号凌晨 4 点
+30 4 L * *         # 每月最后一天凌晨 4:30（需系统支持 L 语法）
+</code></pre>
+<h3>复杂组合</h3>
+<pre><code class="lang-">
+0 */2 1-10 * *     # 每月 1-10 号，每 2 小时整点
+*/30 9-17 * * 1-5  # 工作日 9:00-17:00，每 30 分钟
+0 2 * * 1#2        # 每月第二个周一凌晨 2 点（需系统支持 # 语法）
+</code></pre>
+<h2>Cron 经典陷阱</h2>
+<p><strong>陷阱 1：日期和星期是 OR 关系</strong></p>
+<pre><code class="lang-">
+0 2 15 * 5    # ❗ 不是"15号且周五"，而是"15号 OR 周五"！
+</code></pre>
+<p>这是 Cron 最容易踩坑的地方。当你同时指定日期和星期，条件是<strong>或</strong>（满足任一即可），而不是<strong>且</strong>。</p>
+<p>如果需要"15号且是周五才执行"，需要在脚本中额外判断。</p>
+<p><strong>陷阱 2：时区问题</strong></p>
+<p>Cron 使用系统本地时区。你的服务器可能不是北京时间！</p>
+<pre><code class="lang-bash">
+date  # 查看系统时区
+</code></pre>
+<p>在容器环境尤其要注意时区配置。</p>
+<p><strong>陷阱 3：步长不是从 0 开始</strong></p>
+<pre><code class="lang-">
+*/5 * * * *    # 0,5,10,15,...55 分 ✅
+1-59/5 * * * * # 1,6,11,...56 分 ❗
+</code></pre>
+<p><strong>陷阱 4：日期间隔的月份天数问题</strong></p>
+<pre><code class="lang-">
+0 2 */15 * *   # 每 15 天，但 2 月只有 28 天
+                 # 30/31 号可能在下个月不存在
+</code></pre>
+<p><strong>陷阱 5：输出和日志</strong></p>
+<p>Cron 任务的 stdout/stderr 默认会发邮件，但很多系统没有配置邮件服务。</p>
+<p>✅ 最佳实践：重定向输出到日志</p>
+<pre><code class="lang-">
+0 2 * * * /path/to/script.sh &gt;&gt; /var/log/cron/script.log 2&gt;&amp;1
+</code></pre>
+<h2>调试技巧</h2>
+<h3>验证表达式</h3>
+<p>使用我们的 <a href="/tools/cron-parser">Cron 表达式解析工具</a>，输入表达式，立即显示接下来 5 次执行时间，快速验证是否符合预期。</p>
+<h3>测试脚本</h3>
+<p>先在脚本开头打印时间，测试几次：</p>
+<pre><code class="lang-bash">
+echo "$(date): Script started" &gt;&gt; /tmp/test.log
+</code></pre>
+<h3>环境变量问题</h3>
+<p>Cron 执行时的 PATH 非常有限，常见问题：</p>
+<p>❌ 出错：<code>command not found</code></p>
+<p>✅ 解决：脚本开头设置完整 PATH，或者使用绝对路径</p>
+<pre><code class="lang-bash">
+#!/bin/bash
+export PATH="/usr/local/bin:/usr/bin:/bin"
+</code></pre>
+<h2>不同实现的差异</h2>
+<table><thead><tr>
+<th>实现</th>
+<th>字段数</th>
+<th>特殊语法支持</th>
+</tr></thead><tbody>
+<tr>
+<td>Linux crontab</td>
+<td>5</td>
+<td>基础语法</td>
+</tr>
+<tr>
+<td>Vixie Cron</td>
+<td>5</td>
+<td>@reboot, @yearly, etc.</td>
+</tr>
+<tr>
+<td>Quartz</td>
+<td>6-7</td>
+<td>L, W, #</td>
+</tr>
+<tr>
+<td>Kubernetes CronJob</td>
+<td>5</td>
+<td>基础语法</td>
+</tr>
+<tr>
+<td>GitHub Actions</td>
+<td>5</td>
+<td>标准 POSIX</td>
+</tr>
+<tr>
+<td>AWS CloudWatch</td>
+<td>6</td>
+<td>L, W, #</td>
+</tr>
+</tbody></table>
+<h2>常用简写</h2>
+<pre><code class="lang-">
+@reboot    # 启动时执行一次
+@yearly    # 每年一次 (0 0 1 1 *)
+@monthly   # 每月一次 (0 0 1 * *)
+@weekly    # 每周一次 (0 0 * * 0)
+@daily     # 每天一次 (0 0 * * *)
+@hourly    # 每小时一次 (0 * * * *)
+</code></pre>
+<h2>在线工具</h2>
+<p>使用我们的 <a href="/tools/cron-parser">Cron 表达式解析工具</a>，输入 Cron 表达式，立即看到接下来 5 次执行时间，是调试 Cron 的最佳工具。</p>
+<hr>
+<p>掌握了 Cron 表达式，你就掌握了自动化的核心语法！</p>
+</article>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+</script>
+</body>
+</html>

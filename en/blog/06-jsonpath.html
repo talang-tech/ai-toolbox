@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Complete JSONPath Tutorial: From Beginner to Pro | AI Toolbox</title>
+<meta name="description" content="JSONPath is the XPath for JSON. This guide covers syntax to advanced usage with examples, teaching you to extract data from complex JSON quickly.">
+<meta name="keywords" content="jsonpath tutorial,jsonpath syntax,json extract data,jsonpath examples">
+<link rel="canonical" href="https://tools.talang.fun/en/blog/06-jsonpath">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/blog/06-jsonpath">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/blog/06-jsonpath">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/blog/06-jsonpath">
+<meta property="og:title" content="Complete JSONPath Tutorial: From Beginner to Pro | AI Toolbox">
+<meta property="og:description" content="JSONPath is the XPath for JSON. This guide covers syntax to advanced usage with examples, teaching you to extract data from complex JSON quickly.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/en/blog/06-jsonpath">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Complete JSONPath Tutorial: From Beginner to Pro", "description": "JSONPath is the XPath for JSON. This guide covers syntax to advanced usage with examples, teaching you to extract data from complex JSON quickly.", "author": {"@type": "Organization", "name": "AI Toolbox"}, "datePublished": "2026-05-14", "url": "https://tools.talang.fun/en/blog/06-jsonpath"}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/en/" class="logo"><span class="logo-icon">🛠️</span>AI Toolbox</a>
+    <nav class="nav">
+      <a href="/en/">Home</a>
+      <a href="/en/#tools">All Tools</a>
+      <a href="/en/blog/">Blog</a>
+      <a href="/en/about">About</a>
+      <a href="https://tools.talang.fun/blog/06-jsonpath" class="lang-switch">中文</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<article class="article">
+  <p style="margin-bottom:8px"><a href="/en/blog/" style="color:var(--muted)">← Back to blog</a></p>
+  <h1>Complete JSONPath Tutorial: From Beginner to Pro</h1>
+  <p style="color:var(--muted);margin-bottom:24px">2026-05-14 · 5 min read</p>
+  <h1>Complete JSONPath Tutorial: From Beginner to Pro</h1>
+<p>JSONPath is a query language for extracting data from JSON documents — the equivalent of XPath for XML. If you frequently work with API responses, JSONPath can save you hours of manual parsing.</p>
+<h2>Why JSONPath?</h2>
+<p>Suppose you have this API response:</p>
+<pre><code class="lang-json">
+{
+  "store": {
+    "book": [
+      {"category": "programming", "author": "Zhang", "title": "Python Intro", "price": 89},
+      {"category": "programming", "author": "Li", "title": "Go in Action", "price": 99},
+      {"category": "fiction", "author": "Wang", "title": "Sea of Life", "price": 45}
+    ],
+    "bicycle": {"color": "red", "price": 299}
+  }
+}
+</code></pre>
+<p>Question: <strong>How to extract all book titles with price < 90?</strong></p>
+<p>Writing loops in Python takes 5 lines. With JSONPath, it takes one line:</p>
+<pre><code class="lang-">
+$.store.book[?(@.price &lt; 90)].title
+</code></pre>
+<h2>JSONPath Syntax Cheat Sheet</h2>
+<table><thead><tr>
+<th>Syntax</th>
+<th>Meaning</th>
+<th>Example</th>
+</tr></thead><tbody>
+<tr>
+<td><code>$</code></td>
+<td>Root node</td>
+<td><code>$</code> - entire JSON object</td>
+</tr>
+<tr>
+<td><code>@</code></td>
+<td>Current node</td>
+<td><code>@.price</code> - price field of current object</td>
+</tr>
+<tr>
+<td><code>.key</code></td>
+<td>Child field</td>
+<td><code>$.store</code> - value of store field</td>
+</tr>
+<tr>
+<td><code>..key</code></td>
+<td>Recursive search</td>
+<td><code>$..price</code> - all price fields at any depth</td>
+</tr>
+<tr>
+<td><code>[index]</code></td>
+<td>Array index</td>
+<td><code>$.store.book[0]</code> - first book</td>
+</tr>
+<tr>
+<td><code>[start:end]</code></td>
+<td>Array slice</td>
+<td><code>$.store.book[0:2]</code> - first two books</td>
+</tr>
+<tr>
+<td><code>[*]</code></td>
+<td>All elements</td>
+<td><code>$.store.book[*]</code> - all books</td>
+</tr>
+<tr>
+<td><code>[?(condition)]</code></td>
+<td>Filter</td>
+<td><code>$.[?(@.price > 50)]</code> - items with price > 50</td>
+</tr>
+</tbody></table>
+<h2>Common Scenarios</h2>
+<h3>Scenario 1: Extract nested field</h3>
+<pre><code class="lang-">
+JSONPath: $.store.bicycle.color
+Result: "red"
+</code></pre>
+<h3>Scenario 2: Extract field from all array elements</h3>
+<pre><code class="lang-">
+JSONPath: $..author
+Result: ["Zhang", "Li", "Wang"]
+</code></pre>
+<h3>Scenario 3: Filter by condition</h3>
+<pre><code class="lang-">
+JSONPath: $.store.book[?(@.category == 'programming')].title
+Result: ["Python Intro", "Go in Action"]
+</code></pre>
+<h3>Scenario 4: Combine conditions</h3>
+<pre><code class="lang-">
+JSONPath: $.store.book[?(@.price &lt; 100 &amp;&amp; @.category == 'programming')]
+Result: Both programming books, full objects
+</code></pre>
+<h2>Common Pitfalls</h2>
+<p><strong>Pitfall 1: Forgetting the root node</strong></p>
+<p>❌ Wrong: <code>store.book[0].title</code>  </p>
+<p>✅ Correct: <code>$.store.book[0].title</code></p>
+<p><strong>Pitfall 2: Missing ? in filter</strong></p>
+<p>❌ Wrong: <code>$.[@.price > 50]</code>  </p>
+<p>✅ Correct: <code>$.[?(@.price > 50)]</code></p>
+<p><strong>Pitfall 3: Strings need quotes</strong></p>
+<p>❌ Wrong: <code>?(@.category == programming)</code>  </p>
+<p>✅ Correct: <code>?(@.category == 'programming')</code></p>
+<h2>Recommended Tool</h2>
+<p>Use our <a href="/tools/jsonpath">JSONPath Extractor tool</a> to input JSON and path in real-time — perfect for learning and debugging.</p>
+<h2>Advanced Techniques</h2>
+<h3>Multi-value selection</h3>
+<pre><code class="lang-">
+JSONPath: $.store.book[0]['author', 'title']
+Result: {"author": "Zhang", "title": "Python Intro"}
+</code></pre>
+<h3>Negation</h3>
+<pre><code class="lang-">
+JSONPath: $.store.book[?(@.category != 'fiction')]
+</code></pre>
+<h3>Existence check</h3>
+<pre><code class="lang-">
+JSONPath: $.store.book[?(@.isbn)]
+</code></pre>
+<hr>
+<p>JSONPath is an essential skill for data engineers, backend developers, and API testers. Master it and your JSON processing efficiency will improve dramatically.</p>
+</article>
+</main>
+<footer class="site-footer">
+  © 2026 AI Toolbox · Free online AI & developer tools · <a href='/en/about'>About</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('Copied!'));
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JSON ↔ CSV Converter - JSON CSV Converter | Online JSON to CSV and CSV to JSON | AI Toolbox</title>
+<meta name="description" content="Free online json ↔ csv converter. Bidirectional JSON array ↔ CSV table conversion, supports complex values with commas/quotes. Fast, secure, and works in your browser without downloading.">
+<meta name="keywords" content="json to csv,csv to json,csv to json converter,json csv converter,csv to json online">
+<link rel="canonical" href="https://tools.talang.fun/en/tools/json-csv">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/json-csv">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/json-csv">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/json-csv">
+<meta property="og:title" content="JSON ↔ CSV Converter - JSON CSV Converter | Online JSON to CSV and CSV to JSON | AI Toolbox">
+<meta property="og:description" content="Free online json ↔ csv converter. Bidirectional JSON array ↔ CSV table conversion, supports complex values with commas/quotes. Fast, secure, and works in your browser without downloading.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/en/tools/json-csv">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "JSON ↔ CSV Converter", "description": "Free online json ↔ csv converter. Bidirectional JSON array ↔ CSV table conversion, supports complex values with commas/quotes. Fast, secure, and works in your browser without downloading.", "url": "https://tools.talang.fun/en/tools/json-csv", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "Bidirectional JSON array ↔ CSV table conversion, supports complex values with commas/quotes", "inLanguage": "en", "author": {"@type": "Organization", "name": "AI Toolbox"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/en/" class="logo"><span class="logo-icon">🛠️</span>AI Toolbox</a>
+    <nav class="nav">
+      <a href="/en/">Home</a>
+      <a href="/en/#tools">All Tools</a>
+      <a href="/en/blog/">Blog</a>
+      <a href="/en/about">About</a>
+      <a href="https://tools.talang.fun/tools/json-csv" class="lang-switch">中文</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🔄</div>
+  <h1>JSON ↔ CSV Converter</h1>
+  <p>Bidirectional JSON array ↔ CSV table conversion, supports complex values with commas/quotes</p>
+</div>
+<div class="tool-panel">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px"><div><label>JSON:</label><textarea id="jsonCsvJson" style="min-height:260px;font-family:monospace;font-size:12px">[{"name":"Alice","age":30},{"name":"Bob","age":25}]</textarea><button class="btn" id="toCsvBtn" style="margin-top:8px">→ to CSV</button></div><div><label>CSV:</label><textarea id="jsonCsvCsv" style="min-height:260px;font-family:monospace;font-size:12px">name,age
+Alice,30
+Bob,25</textarea><button class="btn" id="toJsonBtn" style="margin-top:8px">→ to JSON</button></div></div><div id="jsonCsvMsg" style="margin-top:8px"></div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>About this tool</h2>
+  <p>JSON and CSV are the two most common formats in data processing. This tool supports: JSON array of objects to CSV table, CSV table to JSON array.</p><p>Properly handles complex values with commas, quotes, and newlines inside fields.</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>Key Features</h2><ul><li>JSON array to CSV table conversion</li><li>CSV table to JSON array conversion</li><li>Support complex content with commas/quotes</li><li>Auto detect headers</li><li>Nested object flattening</li><li>One-click copy result</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>Frequently Asked Questions</h2><h3 style="margin-top:20px;margin-bottom:8px">Is nested JSON supported?</h3><p>Yes, nested objects are automatically flattened.</p><h3 style="margin-top:20px;margin-bottom:8px">How are commas in CSV handled?</h3><p>Fields containing commas are automatically wrapped in double quotes.</p><h3 style="margin-top:20px;margin-bottom:8px">How many rows are supported?</h3><p>As long as browser memory allows, tens of thousands of rows can be processed.</p></section>
+<section class="related"><h3>Related Tools</h3><div class="tools-grid"><a href="/en/tools/json-formatter" class="tool-card"><div class="icon">{ }</div><h3>JSON Formatter</h3><p>Beautify, minify, and validate JSON with precise error location</p></a><a href="/en/tools/base64" class="tool-card"><div class="icon">🔣</div><h3>Base64 Encoder/Decoder</h3><p>Encode/decode Base64 strings and files, UTF-8 safe</p></a></div></section>
+<script src="/assets/tools/_utils.js" defer></script>
+    <script src="/assets/tools/json-csv.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI Toolbox · Free online AI & developer tools · <a href='/en/about'>About</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('Copied!'));
+}
+</script>
+</body>
+</html>

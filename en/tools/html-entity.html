@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HTML Entity Encoder/Decoder - HTML Entity Encoder Decoder | HTML Special Character Escape | AI Toolbox</title>
+<meta name="description" content="Free online html entity encoder/decoder. Encode/decode HTML entities: &lt; ↔ <, &copy; ↔ ©. Fast, secure, and works in your browser without downloading.">
+<meta name="keywords" content="html entity encoder,html escape,html unescape,html entity decoder">
+<link rel="canonical" href="https://tools.talang.fun/en/tools/html-entity">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/html-entity">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/html-entity">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/html-entity">
+<meta property="og:title" content="HTML Entity Encoder/Decoder - HTML Entity Encoder Decoder | HTML Special Character Escape | AI Toolbox">
+<meta property="og:description" content="Free online html entity encoder/decoder. Encode/decode HTML entities: &lt; ↔ <, &copy; ↔ ©. Fast, secure, and works in your browser without downloading.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/en/tools/html-entity">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "HTML Entity Encoder/Decoder", "description": "Free online html entity encoder/decoder. Encode/decode HTML entities: &lt; ↔ <, &copy; ↔ ©. Fast, secure, and works in your browser without downloading.", "url": "https://tools.talang.fun/en/tools/html-entity", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "Encode/decode HTML entities: &lt; ↔ <, &copy; ↔ ©", "inLanguage": "en", "author": {"@type": "Organization", "name": "AI Toolbox"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/en/" class="logo"><span class="logo-icon">🛠️</span>AI Toolbox</a>
+    <nav class="nav">
+      <a href="/en/">Home</a>
+      <a href="/en/#tools">All Tools</a>
+      <a href="/en/blog/">Blog</a>
+      <a href="/en/about">About</a>
+      <a href="https://tools.talang.fun/tools/html-entity" class="lang-switch">中文</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🏷️</div>
+  <h1>HTML Entity Encoder/Decoder</h1>
+  <p>Encode/decode HTML entities: &lt; ↔ <, &copy; ↔ ©</p>
+</div>
+<div class="tool-panel">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px"><div><label>Input:</label><textarea id="heInput" style="min-height:200px"></textarea></div><div><label>Output:</label><textarea id="heOutput" readonly style="min-height:200px"></textarea></div></div><div style="margin-top:12px;display:flex;gap:12px"><button class="btn" id="heEncode">Encode</button><button class="btn" id="heDecode">Decode</button><button class="btn btn-secondary" id="heCopy">Copy Result</button></div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>About this tool</h2>
+  <p>Convert HTML special characters to entity encoding, or decode entities back to original characters. Supports named entities, hex and decimal numeric entities.</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>Key Features</h2><ul><li>HTML special character encoding</li><li>HTML entity decoding</li><li>Named entities support (&amp;)</li><li>Numeric entities support (&#38;)</li><li>Unicode character support</li><li>XML compatible</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>Frequently Asked Questions</h2><h3 style="margin-top:20px;margin-bottom:8px">Why escape HTML characters?</h3><p>< > & " ' have special meaning in HTML and must be escaped to display correctly.</p><h3 style="margin-top:20px;margin-bottom:8px">What's the difference between named and numeric entities?</h3><p>Named entities like &lt; are readable; numeric entities like &#60; have wider coverage.</p><h3 style="margin-top:20px;margin-bottom:8px">Do Chinese characters need escaping?</h3><p>Generally not needed in UTF-8 encoding.</p></section>
+<section class="related"><h3>Related Tools</h3><div class="tools-grid"><a href="/en/tools/url-encoder" class="tool-card"><div class="icon">🔗</div><h3>URL Encoder/Decoder</h3><p>Encode/decode URLs, handle special characters and Unicode</p></a><a href="/en/tools/base64" class="tool-card"><div class="icon">🔣</div><h3>Base64 Encoder/Decoder</h3><p>Encode/decode Base64 strings and files, UTF-8 safe</p></a><a href="/en/tools/json-formatter" class="tool-card"><div class="icon">{ }</div><h3>JSON Formatter</h3><p>Beautify, minify, and validate JSON with precise error location</p></a></div></section>
+<script src="/assets/tools/_utils.js" defer></script>
+    <script src="/assets/tools/html-entity.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI Toolbox · Free online AI & developer tools · <a href='/en/about'>About</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('Copied!'));
+}
+</script>
+</body>
+</html>

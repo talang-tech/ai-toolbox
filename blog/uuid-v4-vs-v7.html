@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UUID v4 vs v7 完全对比：什么时候该用哪个？(2026 最新) | AI 工具盒子</title>
+<meta name="description" content="详解 UUID v4（随机）和 UUID v7（时间序）的区别，性能基准、数据库索引影响、迁移建议，以及 6 个真实场景该选哪个。">
+<meta name="keywords" content="UUID v4,UUID v7,UUID 对比,UUID 数据库性能,Snowflake ID,主键设计,分布式 ID">
+<link rel="canonical" href="https://tools.talang.fun/blog/uuid-v4-vs-v7">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/blog/uuid-v4-vs-v7">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/blog/uuid-v4-vs-v7">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/blog/uuid-v4-vs-v7">
+<meta property="og:title" content="UUID v4 vs v7 完全对比：什么时候该用哪个？(2026 最新) | AI 工具盒子">
+<meta property="og:description" content="详解 UUID v4（随机）和 UUID v7（时间序）的区别，性能基准、数据库索引影响、迁移建议，以及 6 个真实场景该选哪个。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/blog/uuid-v4-vs-v7">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "UUID v4 vs v7 完全对比：什么时候该用哪个？(2026 最新)", "description": "详解 UUID v4（随机）和 UUID v7（时间序）的区别，性能基准、数据库索引影响、迁移建议，以及 6 个真实场景该选哪个。", "author": {"@type": "Organization", "name": "AI 工具盒子"}, "datePublished": "2026-05-10", "url": "https://tools.talang.fun/blog/uuid-v4-vs-v7"}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="https://tools.talang.fun/en/blog/uuid-v4-vs-v7" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<article class="article">
+  <p style="margin-bottom:8px"><a href="/blog/" style="color:var(--muted)">← 返回博客</a></p>
+  <h1>UUID v4 vs v7 完全对比：什么时候该用哪个？(2026 最新)</h1>
+  <p style="color:var(--muted);margin-bottom:24px">2026-05-10 · 11 分钟阅读</p>
+  <p>如果你最近一年没关注 UUID 的话，可能已经过时了。<strong>RFC 9562</strong>（2024 年 5 月发布）正式标准化了 UUID v6/v7/v8，其中 <strong>UUID v7</strong> 正在迅速取代 v4 成为新项目的默认选择。</p>
+<p>这篇文章告诉你为什么。</p>
+<h2>一、UUID v4 是什么？</h2>
+<p>UUID v4 = 122 bit 随机数 + 6 bit 版本号。长这样：</p>
+<pre><code class="lang-">
+f47ac10b-58cc-4372-a567-0e02b2c3d479
+</code></pre>
+<p>碰撞概率：<strong>生成 10 亿个有 50% 概率重复一个</strong>。所以可以认为永不重复。</p>
+<p><strong>优点</strong>：</p>
+<ul>
+<li>完全随机，不暴露任何信息</li>
+<li>无需中心化协调</li>
+<li>最常见，所有语言库都支持</li>
+</ul>
+<p><strong>缺点（这是 v7 出现的原因）</strong>：</p>
+<ul>
+<li>没有时间顺序 → 数据库 B-Tree 索引插入时<strong>随机分散写入</strong></li>
+<li>不能按生成时间排序</li>
+<li>在大表中是<strong>性能杀手</strong>（页分裂、缓存失效）</li>
+</ul>
+<h2>二、UUID v7 是什么？</h2>
+<p>UUID v7 = <strong>48 bit Unix 毫秒时间戳</strong> + 74 bit 随机数 + 6 bit 版本号。长这样：</p>
+<pre><code class="lang-">
+01928a3f-1234-7567-89ab-0123456789ab
+└─时间戳─┘└随机─┘└版本└─随机───┘
+</code></pre>
+<p><strong>前 48 bit 是时间</strong>，后续是随机。所以：</p>
+<ul>
+<li>仍然全球唯一（74 bit 随机 ≈ 1.8 × 10^22 种组合）</li>
+<li><strong>天然按生成时间排序</strong></li>
+<li>数据库插入时是<strong>顺序追加</strong>，不再页分裂</li>
+</ul>
+<h2>三、性能对比：插入 1000 万行</h2>
+<p>PostgreSQL 16 单表插入 1000 万行的实测：</p>
+<table><thead><tr>
+<th>主键类型</th>
+<th>插入耗时</th>
+<th>表大小</th>
+<th>索引大小</th>
+</tr></thead><tbody>
+<tr>
+<td>BIGSERIAL（自增）</td>
+<td>32s</td>
+<td>850 MB</td>
+<td>215 MB</td>
+</tr>
+<tr>
+<td><strong>UUID v7</strong></td>
+<td>41s</td>
+<td>1.0 GB</td>
+<td>280 MB</td>
+</tr>
+<tr>
+<td>UUID v4</td>
+<td>138s</td>
+<td>1.0 GB</td>
+<td>540 MB</td>
+</tr>
+</tbody></table>
+<p><strong>关键发现</strong>：</p>
+<ol>
+<li>UUID v7 比 v4 快 <strong>3.4 倍</strong></li>
+<li>UUID v7 索引比 v4 小 <strong>48%</strong>（顺序写入页填充率高）</li>
+<li>v7 接近 BIGSERIAL 的性能，但保留 UUID 的所有优点</li>
+</ol>
+<p>数据来源：<a href="https://github.com/uuid7/postgres-benchmark">uuid7 PostgreSQL benchmark</a></p>
+<h2>四、6 个场景该选哪个？</h2>
+<table><thead><tr>
+<th>场景</th>
+<th>推荐</th>
+<th>原因</th>
+</tr></thead><tbody>
+<tr>
+<td>数据库主键（新项目）</td>
+<td><strong>v7</strong></td>
+<td>顺序写入，索引友好</td>
+</tr>
+<tr>
+<td>分布式系统 ID</td>
+<td><strong>v7</strong></td>
+<td>多节点天然按时间排序，方便分片</td>
+</tr>
+<tr>
+<td>临时会话 ID / token</td>
+<td>v4</td>
+<td>不需要时间，纯随机更安全</td>
+</tr>
+<tr>
+<td>加密 nonce / API key</td>
+<td>v4</td>
+<td>必须不可预测</td>
+</tr>
+<tr>
+<td>文件名（防猜测）</td>
+<td>v4</td>
+<td>时间戳暴露上传时间</td>
+</tr>
+<tr>
+<td>日志关联 ID</td>
+<td><strong>v7</strong></td>
+<td>按时间归档天然有序</td>
+</tr>
+</tbody></table>
+<h2>五、常见问题</h2>
+<h3>Q: v7 暴露生成时间，会不会有安全问题？</h3>
+<p>会，但只在特定场景。如果你的业务依赖 ID 不可预测（如优惠券码、临时分享链接），<strong>还是用 v4</strong>。日常数据库主键不敏感，v7 的好处大于风险。</p>
+<h3>Q: 现有 v4 系统能迁移到 v7 吗？</h3>
+<p>不需要全部迁移。两者都符合 UUID 标准（128 bit），可以<strong>新数据用 v7、老数据保留 v4</strong>，不影响读取。但表的物理排序不会因此优化（要做 <code>CLUSTER</code> 才能整理）。</p>
+<h3>Q: 跟 Snowflake ID、Sonyflake、Nano ID 比呢？</h3>
+<table><thead><tr>
+<th>ID 类型</th>
+<th>长度</th>
+<th>时间序</th>
+<th>中心化</th>
+<th>推荐场景</th>
+</tr></thead><tbody>
+<tr>
+<td>BIGSERIAL</td>
+<td>8 字节</td>
+<td>✅</td>
+<td>⚠️ 单 DB</td>
+<td>单库、小项目</td>
+</tr>
+<tr>
+<td><strong>UUID v7</strong></td>
+<td>16 字节</td>
+<td>✅</td>
+<td>❌</td>
+<td>大多数场景</td>
+</tr>
+<tr>
+<td>Snowflake</td>
+<td>8 字节</td>
+<td>✅</td>
+<td>❌（节点 ID）</td>
+<td>超大规模、可以管理节点 ID</td>
+</tr>
+<tr>
+<td>Nano ID</td>
+<td>21 字符</td>
+<td>❌</td>
+<td>❌</td>
+<td>URL 短链、API key</td>
+</tr>
+<tr>
+<td>ULID</td>
+<td>26 字符</td>
+<td>✅</td>
+<td>❌</td>
+<td>类似 v7 但用 base32 字符串</td>
+</tr>
+</tbody></table>
+<p><strong>2026 推荐</strong>：除非有特殊需求，新项目主键直接用 <strong>UUID v7</strong>。</p>
+<h3>Q: 各语言怎么生成 v7？</h3>
+<table><thead><tr>
+<th>语言</th>
+<th>库</th>
+</tr></thead><tbody>
+<tr>
+<td>JavaScript</td>
+<td><code>uuidv7</code> 包，或 <code>crypto.randomUUID()</code> （Node 20+ 待确认）</td>
+</tr>
+<tr>
+<td>Python</td>
+<td><code>uuid6</code> 包：<code>uuid6.uuid7()</code></td>
+</tr>
+<tr>
+<td>Go</td>
+<td><code>github.com/google/uuid</code> v1.6+</td>
+</tr>
+<tr>
+<td>Rust</td>
+<td><code>uuid</code> crate v1.5+</td>
+</tr>
+<tr>
+<td>Java</td>
+<td><code>com.fasterxml.uuid:java-uuid-generator</code> v5+</td>
+</tr>
+<tr>
+<td>PostgreSQL</td>
+<td><code>uuidv7()</code> 函数 (pg_uuidv7 扩展) 或 v17 内置</td>
+</tr>
+</tbody></table>
+<h2>六、UUID v7 实现原理（30 行 JS）</h2>
+<pre><code class="lang-js">
+function uuidv7() {
+  const ts = Date.now();              // 48 bit 毫秒时间戳
+  const tsHex = ts.toString(16).padStart(12, '0');
+  // 12 字节 = 24 hex 字符
+  const rand = crypto.getRandomValues(new Uint8Array(10));
+  let randHex = Array.from(rand).map(b =&gt; b.toString(16).padStart(2, '0')).join('');
+  // 设置版本号 7 和 RFC 9562 variant
+  randHex = '7' + randHex.slice(1, 4) + ((parseInt(randHex[4], 16) &amp; 0x3) | 0x8).toString(16) + randHex.slice(5);
+  // 拼成 8-4-4-4-12 格式
+  return `${tsHex.slice(0,8)}-${tsHex.slice(8,12)}-${randHex.slice(0,4)}-${randHex.slice(4,8)}-${randHex.slice(8,20)}`;
+}
+</code></pre>
+<p>完整生产代码看 <a href="https://github.com/uuidjs/uuid">uuid 库</a>。</p>
+<h2>七、立刻去试</h2>
+<p>👉 <a href="/tools/uuid-generator.html">AI 工具盒子的 UUID 生成器</a> 支持：</p>
+<ul>
+<li>UUID v4（随机）</li>
+<li>UUID v7（时间序）</li>
+<li>批量生成 1-1000 个</li>
+<li>一键复制</li>
+<li><strong>纯本地生成</strong>，数据不外发</li>
+</ul>
+<h2>总结</h2>
+<ul>
+<li><strong>新项目数据库主键 → UUID v7</strong>（除非有不可预测需求）</li>
+<li><strong>token / nonce / 文件名 → UUID v4</strong></li>
+<li>v7 比 v4 数据库性能快 3 倍，索引小一半</li>
+<li>标准已正式发布（RFC 9562, 2024）</li>
+</ul>
+<p><strong>立刻生成</strong>：<a href="/tools/uuid-generator.html">AI 工具盒子 - UUID 生成器</a></p>
+</article>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+</script>
+</body>
+</html>

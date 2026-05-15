@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IP 子网计算器 - IP 子网计算器 | CIDR 网络地址广播地址计算 | AI 工具盒子</title>
+<meta name="description" content="免费在线IP 子网计算器工具，CIDR 地址计算网络/广播/掩码/可用主机范围。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="子网计算器,cidr,ip地址,子网掩码,网络地址">
+<link rel="canonical" href="https://tools.talang.fun/tools/ip-subnet">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/ip-subnet">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/ip-subnet">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/ip-subnet">
+<meta property="og:title" content="IP 子网计算器 - IP 子网计算器 | CIDR 网络地址广播地址计算 | AI 工具盒子">
+<meta property="og:description" content="免费在线IP 子网计算器工具，CIDR 地址计算网络/广播/掩码/可用主机范围。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/ip-subnet">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "IP 子网计算器", "description": "免费在线IP 子网计算器工具，CIDR 地址计算网络/广播/掩码/可用主机范围。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/ip-subnet", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "CIDR 地址计算网络/广播/掩码/可用主机范围", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="https://tools.talang.fun/en/tools/ip-subnet" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🌐</div>
+  <h1>IP 子网计算器</h1>
+  <p>CIDR 地址计算网络/广播/掩码/可用主机范围</p>
+</div>
+<div class="tool-panel">
+<div><label>IP 地址 / CIDR:</label><div style="display:flex;gap:12px;align-items:center;margin-top:8px"><input type="text" id="ipCidr" value="192.168.1.0/24" style="flex:1;font-family:monospace"><button class="btn" id="ipCalc">计算</button></div></div><div id="ipOutput" style="margin-top:16px;"></div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>输入 IP 地址和 CIDR 前缀长度，计算子网掩码、网络地址、广播地址、可用主机范围和主机总数。</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>CIDR 地址解析</li><li>网络地址计算</li><li>广播地址计算</li><li>可用主机范围</li><li>子网掩码显示</li><li>可用主机数量</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">什么是 CIDR？</h3><p>无类别域间路由，用 IP/前缀长度表示子网，如 192.168.1.0/24。</p><h3 style="margin-top:20px;margin-bottom:8px">/24 有多少可用 IP？</h3><p>256 个总地址，去掉网络地址和广播地址，可用 254 个。</p><h3 style="margin-top:20px;margin-bottom:8px">支持 IPv6 吗？</h3><p>目前支持 IPv4，IPv6 可以后续添加。</p></section>
+<section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/base64" class="tool-card"><div class="icon">🔣</div><h3>Base64 编解码</h3><p>Base64 字符串和文件互转，UTF-8 安全</p></a><a href="/tools/url-encoder" class="tool-card"><div class="icon">🔗</div><h3>URL 编解码</h3><p>URL 编码与解码，处理特殊字符和中文</p></a></div></section>
+<script src="/assets/tools/_utils.js" defer></script>
+    <script src="/assets/tools/ip-subnet.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+</script>
+</body>
+</html>

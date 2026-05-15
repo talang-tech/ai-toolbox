@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QR Code Technology Explained: From Black Squares to Data Transmission | AI Toolbox</title>
+<meta name="description" content="How does QR code store data? What are the versions? What is error correction? This article explains the technical principles of QR Code.">
+<meta name="keywords" content="qr code technology,qrcode principles,qr code versions,qr code error correction">
+<link rel="canonical" href="https://tools.talang.fun/en/blog/07-qrcode">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/blog/07-qrcode">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/blog/07-qrcode">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/blog/07-qrcode">
+<meta property="og:title" content="QR Code Technology Explained: From Black Squares to Data Transmission | AI Toolbox">
+<meta property="og:description" content="How does QR code store data? What are the versions? What is error correction? This article explains the technical principles of QR Code.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/en/blog/07-qrcode">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "QR Code Technology Explained: From Black Squares to Data Transmission", "description": "How does QR code store data? What are the versions? What is error correction? This article explains the technical principles of QR Code.", "author": {"@type": "Organization", "name": "AI Toolbox"}, "datePublished": "2026-05-14", "url": "https://tools.talang.fun/en/blog/07-qrcode"}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/en/" class="logo"><span class="logo-icon">🛠️</span>AI Toolbox</a>
+    <nav class="nav">
+      <a href="/en/">Home</a>
+      <a href="/en/#tools">All Tools</a>
+      <a href="/en/blog/">Blog</a>
+      <a href="/en/about">About</a>
+      <a href="https://tools.talang.fun/blog/07-qrcode" class="lang-switch">中文</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<article class="article">
+  <p style="margin-bottom:8px"><a href="/en/blog/" style="color:var(--muted)">← Back to blog</a></p>
+  <h1>QR Code Technology Explained: From Black Squares to Data Transmission</h1>
+  <p style="color:var(--muted);margin-bottom:24px">2026-05-14 · 5 min read</p>
+  <h1>QR Code Technology Explained: From Black Squares to Data Transmission</h1>
+<p>We scan QR codes every day for payments, adding friends, and following accounts — but do you know how those black and white squares actually work?</p>
+<h2>Basic Structure of QR Code</h2>
+<p>A standard QR code consists of:</p>
+<ul>
+<li><strong>Position Detection Patterns</strong>: Large squares at three corners, allowing scanners to quickly locate position and orientation</li>
+<li><strong>Timing Patterns</strong>: Alternating black/white dotted lines, correcting perspective distortion</li>
+<li><strong>Format Information</strong>: Stores error correction level and mask pattern</li>
+<li><strong>Version Information</strong>: QR code size (Version 1 to Version 40)</li>
+<li><strong>Data and Error Correction Codewords</strong>: Actual data + redundant error correction data</li>
+</ul>
+<h2>QR Code Version System</h2>
+<p>QR codes have 40 sizes from Version 1 to Version 40:</p>
+<table><thead><tr>
+<th>Version</th>
+<th>Modules</th>
+<th>Max Capacity (numeric)</th>
+<th>Typical Use</th>
+</tr></thead><tbody>
+<tr>
+<td>1</td>
+<td>21×21</td>
+<td>41 chars</td>
+<td>Short URLs, phone numbers</td>
+</tr>
+<tr>
+<td>5</td>
+<td>37×37</td>
+<td>187 chars</td>
+<td>Business cards, WiFi passwords</td>
+</tr>
+<tr>
+<td>10</td>
+<td>57×57</td>
+<td>652 chars</td>
+<td>Complete text paragraphs</td>
+</tr>
+<tr>
+<td>20</td>
+<td>97×97</td>
+<td>2420 chars</td>
+<td>Short articles, JSON configs</td>
+</tr>
+<tr>
+<td>40</td>
+<td>177×177</td>
+<td>7089 chars</td>
+<td>Long text, small binary files</td>
+</tr>
+</tbody></table>
+<p>Higher versions mean larger QR codes and more data storage. Payment codes we scan daily are roughly Version 5-10.</p>
+<h2>Encoding Modes</h2>
+<p>QR codes support 4 encoding modes, automatically selecting the optimal one based on data type:</p>
+<table><thead><tr>
+<th>Mode</th>
+<th>Character Set</th>
+<th>Bits per Character</th>
+</tr></thead><tbody>
+<tr>
+<td>Numeric</td>
+<td>0-9</td>
+<td>3.33 bits</td>
+</tr>
+<tr>
+<td>Alphanumeric</td>
+<td>0-9, A-Z, space + $%*+-./:</td>
+<td>5.5 bits</td>
+</tr>
+<tr>
+<td>8-bit Byte</td>
+<td>ISO-8859-1 / UTF-8</td>
+<td>8 bits</td>
+</tr>
+<tr>
+<td>Kanji</td>
+<td>Chinese/Japanese characters</td>
+<td>13 bits</td>
+</tr>
+</tbody></table>
+<p>This is why <strong>the same size QR code can store far more numbers than Chinese characters</strong>. Each Chinese character needs 13 bits (~1.6 bytes), while a numeric digit only needs 3.33 bits.</p>
+<h2>Error Correction: Why Damaged QR Codes Still Scan?</h2>
+<p>One of QR code's most magical features is error correction. Even if partially covered, smudged, or printed poorly, QR codes can often still be read successfully.</p>
+<p>This is because QR codes store <strong>redundant data</strong>. Data is divided into blocks, and error correction codes are generated for each block using the Reed-Solomon algorithm.</p>
+<p>Four error correction levels:</p>
+<table><thead><tr>
+<th>Level</th>
+<th>Correction Ability</th>
+<th>Typical Use</th>
+</tr></thead><tbody>
+<tr>
+<td>L</td>
+<td>~7% error correction</td>
+<td>Clear printed documents</td>
+</tr>
+<tr>
+<td>M</td>
+<td>~15% error correction</td>
+<td>Payment codes (default)</td>
+</tr>
+<tr>
+<td>Q</td>
+<td>~25% error correction</td>
+<td>Outdoor billboards</td>
+</tr>
+<tr>
+<td>H</td>
+<td>~30% error correction</td>
+<td>Industrial environments</td>
+</tr>
+</tbody></table>
+<p>This is why many companies can put logos in the center of QR codes and they still work — the logo covers about 20% of the area, and Level H error correction can fully recover the data.</p>
+<h2>Design Considerations</h2>
+<h3>Why square?</h3>
+<p>Square QR codes are easiest to locate and calculate. Three corner detection patterns are sufficient to determine position and rotation.</p>
+<h3>Why black and white?</h3>
+<p>Black and white have the highest contrast, giving the best recognition rate in poor lighting or faded printing. Color QR codes look nicer but have significantly lower scan success rates.</p>
+<h3>Why the white border around QR codes?</h3>
+<p>The quiet zone helps scanners distinguish the QR code from the background. The standard requires at least 4 module widths of quiet zone. QR codes without this have much lower scan success.</p>
+<h2>Online Tools</h2>
+<p>Use our <a href="/tools/qr-code">QR Code Generator</a> and <a href="/tools/qr-decode">QR Code Decoder</a> to generate QR codes for any content, or decode QR codes from images — all processing happens locally in your browser, no data uploaded.</p>
+<h2>The Future of QR Codes</h2>
+<p>Although QR codes were invented over 25 years ago (1994 by Denso Wave in Japan), their applications continue to expand: from payments and health passes to digital collectibles and AR entry points.</p>
+<p>Compared to new technologies, QR codes have the advantage of <strong>extremely low technical barrier</strong>: receivers don't need to install any app — just a camera. Senders don't need internet to generate them. This makes QR codes the simplest bridge between the physical and digital worlds.</p>
+<hr>
+<p>Next time you scan a QR code, you'll know the technology behind those black and white squares!</p>
+</article>
+</main>
+<footer class="site-footer">
+  © 2026 AI Toolbox · Free online AI & developer tools · <a href='/en/about'>About</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('Copied!'));
+}
+</script>
+</body>
+</html>

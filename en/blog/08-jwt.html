@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Complete JWT Guide: Principles, Use Cases, and Security Best Practices | AI Toolbox</title>
+<meta name="description" content="What is JWT? What do Header, Payload, and Signature mean? How is JWT different from Cookie/Session? This article answers all.">
+<meta name="keywords" content="jwt tutorial,jwt principles,json web token,jwt security,jwt explained">
+<link rel="canonical" href="https://tools.talang.fun/en/blog/08-jwt">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/blog/08-jwt">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/blog/08-jwt">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/blog/08-jwt">
+<meta property="og:title" content="Complete JWT Guide: Principles, Use Cases, and Security Best Practices | AI Toolbox">
+<meta property="og:description" content="What is JWT? What do Header, Payload, and Signature mean? How is JWT different from Cookie/Session? This article answers all.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/en/blog/08-jwt">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Complete JWT Guide: Principles, Use Cases, and Security Best Practices", "description": "What is JWT? What do Header, Payload, and Signature mean? How is JWT different from Cookie/Session? This article answers all.", "author": {"@type": "Organization", "name": "AI Toolbox"}, "datePublished": "2026-05-14", "url": "https://tools.talang.fun/en/blog/08-jwt"}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/en/" class="logo"><span class="logo-icon">🛠️</span>AI Toolbox</a>
+    <nav class="nav">
+      <a href="/en/">Home</a>
+      <a href="/en/#tools">All Tools</a>
+      <a href="/en/blog/">Blog</a>
+      <a href="/en/about">About</a>
+      <a href="https://tools.talang.fun/blog/08-jwt" class="lang-switch">中文</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<article class="article">
+  <p style="margin-bottom:8px"><a href="/en/blog/" style="color:var(--muted)">← Back to blog</a></p>
+  <h1>Complete JWT Guide: Principles, Use Cases, and Security Best Practices</h1>
+  <p style="color:var(--muted);margin-bottom:24px">2026-05-14 · 5 min read</p>
+  <h1>Complete JWT Guide: Principles, Use Cases, and Security Best Practices</h1>
+<p>If you've done backend development or API integration, you're familiar with JWT. As the most popular cross-domain authentication scheme today, JWT has become standard in modern web applications. But do you really understand it?</p>
+<h2>What is JWT?</h2>
+<p>JWT (JSON Web Token) is an open standard (RFC 7519) for securely transmitting information between parties as a JSON object.</p>
+<p>A JWT is a Base64-encoded string consisting of three parts separated by dots:</p>
+<pre><code class="lang-">
+xxxxx.yyyyy.zzzzz
+</code></pre>
+<p>These are:</p>
+<ol>
+<li><strong>Header</strong></li>
+<li><strong>Payload</strong></li>
+<li><strong>Signature</strong></li>
+</ol>
+<h2>JWT Three Parts Explained</h2>
+<h3>1. Header</h3>
+<p>The Header typically consists of two parts: the token type (typ) and the signing algorithm (alg).</p>
+<pre><code class="lang-json">
+{
+  "alg": "HS256",
+  "typ": "JWT"
+}
+</code></pre>
+<p>Common signing algorithms:</p>
+<ul>
+<li><strong>HS256</strong> (HMAC-SHA256): Symmetric encryption, same key for signing and verification</li>
+<li><strong>RS256</strong> (RSA-SHA256): Asymmetric encryption, sign with private key, verify with public key</li>
+<li><strong>ES256</strong> (ECDSA-SHA256): Elliptic curve digital signature algorithm</li>
+</ul>
+<h3>2. Payload</h3>
+<p>The Payload contains claims — statements about an entity (typically the user) and additional data.</p>
+<p>Three types of claims:</p>
+<ul>
+<li><strong>Registered claims</strong>: Predefined, recommended but optional</li>
+</ul>
+<p>  - <code>iss</code> (issuer): Who issued this token</p>
+<p>  - <code>exp</code> (expiration time): When the token expires</p>
+<p>  - <code>sub</code> (subject): The subject</p>
+<p>  - <code>aud</code> (audience): Who the token is intended for</p>
+<p>  - <code>iat</code> (issued at): When it was issued</p>
+<ul>
+<li><strong>Public claims</strong>: Custom defined, should be registered or namespaced</li>
+<li><strong>Private claims</strong>: Application-specific custom claims</li>
+</ul>
+<p>A typical Payload:</p>
+<pre><code class="lang-json">
+{
+  "sub": "1234567890",
+  "name": "John Doe",
+  "role": "admin",
+  "iat": 1620000000,
+  "exp": 1620086400
+}
+</code></pre>
+<p><strong>Important reminder:</strong> <strong>The Payload is just Base64 encoded,</strong>NOT encrypted<strong>! Anyone who gets the JWT can decode and see the Payload contents.</strong>Never put sensitive information (passwords, credit card numbers, etc.) in the Payload.**</p>
+<h3>3. Signature</h3>
+<p>The Signature is created by taking the encoded Header + encoded Payload + a secret key, signed using the algorithm specified in the Header.</p>
+<p>Using HS256 as an example:</p>
+<pre><code class="lang-javascript">
+HMACSHA256(
+  base64UrlEncode(header) + "." +
+  base64UrlEncode(payload),
+  secret_key
+)
+</code></pre>
+<p>The signature's purpose:<strong>Verify the message hasn't been tampered with</strong>. If someone modifies the Header or Payload, the recalculated signature won't match the original.</p>
+<h2>JWT vs Session/Cookie</h2>
+<table><thead><tr>
+<th>Feature</th>
+<th>JWT</th>
+<th>Session/Cookie</th>
+</tr></thead><tbody>
+<tr>
+<td>Storage</td>
+<td>Client-side (LocalStorage/memory)</td>
+<td>Server-side</td>
+</tr>
+<tr>
+<td>Scalability</td>
+<td>Good (stateless)</td>
+<td>Poor (stateful)</td>
+</tr>
+<tr>
+<td>CORS support</td>
+<td>Native support</td>
+<td>Limited by same-origin policy</td>
+</tr>
+<tr>
+<td>CSRF protection</td>
+<td>Naturally immune</td>
+<td>Requires additional protection</td>
+</tr>
+<tr>
+<td>Revocation</td>
+<td>Relatively difficult</td>
+<td>Server can delete directly</td>
+</tr>
+<tr>
+<td>Data size</td>
+<td>Larger (hundreds of bytes)</td>
+<td>Very small (Session ID)</td>
+</tr>
+</tbody></table>
+<p>**Selection guide:</p>
+<ul>
+<li>✅ Choose JWT: Cross-origin APIs, mobile APIs, microservices</li>
+<li>✅ Choose Session: Traditional web apps, financial-grade security, need immediate revocation</li>
+</ul>
+<h2>Common JWT Use Cases</h2>
+<h3>Scenario 1: User Authentication</h3>
+<p>After successful login, the server issues a JWT. Subsequent requests carry the JWT, and the server verifies the signature to confirm user identity.</p>
+<pre><code class="lang-">
+Authorization: Bearer &lt;token&gt;
+</code></pre>
+<h3>Scenario 2: Information Exchange</h3>
+<p>Securely pass information between services. For example, microservice A calls microservice B, carrying a JWT to prove identity.</p>
+<h3>Scenario 3: One-time Tokens</h3>
+<p>Password reset links, email verification links, etc. JWT carries expiration time, server just needs to verify signature.</p>
+<h2>JWT Security Best Practices</h2>
+<h3>1. Never put sensitive information in Payload</h3>
+<p>Base64 is NOT encryption! Anyone can decode it.</p>
+<h3>2. Set reasonable expiration times</h3>
+<pre><code class="lang-json">
+{
+  "exp": Math.floor(Date.now() / 1000) + 3600  // 1 hour expiry
+}
+</code></pre>
+<p>Short-lived access token + Refresh Token is best practice.</p>
+<h3>3. Use HTTPS</h3>
+<p>If JWT is intercepted during transmission, attackers can use it directly. Always transmit over HTTPS.</p>
+<h3>4. Choose appropriate signing algorithm</h3>
+<ul>
+<li>Single service: HS256 is sufficient (good performance)</li>
+<li>Multi-service/third-party verification: RS256 (only issuer has private key)</li>
+</ul>
+<h3>5. Don't store JWT in LocalStorage (frontend)</h3>
+<p>LocalStorage is vulnerable to XSS attacks.</p>
+<p>✅ Recommendations:</p>
+<ul>
+<li>In-memory storage (SPA apps)</li>
+<li>HttpOnly Cookie (traditional web apps)</li>
+</ul>
+<h3>6. Implement token revocation mechanism</h3>
+<p>JWT is stateless and can't be directly revoked after issuance. Common solutions:</p>
+<ul>
+<li>Short expiration times</li>
+<li>Revocation blacklist (Redis)</li>
+<li>Version number mechanism</li>
+</ul>
+<h2>Common JWT Misconceptions</h2>
+<p>**Myth 1: JWT is encrypted, very secure</p>
+<p>❌ Wrong. JWT is encoding + signature,<strong>NOT encryption</strong>. Contents are plainly visible.</p>
+<p>**Myth 2: JWT is more secure than Session</p>
+<p>❌ Not necessarily. Each has pros and cons depending on implementation. Session with HttpOnly + Secure Cookie is equally secure.</p>
+<p>**Myth 3: JWT should be stored in LocalStorage</p>
+<p>❌ LocalStorage can't defend against XSS. HttpOnly Cookie is recommended.</p>
+<h2>Online Tool</h2>
+<p>Use our <a href="/tools/jwt">JWT Decoder tool</a> to quickly decode JWT Header and Payload, view expiration time, issuer, and more.</p>
+<h2>Summary</h2>
+<p>JWT is a powerful yet simple standard. Understanding the three-part structure, understanding that signature ≠ encryption, understanding use cases, you can use JWT well.</p>
+<p>Remember three core principles:</p>
+<ol>
+<li>**JWT is NOT encryption</li>
+<li>**Set expiration times</li>
+<li>**Transmit over HTTPS</li>
+</ol>
+<hr>
+<p>Next time you use a JWT, decode it with our tool to see what's inside!</p>
+</article>
+</main>
+<footer class="site-footer">
+  © 2026 AI Toolbox · Free online AI & developer tools · <a href='/en/about'>About</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('Copied!'));
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JSONPath Extractor - JSONPath Extractor | Online JSON Path Query Tool | AI Toolbox</title>
+<meta name="description" content="Free online jsonpath extractor. Extract data from JSON using $.path syntax. Fast, secure, and works in your browser without downloading.">
+<meta name="keywords" content="jsonpath extractor,json path,json extract,json field extract">
+<link rel="canonical" href="https://tools.talang.fun/en/tools/jsonpath">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/jsonpath">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/jsonpath">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/jsonpath">
+<meta property="og:title" content="JSONPath Extractor - JSONPath Extractor | Online JSON Path Query Tool | AI Toolbox">
+<meta property="og:description" content="Free online jsonpath extractor. Extract data from JSON using $.path syntax. Fast, secure, and works in your browser without downloading.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/en/tools/jsonpath">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "JSONPath Extractor", "description": "Free online jsonpath extractor. Extract data from JSON using $.path syntax. Fast, secure, and works in your browser without downloading.", "url": "https://tools.talang.fun/en/tools/jsonpath", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "Extract data from JSON using $.path syntax", "inLanguage": "en", "author": {"@type": "Organization", "name": "AI Toolbox"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/en/" class="logo"><span class="logo-icon">🛠️</span>AI Toolbox</a>
+    <nav class="nav">
+      <a href="/en/">Home</a>
+      <a href="/en/#tools">All Tools</a>
+      <a href="/en/blog/">Blog</a>
+      <a href="/en/about">About</a>
+      <a href="https://tools.talang.fun/tools/jsonpath" class="lang-switch">中文</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🔍</div>
+  <h1>JSONPath Extractor</h1>
+  <p>Extract data from JSON using $.path syntax</p>
+</div>
+<div class="tool-panel">
+<div><label>JSON data:</label><textarea id="jpJson" style="min-height:180px;font-family:monospace">{"user":{"name":"Alice","age":30,"emails":["a@b.com","c@d.com"]}}</textarea></div><div style="margin-top:12px"><label>JSONPath (e.g. $.user.emails[0]):</label><div style="display:flex;gap:12px;align-items:center;margin-top:8px"><input type="text" id="jpPath" value="$.user.emails[0]" style="flex:1"><button class="btn" id="jpExtract">Extract</button></div></div><div style="margin-top:16px"><label>Result:</label><textarea id="jpOutput" readonly style="min-height:180px;font-family:monospace;background:var(--bg)"></textarea></div><div style="margin-top:8px"><button class="btn btn-secondary" id="jpCopy">Copy Result</button></div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>About this tool</h2>
+  <p>JSONPath is like XPath for JSON - use path expressions to extract nested fields and array elements from complex JSON structures.</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>Key Features</h2><ul><li>$ root path syntax support</li><li>Dot and bracket notation</li><li>Filter expression support</li><li>Array slicing and indexing</li><li>Wildcard support</li><li>Real-time extraction preview</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>Frequently Asked Questions</h2><h3 style="margin-top:20px;margin-bottom:8px">What's the relation between JSONPath and XPath?</h3><p>JSONPath is XPath for JSON, similar syntax but simpler.</p><h3 style="margin-top:20px;margin-bottom:8px">Are filter expressions supported?</h3><p>Yes, ?() filter expressions are supported, e.g., $.items[?(@.price > 100)].</p><h3 style="margin-top:20px;margin-bottom:8px">Can it extract deeply nested fields?</h3><p>Yes, JSONPath supports any nesting level.</p></section>
+<section class="related"><h3>Related Tools</h3><div class="tools-grid"><a href="/en/tools/json-formatter" class="tool-card"><div class="icon">{ }</div><h3>JSON Formatter</h3><p>Beautify, minify, and validate JSON with precise error location</p></a><a href="/en/tools/json-csv" class="tool-card"><div class="icon">🔄</div><h3>JSON ↔ CSV Converter</h3><p>Bidirectional JSON array ↔ CSV table conversion, supports complex values with commas/quotes</p></a></div></section>
+<script src="/assets/tools/_utils.js" defer></script>
+    <script src="/assets/tools/jsonpath.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI Toolbox · Free online AI & developer tools · <a href='/en/about'>About</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('Copied!'));
+}
+</script>
+</body>
+</html>

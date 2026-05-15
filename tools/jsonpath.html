@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JSONPath 提取 - JSONPath 提取 | 在线 JSON 路径查询工具 | AI 工具盒子</title>
+<meta name="description" content="免费在线JSONPath 提取工具，用 $.path 语法快速从 JSON 中提取需要的数据。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="jsonpath,json路径提取,json提取,json字段提取,jmespath">
+<link rel="canonical" href="https://tools.talang.fun/tools/jsonpath">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/jsonpath">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/jsonpath">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/jsonpath">
+<meta property="og:title" content="JSONPath 提取 - JSONPath 提取 | 在线 JSON 路径查询工具 | AI 工具盒子">
+<meta property="og:description" content="免费在线JSONPath 提取工具，用 $.path 语法快速从 JSON 中提取需要的数据。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/jsonpath">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "JSONPath 提取", "description": "免费在线JSONPath 提取工具，用 $.path 语法快速从 JSON 中提取需要的数据。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/jsonpath", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "用 $.path 语法快速从 JSON 中提取需要的数据", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="https://tools.talang.fun/en/tools/jsonpath" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🔍</div>
+  <h1>JSONPath 提取</h1>
+  <p>用 $.path 语法快速从 JSON 中提取需要的数据</p>
+</div>
+<div class="tool-panel">
+<div><label>JSON 数据:</label><textarea id="jpJson" style="min-height:180px;font-family:monospace">{"user":{"name":"Alice","age":30,"emails":["a@b.com","c@d.com"]}}</textarea></div><div style="margin-top:12px"><label>JSONPath (如 $.user.emails[0]):</label><div style="display:flex;gap:12px;align-items:center;margin-top:8px"><input type="text" id="jpPath" value="$.user.emails[0]" style="flex:1"><button class="btn" id="jpExtract">提取 Extract</button></div></div><div style="margin-top:16px"><label>结果:</label><textarea id="jpOutput" readonly style="min-height:180px;font-family:monospace;background:var(--bg)"></textarea></div><div style="margin-top:8px"><button class="btn btn-secondary" id="jpCopy">复制结果</button></div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>JSONPath 是 JSON 数据的「XPath」，用路径表达式从复杂 JSON 中提取嵌套字段、数组元素。</p><p>支持：$ 根节点、.key 取属性、[0] 取下标、[*] 取全部、条件过滤等</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>$ 根路径语法支持</li><li>点表示法和括号表示法</li><li>条件过滤表达式</li><li>数组切片和索引</li><li>通配符支持</li><li>实时提取预览</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">JSONPath 和 XPath 有什么关系？</h3><p>JSONPath 是 JSON 版的 XPath，语法风格类似但更简单。</p><h3 style="margin-top:20px;margin-bottom:8px">支持过滤表达式吗？</h3><p>支持 ?() 条件过滤，如 $.items[?(@.price > 100)]。</p><h3 style="margin-top:20px;margin-bottom:8px">可以提取嵌套很深的字段吗？</h3><p>可以，JSONPath 支持任意层级的嵌套。</p></section>
+<section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/json-formatter" class="tool-card"><div class="icon">{ }</div><h3>JSON 格式化</h3><p>JSON 美化、压缩、校验，错误位置精准定位</p></a><a href="/tools/json-csv" class="tool-card"><div class="icon">🔄</div><h3>JSON ↔ CSV 转换</h3><p>JSON 数组与 CSV 表格格式双向转换，支持含逗号/引号的复杂内容</p></a></div></section>
+<script src="/assets/tools/_utils.js" defer></script>
+    <script src="/assets/tools/jsonpath.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+</script>
+</body>
+</html>

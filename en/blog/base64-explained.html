@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Base64 Explained - How It Works, 5 Real Use Cases, and Common Pitfalls | AI Toolbox</title>
+<meta name="description" content="A clear guide to how Base64 encoding works, 5 real-world use cases (APIs, email, Data URLs, JWT, etc.), and the gotchas developers hit.">
+<meta name="keywords" content="Base64, base64 encoding, base64 decoding, how base64 works, Data URL, JWT, online base64 tool">
+<link rel="canonical" href="https://tools.talang.fun/en/blog/base64-explained">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/blog/base64-explained">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/blog/base64-explained">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/blog/base64-explained">
+<meta property="og:title" content="Base64 Explained - How It Works, 5 Real Use Cases, and Common Pitfalls | AI Toolbox">
+<meta property="og:description" content="A clear guide to how Base64 encoding works, 5 real-world use cases (APIs, email, Data URLs, JWT, etc.), and the gotchas developers hit.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/en/blog/base64-explained">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Base64 Explained - How It Works, 5 Real Use Cases, and Common Pitfalls", "description": "A clear guide to how Base64 encoding works, 5 real-world use cases (APIs, email, Data URLs, JWT, etc.), and the gotchas developers hit.", "author": {"@type": "Organization", "name": "AI Toolbox"}, "datePublished": "2026-05-11", "url": "https://tools.talang.fun/en/blog/base64-explained"}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/en/" class="logo"><span class="logo-icon">🛠️</span>AI Toolbox</a>
+    <nav class="nav">
+      <a href="/en/">Home</a>
+      <a href="/en/#tools">All Tools</a>
+      <a href="/en/blog/">Blog</a>
+      <a href="/en/about">About</a>
+      <a href="https://tools.talang.fun/blog/base64-explained" class="lang-switch">中文</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<article class="article">
+  <p style="margin-bottom:8px"><a href="/en/blog/" style="color:var(--muted)">← Back to blog</a></p>
+  <h1>Base64 Explained - How It Works, 5 Real Use Cases, and Common Pitfalls</h1>
+  <p style="color:var(--muted);margin-bottom:24px">2026-05-11 · 9 min read</p>
+  <p>A common misconception: Base64 is <strong>not encryption</strong>. It's just an <strong>encoding</strong>. Anyone who sees a Base64 string can decode it instantly. Remember that first.</p>
+<p>So what is it actually for?</p>
+<h2>1. Why Base64 Exists</h2>
+<p>All data in computers is binary. But many legacy transport channels — email, HTTP headers, URLs — only support <strong>printable ASCII</strong> (~95 chars).</p>
+<p>If you stuff raw binary into an email, you'll hit:</p>
+<ol>
+<li>Bytes interpreted as control chars (<code>0x00</code> = string terminator)</li>
+<li>Encoding conversion mangling bytes (UTF-8/UTF-16/Latin1)</li>
+<li>Newline conversion <code>\n</code> ↔ <code>\r\n</code></li>
+</ol>
+<p>Base64 converts arbitrary binary to <strong>64 printable chars</strong> (A-Z, a-z, 0-9, <code>+</code>, <code>/</code>), at a 33% size cost.</p>
+<h2>2. How Base64 Works (3-min version)</h2>
+<p>Core: <strong>3 bytes (24 bits) → 4 Base64 chars (24 bits)</strong></p>
+<p>Encoding "Cat":</p>
+<ol>
+<li>ASCII → binary:</li>
+</ol>
+<p>   - C = 67 = <code>01000011</code></p>
+<p>   - a = 97 = <code>01100001</code></p>
+<p>   - t = 116 = <code>01110100</code></p>
+<p>   - Concat: <code>010000110110000101110100</code></p>
+<ol>
+<li>Split into 6-bit chunks:</li>
+</ol>
+<p>   - <code>010000</code> <code>110110</code> <code>000101</code> <code>110100</code></p>
+<p>   - Decimal: 16, 54, 5, 52</p>
+<ol>
+<li>Lookup Base64 alphabet:</li>
+</ol>
+<p>   - 16=Q, 54=2, 5=F, 52=0</p>
+<p>   - Result: <code>Q2F0</code></p>
+<p><strong>So <code>Cat</code> in Base64 is <code>Q2F0</code></strong>.</p>
+<p>When input length isn't a multiple of 3, pad with <code>=</code>:</p>
+<table><thead><tr>
+<th>Input</th>
+<th>Base64</th>
+</tr></thead><tbody>
+<tr>
+<td>Cat</td>
+<td>Q2F0</td>
+</tr>
+<tr>
+<td>Cats</td>
+<td>Q2F0cw==</td>
+</tr>
+<tr>
+<td>Catsy</td>
+<td>Q2F0c3k=</td>
+</tr>
+</tbody></table>
+<h2>3. 5 Real Use Cases</h2>
+<h3>Case 1: Binary in JSON APIs (images, PDFs)</h3>
+<p>Many REST APIs only accept JSON, no multipart. Solution — Base64 the binary:</p>
+<pre><code class="lang-json">
+{
+  "filename": "avatar.png",
+  "data": "iVBORw0KGgoAAAANSUhEUgAA..."
+}
+</code></pre>
+<p>⚠️ <strong>Cost</strong>: 33% bigger payload, slower transit and parsing. Prefer multipart when available.</p>
+<h3>Case 2: Inline Images in HTML/CSS (Data URLs)</h3>
+<pre><code class="lang-html">
+&lt;img src="data:image/png;base64,iVBORw0KGgo..."&gt;
+</code></pre>
+<pre><code class="lang-css">
+.icon {
+  background: url('data:image/svg+xml;base64,PHN2Zy...');
+}
+</code></pre>
+<p><strong>Good for tiny icons</strong> (< 5KB), saves HTTP requests. But big files bloat HTML and slow first paint.</p>
+<h3>Case 3: HTTP Basic Auth</h3>
+<pre><code class="lang-">
+Authorization: Basic dXNlcjpwYXNz
+</code></pre>
+<p><code>dXNlcjpwYXNz</code> decodes to <code>user:pass</code>.</p>
+<p>⚠️ <strong>Encoding, not encryption!</strong> Basic Auth requires HTTPS or you're sending plaintext.</p>
+<h3>Case 4: JWT (JSON Web Token)</h3>
+<p>All three segments are Base64URL:</p>
+<pre><code class="lang-">
+eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMjM0In0.SflKxw...
+</code></pre>
+<p>Each part is <code>Base64URL(JSON)</code>, joined by <code>.</code>.</p>
+<p>Note: <strong>Base64URL</strong>, not standard Base64 — <code>+</code> → <code>-</code>, <code>/</code> → <code>_</code>, no <code>=</code> padding.</p>
+<h3>Case 5: Email Attachments (MIME)</h3>
+<p>Email originally supported only 7-bit ASCII. To send images, MIME uses Base64:</p>
+<pre><code class="lang-">
+Content-Type: image/jpeg
+Content-Transfer-Encoding: base64
+
+/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAg...
+</code></pre>
+<h2>4. Base64 Variants</h2>
+<table><thead><tr>
+<th>Variant</th>
+<th>Characters</th>
+<th>Use case</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Base64 standard</strong></td>
+<td>A-Z, a-z, 0-9, +, /</td>
+<td>RFC 4648, email, API</td>
+</tr>
+<tr>
+<td><strong>Base64URL</strong></td>
+<td>+ → -, / → _</td>
+<td>URLs, JWT, filenames</td>
+</tr>
+<tr>
+<td><strong>Base32</strong></td>
+<td>A-Z, 2-7</td>
+<td>Case-insensitive (TOTP)</td>
+</tr>
+<tr>
+<td><strong>Base58</strong></td>
+<td>No 0/O/I/l confusables</td>
+<td>Bitcoin addresses</td>
+</tr>
+</tbody></table>
+<h2>5. Common Pitfalls</h2>
+<h3>Pitfall 1: Base64 is not encryption</h3>
+<p>The classic mistake. <strong>Base64 is public, reversible, deterministic</strong>. Anyone can decode in 1 second. For confidentiality use AES or RSA.</p>
+<h3>Pitfall 2: UTF-8 strings get bigger</h3>
+<p>A Chinese character is 3 bytes in UTF-8, then ~4 chars in Base64:</p>
+<pre><code class="lang-">
+"你好"  (6 UTF-8 bytes)  →  "5L2g5aW9" (8 Base64 chars)
+</code></pre>
+<p>Counted by <strong>bytes</strong>, not characters.</p>
+<h3>Pitfall 3: URLs need Base64URL</h3>
+<p>Standard Base64's <code>+</code>, <code>/</code>, <code>=</code> are special in URLs:</p>
+<ul>
+<li><code>+</code> is interpreted as space</li>
+<li><code>/</code> is path separator</li>
+<li><code>=</code> is query assignment</li>
+</ul>
+<p>Always use Base64URL variant.</p>
+<h3>Pitfall 4: Newline compatibility</h3>
+<p>RFC 2045 (email) requires linebreak every 76 chars. RFC 4648 (general) doesn't.</p>
+<p>Most decoders tolerate both, but not all. If decoding fails, <code>strip()</code> whitespace first.</p>
+<h3>Pitfall 5: Size bloat</h3>
+<p>Base64 size ≈ original × 4/3 + padding. A 10MB file becomes ~13.3MB.</p>
+<p>For frequent transit, consider <a href="https://github.com/google/brotli">Brotli</a> or <a href="https://protobuf.dev">Protobuf</a>.</p>
+<h2>6. Recommended Tool</h2>
+<p>👉 <a href="/en/tools/base64.html">AI Toolbox Base64 Tool</a>:</p>
+<ul>
+<li>String ↔ Base64</li>
+<li>File ↔ Base64 (drag & drop)</li>
+<li>Base64URL mode</li>
+<li>Auto-detect encoding type</li>
+<li><strong>Fully local processing</strong> — no upload</li>
+</ul>
+<h2>TL;DR</h2>
+<ul>
+<li>Base64 = binary into text channels safely. <strong>Not encryption.</strong></li>
+<li>33% size bloat</li>
+<li>5 cases: API, Data URL, Basic Auth, JWT, email attachments</li>
+<li>Use Base64URL variant in URLs</li>
+</ul>
+<p><strong>Try it</strong>: <a href="/en/tools/base64.html">AI Toolbox Base64</a></p>
+</article>
+</main>
+<footer class="site-footer">
+  © 2026 AI Toolbox · Free online AI & developer tools · <a href='/en/about'>About</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('Copied!'));
+}
+</script>
+</body>
+</html>

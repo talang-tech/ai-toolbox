@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JSON 格式化完全指南：原理、工具对比与开发者必知技巧 | AI 工具盒子</title>
+<meta name="description" content="详解 JSON 数据结构、格式化原理、在线工具与本地工具的优劣对比，以及 5 个高级技巧（JSONPath、JSON Lines、Schema 校验等）。">
+<meta name="keywords" content="JSON 格式化,JSON 在线工具,JSON Schema,JSONPath,JSON Lines,JSON 美化,开发者工具">
+<link rel="canonical" href="https://tools.talang.fun/blog/json-formatter-guide">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/blog/json-formatter-guide">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/blog/json-formatter-guide">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/blog/json-formatter-guide">
+<meta property="og:title" content="JSON 格式化完全指南：原理、工具对比与开发者必知技巧 | AI 工具盒子">
+<meta property="og:description" content="详解 JSON 数据结构、格式化原理、在线工具与本地工具的优劣对比，以及 5 个高级技巧（JSONPath、JSON Lines、Schema 校验等）。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/blog/json-formatter-guide">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "JSON 格式化完全指南：原理、工具对比与开发者必知技巧", "description": "详解 JSON 数据结构、格式化原理、在线工具与本地工具的优劣对比，以及 5 个高级技巧（JSONPath、JSON Lines、Schema 校验等）。", "author": {"@type": "Organization", "name": "AI 工具盒子"}, "datePublished": "2026-05-12", "url": "https://tools.talang.fun/blog/json-formatter-guide"}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="https://tools.talang.fun/en/blog/json-formatter-guide" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<article class="article">
+  <p style="margin-bottom:8px"><a href="/blog/" style="color:var(--muted)">← 返回博客</a></p>
+  <h1>JSON 格式化完全指南：原理、工具对比与开发者必知技巧</h1>
+  <p style="color:var(--muted);margin-bottom:24px">2026-05-12 · 10 分钟阅读</p>
+  <p>JSON（JavaScript Object Notation）是 21 世纪最重要的数据交换格式 —— 几乎所有 Web API、配置文件、NoSQL 数据库都在用它。但很多开发者对 JSON 的了解只停留在 "把对象转成字符串"。</p>
+<p>这篇文章带你系统理解 JSON 格式化的方方面面。</p>
+<h2>一、JSON 是什么？</h2>
+<p>JSON 由 Douglas Crockford 在 2001 年从 JavaScript 字面量语法中提取出来。它有 6 种数据类型：</p>
+<pre><code class="lang-json">
+{
+  "string": "你好",
+  "number": 3.14,
+  "boolean": true,
+  "null": null,
+  "array": [1, 2, 3],
+  "object": {"nested": "value"}
+}
+</code></pre>
+<p><strong>注意</strong>：</p>
+<ul>
+<li>字符串必须用<strong>双引号</strong>（不能用单引号）</li>
+<li>不能有<strong>尾随逗号</strong></li>
+<li>不支持<strong>注释</strong>（这是 JSON5 / JSONC 的扩展）</li>
+<li><code>key</code> 必须是字符串</li>
+</ul>
+<h2>二、为什么需要"格式化"JSON？</h2>
+<p>API 返回或日志中的 JSON 通常是<strong>压缩格式</strong>，难以阅读：</p>
+<pre><code class="lang-json">
+{"user":{"id":42,"name":"Alice","emails":["a@b.com","c@d.com"]},"created_at":"2026-05-12T10:00:00Z"}
+</code></pre>
+<p>格式化后：</p>
+<pre><code class="lang-json">
+{
+  "user": {
+    "id": 42,
+    "name": "Alice",
+    "emails": [
+      "a@b.com",
+      "c@d.com"
+    ]
+  },
+  "created_at": "2026-05-12T10:00:00Z"
+}
+</code></pre>
+<p>格式化做的事：</p>
+<ol>
+<li><strong>缩进</strong>（通常 2 或 4 空格）</li>
+<li><strong>换行</strong></li>
+<li><strong>键排序</strong>（可选）</li>
+<li><strong>类型校验</strong>（顺便发现错误）</li>
+</ol>
+<h2>三、在线工具 vs 本地工具：哪个更好？</h2>
+<table><thead><tr>
+<th>维度</th>
+<th>在线工具</th>
+<th>VSCode 插件</th>
+<th>jq 命令行</th>
+</tr></thead><tbody>
+<tr>
+<td>上手成本</td>
+<td>0</td>
+<td>低</td>
+<td>高</td>
+</tr>
+<tr>
+<td>速度</td>
+<td>快</td>
+<td>极快</td>
+<td>极快</td>
+</tr>
+<tr>
+<td>隐私</td>
+<td>⚠️ 看实现（服务端 vs 浏览器本地）</td>
+<td>✅ 完全本地</td>
+<td>✅ 完全本地</td>
+</tr>
+<tr>
+<td>大文件</td>
+<td>中（看实现）</td>
+<td>慢</td>
+<td>✅ 流式处理超大文件</td>
+</tr>
+<tr>
+<td>转换/查询</td>
+<td>少</td>
+<td>中</td>
+<td>✅ 强大的 JSONPath/jq 语法</td>
+</tr>
+<tr>
+<td>适合场景</td>
+<td>临时查看、分享</td>
+<td>日常编辑</td>
+<td>数据处理、脚本</td>
+</tr>
+</tbody></table>
+<p><strong>结论</strong>：</p>
+<ul>
+<li><strong>临时格式化</strong> → 用纯静态在线工具（如 <a href="/tools/json-formatter.html">AI 工具盒子的 JSON 格式化</a>，处理在浏览器本地）</li>
+<li><strong>日常开发</strong> → VSCode 内置功能（<code>Shift+Alt+F</code>）或 <a href="https://prettier.io">Prettier</a></li>
+<li><strong>数据管道</strong> → <code>jq</code>（Linux）或 PowerShell <code>ConvertFrom-Json</code></li>
+</ul>
+<p>⚠️ <strong>隐私警告</strong>：很多在线 JSON 工具会把你的数据 POST 到服务器！如果你的 JSON 包含 token、密码、用户数据，请只用纯前端工具或本地 IDE。</p>
+<h2>四、5 个开发者必知的高级技巧</h2>
+<h3>1. JSONPath：用一行查询深层数据</h3>
+<pre><code class="lang-">
+$.users[?(@.age &gt; 18)].name
+</code></pre>
+<p>含义：所有年龄大于 18 的用户的名字。类似 XPath 之于 XML。</p>
+<h3>2. JSON Lines（NDJSON）：日志和流式数据</h3>
+<p>每行是一个独立 JSON 对象，没有外层数组：</p>
+<pre><code class="lang-">
+{"event":"login","user":1,"ts":1700000000}
+{"event":"click","user":1,"ts":1700000010}
+{"event":"logout","user":1,"ts":1700000100}
+</code></pre>
+<p>优点：</p>
+<ul>
+<li>可流式追加（不用解析整个文件）</li>
+<li>可被 grep/awk 处理</li>
+<li>适合日志、ETL</li>
+</ul>
+<p>文件扩展名通常是 <code>.jsonl</code> 或 <code>.ndjson</code>。</p>
+<h3>3. JSON Schema：自动校验数据结构</h3>
+<pre><code class="lang-json">
+{
+  "type": "object",
+  "required": ["email", "age"],
+  "properties": {
+    "email": {"type": "string", "format": "email"},
+    "age": {"type": "integer", "minimum": 0, "maximum": 150}
+  }
+}
+</code></pre>
+<p>用 <a href="https://ajv.js.org/">Ajv</a>（JS）或 <a href="https://github.com/Julian/jsonschema">jsonschema</a>（Python）校验。</p>
+<h3>4. JSON Pointer：URL 风格定位</h3>
+<pre><code class="lang-">
+/user/emails/0  →  user.emails[0]
+</code></pre>
+<p>RFC 6901 标准。GitHub API、JSON Patch 都在用。</p>
+<h3>5. JSON5：人类友好的扩展</h3>
+<p>JSON5 允许：</p>
+<ul>
+<li>单引号字符串</li>
+<li>注释</li>
+<li>尾随逗号</li>
+<li>多行字符串</li>
+<li>十六进制数字</li>
+</ul>
+<p>很多配置文件（如 <code>tsconfig.json</code>）实际是 JSON5。</p>
+<h2>五、常见的 JSON 错误和修复</h2>
+<table><thead><tr>
+<th>错误</th>
+<th>例子</th>
+<th>修复</th>
+</tr></thead><tbody>
+<tr>
+<td>单引号</td>
+<td><code>{'a':1}</code></td>
+<td>改双引号 <code>{"a":1}</code></td>
+</tr>
+<tr>
+<td>尾随逗号</td>
+<td><code>[1,2,]</code></td>
+<td>删除 → <code>[1,2]</code></td>
+</tr>
+<tr>
+<td>未引号的 key</td>
+<td><code>{a:1}</code></td>
+<td><code>{"a":1}</code></td>
+</tr>
+<tr>
+<td><code>undefined</code> 值</td>
+<td><code>{"a":undefined}</code></td>
+<td>改为 <code>null</code></td>
+</tr>
+<tr>
+<td>注释</td>
+<td><code>{"a":1 // 注释}</code></td>
+<td>删除</td>
+</tr>
+<tr>
+<td>大数字精度丢失</td>
+<td><code>{"id":9007199254740993}</code></td>
+<td>用字符串 <code>"9007199254740993"</code></td>
+</tr>
+</tbody></table>
+<p>⚠️ <strong>JS 的 number 是 IEEE 754 双精度</strong>，安全整数范围 ±2^53。超出会丢精度（很多公司的 ID 系统会踩这个坑）。</p>
+<h2>六、JSON 格式化工具横评</h2>
+<p>我们对比了主流的 6 个在线 JSON 工具：</p>
+<table><thead><tr>
+<th>工具</th>
+<th>隐私</th>
+<th>大文件 (10MB)</th>
+<th>树形展开</th>
+<th>校验提示</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>AI 工具盒子</strong></td>
+<td>⭐⭐⭐⭐⭐ 纯本地</td>
+<td>流畅</td>
+<td>✅</td>
+<td>✅ 行号定位错误</td>
+</tr>
+<tr>
+<td>jsonformatter.org</td>
+<td>⭐⭐ 服务端</td>
+<td>卡顿</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>jsoneditoronline.org</td>
+<td>⭐⭐⭐⭐ 本地</td>
+<td>流畅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>beautifier.io</td>
+<td>⭐⭐⭐⭐ 本地</td>
+<td>中</td>
+<td>❌</td>
+<td>简单</td>
+</tr>
+<tr>
+<td>jsonlint.com</td>
+<td>⭐⭐ 服务端</td>
+<td>卡顿</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+</tbody></table>
+<p>👉 推荐 <a href="/tools/json-formatter.html">AI 工具盒子的 JSON 格式化器</a>：纯本地、零延迟、支持 minify 和折叠。</p>
+<h2>总结</h2>
+<ul>
+<li>JSON 是 6 种类型 + 严格语法</li>
+<li>在线工具最大的坑是隐私（你的数据可能在被服务端记录）</li>
+<li>学一点 jq、JSONPath、JSON Schema 能让数据处理效率翻倍</li>
+<li>警惕大整数精度问题</li>
+</ul>
+<p><strong>立刻去用</strong>：<a href="/tools/json-formatter.html">AI 工具盒子 - JSON 格式化器</a></p>
+</article>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+</script>
+</body>
+</html>

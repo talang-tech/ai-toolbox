@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SQL 格式化 - SQL 格式化 | 在线工具 | AI 工具盒子</title>
+<meta name="description" content="免费在线SQL 格式化工具，在线格式化 SQL 查询语句，美化 SQL 代码。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="sql格式化,sql美化,在线sql格式化,sql format,sql代码美化">
+<link rel="canonical" href="https://tools.talang.fun/tools/sql-formatter">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/sql-formatter">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/sql-formatter">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/sql-formatter">
+<meta property="og:title" content="SQL 格式化 - SQL 格式化 | 在线工具 | AI 工具盒子">
+<meta property="og:description" content="免费在线SQL 格式化工具，在线格式化 SQL 查询语句，美化 SQL 代码。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/sql-formatter">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "SQL 格式化", "description": "免费在线SQL 格式化工具，在线格式化 SQL 查询语句，美化 SQL 代码。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/sql-formatter", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "在线格式化 SQL 查询语句，美化 SQL 代码", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="https://tools.talang.fun/en/tools/sql-formatter" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🔧</div>
+  <h1>SQL 格式化</h1>
+  <p>在线格式化 SQL 查询语句，美化 SQL 代码</p>
+</div>
+<div class="tool-panel">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px"><div><textarea id="input" style="min-height:400px;font-family:monospace;font-size:13px" placeholder="输入..."></textarea></div><div><textarea id="output" style="min-height:400px;font-family:monospace;font-size:13px" readonly placeholder="结果..."></textarea></div></div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>免费在线 SQL 格式化工具。支持 MySQL、PostgreSQL、SQL Server、Oracle 等多种数据库语法。一键美化 SQL 代码，支持大小写转换、缩进调整、紧凑模式。</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>格式化 SELECT、INSERT、UPDATE、DELETE 语句</li><li>支持 MySQL、PostgreSQL、SQL Server、SQLite 语法</li><li>关键字大写/小写选项</li><li>紧凑模式和展开模式</li><li>实时语法验证</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">支持哪些 SQL 方言？</h3><p>支持所有主流 SQL 方言，包括 MySQL、PostgreSQL、SQL Server、Oracle、SQLite 和 ANSI SQL 标准。</p><h3 style="margin-top:20px;margin-bottom:8px">可以压缩 SQL 吗？</h3><p>可以！使用紧凑模式可删除空格和注释，适用于生产环境的 SQL 脚本。</p></section>
+
+<script src="/assets/tools/_utils.js" defer></script>
+    <script src="/assets/tools/sql-formatter.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+</script>
+</body>
+</html>

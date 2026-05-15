@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>颜色转换 - 颜色转换 | HEX/RGB/HSL 在线互转 | AI 工具盒子</title>
+<meta name="description" content="免费在线颜色转换工具，Hex 十六进制颜色码与 RGB 互转，实时预览。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="颜色转换,hex转rgb,rgb转hex,颜色代码,网页颜色">
+<link rel="canonical" href="https://tools.talang.fun/tools/color-converter">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/color-converter">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/color-converter">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/color-converter">
+<meta property="og:title" content="颜色转换 - 颜色转换 | HEX/RGB/HSL 在线互转 | AI 工具盒子">
+<meta property="og:description" content="免费在线颜色转换工具，Hex 十六进制颜色码与 RGB 互转，实时预览。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/color-converter">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "颜色转换", "description": "免费在线颜色转换工具，Hex 十六进制颜色码与 RGB 互转，实时预览。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/color-converter", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "Hex 十六进制颜色码与 RGB 互转，实时预览", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="https://tools.talang.fun/en/tools/color-converter" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🎨</div>
+  <h1>颜色转换</h1>
+  <p>Hex 十六进制颜色码与 RGB 互转，实时预览</p>
+</div>
+<div class="tool-panel">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:24px"><div><label>Hex 十六进制:</label><div class="input-row"><input type="text" id="colorHex" placeholder="#6366f1"></div><div style="margin-top:16px"><label>R (红 0-255):</label><input type="range" id="colorR" min="0" max="255" step="1" value="99" style="width:100%"> <span id="colorRVal" style="display:inline-block;width:40px">99</span></div><div style="margin-top:8px"><label>G (绿 0-255):</label><input type="range" id="colorG" min="0" max="255" step="1" value="102" style="width:100%"> <span id="colorGVal" style="display:inline-block;width:40px">102</span></div><div style="margin-top:8px"><label>B (蓝 0-255):</label><input type="range" id="colorB" min="0" max="255" step="1" value="241" style="width:100%"> <span id="colorBVal" style="display:inline-block;width:40px">241</span></div><div style="margin-top:16px"><button class="btn" id="colorSwap">复制 Hex</button></div></div><div style="display:flex;align-items:center;justify-content:center"><div id="colorPreview" style="width:180px;height:180px;border-radius:16px;border:2px solid var(--border);display:flex;align-items:center;justify-content:center;color:white;font-weight:600;font-size:14px;text-shadow:0 1px 2px rgba(0,0,0,0.5);box-shadow:0 8px 32px rgba(0,0,0,0.2)">—</div></div></div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>网页设计师和前端开发日常必备工具。输入 Hex 颜色码（#fff 或 #ffffff 格式），自动转 RGB；或输入 R/G/B 数值自动转 Hex。</p><p>实时预览颜色效果，一键复制。</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>HEX 十六进制转 RGB</li><li>RGB 转 HEX 十六进制</li><li>RGB 转 HSL</li><li>实时颜色预览</li><li>透明度支持</li><li>颜色拾取器</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">#000000 和 #000 是一样的吗？</h3><p>是的，#RGB 格式是 #RRGGBB 的简写，每个字符重复两次。</p><h3 style="margin-top:20px;margin-bottom:8px">什么是 HSL？</h3><p>Hue(色相 0-360°), Saturation(饱和度 0-100%), Lightness(亮度 0-100%)。</p><h3 style="margin-top:20px;margin-bottom:8px">透明度怎么表示？</h3><p>HEX 用 #RRGGBBAA 表示，RGB 用 rgba(r, g, b, a) 表示。</p></section>
+
+<script src="/assets/tools/_utils.js" defer></script>
+    <script src="/assets/tools/color-converter.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+</script>
+</body>
+</html>

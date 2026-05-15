@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JSONPath 完全教程：从入门到精通 | AI 工具盒子</title>
+<meta name="description" content="JSONPath 是 JSON 数据的 XPath，本文从基础语法到高级应用，配合大量实例，教你如何从复杂 JSON 中快速提取所需数据。">
+<meta name="keywords" content="jsonpath教程,jsonpath语法,json提取数据,jsonpath实例">
+<link rel="canonical" href="https://tools.talang.fun/blog/06-jsonpath">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/blog/06-jsonpath">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/blog/06-jsonpath">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/blog/06-jsonpath">
+<meta property="og:title" content="JSONPath 完全教程：从入门到精通 | AI 工具盒子">
+<meta property="og:description" content="JSONPath 是 JSON 数据的 XPath，本文从基础语法到高级应用，配合大量实例，教你如何从复杂 JSON 中快速提取所需数据。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/blog/06-jsonpath">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "JSONPath 完全教程：从入门到精通", "description": "JSONPath 是 JSON 数据的 XPath，本文从基础语法到高级应用，配合大量实例，教你如何从复杂 JSON 中快速提取所需数据。", "author": {"@type": "Organization", "name": "AI 工具盒子"}, "datePublished": "2026-05-14", "url": "https://tools.talang.fun/blog/06-jsonpath"}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="https://tools.talang.fun/en/blog/06-jsonpath" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<article class="article">
+  <p style="margin-bottom:8px"><a href="/blog/" style="color:var(--muted)">← 返回博客</a></p>
+  <h1>JSONPath 完全教程：从入门到精通</h1>
+  <p style="color:var(--muted);margin-bottom:24px">2026-05-14 · 5 分钟阅读</p>
+  <h1>JSONPath 完全教程：从入门到精通</h1>
+<p>JSONPath 是一种用于从 JSON 文档中提取数据的查询语言，相当于 XML 领域的 XPath。如果你经常需要处理 API 返回的 JSON 数据，JSONPath 能帮你节省大量手动解析的时间。</p>
+<h2>为什么需要 JSONPath？</h2>
+<p>假设你有这样一个 API 响应：</p>
+<pre><code class="lang-json">
+{
+  "store": {
+    "book": [
+      {"category": "编程", "author": "张三", "title": "Python 入门", "price": 89},
+      {"category": "编程", "author": "李四", "title": "Go 语言实战", "price": 99},
+      {"category": "文学", "author": "王五", "title": "人生海海", "price": 45}
+    ],
+    "bicycle": {"color": "红色", "price": 299}
+  }
+}
+</code></pre>
+<p>问题：如何<strong>快速提取所有价格小于 90 的书名</strong>？</p>
+<p>用 Python 写循环需要 5 行代码。用 JSONPath，只需要一句话：</p>
+<pre><code class="lang-">
+$.store.book[?(@.price &lt; 90)].title
+</code></pre>
+<h2>JSONPath 语法速查表</h2>
+<table><thead><tr>
+<th>语法</th>
+<th>含义</th>
+<th>示例</th>
+</tr></thead><tbody>
+<tr>
+<td><code>$</code></td>
+<td>根节点</td>
+<td><code>$</code> - 整个 JSON 对象</td>
+</tr>
+<tr>
+<td><code>@</code></td>
+<td>当前节点</td>
+<td><code>@.price</code> - 当前对象的 price 字段</td>
+</tr>
+<tr>
+<td><code>.key</code></td>
+<td>取子字段</td>
+<td><code>$.store</code> - store 字段的值</td>
+</tr>
+<tr>
+<td><code>..key</code></td>
+<td>递归查找</td>
+<td><code>$..price</code> - 所有层级中的 price 字段</td>
+</tr>
+<tr>
+<td><code>[index]</code></td>
+<td>取数组下标</td>
+<td><code>$.store.book[0]</code> - 第一本书</td>
+</tr>
+<tr>
+<td><code>[start:end]</code></td>
+<td>数组切片</td>
+<td><code>$.store.book[0:2]</code> - 前两本书</td>
+</tr>
+<tr>
+<td><code>[*]</code></td>
+<td>所有元素</td>
+<td><code>$.store.book[*]</code> - 所有书</td>
+</tr>
+<tr>
+<td><code>[?(condition)]</code></td>
+<td>条件过滤</td>
+<td><code>$.[?(@.price > 50)]</code> - 价格大于 50 的</td>
+</tr>
+</tbody></table>
+<h2>常用场景举例</h2>
+<h3>场景 1：提取嵌套字段</h3>
+<pre><code class="lang-">
+JSONPath: $.store.bicycle.color
+结果: "红色"
+</code></pre>
+<h3>场景 2：提取数组所有元素的某字段</h3>
+<pre><code class="lang-">
+JSONPath: $..author
+结果: ["张三", "李四", "王五"]
+</code></pre>
+<h3>场景 3：条件过滤</h3>
+<pre><code class="lang-">
+JSONPath: $.store.book[?(@.category == '编程')].title
+结果: ["Python 入门", "Go 语言实战"]
+</code></pre>
+<h3>场景 4：多条件组合</h3>
+<pre><code class="lang-">
+JSONPath: $.store.book[?(@.price &lt; 100 &amp;&amp; @.category == '编程')]
+结果: 两本编程书的完整对象
+</code></pre>
+<h2>常见陷阱</h2>
+<p><strong>陷阱 1：根节点容易忘写</strong></p>
+<p>❌ 错误：<code>store.book[0].title</code>  </p>
+<p>✅ 正确：<code>$.store.book[0].title</code></p>
+<p><strong>陷阱 2：过滤条件的括号</strong></p>
+<p>❌ 错误：<code>$.[@.price > 50]</code>  </p>
+<p>✅ 正确：<code>$.[?(@.price > 50)]</code></p>
+<p><strong>陷阱 3：字符串必须用引号</strong></p>
+<p>❌ 错误：<code>?(@.category == 编程)</code>  </p>
+<p>✅ 正确：<code>?(@.category == '编程')</code></p>
+<h2>在线工具推荐</h2>
+<p>使用我们的 <a href="/tools/jsonpath">JSONPath 提取工具</a>，可以实时输入 JSON 和路径，立即看到提取结果，是学习和调试的最佳伴侣。</p>
+<h2>进阶技巧</h2>
+<h3>多值选择</h3>
+<pre><code class="lang-">
+JSONPath: $.store.book[0]['author', 'title']
+结果: {"author": "张三", "title": "Python 入门"}
+</code></pre>
+<h3>否定条件</h3>
+<pre><code class="lang-">
+JSONPath: $.store.book[?(@.category != '文学')]
+</code></pre>
+<h3>存在性检查</h3>
+<pre><code class="lang-">
+JSONPath: $.store.book[?(@.isbn)]
+</code></pre>
+<hr>
+<p>JSONPath 是数据处理工程师、后端开发者、API 测试工程师的必备技能。掌握它，能让你处理 JSON 数据的效率提升数倍。</p>
+</article>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+</script>
+</body>
+</html>

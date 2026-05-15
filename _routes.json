@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "include": ["/*"],
+  "exclude": [
+    "/baidu_verify_*.html",
+    "/google*.html",
+    "/robots.txt",
+    "/sitemap.xml",
+    "/assets/*",
+    "/_headers",
+    "/_routes.json",
+    "*.css",
+    "*.js"
+  ],
+  "routes": [
+    {"path": "/tools/:slug", "status": 200, "serve": "/tools/:slug.html"},
+    {"path": "/blog/:slug", "status": 200, "serve": "/blog/:slug.html"},
+    {"path": "/en/tools/:slug", "status": 200, "serve": "/en/tools/:slug.html"},
+    {"path": "/en/blog/:slug", "status": 200, "serve": "/en/blog/:slug.html"},
+    {"path": "/about", "status": 200, "serve": "/about.html"},
+    {"path": "/en/about", "status": 200, "serve": "/en/about.html"},
+    {"path": "/blog/", "status": 200, "serve": "/blog/index.html"},
+    {"path": "/en/blog/", "status": 200, "serve": "/en/blog/index.html"},
+    {"path": "/", "status": 200, "serve": "/index.html"},
+    {"path": "/en/", "status": 200, "serve": "/en/index.html"}
+  ]
+}

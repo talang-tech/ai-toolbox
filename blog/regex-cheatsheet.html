@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>正则表达式入门到精通：30 个最常用模式速查表 + 调试技巧 | AI 工具盒子</title>
+<meta name="description" content="从零讲解正则表达式语法，30 个高频实战模式（邮箱、URL、IP、密码、中文等），常见陷阱与调试方法。">
+<meta name="keywords" content="正则表达式,regex,regex 教程,正则匹配,邮箱正则,URL 正则,正则速查表">
+<link rel="canonical" href="https://tools.talang.fun/blog/regex-cheatsheet">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/blog/regex-cheatsheet">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/blog/regex-cheatsheet">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/blog/regex-cheatsheet">
+<meta property="og:title" content="正则表达式入门到精通：30 个最常用模式速查表 + 调试技巧 | AI 工具盒子">
+<meta property="og:description" content="从零讲解正则表达式语法，30 个高频实战模式（邮箱、URL、IP、密码、中文等），常见陷阱与调试方法。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/blog/regex-cheatsheet">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "正则表达式入门到精通：30 个最常用模式速查表 + 调试技巧", "description": "从零讲解正则表达式语法，30 个高频实战模式（邮箱、URL、IP、密码、中文等），常见陷阱与调试方法。", "author": {"@type": "Organization", "name": "AI 工具盒子"}, "datePublished": "2026-05-09", "url": "https://tools.talang.fun/blog/regex-cheatsheet"}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="https://tools.talang.fun/en/blog/regex-cheatsheet" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<article class="article">
+  <p style="margin-bottom:8px"><a href="/blog/" style="color:var(--muted)">← 返回博客</a></p>
+  <h1>正则表达式入门到精通：30 个最常用模式速查表 + 调试技巧</h1>
+  <p style="color:var(--muted);margin-bottom:24px">2026-05-09 · 14 分钟阅读</p>
+  <p>正则表达式（Regular Expression，简称 regex）是开发者必备技能 —— 但也是最让人头疼的话题之一。这篇文章一次性讲清楚：</p>
+<ol>
+<li>7 分钟入门核心语法</li>
+<li>30 个最常用的实战模式</li>
+<li>6 个最容易踩的坑</li>
+<li>调试和性能优化技巧</li>
+</ol>
+<p>读完你就能写出 90% 工作中需要的正则。</p>
+<h2>一、7 分钟入门核心语法</h2>
+<h3>字符类</h3>
+<table><thead><tr>
+<th>模式</th>
+<th>含义</th>
+</tr></thead><tbody>
+<tr>
+<td><code>.</code></td>
+<td>任意字符（不含换行）</td>
+</tr>
+<tr>
+<td><code>\d</code></td>
+<td>数字（0-9）</td>
+</tr>
+<tr>
+<td><code>\D</code></td>
+<td>非数字</td>
+</tr>
+<tr>
+<td><code>\w</code></td>
+<td>单词字符（字母数字下划线）</td>
+</tr>
+<tr>
+<td><code>\W</code></td>
+<td>非单词字符</td>
+</tr>
+<tr>
+<td><code>\s</code></td>
+<td>空白（空格、tab、换行）</td>
+</tr>
+<tr>
+<td><code>\S</code></td>
+<td>非空白</td>
+</tr>
+<tr>
+<td><code>[abc]</code></td>
+<td>a 或 b 或 c</td>
+</tr>
+<tr>
+<td><code>[^abc]</code></td>
+<td>不是 a/b/c</td>
+</tr>
+<tr>
+<td><code>[a-z]</code></td>
+<td>a 到 z</td>
+</tr>
+<tr>
+<td><code>[a-zA-Z0-9]</code></td>
+<td>任意字母或数字</td>
+</tr>
+</tbody></table>
+<h3>数量词</h3>
+<table><thead><tr>
+<th>模式</th>
+<th>含义</th>
+</tr></thead><tbody>
+<tr>
+<td><code>*</code></td>
+<td>0 次或多次</td>
+</tr>
+<tr>
+<td><code>+</code></td>
+<td>1 次或多次</td>
+</tr>
+<tr>
+<td><code>?</code></td>
+<td>0 次或 1 次</td>
+</tr>
+<tr>
+<td><code>{n}</code></td>
+<td>正好 n 次</td>
+</tr>
+<tr>
+<td><code>{n,}</code></td>
+<td>至少 n 次</td>
+</tr>
+<tr>
+<td><code>{n,m}</code></td>
+<td>n 到 m 次</td>
+</tr>
+</tbody></table>
+<p><strong>贪婪 vs 懒惰</strong>：默认贪婪（尽可能多匹配）。在数量词后加 <code>?</code> 变懒惰：</p>
+<pre><code class="lang-">
+"abc&lt;1&gt;&lt;2&gt;"  正则 &lt;.+&gt;   匹配 &lt;1&gt;&lt;2&gt;     (贪婪)
+"abc&lt;1&gt;&lt;2&gt;"  正则 &lt;.+?&gt;  匹配 &lt;1&gt;        (懒惰)
+</code></pre>
+<h3>锚点</h3>
+<table><thead><tr>
+<th>模式</th>
+<th>含义</th>
+</tr></thead><tbody>
+<tr>
+<td><code>^</code></td>
+<td>字符串开头</td>
+</tr>
+<tr>
+<td><code>$</code></td>
+<td>字符串结尾</td>
+</tr>
+<tr>
+<td><code>\b</code></td>
+<td>单词边界</td>
+</tr>
+<tr>
+<td><code>\B</code></td>
+<td>非单词边界</td>
+</tr>
+</tbody></table>
+<h3>分组与捕获</h3>
+<table><thead><tr>
+<th>模式</th>
+<th>含义</th>
+</tr></thead><tbody>
+<tr>
+<td><code>(abc)</code></td>
+<td>分组并捕获</td>
+</tr>
+<tr>
+<td><code>(?:abc)</code></td>
+<td>分组但<strong>不</strong>捕获</td>
+</tr>
+<tr>
+<td><code>(?<name>abc)</code></td>
+<td>命名捕获组</td>
+</tr>
+<tr>
+<td><code>\1</code>, <code>\2</code></td>
+<td>反向引用</td>
+</tr>
+<tr>
+<td>`(a\</td>
+<td>b)`</td>
+<td>或</td>
+</tr>
+</tbody></table>
+<h3>前瞻和后顾（lookaround）</h3>
+<table><thead><tr>
+<th>模式</th>
+<th>含义</th>
+</tr></thead><tbody>
+<tr>
+<td><code>(?=...)</code></td>
+<td>前瞻：后面必须是</td>
+</tr>
+<tr>
+<td><code>(?!...)</code></td>
+<td>否定前瞻：后面不能是</td>
+</tr>
+<tr>
+<td><code>(?<=...)</code></td>
+<td>后顾：前面必须是</td>
+</tr>
+<tr>
+<td><code>(?<!...)</code></td>
+<td>否定后顾：前面不能是</td>
+</tr>
+</tbody></table>
+<p>例子：匹配后面跟 "px" 的数字（但不要 "px"）：</p>
+<pre><code class="lang-">
+\d+(?=px)       匹配 "12px" 中的 "12"
+</code></pre>
+<h3>标志位（flags）</h3>
+<table><thead><tr>
+<th>标志</th>
+<th>含义</th>
+</tr></thead><tbody>
+<tr>
+<td><code>i</code></td>
+<td>不区分大小写</td>
+</tr>
+<tr>
+<td><code>g</code></td>
+<td>全局匹配（不停在第一个）</td>
+</tr>
+<tr>
+<td><code>m</code></td>
+<td>多行模式（<code>^</code>/<code>$</code> 匹配每行）</td>
+</tr>
+<tr>
+<td><code>s</code></td>
+<td>dotall 模式（<code>.</code> 也匹配换行）</td>
+</tr>
+<tr>
+<td><code>u</code></td>
+<td>Unicode 模式</td>
+</tr>
+</tbody></table>
+<h2>二、30 个最常用模式</h2>
+<h3>验证类</h3>
+<pre><code class="lang-">
+邮箱（基础）        ^[\w.-]+@[\w.-]+\.[a-zA-Z]{2,}$
+邮箱（更严格）      ^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$
+URL                ^https?:\/\/[\w.-]+(\:\d+)?(\/[\w./?=#&amp;-]*)?$
+IPv4               ^(?:(?:25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(?:25[0-5]|2[0-4]\d|[01]?\d\d?)$
+IPv6（简化）        ^[0-9a-fA-F:]+$
+中国手机号          ^1[3-9]\d{9}$
+中国身份证（18位）   ^\d{17}[\dXx]$
+中国邮编            ^\d{6}$
+强密码（8+混合）    ^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\w]).{8,}$
+日期 YYYY-MM-DD     ^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$
+时间 HH:MM:SS       ^([01]\d|2[0-3]):[0-5]\d:[0-5]\d$
+信用卡（Visa）      ^4\d{12}(\d{3})?$
+</code></pre>
+<h3>提取类</h3>
+<pre><code class="lang-">
+URL 中的域名        https?:\/\/([^\/]+)
+JSON 中的字符串值   "(\\.|[^"])*"
+HTML 标签           &lt;\/?(\w+)[^&gt;]*&gt;
+CSS 颜色 hex        #(?:[0-9a-fA-F]{3}){1,2}\b
+邮箱（提取）        [\w.-]+@[\w.-]+\.[a-zA-Z]{2,}
+中文字符            [\u4e00-\u9fa5]+
+emoji               [\u{1F600}-\u{1F64F}]   (需 u 标志)
+URL 中的 query 参数  [?&amp;]([^=&amp;]+)=([^&amp;]*)
+代码块（markdown）   ```[\s\S]*?```
+</code></pre>
+<h3>替换/格式化类</h3>
+<pre><code class="lang-">
+去多余空格          \s+              →  " "
+驼峰转下划线        ([A-Z])          →  _$1   再 toLowerCase
+下划线转驼峰        _([a-z])         →  $1.toUpperCase()
+千分位逗号          (\d)(?=(\d{3})+$) → $1,
+去 HTML 标签         &lt;[^&gt;]+&gt;         →  ""
+trim                 ^\s+|\s+$       →  ""
+去注释（C 风格）    \/\*[\s\S]*?\*\/  →  ""
+去注释（行）         \/\/.*$          →  ""  (m 标志)
+重复字符压缩         (.)\1+           →  "$1"
+</code></pre>
+<h2>三、6 个最容易踩的坑</h2>
+<h3>坑 1：<code>.</code> 不匹配换行</h3>
+<pre><code class="lang-">
+"line1\nline2"  正则 line1.line2  ❌ 不匹配
+                正则 line1[\s\S]line2  ✅ 匹配
+                或加 s 标志: /line1.line2/s  ✅
+</code></pre>
+<h3>坑 2：忘了转义特殊字符</h3>
+<p><code>.</code> <code>*</code> <code>+</code> <code>?</code> <code>(</code> <code>)</code> <code>[</code> <code>]</code> <code>{</code> <code>}</code> <code>\</code> <code>|</code> <code>^</code> <code>$</code> 都需要转义：</p>
+<pre><code class="lang-">
+匹配 "1.0"      ❌ 1.0       (会匹配 "1x0")
+                ✅ 1\.0
+</code></pre>
+<h3>坑 3：贪婪导致回溯爆炸</h3>
+<pre><code class="lang-">
+"&lt;a href='1'&gt;&lt;a href='2'&gt;"
+正则 &lt;a href='.*'&gt;   ❌ 匹配整个字符串（贪婪）
+正则 &lt;a href='.*?'&gt;  ✅ 匹配第一个
+</code></pre>
+<h3>坑 4：<code>^</code> 和 <code>$</code> 在多行模式下的差异</h3>
+<pre><code class="lang-">
+"line1\nline2"
+/^line2/        ❌ 不匹配（^ 是字符串开头）
+/^line2/m       ✅ 匹配（多行下 ^ 是每行开头）
+</code></pre>
+<h3>坑 5：用正则解析 HTML</h3>
+<p><strong>别这么做</strong>。HTML 不是正则语言，嵌套结构无法用正则表达。用 DOM parser（如 <a href="https://cheerio.js.org/">cheerio</a>、Python <code>BeautifulSoup</code>）。</p>
+<p>经典图片：<a href="https://stackoverflow.com/a/1732454">Stack Overflow 上著名的 "你不能用正则解析 HTML" 回复</a>。</p>
+<h3>坑 6：灾难性回溯（ReDoS）</h3>
+<pre><code class="lang-">
+正则 (a+)+$  对输入 "aaaaaaaaaaaaaaab" → 几秒甚至卡死
+</code></pre>
+<p>避免<strong>嵌套数量词</strong>。已知容易 ReDoS 的库（如旧版 <code>validator.js</code>）已被 CVE 收录。</p>
+<h2>四、调试和测试技巧</h2>
+<h3>1. 用可视化工具</h3>
+<ul>
+<li><a href="https://regex101.com">regex101.com</a>：实时高亮，解释每个 token</li>
+<li><a href="https://regexper.com">regexper.com</a>：把正则画成铁路图</li>
+<li><a href="https://www.debuggex.com">debuggex.com</a>：可视化匹配过程</li>
+</ul>
+<p>👉 或者用 <a href="/tools/regex-tester.html">AI 工具盒子的正则测试器</a>：纯本地运行，支持中文输入。</p>
+<h3>2. 用 verbose / extended 模式分块写</h3>
+<p>Python 的 <code>re.X</code> 标志允许写多行带注释的正则：</p>
+<pre><code class="lang-python">
+re.compile(r"""
+    ^
+    [\w.-]+        # 用户名
+    @
+    [\w.-]+        # 域名
+    \.
+    [a-zA-Z]{2,}   # 顶级域
+    $
+""", re.X)
+</code></pre>
+<h3>3. 性能测试</h3>
+<p>如果正则在长字符串上慢，先怀疑回溯。试试：</p>
+<ul>
+<li>把贪婪改懒惰</li>
+<li>把 <code>.*</code> 改成更具体的字符类</li>
+<li>用<strong>原子分组</strong> <code>(?>...)</code>（部分语言支持）</li>
+<li>改用解析器或多步处理</li>
+</ul>
+<h2>五、不同语言的差异</h2>
+<table><thead><tr>
+<th>特性</th>
+<th>JS</th>
+<th>Python</th>
+<th>Java</th>
+<th>Go (RE2)</th>
+</tr></thead><tbody>
+<tr>
+<td>反向引用</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>Lookbehind</td>
+<td>✅ (固定长度可变长度)</td>
+<td>✅ (3.7+ 可变长度)</td>
+<td>✅</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>Verbose 模式</td>
+<td>❌</td>
+<td>✅</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>Unicode 默认</td>
+<td>需 <code>u</code> 标志</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>命名捕获</td>
+<td><code>(?<name>)</code></td>
+<td><code>(?P<name>)</code></td>
+<td><code>(?<name>)</code></td>
+<td><code>(?P<name>)</code></td>
+</tr>
+<tr>
+<td>ReDoS 免疫</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>✅（线性时间）</td>
+</tr>
+</tbody></table>
+<p><strong>Go 的正则用 RE2，没有反向引用和 lookaround，但保证线性时间</strong>。如果你担心 ReDoS，可以用 RE2 引擎（也有 <a href="https://github.com/uhop/node-re2">Node.js 绑定</a>）。</p>
+<h2>六、推荐学习路径</h2>
+<ol>
+<li><strong>先用工具调通</strong>：<a href="/tools/regex-tester.html">AI 工具盒子正则测试器</a></li>
+<li><strong>进阶看书</strong>：《精通正则表达式》（Jeffrey Friedl）</li>
+<li><strong>平时积累</strong>：把上面 30 个模式存起来，下次直接抄</li>
+</ol>
+<h2>总结</h2>
+<ul>
+<li>正则核心：<strong>字符类 + 数量词 + 锚点 + 分组</strong></li>
+<li>30 个模式覆盖 90% 场景</li>
+<li>6 个坑：<code>.</code> 不含换行、忘转义、贪婪回溯、<code>^$</code> 模式、不要解析 HTML、ReDoS</li>
+<li>用可视化工具调试，用 RE2 防 ReDoS</li>
+</ul>
+<p><strong>立刻去练</strong>：<a href="/tools/regex-tester.html">AI 工具盒子 - 正则表达式测试器</a></p>
+</article>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+</script>
+</body>
+</html>

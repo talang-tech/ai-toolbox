@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Programmer's Guide to Number Bases: Binary, Octal, Decimal, Hex | AI Toolbox</title>
+<meta name="description" content="Why do computers use binary? Why is hex the programmer's best friend? How to convert between bases? This guide explains the principles and tricks.">
+<meta name="keywords" content="base conversion,binary,hexadecimal,octal,programmer">
+<link rel="canonical" href="https://tools.talang.fun/en/blog/10-bases">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/blog/10-bases">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/blog/10-bases">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/blog/10-bases">
+<meta property="og:title" content="Programmer's Guide to Number Bases: Binary, Octal, Decimal, Hex | AI Toolbox">
+<meta property="og:description" content="Why do computers use binary? Why is hex the programmer's best friend? How to convert between bases? This guide explains the principles and tricks.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/en/blog/10-bases">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Programmer's Guide to Number Bases: Binary, Octal, Decimal, Hex", "description": "Why do computers use binary? Why is hex the programmer's best friend? How to convert between bases? This guide explains the principles and tricks.", "author": {"@type": "Organization", "name": "AI Toolbox"}, "datePublished": "2026-05-14", "url": "https://tools.talang.fun/en/blog/10-bases"}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/en/" class="logo"><span class="logo-icon">🛠️</span>AI Toolbox</a>
+    <nav class="nav">
+      <a href="/en/">Home</a>
+      <a href="/en/#tools">All Tools</a>
+      <a href="/en/blog/">Blog</a>
+      <a href="/en/about">About</a>
+      <a href="https://tools.talang.fun/blog/10-bases" class="lang-switch">中文</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<article class="article">
+  <p style="margin-bottom:8px"><a href="/en/blog/" style="color:var(--muted)">← Back to blog</a></p>
+  <h1>Programmer's Guide to Number Bases: Binary, Octal, Decimal, Hex</h1>
+  <p style="color:var(--muted);margin-bottom:24px">2026-05-14 · 5 min read</p>
+  <h1>Programmer's Guide to Number Bases: Binary, Octal, Decimal, Hex</h1>
+<p>As programmers, we work with number bases every day, but few truly understand the principles behind them.</p>
+<h2>Why Do Computers Use Binary?</h2>
+<p>Computers are made of digital circuits, which only have two states: ON and OFF — corresponding to 0 and 1.</p>
+<p>This is the fundamental reason binary is the base language of computers: <strong>simplest physical implementation</strong>.</p>
+<h2>Number Base Basics</h2>
+<h3>What is a base?</h3>
+<p>A base is a counting system. Base N means "count N, then carry over."</p>
+<table><thead><tr>
+<th>Base</th>
+<th>Radix</th>
+<th>Symbols</th>
+<th>Prefix Notation</th>
+<th>Typical Use Case</th>
+</tr></thead><tbody>
+<tr>
+<td>Binary</td>
+<td>2</td>
+<td>0, 1</td>
+<td><code>0b</code></td>
+<td>Machine code, bit ops, flags</td>
+</tr>
+<tr>
+<td>Octal</td>
+<td>8</td>
+<td>0-7</td>
+<td><code>0</code> / <code>0o</code></td>
+<td>Linux file permissions</td>
+</tr>
+<tr>
+<td>Decimal</td>
+<td>10</td>
+<td>0-9</td>
+<td>(none)</td>
+<td>Human everyday calculation</td>
+</tr>
+<tr>
+<td>Hexadecimal</td>
+<td>16</td>
+<td>0-9, A-F</td>
+<td><code>0x</code></td>
+<td>Memory addresses, colors, hashes</td>
+</tr>
+</tbody></table>
+<h2>Why Programmers Love Hexadecimal</h2>
+<p><strong>Reason 1: Binary ↔ Hex conversion is trivial</strong></p>
+<p>4 binary digits = exactly 1 hex digit, perfect alignment:</p>
+<pre><code class="lang-">
+Binary    Hex
+0000  →  0
+0001  →  1
+...
+1110  →  E
+1111  →  F
+</code></pre>
+<p>So a 32-bit binary number can be neatly represented in just 8 hex characters.</p>
+<p><strong>Reason 2: Readability</strong></p>
+<ul>
+<li><code>0b11111010011010110010110001000000</code> = 4294967040 ❌ Unreadable at a glance</li>
+<li><code>0xFACEB000</code> ✅ A programmer instantly recognizes it</li>
+</ul>
+<p>This is why memory addresses, color values, and hashes all use hexadecimal.</p>
+<h2>Conversion Methods Between Bases</h2>
+<h3>Decimal → Binary: Divide by 2, collect remainders</h3>
+<p>Using 42 as example:</p>
+<pre><code class="lang-">
+42 ÷ 2 = 21  remainder 0
+21 ÷ 2 = 10  remainder 1
+10 ÷ 2 = 5   remainder 0
+ 5 ÷ 2 = 2   remainder 1
+ 2 ÷ 2 = 1   remainder 0
+ 1 ÷ 2 = 0   remainder 1
+</code></pre>
+<p>Read remainders <strong>bottom-up</strong>: <code>101010</code></p>
+<p>✅ Verify: <code>32 + 8 + 2 = 42</code></p>
+<h3>Binary → Decimal: Expand by place value</h3>
+<p><code>101010₂</code> = 1×2⁵ + 0×2⁴ + 1×2³ + 0×2² + 1×2¹ + 0×2⁰ = 32 + 8 + 2 = 42₁₀</p>
+<h3>Binary ↔ Hex: 4-bit grouping</h3>
+<p>Binary → Hex: Group from right into 4-bit chunks, convert each</p>
+<pre><code class="lang-">
+101010 = 0010 1010
+         ↓    ↓
+         2    A
+</code></pre>
+<p>Result = <code>0x2A</code></p>
+<p>Hex → Binary: Expand each digit to 4 bits</p>
+<pre><code class="lang-">
+0xFACE = 1111 1010 1100 1110
+</code></pre>
+<h3>Fast Conversion Tricks</h3>
+<p><strong>Memorize powers of 2</strong></p>
+<pre><code class="lang-">
+2⁰ = 1      2⁵ = 32     2¹⁰ = 1024
+2¹ = 2      2⁶ = 64     2¹⁶ = 65536
+2² = 4      2⁷ = 128    2²⁰ = 1048576
+2³ = 8      2⁸ = 256    2³² = 4294967296
+2⁴ = 16     2⁹ = 512
+</code></pre>
+<p>With these memorized, you can compute binary numbers instantly.</p>
+<h2>Programmer's Daily Base Usage</h2>
+<h3>Scenario 1: Color Values</h3>
+<p>Hex colors in CSS:</p>
+<pre><code class="lang-">
+#FF0000  = Red (R=255, G=0, B=0)
+#00FF00  = Green
+#0000FF  = Blue
+#FFFFFF  = White
+#808080  = Gray
+</code></pre>
+<p>Each pair corresponds to a color channel (00=0, FF=255).</p>
+<h3>Scenario 2: Linux File Permissions</h3>
+<pre><code class="lang-">
+rwx r-x r--  =  7 5 4  (octal)
+</code></pre>
+<p>3 binary bits = 1 octal digit:</p>
+<ul>
+<li>r (read) = 4 = 100</li>
+<li>w (write) = 2 = 010</li>
+<li>x (execute) = 1 = 001</li>
+</ul>
+<p>That's why <code>chmod 755</code> is typed by programmers every day.</p>
+<h3>Scenario 3: Bitwise Operations</h3>
+<pre><code class="lang-python">
+flags = 0b1010  # Bits 1, 3 are 1
+flags |= 0b0100  # Set bit 2
+flags &amp;= ~0b1000 # Clear bit 3
+</code></pre>
+<p>Bitwise operations are used daily in low-level development and performance optimization.</p>
+<h3>Scenario 4: Memory Addresses</h3>
+<pre><code class="lang-">
+0x7ffee6b8c8a0  # Typical 64-bit memory address
+</code></pre>
+<p>Hex lets 64-bit addresses be represented in just 16 characters.</p>
+<h2>Common Misconceptions</h2>
+<p><strong>Myth 1: Hex is "programmer-only", not worth learning</strong></p>
+<p>❌ Wrong. Hex is the programmer's native language. Without it, you can't understand low-level code.</p>
+<p><strong>Myth 2: Tools do conversion, no need to calculate yourself</strong></p>
+<p>✅ Tools are fine, but <strong>understanding the principle lets you estimate instantly</strong>. When you see <code>0x1000</code> you should immediately know it's 4096, not wait for a tool.</p>
+<p><strong>Myth 3: Octal is obsolete</strong></p>
+<p>❌ Not yet. <code>chmod 755</code> file permissions are used every day.</p>
+<h2>Quick Mental Math Exercises</h2>
+<p>How fast can you get these answers?</p>
+<ol>
+<li><code>0xFF</code> = ?</li>
+<li><code>0x1000</code> = ?</li>
+<li><code>64</code> = 2 to what power?</li>
+<li><code>0b1111</code> = ?</li>
+<li>What color is <code>#00FFFF</code>?</li>
+</ol>
+<p><details></p>
+<p><summary>Click for answers</summary></p>
+<ol>
+<li>255</li>
+<li>4096</li>
+<li>Power of 6</li>
+<li>15</li>
+<li>Cyan</li>
+</ol>
+<p></details></p>
+<h2>Online Tool</h2>
+<p>Use our <a href="/tools/base-converter">Base Converter tool</a> for conversion between binary, octal, decimal, and hexadecimal.</p>
+<h2>Summary</h2>
+<p>Number bases are fundamental programmer literacy:</p>
+<ul>
+<li>✅ <strong>Binary</strong>: Understand how machines work</li>
+<li>✅ <strong>Hexadecimal</strong>: The daily language of programming</li>
+<li>✅ <strong>Octal</strong>: File permissions only</li>
+<li>✅ <strong>Decimal</strong>: For humans to read</li>
+</ul>
+<p>Understanding bases makes the computer's world clearer.</p>
+<hr>
+<p>Next time you see <code>0xDEADBEEF</code> or <code>0xC0FFEE</code>, you'll know it's not garbage — it's programmer humor!</p>
+</article>
+</main>
+<footer class="site-footer">
+  © 2026 AI Toolbox · Free online AI & developer tools · <a href='/en/about'>About</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('Copied!'));
+}
+</script>
+</body>
+</html>

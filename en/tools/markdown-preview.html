@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Markdown Live Preview - Markdown Live Preview | Online MD Render Editor | AI Toolbox</title>
+<meta name="description" content="Free online markdown live preview. Write MD on left, live preview on right. Fast, secure, and works in your browser without downloading.">
+<meta name="keywords" content="markdown preview,md preview,online markdown,markdown render">
+<link rel="canonical" href="https://tools.talang.fun/en/tools/markdown-preview">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/markdown-preview">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/markdown-preview">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/markdown-preview">
+<meta property="og:title" content="Markdown Live Preview - Markdown Live Preview | Online MD Render Editor | AI Toolbox">
+<meta property="og:description" content="Free online markdown live preview. Write MD on left, live preview on right. Fast, secure, and works in your browser without downloading.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/en/tools/markdown-preview">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Markdown Live Preview", "description": "Free online markdown live preview. Write MD on left, live preview on right. Fast, secure, and works in your browser without downloading.", "url": "https://tools.talang.fun/en/tools/markdown-preview", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "Write MD on left, live preview on right", "inLanguage": "en", "author": {"@type": "Organization", "name": "AI Toolbox"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/en/" class="logo"><span class="logo-icon">🛠️</span>AI Toolbox</a>
+    <nav class="nav">
+      <a href="/en/">Home</a>
+      <a href="/en/#tools">All Tools</a>
+      <a href="/en/blog/">Blog</a>
+      <a href="/en/about">About</a>
+      <a href="https://tools.talang.fun/tools/markdown-preview" class="lang-switch">中文</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">📝</div>
+  <h1>Markdown Live Preview</h1>
+  <p>Write MD on left, live preview on right</p>
+</div>
+<div class="tool-panel">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px"><div><label>Markdown source:</label><textarea id="mdInput" style="min-height:500px;font-family:monospace;font-size:13px"># Title
+
+## Heading 2
+
+This is **bold** and *italic*.
+
+### List
+
+- Item one
+- Item two
+- Item three
+
+### Code block
+
+```python
+print('hello')
+```
+
+### Link
+
+[Visit AI Toolbox](https://tools.talang.fun)</textarea></div><div><label>Preview:</label><div id="mdPreview" style="min-height:500px;padding:16px;border:1px solid var(--border);border-radius:8px;background:white;color:#111"></div></div></div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>About this tool</h2>
+  <p>Supports basic Markdown: headers, bold/italic, lists, code blocks, quotes, links, images.</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>Key Features</h2><ul><li>Real-time Markdown rendering</li><li>Common Markdown syntax support</li><li>Headings/bold/italic/lists</li><li>Code block highlighting</li><li>Link/image support</li><li>Quote/table support</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>Frequently Asked Questions</h2><h3 style="margin-top:20px;margin-bottom:8px">Is GitHub Flavored Markdown supported?</h3><p>Most GFM syntax is supported including tables, task lists, etc.</p><h3 style="margin-top:20px;margin-bottom:8px">Is content saved?</h3><p>No, everything stays in browser memory and is lost on refresh.</p><h3 style="margin-top:20px;margin-bottom:8px">Can it export HTML?</h3><p>Currently preview mode only. Export can be added later.</p></section>
+<section class="related"><h3>Related Tools</h3><div class="tools-grid"><a href="/en/tools/word-counter" class="tool-card"><div class="icon">📊</div><h3>Word Counter</h3><p>Real-time character, word, line, and paragraph counter</p></a><a href="/en/tools/case-converter" class="tool-card"><div class="icon">🔠</div><h3>Case Converter</h3><p>Convert text between uppercase, lowercase, camelCase, snake_case, etc.</p></a><a href="/en/tools/json-formatter" class="tool-card"><div class="icon">{ }</div><h3>JSON Formatter</h3><p>Beautify, minify, and validate JSON with precise error location</p></a></div></section>
+<script src="/assets/tools/_utils.js" defer></script>
+    <script src="/assets/tools/markdown-preview.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI Toolbox · Free online AI & developer tools · <a href='/en/about'>About</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('Copied!'));
+}
+</script>
+</body>
+</html>

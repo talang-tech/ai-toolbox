@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>二维码技术原理解析：从黑白方块到信息传输 | AI 工具盒子</title>
+<meta name="description" content="二维码如何存储数据？二维码有哪几个版本？纠错能力是什么？本文深入解析 QR Code 的技术原理和设计细节。">
+<meta name="keywords" content="二维码原理,qrcode技术,二维码版本,二维码纠错">
+<link rel="canonical" href="https://tools.talang.fun/blog/07-qrcode">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/blog/07-qrcode">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/blog/07-qrcode">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/blog/07-qrcode">
+<meta property="og:title" content="二维码技术原理解析：从黑白方块到信息传输 | AI 工具盒子">
+<meta property="og:description" content="二维码如何存储数据？二维码有哪几个版本？纠错能力是什么？本文深入解析 QR Code 的技术原理和设计细节。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/blog/07-qrcode">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "二维码技术原理解析：从黑白方块到信息传输", "description": "二维码如何存储数据？二维码有哪几个版本？纠错能力是什么？本文深入解析 QR Code 的技术原理和设计细节。", "author": {"@type": "Organization", "name": "AI 工具盒子"}, "datePublished": "2026-05-14", "url": "https://tools.talang.fun/blog/07-qrcode"}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="https://tools.talang.fun/en/blog/07-qrcode" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<article class="article">
+  <p style="margin-bottom:8px"><a href="/blog/" style="color:var(--muted)">← 返回博客</a></p>
+  <h1>二维码技术原理解析：从黑白方块到信息传输</h1>
+  <p style="color:var(--muted);margin-bottom:24px">2026-05-14 · 5 分钟阅读</p>
+  <h1>二维码技术原理解析：从黑白方块到信息传输</h1>
+<p>每天扫码支付、扫码加好友、扫码关注公众号，二维码已经融入我们生活的每一个角落。但你知道这一个个黑白方块背后是什么原理吗？</p>
+<h2>二维码的基本结构</h2>
+<p>一个标准的 QR 码由以下部分组成：</p>
+<ul>
+<li><strong>位置探测图形</strong>：三个角落的大方块，让扫码软件快速定位二维码位置和方向</li>
+<li><strong>定位图形</strong>：黑白相间的虚线，辅助软件修正扫描时的透视变形</li>
+<li><strong>格式信息</strong>：存储纠错级别和掩码模式</li>
+<li><strong>版本信息</strong>：二维码的版本大小（版本 1 到 版本 40）</li>
+<li><strong>数据和纠错码</strong>：实际存储的数据 + 冗余纠错数据</li>
+</ul>
+<h2>QR 码的版本体系</h2>
+<p>QR 码从版本 1 到版本 40 共 40 个规格：</p>
+<table><thead><tr>
+<th>版本</th>
+<th>模块数</th>
+<th>最大容量（数字）</th>
+<th>典型用途</th>
+</tr></thead><tbody>
+<tr>
+<td>1</td>
+<td>21×21</td>
+<td>41 字符</td>
+<td>短网址、手机号</td>
+</tr>
+<tr>
+<td>5</td>
+<td>37×37</td>
+<td>187 字符</td>
+<td>商务名片、WiFi 密码</td>
+</tr>
+<tr>
+<td>10</td>
+<td>57×57</td>
+<td>652 字符</td>
+<td>完整文本段落</td>
+</tr>
+<tr>
+<td>20</td>
+<td>97×97</td>
+<td>2420 字符</td>
+<td>短文章、JSON 配置</td>
+</tr>
+<tr>
+<td>40</td>
+<td>177×177</td>
+<td>7089 字符</td>
+<td>长文、小型二进制文件</td>
+</tr>
+</tbody></table>
+<p>版本越高，二维码越大，能存储的数据越多。平时我们扫的支付码大约是版本 5-10。</p>
+<h2>编码模式</h2>
+<p>QR 码支持 4 种编码模式，根据数据类型自动选择最优模式：</p>
+<table><thead><tr>
+<th>模式</th>
+<th>字符集</th>
+<th>每字符 bit</th>
+</tr></thead><tbody>
+<tr>
+<td>数字</td>
+<td>0-9</td>
+<td>3.33 bits</td>
+</tr>
+<tr>
+<td>字母数字</td>
+<td>0-9, A-Z, 空格 + $%*+-./:</td>
+<td>5.5 bits</td>
+</tr>
+<tr>
+<td>8位字节</td>
+<td>ISO-8859-1 / UTF-8</td>
+<td>8 bits</td>
+</tr>
+<tr>
+<td>汉字</td>
+<td>GB2312 编码中文</td>
+<td>13 bits</td>
+</tr>
+</tbody></table>
+<p>这就是为什么<strong>同样大小的二维码，存数字比存中文多得多</strong>。存中文时每个汉字需要 13 bit（约 1.6 字节），而纯数字每个字符只需要 3.33 bit。</p>
+<h2>纠错能力：为什么二维码破损了还能扫？</h2>
+<p>QR 码最神奇的特性之一就是纠错能力。即使二维码被遮挡、污损、打印模糊，往往仍然可以成功识别。</p>
+<p>这是因为二维码中存储了<strong>冗余数据</strong>。数据被分成块，每块根据里德-所罗门算法（Reed-Solomon）生成纠错码。</p>
+<p>四种纠错级别：</p>
+<table><thead><tr>
+<th>级别</th>
+<th>纠错能力</th>
+<th>典型用途</th>
+</tr></thead><tbody>
+<tr>
+<td>L</td>
+<td>可纠正约 7% 错误</td>
+<td>印刷清晰的文件</td>
+</tr>
+<tr>
+<td>M</td>
+<td>可纠正约 15% 错误</td>
+<td>一般支付码（默认）</td>
+</tr>
+<tr>
+<td>Q</td>
+<td>可纠正约 25% 错误</td>
+<td>户外广告牌</td>
+</tr>
+<tr>
+<td>H</td>
+<td>可纠正约 30% 错误</td>
+<td>工业环境、污损风险高</td>
+</tr>
+</tbody></table>
+<p>这就是为什么很多公司在二维码中间加 Logo 仍然可以正常扫码——Logo 遮挡约 20% 的区域，选择 H 级纠错完全可以恢复数据。</p>
+<h2>二维码的设计考虑</h2>
+<h3>为什么是方形？</h3>
+<p>因为方形二维码的定位和扫描计算最简单，三个角的探测图形足以确定位置和旋转角度。</p>
+<h3>为什么是黑白两色？</h3>
+<p>黑白对比度最高，在光线不足、打印褪色等情况下识别率最高。彩色二维码虽然美观，但扫描成功率大幅下降。</p>
+<h3>为什么二维码周围需要留白？</h3>
+<p>留白（安静区）是让扫码软件区分二维码和背景。标准要求留白至少 4 个模块宽度。没有留白的二维码，扫描成功率会大幅降低。</p>
+<h2>在线工具</h2>
+<p>使用我们的 <a href="/tools/qr-code">二维码生成器</a> 和 <a href="/tools/qr-decode">二维码解码器</a>，可以免费生成任意内容的二维码，或者从图片中解码二维码内容。所有处理在浏览器本地完成，数据不会上传服务器。</p>
+<h2>二维码的未来</h2>
+<p>虽然二维码已经诞生超过 25 年（1994 年由日本 Denso Wave 发明），但它的应用仍然在不断扩展：从支付、防疫、身份验证，到数字藏品、AR 入口。</p>
+<p>与各种新技术相比，二维码的优势在于<strong>极低的技术门槛</strong>：接收方不需要安装任何 App，只要有相机就能识别；发送方不需要联网就能生成。这使得二维码成为了连接物理世界和数字世界的最简单桥梁。</p>
+<hr>
+<p>下次扫码时，你就知道这一个个黑白方块中蕴含的技术了！</p>
+</article>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+</script>
+</body>
+</html>

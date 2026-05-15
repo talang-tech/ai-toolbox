@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UUID v4 vs UUID v7 - Which Should You Use in 2026? | AI Toolbox</title>
+<meta name="description" content="Deep comparison of UUID v4 (random) and v7 (time-ordered) - performance benchmarks, database index impact, migration tips, and 6 real scenarios.">
+<meta name="keywords" content="UUID v4, UUID v7, UUID comparison, UUID database performance, Snowflake ID, primary key design, distributed ID">
+<link rel="canonical" href="https://tools.talang.fun/en/blog/uuid-v4-vs-v7">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/blog/uuid-v4-vs-v7">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/blog/uuid-v4-vs-v7">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/blog/uuid-v4-vs-v7">
+<meta property="og:title" content="UUID v4 vs UUID v7 - Which Should You Use in 2026? | AI Toolbox">
+<meta property="og:description" content="Deep comparison of UUID v4 (random) and v7 (time-ordered) - performance benchmarks, database index impact, migration tips, and 6 real scenarios.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/en/blog/uuid-v4-vs-v7">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "UUID v4 vs UUID v7 - Which Should You Use in 2026?", "description": "Deep comparison of UUID v4 (random) and v7 (time-ordered) - performance benchmarks, database index impact, migration tips, and 6 real scenarios.", "author": {"@type": "Organization", "name": "AI Toolbox"}, "datePublished": "2026-05-10", "url": "https://tools.talang.fun/en/blog/uuid-v4-vs-v7"}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/en/" class="logo"><span class="logo-icon">🛠️</span>AI Toolbox</a>
+    <nav class="nav">
+      <a href="/en/">Home</a>
+      <a href="/en/#tools">All Tools</a>
+      <a href="/en/blog/">Blog</a>
+      <a href="/en/about">About</a>
+      <a href="https://tools.talang.fun/blog/uuid-v4-vs-v7" class="lang-switch">中文</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<article class="article">
+  <p style="margin-bottom:8px"><a href="/en/blog/" style="color:var(--muted)">← Back to blog</a></p>
+  <h1>UUID v4 vs UUID v7 - Which Should You Use in 2026?</h1>
+  <p style="color:var(--muted);margin-bottom:24px">2026-05-10 · 11 min read</p>
+  <p>If you haven't followed UUID news in the past year, you might be behind. <strong>RFC 9562</strong> (May 2024) standardized UUID v6/v7/v8, and <strong>UUID v7</strong> is rapidly becoming the new default for new projects.</p>
+<p>Here's why.</p>
+<h2>1. What Is UUID v4?</h2>
+<p>UUID v4 = 122 bits of random + 6 bits of version. Looks like:</p>
+<pre><code class="lang-">
+f47ac10b-58cc-4372-a567-0e02b2c3d479
+</code></pre>
+<p>Collision probability: generating a billion UUIDs has only ~50% chance of one duplicate. Practically never collides.</p>
+<p><strong>Pros:</strong></p>
+<ul>
+<li>Fully random — leaks nothing</li>
+<li>No central coordination needed</li>
+<li>Most common, supported everywhere</li>
+</ul>
+<p><strong>Cons (why v7 was created):</strong></p>
+<ul>
+<li>No time ordering → DB B-Tree inserts scatter randomly</li>
+<li>Can't sort by creation time</li>
+<li><strong>Performance killer</strong> in large tables (page splits, cache thrash)</li>
+</ul>
+<h2>2. What Is UUID v7?</h2>
+<p>UUID v7 = <strong>48-bit Unix millisecond timestamp</strong> + 74 bits random + 6 bits version. Looks like:</p>
+<pre><code class="lang-">
+01928a3f-1234-7567-89ab-0123456789ab
+└timestamp┘└rand┘└ver└──random───┘
+</code></pre>
+<p><strong>First 48 bits = time</strong>, rest random. So:</p>
+<ul>
+<li>Still globally unique (74 bits random ≈ 1.8 × 10^22 combos)</li>
+<li><strong>Naturally sorted by creation time</strong></li>
+<li>DB insert = <strong>sequential append</strong>, no page splits</li>
+</ul>
+<h2>3. Performance: 10M Row Insert</h2>
+<p>PostgreSQL 16, single table, 10M rows:</p>
+<table><thead><tr>
+<th>PK type</th>
+<th>Insert time</th>
+<th>Table size</th>
+<th>Index size</th>
+</tr></thead><tbody>
+<tr>
+<td>BIGSERIAL</td>
+<td>32s</td>
+<td>850 MB</td>
+<td>215 MB</td>
+</tr>
+<tr>
+<td><strong>UUID v7</strong></td>
+<td>41s</td>
+<td>1.0 GB</td>
+<td>280 MB</td>
+</tr>
+<tr>
+<td>UUID v4</td>
+<td>138s</td>
+<td>1.0 GB</td>
+<td>540 MB</td>
+</tr>
+</tbody></table>
+<p><strong>Key findings:</strong></p>
+<ol>
+<li>UUID v7 is <strong>3.4× faster</strong> than v4</li>
+<li>v7 index is <strong>48% smaller</strong> than v4 (sequential writes pack pages tightly)</li>
+<li>v7 nears BIGSERIAL performance with all UUID benefits</li>
+</ol>
+<p>Source: <a href="https://github.com/uuid7/postgres-benchmark">uuid7 PostgreSQL benchmark</a></p>
+<h2>4. Which to Pick? 6 Scenarios</h2>
+<table><thead><tr>
+<th>Scenario</th>
+<th>Pick</th>
+<th>Why</th>
+</tr></thead><tbody>
+<tr>
+<td>DB primary key (new project)</td>
+<td><strong>v7</strong></td>
+<td>Sequential writes, index-friendly</td>
+</tr>
+<tr>
+<td>Distributed system ID</td>
+<td><strong>v7</strong></td>
+<td>Naturally time-ordered across nodes</td>
+</tr>
+<tr>
+<td>Session ID / temp token</td>
+<td>v4</td>
+<td>No time, pure random more secure</td>
+</tr>
+<tr>
+<td>Crypto nonce / API key</td>
+<td>v4</td>
+<td>Must be unpredictable</td>
+</tr>
+<tr>
+<td>Filename (anti-guess)</td>
+<td>v4</td>
+<td>Timestamps leak upload time</td>
+</tr>
+<tr>
+<td>Log correlation ID</td>
+<td><strong>v7</strong></td>
+<td>Time-archive friendly</td>
+</tr>
+</tbody></table>
+<h2>5. FAQ</h2>
+<h3>Q: Does v7 leaking creation time cause security issues?</h3>
+<p>In specific scenarios, yes. If your app needs unpredictable IDs (coupons, temp share links), <strong>stick with v4</strong>. For everyday DB keys, v7's gains beat the risk.</p>
+<h3>Q: Can I migrate v4 to v7?</h3>
+<p>You don't have to migrate everything. Both are valid UUIDs (128 bits) — <strong>new data v7, old data v4</strong> coexist fine. But existing physical row order won't reorganize unless you <code>CLUSTER</code>.</p>
+<h3>Q: How does it compare to Snowflake, Sonyflake, Nano ID?</h3>
+<table><thead><tr>
+<th>ID type</th>
+<th>Size</th>
+<th>Time-ordered</th>
+<th>Centralized</th>
+<th>Best for</th>
+</tr></thead><tbody>
+<tr>
+<td>BIGSERIAL</td>
+<td>8 bytes</td>
+<td>✅</td>
+<td>⚠️ Single DB</td>
+<td>Small projects</td>
+</tr>
+<tr>
+<td><strong>UUID v7</strong></td>
+<td>16 bytes</td>
+<td>✅</td>
+<td>❌</td>
+<td>Most cases</td>
+</tr>
+<tr>
+<td>Snowflake</td>
+<td>8 bytes</td>
+<td>✅</td>
+<td>❌ (node ID)</td>
+<td>Hyperscale w/ node mgmt</td>
+</tr>
+<tr>
+<td>Nano ID</td>
+<td>21 chars</td>
+<td>❌</td>
+<td>❌</td>
+<td>Short URLs, API keys</td>
+</tr>
+<tr>
+<td>ULID</td>
+<td>26 chars</td>
+<td>✅</td>
+<td>❌</td>
+<td>Like v7 but base32 string</td>
+</tr>
+</tbody></table>
+<p><strong>2026 default</strong>: unless you have special needs, use <strong>UUID v7</strong> for new project primary keys.</p>
+<h3>Q: How to generate v7 in each language?</h3>
+<table><thead><tr>
+<th>Language</th>
+<th>Library</th>
+</tr></thead><tbody>
+<tr>
+<td>JavaScript</td>
+<td><code>uuidv7</code> package, or check <code>crypto.randomUUID()</code> for v7 support</td>
+</tr>
+<tr>
+<td>Python</td>
+<td><code>uuid6</code> package: <code>uuid6.uuid7()</code></td>
+</tr>
+<tr>
+<td>Go</td>
+<td><code>github.com/google/uuid</code> v1.6+</td>
+</tr>
+<tr>
+<td>Rust</td>
+<td><code>uuid</code> crate v1.5+</td>
+</tr>
+<tr>
+<td>Java</td>
+<td><code>com.fasterxml.uuid:java-uuid-generator</code> v5+</td>
+</tr>
+<tr>
+<td>PostgreSQL</td>
+<td><code>uuidv7()</code> function (pg_uuidv7 ext) or built-in in v17</td>
+</tr>
+</tbody></table>
+<h2>6. UUID v7 Implementation (30 lines of JS)</h2>
+<pre><code class="lang-js">
+function uuidv7() {
+  const ts = Date.now();              // 48-bit ms timestamp
+  const tsHex = ts.toString(16).padStart(12, '0');
+  const rand = crypto.getRandomValues(new Uint8Array(10));
+  let randHex = Array.from(rand).map(b =&gt; b.toString(16).padStart(2, '0')).join('');
+  // Set version 7 and RFC 9562 variant bits
+  randHex = '7' + randHex.slice(1, 4) + ((parseInt(randHex[4], 16) &amp; 0x3) | 0x8).toString(16) + randHex.slice(5);
+  return `${tsHex.slice(0,8)}-${tsHex.slice(8,12)}-${randHex.slice(0,4)}-${randHex.slice(4,8)}-${randHex.slice(8,20)}`;
+}
+</code></pre>
+<p>Full production code: <a href="https://github.com/uuidjs/uuid">uuid lib</a>.</p>
+<h2>7. Try It</h2>
+<p>👉 <a href="/en/tools/uuid-generator.html">AI Toolbox UUID Generator</a>:</p>
+<ul>
+<li>UUID v4 (random)</li>
+<li>UUID v7 (time-ordered)</li>
+<li>Bulk generate 1-1000 at once</li>
+<li>One-click copy</li>
+<li><strong>Fully local</strong> — nothing sent</li>
+</ul>
+<h2>TL;DR</h2>
+<ul>
+<li><strong>DB primary keys → UUID v7</strong> (unless unpredictability matters)</li>
+<li><strong>Tokens / nonces / filenames → UUID v4</strong></li>
+<li>v7 is ~3× faster than v4 in DB inserts, half the index size</li>
+<li>Standard officially published (RFC 9562, 2024)</li>
+</ul>
+<p><strong>Generate now</strong>: <a href="/en/tools/uuid-generator.html">AI Toolbox UUID Generator</a></p>
+</article>
+</main>
+<footer class="site-footer">
+  © 2026 AI Toolbox · Free online AI & developer tools · <a href='/en/about'>About</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('Copied!'));
+}
+</script>
+</body>
+</html>

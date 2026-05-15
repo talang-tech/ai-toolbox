@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>时间戳转换 - 时间戳转换 | 在线工具 | AI 工具盒子</title>
+<meta name="description" content="免费在线时间戳转换工具，Unix 时间戳与日期时间相互转换。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="时间戳转换,unix时间戳,时间戳转日期,时间戳转换器">
+<link rel="canonical" href="https://tools.talang.fun/tools/timestamp-converter">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/timestamp-converter">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/timestamp-converter">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/timestamp-converter">
+<meta property="og:title" content="时间戳转换 - 时间戳转换 | 在线工具 | AI 工具盒子">
+<meta property="og:description" content="免费在线时间戳转换工具，Unix 时间戳与日期时间相互转换。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/timestamp-converter">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "时间戳转换", "description": "免费在线时间戳转换工具，Unix 时间戳与日期时间相互转换。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/timestamp-converter", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "Unix 时间戳与日期时间相互转换", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="https://tools.talang.fun/en/tools/timestamp-converter" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🔧</div>
+  <h1>时间戳转换</h1>
+  <p>Unix 时间戳与日期时间相互转换</p>
+</div>
+<div class="tool-panel">
+<textarea id="input" style="min-height:200px" placeholder="输入..."></textarea><div class="btn-group" style="margin-top:12px"><button class="btn" id="process">转换</button></div><textarea id="output" style="min-height:200px;margin-top:12px" readonly placeholder="结果..."></textarea>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>Unix 时间戳与可读日期时间相互转换工具。支持秒、毫秒、微秒三种精度，多时区支持，ISO 8601 格式输出。</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>时间戳 ↔ 日期时间互转</li><li>支持秒、毫秒、微秒</li><li>多时区支持（UTC、本地、自定义）</li><li>ISO 8601 和 RFC 3339 格式</li><li>实时显示当前时间戳</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">什么是 Unix 时间戳？</h3><p>Unix 时间戳是自 1970 年 1 月 1 日 UTC 以来的秒数（或毫秒数）。是计算机中表示时间的标准方式。</p><h3 style="margin-top:20px;margin-bottom:8px">为什么从 1970 年开始？</h3><p>1970 年 1 月 1 日 UTC 是 Unix 纪元 - Unix 时间的起点。这是早期 Unix 开发中出于实际原因选择的。</p></section>
+
+<script src="/assets/tools/_utils.js" defer></script>
+    <script src="/assets/tools/timestamp-converter.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+</script>
+</body>
+</html>

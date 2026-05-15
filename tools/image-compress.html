@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>图片压缩 - 在线图片压缩 - JPG/PNG/WebP 批量压缩 | AI 工具盒子</title>
+<meta name="description" content="免费在线图片压缩工具，批量压缩 JPG/PNG/WebP 图片，保持画质减小体积。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="图片压缩,在线压缩图片,jpg压缩,png压缩,webp压缩,图片压缩在线">
+<link rel="canonical" href="https://tools.talang.fun/tools/image-compress">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/image-compress">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/image-compress">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/image-compress">
+<meta property="og:title" content="图片压缩 - 在线图片压缩 - JPG/PNG/WebP 批量压缩 | AI 工具盒子">
+<meta property="og:description" content="免费在线图片压缩工具，批量压缩 JPG/PNG/WebP 图片，保持画质减小体积。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/image-compress">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "图片压缩", "description": "免费在线图片压缩工具，批量压缩 JPG/PNG/WebP 图片，保持画质减小体积。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/image-compress", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "批量压缩 JPG/PNG/WebP 图片，保持画质减小体积", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="https://tools.talang.fun/en/tools/image-compress" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🗜️</div>
+  <h1>图片压缩</h1>
+  <p>批量压缩 JPG/PNG/WebP 图片，保持画质减小体积</p>
+</div>
+<div class="tool-panel">
+
+<div class="file-tool-container" style="max-width:800px;margin:0 auto;">
+    <div id="drop-zone" style="border:2px dashed var(--border);border-radius:12px;padding:40px;text-align:center;cursor:pointer;transition:all 0.3s;margin-bottom:20px;">
+        <div style="font-size:48px;margin-bottom:12px;">📁</div>
+        <p style="font-size:16px;line-height:1.8;">点击或拖拽图片到这里<br><small>支持 JPG, PNG, WebP, GIF（单文件最大 50MB）</small></p>
+        <input type="file" id="file-input" accept="image/*" multiple style="display:none;">
+    </div>
+    
+    <div id="file-list" style="margin-bottom:20px;max-height:300px;overflow-y:auto;"></div>
+    
+    <div class="options-panel" style="background:var(--bg-light);padding:20px;border-radius:8px;margin-bottom:20px;">
+        <h4 style="margin-top:0;margin-bottom:16px;">⚙️ 压缩设置</h4>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;">
+            <div>
+                <label style="display:block;margin-bottom:8px;font-weight:500;">压缩质量</label>
+                <div style="display:flex;align-items:center;gap:12px;">
+                    <input type="range" id="quality" min="10" max="100" value="80" style="flex:1;">
+                    <span id="quality-value" style="font-weight:600;min-width:40px;">80%</span>
+                </div>
+            </div>
+            <div>
+                <label style="display:block;margin-bottom:8px;font-weight:500;">输出格式</label>
+                <select id="format" style="width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);">
+                    <option value="auto">保持原格式</option>
+                    <option value="jpeg">JPEG</option>
+                    <option value="png">PNG</option>
+                    <option value="webp">WebP</option>
+                </select>
+            </div>
+            <div>
+                <label style="display:block;margin-bottom:8px;font-weight:500;">最大宽度 (px)</label>
+                <input type="number" id="max-width" value="0" placeholder="0=不限制" style="width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);">
+            </div>
+            <div>
+                <label style="display:block;margin-bottom:8px;font-weight:500;">最大高度 (px)</label>
+                <input type="number" id="max-height" value="0" placeholder="0=不限制" style="width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);">
+            </div>
+        </div>
+    </div>
+    
+    <div style="text-align:center;margin-bottom:20px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+        <button id="process-btn" class="btn btn-primary" style="padding:12px 32px;font-size:16px;">🗜️ 开始压缩</button>
+        <button id="download-btn" class="btn btn-secondary" style="padding:12px 32px;font-size:16px;">📥 下载全部</button>
+    </div>
+    
+    <div id="progress"></div>
+    <div id="result"></div>
+</div>
+
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  
+<p>免费在线图片压缩工具，纯前端实现，所有处理都在浏览器本地完成，图片不会上传到服务器，保护您的隐私安全。</p>
+<p><strong>功能特点：</strong></p>
+<ul>
+<li>✅ 支持批量上传多张图片</li>
+<li>✅ 拖拽上传，操作简单</li>
+<li>✅ 可调节压缩质量 (0-100%)</li>
+<li>✅ 支持转换输出格式 (JPG/PNG/WebP)</li>
+<li>✅ 可设置最大宽高，自动缩放</li>
+<li>✅ 实时显示压缩率和文件大小</li>
+<li>✅ 100% 浏览器本地处理，数据不上传</li>
+</ul>
+<p>适用于：网站图片优化、邮件附件、减小存储空间、快速分享等场景。</p>
+
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>批量压缩多张图片</li><li>拖拽上传，操作简单</li><li>可调节压缩质量</li><li>支持格式转换</li><li>限制最大尺寸</li><li>100% 浏览器本地处理</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">图片会上传到服务器吗？</h3><p>不会。所有压缩操作都在您的浏览器本地完成，图片数据不会离开您的设备，完全保护隐私安全。</p><h3 style="margin-top:20px;margin-bottom:8px">支持哪些图片格式？</h3><p>支持 JPG、PNG、WebP、GIF 等常见格式，可以转换输出格式。</p><h3 style="margin-top:20px;margin-bottom:8px">压缩后的图片质量怎么样？</h3><p>可以根据需要调整压缩质量。80%质量通常肉眼看不出区别但体积能减少 50-70%。</p></section>
+
+<script src="/assets/tools/_utils.js" defer></script>
+    <script src="/assets/tools/image-compress.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+</script>
+</body>
+</html>
