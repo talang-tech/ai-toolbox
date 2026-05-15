@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>图片加水印 - 图片加水印 - 在线添加文字/图片水印 | 开发工具箱 | AI 工具盒子</title>
+<meta name="description" content="免费在线图片加水印工具，文字/图片水印，位置透明度可调。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="图片加水印, 文字水印, 图片水印, 批量加水印">
+<link rel="canonical" href="https://tools.talang.fun/tools/image-watermark">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/image-watermark">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/image-watermark">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/image-watermark">
+<meta property="og:title" content="图片加水印 - 图片加水印 - 在线添加文字/图片水印 | 开发工具箱 | AI 工具盒子">
+<meta property="og:description" content="免费在线图片加水印工具，文字/图片水印，位置透明度可调。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/image-watermark">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "图片加水印", "description": "免费在线图片加水印工具，文字/图片水印，位置透明度可调。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/image-watermark", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "文字/图片水印，位置透明度可调", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="https://tools.talang.fun/en/tools/image-watermark" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">💧</div>
+  <h1>图片加水印</h1>
+  <p>文字/图片水印，位置透明度可调</p>
+</div>
+<div class="tool-panel">
+
+<div class="file-tool-container" style="max-width:800px;margin:0 auto;">
+    <div id="drop-zone" style="border:2px dashed var(--border);border-radius:12px;padding:40px;text-align:center;cursor:pointer;transition:all 0.3s;margin-bottom:20px;">
+        <div style="font-size:48px;margin-bottom:12px;">📁</div>
+        <p style="font-size:16px;line-height:1.8;">点击或拖拽图片到这里<br><small>支持 JPG, PNG, WebP, GIF</small></p>
+        <input type="file" id="file-input" accept="image/*" multiple style="display:none;">
+    </div>
+    
+    <div id="file-list" style="margin-bottom:20px;max-height:300px;overflow-y:auto;"></div>
+    
+    <div class="options-panel" style="background:var(--bg-light);padding:20px;border-radius:8px;margin-bottom:20px;">
+        <h4 style="margin-top:0;margin-bottom:16px;">⚙️ 设置</h4>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;">
+            <div>
+                <label style="display:block;margin-bottom:8px;font-weight:500;">水印类型</label>
+                <select id="watermark-type" style="width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);">
+                    <option value="text">文字水印</option>
+                    <option value="image">图片水印</option>
+                </select>
+            </div>
+            <div>
+                <label style="display:block;margin-bottom:8px;font-weight:500;">水印文字</label>
+                <input type="text" id="watermark-text" value="WATERMARK" style="width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);">
+            </div>
+            <div>
+                <label style="display:block;margin-bottom:8px;font-weight:500;">水印位置</label>
+                <select id="watermark-position" style="width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);">
+                    <option value="bottom-right">右下角</option>
+                    <option value="bottom-left">左下角</option>
+                    <option value="bottom-center">底部居中</option>
+                    <option value="top-right">右上角</option>
+                    <option value="top-left">左上角</option>
+                    <option value="top-center">顶部居中</option>
+                    <option value="center">居中</option>
+                </select>
+            </div>
+            <div>
+                <label style="display:block;margin-bottom:8px;font-weight:500;">透明度</label>
+                <div style="display:flex;align-items:center;gap:12px;">
+                    <input type="range" id="watermark-opacity" min="10" max="100" value="30" style="flex:1;">
+                    <span id="opacity-value" style="font-weight:600;min-width:40px;">30%</span>
+                </div>
+            </div>
+            <div>
+                <label style="display:block;margin-bottom:8px;font-weight:500;">字体大小</label>
+                <input type="number" id="font-size" value="48" style="width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);">
+            </div>
+            <div>
+                <label style="display:block;margin-bottom:8px;font-weight:500;">字体颜色</label>
+                <input type="color" id="font-color" value="#ffffff" style="width:100%;padding:4px;height:38px;border:1px solid var(--border);border-radius:6px;background:var(--bg);">
+            </div>
+        </div>
+    </div>
+    
+    <div style="text-align:center;margin-bottom:20px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+        <button id="process-btn" class="btn btn-primary" style="padding:12px 32px;font-size:16px;">🔄 开始处理</button>
+        <button id="download-btn" class="btn btn-secondary" style="padding:12px 32px;font-size:16px;">📥 下载全部</button>
+    </div>
+    
+    <div id="progress" style="height:6px;background:var(--border);border-radius:3px;overflow:hidden;margin-bottom:20px;">
+        <div style="height:100%;background:var(--primary);width:0;transition:width 0.3s;"></div>
+    </div>
+    <div id="result"></div>
+</div>
+
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  在线图片加水印工具，支持文字水印和图片水印，可调整位置、透明度、字体大小、颜色。纯前端实现，保护隐私。
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>文字/图片水印</li><li>位置可调</li><li>透明度调节</li><li>批量处理</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">支持哪些水印类型？</h3><p>支持文字水印和图片水印两种类型</p><h3 style="margin-top:20px;margin-bottom:8px">水印位置可以调整吗？</h3><p>可以，支持九宫格位置可选，也可以调整边距</p></section>
+
+<script src="/assets/tools/_utils.js" defer></script>
+    <script src="/assets/tools/image-watermark.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+</script>
+</body>
+</html>

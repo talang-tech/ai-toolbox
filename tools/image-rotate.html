@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>图片旋转 - 图片旋转 - 在线旋转翻转图片 | 开发工具箱 | AI 工具盒子</title>
+<meta name="description" content="免费在线图片旋转工具，90°/180°/270° 旋转，镜像翻转。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="图片旋转, 旋转图片, 图片翻转, 镜像翻转">
+<link rel="canonical" href="https://tools.talang.fun/tools/image-rotate">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/image-rotate">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/image-rotate">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/image-rotate">
+<meta property="og:title" content="图片旋转 - 图片旋转 - 在线旋转翻转图片 | 开发工具箱 | AI 工具盒子">
+<meta property="og:description" content="免费在线图片旋转工具，90°/180°/270° 旋转，镜像翻转。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/image-rotate">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "图片旋转", "description": "免费在线图片旋转工具，90°/180°/270° 旋转，镜像翻转。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/image-rotate", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "90°/180°/270° 旋转，镜像翻转", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="https://tools.talang.fun/en/tools/image-rotate" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🔃</div>
+  <h1>图片旋转</h1>
+  <p>90°/180°/270° 旋转，镜像翻转</p>
+</div>
+<div class="tool-panel">
+
+<div class="file-tool-container" style="max-width:800px;margin:0 auto;">
+    <div id="drop-zone" style="border:2px dashed var(--border);border-radius:12px;padding:40px;text-align:center;cursor:pointer;transition:all 0.3s;margin-bottom:20px;">
+        <div style="font-size:48px;margin-bottom:12px;">📁</div>
+        <p style="font-size:16px;line-height:1.8;">点击或拖拽图片到这里<br><small>支持 JPG, PNG, WebP, GIF</small></p>
+        <input type="file" id="file-input" accept="image/*" style="display:none;">
+    </div>
+    
+    <div id="file-list" style="margin-bottom:20px;max-height:150px;overflow-y:auto;"></div>
+    
+    <div id="preview-container" style="margin-bottom:20px;"></div>
+    
+    <div class="options-panel" style="background:var(--bg-light);padding:20px;border-radius:8px;margin-bottom:20px;">
+        <h4 style="margin-top:0;margin-bottom:16px;">⚙️ 设置</h4>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px;margin-bottom:16px;">
+    <button type="button" id="rotate-left" style="padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg);cursor:pointer;">↺ 左旋</button>
+    <button type="button" id="rotate-right" style="padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg);cursor:pointer;">↻ 右旋</button>
+    <button type="button" id="rotate-180" style="padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg);cursor:pointer;">⟳ 180°</button>
+    <button type="button" id="flip-h" style="padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg);cursor:pointer;">↔ 水平</button>
+    <button type="button" id="flip-v" style="padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg);cursor:pointer;">↕ 垂直</button>
+    <button type="button" id="reset" style="padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg);cursor:pointer;">↩ 重置</button>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;">
+    <div>
+        <label style="display:block;margin-bottom:8px;font-weight:500;">输出格式</label>
+        <select id="format" style="width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);">
+            <option value="image/jpeg">JPEG</option>
+            <option value="image/png">PNG</option>
+            <option value="image/webp">WebP</option>
+        </select>
+    </div>
+    <div>
+        <label style="display:block;margin-bottom:8px;font-weight:500;">输出质量</label>
+        <div style="display:flex;align-items:center;gap:12px;">
+            <input type="range" id="quality" min="10" max="100" value="90" style="flex:1;">
+            <span id="quality-value" style="font-weight:600;min-width:40px;">90%</span>
+        </div>
+    </div>
+</div>
+    </div>
+    
+    <div style="text-align:center;margin-bottom:20px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+        <button id="process-btn" class="btn btn-primary" style="padding:12px 32px;font-size:16px;">💾 导出图片</button>
+    </div>
+    
+    <div id="progress" style="height:6px;background:var(--border);border-radius:3px;overflow:hidden;margin-bottom:20px;">
+        <div style="height:100%;background:var(--primary);width:0;transition:width 0.3s;"></div>
+    </div>
+    <div id="result"></div>
+</div>
+
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  在线图片旋转工具，支持90度、180度、270度旋转，水平/垂直镜像翻转，实时预览效果。
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>多角度旋转</li><li>镜像翻转</li><li>实时预览</li><li>批量处理</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">支持哪些旋转角度？</h3><p>支持90°、180°、270°旋转，以及水平/垂直镜像翻转</p><h3 style="margin-top:20px;margin-bottom:8px">旋转会损失画质吗？</h3><p>不会，使用Canvas高精度渲染，画质无损</p></section>
+
+<script src="/assets/tools/_utils.js" defer></script>
+    <script src="/assets/tools/image-rotate.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+</script>
+</body>
+</html>

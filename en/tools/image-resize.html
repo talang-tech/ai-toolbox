@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Resize & Crop - Image Resize - Crop & Scale Online | DevToolBox | AI Toolbox</title>
+<meta name="description" content="Free online image resize & crop. Custom size crop, proportional scaling. Fast, secure, and works in your browser without downloading.">
+<meta name="keywords" content="image crop, image resize, resize image, change size">
+<link rel="canonical" href="https://tools.talang.fun/en/tools/image-resize">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/image-resize">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/image-resize">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/image-resize">
+<meta property="og:title" content="Image Resize & Crop - Image Resize - Crop & Scale Online | DevToolBox | AI Toolbox">
+<meta property="og:description" content="Free online image resize & crop. Custom size crop, proportional scaling. Fast, secure, and works in your browser without downloading.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/en/tools/image-resize">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Image Resize & Crop", "description": "Free online image resize & crop. Custom size crop, proportional scaling. Fast, secure, and works in your browser without downloading.", "url": "https://tools.talang.fun/en/tools/image-resize", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "Custom size crop, proportional scaling", "inLanguage": "en", "author": {"@type": "Organization", "name": "AI Toolbox"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/en/" class="logo"><span class="logo-icon">🛠️</span>AI Toolbox</a>
+    <nav class="nav">
+      <a href="/en/">Home</a>
+      <a href="/en/#tools">All Tools</a>
+      <a href="/en/blog/">Blog</a>
+      <a href="/en/about">About</a>
+      <a href="https://tools.talang.fun/tools/image-resize" class="lang-switch">中文</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">📐</div>
+  <h1>Image Resize & Crop</h1>
+  <p>Custom size crop, proportional scaling</p>
+</div>
+<div class="tool-panel">
+
+<div class="file-tool-container" style="max-width:800px;margin:0 auto;">
+    <div id="drop-zone" style="border:2px dashed var(--border);border-radius:12px;padding:40px;text-align:center;cursor:pointer;transition:all 0.3s;margin-bottom:20px;">
+        <div style="font-size:48px;margin-bottom:12px;">📁</div>
+        <p style="font-size:16px;line-height:1.8;">Click or drag images here<br><small>Supports JPG, PNG, WebP, GIF</small></p>
+        <input type="file" id="file-input" accept="image/*" multiple style="display:none;">
+    </div>
+    
+    <div id="file-list" style="margin-bottom:20px;max-height:300px;overflow-y:auto;"></div>
+    
+    <div class="options-panel" style="background:var(--bg-light);padding:20px;border-radius:8px;margin-bottom:20px;">
+        <h4 style="margin-top:0;margin-bottom:16px;">⚙️ Settings</h4>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;">
+            <div>
+                <label style="display:block;margin-bottom:8px;font-weight:500;">Mode</label>
+                <select id="mode" style="width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);">
+                    <option value="resize">Resize (Stretch)</option>
+                    <option value="crop">Crop (Center)</option>
+                </select>
+            </div>
+            <div>
+                <label style="display:block;margin-bottom:8px;font-weight:500;">Width (px)</label>
+                <input type="number" id="width" value="800" style="width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);">
+            </div>
+            <div>
+                <label style="display:block;margin-bottom:8px;font-weight:500;">Height (px)</label>
+                <input type="number" id="height" value="600" style="width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);">
+            </div>
+            <div>
+                <label style="display:block;margin-bottom:8px;font-weight:500;">Output Format</label>
+                <select id="format" style="width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);">
+                    <option value="image/jpeg">JPEG</option>
+                    <option value="image/png">PNG</option>
+                    <option value="image/webp">WebP</option>
+                </select>
+            </div>
+            <div>
+                <label style="display:block;margin-bottom:8px;font-weight:500;">Quality</label>
+                <div style="display:flex;align-items:center;gap:12px;">
+                    <input type="range" id="quality" min="10" max="100" value="85" style="flex:1;">
+                    <span id="quality-value" style="font-weight:600;min-width:40px;">85%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div style="text-align:center;margin-bottom:20px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+        <button id="process-btn" class="btn btn-primary" style="padding:12px 32px;font-size:16px;">🔄 Start Process</button>
+        <button id="download-btn" class="btn btn-secondary" style="padding:12px 32px;font-size:16px;">📥 Download All</button>
+    </div>
+    
+    <div id="progress" style="height:6px;background:var(--border);border-radius:3px;overflow:hidden;margin-bottom:20px;">
+        <div style="height:100%;background:var(--primary);width:0;transition:width 0.3s;"></div>
+    </div>
+    <div id="result"></div>
+</div>
+
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>About this tool</h2>
+  Online image resize and crop tool, custom dimensions, proportional scaling. Pure frontend implementation, batch processing supported.
+</article>
+<section class="article" style="margin-top:32px"><h2>Key Features</h2><ul><li>Custom Size</li><li>Keep Ratio</li><li>Batch Process</li><li>No Upload</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>Frequently Asked Questions</h2><h3 style="margin-top:20px;margin-bottom:8px">How to keep aspect ratio?</h3><p>Enable keep ratio, input width or height only, the other dimension auto calculates</p><h3 style="margin-top:20px;margin-bottom:8px">Is batch processing supported?</h3><p>Yes, multiple images can be processed at the same time</p></section>
+
+<script src="/assets/tools/_utils.js" defer></script>
+    <script src="/assets/tools/image-resize.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI Toolbox · Free online AI & developer tools · <a href='/en/about'>About</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('Copied!'));
+}
+</script>
+</body>
+</html>

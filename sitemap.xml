@@ -76,6 +76,20 @@
   <url><loc>https://tools.talang.fun/en/tools/html-encoder</loc><lastmod>2026-05-15</lastmod><priority>0.8</priority></url>
   <url><loc>https://tools.talang.fun/tools/image-compress</loc><lastmod>2026-05-15</lastmod><priority>0.8</priority></url>
   <url><loc>https://tools.talang.fun/en/tools/image-compress</loc><lastmod>2026-05-15</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/tools/image-convert</loc><lastmod>2026-05-15</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/en/tools/image-convert</loc><lastmod>2026-05-15</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/tools/image-resize</loc><lastmod>2026-05-15</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/en/tools/image-resize</loc><lastmod>2026-05-15</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/tools/image-watermark</loc><lastmod>2026-05-15</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/en/tools/image-watermark</loc><lastmod>2026-05-15</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/tools/image-base64</loc><lastmod>2026-05-15</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/en/tools/image-base64</loc><lastmod>2026-05-15</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/tools/image-merge</loc><lastmod>2026-05-15</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/en/tools/image-merge</loc><lastmod>2026-05-15</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/tools/image-rotate</loc><lastmod>2026-05-15</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/en/tools/image-rotate</loc><lastmod>2026-05-15</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/tools/image-filter</loc><lastmod>2026-05-15</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/en/tools/image-filter</loc><lastmod>2026-05-15</lastmod><priority>0.8</priority></url>
   <url><loc>https://tools.talang.fun/blog/11-jsonpath-guide</loc><lastmod>2026-05-15</lastmod><priority>0.7</priority></url>
   <url><loc>https://tools.talang.fun/blog/06-jsonpath</loc><lastmod>2026-05-15</lastmod><priority>0.7</priority></url>
   <url><loc>https://tools.talang.fun/blog/07-qrcode</loc><lastmod>2026-05-15</lastmod><priority>0.7</priority></url>

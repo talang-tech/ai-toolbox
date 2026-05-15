@@ -2308,6 +2308,349 @@
           "Quality can be adjusted as needed. 80% quality usually reduces size by 50-70% with no visible difference."
         ]
       ]
+    },
+    {
+      "slug": "image-convert",
+      "category": "image",
+      "icon": "🔄",
+      "name_zh": "图片格式转换",
+      "name_en": "Image Format Converter",
+      "short_zh": "JPG/PNG/WebP 互转，纯前端实现",
+      "short_en": "Convert between JPG/PNG/WebP, pure frontend",
+      "keywords_zh": "图片格式转换, jpg转png, png转jpg, webp转换",
+      "keywords_en": "image converter, jpg to png, png to jpg, webp converter",
+      "long_zh": "在线图片格式转换工具，支持 JPG、PNG、WebP 互转。纯前端 Canvas 实现，图片不上传服务器，保护隐私。支持批量转换，可调节输出质量。",
+      "long_en": "Online image format converter supporting JPG, PNG, WebP conversion. Pure frontend Canvas implementation, no server upload, privacy protected. Batch conversion supported, adjustable output quality.",
+      "features_zh": [
+        "批量转换",
+        "质量调节",
+        "无需上传",
+        "完全免费"
+      ],
+      "features_en": [
+        "Batch Convert",
+        "Quality Control",
+        "No Upload",
+        "100% Free"
+      ],
+      "faq_zh": [
+        [
+          "是否支持批量转换？",
+          "支持，可以同时选择多张图片进行转换"
+        ],
+        [
+          "转换后的图片质量如何？",
+          "可以调节输出质量，从10%-100%，根据需求选择"
+        ]
+      ],
+      "faq_en": [
+        [
+          "Is batch conversion supported?",
+          "Yes, you can select multiple images for conversion at the same time"
+        ],
+        [
+          "How is the output quality?",
+          "Adjustable from 10%-100%, choose according to your needs"
+        ]
+      ],
+      "seo_title_zh": "图片格式转换 - 在线 JPG/PNG/WebP 互转 | 开发工具箱",
+      "seo_title_en": "Image Format Converter - Online JPG/PNG/WebP | DevToolBox",
+      "ui_zh": "\n<div class=\"file-tool-container\" style=\"max-width:800px;margin:0 auto;\">\n    <div id=\"drop-zone\" style=\"border:2px dashed var(--border);border-radius:12px;padding:40px;text-align:center;cursor:pointer;transition:all 0.3s;margin-bottom:20px;\">\n        <div style=\"font-size:48px;margin-bottom:12px;\">📁</div>\n        <p style=\"font-size:16px;line-height:1.8;\">点击或拖拽图片到这里<br><small>支持 JPG, PNG, WebP, GIF</small></p>\n        <input type=\"file\" id=\"file-input\" accept=\"image/*\" multiple style=\"display:none;\">\n    </div>\n    \n    <div id=\"file-list\" style=\"margin-bottom:20px;max-height:300px;overflow-y:auto;\"></div>\n    \n    <div class=\"options-panel\" style=\"background:var(--bg-light);padding:20px;border-radius:8px;margin-bottom:20px;\">\n        <h4 style=\"margin-top:0;margin-bottom:16px;\">⚙️ 设置</h4>\n        <div style=\"display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;\">\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">输出格式</label>\n                <select id=\"format\" style=\"width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n                    <option value=\"image/jpeg\">JPEG</option>\n                    <option value=\"image/png\">PNG</option>\n                    <option value=\"image/webp\">WebP</option>\n                </select>\n            </div>\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">输出质量</label>\n                <div style=\"display:flex;align-items:center;gap:12px;\">\n                    <input type=\"range\" id=\"quality\" min=\"10\" max=\"100\" value=\"85\" style=\"flex:1;\">\n                    <span id=\"quality-value\" style=\"font-weight:600;min-width:40px;\">85%</span>\n                </div>\n            </div>\n        </div>\n    </div>\n    \n    <div style=\"text-align:center;margin-bottom:20px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;\">\n        <button id=\"process-btn\" class=\"btn btn-primary\" style=\"padding:12px 32px;font-size:16px;\">🔄 开始处理</button>\n        <button id=\"download-btn\" class=\"btn btn-secondary\" style=\"padding:12px 32px;font-size:16px;\">📥 下载全部</button>\n    </div>\n    \n    <div id=\"progress\" style=\"height:6px;background:var(--border);border-radius:3px;overflow:hidden;margin-bottom:20px;\">\n        <div style=\"height:100%;background:var(--primary);width:0;transition:width 0.3s;\"></div>\n    </div>\n    <div id=\"result\"></div>\n</div>\n",
+      "ui_en": "\n<div class=\"file-tool-container\" style=\"max-width:800px;margin:0 auto;\">\n    <div id=\"drop-zone\" style=\"border:2px dashed var(--border);border-radius:12px;padding:40px;text-align:center;cursor:pointer;transition:all 0.3s;margin-bottom:20px;\">\n        <div style=\"font-size:48px;margin-bottom:12px;\">📁</div>\n        <p style=\"font-size:16px;line-height:1.8;\">Click or drag images here<br><small>Supports JPG, PNG, WebP, GIF</small></p>\n        <input type=\"file\" id=\"file-input\" accept=\"image/*\" multiple style=\"display:none;\">\n    </div>\n    \n    <div id=\"file-list\" style=\"margin-bottom:20px;max-height:300px;overflow-y:auto;\"></div>\n    \n    <div class=\"options-panel\" style=\"background:var(--bg-light);padding:20px;border-radius:8px;margin-bottom:20px;\">\n        <h4 style=\"margin-top:0;margin-bottom:16px;\">⚙️ Settings</h4>\n        <div style=\"display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;\">\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">Output Format</label>\n                <select id=\"format\" style=\"width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n                    <option value=\"image/jpeg\">JPEG</option>\n                    <option value=\"image/png\">PNG</option>\n                    <option value=\"image/webp\">WebP</option>\n                </select>\n            </div>\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">Quality</label>\n                <div style=\"display:flex;align-items:center;gap:12px;\">\n                    <input type=\"range\" id=\"quality\" min=\"10\" max=\"100\" value=\"85\" style=\"flex:1;\">\n                    <span id=\"quality-value\" style=\"font-weight:600;min-width:40px;\">85%</span>\n                </div>\n            </div>\n        </div>\n    </div>\n    \n    <div style=\"text-align:center;margin-bottom:20px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;\">\n        <button id=\"process-btn\" class=\"btn btn-primary\" style=\"padding:12px 32px;font-size:16px;\">🔄 Start Process</button>\n        <button id=\"download-btn\" class=\"btn btn-secondary\" style=\"padding:12px 32px;font-size:16px;\">📥 Download All</button>\n    </div>\n    \n    <div id=\"progress\" style=\"height:6px;background:var(--border);border-radius:3px;overflow:hidden;margin-bottom:20px;\">\n        <div style=\"height:100%;background:var(--primary);width:0;transition:width 0.3s;\"></div>\n    </div>\n    <div id=\"result\"></div>\n</div>\n"
+    },
+    {
+      "slug": "image-resize",
+      "category": "image",
+      "icon": "📐",
+      "name_zh": "图片裁剪缩放",
+      "name_en": "Image Resize & Crop",
+      "short_zh": "自定义尺寸裁剪，保持比例缩放",
+      "short_en": "Custom size crop, proportional scaling",
+      "keywords_zh": "图片裁剪, 图片缩放, 调整尺寸, 改变大小",
+      "keywords_en": "image crop, image resize, resize image, change size",
+      "long_zh": "在线图片裁剪缩放工具，支持自定义尺寸、保持宽高比缩放。纯前端实现，支持批量处理。",
+      "long_en": "Online image resize and crop tool, custom dimensions, proportional scaling. Pure frontend implementation, batch processing supported.",
+      "features_zh": [
+        "自定义尺寸",
+        "保持比例",
+        "批量处理",
+        "无需上传"
+      ],
+      "features_en": [
+        "Custom Size",
+        "Keep Ratio",
+        "Batch Process",
+        "No Upload"
+      ],
+      "faq_zh": [
+        [
+          "如何保持图片比例？",
+          "勾选保持比例开关后，只需输入宽度或高度，另一维度自动计算"
+        ],
+        [
+          "支持批量处理吗？",
+          "支持，可以同时处理多张图片"
+        ]
+      ],
+      "faq_en": [
+        [
+          "How to keep aspect ratio?",
+          "Enable keep ratio, input width or height only, the other dimension auto calculates"
+        ],
+        [
+          "Is batch processing supported?",
+          "Yes, multiple images can be processed at the same time"
+        ]
+      ],
+      "seo_title_zh": "图片裁剪缩放 - 在线调整图片尺寸 | 开发工具箱",
+      "seo_title_en": "Image Resize - Crop & Scale Online | DevToolBox",
+      "ui_zh": "\n<div class=\"file-tool-container\" style=\"max-width:800px;margin:0 auto;\">\n    <div id=\"drop-zone\" style=\"border:2px dashed var(--border);border-radius:12px;padding:40px;text-align:center;cursor:pointer;transition:all 0.3s;margin-bottom:20px;\">\n        <div style=\"font-size:48px;margin-bottom:12px;\">📁</div>\n        <p style=\"font-size:16px;line-height:1.8;\">点击或拖拽图片到这里<br><small>支持 JPG, PNG, WebP, GIF</small></p>\n        <input type=\"file\" id=\"file-input\" accept=\"image/*\" multiple style=\"display:none;\">\n    </div>\n    \n    <div id=\"file-list\" style=\"margin-bottom:20px;max-height:300px;overflow-y:auto;\"></div>\n    \n    <div class=\"options-panel\" style=\"background:var(--bg-light);padding:20px;border-radius:8px;margin-bottom:20px;\">\n        <h4 style=\"margin-top:0;margin-bottom:16px;\">⚙️ 设置</h4>\n        <div style=\"display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;\">\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">处理模式</label>\n                <select id=\"mode\" style=\"width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n                    <option value=\"resize\">缩放（拉伸）</option>\n                    <option value=\"crop\">裁剪（居中）</option>\n                </select>\n            </div>\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">宽度 (px)</label>\n                <input type=\"number\" id=\"width\" value=\"800\" style=\"width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n            </div>\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">高度 (px)</label>\n                <input type=\"number\" id=\"height\" value=\"600\" style=\"width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n            </div>\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">输出格式</label>\n                <select id=\"format\" style=\"width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n                    <option value=\"image/jpeg\">JPEG</option>\n                    <option value=\"image/png\">PNG</option>\n                    <option value=\"image/webp\">WebP</option>\n                </select>\n            </div>\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">输出质量</label>\n                <div style=\"display:flex;align-items:center;gap:12px;\">\n                    <input type=\"range\" id=\"quality\" min=\"10\" max=\"100\" value=\"85\" style=\"flex:1;\">\n                    <span id=\"quality-value\" style=\"font-weight:600;min-width:40px;\">85%</span>\n                </div>\n            </div>\n        </div>\n    </div>\n    \n    <div style=\"text-align:center;margin-bottom:20px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;\">\n        <button id=\"process-btn\" class=\"btn btn-primary\" style=\"padding:12px 32px;font-size:16px;\">🔄 开始处理</button>\n        <button id=\"download-btn\" class=\"btn btn-secondary\" style=\"padding:12px 32px;font-size:16px;\">📥 下载全部</button>\n    </div>\n    \n    <div id=\"progress\" style=\"height:6px;background:var(--border);border-radius:3px;overflow:hidden;margin-bottom:20px;\">\n        <div style=\"height:100%;background:var(--primary);width:0;transition:width 0.3s;\"></div>\n    </div>\n    <div id=\"result\"></div>\n</div>\n",
+      "ui_en": "\n<div class=\"file-tool-container\" style=\"max-width:800px;margin:0 auto;\">\n    <div id=\"drop-zone\" style=\"border:2px dashed var(--border);border-radius:12px;padding:40px;text-align:center;cursor:pointer;transition:all 0.3s;margin-bottom:20px;\">\n        <div style=\"font-size:48px;margin-bottom:12px;\">📁</div>\n        <p style=\"font-size:16px;line-height:1.8;\">Click or drag images here<br><small>Supports JPG, PNG, WebP, GIF</small></p>\n        <input type=\"file\" id=\"file-input\" accept=\"image/*\" multiple style=\"display:none;\">\n    </div>\n    \n    <div id=\"file-list\" style=\"margin-bottom:20px;max-height:300px;overflow-y:auto;\"></div>\n    \n    <div class=\"options-panel\" style=\"background:var(--bg-light);padding:20px;border-radius:8px;margin-bottom:20px;\">\n        <h4 style=\"margin-top:0;margin-bottom:16px;\">⚙️ Settings</h4>\n        <div style=\"display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;\">\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">Mode</label>\n                <select id=\"mode\" style=\"width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n                    <option value=\"resize\">Resize (Stretch)</option>\n                    <option value=\"crop\">Crop (Center)</option>\n                </select>\n            </div>\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">Width (px)</label>\n                <input type=\"number\" id=\"width\" value=\"800\" style=\"width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n            </div>\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">Height (px)</label>\n                <input type=\"number\" id=\"height\" value=\"600\" style=\"width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n            </div>\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">Output Format</label>\n                <select id=\"format\" style=\"width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n                    <option value=\"image/jpeg\">JPEG</option>\n                    <option value=\"image/png\">PNG</option>\n                    <option value=\"image/webp\">WebP</option>\n                </select>\n            </div>\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">Quality</label>\n                <div style=\"display:flex;align-items:center;gap:12px;\">\n                    <input type=\"range\" id=\"quality\" min=\"10\" max=\"100\" value=\"85\" style=\"flex:1;\">\n                    <span id=\"quality-value\" style=\"font-weight:600;min-width:40px;\">85%</span>\n                </div>\n            </div>\n        </div>\n    </div>\n    \n    <div style=\"text-align:center;margin-bottom:20px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;\">\n        <button id=\"process-btn\" class=\"btn btn-primary\" style=\"padding:12px 32px;font-size:16px;\">🔄 Start Process</button>\n        <button id=\"download-btn\" class=\"btn btn-secondary\" style=\"padding:12px 32px;font-size:16px;\">📥 Download All</button>\n    </div>\n    \n    <div id=\"progress\" style=\"height:6px;background:var(--border);border-radius:3px;overflow:hidden;margin-bottom:20px;\">\n        <div style=\"height:100%;background:var(--primary);width:0;transition:width 0.3s;\"></div>\n    </div>\n    <div id=\"result\"></div>\n</div>\n"
+    },
+    {
+      "slug": "image-watermark",
+      "category": "image",
+      "icon": "💧",
+      "name_zh": "图片加水印",
+      "name_en": "Image Watermark",
+      "short_zh": "文字/图片水印，位置透明度可调",
+      "short_en": "Text/image watermark, position & opacity adjustable",
+      "keywords_zh": "图片加水印, 文字水印, 图片水印, 批量加水印",
+      "keywords_en": "add watermark, text watermark, image watermark, batch watermark",
+      "long_zh": "在线图片加水印工具，支持文字水印和图片水印，可调整位置、透明度、字体大小、颜色。纯前端实现，保护隐私。",
+      "long_en": "Online image watermark tool, text and image watermark supported. Adjustable position, opacity, font size, color. Pure frontend implementation, privacy protected.",
+      "features_zh": [
+        "文字/图片水印",
+        "位置可调",
+        "透明度调节",
+        "批量处理"
+      ],
+      "features_en": [
+        "Text/Image Watermark",
+        "Adjustable Position",
+        "Opacity Control",
+        "Batch Process"
+      ],
+      "faq_zh": [
+        [
+          "支持哪些水印类型？",
+          "支持文字水印和图片水印两种类型"
+        ],
+        [
+          "水印位置可以调整吗？",
+          "可以，支持九宫格位置可选，也可以调整边距"
+        ]
+      ],
+      "faq_en": [
+        [
+          "What watermark types are supported?",
+          "Both text and image watermarks are supported"
+        ],
+        [
+          "Can watermark position be adjusted?",
+          "Yes, 9-grid positions available, margins adjustable"
+        ]
+      ],
+      "seo_title_zh": "图片加水印 - 在线添加文字/图片水印 | 开发工具箱",
+      "seo_title_en": "Add Watermark to Image - Online | DevToolBox",
+      "ui_zh": "\n<div class=\"file-tool-container\" style=\"max-width:800px;margin:0 auto;\">\n    <div id=\"drop-zone\" style=\"border:2px dashed var(--border);border-radius:12px;padding:40px;text-align:center;cursor:pointer;transition:all 0.3s;margin-bottom:20px;\">\n        <div style=\"font-size:48px;margin-bottom:12px;\">📁</div>\n        <p style=\"font-size:16px;line-height:1.8;\">点击或拖拽图片到这里<br><small>支持 JPG, PNG, WebP, GIF</small></p>\n        <input type=\"file\" id=\"file-input\" accept=\"image/*\" multiple style=\"display:none;\">\n    </div>\n    \n    <div id=\"file-list\" style=\"margin-bottom:20px;max-height:300px;overflow-y:auto;\"></div>\n    \n    <div class=\"options-panel\" style=\"background:var(--bg-light);padding:20px;border-radius:8px;margin-bottom:20px;\">\n        <h4 style=\"margin-top:0;margin-bottom:16px;\">⚙️ 设置</h4>\n        <div style=\"display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;\">\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">水印类型</label>\n                <select id=\"watermark-type\" style=\"width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n                    <option value=\"text\">文字水印</option>\n                    <option value=\"image\">图片水印</option>\n                </select>\n            </div>\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">水印文字</label>\n                <input type=\"text\" id=\"watermark-text\" value=\"WATERMARK\" style=\"width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n            </div>\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">水印位置</label>\n                <select id=\"watermark-position\" style=\"width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n                    <option value=\"bottom-right\">右下角</option>\n                    <option value=\"bottom-left\">左下角</option>\n                    <option value=\"bottom-center\">底部居中</option>\n                    <option value=\"top-right\">右上角</option>\n                    <option value=\"top-left\">左上角</option>\n                    <option value=\"top-center\">顶部居中</option>\n                    <option value=\"center\">居中</option>\n                </select>\n            </div>\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">透明度</label>\n                <div style=\"display:flex;align-items:center;gap:12px;\">\n                    <input type=\"range\" id=\"watermark-opacity\" min=\"10\" max=\"100\" value=\"30\" style=\"flex:1;\">\n                    <span id=\"opacity-value\" style=\"font-weight:600;min-width:40px;\">30%</span>\n                </div>\n            </div>\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">字体大小</label>\n                <input type=\"number\" id=\"font-size\" value=\"48\" style=\"width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n            </div>\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">字体颜色</label>\n                <input type=\"color\" id=\"font-color\" value=\"#ffffff\" style=\"width:100%;padding:4px;height:38px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n            </div>\n        </div>\n    </div>\n    \n    <div style=\"text-align:center;margin-bottom:20px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;\">\n        <button id=\"process-btn\" class=\"btn btn-primary\" style=\"padding:12px 32px;font-size:16px;\">🔄 开始处理</button>\n        <button id=\"download-btn\" class=\"btn btn-secondary\" style=\"padding:12px 32px;font-size:16px;\">📥 下载全部</button>\n    </div>\n    \n    <div id=\"progress\" style=\"height:6px;background:var(--border);border-radius:3px;overflow:hidden;margin-bottom:20px;\">\n        <div style=\"height:100%;background:var(--primary);width:0;transition:width 0.3s;\"></div>\n    </div>\n    <div id=\"result\"></div>\n</div>\n",
+      "ui_en": "\n<div class=\"file-tool-container\" style=\"max-width:800px;margin:0 auto;\">\n    <div id=\"drop-zone\" style=\"border:2px dashed var(--border);border-radius:12px;padding:40px;text-align:center;cursor:pointer;transition:all 0.3s;margin-bottom:20px;\">\n        <div style=\"font-size:48px;margin-bottom:12px;\">📁</div>\n        <p style=\"font-size:16px;line-height:1.8;\">Click or drag images here<br><small>Supports JPG, PNG, WebP, GIF</small></p>\n        <input type=\"file\" id=\"file-input\" accept=\"image/*\" multiple style=\"display:none;\">\n    </div>\n    \n    <div id=\"file-list\" style=\"margin-bottom:20px;max-height:300px;overflow-y:auto;\"></div>\n    \n    <div class=\"options-panel\" style=\"background:var(--bg-light);padding:20px;border-radius:8px;margin-bottom:20px;\">\n        <h4 style=\"margin-top:0;margin-bottom:16px;\">⚙️ Settings</h4>\n        <div style=\"display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;\">\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">Watermark Type</label>\n                <select id=\"watermark-type\" style=\"width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n                    <option value=\"text\">Text Watermark</option>\n                    <option value=\"image\">Image Watermark</option>\n                </select>\n            </div>\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">Watermark Text</label>\n                <input type=\"text\" id=\"watermark-text\" value=\"WATERMARK\" style=\"width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n            </div>\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">Position</label>\n                <select id=\"watermark-position\" style=\"width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n                    <option value=\"bottom-right\">Bottom Right</option>\n                    <option value=\"bottom-left\">Bottom Left</option>\n                    <option value=\"bottom-center\">Bottom Center</option>\n                    <option value=\"top-right\">Top Right</option>\n                    <option value=\"top-left\">Top Left</option>\n                    <option value=\"top-center\">Top Center</option>\n                    <option value=\"center\">Center</option>\n                </select>\n            </div>\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">Opacity</label>\n                <div style=\"display:flex;align-items:center;gap:12px;\">\n                    <input type=\"range\" id=\"watermark-opacity\" min=\"10\" max=\"100\" value=\"30\" style=\"flex:1;\">\n                    <span id=\"opacity-value\" style=\"font-weight:600;min-width:40px;\">30%</span>\n                </div>\n            </div>\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">Font Size</label>\n                <input type=\"number\" id=\"font-size\" value=\"48\" style=\"width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n            </div>\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">Font Color</label>\n                <input type=\"color\" id=\"font-color\" value=\"#ffffff\" style=\"width:100%;padding:4px;height:38px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n            </div>\n        </div>\n    </div>\n    \n    <div style=\"text-align:center;margin-bottom:20px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;\">\n        <button id=\"process-btn\" class=\"btn btn-primary\" style=\"padding:12px 32px;font-size:16px;\">🔄 Start Process</button>\n        <button id=\"download-btn\" class=\"btn btn-secondary\" style=\"padding:12px 32px;font-size:16px;\">📥 Download All</button>\n    </div>\n    \n    <div id=\"progress\" style=\"height:6px;background:var(--border);border-radius:3px;overflow:hidden;margin-bottom:20px;\">\n        <div style=\"height:100%;background:var(--primary);width:0;transition:width 0.3s;\"></div>\n    </div>\n    <div id=\"result\"></div>\n</div>\n"
+    },
+    {
+      "slug": "image-base64",
+      "category": "image",
+      "icon": "📝",
+      "name_zh": "图片转 Base64",
+      "name_en": "Image to Base64",
+      "short_zh": "图片转 Base64 编码，一键复制",
+      "short_en": "Convert image to Base64, one-click copy",
+      "keywords_zh": "图片转base64, base64编码, 图片编码",
+      "keywords_en": "image to base64, base64 encoding, image encode",
+      "long_zh": "在线图片转 Base64 工具，支持多种输出格式、尺寸调整、一键复制编码结果。纯前端实现，图片不上传服务器。",
+      "long_en": "Online image to Base64 converter, multiple output formats, size adjustment, one-click copy. Pure frontend implementation, no server upload.",
+      "features_zh": [
+        "格式选择",
+        "尺寸限制",
+        "一键复制",
+        "实时预览"
+      ],
+      "features_en": [
+        "Format Selection",
+        "Size Limit",
+        "One-click Copy",
+        "Live Preview"
+      ],
+      "faq_zh": [
+        [
+          "转换后的 Base64 可以直接用在网页吗？",
+          "可以，data:前缀的格式可以直接用于img标签的src属性"
+        ],
+        [
+          "支持尺寸压缩后转换吗？",
+          "支持，可以设置最大宽度和高度限制"
+        ]
+      ],
+      "faq_en": [
+        [
+          "Can the converted Base64 be used directly in web pages?",
+          "Yes, the data: prefixed format can be used directly in img src attribute"
+        ],
+        [
+          "Is resizing supported?",
+          "Yes, you can set max width and height limits"
+        ]
+      ],
+      "seo_title_zh": "图片转 Base64 - 在线编码转换 | 开发工具箱",
+      "seo_title_en": "Image to Base64 - Online Encoder | DevToolBox",
+      "ui_zh": "\n<div class=\"file-tool-container\" style=\"max-width:800px;margin:0 auto;\">\n    <div id=\"drop-zone\" style=\"border:2px dashed var(--border);border-radius:12px;padding:40px;text-align:center;cursor:pointer;transition:all 0.3s;margin-bottom:20px;\">\n        <div style=\"font-size:48px;margin-bottom:12px;\">📁</div>\n        <p style=\"font-size:16px;line-height:1.8;\">点击或拖拽图片到这里<br><small>支持 JPG, PNG, WebP, GIF</small></p>\n        <input type=\"file\" id=\"file-input\" accept=\"image/*\" multiple style=\"display:none;\">\n    </div>\n    \n    <div id=\"file-list\" style=\"margin-bottom:20px;max-height:300px;overflow-y:auto;\"></div>\n    \n    <div class=\"options-panel\" style=\"background:var(--bg-light);padding:20px;border-radius:8px;margin-bottom:20px;\">\n        <h4 style=\"margin-top:0;margin-bottom:16px;\">⚙️ 设置</h4>\n        <div style=\"display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;\">\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">输出格式</label>\n                <select id=\"format\" style=\"width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n                    <option value=\"original\">保持原格式</option>\n                    <option value=\"image/jpeg\">JPEG</option>\n                    <option value=\"image/png\">PNG</option>\n                    <option value=\"image/webp\">WebP</option>\n                </select>\n            </div>\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">最大宽度</label>\n                <input type=\"number\" id=\"max-width\" value=\"0\" placeholder=\"0=不限制\" style=\"width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n            </div>\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">最大高度</label>\n                <input type=\"number\" id=\"max-height\" value=\"0\" placeholder=\"0=不限制\" style=\"width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n            </div>\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">输出质量</label>\n                <div style=\"display:flex;align-items:center;gap:12px;\">\n                    <input type=\"range\" id=\"quality\" min=\"10\" max=\"100\" value=\"85\" style=\"flex:1;\">\n                    <span id=\"quality-value\" style=\"font-weight:600;min-width:40px;\">85%</span>\n                </div>\n            </div>\n        </div>\n    </div>\n    \n    <div style=\"text-align:center;margin-bottom:20px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;\">\n        <button id=\"process-btn\" class=\"btn btn-primary\" style=\"padding:12px 32px;font-size:16px;\">🔄 开始处理</button>\n        <button id=\"download-btn\" class=\"btn btn-secondary\" style=\"padding:12px 32px;font-size:16px;\">📥 下载全部</button>\n    </div>\n    \n    <div id=\"progress\" style=\"height:6px;background:var(--border);border-radius:3px;overflow:hidden;margin-bottom:20px;\">\n        <div style=\"height:100%;background:var(--primary);width:0;transition:width 0.3s;\"></div>\n    </div>\n    <div id=\"result\"></div>\n</div>\n",
+      "ui_en": "\n<div class=\"file-tool-container\" style=\"max-width:800px;margin:0 auto;\">\n    <div id=\"drop-zone\" style=\"border:2px dashed var(--border);border-radius:12px;padding:40px;text-align:center;cursor:pointer;transition:all 0.3s;margin-bottom:20px;\">\n        <div style=\"font-size:48px;margin-bottom:12px;\">📁</div>\n        <p style=\"font-size:16px;line-height:1.8;\">Click or drag images here<br><small>Supports JPG, PNG, WebP, GIF</small></p>\n        <input type=\"file\" id=\"file-input\" accept=\"image/*\" multiple style=\"display:none;\">\n    </div>\n    \n    <div id=\"file-list\" style=\"margin-bottom:20px;max-height:300px;overflow-y:auto;\"></div>\n    \n    <div class=\"options-panel\" style=\"background:var(--bg-light);padding:20px;border-radius:8px;margin-bottom:20px;\">\n        <h4 style=\"margin-top:0;margin-bottom:16px;\">⚙️ Settings</h4>\n        <div style=\"display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;\">\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">Output Format</label>\n                <select id=\"format\" style=\"width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n                    <option value=\"original\">Keep Original</option>\n                    <option value=\"image/jpeg\">JPEG</option>\n                    <option value=\"image/png\">PNG</option>\n                    <option value=\"image/webp\">WebP</option>\n                </select>\n            </div>\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">Max Width</label>\n                <input type=\"number\" id=\"max-width\" value=\"0\" placeholder=\"0=No limit\" style=\"width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n            </div>\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">Max Height</label>\n                <input type=\"number\" id=\"max-height\" value=\"0\" placeholder=\"0=No limit\" style=\"width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n            </div>\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">Quality</label>\n                <div style=\"display:flex;align-items:center;gap:12px;\">\n                    <input type=\"range\" id=\"quality\" min=\"10\" max=\"100\" value=\"85\" style=\"flex:1;\">\n                    <span id=\"quality-value\" style=\"font-weight:600;min-width:40px;\">85%</span>\n                </div>\n            </div>\n        </div>\n    </div>\n    \n    <div style=\"text-align:center;margin-bottom:20px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;\">\n        <button id=\"process-btn\" class=\"btn btn-primary\" style=\"padding:12px 32px;font-size:16px;\">🔄 Start Process</button>\n        <button id=\"download-btn\" class=\"btn btn-secondary\" style=\"padding:12px 32px;font-size:16px;\">📥 Download All</button>\n    </div>\n    \n    <div id=\"progress\" style=\"height:6px;background:var(--border);border-radius:3px;overflow:hidden;margin-bottom:20px;\">\n        <div style=\"height:100%;background:var(--primary);width:0;transition:width 0.3s;\"></div>\n    </div>\n    <div id=\"result\"></div>\n</div>\n"
+    },
+    {
+      "slug": "image-merge",
+      "category": "image",
+      "icon": "🔗",
+      "name_zh": "图片拼接",
+      "name_en": "Image Merge",
+      "short_zh": "多张图片横向/纵向拼接",
+      "short_en": "Merge multiple images horizontally/vertically",
+      "keywords_zh": "图片拼接, 图片合并, 长图拼接, 拼接图片",
+      "keywords_en": "image merge, combine images, photo merge images",
+      "long_zh": "在线图片拼接工具，支持多张图片横向或纵向拼接，可调整间距、背景颜色，拖拽排序。纯前端实现，批量处理。",
+      "long_en": "Online image merge tool, horizontal/vertical merge, adjustable spacing, background color, drag to sort. Pure frontend implementation, batch processing.",
+      "features_zh": [
+        "横向/纵向",
+        "间距调整",
+        "拖拽排序",
+        "背景自定义"
+      ],
+      "features_en": [
+        "Horizontal/Vertical",
+        "Spacing Control",
+        "Drag to Sort",
+        "Custom Background"
+      ],
+      "faq_zh": [
+        [
+          "最多支持几张图片拼接？",
+          "理论上没有限制，但建议单次不超过10张以保证性能"
+        ],
+        [
+          "可以调整图片顺序吗？",
+          "可以，拖拽文件列表可以调整顺序"
+        ]
+      ],
+      "faq_en": [
+        [
+          "How many images can be merged?",
+          "No theoretical limit, but recommend no more than 10 for performance"
+        ],
+        [
+          "Can image order be adjusted?",
+          "Yes, drag the file list to reorder"
+        ]
+      ],
+      "seo_title_zh": "图片拼接 - 在线合并多张图片 | 开发工具箱",
+      "seo_title_en": "Image Merge - Combine Photos Online | DevToolBox",
+      "ui_zh": "\n<div class=\"file-tool-container\" style=\"max-width:800px;margin:0 auto;\">\n    <div id=\"drop-zone\" style=\"border:2px dashed var(--border);border-radius:12px;padding:40px;text-align:center;cursor:pointer;transition:all 0.3s;margin-bottom:20px;\">\n        <div style=\"font-size:48px;margin-bottom:12px;\">📁</div>\n        <p style=\"font-size:16px;line-height:1.8;\">点击或拖拽图片到这里<br><small>支持 JPG, PNG, WebP, GIF</small></p>\n        <input type=\"file\" id=\"file-input\" accept=\"image/*\" multiple style=\"display:none;\">\n    </div>\n    \n    <div id=\"file-list\" style=\"margin-bottom:20px;max-height:300px;overflow-y:auto;\"></div>\n    \n    <div class=\"options-panel\" style=\"background:var(--bg-light);padding:20px;border-radius:8px;margin-bottom:20px;\">\n        <h4 style=\"margin-top:0;margin-bottom:16px;\">⚙️ 设置</h4>\n        <div style=\"display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;\">\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">拼接方向</label>\n                <select id=\"direction\" style=\"width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n                    <option value=\"horizontal\">横向拼接</option>\n                    <option value=\"vertical\">纵向拼接</option>\n                </select>\n            </div>\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">图片间距</label>\n                <div style=\"display:flex;align-items:center;gap:12px;\">\n                    <input type=\"range\" id=\"spacing\" min=\"0\" max=\"100\" value=\"0\" style=\"flex:1;\">\n                    <span id=\"spacing-value\" style=\"font-weight:600;min-width:40px;\">0px</span>\n                </div>\n            </div>\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">背景颜色</label>\n                <input type=\"color\" id=\"bg-color\" value=\"#ffffff\" style=\"width:100%;padding:4px;height:38px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n            </div>\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">输出格式</label>\n                <select id=\"format\" style=\"width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n                    <option value=\"image/jpeg\">JPEG</option>\n                    <option value=\"image/png\">PNG</option>\n                    <option value=\"image/webp\">WebP</option>\n                </select>\n            </div>\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">输出质量</label>\n                <div style=\"display:flex;align-items:center;gap:12px;\">\n                    <input type=\"range\" id=\"quality\" min=\"10\" max=\"100\" value=\"90\" style=\"flex:1;\">\n                    <span id=\"quality-value\" style=\"font-weight:600;min-width:40px;\">90%</span>\n                </div>\n            </div>\n        </div>\n    </div>\n    \n    <div style=\"text-align:center;margin-bottom:20px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;\">\n        <button id=\"process-btn\" class=\"btn btn-primary\" style=\"padding:12px 32px;font-size:16px;\">🔄 开始处理</button>\n        <button id=\"download-btn\" class=\"btn btn-secondary\" style=\"padding:12px 32px;font-size:16px;\">📥 下载全部</button>\n    </div>\n    \n    <div id=\"progress\" style=\"height:6px;background:var(--border);border-radius:3px;overflow:hidden;margin-bottom:20px;\">\n        <div style=\"height:100%;background:var(--primary);width:0;transition:width 0.3s;\"></div>\n    </div>\n    <div id=\"result\"></div>\n</div>\n",
+      "ui_en": "\n<div class=\"file-tool-container\" style=\"max-width:800px;margin:0 auto;\">\n    <div id=\"drop-zone\" style=\"border:2px dashed var(--border);border-radius:12px;padding:40px;text-align:center;cursor:pointer;transition:all 0.3s;margin-bottom:20px;\">\n        <div style=\"font-size:48px;margin-bottom:12px;\">📁</div>\n        <p style=\"font-size:16px;line-height:1.8;\">Click or drag images here<br><small>Supports JPG, PNG, WebP, GIF</small></p>\n        <input type=\"file\" id=\"file-input\" accept=\"image/*\" multiple style=\"display:none;\">\n    </div>\n    \n    <div id=\"file-list\" style=\"margin-bottom:20px;max-height:300px;overflow-y:auto;\"></div>\n    \n    <div class=\"options-panel\" style=\"background:var(--bg-light);padding:20px;border-radius:8px;margin-bottom:20px;\">\n        <h4 style=\"margin-top:0;margin-bottom:16px;\">⚙️ Settings</h4>\n        <div style=\"display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;\">\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">Merge Direction</label>\n                <select id=\"direction\" style=\"width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n                    <option value=\"horizontal\">Horizontal</option>\n                    <option value=\"vertical\">Vertical</option>\n                </select>\n            </div>\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">Spacing</label>\n                <div style=\"display:flex;align-items:center;gap:12px;\">\n                    <input type=\"range\" id=\"spacing\" min=\"0\" max=\"100\" value=\"0\" style=\"flex:1;\">\n                    <span id=\"spacing-value\" style=\"font-weight:600;min-width:40px;\">0px</span>\n                </div>\n            </div>\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">Background</label>\n                <input type=\"color\" id=\"bg-color\" value=\"#ffffff\" style=\"width:100%;padding:4px;height:38px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n            </div>\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">Output Format</label>\n                <select id=\"format\" style=\"width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n                    <option value=\"image/jpeg\">JPEG</option>\n                    <option value=\"image/png\">PNG</option>\n                    <option value=\"image/webp\">WebP</option>\n                </select>\n            </div>\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">Quality</label>\n                <div style=\"display:flex;align-items:center;gap:12px;\">\n                    <input type=\"range\" id=\"quality\" min=\"10\" max=\"100\" value=\"90\" style=\"flex:1;\">\n                    <span id=\"quality-value\" style=\"font-weight:600;min-width:40px;\">90%</span>\n                </div>\n            </div>\n        </div>\n    </div>\n    \n    <div style=\"text-align:center;margin-bottom:20px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;\">\n        <button id=\"process-btn\" class=\"btn btn-primary\" style=\"padding:12px 32px;font-size:16px;\">🔄 Start Process</button>\n        <button id=\"download-btn\" class=\"btn btn-secondary\" style=\"padding:12px 32px;font-size:16px;\">📥 Download All</button>\n    </div>\n    \n    <div id=\"progress\" style=\"height:6px;background:var(--border);border-radius:3px;overflow:hidden;margin-bottom:20px;\">\n        <div style=\"height:100%;background:var(--primary);width:0;transition:width 0.3s;\"></div>\n    </div>\n    <div id=\"result\"></div>\n</div>\n"
+    },
+    {
+      "slug": "image-rotate",
+      "category": "image",
+      "icon": "🔃",
+      "name_zh": "图片旋转",
+      "name_en": "Image Rotate",
+      "short_zh": "90°/180°/270° 旋转，镜像翻转",
+      "short_en": "90°/180°/270° rotation, mirror flip",
+      "keywords_zh": "图片旋转, 旋转图片, 图片翻转, 镜像翻转",
+      "keywords_en": "rotate image, image flip, mirror flip",
+      "long_zh": "在线图片旋转工具，支持90度、180度、270度旋转，水平/垂直镜像翻转，实时预览效果。",
+      "long_en": "Online image rotation tool, 90°, 180°, 270° rotation, horizontal/vertical mirror flip, real-time preview.",
+      "features_zh": [
+        "多角度旋转",
+        "镜像翻转",
+        "实时预览",
+        "批量处理"
+      ],
+      "features_en": [
+        "Multi-angle Rotate",
+        "Mirror Flip",
+        "Live Preview",
+        "Batch Process"
+      ],
+      "faq_zh": [
+        [
+          "支持哪些旋转角度？",
+          "支持90°、180°、270°旋转，以及水平/垂直镜像翻转"
+        ],
+        [
+          "旋转会损失画质吗？",
+          "不会，使用Canvas高精度渲染，画质无损"
+        ]
+      ],
+      "faq_en": [
+        [
+          "What rotation angles are supported?",
+          "90°, 180°, 270° rotation, plus horizontal/vertical mirror flip"
+        ],
+        [
+          "Will rotation lose quality?",
+          "No, Canvas high-precision rendering, lossless quality"
+        ]
+      ],
+      "seo_title_zh": "图片旋转 - 在线旋转翻转图片 | 开发工具箱",
+      "seo_title_en": "Image Rotate - Rotate & Flip Online | DevToolBox",
+      "ui_zh": "\n<div class=\"file-tool-container\" style=\"max-width:800px;margin:0 auto;\">\n    <div id=\"drop-zone\" style=\"border:2px dashed var(--border);border-radius:12px;padding:40px;text-align:center;cursor:pointer;transition:all 0.3s;margin-bottom:20px;\">\n        <div style=\"font-size:48px;margin-bottom:12px;\">📁</div>\n        <p style=\"font-size:16px;line-height:1.8;\">点击或拖拽图片到这里<br><small>支持 JPG, PNG, WebP, GIF</small></p>\n        <input type=\"file\" id=\"file-input\" accept=\"image/*\" style=\"display:none;\">\n    </div>\n    \n    <div id=\"file-list\" style=\"margin-bottom:20px;max-height:150px;overflow-y:auto;\"></div>\n    \n    <div id=\"preview-container\" style=\"margin-bottom:20px;\"></div>\n    \n    <div class=\"options-panel\" style=\"background:var(--bg-light);padding:20px;border-radius:8px;margin-bottom:20px;\">\n        <h4 style=\"margin-top:0;margin-bottom:16px;\">⚙️ 设置</h4>\n        <div style=\"display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px;margin-bottom:16px;\">\n    <button type=\"button\" id=\"rotate-left\" style=\"padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg);cursor:pointer;\">↺ 左旋</button>\n    <button type=\"button\" id=\"rotate-right\" style=\"padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg);cursor:pointer;\">↻ 右旋</button>\n    <button type=\"button\" id=\"rotate-180\" style=\"padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg);cursor:pointer;\">⟳ 180°</button>\n    <button type=\"button\" id=\"flip-h\" style=\"padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg);cursor:pointer;\">↔ 水平</button>\n    <button type=\"button\" id=\"flip-v\" style=\"padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg);cursor:pointer;\">↕ 垂直</button>\n    <button type=\"button\" id=\"reset\" style=\"padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg);cursor:pointer;\">↩ 重置</button>\n</div>\n<div style=\"display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;\">\n    <div>\n        <label style=\"display:block;margin-bottom:8px;font-weight:500;\">输出格式</label>\n        <select id=\"format\" style=\"width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n            <option value=\"image/jpeg\">JPEG</option>\n            <option value=\"image/png\">PNG</option>\n            <option value=\"image/webp\">WebP</option>\n        </select>\n    </div>\n    <div>\n        <label style=\"display:block;margin-bottom:8px;font-weight:500;\">输出质量</label>\n        <div style=\"display:flex;align-items:center;gap:12px;\">\n            <input type=\"range\" id=\"quality\" min=\"10\" max=\"100\" value=\"90\" style=\"flex:1;\">\n            <span id=\"quality-value\" style=\"font-weight:600;min-width:40px;\">90%</span>\n        </div>\n    </div>\n</div>\n    </div>\n    \n    <div style=\"text-align:center;margin-bottom:20px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;\">\n        <button id=\"process-btn\" class=\"btn btn-primary\" style=\"padding:12px 32px;font-size:16px;\">💾 导出图片</button>\n    </div>\n    \n    <div id=\"progress\" style=\"height:6px;background:var(--border);border-radius:3px;overflow:hidden;margin-bottom:20px;\">\n        <div style=\"height:100%;background:var(--primary);width:0;transition:width 0.3s;\"></div>\n    </div>\n    <div id=\"result\"></div>\n</div>\n",
+      "ui_en": "\n<div class=\"file-tool-container\" style=\"max-width:800px;margin:0 auto;\">\n    <div id=\"drop-zone\" style=\"border:2px dashed var(--border);border-radius:12px;padding:40px;text-align:center;cursor:pointer;transition:all 0.3s;margin-bottom:20px;\">\n        <div style=\"font-size:48px;margin-bottom:12px;\">📁</div>\n        <p style=\"font-size:16px;line-height:1.8;\">Click or drag image here<br><small>Supports JPG, PNG, WebP, GIF</small></p>\n        <input type=\"file\" id=\"file-input\" accept=\"image/*\" style=\"display:none;\">\n    </div>\n    \n    <div id=\"file-list\" style=\"margin-bottom:20px;max-height:150px;overflow-y:auto;\"></div>\n    \n    <div id=\"preview-container\" style=\"margin-bottom:20px;\"></div>\n    \n    <div class=\"options-panel\" style=\"background:var(--bg-light);padding:20px;border-radius:8px;margin-bottom:20px;\">\n        <h4 style=\"margin-top:0;margin-bottom:16px;\">⚙️ Settings</h4>\n        <div style=\"display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px;margin-bottom:16px;\">\n    <button type=\"button\" id=\"rotate-left\" style=\"padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg);cursor:pointer;\">↺ Left</button>\n    <button type=\"button\" id=\"rotate-right\" style=\"padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg);cursor:pointer;\">↻ Right</button>\n    <button type=\"button\" id=\"rotate-180\" style=\"padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg);cursor:pointer;\">⟳ 180°</button>\n    <button type=\"button\" id=\"flip-h\" style=\"padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg);cursor:pointer;\">↔ H-Flip</button>\n    <button type=\"button\" id=\"flip-v\" style=\"padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg);cursor:pointer;\">↕ V-Flip</button>\n    <button type=\"button\" id=\"reset\" style=\"padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg);cursor:pointer;\">↩ Reset</button>\n</div>\n<div style=\"display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;\">\n    <div>\n        <label style=\"display:block;margin-bottom:8px;font-weight:500;\">Output Format</label>\n        <select id=\"format\" style=\"width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n            <option value=\"image/jpeg\">JPEG</option>\n            <option value=\"image/png\">PNG</option>\n            <option value=\"image/webp\">WebP</option>\n        </select>\n    </div>\n    <div>\n        <label style=\"display:block;margin-bottom:8px;font-weight:500;\">Quality</label>\n        <div style=\"display:flex;align-items:center;gap:12px;\">\n            <input type=\"range\" id=\"quality\" min=\"10\" max=\"100\" value=\"90\" style=\"flex:1;\">\n            <span id=\"quality-value\" style=\"font-weight:600;min-width:40px;\">90%</span>\n        </div>\n    </div>\n</div>\n    </div>\n    \n    <div style=\"text-align:center;margin-bottom:20px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;\">\n        <button id=\"process-btn\" class=\"btn btn-primary\" style=\"padding:12px 32px;font-size:16px;\">💾 Export Image</button>\n    </div>\n    \n    <div id=\"progress\" style=\"height:6px;background:var(--border);border-radius:3px;overflow:hidden;margin-bottom:20px;\">\n        <div style=\"height:100%;background:var(--primary);width:0;transition:width 0.3s;\"></div>\n    </div>\n    <div id=\"result\"></div>\n</div>\n"
+    },
+    {
+      "slug": "image-filter",
+      "category": "image",
+      "icon": "🎨",
+      "name_zh": "图片滤镜",
+      "name_en": "Image Filter",
+      "short_zh": "黑白/怀旧/反色/对比度等滤镜效果",
+      "short_en": "Grayscale/sepia/invert/contrast filter effects",
+      "keywords_zh": "图片滤镜, 黑白照片, 怀旧滤镜, 反色效果",
+      "keywords_en": "image filter, grayscale photo, sepia filter, invert effect",
+      "long_zh": "在线图片滤镜工具，支持黑白、怀旧、反色、对比度、亮度、复古、冷暖色调等多种滤镜效果，强度可调，实时预览。",
+      "long_en": "Online image filter tool, grayscale, sepia, invert, contrast, brightness, vintage, warm/cold tone filters, adjustable intensity, real-time preview.",
+      "features_zh": [
+        "10+滤镜",
+        "强度可调",
+        "实时预览",
+        "无需上传"
+      ],
+      "features_en": [
+        "10+ Filters",
+        "Adjustable Intensity",
+        "Live Preview",
+        "No Upload"
+      ],
+      "faq_zh": [
+        [
+          "支持哪些滤镜效果？",
+          "支持黑白、怀旧、反色、对比度、亮度、复古、冷色调、暖色调等多种滤镜"
+        ],
+        [
+          "滤镜强度可以调整吗？",
+          "可以，0-100%强度可调，实时预览效果"
+        ]
+      ],
+      "faq_en": [
+        [
+          "What filter effects are supported?",
+          "Grayscale, sepia, invert, contrast, brightness, vintage, cold/warm tone and more"
+        ],
+        [
+          "Can filter intensity be adjusted?",
+          "Yes, 0-100% adjustable, real-time preview"
+        ]
+      ],
+      "seo_title_zh": "图片滤镜 - 在线添加滤镜效果 | 开发工具箱",
+      "seo_title_en": "Image Filter - Apply Effects Online | DevToolBox",
+      "ui_zh": "\n<div class=\"file-tool-container\" style=\"max-width:800px;margin:0 auto;\">\n    <div id=\"drop-zone\" style=\"border:2px dashed var(--border);border-radius:12px;padding:40px;text-align:center;cursor:pointer;transition:all 0.3s;margin-bottom:20px;\">\n        <div style=\"font-size:48px;margin-bottom:12px;\">📁</div>\n        <p style=\"font-size:16px;line-height:1.8;\">点击或拖拽图片到这里<br><small>支持 JPG, PNG, WebP, GIF</small></p>\n        <input type=\"file\" id=\"file-input\" accept=\"image/*\" style=\"display:none;\">\n    </div>\n    \n    <div id=\"file-list\" style=\"margin-bottom:20px;max-height:150px;overflow-y:auto;\"></div>\n    \n    <div id=\"preview-container\" style=\"margin-bottom:20px;\"></div>\n    \n    <div class=\"options-panel\" style=\"background:var(--bg-light);padding:20px;border-radius:8px;margin-bottom:20px;\">\n        <h4 style=\"margin-top:0;margin-bottom:16px;\">⚙️ 设置</h4>\n        <div style=\"display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;\">\n    <div>\n        <label style=\"display:block;margin-bottom:8px;font-weight:500;\">滤镜类型</label>\n        <select id=\"filter-type\" style=\"width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n            <option value=\"grayscale\">黑白</option>\n            <option value=\"sepia\">怀旧</option>\n            <option value=\"invert\">反色</option>\n            <option value=\"contrast\">对比度</option>\n            <option value=\"brightness\">亮度</option>\n            <option value=\"vintage\">复古</option>\n            <option value=\"cold\">冷色调</option>\n            <option value=\"warm\">暖色调</option>\n        </select>\n    </div>\n    <div>\n        <label style=\"display:block;margin-bottom:8px;font-weight:500;\">滤镜强度</label>\n        <div style=\"display:flex;align-items:center;gap:12px;\">\n            <input type=\"range\" id=\"intensity\" min=\"0\" max=\"100\" value=\"50\" style=\"flex:1;\">\n            <span id=\"intensity-value\" style=\"font-weight:600;min-width:40px;\">50%</span>\n        </div>\n    </div>\n    <div>\n        <label style=\"display:block;margin-bottom:8px;font-weight:500;\">输出格式</label>\n        <select id=\"format\" style=\"width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n            <option value=\"image/jpeg\">JPEG</option>\n            <option value=\"image/png\">PNG</option>\n            <option value=\"image/webp\">WebP</option>\n        </select>\n    </div>\n    <div>\n        <label style=\"display:block;margin-bottom:8px;font-weight:500;\">输出质量</label>\n        <div style=\"display:flex;align-items:center;gap:12px;\">\n            <input type=\"range\" id=\"quality\" min=\"10\" max=\"100\" value=\"90\" style=\"flex:1;\">\n            <span id=\"quality-value\" style=\"font-weight:600;min-width:40px;\">90%</span>\n        </div>\n    </div>\n</div>\n    </div>\n    \n    <div style=\"text-align:center;margin-bottom:20px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;\">\n        <button id=\"process-btn\" class=\"btn btn-primary\" style=\"padding:12px 32px;font-size:16px;\">💾 导出图片</button>\n    </div>\n    \n    <div id=\"progress\" style=\"height:6px;background:var(--border);border-radius:3px;overflow:hidden;margin-bottom:20px;\">\n        <div style=\"height:100%;background:var(--primary);width:0;transition:width 0.3s;\"></div>\n    </div>\n    <div id=\"result\"></div>\n</div>\n",
+      "ui_en": "\n<div class=\"file-tool-container\" style=\"max-width:800px;margin:0 auto;\">\n    <div id=\"drop-zone\" style=\"border:2px dashed var(--border);border-radius:12px;padding:40px;text-align:center;cursor:pointer;transition:all 0.3s;margin-bottom:20px;\">\n        <div style=\"font-size:48px;margin-bottom:12px;\">📁</div>\n        <p style=\"font-size:16px;line-height:1.8;\">Click or drag image here<br><small>Supports JPG, PNG, WebP, GIF</small></p>\n        <input type=\"file\" id=\"file-input\" accept=\"image/*\" style=\"display:none;\">\n    </div>\n    \n    <div id=\"file-list\" style=\"margin-bottom:20px;max-height:150px;overflow-y:auto;\"></div>\n    \n    <div id=\"preview-container\" style=\"margin-bottom:20px;\"></div>\n    \n    <div class=\"options-panel\" style=\"background:var(--bg-light);padding:20px;border-radius:8px;margin-bottom:20px;\">\n        <h4 style=\"margin-top:0;margin-bottom:16px;\">⚙️ Settings</h4>\n        <div style=\"display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;\">\n    <div>\n        <label style=\"display:block;margin-bottom:8px;font-weight:500;\">Filter Type</label>\n        <select id=\"filter-type\" style=\"width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n            <option value=\"grayscale\">Grayscale</option>\n            <option value=\"sepia\">Sepia</option>\n            <option value=\"invert\">Invert</option>\n            <option value=\"contrast\">Contrast</option>\n            <option value=\"brightness\">Brightness</option>\n            <option value=\"vintage\">Vintage</option>\n            <option value=\"cold\">Cold Tone</option>\n            <option value=\"warm\">Warm Tone</option>\n        </select>\n    </div>\n    <div>\n        <label style=\"display:block;margin-bottom:8px;font-weight:500;\">Intensity</label>\n        <div style=\"display:flex;align-items:center;gap:12px;\">\n            <input type=\"range\" id=\"intensity\" min=\"0\" max=\"100\" value=\"50\" style=\"flex:1;\">\n            <span id=\"intensity-value\" style=\"font-weight:600;min-width:40px;\">50%</span>\n        </div>\n    </div>\n    <div>\n        <label style=\"display:block;margin-bottom:8px;font-weight:500;\">Output Format</label>\n        <select id=\"format\" style=\"width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n            <option value=\"image/jpeg\">JPEG</option>\n            <option value=\"image/png\">PNG</option>\n            <option value=\"image/webp\">WebP</option>\n        </select>\n    </div>\n    <div>\n        <label style=\"display:block;margin-bottom:8px;font-weight:500;\">Quality</label>\n        <div style=\"display:flex;align-items:center;gap:12px;\">\n            <input type=\"range\" id=\"quality\" min=\"10\" max=\"100\" value=\"90\" style=\"flex:1;\">\n            <span id=\"quality-value\" style=\"font-weight:600;min-width:40px;\">90%</span>\n        </div>\n    </div>\n</div>\n    </div>\n    \n    <div style=\"text-align:center;margin-bottom:20px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;\">\n        <button id=\"process-btn\" class=\"btn btn-primary\" style=\"padding:12px 32px;font-size:16px;\">💾 Export Image</button>\n    </div>\n    \n    <div id=\"progress\" style=\"height:6px;background:var(--border);border-radius:3px;overflow:hidden;margin-bottom:20px;\">\n        <div style=\"height:100%;background:var(--primary);width:0;transition:width 0.3s;\"></div>\n    </div>\n    <div id=\"result\"></div>\n</div>\n"
     }
   ]
 }

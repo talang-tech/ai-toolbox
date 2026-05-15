@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>图片格式转换 - 图片格式转换 - 在线 JPG/PNG/WebP 互转 | 开发工具箱 | AI 工具盒子</title>
+<meta name="description" content="免费在线图片格式转换工具，JPG/PNG/WebP 互转，纯前端实现。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="图片格式转换, jpg转png, png转jpg, webp转换">
+<link rel="canonical" href="https://tools.talang.fun/tools/image-convert">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/image-convert">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/image-convert">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/image-convert">
+<meta property="og:title" content="图片格式转换 - 图片格式转换 - 在线 JPG/PNG/WebP 互转 | 开发工具箱 | AI 工具盒子">
+<meta property="og:description" content="免费在线图片格式转换工具，JPG/PNG/WebP 互转，纯前端实现。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/image-convert">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "图片格式转换", "description": "免费在线图片格式转换工具，JPG/PNG/WebP 互转，纯前端实现。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/image-convert", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "JPG/PNG/WebP 互转，纯前端实现", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="https://tools.talang.fun/en/tools/image-convert" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🔄</div>
+  <h1>图片格式转换</h1>
+  <p>JPG/PNG/WebP 互转，纯前端实现</p>
+</div>
+<div class="tool-panel">
+
+<div class="file-tool-container" style="max-width:800px;margin:0 auto;">
+    <div id="drop-zone" style="border:2px dashed var(--border);border-radius:12px;padding:40px;text-align:center;cursor:pointer;transition:all 0.3s;margin-bottom:20px;">
+        <div style="font-size:48px;margin-bottom:12px;">📁</div>
+        <p style="font-size:16px;line-height:1.8;">点击或拖拽图片到这里<br><small>支持 JPG, PNG, WebP, GIF</small></p>
+        <input type="file" id="file-input" accept="image/*" multiple style="display:none;">
+    </div>
+    
+    <div id="file-list" style="margin-bottom:20px;max-height:300px;overflow-y:auto;"></div>
+    
+    <div class="options-panel" style="background:var(--bg-light);padding:20px;border-radius:8px;margin-bottom:20px;">
+        <h4 style="margin-top:0;margin-bottom:16px;">⚙️ 设置</h4>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;">
+            <div>
+                <label style="display:block;margin-bottom:8px;font-weight:500;">输出格式</label>
+                <select id="format" style="width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);">
+                    <option value="image/jpeg">JPEG</option>
+                    <option value="image/png">PNG</option>
+                    <option value="image/webp">WebP</option>
+                </select>
+            </div>
+            <div>
+                <label style="display:block;margin-bottom:8px;font-weight:500;">输出质量</label>
+                <div style="display:flex;align-items:center;gap:12px;">
+                    <input type="range" id="quality" min="10" max="100" value="85" style="flex:1;">
+                    <span id="quality-value" style="font-weight:600;min-width:40px;">85%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div style="text-align:center;margin-bottom:20px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+        <button id="process-btn" class="btn btn-primary" style="padding:12px 32px;font-size:16px;">🔄 开始处理</button>
+        <button id="download-btn" class="btn btn-secondary" style="padding:12px 32px;font-size:16px;">📥 下载全部</button>
+    </div>
+    
+    <div id="progress" style="height:6px;background:var(--border);border-radius:3px;overflow:hidden;margin-bottom:20px;">
+        <div style="height:100%;background:var(--primary);width:0;transition:width 0.3s;"></div>
+    </div>
+    <div id="result"></div>
+</div>
+
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  在线图片格式转换工具，支持 JPG、PNG、WebP 互转。纯前端 Canvas 实现，图片不上传服务器，保护隐私。支持批量转换，可调节输出质量。
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>批量转换</li><li>质量调节</li><li>无需上传</li><li>完全免费</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">是否支持批量转换？</h3><p>支持，可以同时选择多张图片进行转换</p><h3 style="margin-top:20px;margin-bottom:8px">转换后的图片质量如何？</h3><p>可以调节输出质量，从10%-100%，根据需求选择</p></section>
+
+<script src="/assets/tools/_utils.js" defer></script>
+    <script src="/assets/tools/image-convert.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+</script>
+</body>
+</html>

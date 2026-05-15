@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image to Base64 - Image to Base64 - Online Encoder | DevToolBox | AI Toolbox</title>
+<meta name="description" content="Free online image to base64. Convert image to Base64, one-click copy. Fast, secure, and works in your browser without downloading.">
+<meta name="keywords" content="image to base64, base64 encoding, image encode">
+<link rel="canonical" href="https://tools.talang.fun/en/tools/image-base64">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/image-base64">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/image-base64">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/image-base64">
+<meta property="og:title" content="Image to Base64 - Image to Base64 - Online Encoder | DevToolBox | AI Toolbox">
+<meta property="og:description" content="Free online image to base64. Convert image to Base64, one-click copy. Fast, secure, and works in your browser without downloading.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/en/tools/image-base64">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Image to Base64", "description": "Free online image to base64. Convert image to Base64, one-click copy. Fast, secure, and works in your browser without downloading.", "url": "https://tools.talang.fun/en/tools/image-base64", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "Convert image to Base64, one-click copy", "inLanguage": "en", "author": {"@type": "Organization", "name": "AI Toolbox"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/en/" class="logo"><span class="logo-icon">🛠️</span>AI Toolbox</a>
+    <nav class="nav">
+      <a href="/en/">Home</a>
+      <a href="/en/#tools">All Tools</a>
+      <a href="/en/blog/">Blog</a>
+      <a href="/en/about">About</a>
+      <a href="https://tools.talang.fun/tools/image-base64" class="lang-switch">中文</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">📝</div>
+  <h1>Image to Base64</h1>
+  <p>Convert image to Base64, one-click copy</p>
+</div>
+<div class="tool-panel">
+
+<div class="file-tool-container" style="max-width:800px;margin:0 auto;">
+    <div id="drop-zone" style="border:2px dashed var(--border);border-radius:12px;padding:40px;text-align:center;cursor:pointer;transition:all 0.3s;margin-bottom:20px;">
+        <div style="font-size:48px;margin-bottom:12px;">📁</div>
+        <p style="font-size:16px;line-height:1.8;">Click or drag images here<br><small>Supports JPG, PNG, WebP, GIF</small></p>
+        <input type="file" id="file-input" accept="image/*" multiple style="display:none;">
+    </div>
+    
+    <div id="file-list" style="margin-bottom:20px;max-height:300px;overflow-y:auto;"></div>
+    
+    <div class="options-panel" style="background:var(--bg-light);padding:20px;border-radius:8px;margin-bottom:20px;">
+        <h4 style="margin-top:0;margin-bottom:16px;">⚙️ Settings</h4>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;">
+            <div>
+                <label style="display:block;margin-bottom:8px;font-weight:500;">Output Format</label>
+                <select id="format" style="width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);">
+                    <option value="original">Keep Original</option>
+                    <option value="image/jpeg">JPEG</option>
+                    <option value="image/png">PNG</option>
+                    <option value="image/webp">WebP</option>
+                </select>
+            </div>
+            <div>
+                <label style="display:block;margin-bottom:8px;font-weight:500;">Max Width</label>
+                <input type="number" id="max-width" value="0" placeholder="0=No limit" style="width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);">
+            </div>
+            <div>
+                <label style="display:block;margin-bottom:8px;font-weight:500;">Max Height</label>
+                <input type="number" id="max-height" value="0" placeholder="0=No limit" style="width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);">
+            </div>
+            <div>
+                <label style="display:block;margin-bottom:8px;font-weight:500;">Quality</label>
+                <div style="display:flex;align-items:center;gap:12px;">
+                    <input type="range" id="quality" min="10" max="100" value="85" style="flex:1;">
+                    <span id="quality-value" style="font-weight:600;min-width:40px;">85%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div style="text-align:center;margin-bottom:20px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+        <button id="process-btn" class="btn btn-primary" style="padding:12px 32px;font-size:16px;">🔄 Start Process</button>
+        <button id="download-btn" class="btn btn-secondary" style="padding:12px 32px;font-size:16px;">📥 Download All</button>
+    </div>
+    
+    <div id="progress" style="height:6px;background:var(--border);border-radius:3px;overflow:hidden;margin-bottom:20px;">
+        <div style="height:100%;background:var(--primary);width:0;transition:width 0.3s;"></div>
+    </div>
+    <div id="result"></div>
+</div>
+
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>About this tool</h2>
+  Online image to Base64 converter, multiple output formats, size adjustment, one-click copy. Pure frontend implementation, no server upload.
+</article>
+<section class="article" style="margin-top:32px"><h2>Key Features</h2><ul><li>Format Selection</li><li>Size Limit</li><li>One-click Copy</li><li>Live Preview</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>Frequently Asked Questions</h2><h3 style="margin-top:20px;margin-bottom:8px">Can the converted Base64 be used directly in web pages?</h3><p>Yes, the data: prefixed format can be used directly in img src attribute</p><h3 style="margin-top:20px;margin-bottom:8px">Is resizing supported?</h3><p>Yes, you can set max width and height limits</p></section>
+
+<script src="/assets/tools/_utils.js" defer></script>
+    <script src="/assets/tools/image-base64.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI Toolbox · Free online AI & developer tools · <a href='/en/about'>About</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('Copied!'));
+}
+</script>
+</body>
+</html>
