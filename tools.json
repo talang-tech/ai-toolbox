@@ -6,7 +6,8 @@
       "json",
       "encode",
       "generate",
-      "image"
+      "image",
+      "pdf"
     ],
     "items": {
       "text": {
@@ -38,6 +39,11 @@
         "icon": "🖼️",
         "name_zh": "图片工具",
         "name_en": "Image Tools"
+      },
+      "pdf": {
+        "icon": "📄",
+        "name_zh": "PDF 工具",
+        "name_en": "PDF Tools"
       }
     }
   },
@@ -2651,6 +2657,209 @@
       "seo_title_en": "Image Filter - Apply Effects Online | DevToolBox",
       "ui_zh": "\n<div class=\"file-tool-container\" style=\"max-width:800px;margin:0 auto;\">\n    <div id=\"drop-zone\" style=\"border:2px dashed var(--border);border-radius:12px;padding:40px;text-align:center;cursor:pointer;transition:all 0.3s;margin-bottom:20px;\">\n        <div style=\"font-size:48px;margin-bottom:12px;\">📁</div>\n        <p style=\"font-size:16px;line-height:1.8;\">点击或拖拽图片到这里<br><small>支持 JPG, PNG, WebP, GIF</small></p>\n        <input type=\"file\" id=\"file-input\" accept=\"image/*\" style=\"display:none;\">\n    </div>\n    \n    <div id=\"file-list\" style=\"margin-bottom:20px;max-height:150px;overflow-y:auto;\"></div>\n    \n    <div id=\"preview-container\" style=\"margin-bottom:20px;\"></div>\n    \n    <div class=\"options-panel\" style=\"background:var(--bg-light);padding:20px;border-radius:8px;margin-bottom:20px;\">\n        <h4 style=\"margin-top:0;margin-bottom:16px;\">⚙️ 设置</h4>\n        <div style=\"display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;\">\n    <div>\n        <label style=\"display:block;margin-bottom:8px;font-weight:500;\">滤镜类型</label>\n        <select id=\"filter-type\" style=\"width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n            <option value=\"grayscale\">黑白</option>\n            <option value=\"sepia\">怀旧</option>\n            <option value=\"invert\">反色</option>\n            <option value=\"contrast\">对比度</option>\n            <option value=\"brightness\">亮度</option>\n            <option value=\"vintage\">复古</option>\n            <option value=\"cold\">冷色调</option>\n            <option value=\"warm\">暖色调</option>\n        </select>\n    </div>\n    <div>\n        <label style=\"display:block;margin-bottom:8px;font-weight:500;\">滤镜强度</label>\n        <div style=\"display:flex;align-items:center;gap:12px;\">\n            <input type=\"range\" id=\"intensity\" min=\"0\" max=\"100\" value=\"50\" style=\"flex:1;\">\n            <span id=\"intensity-value\" style=\"font-weight:600;min-width:40px;\">50%</span>\n        </div>\n    </div>\n    <div>\n        <label style=\"display:block;margin-bottom:8px;font-weight:500;\">输出格式</label>\n        <select id=\"format\" style=\"width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n            <option value=\"image/jpeg\">JPEG</option>\n            <option value=\"image/png\">PNG</option>\n            <option value=\"image/webp\">WebP</option>\n        </select>\n    </div>\n    <div>\n        <label style=\"display:block;margin-bottom:8px;font-weight:500;\">输出质量</label>\n        <div style=\"display:flex;align-items:center;gap:12px;\">\n            <input type=\"range\" id=\"quality\" min=\"10\" max=\"100\" value=\"90\" style=\"flex:1;\">\n            <span id=\"quality-value\" style=\"font-weight:600;min-width:40px;\">90%</span>\n        </div>\n    </div>\n</div>\n    </div>\n    \n    <div style=\"text-align:center;margin-bottom:20px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;\">\n        <button id=\"process-btn\" class=\"btn btn-primary\" style=\"padding:12px 32px;font-size:16px;\">💾 导出图片</button>\n    </div>\n    \n    <div id=\"progress\" style=\"height:6px;background:var(--border);border-radius:3px;overflow:hidden;margin-bottom:20px;\">\n        <div style=\"height:100%;background:var(--primary);width:0;transition:width 0.3s;\"></div>\n    </div>\n    <div id=\"result\"></div>\n</div>\n",
       "ui_en": "\n<div class=\"file-tool-container\" style=\"max-width:800px;margin:0 auto;\">\n    <div id=\"drop-zone\" style=\"border:2px dashed var(--border);border-radius:12px;padding:40px;text-align:center;cursor:pointer;transition:all 0.3s;margin-bottom:20px;\">\n        <div style=\"font-size:48px;margin-bottom:12px;\">📁</div>\n        <p style=\"font-size:16px;line-height:1.8;\">Click or drag image here<br><small>Supports JPG, PNG, WebP, GIF</small></p>\n        <input type=\"file\" id=\"file-input\" accept=\"image/*\" style=\"display:none;\">\n    </div>\n    \n    <div id=\"file-list\" style=\"margin-bottom:20px;max-height:150px;overflow-y:auto;\"></div>\n    \n    <div id=\"preview-container\" style=\"margin-bottom:20px;\"></div>\n    \n    <div class=\"options-panel\" style=\"background:var(--bg-light);padding:20px;border-radius:8px;margin-bottom:20px;\">\n        <h4 style=\"margin-top:0;margin-bottom:16px;\">⚙️ Settings</h4>\n        <div style=\"display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;\">\n    <div>\n        <label style=\"display:block;margin-bottom:8px;font-weight:500;\">Filter Type</label>\n        <select id=\"filter-type\" style=\"width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n            <option value=\"grayscale\">Grayscale</option>\n            <option value=\"sepia\">Sepia</option>\n            <option value=\"invert\">Invert</option>\n            <option value=\"contrast\">Contrast</option>\n            <option value=\"brightness\">Brightness</option>\n            <option value=\"vintage\">Vintage</option>\n            <option value=\"cold\">Cold Tone</option>\n            <option value=\"warm\">Warm Tone</option>\n        </select>\n    </div>\n    <div>\n        <label style=\"display:block;margin-bottom:8px;font-weight:500;\">Intensity</label>\n        <div style=\"display:flex;align-items:center;gap:12px;\">\n            <input type=\"range\" id=\"intensity\" min=\"0\" max=\"100\" value=\"50\" style=\"flex:1;\">\n            <span id=\"intensity-value\" style=\"font-weight:600;min-width:40px;\">50%</span>\n        </div>\n    </div>\n    <div>\n        <label style=\"display:block;margin-bottom:8px;font-weight:500;\">Output Format</label>\n        <select id=\"format\" style=\"width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n            <option value=\"image/jpeg\">JPEG</option>\n            <option value=\"image/png\">PNG</option>\n            <option value=\"image/webp\">WebP</option>\n        </select>\n    </div>\n    <div>\n        <label style=\"display:block;margin-bottom:8px;font-weight:500;\">Quality</label>\n        <div style=\"display:flex;align-items:center;gap:12px;\">\n            <input type=\"range\" id=\"quality\" min=\"10\" max=\"100\" value=\"90\" style=\"flex:1;\">\n            <span id=\"quality-value\" style=\"font-weight:600;min-width:40px;\">90%</span>\n        </div>\n    </div>\n</div>\n    </div>\n    \n    <div style=\"text-align:center;margin-bottom:20px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;\">\n        <button id=\"process-btn\" class=\"btn btn-primary\" style=\"padding:12px 32px;font-size:16px;\">💾 Export Image</button>\n    </div>\n    \n    <div id=\"progress\" style=\"height:6px;background:var(--border);border-radius:3px;overflow:hidden;margin-bottom:20px;\">\n        <div style=\"height:100%;background:var(--primary);width:0;transition:width 0.3s;\"></div>\n    </div>\n    <div id=\"result\"></div>\n</div>\n"
+    },
+    {
+      "slug": "pdf-merge",
+      "category": "pdf",
+      "icon": "🔗",
+      "name_zh": "PDF 合并",
+      "name_en": "PDF Merge",
+      "short_zh": "合并多个 PDF 文件，支持拖拽排序",
+      "short_en": "Merge multiple PDF files, drag to reorder",
+      "keywords_zh": "pdf合并, pdf合并工具, 合并pdf, pdf合并在线, 免费pdf合并",
+      "keywords_en": "merge pdf, pdf merge, combine pdf, pdf merger, merge pdf online",
+      "long_zh": "在线免费 PDF 合并工具，纯前端实现，文件不上传服务器。支持批量选择多个 PDF 文件，拖拽调整顺序，一键合并下载。快速、安全、无需安装任何软件。",
+      "long_en": "Free online PDF merge tool, pure frontend implementation, files never leave your browser. Batch select multiple PDFs, drag to reorder, one-click merge and download. Fast, secure, no installation needed.",
+      "features_zh": [
+        "批量合并",
+        "拖拽排序",
+        "纯前端处理",
+        "隐私保护"
+      ],
+      "features_en": [
+        "Batch Merge",
+        "Drag & Drop Reorder",
+        "Pure Frontend",
+        "Privacy Protected"
+      ],
+      "faq_zh": [
+        [
+          "PDF 会上传到服务器吗？",
+          "不会。所有操作都在您的浏览器本地完成，PDF 文件数据不会离开您的设备，完全保护隐私安全。"
+        ],
+        [
+          "支持合并多少个文件？",
+          "理论上没有限制，但建议单次合并不超过 50 个文件以保证浏览器性能。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "Are PDFs uploaded to server?",
+          "No. All operations happen locally in your browser, PDF data never leaves your device, fully privacy protected."
+        ],
+        [
+          "How many files can be merged?",
+          "No theoretical limit, but recommend no more than 50 files at once for browser performance."
+        ]
+      ],
+      "ui_zh": "\n<div class=\"file-tool-container\" style=\"max-width:800px;margin:0 auto;\">\n    <div id=\"drop-zone\" style=\"border:2px dashed var(--border);border-radius:12px;padding:40px;text-align:center;cursor:pointer;transition:all 0.3s;margin-bottom:20px;\">\n        <div style=\"font-size:48px;margin-bottom:12px;\">📁</div>\n        <p style=\"font-size:16px;line-height:1.8;\">点击或拖拽 PDF 文件到这里<br><small>支持批量选择和拖拽排序</small></p>\n        <input type=\"file\" id=\"file-input\" accept=\".pdf\" multiple style=\"display:none;\">\n    </div>\n    \n    <div id=\"file-list\" style=\"margin-bottom:20px;max-height:300px;overflow-y:auto;\"></div>\n    \n    <div style=\"text-align:center;margin-bottom:20px;\">\n        <button id=\"process-btn\" class=\"btn btn-primary\" style=\"padding:12px 32px;font-size:16px;\" disabled>🔗 开始合并</button>\n    </div>\n    \n    <div id=\"progress\" style=\"height:6px;background:var(--border);border-radius:3px;overflow:hidden;margin-bottom:20px;\">\n        <div style=\"height:100%;background:var(--primary);width:0;transition:width 0.3s;\"></div>\n    </div>\n    <div id=\"result\"></div>\n</div>\n",
+      "ui_en": "\n<div class=\"file-tool-container\" style=\"max-width:800px;margin:0 auto;\">\n    <div id=\"drop-zone\" style=\"border:2px dashed var(--border);border-radius:12px;padding:40px;text-align:center;cursor:pointer;transition:all 0.3s;margin-bottom:20px;\">\n        <div style=\"font-size:48px;margin-bottom:12px;\">📁</div>\n        <p style=\"font-size:16px;line-height:1.8;\">Click or drag PDF files here<br><small>Batch select and drag to reorder</small></p>\n        <input type=\"file\" id=\"file-input\" accept=\".pdf\" multiple style=\"display:none;\">\n    </div>\n    \n    <div id=\"file-list\" style=\"margin-bottom:20px;max-height:300px;overflow-y:auto;\"></div>\n    \n    <div style=\"text-align:center;margin-bottom:20px;\">\n        <button id=\"process-btn\" class=\"btn btn-primary\" style=\"padding:12px 32px;font-size:16px;\" disabled>🔗 Start Merge</button>\n    </div>\n    \n    <div id=\"progress\" style=\"height:6px;background:var(--border);border-radius:3px;overflow:hidden;margin-bottom:20px;\">\n        <div style=\"height:100%;background:var(--primary);width:0;transition:width 0.3s;\"></div>\n    </div>\n    <div id=\"result\"></div>\n</div>\n"
+    },
+    {
+      "slug": "pdf-split",
+      "category": "pdf",
+      "icon": "✂️",
+      "name_zh": "PDF 分割",
+      "name_en": "PDF Split",
+      "short_zh": "分割 PDF 文件，按范围或每页分割",
+      "short_en": "Split PDF files by range or per page",
+      "keywords_zh": "pdf分割, pdf拆分, pdf分割工具, 分割pdf, 拆分pdf",
+      "keywords_en": "split pdf, pdf split, pdf splitter, separate pdf, divide pdf",
+      "long_zh": "在线免费 PDF 分割工具，纯前端实现，文件不上传服务器。支持按自定义范围分割，或每 N 页自动分割。快速、安全、无需安装任何软件。",
+      "long_en": "Free online PDF split tool, pure frontend implementation, files never leave your browser. Split by custom range or auto split every N pages. Fast, secure, no installation needed.",
+      "features_zh": [
+        "范围分割",
+        "按页分割",
+        "纯前端处理",
+        "隐私保护"
+      ],
+      "features_en": [
+        "Split by Range",
+        "Split per Page",
+        "Pure Frontend",
+        "Privacy Protected"
+      ],
+      "faq_zh": [
+        [
+          "PDF 会上传到服务器吗？",
+          "不会。所有操作都在您的浏览器本地完成，PDF 文件数据不会离开您的设备，完全保护隐私安全。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "Are PDFs uploaded to server?",
+          "No. All operations happen locally in your browser, PDF data never leaves your device, fully privacy protected."
+        ]
+      ],
+      "ui_zh": "\n<div class=\"file-tool-container\" style=\"max-width:800px;margin:0 auto;\">\n    <div id=\"drop-zone\" style=\"border:2px dashed var(--border);border-radius:12px;padding:40px;text-align:center;cursor:pointer;transition:all 0.3s;margin-bottom:20px;\">\n        <div style=\"font-size:48px;margin-bottom:12px;\">📁</div>\n        <p style=\"font-size:16px;line-height:1.8;\">点击或拖拽 PDF 文件到这里</p>\n        <input type=\"file\" id=\"file-input\" accept=\".pdf\" style=\"display:none;\">\n    </div>\n    \n    <div id=\"file-list\" style=\"margin-bottom:20px;max-height:150px;overflow-y:auto;\"></div>\n    \n    <div class=\"options-panel\" style=\"background:var(--bg-light);padding:20px;border-radius:8px;margin-bottom:20px;\">\n        <h4 style=\"margin-top:0;margin-bottom:16px;\">⚙️ 分割设置</h4>\n        <div style=\"display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;\">\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">分割模式</label>\n                <select id=\"mode\" style=\"width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n                    <option value=\"range\">按范围分割</option>\n                    <option value=\"every\">每 N 页分割</option>\n                </select>\n            </div>\n            <div id=\"range-option\">\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">页面范围</label>\n                <input type=\"text\" id=\"page-range\" placeholder=\"例如: 1-5, 8-10, 15\" style=\"width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n            </div>\n            <div id=\"every-option\" style=\"display:none;\">\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">每文件页数</label>\n                <input type=\"number\" id=\"pages-per-file\" value=\"1\" min=\"1\" style=\"width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n            </div>\n        </div>\n    </div>\n    \n    <div style=\"text-align:center;margin-bottom:20px;\">\n        <button id=\"process-btn\" class=\"btn btn-primary\" style=\"padding:12px 32px;font-size:16px;\" disabled>✂️ 开始分割</button>\n    </div>\n    \n    <div id=\"progress\" style=\"height:6px;background:var(--border);border-radius:3px;overflow:hidden;margin-bottom:20px;\">\n        <div style=\"height:100%;background:var(--primary);width:0;transition:width 0.3s;\"></div>\n    </div>\n    <div id=\"result\"></div>\n</div>\n",
+      "ui_en": "\n<div class=\"file-tool-container\" style=\"max-width:800px;margin:0 auto;\">\n    <div id=\"drop-zone\" style=\"border:2px dashed var(--border);border-radius:12px;padding:40px;text-align:center;cursor:pointer;transition:all 0.3s;margin-bottom:20px;\">\n        <div style=\"font-size:48px;margin-bottom:12px;\">📁</div>\n        <p style=\"font-size:16px;line-height:1.8;\">Click or drag PDF file here</p>\n        <input type=\"file\" id=\"file-input\" accept=\".pdf\" style=\"display:none;\">\n    </div>\n    \n    <div id=\"file-list\" style=\"margin-bottom:20px;max-height:150px;overflow-y:auto;\"></div>\n    \n    <div class=\"options-panel\" style=\"background:var(--bg-light);padding:20px;border-radius:8px;margin-bottom:20px;\">\n        <h4 style=\"margin-top:0;margin-bottom:16px;\">⚙️ Split Settings</h4>\n        <div style=\"display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;\">\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">Split Mode</label>\n                <select id=\"mode\" style=\"width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n                    <option value=\"range\">Split by Range</option>\n                    <option value=\"every\">Every N Pages</option>\n                </select>\n            </div>\n            <div id=\"range-option\">\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">Page Range</label>\n                <input type=\"text\" id=\"page-range\" placeholder=\"e.g.: 1-5, 8-10, 15\" style=\"width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n            </div>\n            <div id=\"every-option\" style=\"display:none;\">\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">Pages per File</label>\n                <input type=\"number\" id=\"pages-per-file\" value=\"1\" min=\"1\" style=\"width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n            </div>\n        </div>\n    </div>\n    \n    <div style=\"text-align:center;margin-bottom:20px;\">\n        <button id=\"process-btn\" class=\"btn btn-primary\" style=\"padding:12px 32px;font-size:16px;\" disabled>✂️ Start Split</button>\n    </div>\n    \n    <div id=\"progress\" style=\"height:6px;background:var(--border);border-radius:3px;overflow:hidden;margin-bottom:20px;\">\n        <div style=\"height:100%;background:var(--primary);width:0;transition:width 0.3s;\"></div>\n    </div>\n    <div id=\"result\"></div>\n</div>\n"
+    },
+    {
+      "slug": "pdf-to-image",
+      "category": "pdf",
+      "icon": "🖼️",
+      "name_zh": "PDF 转图片",
+      "name_en": "PDF to Image",
+      "short_zh": "PDF 转 JPG/PNG 图片，高清渲染",
+      "short_en": "Convert PDF to JPG/PNG images, high quality",
+      "keywords_zh": "pdf转图片, pdf转jpg, pdf转png, pdf转图片在线, pdf转图片工具",
+      "keywords_en": "pdf to image, pdf to jpg, pdf to png, convert pdf to image, pdf to image online",
+      "long_zh": "在线免费 PDF 转图片工具，纯前端实现，文件不上传服务器。支持导出 JPG 或 PNG 格式，可调节图片质量和缩放比例。快速、安全、无需安装任何软件。",
+      "long_en": "Free online PDF to image converter, pure frontend implementation, files never leave your browser. Export JPG or PNG format, adjustable quality and scale. Fast, secure, no installation needed.",
+      "features_zh": [
+        "JPG/PNG 输出",
+        "质量调节",
+        "高清渲染",
+        "纯前端处理"
+      ],
+      "features_en": [
+        "JPG/PNG Output",
+        "Quality Control",
+        "High Quality Render",
+        "Pure Frontend"
+      ],
+      "faq_zh": [
+        [
+          "PDF 会上传到服务器吗？",
+          "不会。所有操作都在您的浏览器本地完成，PDF 文件数据不会离开您的设备，完全保护隐私安全。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "Are PDFs uploaded to server?",
+          "No. All operations happen locally in your browser, PDF data never leaves your device, fully privacy protected."
+        ]
+      ],
+      "ui_zh": "\n<div class=\"file-tool-container\" style=\"max-width:800px;margin:0 auto;\">\n    <div id=\"drop-zone\" style=\"border:2px dashed var(--border);border-radius:12px;padding:40px;text-align:center;cursor:pointer;transition:all 0.3s;margin-bottom:20px;\">\n        <div style=\"font-size:48px;margin-bottom:12px;\">📁</div>\n        <p style=\"font-size:16px;line-height:1.8;\">点击或拖拽 PDF 文件到这里</p>\n        <input type=\"file\" id=\"file-input\" accept=\".pdf\" style=\"display:none;\">\n    </div>\n    \n    <div id=\"file-list\" style=\"margin-bottom:20px;max-height:150px;overflow-y:auto;\"></div>\n    \n    <div class=\"options-panel\" style=\"background:var(--bg-light);padding:20px;border-radius:8px;margin-bottom:20px;\">\n        <h4 style=\"margin-top:0;margin-bottom:16px;\">⚙️ 转换设置</h4>\n        <div style=\"display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;\">\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">输出格式</label>\n                <select id=\"format\" style=\"width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n                    <option value=\"image/png\">PNG</option>\n                    <option value=\"image/jpeg\">JPEG</option>\n                </select>\n            </div>\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">图片质量</label>\n                <div style=\"display:flex;align-items:center;gap:12px;\">\n                    <input type=\"range\" id=\"quality\" min=\"10\" max=\"100\" value=\"90\" style=\"flex:1;\">\n                    <span id=\"quality-value\" style=\"font-weight:600;min-width:40px;\">90%</span>\n                </div>\n            </div>\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">缩放比例</label>\n                <div style=\"display:flex;align-items:center;gap:12px;\">\n                    <input type=\"range\" id=\"scale\" min=\"1\" max=\"4\" value=\"2\" style=\"flex:1;\">\n                    <span id=\"scale-value\" style=\"font-weight:600;min-width:40px;\">2x</span>\n                </div>\n            </div>\n        </div>\n    </div>\n    \n    <div style=\"text-align:center;margin-bottom:20px;\">\n        <button id=\"process-btn\" class=\"btn btn-primary\" style=\"padding:12px 32px;font-size:16px;\" disabled>🖼️ 开始转换</button>\n    </div>\n    \n    <div id=\"progress\" style=\"height:6px;background:var(--border);border-radius:3px;overflow:hidden;margin-bottom:20px;\">\n        <div style=\"height:100%;background:var(--primary);width:0;transition:width 0.3s;\"></div>\n    </div>\n    <div id=\"result\"></div>\n</div>\n",
+      "ui_en": "\n<div class=\"file-tool-container\" style=\"max-width:800px;margin:0 auto;\">\n    <div id=\"drop-zone\" style=\"border:2px dashed var(--border);border-radius:12px;padding:40px;text-align:center;cursor:pointer;transition:all 0.3s;margin-bottom:20px;\">\n        <div style=\"font-size:48px;margin-bottom:12px;\">📁</div>\n        <p style=\"font-size:16px;line-height:1.8;\">Click or drag PDF file here</p>\n        <input type=\"file\" id=\"file-input\" accept=\".pdf\" style=\"display:none;\">\n    </div>\n    \n    <div id=\"file-list\" style=\"margin-bottom:20px;max-height:150px;overflow-y:auto;\"></div>\n    \n    <div class=\"options-panel\" style=\"background:var(--bg-light);padding:20px;border-radius:8px;margin-bottom:20px;\">\n        <h4 style=\"margin-top:0;margin-bottom:16px;\">⚙️ Conversion Settings</h4>\n        <div style=\"display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;\">\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">Output Format</label>\n                <select id=\"format\" style=\"width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n                    <option value=\"image/png\">PNG</option>\n                    <option value=\"image/jpeg\">JPEG</option>\n                </select>\n            </div>\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">Quality</label>\n                <div style=\"display:flex;align-items:center;gap:12px;\">\n                    <input type=\"range\" id=\"quality\" min=\"10\" max=\"100\" value=\"90\" style=\"flex:1;\">\n                    <span id=\"quality-value\" style=\"font-weight:600;min-width:40px;\">90%</span>\n                </div>\n            </div>\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">Scale</label>\n                <div style=\"display:flex;align-items:center;gap:12px;\">\n                    <input type=\"range\" id=\"scale\" min=\"1\" max=\"4\" value=\"2\" style=\"flex:1;\">\n                    <span id=\"scale-value\" style=\"font-weight:600;min-width:40px;\">2x</span>\n                </div>\n            </div>\n        </div>\n    </div>\n    \n    <div style=\"text-align:center;margin-bottom:20px;\">\n        <button id=\"process-btn\" class=\"btn btn-primary\" style=\"padding:12px 32px;font-size:16px;\" disabled>🖼️ Start Conversion</button>\n    </div>\n    \n    <div id=\"progress\" style=\"height:6px;background:var(--border);border-radius:3px;overflow:hidden;margin-bottom:20px;\">\n        <div style=\"height:100%;background:var(--primary);width:0;transition:width 0.3s;\"></div>\n    </div>\n    <div id=\"result\"></div>\n</div>\n"
+    },
+    {
+      "slug": "pdf-extract-text",
+      "category": "pdf",
+      "icon": "📝",
+      "name_zh": "PDF 提取文字",
+      "name_en": "PDF Extract Text",
+      "short_zh": "从 PDF 提取文本内容，支持复制下载",
+      "short_en": "Extract text content from PDF, copy or download",
+      "keywords_zh": "pdf提取文字, pdf转文字, pdf文本提取, 提取pdf文字, pdf转文本",
+      "keywords_en": "extract text from pdf, pdf to text, pdf text extractor, get text from pdf, pdf to text converter",
+      "long_zh": "在线免费 PDF 文字提取工具，纯前端实现，文件不上传服务器。一键提取 PDF 中的所有文本内容，支持在线预览、复制或下载为 TXT 文件。快速、安全、无需安装任何软件。",
+      "long_en": "Free online PDF text extractor, pure frontend implementation, files never leave your browser. One-click extract all text from PDF, preview, copy or download as TXT file. Fast, secure, no installation needed.",
+      "features_zh": [
+        "一键提取",
+        "在线预览",
+        "复制下载",
+        "纯前端处理"
+      ],
+      "features_en": [
+        "One-click Extract",
+        "Live Preview",
+        "Copy & Download",
+        "Pure Frontend"
+      ],
+      "faq_zh": [
+        [
+          "PDF 会上传到服务器吗？",
+          "不会。所有操作都在您的浏览器本地完成，PDF 文件数据不会离开您的设备，完全保护隐私安全。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "Are PDFs uploaded to server?",
+          "No. All operations happen locally in your browser, PDF data never leaves your device, fully privacy protected."
+        ]
+      ],
+      "ui_zh": "\n<div class=\"file-tool-container\" style=\"max-width:800px;margin:0 auto;\">\n    <div id=\"drop-zone\" style=\"border:2px dashed var(--border);border-radius:12px;padding:40px;text-align:center;cursor:pointer;transition:all 0.3s;margin-bottom:20px;\">\n        <div style=\"font-size:48px;margin-bottom:12px;\">📁</div>\n        <p style=\"font-size:16px;line-height:1.8;\">点击或拖拽 PDF 文件到这里</p>\n        <input type=\"file\" id=\"file-input\" accept=\".pdf\" style=\"display:none;\">\n    </div>\n    \n    <div id=\"file-list\" style=\"margin-bottom:20px;max-height:150px;overflow-y:auto;\"></div>\n    \n    <div style=\"text-align:center;margin-bottom:20px;\">\n        <button id=\"process-btn\" class=\"btn btn-primary\" style=\"padding:12px 32px;font-size:16px;\" disabled>📝 开始提取</button>\n    </div>\n    \n    <div id=\"progress\" style=\"height:6px;background:var(--border);border-radius:3px;overflow:hidden;margin-bottom:20px;\">\n        <div style=\"height:100%;background:var(--primary);width:0;transition:width 0.3s;\"></div>\n    </div>\n    <div id=\"result\"></div>\n</div>\n",
+      "ui_en": "\n<div class=\"file-tool-container\" style=\"max-width:800px;margin:0 auto;\">\n    <div id=\"drop-zone\" style=\"border:2px dashed var(--border);border-radius:12px;padding:40px;text-align:center;cursor:pointer;transition:all 0.3s;margin-bottom:20px;\">\n        <div style=\"font-size:48px;margin-bottom:12px;\">📁</div>\n        <p style=\"font-size:16px;line-height:1.8;\">Click or drag PDF file here</p>\n        <input type=\"file\" id=\"file-input\" accept=\".pdf\" style=\"display:none;\">\n    </div>\n    \n    <div id=\"file-list\" style=\"margin-bottom:20px;max-height:150px;overflow-y:auto;\"></div>\n    \n    <div style=\"text-align:center;margin-bottom:20px;\">\n        <button id=\"process-btn\" class=\"btn btn-primary\" style=\"padding:12px 32px;font-size:16px;\" disabled>📝 Start Extract</button>\n    </div>\n    \n    <div id=\"progress\" style=\"height:6px;background:var(--border);border-radius:3px;overflow:hidden;margin-bottom:20px;\">\n        <div style=\"height:100%;background:var(--primary);width:0;transition:width 0.3s;\"></div>\n    </div>\n    <div id=\"result\"></div>\n</div>\n"
+    },
+    {
+      "slug": "image-to-pdf",
+      "category": "pdf",
+      "icon": "📄",
+      "name_zh": "图片转 PDF",
+      "name_en": "Image to PDF",
+      "short_zh": "多张图片合并为 PDF 文件",
+      "short_en": "Combine multiple images into PDF file",
+      "keywords_zh": "图片转pdf, jpg转pdf, png转pdf, 图片合并pdf, jpg to pdf",
+      "keywords_en": "image to pdf, jpg to pdf, png to pdf, images to pdf, convert image to pdf",
+      "long_zh": "在线免费图片转 PDF 工具，纯前端实现，文件不上传服务器。支持批量选择多张图片，拖拽调整顺序，可选择页面大小、方向和边距。快速、安全、无需安装任何软件。",
+      "long_en": "Free online image to PDF converter, pure frontend implementation, files never leave your browser. Batch select multiple images, drag to reorder, choose page size, orientation and margins. Fast, secure, no installation needed.",
+      "features_zh": [
+        "批量处理",
+        "拖拽排序",
+        "自定义页面",
+        "纯前端处理"
+      ],
+      "features_en": [
+        "Batch Process",
+        "Drag & Drop Reorder",
+        "Custom Page",
+        "Pure Frontend"
+      ],
+      "faq_zh": [
+        [
+          "图片会上传到服务器吗？",
+          "不会。所有操作都在您的浏览器本地完成，图片数据不会离开您的设备，完全保护隐私安全。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "Are images uploaded to server?",
+          "No. All operations happen locally in your browser, image data never leaves your device, fully privacy protected."
+        ]
+      ],
+      "ui_zh": "\n<div class=\"file-tool-container\" style=\"max-width:800px;margin:0 auto;\">\n    <div id=\"drop-zone\" style=\"border:2px dashed var(--border);border-radius:12px;padding:40px;text-align:center;cursor:pointer;transition:all 0.3s;margin-bottom:20px;\">\n        <div style=\"font-size:48px;margin-bottom:12px;\">📁</div>\n        <p style=\"font-size:16px;line-height:1.8;\">点击或拖拽图片到这里<br><small>支持 JPG, PNG, WebP, GIF，可拖拽排序</small></p>\n        <input type=\"file\" id=\"file-input\" accept=\"image/*\" multiple style=\"display:none;\">\n    </div>\n    \n    <div id=\"file-list\" style=\"margin-bottom:20px;max-height:300px;overflow-y:auto;\"></div>\n    \n    <div class=\"options-panel\" style=\"background:var(--bg-light);padding:20px;border-radius:8px;margin-bottom:20px;\">\n        <h4 style=\"margin-top:0;margin-bottom:16px;\">⚙️ PDF 设置</h4>\n        <div style=\"display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;\">\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">页面大小</label>\n                <select id=\"page-size\" style=\"width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n                    <option value=\"auto\">自动（按图片尺寸）</option>\n                    <option value=\"a4\">A4</option>\n                </select>\n            </div>\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">页面方向</label>\n                <select id=\"orientation\" style=\"width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n                    <option value=\"portrait\">纵向</option>\n                    <option value=\"landscape\">横向</option>\n                </select>\n            </div>\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">边距 (mm)</label>\n                <input type=\"number\" id=\"margin\" value=\"10\" min=\"0\" max=\"50\" style=\"width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n            </div>\n        </div>\n    </div>\n    \n    <div style=\"text-align:center;margin-bottom:20px;\">\n        <button id=\"process-btn\" class=\"btn btn-primary\" style=\"padding:12px 32px;font-size:16px;\" disabled>📄 生成 PDF</button>\n    </div>\n    \n    <div id=\"progress\" style=\"height:6px;background:var(--border);border-radius:3px;overflow:hidden;margin-bottom:20px;\">\n        <div style=\"height:100%;background:var(--primary);width:0;transition:width 0.3s;\"></div>\n    </div>\n    <div id=\"result\"></div>\n</div>\n",
+      "ui_en": "\n<div class=\"file-tool-container\" style=\"max-width:800px;margin:0 auto;\">\n    <div id=\"drop-zone\" style=\"border:2px dashed var(--border);border-radius:12px;padding:40px;text-align:center;cursor:pointer;transition:all 0.3s;margin-bottom:20px;\">\n        <div style=\"font-size:48px;margin-bottom:12px;\">📁</div>\n        <p style=\"font-size:16px;line-height:1.8;\">Click or drag images here<br><small>Supports JPG, PNG, WebP, GIF, drag to reorder</small></p>\n        <input type=\"file\" id=\"file-input\" accept=\"image/*\" multiple style=\"display:none;\">\n    </div>\n    \n    <div id=\"file-list\" style=\"margin-bottom:20px;max-height:300px;overflow-y:auto;\"></div>\n    \n    <div class=\"options-panel\" style=\"background:var(--bg-light);padding:20px;border-radius:8px;margin-bottom:20px;\">\n        <h4 style=\"margin-top:0;margin-bottom:16px;\">⚙️ PDF Settings</h4>\n        <div style=\"display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;\">\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">Page Size</label>\n                <select id=\"page-size\" style=\"width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n                    <option value=\"auto\">Auto (by image size)</option>\n                    <option value=\"a4\">A4</option>\n                </select>\n            </div>\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">Orientation</label>\n                <select id=\"orientation\" style=\"width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n                    <option value=\"portrait\">Portrait</option>\n                    <option value=\"landscape\">Landscape</option>\n                </select>\n            </div>\n            <div>\n                <label style=\"display:block;margin-bottom:8px;font-weight:500;\">Margin (mm)</label>\n                <input type=\"number\" id=\"margin\" value=\"10\" min=\"0\" max=\"50\" style=\"width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);\">\n            </div>\n        </div>\n    </div>\n    \n    <div style=\"text-align:center;margin-bottom:20px;\">\n        <button id=\"process-btn\" class=\"btn btn-primary\" style=\"padding:12px 32px;font-size:16px;\" disabled>📄 Generate PDF</button>\n    </div>\n    \n    <div id=\"progress\" style=\"height:6px;background:var(--border);border-radius:3px;overflow:hidden;margin-bottom:20px;\">\n        <div style=\"height:100%;background:var(--primary);width:0;transition:width 0.3s;\"></div>\n    </div>\n    <div id=\"result\"></div>\n</div>\n"
     }
   ]
 }

@@ -228,7 +228,16 @@ def about_page(lang):
 
 def tool_page(tool, lang):
     is_en = lang == "en"
+    # PDF tool library flags
     slug = tool["slug"]
+    pdf_lib = slug in ["pdf-merge", "pdf-split"]
+    pdf_js = slug in ["pdf-to-image", "pdf-extract-text"]
+    jspdf = slug == "image-to-pdf"
+    
+    # Generate script tags based on tool type
+    pdf_lib_script = '<script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>' if pdf_lib else ''
+    pdf_js_script = '<script src="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.min.js"></script>' if pdf_js else ''
+    jspdf_script = '<script src="https://unpkg.com/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>' if jspdf else '' 
     canonical = f"{SITE_URL}/en/tools/{slug}" if is_en else f"{SITE_URL}/tools/{slug}"
     name = tool["name_en"] if is_en else tool["name_zh"]
     short = tool["short_en"] if is_en else tool["short_zh"]
@@ -312,7 +321,10 @@ def tool_page(tool, lang):
 {faq_html}
 {related_html}
 <script src="/assets/tools/_utils.js" defer></script>
-    <script src="/assets/tools/{slug}.js" defer></script>"""
+{pdf_lib_script}
+{pdf_js_script}
+{jspdf_script}
+<script src="/assets/tools/{slug}.js" defer></script>"""
 
     return base_layout(
         lang=lang, title=title, description=seo_description, keywords=keywords,

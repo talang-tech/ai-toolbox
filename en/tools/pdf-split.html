@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PDF Split - Free Online Tool | AI Toolbox</title>
+<meta name="description" content="Free online pdf split. Split PDF files by range or per page. Fast, secure, and works in your browser without downloading.">
+<meta name="keywords" content="split pdf, pdf split, pdf splitter, separate pdf, divide pdf">
+<link rel="canonical" href="https://tools.talang.fun/en/tools/pdf-split">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/pdf-split">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/pdf-split">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/pdf-split">
+<meta property="og:title" content="PDF Split - Free Online Tool | AI Toolbox">
+<meta property="og:description" content="Free online pdf split. Split PDF files by range or per page. Fast, secure, and works in your browser without downloading.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/en/tools/pdf-split">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "PDF Split", "description": "Free online pdf split. Split PDF files by range or per page. Fast, secure, and works in your browser without downloading.", "url": "https://tools.talang.fun/en/tools/pdf-split", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "Split PDF files by range or per page", "inLanguage": "en", "author": {"@type": "Organization", "name": "AI Toolbox"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/en/" class="logo"><span class="logo-icon">🛠️</span>AI Toolbox</a>
+    <nav class="nav">
+      <a href="/en/">Home</a>
+      <a href="/en/#tools">All Tools</a>
+      <a href="/en/blog/">Blog</a>
+      <a href="/en/about">About</a>
+      <a href="https://tools.talang.fun/tools/pdf-split" class="lang-switch">中文</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">✂️</div>
+  <h1>PDF Split</h1>
+  <p>Split PDF files by range or per page</p>
+</div>
+<div class="tool-panel">
+
+<div class="file-tool-container" style="max-width:800px;margin:0 auto;">
+    <div id="drop-zone" style="border:2px dashed var(--border);border-radius:12px;padding:40px;text-align:center;cursor:pointer;transition:all 0.3s;margin-bottom:20px;">
+        <div style="font-size:48px;margin-bottom:12px;">📁</div>
+        <p style="font-size:16px;line-height:1.8;">Click or drag PDF file here</p>
+        <input type="file" id="file-input" accept=".pdf" style="display:none;">
+    </div>
+    
+    <div id="file-list" style="margin-bottom:20px;max-height:150px;overflow-y:auto;"></div>
+    
+    <div class="options-panel" style="background:var(--bg-light);padding:20px;border-radius:8px;margin-bottom:20px;">
+        <h4 style="margin-top:0;margin-bottom:16px;">⚙️ Split Settings</h4>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;">
+            <div>
+                <label style="display:block;margin-bottom:8px;font-weight:500;">Split Mode</label>
+                <select id="mode" style="width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);">
+                    <option value="range">Split by Range</option>
+                    <option value="every">Every N Pages</option>
+                </select>
+            </div>
+            <div id="range-option">
+                <label style="display:block;margin-bottom:8px;font-weight:500;">Page Range</label>
+                <input type="text" id="page-range" placeholder="e.g.: 1-5, 8-10, 15" style="width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);">
+            </div>
+            <div id="every-option" style="display:none;">
+                <label style="display:block;margin-bottom:8px;font-weight:500;">Pages per File</label>
+                <input type="number" id="pages-per-file" value="1" min="1" style="width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);">
+            </div>
+        </div>
+    </div>
+    
+    <div style="text-align:center;margin-bottom:20px;">
+        <button id="process-btn" class="btn btn-primary" style="padding:12px 32px;font-size:16px;" disabled>✂️ Start Split</button>
+    </div>
+    
+    <div id="progress" style="height:6px;background:var(--border);border-radius:3px;overflow:hidden;margin-bottom:20px;">
+        <div style="height:100%;background:var(--primary);width:0;transition:width 0.3s;"></div>
+    </div>
+    <div id="result"></div>
+</div>
+
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>About this tool</h2>
+  Free online PDF split tool, pure frontend implementation, files never leave your browser. Split by custom range or auto split every N pages. Fast, secure, no installation needed.
+</article>
+<section class="article" style="margin-top:32px"><h2>Key Features</h2><ul><li>Split by Range</li><li>Split per Page</li><li>Pure Frontend</li><li>Privacy Protected</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>Frequently Asked Questions</h2><h3 style="margin-top:20px;margin-bottom:8px">Are PDFs uploaded to server?</h3><p>No. All operations happen locally in your browser, PDF data never leaves your device, fully privacy protected.</p></section>
+
+<script src="/assets/tools/_utils.js" defer></script>
+<script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+
+
+<script src="/assets/tools/pdf-split.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI Toolbox · Free online AI & developer tools · <a href='/en/about'>About</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('Copied!'));
+}
+</script>
+</body>
+</html>

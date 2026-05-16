@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PDF Extract Text - Free Online Tool | AI Toolbox</title>
+<meta name="description" content="Free online pdf extract text. Extract text content from PDF, copy or download. Fast, secure, and works in your browser without downloading.">
+<meta name="keywords" content="extract text from pdf, pdf to text, pdf text extractor, get text from pdf, pdf to text converter">
+<link rel="canonical" href="https://tools.talang.fun/en/tools/pdf-extract-text">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/pdf-extract-text">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/pdf-extract-text">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/pdf-extract-text">
+<meta property="og:title" content="PDF Extract Text - Free Online Tool | AI Toolbox">
+<meta property="og:description" content="Free online pdf extract text. Extract text content from PDF, copy or download. Fast, secure, and works in your browser without downloading.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/en/tools/pdf-extract-text">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "PDF Extract Text", "description": "Free online pdf extract text. Extract text content from PDF, copy or download. Fast, secure, and works in your browser without downloading.", "url": "https://tools.talang.fun/en/tools/pdf-extract-text", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "Extract text content from PDF, copy or download", "inLanguage": "en", "author": {"@type": "Organization", "name": "AI Toolbox"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/en/" class="logo"><span class="logo-icon">🛠️</span>AI Toolbox</a>
+    <nav class="nav">
+      <a href="/en/">Home</a>
+      <a href="/en/#tools">All Tools</a>
+      <a href="/en/blog/">Blog</a>
+      <a href="/en/about">About</a>
+      <a href="https://tools.talang.fun/tools/pdf-extract-text" class="lang-switch">中文</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">📝</div>
+  <h1>PDF Extract Text</h1>
+  <p>Extract text content from PDF, copy or download</p>
+</div>
+<div class="tool-panel">
+
+<div class="file-tool-container" style="max-width:800px;margin:0 auto;">
+    <div id="drop-zone" style="border:2px dashed var(--border);border-radius:12px;padding:40px;text-align:center;cursor:pointer;transition:all 0.3s;margin-bottom:20px;">
+        <div style="font-size:48px;margin-bottom:12px;">📁</div>
+        <p style="font-size:16px;line-height:1.8;">Click or drag PDF file here</p>
+        <input type="file" id="file-input" accept=".pdf" style="display:none;">
+    </div>
+    
+    <div id="file-list" style="margin-bottom:20px;max-height:150px;overflow-y:auto;"></div>
+    
+    <div style="text-align:center;margin-bottom:20px;">
+        <button id="process-btn" class="btn btn-primary" style="padding:12px 32px;font-size:16px;" disabled>📝 Start Extract</button>
+    </div>
+    
+    <div id="progress" style="height:6px;background:var(--border);border-radius:3px;overflow:hidden;margin-bottom:20px;">
+        <div style="height:100%;background:var(--primary);width:0;transition:width 0.3s;"></div>
+    </div>
+    <div id="result"></div>
+</div>
+
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>About this tool</h2>
+  Free online PDF text extractor, pure frontend implementation, files never leave your browser. One-click extract all text from PDF, preview, copy or download as TXT file. Fast, secure, no installation needed.
+</article>
+<section class="article" style="margin-top:32px"><h2>Key Features</h2><ul><li>One-click Extract</li><li>Live Preview</li><li>Copy & Download</li><li>Pure Frontend</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>Frequently Asked Questions</h2><h3 style="margin-top:20px;margin-bottom:8px">Are PDFs uploaded to server?</h3><p>No. All operations happen locally in your browser, PDF data never leaves your device, fully privacy protected.</p></section>
+
+<script src="/assets/tools/_utils.js" defer></script>
+
+<script src="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.min.js"></script>
+
+<script src="/assets/tools/pdf-extract-text.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI Toolbox · Free online AI & developer tools · <a href='/en/about'>About</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('Copied!'));
+}
+</script>
+</body>
+</html>

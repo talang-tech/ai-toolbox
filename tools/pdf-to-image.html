@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PDF 转图片 - 免费在线工具 | AI 工具盒子</title>
+<meta name="description" content="免费在线PDF 转图片工具，PDF 转 JPG/PNG 图片，高清渲染。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="pdf转图片, pdf转jpg, pdf转png, pdf转图片在线, pdf转图片工具">
+<link rel="canonical" href="https://tools.talang.fun/tools/pdf-to-image">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/pdf-to-image">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/pdf-to-image">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/pdf-to-image">
+<meta property="og:title" content="PDF 转图片 - 免费在线工具 | AI 工具盒子">
+<meta property="og:description" content="免费在线PDF 转图片工具，PDF 转 JPG/PNG 图片，高清渲染。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/pdf-to-image">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "PDF 转图片", "description": "免费在线PDF 转图片工具，PDF 转 JPG/PNG 图片，高清渲染。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/pdf-to-image", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "PDF 转 JPG/PNG 图片，高清渲染", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="https://tools.talang.fun/en/tools/pdf-to-image" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🖼️</div>
+  <h1>PDF 转图片</h1>
+  <p>PDF 转 JPG/PNG 图片，高清渲染</p>
+</div>
+<div class="tool-panel">
+
+<div class="file-tool-container" style="max-width:800px;margin:0 auto;">
+    <div id="drop-zone" style="border:2px dashed var(--border);border-radius:12px;padding:40px;text-align:center;cursor:pointer;transition:all 0.3s;margin-bottom:20px;">
+        <div style="font-size:48px;margin-bottom:12px;">📁</div>
+        <p style="font-size:16px;line-height:1.8;">点击或拖拽 PDF 文件到这里</p>
+        <input type="file" id="file-input" accept=".pdf" style="display:none;">
+    </div>
+    
+    <div id="file-list" style="margin-bottom:20px;max-height:150px;overflow-y:auto;"></div>
+    
+    <div class="options-panel" style="background:var(--bg-light);padding:20px;border-radius:8px;margin-bottom:20px;">
+        <h4 style="margin-top:0;margin-bottom:16px;">⚙️ 转换设置</h4>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;">
+            <div>
+                <label style="display:block;margin-bottom:8px;font-weight:500;">输出格式</label>
+                <select id="format" style="width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);">
+                    <option value="image/png">PNG</option>
+                    <option value="image/jpeg">JPEG</option>
+                </select>
+            </div>
+            <div>
+                <label style="display:block;margin-bottom:8px;font-weight:500;">图片质量</label>
+                <div style="display:flex;align-items:center;gap:12px;">
+                    <input type="range" id="quality" min="10" max="100" value="90" style="flex:1;">
+                    <span id="quality-value" style="font-weight:600;min-width:40px;">90%</span>
+                </div>
+            </div>
+            <div>
+                <label style="display:block;margin-bottom:8px;font-weight:500;">缩放比例</label>
+                <div style="display:flex;align-items:center;gap:12px;">
+                    <input type="range" id="scale" min="1" max="4" value="2" style="flex:1;">
+                    <span id="scale-value" style="font-weight:600;min-width:40px;">2x</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div style="text-align:center;margin-bottom:20px;">
+        <button id="process-btn" class="btn btn-primary" style="padding:12px 32px;font-size:16px;" disabled>🖼️ 开始转换</button>
+    </div>
+    
+    <div id="progress" style="height:6px;background:var(--border);border-radius:3px;overflow:hidden;margin-bottom:20px;">
+        <div style="height:100%;background:var(--primary);width:0;transition:width 0.3s;"></div>
+    </div>
+    <div id="result"></div>
+</div>
+
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  在线免费 PDF 转图片工具，纯前端实现，文件不上传服务器。支持导出 JPG 或 PNG 格式，可调节图片质量和缩放比例。快速、安全、无需安装任何软件。
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>JPG/PNG 输出</li><li>质量调节</li><li>高清渲染</li><li>纯前端处理</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">PDF 会上传到服务器吗？</h3><p>不会。所有操作都在您的浏览器本地完成，PDF 文件数据不会离开您的设备，完全保护隐私安全。</p></section>
+
+<script src="/assets/tools/_utils.js" defer></script>
+
+<script src="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.min.js"></script>
+
+<script src="/assets/tools/pdf-to-image.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+</script>
+</body>
+</html>
