@@ -156,7 +156,16 @@ document.addEventListener('DOMContentLoaded', () => {
   // ========================================
   // 8. 初始化拖放
   // ========================================
-  ToolUtils.setupDragDrop(ui.dropZone, ui.fileInput, handleFiles);
+  if (typeof window.initDragDrop === 'function') {
+    window.initDragDrop(ui.dropZone, ui.fileInput, handleFiles);
+  }
+
+  if (ui.fileInput) {
+    ui.fileInput.addEventListener('change', (e) => {
+      handleFiles([...e.target.files]);
+      e.target.value = '';
+    });
+  }
 
   // ========================================
   // 9. 绑定事件
