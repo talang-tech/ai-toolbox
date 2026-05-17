@@ -64,7 +64,42 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // 初始化拖拽
-    ToolUtils.setupDragDrop(ui.dropZone, ui.fileInput, handleFiles);
+  // ========================================
+  // 绑定拖拽和点击事件
+  // ========================================
+  if (ui.dropZone && ui.fileInput) {
+    // 点击弹出文件选择
+    ui.dropZone.addEventListener('click', (e) => {
+      if (e.target === ui.fileInput) return;
+      e.preventDefault();
+      e.stopPropagation();
+      ui.fileInput.click();
+    });
 
-  ui.processBtn.addEventListener('click', extractText);
+    // 拖拽进入
+    ui.dropZone.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      ui.dropZone.classList.add('dragover');
+    });
+
+    // 拖拽离开
+    ui.dropZone.addEventListener('dragleave', () => {
+      ui.dropZone.classList.remove('dragover');
+    });
+
+    // 拖拽放下
+    ui.dropZone.addEventListener('drop', (e) => {
+      e.preventDefault();
+      ui.dropZone.classList.remove('dragover');
+      const files = [...e.dataTransfer.files];
+      handleFiles(files);
+    });
+
+    // 文件选择变化
+    ui.fileInput.addEventListener('change', (e) => {
+      handleFiles([...e.target.files]);
+      e.target.value = '';
+    });
+  }
+ui.processBtn.addEventListener('click', extractText);
 });
