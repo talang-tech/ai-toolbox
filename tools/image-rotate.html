@@ -46,7 +46,7 @@
     <div id="drop-zone" style="border:2px dashed var(--border);border-radius:12px;padding:40px;text-align:center;cursor:pointer;transition:all 0.3s;margin-bottom:20px;">
         <div style="font-size:48px;margin-bottom:12px;">📁</div>
         <p style="font-size:16px;line-height:1.8;">点击或拖拽图片到这里<br><small>支持 JPG, PNG, WebP, GIF</small></p>
-        <input type="file" id="file-input" accept="image/*" style="display:none;">
+        <input type="file" id="file-input" accept="image/*" style="position:absolute;left:-9999px;opacity:0;width:1px;height:1px;">
     </div>
     
     <div id="file-list" style="margin-bottom:20px;max-height:150px;overflow-y:auto;"></div>
