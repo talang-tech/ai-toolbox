@@ -340,7 +340,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // ========================================
   // 拖拽区域点击弹出文件选择框 + 拖拽支持
   if (ui.dropZone && ui.fileInput) {
-    ui.dropZone.addEventListener('click', () => ui.fileInput.click());
+    ui.dropZone.addEventListener('click', (e) => {
+      e.preventDefault();
+      try {
+        ui.fileInput.click();
+      } catch (err) {
+        console.error('File input click failed:', err);
+      }
+    });
     ui.dropZone.addEventListener('dragover', (e) => {
       e.preventDefault();
       ui.dropZone.classList.add('dragover');
