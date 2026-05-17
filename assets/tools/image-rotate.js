@@ -280,10 +280,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ========================================
   if (ui.dropZone && ui.fileInput) {
     // 点击弹出文件选择
-    ui.dropZone.addEventListener('click', (e) => {
-      if (e.target === ui.fileInput) return;
-      e.preventDefault();
-      e.stopPropagation();
+    ui.dropZone.addEventListener('click', () => {
       ui.fileInput.click();
     });
 

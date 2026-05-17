@@ -46,7 +46,7 @@
     <div id="drop-zone" style="border:2px dashed var(--border);border-radius:12px;padding:40px;text-align:center;cursor:pointer;transition:all 0.3s;margin-bottom:20px;">
         <div style="font-size:48px;margin-bottom:12px;">📁</div>
         <p style="font-size:16px;line-height:1.8;">Click or drag PDF file here</p>
-        <input type="file" id="file-input" accept=".pdf" style="position:absolute;left:-9999px;opacity:0;width:1px;height:1px;">
+        <input type="file" id="file-input" accept=".pdf" style="font-size:16px;padding:12px 24px;margin-top:15px;cursor:pointer;background:var(--bg-light);border:1px solid var(--border);border-radius:8px;">
     </div>
     
     <div id="file-list" style="margin-bottom:20px;max-height:150px;overflow-y:auto;"></div>
@@ -65,7 +65,7 @@
                 <label style="display:block;margin-bottom:8px;font-weight:500;">Page Range</label>
                 <input type="text" id="page-range" placeholder="e.g.: 1-5, 8-10, 15" style="width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);">
             </div>
-            <div id="every-option" style="position:absolute;left:-9999px;opacity:0;width:1px;height:1px;">
+            <div id="every-option" style="font-size:16px;padding:12px 24px;margin-top:15px;cursor:pointer;background:var(--bg-light);border:1px solid var(--border);border-radius:8px;">
                 <label style="display:block;margin-bottom:8px;font-weight:500;">Pages per File</label>
                 <input type="number" id="pages-per-file" value="1" min="1" style="width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg);">
             </div>
