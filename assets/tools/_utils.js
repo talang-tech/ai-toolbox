@@ -22,7 +22,17 @@
     if (!dropZone || !fileInput) return;
 
     // 点击触发文件选择
-    dropZone.addEventListener('click', () => fileInput.click());
+    dropZone.addEventListener('click', (e) => {
+      // 防止 file-input 自身的点击冒泡导致无限循环
+      if (e.target === fileInput) return;
+      e.preventDefault();
+      e.stopPropagation();
+      try {
+        fileInput.click();
+      } catch (err) {
+        console.error('File input click failed:', err);
+      }
+    });
 
     // 拖放进入
     dropZone.addEventListener('dragover', (e) => {

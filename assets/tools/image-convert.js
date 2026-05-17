@@ -246,42 +246,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // ========================================
   
   // 使用 _utils.js 的通用拖放
-  // 拖拽区域点击弹出文件选择框 + 拖拽支持
-  if (ui.dropZone && ui.fileInput) {
-    ui.dropZone.addEventListener('click', (e) => {
-      // 防止 file-input 自身的点击冒泡导致无限循环
-      if (e.target === ui.fileInput) return;
-      
-      e.preventDefault();
-      e.stopPropagation();
-      try {
-        ui.fileInput.click();
-      } catch (err) {
-        console.error('File input click failed:', err);
-      }
-    });
-    ui.dropZone.addEventListener('dragover', (e) => {
-      e.preventDefault();
-      ui.dropZone.classList.add('dragover');
-    });
-    ui.dropZone.addEventListener('dragleave', () => {
-      ui.dropZone.classList.remove('dragover');
-    });
-    ui.dropZone.addEventListener('drop', (e) => {
-      e.preventDefault();
-      ui.dropZone.classList.remove('dragover');
-      const files = [...e.dataTransfer.files];
-      handleFiles(files);
-    });
-  }
+    ToolUtils.setupDragDrop(ui.dropZone, ui.fileInput, handleFiles);
+
   
-  // 文件选择
-  if (ui.fileInput) {
-    ui.fileInput.addEventListener('change', (e) => {
-      handleFiles([...e.target.files]);
-      e.target.value = '';
-    });
-  }
   
   // 处理按钮
   if (ui.processBtn) {
