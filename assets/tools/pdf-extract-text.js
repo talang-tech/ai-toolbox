@@ -64,8 +64,22 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // 初始化拖拽
-  if (window.initDragDrop) {
-    window.initDragDrop(ui.dropZone, ui.fileInput, handleFiles);
+  // 拖拽区域点击弹出文件选择框 + 拖拽支持
+  if (ui.dropZone && ui.fileInput) {
+    ui.dropZone.addEventListener('click', () => ui.fileInput.click());
+    ui.dropZone.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      ui.dropZone.classList.add('dragover');
+    });
+    ui.dropZone.addEventListener('dragleave', () => {
+      ui.dropZone.classList.remove('dragover');
+    });
+    ui.dropZone.addEventListener('drop', (e) => {
+      e.preventDefault();
+      ui.dropZone.classList.remove('dragover');
+      const files = [...e.dataTransfer.files];
+      handleFiles(files);
+    });
   }
 
   ui.fileInput.addEventListener('change', (e) => {
