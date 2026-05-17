@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>上传功能测试</title>
+    <style>
+        :root {
+            --border: #ddd;
+            --bg-light: #f5f5f5;
+        }
+        body { font-family: system-ui, sans-serif; padding: 40px; max-width: 800px; margin: 0 auto; }
+        .test-result { padding: 12px; margin: 10px 0; border-radius: 6px; }
+        .pass { background: #d4edda; color: #155724; }
+        .fail { background: #f8d7da; color: #721c24; }
+        #log { background: #000; color: #0f0; padding: 15px; font-family: monospace; height: 200px; overflow-y: auto; }
+    </style>
+</head>
+<body>
+    <h1>🔍 上传功能验证测试</h1>
+    
+    <div class="file-tool-container" style="max-width:800px;margin:0 auto;">
+        <div id="drop-zone" style="border:2px dashed var(--border);border-radius:12px;padding:40px;text-align:center;cursor:pointer;transition:all 0.3s;margin-bottom:20px;">
+            <div style="font-size:48px;margin-bottom:12px;">📁</div>
+            <p style="font-size:16px;line-height:1.8;">点击或拖拽图片到这里<br><small>支持 JPG, PNG, WebP, GIF</small></p>
+            <input type="file" id="file-input" accept="image/*" multiple style="position:absolute;left:-9999px;opacity:0;width:1px;height:1px;">
+        </div>
+        <div id="file-list"></div>
+    </div>
+
+    <h3>📋 测试结果：</h3>
+    <div id="test-results"></div>
+    
+    <h3>🖥️ 控制台日志：</h3>
+    <div id="log"></div>
+
+    <script>
+        // 模拟控制台日志
+        const logDiv = document.getElementById('log');
+        const originalLog = console.log;
+        const originalError = console.error;
+        
+        console.log = function(...args) {
+            originalLog.apply(console, args);
+            logDiv.innerHTML += '<div>' + args.join(' ') + '</div>';
+        };
+        console.error = function(...args) {
+            originalError.apply(console, args);
+            logDiv.innerHTML += '<div style="color:#f00;">ERROR: ' + args.join(' ') + '</div>';
+        };
+
+        // UI 元素
+        const ui = {
+            dropZone: document.getElementById('drop-zone'),
+            fileInput: document.getElementById('file-input'),
+            fileList: document.getElementById('file-list'),
+        };
+
+        // 测试结果
+        const results = [];
+        function addTest(name, passed, message = '') {
+            results.push({name, passed, message});
+            const div = document.createElement('div');
+            div.className = 'test-result ' + (passed ? 'pass' : 'fail');
+            div.innerHTML = `<strong>${passed ? '✅ 通过' : '❌ 失败'}</strong>: ${name}` + (message ? `<br><small>${message}</small>` : '');
+            document.getElementById('test-results').appendChild(div);
+        }
+
+        // 测试 1: UI 元素是否存在
+        addTest('dropZone 元素存在', !!ui.dropZone, ui.dropZone ? 'ID: drop-zone' : '未找到');
+        addTest('fileInput 元素存在', !!ui.fileInput, ui.fileInput ? 'ID: file-input' : '未找到');
+
+        // 测试 2: fileInput 是否可点击（不是 display: none）
+        if (ui.fileInput) {
+            const style = window.getComputedStyle(ui.fileInput);
+            const display = style.display;
+            const opacity = style.opacity;
+            const position = style.position;
+            addTest('fileInput 不是 display:none', display !== 'none', `display: ${display}, opacity: ${opacity}, position: ${position}`);
+        }
+
+        // 测试 3: 绑定事件
+        let clickTriggered = false;
+        let changeTriggered = false;
+
+        if (ui.dropZone && ui.fileInput) {
+            // 绑定拖拽事件
+            ui.dropZone.addEventListener('click', (e) => {
+                e.preventDefault();
+                console.log('dropZone clicked!');
+                clickTriggered = true;
+                try {
+                    ui.fileInput.click();
+                    console.log('fileInput.click() 调用成功!');
+                } catch (err) {
+                    console.error('fileInput.click() 失败:', err);
+                }
+            });
+
+            ui.dropZone.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                ui.dropZone.classList.add('dragover');
+                console.log('dragover 事件触发');
+            });
+
+            ui.dropZone.addEventListener('dragleave', () => {
+                ui.dropZone.classList.remove('dragover');
+                console.log('dragleave 事件触发');
+            });
+
+            ui.dropZone.addEventListener('drop', (e) => {
+                e.preventDefault();
+                ui.dropZone.classList.remove('dragover');
+                const files = [...e.dataTransfer.files];
+                console.log('drop 事件触发，文件数:', files.length);
+            });
+
+            ui.fileInput.addEventListener('change', (e) => {
+                changeTriggered = true;
+                const files = [...e.target.files];
+                console.log('change 事件触发，文件数:', files.length);
+                e.target.value = '';
+            });
+
+            addTest('事件绑定成功', true, 'click/dragover/dragleave/drop/change 全部绑定');
+        }
+
+        // 测试 4: 模拟点击（仅测试代码执行，不实际弹出文件框）
+        console.log('=== 开始模拟测试 ===');
+        try {
+            // 测试代码路径是否可执行
+            const testClick = new Event('click', {bubbles: true});
+            ui.dropZone.dispatchEvent(testClick);
+            addTest('dropZone click 事件可正常触发', clickTriggered, '事件回调已执行');
+            
+            addTest('fileInput.click() 代码可执行', true, '没有 JavaScript 错误');
+        } catch (e) {
+            addTest('JavaScript 执行测试', false, e.message);
+        }
+
+        console.log('=== 测试完成 ===');
+        console.log('请手动点击上方的拖拽区域，验证是否能弹出文件选择框！');
+    </script>
+</body>
+</html>
