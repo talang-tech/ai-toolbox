@@ -92,7 +92,11 @@ document.addEventListener('DOMContentLoaded', () => {
       if (e.target === ui.fileInput) return;
       e.preventDefault();
       e.stopPropagation();
-      ui.fileInput.click();
+      try {
+        ui.fileInput.click();
+      } catch (err) {
+        console.error('File input click failed:', err);
+      }
     });
 
     // 拖拽进入
