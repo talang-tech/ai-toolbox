@@ -1,320 +1,180 @@
 /**
  * PDF 分割工具
- * 纯前端 pdf-lib.js 实现
+ * 使用 ToolBase 基类实现 - 重构版 v2.0
  */
 
-document.addEventListener('DOMContentLoaded', () => {
-  const isEN = document.documentElement.lang === 'en';
+document.addEventListener('DOMContentLoaded', async () => {
+  const waitForPDFLib = () => new Promise((resolve) => {
+    if (window.PDFLib) return resolve(window.PDFLib);
+    const timer = setInterval(() => {
+      if (window.PDFLib) {
+        clearInterval(timer);
+        resolve(window.PDFLib);
+      }
+    }, 100);
+    setTimeout(() => clearInterval(timer), 10000);
+  });
 
-  // DOM 元素
-  const ui = {
-    dropZone: document.getElementById('drop-zone'),
-    fileInput: document.getElementById('file-input'),
-    fileList: document.getElementById('file-list'),
-    processBtn: document.getElementById('process-btn'),
-    progress: document.getElementById('progress'),
-    result: document.getElementById('result'),
-    mode: document.getElementById('mode'),
-    pageRange: document.getElementById('page-range'),
-    pagesPerFile: document.getElementById('pages-per-file'),
-  };
+  const PDFLib = await waitForPDFLib();
 
-  // 状态
-  const state = {
-    file: null,
-    pdfDoc: null,
-    totalPages: 0,
-    isProcessing: false,
-  };
-
-  // 文本
-  const texts = {
-    zh: {
-      dropText: '📁 点击或拖拽 PDF 文件到这里',
-      selectFiles: '选择文件',
-      process: '开始分割',
-      processing: '分割中...',
-      noFiles: '请先选择 PDF 文件',
-      complete: '分割完成！',
-      download: '下载',
-      page: '页',
-      totalPages: '总页数',
-      rangeHint: '例如: 1-5, 8-10, 15',
-      pagesPerFile: '每文件页数',
-      splitMode: '分割模式',
-      range: '按范围分割',
-      everyN: '每 N 页分割',
-    },
-    en: {
-      dropText: '📁 Click or drag PDF file here',
-      selectFiles: 'Select File',
-      process: 'Start Split',
-      processing: 'Splitting...',
-      noFiles: 'Please select a PDF file first',
-      complete: 'Split Complete!',
-      download: 'Download',
-      page: 'page(s)',
-      totalPages: 'Total Pages',
-      rangeHint: 'e.g.: 1-5, 8-10, 15',
-      pagesPerFile: 'Pages per File',
-      splitMode: 'Split Mode',
-      range: 'Split by Range',
-      everyN: 'Every N Pages',
+  class PDFSplitTool extends ToolBase {
+    constructor() {
+      super({
+        name: 'PDF 分割工具',
+        accept: '.pdf',
+        multiple: false
+      });
+      this.results = [];
+      this.setupOptions();
     }
-  };
 
-  function t(key) {
-    return (isEN ? texts.en : texts.zh)[key] || key;
-  }
+    setupOptions() {
+      const mode = document.getElementById('mode');
+      const rangeOption = document.getElementById('range-option');
+      const everyOption = document.getElementById('every-option');
 
-  // 初始化拖拽和点击事件
-  if (ui.dropZone && ui.fileInput) {
-    // 点击弹出文件选择
-    ui.dropZone.addEventListener('click', (e) => {
-      // 防止 file-input 自身的点击冒泡导致无限循环
-      if (e.target === ui.fileInput) return;
-      e.preventDefault();
-      e.stopPropagation();
+      if (mode) {
+        mode.addEventListener('change', () => {
+          if (mode.value === 'range') {
+            rangeOption.style.display = 'block';
+            everyOption.style.display = 'none';
+          } else {
+            rangeOption.style.display = 'none';
+            everyOption.style.display = 'block';
+          }
+        });
+      }
+    }
+
+    async process() {
+      this.state.isProcessing = true;
+      this.updateUI();
+      this.results = [];
+
       try {
-        ui.fileInput.click();
+        const file = this.state.files[0];
+        const mode = document.getElementById('mode')?.value || 'range';
+        const pageRange = document.getElementById('page-range')?.value || '';
+        const pagesPerFile = parseInt(document.getElementById('pages-per-file')?.value || '1');
+
+        this.updateProgress(20, 100, '正在读取 PDF...');
+        const arrayBuffer = await file.arrayBuffer();
+        const { PDFDocument } = PDFLib;
+        const pdf = await PDFDocument.load(arrayBuffer);
+        const totalPages = pdf.getPageCount();
+
+        if (mode === 'range') {
+          // 按范围分割
+          const ranges = this.parseRange(pageRange, totalPages);
+          for (let i = 0; i < ranges.length; i++) {
+            this.updateProgress(30 + (i / ranges.length) * 60, 100, `正在分割第 ${i + 1} 部分...`);
+            const [start, end] = ranges[i];
+            const newPdf = await PDFDocument.create();
+            const pages = await newPdf.copyPages(pdf, Array.from({ length: end - start + 1 }, (_, j) => start + j));
+            pages.forEach(p => newPdf.addPage(p));
+            const bytes = await newPdf.save();
+            this.results.push({
+              name: `split_part_${i + 1}.pdf`,
+              blob: new Blob([bytes], { type: 'application/pdf' })
+            });
+          }
+        } else {
+          // 每页分割
+          const totalFiles = Math.ceil(totalPages / pagesPerFile);
+          for (let i = 0; i < totalFiles; i++) {
+            this.updateProgress(30 + (i / totalFiles) * 60, 100, `正在分割第 ${i + 1} / ${totalFiles} 个文件...`);
+            const start = i * pagesPerFile;
+            const end = Math.min((i + 1) * pagesPerFile, totalPages) - 1;
+            const newPdf = await PDFDocument.create();
+            const pages = await newPdf.copyPages(pdf, Array.from({ length: end - start + 1 }, (_, j) => start + j));
+            pages.forEach(p => newPdf.addPage(p));
+            const bytes = await newPdf.save();
+            this.results.push({
+              name: `split_part_${i + 1}.pdf`,
+              blob: new Blob([bytes], { type: 'application/pdf' })
+            });
+          }
+        }
+
+        this.updateProgress(100, 100, '分割完成！');
+        this.showResultHtml(totalPages);
+
       } catch (err) {
-        console.error('File input click failed:', err);
+        console.error('Split failed:', err);
+        this.showMessage('分割失败: ' + err.message, 'error');
       }
-    });
 
-    // 拖拽进入
-    ui.dropZone.addEventListener('dragover', (e) => {
-      e.preventDefault();
-      ui.dropZone.classList.add('dragover');
-    });
-
-    // 拖拽离开
-    ui.dropZone.addEventListener('dragleave', () => {
-      ui.dropZone.classList.remove('dragover');
-    });
-
-    // 拖拽放下
-    ui.dropZone.addEventListener('drop', (e) => {
-      e.preventDefault();
-      ui.dropZone.classList.remove('dragover');
-      const files = [...e.dataTransfer.files];
-      handleFiles(files);
-    });
-
-    // 文件选择变化
-    ui.fileInput.addEventListener('change', (e) => {
-      handleFiles([...e.target.files]);
-      e.target.value = '';
-    });
-  }
-
-  // 模式切换
-  if (ui.mode) {
-    ui.mode.addEventListener('change', () => {
-      const isRange = ui.mode.value === 'range';
-      if (ui.pageRange) ui.pageRange.parentElement.style.display = isRange ? 'block' : 'none';
-      if (ui.pagesPerFile) ui.pagesPerFile.parentElement.style.display = isRange ? 'none' : 'block';
-    });
-  }
-
-  async function handleFiles(newFiles) {
-    const pdfFiles = newFiles.filter(f => 
-      f.type === 'application/pdf' || f.name.toLowerCase().endsWith('.pdf'));
-    
-    if (pdfFiles.length === 0) {
-      alert(isEN ? 'Please select a PDF file' : '请选择 PDF 文件');
-      return;
+      this.state.isProcessing = false;
+      this.updateUI();
     }
 
-    state.file = pdfFiles[0];
-    state.processed = [];
-    
-    // 加载 PDF 获取页数
-    await loadPDFInfo();
-    
-    renderFileList();
-    updateUI();
-  }
-
-  async function loadPDFInfo() {
-    try {
-      const { PDFDocument } = PDFLib;
-      const arrayBuffer = await state.file.arrayBuffer();
-      state.pdfDoc = await PDFDocument.load(arrayBuffer);
-      state.totalPages = state.pdfDoc.getPageCount();
+    parseRange(rangeStr, totalPages) {
+      const ranges = [];
+      const parts = rangeStr.split(/[,，]/);
       
-      //  renderFileList();
-    } catch (err) {
-      console.error('Load PDF failed:', err);
-      alert(isEN ? 'Failed to load PDF: ' + err.message : '加载 PDF 失败：' + err.message);
-    }
-  }
-
-  function renderFileList() {
-    if (!ui.fileList || !state.file) return;
-    
-    const size = (state.file.size / 1024 / 1024).toFixed(2);
-    ui.fileList.innerHTML = `
-      <div class="file-item" style="display:flex;align-items:center;gap:12px;">
-        <span class="file-name" style="flex:1;">${state.file.name}</span>
-        <span class="file-meta">${size} MB · ${state.totalPages || '?'} ${t('page')}</span>
-        <button class="btn-remove" onclick="removeFile()" title="${isEN ? 'Remove' : '移除'}">×</button>
-      </div>
-    `;
-  }
-
-  window.removeFile = function() {
-    state.file = null;
-    state.pdfDoc = null;
-    state.totalPages = 0;
-    ui.fileList.innerHTML = '';
-    updateUI();
-  };
-
-  function updateUI() {
-    const hasFile = state.file !== null;
-    
-    if (ui.processBtn) {
-      ui.processBtn.disabled = !hasFile || state.isProcessing;
-      ui.processBtn.textContent = state.isProcessing ? t('processing') : t('process');
-    }
-  }
-
-  // 解析页面范围解析
-  function parsePageRange(rangeStr, totalPages) {
-    const ranges = [];
-    const parts = rangeStr.split(',').map(p => p.trim()).filter(p => p);
-    
-    for (const part of parts) {
-      if (part.includes('-')) {
-        const [start, end] = part.split('-').map(n => parseInt(n.trim()));
-        if (!isNaN(start) && !isNaN(end)) {
-          ranges.push({ start: Math.max(1, start), end: Math.min(totalPages, end) });
-        }
-      } else {
-        const page = parseInt(part);
-        if (!isNaN(page)) {
-          ranges.push({ start: Math.max(1, page), end: Math.min(totalPages, page) });
+      for (const part of parts) {
+        const match = part.trim().match(/^(\d+)(?:[-~至](\d+))?$/);
+        if (match) {
+          let start = parseInt(match[1]) - 1;
+          let end = match[2] ? parseInt(match[2]) - 1 : start;
+          start = Math.max(0, start);
+          end = Math.min(totalPages - 1, end);
+          if (start <= end) {
+            ranges.push([start, end]);
+          }
         }
       }
-    }
-    
-    return ranges;
-  }
-
-  // 分割核心逻辑
-  async function splitPDF() {
-    if (!state.file || !state.pdfDoc) {
-      alert(t('noFiles'));
-      return;
-    }
-
-    state.isProcessing = true;
-    updateUI();
-
-    try {
-      const { PDFDocument } = PDFLib;
-      const mode = ui.mode ? ui.mode.value : 'range';
-      const results = [];
-
-      if (mode === 'range') {
-        // 按范围分割
-        const rangeStr = ui.pageRange ? ui.pageRange.value : '';
-        const ranges = parsePageRange(rangeStr, state.totalPages);
-        
-        if (ranges.length === 0) {
-          alert(isEN ? 'Invalid page range' : '无效的页面范围');
-          state.isProcessing = false;
-          updateUI();
-          return;
-        }
-
-        for (let i = 0; i < ranges.length; i++) {
-          const range = ranges[i];
-          const newPdf = await PDFDocument.create();
-          const pages = await newPdf.copyPages(state.pdfDoc, 
-            Array.from({ length: range.end - range.start + 1 }, (_, idx) => range.start - 1 + idx));
-          
-          pages.forEach(page => newPdf.addPage(page));
-          
-          const pdfBytes = await newPdf.save();
-          const blob = new Blob([pdfBytes], { type: 'application/pdf' });
-          results.push({
-            name: `pages_${range.start}-${range.end}.pdf`,
-            blob: blob,
-            url: URL.createObjectURL(blob)
-          });
-
-          if (ui.progress) {
-            ui.progress.style.width = ((i + 1) / ranges.length * 100) + '%';
-          }
-          await new Promise(r => setTimeout(r, 50));
-        }
-      } else {
-        // 每 N 页分割
-        const n = ui.pagesPerFile ? parseInt(ui.pagesPerFile.value) : 1;
-        if (isNaN(n) || n < 1) {
-          alert(isEN ? 'Invalid pages per file' : '无效的每页数量');
-          state.isProcessing = false;
-          updateUI();
-          return;
-        }
-
-        const totalFiles = Math.ceil(state.totalPages / n);
-        for (let i = 0; i < totalFiles; i++) {
-          const start = i * n + 1;
-          const end = Math.min((i + 1) * n, state.totalPages);
-          
-          const newPdf = await PDFDocument.create();
-          const pages = await newPdf.copyPages(state.pdfDoc, 
-            Array.from({ length: end - start + 1 }, (_, idx) => start - 1 + idx));
-          
-          pages.forEach(page => newPdf.addPage(page));
-          
-          const pdfBytes = await newPdf.save();
-          const blob = new Blob([pdfBytes], { type: 'application/pdf' });
-          results.push({
-            name: `part_${i + 1}_pages_${start}-${end}.pdf`,
-            blob: blob,
-            url: URL.createObjectURL(blob)
-          });
-
-          if (ui.progress) {
-            ui.progress.style.width = ((i + 1) / totalFiles * 100) + '%';
-          }
-          await new Promise(r => setTimeout(r, 50));
+      
+      if (ranges.length === 0) {
+        for (let i = 0; i < totalPages; i++) {
+          ranges.push([i, i]);
         }
       }
+      
+      return ranges;
+    }
 
-      // 显示结果
-      ui.result.innerHTML = `
+    showResultHtml(totalPages) {
+      this.showResult(`
         <div style="text-align:center;padding:20px;">
           <div style="font-size:48px;margin-bottom:12px;">✅</div>
-          <h4 style="margin:0 0 16px 0;">${t('complete')}</h4>
+          <h4 style="margin:0 0 16px 0;">分割完成！</h4>
           <p style="color:var(--text-muted);margin-bottom:20px;">
-            ${results.length} 个文件已生成
+            原始文档 ${totalPages} 页，已分割为 ${this.results.length} 个文件
           </p>
-          <div style="text-align:left;max-width:500px;margin:0 auto;">
-            ${results.map((r, i) => `
-              <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:var(--bg-light);border-radius:6px;margin-bottom:8px;">
-                <span>${r.name}</span>
-                <a href="${r.url}" download="${r.name}" class="btn btn-secondary" style="padding:6px 12px;font-size:14px;">
-                  📥 ${t('download')}
-                </a>
-              </div>
-            `).join('')}
-          </div>
+          <button class="btn btn-primary" onclick="window.toolInstance.downloadAll()" style="padding:12px 32px;">
+            📥 全部下载
+          </button>
         </div>
-      `;
-
-    } catch (err) {
-      console.error('Split failed:', err);
-      alert(isEN ? 'Split failed: ' + err.message : '分割失败：' + err.message);
+        <div style="margin-top:20px;">
+          ${this.results.map((r, i) => `
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:12px;background:var(--bg-light);border-radius:8px;margin-bottom:8px;">
+              <div>
+                <div style="font-weight:500;">${r.name}</div>
+                <div style="font-size:12px;color:var(--text-muted);">${this.formatSize(r.blob.size)}</div>
+              </div>
+              <button class="btn btn-secondary" onclick="window.toolInstance.downloadSingle(${i})" style="padding:8px 16px;">
+                下载
+              </button>
+            </div>
+          `).join('')}
+        </div>
+      `);
     }
 
-    state.isProcessing = false;
-    updateUI();
+    downloadSingle(index) {
+      const result = this.results[index];
+      if (result) {
+        this.downloadBlob(result.blob, result.name);
+      }
+    }
+
+    downloadAll() {
+      this.results.forEach((r, i) => {
+        setTimeout(() => this.downloadBlob(r.blob, r.name), i * 300);
+      });
+    }
   }
 
-  ui.processBtn.addEventListener('click', splitPDF);
+  window.toolInstance = new PDFSplitTool();
 });
