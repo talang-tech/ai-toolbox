@@ -53,7 +53,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // 初始化拖拽和点击事件
   if (ui.dropZone && ui.fileInput) {
     // 点击弹出文件选择
-    ui.dropZone.addEventListener('click', () => {
+    ui.dropZone.addEventListener('click', (e) => {
+      // 防止 file-input 自身的点击冒泡导致无限循环
+      if (e.target === ui.fileInput) return;
+      e.preventDefault();
+      e.stopPropagation();
       ui.fileInput.click();
     });
 
