@@ -272,7 +272,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         if (ui.progress) {
-          ui.progress.style.width = ((i + 1) / state.files.length * 100 + '%';
+          ui.progress.style.width = ((i + 1) / state.files.length * 100) + '%';
         }
       }
 
