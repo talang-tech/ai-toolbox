@@ -273,8 +273,16 @@ document.addEventListener('DOMContentLoaded', () => {
   // ========================================
   if (ui.dropZone && ui.fileInput) {
     // 点击弹出文件选择
-    ui.dropZone.addEventListener('click', () => {
-      ui.fileInput.click();
+    ui.dropZone.addEventListener('click', (e) => {
+      // 防止 file-input 自身的点击冒泡导致无限循环
+      if (e.target === ui.fileInput) return;
+      e.preventDefault();
+      e.stopPropagation();
+      try {
+        ui.fileInput.click();
+      } catch (err) {
+        console.error('File input click failed:', err);
+      }
     });
 
     // 拖拽进入
