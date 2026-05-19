@@ -5,6 +5,20 @@
 
 document.addEventListener('DOMContentLoaded', async () => {
   // 等待 PDFLib 加载
+
+  const waitForToolBase = () => new Promise((resolve) => {
+    if (window.ToolBase) return resolve(window.ToolBase);
+    const timer = setInterval(() => {
+      if (window.ToolBase) {
+        clearInterval(timer);
+        resolve(window.ToolBase);
+      }
+    }, 50);
+    setTimeout(() => clearInterval(timer), 5000);
+  });
+
+  const ToolBase = await waitForToolBase();
+
   const waitForPDFLib = () => new Promise((resolve) => {
     if (window.PDFLib) return resolve(window.PDFLib);
     const timer = setInterval(() => {

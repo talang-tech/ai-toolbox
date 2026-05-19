@@ -4,6 +4,20 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+
+  const waitForToolBase = () => new Promise((resolve) => {
+    if (window.ToolBase) return resolve(window.ToolBase);
+    const timer = setInterval(() => {
+      if (window.ToolBase) {
+        clearInterval(timer);
+        resolve(window.ToolBase);
+      }
+    }, 50);
+    setTimeout(() => clearInterval(timer), 5000);
+  });
+
+  const ToolBase = await waitForToolBase();
+
   // 等待 jspdf 加载 (如果存在)
   class ImageToPDFTool extends ToolBase {
     constructor() {
