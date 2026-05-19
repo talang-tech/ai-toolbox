@@ -1,6 +1,6 @@
 /**
  * PDF 转图片工具
- * 使用 ToolBase 基类实现 - 重构版 v2.0
+ * 使用 pdfjs-dist 实现真正的 PDF 页面渲染
  */
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -18,18 +18,25 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   const ToolBase = await waitForToolBase();
 
-  const waitForPDFLib = () => new Promise((resolve) => {
-    if (window.PDFLib) return resolve(window.PDFLib);
+  const waitForPDFJS = () => new Promise((resolve) => {
+    if (window.pdfjsLib) return resolve(window.pdfjsLib);
     const timer = setInterval(() => {
-      if (window.PDFLib) {
+      if (window.pdfjsLib) {
         clearInterval(timer);
-        resolve(window.PDFLib);
+        resolve(window.pdfjsLib);
       }
     }, 100);
     setTimeout(() => clearInterval(timer), 10000);
   });
 
-  const PDFLib = await waitForPDFLib();
+  const pdfjsLib = await waitForPDFJS();
+
+  if (!pdfjsLib) {
+    console.error('pdfjs-dist 加载失败');
+    return;
+  }
+
+  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js';
 
   class PDFToImageTool extends ToolBase {
     constructor() {
@@ -51,45 +58,36 @@ document.addEventListener('DOMContentLoaded', async () => {
         const format = document.getElementById('format')?.value || 'image/png';
         const scale = parseFloat(document.getElementById('scale')?.value || 2);
 
-        this.updateProgress(30, 100, '正在读取 PDF...');
+        this.updateProgress(10, 100, '正在读取 PDF...');
         const arrayBuffer = await file.arrayBuffer();
-        const { PDFDocument } = PDFLib;
-        const pdf = await PDFDocument.load(arrayBuffer);
-        const pages = pdf.getPages();
+        this.updateProgress(30, 100, '正在解析 PDF...');
 
-        this.updateProgress(50, 100, `正在渲染 ${pages.length} 页...');
+        const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+        const totalPages = pdf.numPages;
 
-        // 创建一个 Canvas 渲染 (演示版 - 实际项目需要 pdf.js 等库)
-        for (let i = 0; i < pages.length; i++) {
-          // 演示模式下生成一个简单的图片
+        for (let i = 1; i <= totalPages; i++) {
+          this.updateProgress(30 + Math.round((i / totalPages) * 60), 100, '正在渲染第 ' + i + ' / ' + totalPages + ' 页...');
+
+          const page = await pdf.getPage(i);
+          const viewport = page.getViewport({ scale: scale });
           const canvas = document.createElement('canvas');
-          canvas.width = 800;
-          canvas.height = 1000;
           const ctx = canvas.getContext('2d');
-          
-          // 绘制背景
-          ctx.fillStyle = '#ffffff';
-          ctx.fillRect(0, 0, 800, 1000);
-          
-          // 绘制文字
-          ctx.fillStyle = '#000000';
-          ctx.font = '24px sans-serif';
-          ctx.textAlign = 'center';
-          ctx.fillText('PDF 转图片 - 演示模式', 400, 120);
-          ctx.font = '16px sans-serif';
-          ctx.fillText(`第 ${i + 1} 页 / 共 ${pages.length} 页`, 400, 160);
-          ctx.fillText('完整版需要集成 pdf.js 或 pdf-lib 主要用于创建/修改 PDF', 400, 200);
-          
+          canvas.width = viewport.width;
+          canvas.height = viewport.height;
+
+          await page.render({ canvasContext: ctx, viewport: viewport }).promise;
+
           const blob = await new Promise(resolve => canvas.toBlob(resolve, format, 0.9));
+          const ext = format === 'image/jpeg' ? 'jpg' : 'png';
           this.results.push({
-            name: `page_${i + 1}.${format.split('/')[1]}`,
-            blob,
+            name: 'page_' + i + '.' + ext,
+            blob: blob,
             url: URL.createObjectURL(blob)
           });
         }
 
         this.updateProgress(100, 100, '转换完成！');
-        this.showResultHtml(pages.length);
+        this.showResultHtml(totalPages);
 
       } catch (err) {
         console.error('Convert failed:', err);
@@ -101,29 +99,25 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     showResultHtml(totalPages) {
-      const html = `
-        <div style="text-align:center;padding:20px;">
-          <div style="font-size:48px;margin-bottom:12px;">✅</div>
-          <h4 style="margin:0 0 16px 0;">转换完成！</h4>
-          <p style="color:var(--text-muted);margin-bottom:20px;">
-            共 ${totalPages} 页已转换为图片
-          </p>
-          <button class="btn btn-primary" onclick="window.toolInstance.downloadAll()" style="padding:12px 32px;">
-            📥 全部下载
-          </button>
-        </div>
-        <div style="margin-top:20px;display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;">
-          ${this.results.map((r, i) => `
-            <div style="border:1px solid var(--border);border-radius:8px;overflow:hidden;">
-              <img src="${r.url}" style="width:100%;aspect-ratio:4/5;object-fit:cover;border-bottom:1px solid var(--border);">
-              <div style="padding:12px;">
-                <div style="font-size:14px;font-weight:500;margin-bottom:8px;">第 ${i + 1}. ${r.name}</div>
-                <button class="btn btn-secondary" onclick="window.toolInstance.downloadSingle(${i})" style="width:100%;padding:8px;">下载</button>
-              </div>
-            </div>
-          `).join('')}
-        </div>
-      `;
+      const html = [
+        '<div style="text-align:center;padding:20px;">',
+        '  <div style="font-size:48px;margin-bottom:12px;">✅</div>',
+        '  <h4 style="margin:0 0 16px 0;">转换完成！</h4>',
+        '  <p style="color:var(--text-muted);margin-bottom:20px;">共 ' + totalPages + ' 页已转换为图片</p>',
+        '  <button class="btn btn-primary" onclick="window.toolInstance.downloadAll()" style="padding:12px 32px;">📥 全部下载</button>',
+        '</div>',
+        '<div style="margin-top:20px;display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;">',
+        this.results.map((r, i) => [
+          '<div style="border:1px solid var(--border);border-radius:8px;overflow:hidden;">',
+          '  <img src="' + r.url + '" style="width:100%;aspect-ratio:4/5;object-fit:cover;border-bottom:1px solid var(--border);">',
+          '  <div style="padding:12px;">',
+          '    <div style="font-size:14px;font-weight:500;margin-bottom:8px;">第 ' + (i + 1) + ' 页</div>',
+          '    <button class="btn btn-secondary" onclick="window.toolInstance.downloadSingle(' + i + ')" style="width:100%;padding:8px;">下载</button>',
+          '  </div>',
+          '</div>'
+        ].join('\n')).join('\n'),
+        '</div>'
+      ].join('\n');
       this.showResult(html);
     }
 

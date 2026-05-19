@@ -58,15 +58,8 @@
       if (!dropZone || !fileInput) return;
 
       // 点击弹出文件选择
-      dropZone.addEventListener('click', (e) => {
-        if (e.target === fileInput) return;
-        e.preventDefault();
-        e.stopPropagation();
-        try {
-          fileInput.click();
-        } catch (err) {
-          console.error('File input click failed:', err);
-        }
+      dropZone.addEventListener('click', () => {
+        fileInput.click();
       });
 
       // 拖拽进入
@@ -282,15 +275,8 @@
   function setupDragDrop(dropZone, fileInput, callback) {
     if (!dropZone || !fileInput) return;
 
-    dropZone.addEventListener('click', (e) => {
-      if (e.target === fileInput) return;
-      e.preventDefault();
-      e.stopPropagation();
-      try {
-        fileInput.click();
-      } catch (err) {
-        console.error('File input click failed:', err);
-      }
+    dropZone.addEventListener('click', () => {
+      fileInput.click();
     });
 
     dropZone.addEventListener('dragover', (e) => {

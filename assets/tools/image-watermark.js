@@ -6,9 +6,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const isEN = document.documentElement.lang === 'en';
 
-  // ========================================
-  // 1. DOM 元素引用
-  // ========================================
   const ui = {
     dropZone: document.getElementById('drop-zone'),
     fileInput: document.getElementById('file-input'),
@@ -29,9 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
     sizeValue: document.getElementById('size-value'),
   };
 
-  // ========================================
-  // 2. 状态管理
-  // ========================================
   const state = {
     files: [],
     processed: [],
@@ -39,43 +33,20 @@ document.addEventListener('DOMContentLoaded', () => {
     watermarkImage: null,
   };
 
-  // ========================================
-  // 3. 初始化多语言文本
-  // ========================================
   const texts = {
     zh: {
-      dropText: '📁 点击或拖拽图片到这里\n支持 JPG, PNG, WebP, GIF',
-      selectFiles: '选择文件',
       process: '添加水印',
       processing: '处理中...',
       download: '下载全部',
       noFiles: '请先选择图片',
       complete: '水印添加完成！',
-      watermarkText: '水印文字',
-      watermarkImage: '水印图片',
-      position: '水印位置',
-      opacity: '透明度',
-      fontSize: '字体大小',
-      fontColor: '字体颜色',
-      imageSize: '水印大小 (%)',
-      selectWatermark: '选择水印图片',
     },
     en: {
-      dropText: '📁 Click or drag images here\nSupports JPG, PNG, WebP, GIF',
-      selectFiles: 'Select Files',
       process: 'Add Watermark',
       processing: 'Processing...',
       download: 'Download All',
       noFiles: 'Please select images first',
       complete: 'Watermark Added!',
-      watermarkText: 'Watermark Text',
-      watermarkImage: 'Watermark Image',
-      position: 'Position',
-      opacity: 'Opacity',
-      fontSize: 'Font Size',
-      fontColor: 'Font Color',
-      imageSize: 'Watermark Size (%)',
-      selectWatermark: 'Select Watermark',
     }
   };
 
@@ -83,9 +54,6 @@ document.addEventListener('DOMContentLoaded', () => {
     return (isEN ? texts.en : texts.zh)[key] || key;
   }
 
-  // ========================================
-  // 4. 初始化 UI
-  // ========================================
   if (ui.watermarkOpacity && ui.opacityValue) {
     ui.watermarkOpacity.addEventListener('input', () => {
       ui.opacityValue.textContent = ui.watermarkOpacity.value + '%';
@@ -98,7 +66,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 水印类型切换
   if (ui.watermarkType) {
     ui.watermarkType.addEventListener('change', () => {
       const textSection = document.querySelector('.watermark-text-section');
@@ -113,7 +80,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 水印图片选择
   if (ui.watermarkImage) {
     ui.watermarkImage.addEventListener('change', (e) => {
       if (e.target.files.length > 0) {
@@ -131,16 +97,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ========================================
-  // 5. 文件处理
-  // ========================================
   function handleFiles(newFiles) {
     const imageFiles = newFiles.filter(f => f.type.startsWith('image/'));
-    
     if (imageFiles.length !== newFiles.length) {
       alert(isEN ? 'Some files are not images and were skipped' : '部分非图片文件已跳过');
     }
-
     state.files = [...state.files, ...imageFiles];
     state.processed = [];
     renderFileList();
@@ -149,16 +110,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function renderFileList() {
     if (!ui.fileList) return;
-    
     ui.fileList.innerHTML = state.files.map((file, index) => {
       const size = (file.size / 1024).toFixed(1);
-      return `
-        <div class="file-item" data-index="${index}">
-          <span class="file-name">${file.name}</span>
-          <span class="file-meta">${file.type} · ${size} KB</span>
-          <button class="btn-remove" onclick="removeFile(${index})" title="${isEN ? 'Remove' : '移除'}">×</button>
-        </div>
-      `;
+      return [
+        '<div class="file-item" data-index="' + index + '">',
+        '  <span class="file-name">' + file.name + '</span>',
+        '  <span class="file-meta">' + file.type + ' · ' + size + ' KB</span>',
+        '  <button class="btn-remove" onclick="removeFile(' + index + ')" title="' + (isEN ? 'Remove' : '移除') + '">×</button>',
+        '</div>'
+      ].join('\n');
     }).join('');
   }
 
@@ -170,23 +130,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function updateUI() {
     const hasFiles = state.files.length > 0;
-    
     if (ui.processBtn) {
       ui.processBtn.disabled = !hasFiles || state.isProcessing;
       ui.processBtn.textContent = state.isProcessing ? t('processing') : t('process');
     }
-    
     if (ui.downloadBtn) {
       ui.downloadBtn.style.display = state.processed.length > 0 ? 'inline-block' : 'none';
     }
   }
 
-  // ========================================
-  // 6. 水印核心
-  // ========================================
   async function processFiles() {
     if (state.files.length === 0) return;
-    
+
     const type = ui.watermarkType ? ui.watermarkType.value : 'text';
     const text = ui.watermarkText ? ui.watermarkText.value : 'WATERMARK';
     const position = ui.watermarkPosition ? ui.watermarkPosition.value : 'bottom-right';
@@ -194,35 +149,32 @@ document.addEventListener('DOMContentLoaded', () => {
     const fontSize = ui.fontSize ? parseInt(ui.fontSize.value) : 48;
     const fontColor = ui.fontColor ? ui.fontColor.value : '#ffffff';
     const watermarkSize = ui.watermarkSize ? parseInt(ui.watermarkSize.value) / 100 : 0.2;
-    
+
     if (type === 'image' && !state.watermarkImage) {
       alert(isEN ? 'Please select a watermark image first' : '请先选择水印图片');
       return;
     }
-    
+
     state.isProcessing = true;
     state.processed = [];
     updateUI();
-    
+
     for (let i = 0; i < state.files.length; i++) {
       const file = state.files[i];
-      
       if (ui.progress) {
-        ui.progress.style.width = ((i + 1) / state.files.length * 100) + '%';
-        ui.progress.textContent = `${i + 1}/${state.files.length}`;
+        const bar = ui.progress.querySelector('div');
+        if (bar) bar.style.width = ((i + 1) / state.files.length * 100) + '%';
       }
-      
       try {
-        const result = await addWatermark(file, type, text, state.watermarkImage, 
+        const result = await addWatermark(file, type, text, state.watermarkImage,
           position, opacity, fontSize, fontColor, watermarkSize);
         state.processed.push(result);
       } catch (err) {
         console.error('Watermark failed:', err);
       }
-      
       await new Promise(r => setTimeout(r, 50));
     }
-    
+
     state.isProcessing = false;
     updateUI();
     renderResults();
@@ -237,16 +189,14 @@ document.addEventListener('DOMContentLoaded', () => {
           const canvas = document.createElement('canvas');
           canvas.width = img.width;
           canvas.height = img.height;
-          
           const ctx = canvas.getContext('2d');
           ctx.drawImage(img, 0, 0);
           ctx.globalAlpha = opacity;
-          
-          // 计算水印位置
+
           const positions = getPosition(position, img.width, img.height);
-          
+
           if (type === 'text') {
-            ctx.font = `bold ${fontSize}px Arial, sans-serif`;
+            ctx.font = 'bold ' + fontSize + 'px Arial, sans-serif';
             ctx.fillStyle = fontColor;
             ctx.textAlign = positions.align;
             ctx.textBaseline = positions.baseline;
@@ -255,26 +205,23 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetWidth = img.width * watermarkSize;
             const ratio = watermarkImg.height / watermarkImg.width;
             const targetHeight = targetWidth * ratio;
-            
+
             let x = positions.x;
             let y = positions.y;
-            
-            // 调整位置偏移
+
             if (position.includes('right')) x -= targetWidth;
             if (position.includes('bottom')) y -= targetHeight;
             if (position === 'center') {
               x -= targetWidth / 2;
               y -= targetHeight / 2;
             }
-            
             ctx.drawImage(watermarkImg, x, y, targetWidth, targetHeight);
           }
-          
+
           canvas.toBlob((blob) => {
             const baseName = file.name.replace(/\.[^.]+$/, '');
             const ext = file.name.split('.').pop();
-            const newName = `${baseName}_watermarked.${ext}`;
-            
+            const newName = baseName + '_watermarked.' + ext;
             resolve({
               name: newName,
               original: file,
@@ -309,18 +256,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function renderResults() {
     if (!ui.result) return;
-    
-    ui.result.innerHTML = '<h4>' + t('complete') + '</h4>' + 
+    ui.result.innerHTML = '<h4>' + t('complete') + '</h4>' +
       state.processed.map((r, i) => {
-        return `
-          <div class="result-item">
-            <span>${r.name}</span>
-            <span class="size-info">
-              ${(r.originalSize / 1024).toFixed(1)} KB → ${(r.newSize / 1024).toFixed(1)} KB
-            </span>
-            <a href="${r.url}" download="${r.name}" class="btn-download">${isEN ? 'Download' : '下载'}</a>
-          </div>
-        `;
+        return [
+          '<div class="result-item">',
+          '  <span>' + r.name + '</span>',
+          '  <span class="size-info">' + (r.originalSize / 1024).toFixed(1) + ' KB → ' + (r.newSize / 1024).toFixed(1) + ' KB</span>',
+          '  <a href="' + r.url + '" download="' + r.name + '" class="btn-download">' + (isEN ? 'Download' : '下载') + '</a>',
+          '</div>'
+        ].join('\n');
       }).join('');
   }
 
@@ -335,55 +279,32 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ========================================
-  // 7. 事件绑定
-  // ========================================
-  // ========================================
-  // 绑定拖拽和点击事件
-  // ========================================
   if (ui.dropZone && ui.fileInput) {
-    // 点击弹出文件选择
-    ui.dropZone.addEventListener('click', (e) => {
-      // 防止 file-input 自身的点击冒泡导致无限循环
-      if (e.target === ui.fileInput) return;
-      e.preventDefault();
-      e.stopPropagation();
-      try {
-        ui.fileInput.click();
-      } catch (err) {
-        console.error('File input click failed:', err);
-      }
+    ui.dropZone.addEventListener('click', () => {
+      ui.fileInput.click();
     });
-
-    // 拖拽进入
     ui.dropZone.addEventListener('dragover', (e) => {
       e.preventDefault();
       ui.dropZone.classList.add('dragover');
     });
-
-    // 拖拽离开
     ui.dropZone.addEventListener('dragleave', () => {
       ui.dropZone.classList.remove('dragover');
     });
-
-    // 拖拽放下
     ui.dropZone.addEventListener('drop', (e) => {
       e.preventDefault();
       ui.dropZone.classList.remove('dragover');
       const files = [...e.dataTransfer.files];
       handleFiles(files);
     });
-
-    // 文件选择变化
     ui.fileInput.addEventListener('change', (e) => {
       handleFiles([...e.target.files]);
       e.target.value = '';
     });
   }
-if (ui.processBtn) {
+
+  if (ui.processBtn) {
     ui.processBtn.addEventListener('click', processFiles);
   }
-  
   if (ui.downloadBtn) {
     ui.downloadBtn.addEventListener('click', downloadAll);
   }
