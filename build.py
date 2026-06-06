@@ -7,7 +7,7 @@ AI Toolbox - 静态站点生成器
 import json
 import os
 from pathlib import Path
-from datetime import datetime
+from datetime import datetime, timezone
 
 ROOT = Path(__file__).parent
 SITE_URL = "https://tools.talang.fun"
@@ -20,6 +20,57 @@ with open(ROOT / "tools.json", encoding="utf-8") as f:
 
 TOOLS = DATA["tools"]
 CATEGORIES = DATA["categories"]
+
+
+def repo_last_modified(path):
+    """Return YYYY-MM-DD of the last git commit touching a file, or None."""
+    import subprocess
+    try:
+        result = subprocess.run(
+            ["git", "log", "-1", "--format=%cs", "--", str(path)],
+            cwd=ROOT,
+            text=True,
+            capture_output=True,
+            check=False,
+        )
+        value = result.stdout.strip()
+        return value or None
+    except Exception:
+        return None
+
+
+def file_last_modified(path):
+    """Return YYYY-MM-DD from the file mtime."""
+    try:
+        return datetime.fromtimestamp(Path(path).stat().st_mtime, tz=timezone.utc).strftime("%Y-%m-%d")
+    except OSError:
+        return None
+
+
+def post_last_modified(post):
+    """Prefer frontmatter date for blog posts; fall back to git/file mtime."""
+    date = str(post.get("date", "")).strip()
+    if date:
+        return date[:10]
+    source = post.get("source_path")
+    return (repo_last_modified(source) if source else None) or (file_last_modified(source) if source else None)
+
+
+def tool_last_modified(tool):
+    """Use the latest relevant git date for a generated tool page."""
+    candidates = [
+        ROOT / "tools.json",
+        ROOT / "build.py",
+        ROOT / "assets" / "tools" / f"{tool['slug']}.js",
+        ROOT / "assets" / "tools" / "_utils.js",
+        ROOT / "assets" / "css" / "style.css",
+    ]
+    dates = [repo_last_modified(p) or file_last_modified(p) for p in candidates]
+    dates = [d for d in dates if d]
+    return max(dates) if dates else datetime.now(timezone.utc).strftime("%Y-%m-%d")
+
+
+SITE_LASTMOD = repo_last_modified(ROOT / "build.py") or datetime.now(timezone.utc).strftime("%Y-%m-%d")
 
 
 def base_layout(*, lang, title, description, keywords, canonical, body, extra_head=""):
@@ -108,6 +159,21 @@ function toast(msg) {{
 function copyToClipboard(text) {{
   navigator.clipboard.writeText(text).then(() => toast('{"Copied!" if is_en else "已复制!"}'));
 }}
+function trackEvent(action, params) {{
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({{
+    event_category: 'engagement',
+    page_location: window.location.href
+  }}, params || {{}}));
+}}
+document.addEventListener('click', function(e) {{
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {{
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  }});
+}});
 </script>
 </body>
 </html>"""
@@ -238,12 +304,12 @@ def conversion_cta(lang):
         return """<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
   <h2>Need a private toolbox or custom browser tool?</h2>
   <p>AI Toolbox can be adapted for internal workflows, private deployment, sponsored categories, or custom privacy-first utilities.</p>
-  <p><a href="/en/sponsor">View partnership and custom tool options →</a></p>
+  <p><a href="/en/sponsor" data-event="conversion_cta_click" data-label="en_partner_custom_tool_cta">View partnership and custom tool options →</a></p>
 </section>"""
     return """<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
   <h2>需要内部工具箱、私有化部署或定制工具？</h2>
   <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
-  <p><a href="/sponsor">查看合作与定制方式 →</a></p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
 </section>"""
 
 
@@ -284,9 +350,9 @@ def sponsor_page(lang):
   <h2>Contact</h2>
   <p>Choose the most relevant GitHub issue template so we can understand the request faster:</p>
   <ul>
-    <li><a href="https://github.com/talang-tech/ai-toolbox/issues/new?template=sponsorship_partnership.yml">Sponsorship / partnership request →</a></li>
-    <li><a href="https://github.com/talang-tech/ai-toolbox/issues/new?template=custom_tool_private_deploy.yml">Custom tool / private deployment request →</a></li>
-    <li><a href="https://github.com/talang-tech/ai-toolbox/issues/new?template=tool_request.yml">Suggest a new public tool →</a></li>
+    <li><a href="https://github.com/talang-tech/ai-toolbox/issues/new?template=sponsorship_partnership.yml" data-event="issue_template_click" data-label="sponsorship_partnership">Sponsorship / partnership request →</a></li>
+    <li><a href="https://github.com/talang-tech/ai-toolbox/issues/new?template=custom_tool_private_deploy.yml" data-event="issue_template_click" data-label="custom_tool_private_deploy">Custom tool / private deployment request →</a></li>
+    <li><a href="https://github.com/talang-tech/ai-toolbox/issues/new?template=tool_request.yml" data-event="issue_template_click" data-label="tool_request">Suggest a new public tool →</a></li>
   </ul>
 </article>"""
     else:
@@ -322,9 +388,9 @@ def sponsor_page(lang):
   <h2>联系与提交</h2>
   <p>请选择最匹配的 GitHub Issue 模板，方便我们更快理解需求：</p>
   <ul>
-    <li><a href="https://github.com/talang-tech/ai-toolbox/issues/new?template=sponsorship_partnership.yml">提交赞助 / 合作需求 →</a></li>
-    <li><a href="https://github.com/talang-tech/ai-toolbox/issues/new?template=custom_tool_private_deploy.yml">提交定制工具 / 私有化部署需求 →</a></li>
-    <li><a href="https://github.com/talang-tech/ai-toolbox/issues/new?template=tool_request.yml">建议新增公开工具 →</a></li>
+    <li><a href="https://github.com/talang-tech/ai-toolbox/issues/new?template=sponsorship_partnership.yml" data-event="issue_template_click" data-label="sponsorship_partnership">提交赞助 / 合作需求 →</a></li>
+    <li><a href="https://github.com/talang-tech/ai-toolbox/issues/new?template=custom_tool_private_deploy.yml" data-event="issue_template_click" data-label="custom_tool_private_deploy">提交定制工具 / 私有化部署需求 →</a></li>
+    <li><a href="https://github.com/talang-tech/ai-toolbox/issues/new?template=tool_request.yml" data-event="issue_template_click" data-label="tool_request">建议新增公开工具 →</a></li>
   </ul>
 </article>"""
     return base_layout(
@@ -596,6 +662,7 @@ def load_posts():
                 fm["slug"] = f.stem
                 fm["body_html"] = md_to_html(body)
                 fm["lang"] = lang
+                fm["source_path"] = f
                 posts[lang].append(fm)
             except Exception as e:
                 print(f"  ✗ failed to parse {f}: {e}")
@@ -684,28 +751,28 @@ def blog_post_page(post):
 
 def generate_sitemap(posts=None):
     """生成 sitemap.xml"""
-    today = datetime.now().strftime("%Y-%m-%d")
     urls = [
-        (f"{SITE_URL}/", "1.0"),
-        (f"{SITE_URL}/en/", "1.0"),
-        (f"{SITE_URL}/about", "0.5"),
-        (f"{SITE_URL}/en/about", "0.5"),
-        (f"{SITE_URL}/sponsor", "0.6"),
-        (f"{SITE_URL}/en/sponsor", "0.6"),
-        (f"{SITE_URL}/blog/", "0.7"),
-        (f"{SITE_URL}/en/blog/", "0.7"),
+        (f"{SITE_URL}/", SITE_LASTMOD, "1.0"),
+        (f"{SITE_URL}/en/", SITE_LASTMOD, "1.0"),
+        (f"{SITE_URL}/about", SITE_LASTMOD, "0.5"),
+        (f"{SITE_URL}/en/about", SITE_LASTMOD, "0.5"),
+        (f"{SITE_URL}/sponsor", SITE_LASTMOD, "0.6"),
+        (f"{SITE_URL}/en/sponsor", SITE_LASTMOD, "0.6"),
+        (f"{SITE_URL}/blog/", SITE_LASTMOD, "0.7"),
+        (f"{SITE_URL}/en/blog/", SITE_LASTMOD, "0.7"),
     ]
     for t in TOOLS:
-        urls.append((f"{SITE_URL}/tools/{t['slug']}", "0.8"))
-        urls.append((f"{SITE_URL}/en/tools/{t['slug']}", "0.8"))
+        lastmod = tool_last_modified(t)
+        urls.append((f"{SITE_URL}/tools/{t['slug']}", lastmod, "0.8"))
+        urls.append((f"{SITE_URL}/en/tools/{t['slug']}", lastmod, "0.8"))
     for p in posts["zh"]:
-        urls.append((f"{SITE_URL}/blog/{p['slug']}", "0.7"))
+        urls.append((f"{SITE_URL}/blog/{p['slug']}", post_last_modified(p), "0.7"))
     for p in posts["en"]:
-        urls.append((f"{SITE_URL}/en/blog/{p['slug']}", "0.7"))
+        urls.append((f"{SITE_URL}/en/blog/{p['slug']}", post_last_modified(p), "0.7"))
 
     body = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-    for url, prio in urls:
-        body += f"  <url><loc>{url}</loc><lastmod>{today}</lastmod><priority>{prio}</priority></url>\n"
+    for url, lastmod, prio in urls:
+        body += f"  <url><loc>{url}</loc><lastmod>{lastmod}</lastmod><priority>{prio}</priority></url>\n"
     body += "</urlset>\n"
     write("sitemap.xml", body)
 

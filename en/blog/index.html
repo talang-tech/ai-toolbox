@@ -117,6 +117,21 @@ function toast(msg) {
 function copyToClipboard(text) {
   navigator.clipboard.writeText(text).then(() => toast('Copied!'));
 }
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
 </script>
 </body>
 </html>

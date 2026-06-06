@@ -66,9 +66,9 @@
   <h2>Contact</h2>
   <p>Choose the most relevant GitHub issue template so we can understand the request faster:</p>
   <ul>
-    <li><a href="https://github.com/talang-tech/ai-toolbox/issues/new?template=sponsorship_partnership.yml">Sponsorship / partnership request →</a></li>
-    <li><a href="https://github.com/talang-tech/ai-toolbox/issues/new?template=custom_tool_private_deploy.yml">Custom tool / private deployment request →</a></li>
-    <li><a href="https://github.com/talang-tech/ai-toolbox/issues/new?template=tool_request.yml">Suggest a new public tool →</a></li>
+    <li><a href="https://github.com/talang-tech/ai-toolbox/issues/new?template=sponsorship_partnership.yml" data-event="issue_template_click" data-label="sponsorship_partnership">Sponsorship / partnership request →</a></li>
+    <li><a href="https://github.com/talang-tech/ai-toolbox/issues/new?template=custom_tool_private_deploy.yml" data-event="issue_template_click" data-label="custom_tool_private_deploy">Custom tool / private deployment request →</a></li>
+    <li><a href="https://github.com/talang-tech/ai-toolbox/issues/new?template=tool_request.yml" data-event="issue_template_click" data-label="tool_request">Suggest a new public tool →</a></li>
   </ul>
 </article>
 </main>
@@ -86,6 +86,21 @@ function toast(msg) {
 function copyToClipboard(text) {
   navigator.clipboard.writeText(text).then(() => toast('Copied!'));
 }
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
 </script>
 </body>
 </html>
