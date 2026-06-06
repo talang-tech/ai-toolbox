@@ -231,6 +231,22 @@ def about_page(lang):
     )
 
 
+def conversion_cta(lang):
+    """统一转化 CTA：承接私有化、定制工具和合作需求。"""
+    is_en = lang == "en"
+    if is_en:
+        return """<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>Need a private toolbox or custom browser tool?</h2>
+  <p>AI Toolbox can be adapted for internal workflows, private deployment, sponsored categories, or custom privacy-first utilities.</p>
+  <p><a href="/en/sponsor">View partnership and custom tool options →</a></p>
+</section>"""
+    return """<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor">查看合作与定制方式 →</a></p>
+</section>"""
+
+
 def sponsor_page(lang):
     """赞助、合作与定制需求入口"""
     is_en = lang == "en"
@@ -266,8 +282,12 @@ def sponsor_page(lang):
   </ul>
 
   <h2>Contact</h2>
-  <p>Open an issue on GitHub and describe your request, target users, budget range if any, and expected timeline.</p>
-  <p><a href="https://github.com/talang-tech/ai-toolbox/issues/new">Create a GitHub Issue →</a></p>
+  <p>Choose the most relevant GitHub issue template so we can understand the request faster:</p>
+  <ul>
+    <li><a href="https://github.com/talang-tech/ai-toolbox/issues/new?template=sponsorship_partnership.yml">Sponsorship / partnership request →</a></li>
+    <li><a href="https://github.com/talang-tech/ai-toolbox/issues/new?template=custom_tool_private_deploy.yml">Custom tool / private deployment request →</a></li>
+    <li><a href="https://github.com/talang-tech/ai-toolbox/issues/new?template=tool_request.yml">Suggest a new public tool →</a></li>
+  </ul>
 </article>"""
     else:
         title = "赞助合作与定制工具 - AI 工具盒子"
@@ -300,8 +320,12 @@ def sponsor_page(lang):
   </ul>
 
   <h2>联系与提交</h2>
-  <p>请在 GitHub Issue 中说明你的需求、目标用户、预算范围（如有）和期望时间。</p>
-  <p><a href="https://github.com/talang-tech/ai-toolbox/issues/new">创建 GitHub Issue →</a></p>
+  <p>请选择最匹配的 GitHub Issue 模板，方便我们更快理解需求：</p>
+  <ul>
+    <li><a href="https://github.com/talang-tech/ai-toolbox/issues/new?template=sponsorship_partnership.yml">提交赞助 / 合作需求 →</a></li>
+    <li><a href="https://github.com/talang-tech/ai-toolbox/issues/new?template=custom_tool_private_deploy.yml">提交定制工具 / 私有化部署需求 →</a></li>
+    <li><a href="https://github.com/talang-tech/ai-toolbox/issues/new?template=tool_request.yml">建议新增公开工具 →</a></li>
+  </ul>
 </article>"""
     return base_layout(
         lang=lang, title=title, description=desc,
@@ -404,6 +428,7 @@ def tool_page(tool, lang):
 {features_html}
 {faq_html}
 {related_html}
+{conversion_cta(lang)}
 <script src="/assets/tools/_utils.js" defer></script>
 {pdf_lib_script}
 {pdf_js_script}
@@ -649,6 +674,7 @@ def blog_post_page(post):
   <h1>{post.get('title','')}</h1>
   <p style="color:var(--muted);margin-bottom:24px">{post.get('date','')} · {post.get('readtime','5 min read' if is_en else '5 分钟阅读')}</p>
   {post.get('body_html','')}
+  {conversion_cta(post["lang"])}
 </article>"""
     return base_layout(
         lang=post["lang"], title=title, description=desc, keywords=keywords,
