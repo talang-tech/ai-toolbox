@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Sponsor & partnership page
+    url: https://tools.talang.fun/sponsor
+    about: Learn about sponsorship, custom tools, and private deployment options.
+  - name: AI Toolbox website
+    url: https://tools.talang.fun
+    about: Use the online toolbox.

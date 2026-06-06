@@ -1,0 +1,47 @@
+name: Sponsorship / Partnership / 赞助合作
+description: Discuss sponsorship, tool category placement, or product collaboration.
+title: "[Partnership]: "
+labels: ["partnership"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        AI Toolbox keeps core tools free and privacy-friendly. Sponsored content should be clearly marked and non-intrusive.
+  - type: input
+    id: company
+    attributes:
+      label: Company / product
+      placeholder: Your company or product name
+    validations:
+      required: true
+  - type: input
+    id: website
+    attributes:
+      label: Website
+      placeholder: https://example.com
+  - type: dropdown
+    id: type
+    attributes:
+      label: Partnership type
+      options:
+        - Sponsored category/tool page
+        - Product listing or recommendation
+        - Content collaboration
+        - Affiliate / referral discussion
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: audience
+    attributes:
+      label: Target audience and fit
+      description: Which AI Toolbox users would benefit from this?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+      description: Describe the offer, placement idea, timeline, and budget range if any.
+    validations:
+      required: true

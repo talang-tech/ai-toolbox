@@ -1,0 +1,44 @@
+name: Custom tool / Private deployment / 定制工具与私有化
+description: Request custom browser tools, internal toolboxes, or private deployment.
+title: "[Custom]: "
+labels: ["custom", "business"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template for internal tools, private deployment, or workflow-specific utilities. Do not include confidential data in the issue.
+  - type: textarea
+    id: scenario
+    attributes:
+      label: Scenario
+      description: What workflow or business process should the tool support?
+      placeholder: Describe the team, workflow, and current pain point.
+    validations:
+      required: true
+  - type: textarea
+    id: requirements
+    attributes:
+      label: Requirements
+      description: What features are needed?
+      placeholder: Inputs, outputs, validation rules, export formats, browser support, etc.
+    validations:
+      required: true
+  - type: dropdown
+    id: deployment
+    attributes:
+      label: Deployment preference
+      options:
+        - Public open-source tool
+        - Private/internal deployment
+        - White-label/customized toolbox
+        - Not sure yet
+  - type: textarea
+    id: constraints
+    attributes:
+      label: Constraints
+      description: Privacy, compliance, offline use, file size, browser compatibility, timeline, or budget constraints.
+  - type: input
+    id: contact
+    attributes:
+      label: Contact method (optional)
+      description: If you prefer not to discuss details publicly, leave a way to continue the conversation.

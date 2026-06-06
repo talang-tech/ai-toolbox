@@ -1,0 +1,40 @@
+name: Tool request / 工具需求
+description: Suggest a new privacy-first browser tool.
+title: "[Tool Request]: "
+labels: ["tool-request", "enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Suggest a tool that fits AI Toolbox: free, lightweight, privacy-first, and useful in the browser.
+  - type: input
+    id: tool_name
+    attributes:
+      label: Tool name
+      placeholder: e.g. YAML Formatter, CSV Deduplicator, SVG Optimizer
+    validations:
+      required: true
+  - type: textarea
+    id: use_case
+    attributes:
+      label: Use case
+      description: What problem does it solve? Who needs it?
+      placeholder: Describe the workflow and target users.
+    validations:
+      required: true
+  - type: textarea
+    id: inputs_outputs
+    attributes:
+      label: Inputs and outputs
+      description: What does the user paste/upload/configure, and what result should be produced?
+      placeholder: Input -> processing -> output
+  - type: textarea
+    id: privacy
+    attributes:
+      label: Privacy expectations
+      description: Should everything run locally in the browser? Any sensitive data involved?
+  - type: textarea
+    id: references
+    attributes:
+      label: Reference tools or examples
+      description: Links to similar tools, screenshots, or expected UX.

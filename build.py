@@ -30,6 +30,7 @@ def base_layout(*, lang, title, description, keywords, canonical, body, extra_he
     nav_tools = "All Tools" if is_en else "所有工具"
     nav_blog = "Blog" if is_en else "博客"
     nav_about = "About" if is_en else "关于"
+    nav_sponsor = "Sponsor" if is_en else "合作"
     lang_label = "中文" if is_en else "EN"
     lang_href = canonical.replace(f"{SITE_URL}/en", SITE_URL) if is_en else canonical.replace(SITE_URL, f"{SITE_URL}/en")
     if is_en and "/en/" not in canonical and not canonical.endswith("/en"):
@@ -38,6 +39,7 @@ def base_layout(*, lang, title, description, keywords, canonical, body, extra_he
     tools_href = "/en/#tools" if is_en else "/#tools"
     blog_href = "/en/blog/" if is_en else "/blog/"
     about_href = "/en/about" if is_en else "/about"
+    sponsor_href = "/en/sponsor" if is_en else "/sponsor"
     footer_text = (
         f"© {datetime.now().year} {site_name} · Free online AI & developer tools · "
         f"<a href='{about_href}'>About</a> · "
@@ -84,6 +86,7 @@ def base_layout(*, lang, title, description, keywords, canonical, body, extra_he
       <a href="{tools_href}">{nav_tools}</a>
       <a href="{blog_href}">{nav_blog}</a>
       <a href="{about_href}">{nav_about}</a>
+      <a href="{sponsor_href}">{nav_sponsor}</a>
       <a href="{lang_href}" class="lang-switch">{lang_label}</a>
     </nav>
   </div>

@@ -1,0 +1,47 @@
+name: Bug report / Bug 反馈
+description: Report a broken tool, UI issue, or incorrect result.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve AI Toolbox. Please do not paste secrets, tokens, private documents, or sensitive user data.
+  - type: input
+    id: tool
+    attributes:
+      label: Tool or page
+      description: Which tool/page has the issue?
+      placeholder: e.g. JSON Formatter, /tools/json-formatter
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Describe the bug and the expected behavior.
+      placeholder: Tell us what went wrong and what you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: How can we reproduce it?
+      placeholder: |
+        1. Open ...
+        2. Paste ...
+        3. Click ...
+        4. See ...
+    validations:
+      required: true
+  - type: input
+    id: browser
+    attributes:
+      label: Browser / device
+      placeholder: e.g. Chrome 125 on macOS, Safari on iPhone
+  - type: textarea
+    id: extra
+    attributes:
+      label: Additional context
+      description: Screenshots, console errors, or non-sensitive sample input.
