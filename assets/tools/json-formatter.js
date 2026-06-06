@@ -1,5 +1,7 @@
 // JSON Formatter
 (function () {
+  'use strict';
+
   const input = document.getElementById('input');
   const output = document.getElementById('output');
   const msg = document.getElementById('msg');

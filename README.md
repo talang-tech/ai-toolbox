@@ -112,6 +112,31 @@ AI Toolbox 会优先保持核心工具免费、轻量和隐私友好。商业化
 
 合作入口：<https://tools.talang.fun/sponsor>
 
+## 🤝 Partnership & Monetization
+
+AI Toolbox is designed to stay useful without blocking the core tool experience. Commercialization should be transparent, relevant, and low-friction.
+
+Primary conversion paths:
+
+- **Sponsor / partnership page**: <https://tools.talang.fun/sponsor>
+- **Sponsorship or product collaboration**: [open a partnership issue](https://github.com/talang-tech/ai-toolbox/issues/new?template=sponsorship_partnership.yml)
+- **Custom browser tools / private deployment**: [open a custom tool request](https://github.com/talang-tech/ai-toolbox/issues/new?template=custom_tool_private_deploy.yml)
+- **Public tool suggestion**: [request a new tool](https://github.com/talang-tech/ai-toolbox/issues/new?template=tool_request.yml)
+
+Suitable partnership directions:
+
+- Non-intrusive sponsored placements on relevant tool or category pages.
+- Developer SaaS, API, cloud, security, productivity, and AI workflow products.
+- Private/internal deployments for teams that handle sensitive data.
+- Custom browser-based tools for data conversion, PDF/image processing, validation, and workflow automation.
+
+Principles:
+
+- Core tools remain free and usable.
+- Sponsored content should be clearly marked.
+- No misleading rankings or fake recommendations.
+- No intrusive popups that break the tool experience.
+
 ## 📝 License
 
 MIT © 2026 talang-tech

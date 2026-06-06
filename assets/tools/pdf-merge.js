@@ -5,6 +5,8 @@
  */
 
 document.addEventListener('DOMContentLoaded', async () => {
+  'use strict';
+
   // 等待 PDFLib 加载
 
   const waitForToolBase = () => new Promise((resolve) => {

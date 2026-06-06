@@ -4,6 +4,8 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  'use strict';
+
 
   const waitForToolBase = () => new Promise((resolve) => {
     if (window.ToolBase) return resolve(window.ToolBase);

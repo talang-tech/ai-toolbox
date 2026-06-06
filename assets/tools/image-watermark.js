@@ -4,6 +4,8 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  'use strict';
+
   const isEN = document.documentElement.lang === 'en';
 
   const ui = {

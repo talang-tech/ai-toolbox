@@ -1,5 +1,7 @@
 // JWT Decoder
 document.addEventListener('DOMContentLoaded', () => {
+    'use strict';
+
     const input = document.getElementById('jwt-input');
     const headerOutput = document.getElementById('header-output');
     const payloadOutput = document.getElementById('payload-output');
