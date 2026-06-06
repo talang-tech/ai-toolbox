@@ -41,10 +41,12 @@ def base_layout(*, lang, title, description, keywords, canonical, body, extra_he
     footer_text = (
         f"© {datetime.now().year} {site_name} · Free online AI & developer tools · "
         f"<a href='{about_href}'>About</a> · "
+        f"<a href='/en/sponsor'>Sponsor</a> · "
         f"<a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>"
         if is_en else
         f"© {datetime.now().year} {site_name} · 免费在线 AI 与开发者工具 · "
         f"<a href='{about_href}'>关于</a> · "
+        f"<a href='/sponsor'>合作</a> · "
         f"<a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>"
     )
     # Alternate hreflang
@@ -222,6 +224,85 @@ def about_page(lang):
     return base_layout(
         lang=lang, title=title, description=desc,
         keywords="about, ai toolbox" if is_en else "关于,AI 工具盒子",
+        canonical=canonical, body=body
+    )
+
+
+def sponsor_page(lang):
+    """赞助、合作与定制需求入口"""
+    is_en = lang == "en"
+    canonical = f"{SITE_URL}/en/sponsor" if is_en else f"{SITE_URL}/sponsor"
+    if is_en:
+        title = "Sponsor & Partnerships - AI Toolbox"
+        desc = "Sponsor AI Toolbox, request a tool, or discuss custom privacy-first browser tools for your team."
+        body = """<article class="article">
+  <h1>Sponsor & Partnerships</h1>
+  <p><strong>AI Toolbox</strong> is a free, privacy-first collection of browser-based developer and office tools. Most tools run locally in the browser, so user data is not uploaded to a server.</p>
+
+  <h2>Who this is for</h2>
+  <ul>
+    <li>Developer tool, SaaS, API, cloud, security, productivity, and AI workflow products.</li>
+    <li>Teams that need private, lightweight internal tools.</li>
+    <li>Users who want to request a new tool or improve an existing one.</li>
+  </ul>
+
+  <h2>Partnership options</h2>
+  <ul>
+    <li><strong>Sponsored tool category:</strong> non-intrusive placement on relevant tool or category pages.</li>
+    <li><strong>Tool request:</strong> propose a new utility that fits the privacy-first toolbox.</li>
+    <li><strong>Custom tools:</strong> browser-based tools for internal workflows, data conversion, PDF/image processing, or developer productivity.</li>
+    <li><strong>Private deployment:</strong> adapt AI Toolbox for internal documentation portals or intranet use.</li>
+  </ul>
+
+  <h2>Principles</h2>
+  <ul>
+    <li>Core tools stay free and usable.</li>
+    <li>No misleading rankings or fake recommendations.</li>
+    <li>No intrusive popups that break the tool experience.</li>
+    <li>Sponsored content should be clearly marked.</li>
+  </ul>
+
+  <h2>Contact</h2>
+  <p>Open an issue on GitHub and describe your request, target users, budget range if any, and expected timeline.</p>
+  <p><a href="https://github.com/talang-tech/ai-toolbox/issues/new">Create a GitHub Issue →</a></p>
+</article>"""
+    else:
+        title = "赞助合作与定制工具 - AI 工具盒子"
+        desc = "赞助 AI 工具盒子、提交工具需求，或咨询隐私优先的浏览器本地处理工具定制与私有化部署。"
+        body = """<article class="article">
+  <h1>赞助合作与定制工具</h1>
+  <p><strong>AI 工具盒子</strong> 是一个免费、隐私优先、浏览器本地处理的在线开发者与办公工具箱。大部分工具直接在用户浏览器中运行，文本、JSON、图片、PDF 等数据不会上传到服务器。</p>
+
+  <h2>适合谁合作</h2>
+  <ul>
+    <li>开发者工具、SaaS、API、云服务、安全、效率工具、AI 工作流产品。</li>
+    <li>需要轻量内部工具、数据转换工具、PDF/图片处理工具的团队。</li>
+    <li>希望提交新工具需求或改进现有工具的用户。</li>
+  </ul>
+
+  <h2>合作方式</h2>
+  <ul>
+    <li><strong>工具分类赞助：</strong> 在相关工具页或分类页展示非侵入式赞助说明。</li>
+    <li><strong>提交工具需求：</strong> 提议新增适合工具箱定位的实用工具。</li>
+    <li><strong>定制工具开发：</strong> 为团队工作流定制浏览器本地处理工具，例如数据转换、格式化、PDF/图片处理、开发者效率工具。</li>
+    <li><strong>私有化部署：</strong> 将 AI 工具盒子改造成企业内部门户、文档站或内网工具箱。</li>
+  </ul>
+
+  <h2>合作原则</h2>
+  <ul>
+    <li>核心工具保持免费可用。</li>
+    <li>不做误导性排名，不伪装真实推荐。</li>
+    <li>不使用影响工具体验的侵入式弹窗。</li>
+    <li>赞助内容需要清晰标注。</li>
+  </ul>
+
+  <h2>联系与提交</h2>
+  <p>请在 GitHub Issue 中说明你的需求、目标用户、预算范围（如有）和期望时间。</p>
+  <p><a href="https://github.com/talang-tech/ai-toolbox/issues/new">创建 GitHub Issue →</a></p>
+</article>"""
+    return base_layout(
+        lang=lang, title=title, description=desc,
+        keywords="sponsor, partnership, custom tools, AI Toolbox" if is_en else "赞助合作,工具定制,在线工具,AI 工具盒子,私有化部署",
         canonical=canonical, body=body
     )
 
@@ -580,6 +661,8 @@ def generate_sitemap(posts=None):
         (f"{SITE_URL}/en/", "1.0"),
         (f"{SITE_URL}/about", "0.5"),
         (f"{SITE_URL}/en/about", "0.5"),
+        (f"{SITE_URL}/sponsor", "0.6"),
+        (f"{SITE_URL}/en/sponsor", "0.6"),
         (f"{SITE_URL}/blog/", "0.7"),
         (f"{SITE_URL}/en/blog/", "0.7"),
     ]
@@ -645,6 +728,9 @@ def main():
     # About pages
     write("about.html", about_page("zh"))
     write("en/about.html", about_page("en"))
+    # Sponsor / partnership pages
+    write("sponsor.html", sponsor_page("zh"))
+    write("en/sponsor.html", sponsor_page("en"))
     # Tool pages
     for t in TOOLS:
         write(f"tools/{t['slug']}.html", tool_page(t, "zh"))
@@ -661,7 +747,7 @@ def main():
     generate_sitemap(posts)
     generate_robots()
     n_posts = len(posts["zh"]) + len(posts["en"])
-    n_html = 2 + 2 + len(TOOLS) * 2 + 2 + n_posts
+    n_html = 2 + 2 + 2 + len(TOOLS) * 2 + 2 + n_posts
     print(f"\n✅ Generated {n_html} HTML pages + sitemap + robots.")
     print(f"   {len(TOOLS)} tools × 2 languages + {n_posts} blog posts")
 

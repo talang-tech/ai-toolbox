@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>赞助合作与定制工具 - AI 工具盒子</title>
+<meta name="description" content="赞助 AI 工具盒子、提交工具需求，或咨询隐私优先的浏览器本地处理工具定制与私有化部署。">
+<meta name="keywords" content="赞助合作,工具定制,在线工具,AI 工具盒子,私有化部署">
+<link rel="canonical" href="https://tools.talang.fun/sponsor">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/sponsor">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/sponsor">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/sponsor">
+<meta property="og:title" content="赞助合作与定制工具 - AI 工具盒子">
+<meta property="og:description" content="赞助 AI 工具盒子、提交工具需求，或咨询隐私优先的浏览器本地处理工具定制与私有化部署。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/sponsor">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="https://tools.talang.fun/en/sponsor" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<article class="article">
+  <h1>赞助合作与定制工具</h1>
+  <p><strong>AI 工具盒子</strong> 是一个免费、隐私优先、浏览器本地处理的在线开发者与办公工具箱。大部分工具直接在用户浏览器中运行，文本、JSON、图片、PDF 等数据不会上传到服务器。</p>
+
+  <h2>适合谁合作</h2>
+  <ul>
+    <li>开发者工具、SaaS、API、云服务、安全、效率工具、AI 工作流产品。</li>
+    <li>需要轻量内部工具、数据转换工具、PDF/图片处理工具的团队。</li>
+    <li>希望提交新工具需求或改进现有工具的用户。</li>
+  </ul>
+
+  <h2>合作方式</h2>
+  <ul>
+    <li><strong>工具分类赞助：</strong> 在相关工具页或分类页展示非侵入式赞助说明。</li>
+    <li><strong>提交工具需求：</strong> 提议新增适合工具箱定位的实用工具。</li>
+    <li><strong>定制工具开发：</strong> 为团队工作流定制浏览器本地处理工具，例如数据转换、格式化、PDF/图片处理、开发者效率工具。</li>
+    <li><strong>私有化部署：</strong> 将 AI 工具盒子改造成企业内部门户、文档站或内网工具箱。</li>
+  </ul>
+
+  <h2>合作原则</h2>
+  <ul>
+    <li>核心工具保持免费可用。</li>
+    <li>不做误导性排名，不伪装真实推荐。</li>
+    <li>不使用影响工具体验的侵入式弹窗。</li>
+    <li>赞助内容需要清晰标注。</li>
+  </ul>
+
+  <h2>联系与提交</h2>
+  <p>请在 GitHub Issue 中说明你的需求、目标用户、预算范围（如有）和期望时间。</p>
+  <p><a href="https://github.com/talang-tech/ai-toolbox/issues/new">创建 GitHub Issue →</a></p>
+</article>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+</script>
+</body>
+</html>

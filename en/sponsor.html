@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sponsor & Partnerships - AI Toolbox</title>
+<meta name="description" content="Sponsor AI Toolbox, request a tool, or discuss custom privacy-first browser tools for your team.">
+<meta name="keywords" content="sponsor, partnership, custom tools, AI Toolbox">
+<link rel="canonical" href="https://tools.talang.fun/en/sponsor">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/sponsor">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/sponsor">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/sponsor">
+<meta property="og:title" content="Sponsor & Partnerships - AI Toolbox">
+<meta property="og:description" content="Sponsor AI Toolbox, request a tool, or discuss custom privacy-first browser tools for your team.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/en/sponsor">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/en/" class="logo"><span class="logo-icon">🛠️</span>AI Toolbox</a>
+    <nav class="nav">
+      <a href="/en/">Home</a>
+      <a href="/en/#tools">All Tools</a>
+      <a href="/en/blog/">Blog</a>
+      <a href="/en/about">About</a>
+      <a href="https://tools.talang.fun/sponsor" class="lang-switch">中文</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<article class="article">
+  <h1>Sponsor & Partnerships</h1>
+  <p><strong>AI Toolbox</strong> is a free, privacy-first collection of browser-based developer and office tools. Most tools run locally in the browser, so user data is not uploaded to a server.</p>
+
+  <h2>Who this is for</h2>
+  <ul>
+    <li>Developer tool, SaaS, API, cloud, security, productivity, and AI workflow products.</li>
+    <li>Teams that need private, lightweight internal tools.</li>
+    <li>Users who want to request a new tool or improve an existing one.</li>
+  </ul>
+
+  <h2>Partnership options</h2>
+  <ul>
+    <li><strong>Sponsored tool category:</strong> non-intrusive placement on relevant tool or category pages.</li>
+    <li><strong>Tool request:</strong> propose a new utility that fits the privacy-first toolbox.</li>
+    <li><strong>Custom tools:</strong> browser-based tools for internal workflows, data conversion, PDF/image processing, or developer productivity.</li>
+    <li><strong>Private deployment:</strong> adapt AI Toolbox for internal documentation portals or intranet use.</li>
+  </ul>
+
+  <h2>Principles</h2>
+  <ul>
+    <li>Core tools stay free and usable.</li>
+    <li>No misleading rankings or fake recommendations.</li>
+    <li>No intrusive popups that break the tool experience.</li>
+    <li>Sponsored content should be clearly marked.</li>
+  </ul>
+
+  <h2>Contact</h2>
+  <p>Open an issue on GitHub and describe your request, target users, budget range if any, and expected timeline.</p>
+  <p><a href="https://github.com/talang-tech/ai-toolbox/issues/new">Create a GitHub Issue →</a></p>
+</article>
+</main>
+<footer class="site-footer">
+  © 2026 AI Toolbox · Free online AI & developer tools · <a href='/en/about'>About</a> · <a href='/en/sponsor'>Sponsor</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('Copied!'));
+}
+</script>
+</body>
+</html>

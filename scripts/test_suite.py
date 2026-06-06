@@ -82,8 +82,8 @@ class TestProjectStructure(unittest.TestCase):
             "build.py",
             "README.md",
             "LICENSE",
-            "MAINTENANCE_GUIDE.md",
-            "TOOL_DEVELOPMENT_GUIDE.md"
+            "docs/MAINTENANCE_GUIDE.md",
+            "docs/TOOL_DEVELOPMENT_GUIDE.md"
         ]
         
         for file_path in required_files:
