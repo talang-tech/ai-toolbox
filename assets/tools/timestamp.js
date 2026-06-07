@@ -1,5 +1,7 @@
 // Timestamp Converter
 (() => {
+  'use strict';
+
   const nowBtn = document.getElementById("tsNow");
   const tsInput = document.getElementById("tsInput");
   const tsHuman = document.getElementById("tsHuman");
@@ -12,17 +14,24 @@
   }
 
   function updateFromTs(value) {
-    const num = parseInt(value, 10);
-    if (isNaN(num)) { tsHuman.value = ""; tsIso.value = ""; tsUnix.value = ""; tsMs.value = ""; return; }
-    // Detect if in seconds or ms (year 2000 = 946684800, year 2100 = 3250368000000)
-    const isMs = num > 9999999999;
-    const sec = isMs ? Math.floor(num / 1000) : num;
-    const ms = isMs ? num : num * 1000;
-    const d = new Date(ms);
-    tsHuman.value = d.toLocaleString("zh-CN", { timeZone: "Asia/Shanghai" }) + " (北京时间) / " + d.toUTCString();
-    tsIso.value = d.toISOString();
-    tsUnix.value = sec;
-    tsMs.value = ms;
+    try {
+      const num = parseInt(value, 10);
+      if (isNaN(num)) { tsHuman.value = ""; tsIso.value = ""; tsUnix.value = ""; tsMs.value = ""; return; }
+      // Detect if in seconds or ms (year 2000 = 946684800, year 2100 = 3250368000000)
+      const isMs = num > 9999999999;
+      const sec = isMs ? Math.floor(num / 1000) : num;
+      const ms = isMs ? num : num * 1000;
+      const d = new Date(ms);
+      tsHuman.value = d.toLocaleString("zh-CN", { timeZone: "Asia/Shanghai" }) + " (北京时间) / " + d.toUTCString();
+      tsIso.value = d.toISOString();
+      tsUnix.value = sec;
+      tsMs.value = ms;
+    } catch (err) {
+      tsHuman.value = err.message;
+      tsIso.value = "";
+      tsUnix.value = "";
+      tsMs.value = "";
+    }
   }
 
   function updateFromDate(value) {

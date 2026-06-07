@@ -43,7 +43,11 @@
 </div>
 <div class="tool-panel">
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px"><div><label>输入:</label><textarea id="dedupInput" style="min-height:280px"></textarea></div><div><label>输出:</label><textarea id="dedupOutput" readonly style="min-height:280px"></textarea></div></div><div style="margin-top:12px;display:flex;gap:12px;align-items:center;flex-wrap:wrap"><label><input type="checkbox" id="dedupCase" checked> 忽略大小写</label><label><input type="checkbox" id="dedupEmpty" checked> 忽略空行</label><label><input type="checkbox" id="dedupTrim" checked> 去两端空白</label><span id="dedupStats" style="margin-left:auto;color:var(--muted)">—</span><button class="btn" id="dedupCopy">复制结果</button></div>
-</div>
+</div><section class="article" style="margin-top:20px;border:1px solid var(--border);background:var(--bg-light);border-radius:12px;padding:16px">
+  <h2 style="margin-top:0">隐私说明</h2>
+  <p>这个工具在你的浏览器中运行。你输入的内容、文件、JSON、JWT、图片、PDF、密码、哈希或文本不会上传到 AI 工具盒子的服务器。</p>
+  <p>站点可能记录基础访问量和转化点击事件，但不会追踪用户输入内容或文件内容。</p>
+</section>
 <article class="article" style="margin-top:32px">
   <h2>关于这个工具</h2>
   <p>整理数据、清洗列表、去重邮件/手机号/URL 时的必备工具。支持：忽略大小写、忽略空行、去除两端空白。</p><p>实时统计：原行数、去重后行数、移除行数和百分比。</p>

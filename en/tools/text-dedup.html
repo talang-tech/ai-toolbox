@@ -43,7 +43,11 @@
 </div>
 <div class="tool-panel">
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px"><div><label>Input:</label><textarea id="dedupInput" style="min-height:280px"></textarea></div><div><label>Output:</label><textarea id="dedupOutput" readonly style="min-height:280px"></textarea></div></div><div style="margin-top:12px;display:flex;gap:12px;align-items:center;flex-wrap:wrap"><label><input type="checkbox" id="dedupCase" checked> Case-insensitive</label><label><input type="checkbox" id="dedupEmpty" checked> Ignore empty lines</label><label><input type="checkbox" id="dedupTrim" checked> Trim whitespace</label><span id="dedupStats" style="margin-left:auto;color:var(--muted)">—</span><button class="btn" id="dedupCopy">Copy Result</button></div>
-</div>
+</div><section class="article" style="margin-top:20px;border:1px solid var(--border);background:var(--bg-light);border-radius:12px;padding:16px">
+  <h2 style="margin-top:0">Privacy note</h2>
+  <p>This tool runs in your browser. Your input, files, JSON, JWT, images, PDFs, passwords, hashes, or text are not uploaded to an AI Toolbox server.</p>
+  <p>Basic analytics may record page views and conversion clicks, but user input and file content are not tracked.</p>
+</section>
 <article class="article" style="margin-top:32px">
   <h2>About this tool</h2>
   <p>Essential for data cleaning, list deduplication, removing duplicate emails/phone numbers/URLs. Supports: case-insensitive, ignore empty lines, trim whitespace.</p><p>Real-time stats: original lines, lines after dedup, count and percentage removed.</p>

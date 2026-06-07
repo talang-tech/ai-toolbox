@@ -313,6 +313,30 @@ def conversion_cta(lang):
 </section>"""
 
 
+def privacy_notice(slug, lang):
+    """Sensitive-tool privacy note. Keep it concise and visible near the tool UI."""
+    sensitive = {
+        "json-formatter", "jwt-decoder", "hash-generator", "password-generator",
+        "pdf-merge", "pdf-split", "pdf-to-image", "pdf-extract-text", "image-to-pdf",
+        "image-compress", "image-convert", "image-resize", "image-watermark", "image-base64",
+        "url-encoder", "text-dedup"
+    }
+    if slug not in sensitive:
+        return ""
+    is_en = lang == "en"
+    if is_en:
+        return """<section class="article" style="margin-top:20px;border:1px solid var(--border);background:var(--bg-light);border-radius:12px;padding:16px">
+  <h2 style="margin-top:0">Privacy note</h2>
+  <p>This tool runs in your browser. Your input, files, JSON, JWT, images, PDFs, passwords, hashes, or text are not uploaded to an AI Toolbox server.</p>
+  <p>Basic analytics may record page views and conversion clicks, but user input and file content are not tracked.</p>
+</section>"""
+    return """<section class="article" style="margin-top:20px;border:1px solid var(--border);background:var(--bg-light);border-radius:12px;padding:16px">
+  <h2 style="margin-top:0">隐私说明</h2>
+  <p>这个工具在你的浏览器中运行。你输入的内容、文件、JSON、JWT、图片、PDF、密码、哈希或文本不会上传到 AI 工具盒子的服务器。</p>
+  <p>站点可能记录基础访问量和转化点击事件，但不会追踪用户输入内容或文件内容。</p>
+</section>"""
+
+
 def sponsor_page(lang):
     """赞助、合作与定制需求入口"""
     is_en = lang == "en"
@@ -486,7 +510,7 @@ def tool_page(tool, lang):
 </div>
 <div class="tool-panel">
 {ui}
-</div>
+</div>{privacy_notice(slug, lang)}
 <article class="article" style="margin-top:32px">
   <h2>{'About this tool' if is_en else '关于这个工具'}</h2>
   {long_desc}
