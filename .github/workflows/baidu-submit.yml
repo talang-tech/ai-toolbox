@@ -1,0 +1,56 @@
+name: Baidu URL Submit
+
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: "Max URLs to submit. Use the Baidu daily quota, e.g. 10."
+        required: false
+        default: "10"
+      mode:
+        description: "URL priority mode: zh-first or all"
+        required: false
+        default: "zh-first"
+  schedule:
+    # Daily 09:15 China time (UTC+8). GitHub cron is UTC.
+    - cron: "15 1 * * *"
+
+permissions:
+  contents: read
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Validate generated sitemap
+        run: python3 - <<'PY'
+          import xml.etree.ElementTree as ET
+          data = open('sitemap.xml', encoding='utf-8').read()
+          root = ET.fromstring(data)
+          ns = {'sm': 'http://www.sitemaps.org/schemas/sitemap/0.9'}
+          urls = [e.text for e in root.findall('sm:url/sm:loc', ns)]
+          print(f'sitemap URLs: {len(urls)}')
+          assert urls, 'sitemap has no URLs'
+          assert all(u.startswith('https://tools.talang.fun/') for u in urls), 'unexpected sitemap host'
+          PY
+
+      - name: Submit URLs to Baidu
+        env:
+          BAIDU_PUSH_TOKEN: ${{ secrets.BAIDU_PUSH_TOKEN }}
+          BAIDU_PUSH_SITE: tools.talang.fun
+        run: |
+          if [ -z "$BAIDU_PUSH_TOKEN" ]; then
+            echo "Missing GitHub secret BAIDU_PUSH_TOKEN" >&2
+            exit 2
+          fi
+          LIMIT="${{ github.event.inputs.limit || '10' }}"
+          MODE="${{ github.event.inputs.mode || 'zh-first' }}"
+          python3 scripts/baidu_submit.py --limit "$LIMIT" --mode "$MODE" --rotate

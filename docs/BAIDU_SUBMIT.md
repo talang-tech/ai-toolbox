@@ -29,10 +29,30 @@ BAIDU_PUSH_TOKEN=your_token_here python3 scripts/baidu_submit.py \
 
 ## Submit a limited batch
 
-Baidu accounts often have a small daily quota. Use `--limit` to submit the highest-priority URLs first:
+Baidu accounts often have a small daily quota. Use `--limit` to submit the highest-priority URLs first. By default, `--mode zh-first` prioritizes the homepage, Chinese tool pages, and Chinese blog posts before English pages:
 
 ```bash
 BAIDU_PUSH_TOKEN=your_token_here python3 scripts/baidu_submit.py --limit 10
+```
+
+Submit in sitemap order instead:
+
+```bash
+BAIDU_PUSH_TOKEN=your_token_here python3 scripts/baidu_submit.py --limit 10 --mode all
+```
+
+## Rotate daily batches
+
+Use `--rotate` with `--limit` to submit a different batch each day:
+
+```bash
+BAIDU_PUSH_TOKEN=your_token_here python3 scripts/baidu_submit.py --limit 10 --rotate
+```
+
+Use `--offset` for a manual batch:
+
+```bash
+BAIDU_PUSH_TOKEN=your_token_here python3 scripts/baidu_submit.py --limit 10 --offset 20
 ```
 
 ## Submit from a file
@@ -43,6 +63,46 @@ BAIDU_PUSH_TOKEN=your_token_here python3 scripts/baidu_submit.py --file urls.txt
 
 `urls.txt` should contain one URL per line. Blank lines and lines beginning with `#` are ignored.
 
-## CI / automation note
+## GitHub Actions automation
 
-If this is later automated in GitHub Actions or another CI system, store the token as a secret named `BAIDU_PUSH_TOKEN`. Never place it in frontend JavaScript, Markdown, or committed config files.
+This repository includes `.github/workflows/baidu-submit.yml`.
+
+### 1. Add the token as a GitHub Secret
+
+Go to:
+
+```text
+GitHub repository → Settings → Secrets and variables → Actions → New repository secret
+```
+
+Create:
+
+```text
+Name: BAIDU_PUSH_TOKEN
+Value: your Baidu push token
+```
+
+Do not include the `token=` prefix; paste only the token value.
+
+### 2. Run manually
+
+Go to:
+
+```text
+Actions → Baidu URL Submit → Run workflow
+```
+
+Recommended inputs:
+
+```text
+limit: 10
+mode: zh-first
+```
+
+### 3. Scheduled run
+
+The workflow also runs daily at 09:15 China time (`01:15 UTC`) and submits up to 10 prioritized URLs. The scheduled run uses `--rotate`, so it submits a different daily batch instead of retrying the same first 10 URLs forever.
+
+## Security note
+
+Never place the token in frontend JavaScript, Markdown pages, committed config files, or public logs. Use `BAIDU_PUSH_TOKEN` as an environment variable or GitHub Actions secret only.

@@ -16,6 +16,7 @@ from __future__ import annotations
 import argparse
 import os
 import sys
+from datetime import datetime, timezone
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -49,6 +50,37 @@ def load_file_urls(path: Path) -> list[str]:
 def chunked(items: list[str], size: int):
     for i in range(0, len(items), size):
         yield items[i : i + size]
+
+
+def prioritize_urls(urls: list[str], mode: str) -> list[str]:
+    """Order URLs for small daily quotas.
+
+    zh-first favors Chinese canonical pages and blog posts before English pages,
+    because Baidu usually has more value for the Chinese site first.
+    """
+    if mode == "all":
+        return urls
+    if mode != "zh-first":
+        raise ValueError(f"unsupported mode: {mode}")
+
+    def score(url: str) -> tuple[int, int, str]:
+        path = urllib.parse.urlparse(url).path or "/"
+        is_en = path.startswith("/en/") or path == "/en"
+        if path == "/":
+            group = 0
+        elif is_en:
+            group = 5
+        elif path.startswith("/tools/"):
+            group = 1
+        elif path.startswith("/blog/"):
+            group = 2
+        elif path in {"/about", "/sponsor"}:
+            group = 3
+        else:
+            group = 4
+        return (group, len(path), path)
+
+    return sorted(urls, key=score)
 
 
 def submit_urls(site: str, token: str, urls: list[str], batch_size: int = 2000) -> int:
@@ -85,7 +117,10 @@ def main() -> int:
     parser.add_argument("--url", action="append", default=[], help="Single URL to submit; can be repeated")
     parser.add_argument("--file", type=Path, help="Text file with one URL per line")
     parser.add_argument("--sitemap", type=Path, default=SITEMAP, help="Sitemap path used when --url/--file are omitted")
-    parser.add_argument("--limit", type=int, help="Submit only the first N URLs after de-duplication")
+    parser.add_argument("--limit", type=int, help="Submit only N URLs after de-duplication and prioritization")
+    parser.add_argument("--offset", type=int, help="Skip the first N prioritized URLs before applying --limit")
+    parser.add_argument("--rotate", action="store_true", help="With --limit, rotate the submitted batch by UTC day-of-year")
+    parser.add_argument("--mode", choices=["zh-first", "all"], default="zh-first", help="URL ordering mode for quota-limited submissions")
     args = parser.parse_args()
 
     if not args.token:
@@ -100,11 +135,29 @@ def main() -> int:
         urls = load_sitemap_urls(args.sitemap)
 
     urls = list(dict.fromkeys(u.strip() for u in urls if u and u.strip()))
+    try:
+        urls = prioritize_urls(urls, args.mode)
+    except ValueError as exc:
+        print(str(exc), file=sys.stderr)
+        return 2
+
+    if args.rotate and args.limit is None:
+        print("--rotate requires --limit", file=sys.stderr)
+        return 2
+    if args.offset is not None and args.offset < 0:
+        print("--offset must be >= 0", file=sys.stderr)
+        return 2
     if args.limit is not None:
         if args.limit < 1:
             print("--limit must be >= 1", file=sys.stderr)
             return 2
-        urls = urls[:args.limit]
+        offset = args.offset or 0
+        if args.rotate and urls:
+            day_of_year = datetime.now(timezone.utc).timetuple().tm_yday
+            batches = max(1, (len(urls) + args.limit - 1) // args.limit)
+            offset = ((day_of_year - 1) % batches) * args.limit
+            print(f"Rotating submission: day_of_year={day_of_year}, batches={batches}, offset={offset}")
+        urls = urls[offset : offset + args.limit]
     if not urls:
         print("No URLs to submit.", file=sys.stderr)
         return 2
