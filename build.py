@@ -110,6 +110,7 @@ def base_layout(*, lang, title, description, keywords, canonical, body, extra_he
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
 <title>{title}</title>
 <meta name="description" content="{description}">
 <meta name="keywords" content="{keywords}">
