@@ -1335,6 +1335,73 @@
       ]
     },
     {
+      "slug": "xml-formatter",
+      "category": "dev",
+      "icon": "🧩",
+      "name_zh": "XML 格式化/压缩",
+      "name_en": "XML Formatter & Minifier",
+      "short_zh": "在线格式化、校验和压缩 XML，支持本地解析错误提示",
+      "short_en": "Format, validate, and minify XML locally with parser error messages",
+      "keywords_zh": "XML格式化,XML压缩,XML校验,在线XML工具,XML美化,SOAP格式化,Sitemap格式化,SVG格式化",
+      "keywords_en": "XML formatter,XML minifier,XML validator,online XML tool,XML beautifier,SOAP formatter,Sitemap formatter,SVG formatter",
+      "long_zh": "<p>免费的在线 XML 格式化、校验与压缩工具，适用于 SOAP 报文、Sitemap、SVG、配置文件、接口响应等场景。工具使用浏览器内置 DOMParser 在本地解析 XML，能提示解析错误，并输出缩进良好的 XML 或压缩后的单行版本。</p><p>所有 XML 文本只在你的浏览器中处理，不会上传到服务器，适合处理内部接口响应、配置和包含敏感字段的 XML 片段。</p>",
+      "long_en": "<p>Free online XML formatter, validator, and minifier for SOAP payloads, sitemaps, SVG, config files, and API responses. It uses the browser's DOMParser locally to detect parse errors and produce either indented XML or a compact one-line version.</p><p>All XML text is processed in your browser and is not uploaded, making it suitable for internal responses, configs, and XML snippets with sensitive fields.</p>",
+      "ui_zh": "<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:16px\"><div><label>XML 输入:</label><textarea id=\"xmlInput\" style=\"min-height:420px;font-family:monospace;font-size:13px\" placeholder=\"粘贴 XML / SVG / SOAP...\"><root><user id=\"1\"><name>AI Toolbox</name><active>true</active></user></root></textarea></div><div><label>输出:</label><textarea id=\"xmlOutput\" style=\"min-height:420px;font-family:monospace;font-size:13px\" readonly placeholder=\"格式化或压缩结果...\"></textarea></div></div><div class=\"input-row\" style=\"margin-top:12px\"><label>缩进 <select id=\"xmlIndent\" style=\"width:auto\"><option value=\"2\">2 空格</option><option value=\"4\">4 空格</option><option value=\"tab\">Tab</option></select></label><button class=\"btn\" id=\"xmlFormat\">格式化并校验</button><button class=\"btn btn-secondary\" id=\"xmlMinify\">压缩</button><button class=\"btn btn-secondary\" id=\"xmlCopy\">复制结果</button><button class=\"btn btn-secondary\" id=\"xmlClear\">清空</button></div><div id=\"xmlStatus\" style=\"margin-top:12px;color:var(--text-dim)\"></div>",
+      "ui_en": "<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:16px\"><div><label>XML input:</label><textarea id=\"xmlInput\" style=\"min-height:420px;font-family:monospace;font-size:13px\" placeholder=\"Paste XML / SVG / SOAP...\"><root><user id=\"1\"><name>AI Toolbox</name><active>true</active></user></root></textarea></div><div><label>Output:</label><textarea id=\"xmlOutput\" style=\"min-height:420px;font-family:monospace;font-size:13px\" readonly placeholder=\"Formatted or minified result...\"></textarea></div></div><div class=\"input-row\" style=\"margin-top:12px\"><label>Indent <select id=\"xmlIndent\" style=\"width:auto\"><option value=\"2\">2 spaces</option><option value=\"4\">4 spaces</option><option value=\"tab\">Tab</option></select></label><button class=\"btn\" id=\"xmlFormat\">Format & validate</button><button class=\"btn btn-secondary\" id=\"xmlMinify\">Minify</button><button class=\"btn btn-secondary\" id=\"xmlCopy\">Copy result</button><button class=\"btn btn-secondary\" id=\"xmlClear\">Clear</button></div><div id=\"xmlStatus\" style=\"margin-top:12px;color:var(--text-dim)\"></div>",
+      "related": [
+        "html-encoder",
+        "json-formatter",
+        "url-encoder",
+        "markdown-preview"
+      ],
+      "seo_title_zh": "XML 格式化/压缩/校验 | SOAP/Sitemap/SVG 本地处理",
+      "seo_title_en": "XML Formatter, Minifier and Validator | Local SOAP/Sitemap/SVG Tool",
+      "features_zh": [
+        "格式化 XML 并按 2/4 空格或 Tab 缩进",
+        "压缩 XML 为紧凑单行",
+        "使用浏览器 DOMParser 校验 XML",
+        "提示解析错误和行列上下文",
+        "适合 SOAP、Sitemap、SVG、配置文件",
+        "浏览器本地处理，XML 内容不上传"
+      ],
+      "features_en": [
+        "Format XML with 2/4 spaces or tab indentation",
+        "Minify XML into a compact one-line string",
+        "Validate XML using the browser DOMParser",
+        "Show parser errors with context when available",
+        "Works for SOAP, sitemaps, SVG, and config files",
+        "Browser-local processing, XML content is not uploaded"
+      ],
+      "faq_zh": [
+        [
+          "能格式化 SVG 吗？",
+          "可以。SVG 本质上是 XML，粘贴 SVG 源码后可以格式化或压缩。"
+        ],
+        [
+          "能处理 SOAP 报文吗？",
+          "可以处理常见 SOAP XML 报文。由于工具在浏览器本地运行，内部接口响应不会上传。"
+        ],
+        [
+          "压缩 XML 会改变内容吗？",
+          "压缩会移除标签之间的空白和换行，通常不改变元素和属性；如果 XML 文本节点依赖空白，请谨慎使用压缩。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "Can it format SVG?",
+          "Yes. SVG is XML, so you can paste SVG source and format or minify it."
+        ],
+        [
+          "Can it handle SOAP payloads?",
+          "Yes, for common SOAP XML payloads. Because it runs locally, internal API responses are not uploaded."
+        ],
+        [
+          "Does minifying XML change content?",
+          "Minifying removes whitespace between tags. It usually preserves elements and attributes, but be careful if text nodes intentionally depend on whitespace."
+        ]
+      ]
+    },
+    {
       "slug": "markdown-preview",
       "icon": "📝",
       "category": "dev",
@@ -1916,6 +1983,73 @@
         [
           "Are large files supported?",
           "Yes, as long as browser memory allows."
+        ]
+      ]
+    },
+    {
+      "slug": "yaml-formatter",
+      "category": "dev",
+      "icon": "🧾",
+      "name_zh": "YAML 格式化/校验",
+      "name_en": "YAML Formatter & Validator",
+      "short_zh": "在线格式化 YAML 配置并检查缩进、冒号和常见语法问题",
+      "short_en": "Format YAML configs and validate indentation, colons, duplicate keys, and common syntax issues locally",
+      "keywords_zh": "YAML格式化,YAML校验,YAML在线工具,YML格式化,YAML语法检查,配置文件格式化,kubernetes yaml,docker compose yaml",
+      "keywords_en": "YAML formatter,YAML validator,YML formatter,YAML syntax checker,Kubernetes YAML,Docker Compose YAML,config formatter,online YAML tool",
+      "long_zh": "<p>免费的在线 YAML 格式化与校验工具，适合整理 Docker Compose、Kubernetes、GitHub Actions、CI/CD、OpenAPI 等配置片段。工具会检查 Tab 缩进、奇数缩进、缺少冒号、未闭合引号、重复键等常见问题，并输出更干净的 YAML 文本。</p><p>所有处理都在浏览器本地完成，你粘贴的配置文件、Token、环境变量示例不会上传到服务器。注意：这是轻量级 YAML 检查器，覆盖常见配置场景，不等同于完整 YAML 1.2 解析器。</p>",
+      "long_en": "<p>Free online YAML formatter and validator for Docker Compose, Kubernetes, GitHub Actions, CI/CD, OpenAPI, and other config snippets. It checks common problems such as tabs, odd indentation, missing colons, unclosed quotes, and duplicate keys, then outputs a cleaner YAML version.</p><p>Everything runs locally in your browser. Your config, tokens, and environment variable examples are not uploaded. Note: this is a lightweight checker for common config files, not a full YAML 1.2 parser.</p>",
+      "ui_zh": "<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:16px\"><div><label>YAML 输入:</label><textarea id=\"yamlInput\" style=\"min-height:420px;font-family:monospace;font-size:13px\" placeholder=\"粘贴 YAML / YML 配置...\">name: ai-toolbox\nservices:\n  web:\n    image: nginx:alpine\n    ports:\n      - \"8080:80\"\n    environment:\n      NODE_ENV: production</textarea></div><div><label>格式化输出:</label><textarea id=\"yamlOutput\" style=\"min-height:420px;font-family:monospace;font-size:13px\" readonly placeholder=\"格式化结果...\"></textarea></div></div><div class=\"input-row\" style=\"margin-top:12px\"><button class=\"btn\" id=\"yamlFormat\">格式化并校验</button><button class=\"btn btn-secondary\" id=\"yamlMinify\">压缩单行</button><button class=\"btn btn-secondary\" id=\"yamlCopy\">复制结果</button><button class=\"btn btn-secondary\" id=\"yamlClear\">清空</button></div><div id=\"yamlStatus\" style=\"margin-top:12px;color:var(--text-dim)\"></div>",
+      "ui_en": "<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:16px\"><div><label>YAML input:</label><textarea id=\"yamlInput\" style=\"min-height:420px;font-family:monospace;font-size:13px\" placeholder=\"Paste YAML / YML config...\">name: ai-toolbox\nservices:\n  web:\n    image: nginx:alpine\n    ports:\n      - \"8080:80\"\n    environment:\n      NODE_ENV: production</textarea></div><div><label>Formatted output:</label><textarea id=\"yamlOutput\" style=\"min-height:420px;font-family:monospace;font-size:13px\" readonly placeholder=\"Formatted result...\"></textarea></div></div><div class=\"input-row\" style=\"margin-top:12px\"><button class=\"btn\" id=\"yamlFormat\">Format & validate</button><button class=\"btn btn-secondary\" id=\"yamlMinify\">Compact one-line</button><button class=\"btn btn-secondary\" id=\"yamlCopy\">Copy result</button><button class=\"btn btn-secondary\" id=\"yamlClear\">Clear</button></div><div id=\"yamlStatus\" style=\"margin-top:12px;color:var(--text-dim)\"></div>",
+      "related": [
+        "json-to-yaml",
+        "json-formatter",
+        "jsonpath",
+        "sql-formatter"
+      ],
+      "seo_title_zh": "YAML 格式化与语法校验 | Docker/K8s 配置本地处理",
+      "seo_title_en": "YAML Formatter and Validator | Local Docker/K8s Config Tool",
+      "features_zh": [
+        "格式化 YAML / YML 配置文本",
+        "检查 Tab 缩进和奇数缩进",
+        "提示缺少冒号、未闭合引号等常见错误",
+        "检测同层级重复键",
+        "支持压缩为单行便于粘贴",
+        "浏览器本地处理，配置内容不上传"
+      ],
+      "features_en": [
+        "Format YAML / YML config text",
+        "Check tabs and odd indentation",
+        "Warn about missing colons, unclosed quotes, and common mistakes",
+        "Detect duplicate keys in the same indentation scope",
+        "Compact YAML to one line for quick pasting",
+        "Browser-local processing, config content is not uploaded"
+      ],
+      "faq_zh": [
+        [
+          "支持完整 YAML 1.2 规范吗？",
+          "这个工具是轻量级格式化与常见错误检查器，适合 Docker Compose、Kubernetes、GitHub Actions 等常见配置。锚点、复杂多行标量等高级语法可能只做保守检查。"
+        ],
+        [
+          "配置里的密钥会上传吗？",
+          "不会。格式化、校验和复制都在浏览器本地执行，输入内容不会上传到 AI 工具盒子的服务器。"
+        ],
+        [
+          "为什么重点检查缩进？",
+          "YAML 对缩进非常敏感。线上排查中最常见的问题就是 Tab、奇数缩进、列表层级和缺少冒号。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "Does it support the full YAML 1.2 spec?",
+          "This is a lightweight formatter and common-error checker for Docker Compose, Kubernetes, GitHub Actions, and similar configs. Advanced anchors or complex block scalars are checked conservatively."
+        ],
+        [
+          "Will secrets in my config be uploaded?",
+          "No. Formatting, validation, and copying run locally in your browser. Input is not uploaded to an AI Toolbox server."
+        ],
+        [
+          "Why focus on indentation?",
+          "YAML is indentation-sensitive. Tabs, odd indentation, list levels, and missing colons are among the most common real-world YAML issues."
         ]
       ]
     },

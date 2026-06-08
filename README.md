@@ -34,6 +34,8 @@ AI Toolbox 的定位不是 AI 导航站，而是一个 **privacy-first browser t
 | Base64 Encoder / Decoder | [Base64 编解码](https://tools.talang.fun/tools/base64) | [Base64](https://tools.talang.fun/en/tools/base64) |
 | JWT Decoder | [JWT 解码](https://tools.talang.fun/tools/jwt-decoder) | [JWT Decoder](https://tools.talang.fun/en/tools/jwt-decoder) |
 | Regex Tester | [正则测试](https://tools.talang.fun/tools/regex-tester) | [Regex Tester](https://tools.talang.fun/en/tools/regex-tester) |
+| YAML Formatter / Validator | [YAML 格式化/校验](https://tools.talang.fun/tools/yaml-formatter) | [YAML Formatter](https://tools.talang.fun/en/tools/yaml-formatter) |
+| XML Formatter / Minifier | [XML 格式化/压缩](https://tools.talang.fun/tools/xml-formatter) | [XML Formatter](https://tools.talang.fun/en/tools/xml-formatter) |
 | Unix Timestamp | [时间戳转换](https://tools.talang.fun/tools/timestamp) | [Timestamp Converter](https://tools.talang.fun/en/tools/timestamp) |
 | Hash Generator | [MD5 / SHA 哈希](https://tools.talang.fun/tools/hash-generator) | [Hash Generator](https://tools.talang.fun/en/tools/hash-generator) |
 | Password Generator | [密码生成器](https://tools.talang.fun/tools/password-generator) | [Password Generator](https://tools.talang.fun/en/tools/password-generator) |
@@ -43,12 +45,12 @@ AI Toolbox 的定位不是 AI 导航站，而是一个 **privacy-first browser t
 
 ---
 
-## Current Tools: 47+
+## Current Tools: 49+
 
 | Category | Tools |
 |----------|-------|
 | 📝 Text | Word counter, case converter, text diff, text deduplication, blank-line remover, Chinese lorem ipsum |
-| 💻 Developer | JSON formatter, regex tester, timestamp converter, base converter, JWT decoder, JSON ↔ CSV, color converter, HTML entity encoder/decoder, JSONPath, URL parser, Markdown preview, QR decoder, Cron parser, IP subnet calculator |
+| 💻 Developer | JSON formatter, regex tester, timestamp converter, base converter, JWT decoder, JSON ↔ CSV, color converter, HTML entity encoder/decoder, JSONPath, URL parser, YAML formatter/validator, XML formatter/minifier, Markdown preview, QR decoder, Cron parser, IP subnet calculator |
 | 📋 JSON | JSON to TypeScript, JSON to Go struct, JSON ↔ YAML |
 | 🔐 Encode / Convert | Base64, URL encoder/decoder, hash generator |
 | ✨ Generators | Password generator, UUID generator, QR code generator, random string generator |

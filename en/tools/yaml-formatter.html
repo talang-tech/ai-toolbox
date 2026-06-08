@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>YAML Formatter & Validator - YAML Formatter and Validator | Local Docker/K8s Config Tool | AI Toolbox</title>
+<meta name="description" content="Free online yaml formatter & validator. Format YAML configs and validate indentation, colons, duplicate keys, and common syntax issues locally. Fast, secure, and works in your browser without downloading.">
+<meta name="keywords" content="YAML formatter,YAML validator,YML formatter,YAML syntax checker,Kubernetes YAML,Docker Compose YAML,config formatter,online YAML tool">
+<link rel="canonical" href="https://tools.talang.fun/en/tools/yaml-formatter">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/yaml-formatter">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/yaml-formatter">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/yaml-formatter">
+<meta property="og:title" content="YAML Formatter & Validator - YAML Formatter and Validator | Local Docker/K8s Config Tool | AI Toolbox">
+<meta property="og:description" content="Free online yaml formatter & validator. Format YAML configs and validate indentation, colons, duplicate keys, and common syntax issues locally. Fast, secure, and works in your browser without downloading.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/en/tools/yaml-formatter">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "YAML Formatter & Validator", "description": "Free online yaml formatter & validator. Format YAML configs and validate indentation, colons, duplicate keys, and common syntax issues locally. Fast, secure, and works in your browser without downloading.", "url": "https://tools.talang.fun/en/tools/yaml-formatter", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "Format YAML configs and validate indentation, colons, duplicate keys, and common syntax issues locally", "inLanguage": "en", "author": {"@type": "Organization", "name": "AI Toolbox"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/en/" class="logo"><span class="logo-icon">🛠️</span>AI Toolbox</a>
+    <nav class="nav">
+      <a href="/en/">Home</a>
+      <a href="/en/#tools">All Tools</a>
+      <a href="/en/blog/">Blog</a>
+      <a href="/en/about">About</a>
+      <a href="/en/sponsor">Sponsor</a>
+      <a href="https://tools.talang.fun/tools/yaml-formatter" class="lang-switch">中文</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🧾</div>
+  <h1>YAML Formatter & Validator</h1>
+  <p>Format YAML configs and validate indentation, colons, duplicate keys, and common syntax issues locally</p>
+</div>
+<div class="tool-panel">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px"><div><label>YAML input:</label><textarea id="yamlInput" style="min-height:420px;font-family:monospace;font-size:13px" placeholder="Paste YAML / YML config...">name: ai-toolbox
+services:
+  web:
+    image: nginx:alpine
+    ports:
+      - "8080:80"
+    environment:
+      NODE_ENV: production</textarea></div><div><label>Formatted output:</label><textarea id="yamlOutput" style="min-height:420px;font-family:monospace;font-size:13px" readonly placeholder="Formatted result..."></textarea></div></div><div class="input-row" style="margin-top:12px"><button class="btn" id="yamlFormat">Format & validate</button><button class="btn btn-secondary" id="yamlMinify">Compact one-line</button><button class="btn btn-secondary" id="yamlCopy">Copy result</button><button class="btn btn-secondary" id="yamlClear">Clear</button></div><div id="yamlStatus" style="margin-top:12px;color:var(--text-dim)"></div>
+</div><section class="article" style="margin-top:20px;border:1px solid var(--border);background:var(--bg-light);border-radius:12px;padding:16px">
+  <h2 style="margin-top:0">Privacy note</h2>
+  <p>This tool runs in your browser. Your input, files, JSON, JWT, images, PDFs, passwords, hashes, or text are not uploaded to an AI Toolbox server.</p>
+  <p>Basic analytics may record page views and conversion clicks, but user input and file content are not tracked.</p>
+</section>
+<article class="article" style="margin-top:32px">
+  <h2>About this tool</h2>
+  <p>Free online YAML formatter and validator for Docker Compose, Kubernetes, GitHub Actions, CI/CD, OpenAPI, and other config snippets. It checks common problems such as tabs, odd indentation, missing colons, unclosed quotes, and duplicate keys, then outputs a cleaner YAML version.</p><p>Everything runs locally in your browser. Your config, tokens, and environment variable examples are not uploaded. Note: this is a lightweight checker for common config files, not a full YAML 1.2 parser.</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>Key Features</h2><ul><li>Format YAML / YML config text</li><li>Check tabs and odd indentation</li><li>Warn about missing colons, unclosed quotes, and common mistakes</li><li>Detect duplicate keys in the same indentation scope</li><li>Compact YAML to one line for quick pasting</li><li>Browser-local processing, config content is not uploaded</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>Frequently Asked Questions</h2><h3 style="margin-top:20px;margin-bottom:8px">Does it support the full YAML 1.2 spec?</h3><p>This is a lightweight formatter and common-error checker for Docker Compose, Kubernetes, GitHub Actions, and similar configs. Advanced anchors or complex block scalars are checked conservatively.</p><h3 style="margin-top:20px;margin-bottom:8px">Will secrets in my config be uploaded?</h3><p>No. Formatting, validation, and copying run locally in your browser. Input is not uploaded to an AI Toolbox server.</p><h3 style="margin-top:20px;margin-bottom:8px">Why focus on indentation?</h3><p>YAML is indentation-sensitive. Tabs, odd indentation, list levels, and missing colons are among the most common real-world YAML issues.</p></section>
+<section class="related"><h3>Related Tools</h3><div class="tools-grid"><a href="/en/tools/json-to-yaml" class="tool-card"><div class="icon">📊</div><h3>JSON ↔ YAML</h3><p>Convert JSON to YAML and YAML to JSON instantly. Preserve data types, formatting options, and live preview of both formats side by side.</p></a><a href="/en/tools/json-formatter" class="tool-card"><div class="icon">{ }</div><h3>JSON Formatter</h3><p>Beautify, minify, and validate JSON with precise error location</p></a><a href="/en/tools/jsonpath" class="tool-card"><div class="icon">🔍</div><h3>JSONPath Extractor</h3><p>Extract data from JSON using $.path syntax</p></a><a href="/en/tools/sql-formatter" class="tool-card"><div class="icon">🔧</div><h3>SQL Formatter</h3><p>Online SQL formatter and beautifier. Format SQL queries with proper indentation, keyword casing, and line breaks. Support MySQL, PostgreSQL, SQL Server, and more.</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>Need a private toolbox or custom browser tool?</h2>
+  <p>AI Toolbox can be adapted for internal workflows, private deployment, sponsored categories, or custom privacy-first utilities.</p>
+  <p><a href="/en/sponsor" data-event="conversion_cta_click" data-label="en_partner_custom_tool_cta">View partnership and custom tool options →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/yaml-formatter.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI Toolbox · Free online AI & developer tools · <a href='/en/about'>About</a> · <a href='/en/sponsor'>Sponsor</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('Copied!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>YAML 格式化/校验 - YAML 格式化与语法校验 | Docker/K8s 配置本地处理 | AI 工具盒子</title>
+<meta name="description" content="免费在线YAML 格式化/校验工具，在线格式化 YAML 配置并检查缩进、冒号和常见语法问题。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="YAML格式化,YAML校验,YAML在线工具,YML格式化,YAML语法检查,配置文件格式化,kubernetes yaml,docker compose yaml">
+<link rel="canonical" href="https://tools.talang.fun/tools/yaml-formatter">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/yaml-formatter">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/yaml-formatter">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/yaml-formatter">
+<meta property="og:title" content="YAML 格式化/校验 - YAML 格式化与语法校验 | Docker/K8s 配置本地处理 | AI 工具盒子">
+<meta property="og:description" content="免费在线YAML 格式化/校验工具，在线格式化 YAML 配置并检查缩进、冒号和常见语法问题。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/yaml-formatter">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "YAML 格式化/校验", "description": "免费在线YAML 格式化/校验工具，在线格式化 YAML 配置并检查缩进、冒号和常见语法问题。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/yaml-formatter", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "在线格式化 YAML 配置并检查缩进、冒号和常见语法问题", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/tools/yaml-formatter" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🧾</div>
+  <h1>YAML 格式化/校验</h1>
+  <p>在线格式化 YAML 配置并检查缩进、冒号和常见语法问题</p>
+</div>
+<div class="tool-panel">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px"><div><label>YAML 输入:</label><textarea id="yamlInput" style="min-height:420px;font-family:monospace;font-size:13px" placeholder="粘贴 YAML / YML 配置...">name: ai-toolbox
+services:
+  web:
+    image: nginx:alpine
+    ports:
+      - "8080:80"
+    environment:
+      NODE_ENV: production</textarea></div><div><label>格式化输出:</label><textarea id="yamlOutput" style="min-height:420px;font-family:monospace;font-size:13px" readonly placeholder="格式化结果..."></textarea></div></div><div class="input-row" style="margin-top:12px"><button class="btn" id="yamlFormat">格式化并校验</button><button class="btn btn-secondary" id="yamlMinify">压缩单行</button><button class="btn btn-secondary" id="yamlCopy">复制结果</button><button class="btn btn-secondary" id="yamlClear">清空</button></div><div id="yamlStatus" style="margin-top:12px;color:var(--text-dim)"></div>
+</div><section class="article" style="margin-top:20px;border:1px solid var(--border);background:var(--bg-light);border-radius:12px;padding:16px">
+  <h2 style="margin-top:0">隐私说明</h2>
+  <p>这个工具在你的浏览器中运行。你输入的内容、文件、JSON、JWT、图片、PDF、密码、哈希或文本不会上传到 AI 工具盒子的服务器。</p>
+  <p>站点可能记录基础访问量和转化点击事件，但不会追踪用户输入内容或文件内容。</p>
+</section>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>免费的在线 YAML 格式化与校验工具，适合整理 Docker Compose、Kubernetes、GitHub Actions、CI/CD、OpenAPI 等配置片段。工具会检查 Tab 缩进、奇数缩进、缺少冒号、未闭合引号、重复键等常见问题，并输出更干净的 YAML 文本。</p><p>所有处理都在浏览器本地完成，你粘贴的配置文件、Token、环境变量示例不会上传到服务器。注意：这是轻量级 YAML 检查器，覆盖常见配置场景，不等同于完整 YAML 1.2 解析器。</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>格式化 YAML / YML 配置文本</li><li>检查 Tab 缩进和奇数缩进</li><li>提示缺少冒号、未闭合引号等常见错误</li><li>检测同层级重复键</li><li>支持压缩为单行便于粘贴</li><li>浏览器本地处理，配置内容不上传</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">支持完整 YAML 1.2 规范吗？</h3><p>这个工具是轻量级格式化与常见错误检查器，适合 Docker Compose、Kubernetes、GitHub Actions 等常见配置。锚点、复杂多行标量等高级语法可能只做保守检查。</p><h3 style="margin-top:20px;margin-bottom:8px">配置里的密钥会上传吗？</h3><p>不会。格式化、校验和复制都在浏览器本地执行，输入内容不会上传到 AI 工具盒子的服务器。</p><h3 style="margin-top:20px;margin-bottom:8px">为什么重点检查缩进？</h3><p>YAML 对缩进非常敏感。线上排查中最常见的问题就是 Tab、奇数缩进、列表层级和缺少冒号。</p></section>
+<section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/json-to-yaml" class="tool-card"><div class="icon">📊</div><h3>JSON ↔ YAML 互转</h3><p>JSON 与 YAML 格式相互转换</p></a><a href="/tools/json-formatter" class="tool-card"><div class="icon">{ }</div><h3>JSON 格式化</h3><p>JSON 美化、压缩、校验，错误位置精准定位</p></a><a href="/tools/jsonpath" class="tool-card"><div class="icon">🔍</div><h3>JSONPath 提取</h3><p>用 $.path 语法快速从 JSON 中提取需要的数据</p></a><a href="/tools/sql-formatter" class="tool-card"><div class="icon">🔧</div><h3>SQL 格式化</h3><p>在线格式化 SQL 查询语句，美化 SQL 代码</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/yaml-formatter.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>

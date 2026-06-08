@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 AI Toolbox 自动化测试框架
-运行所有测试：python3 run_tests.py
+运行所有测试：python3 scripts/run_tests.py
 运行特定测试：python3 run_tests.py --test test_build
 """
 
@@ -14,7 +14,7 @@ import argparse
 from pathlib import Path
 
 # 项目根目录
-ROOT = Path(__file__).parent
+ROOT = Path(__file__).resolve().parent.parent
 
 class TestBuildScript(unittest.TestCase):
     """测试构建脚本功能"""
@@ -211,10 +211,11 @@ def run_tests(test_pattern=None):
     
     if test_pattern:
         # 运行特定测试
-        suite = loader.loadTestsFromName(test_pattern)
+        suite = loader.loadTestsFromName(test_pattern, module=sys.modules[__name__])
     else:
-        # 运行所有测试
-        suite = loader.discover(str(ROOT), pattern="test_*.py")
+        # 运行本文件中定义的所有测试类。
+        # 旧版 discover(test_*.py) 在从 scripts/run_tests.py 直接执行时会漏掉本文件，导致 0 tests。
+        suite = loader.loadTestsFromModule(sys.modules[__name__])
     
     # 运行测试
     runner = unittest.TextTestRunner(verbosity=2)
