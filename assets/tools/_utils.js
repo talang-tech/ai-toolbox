@@ -58,7 +58,13 @@
       if (!dropZone || !fileInput) return;
 
       // 点击弹出文件选择
-      dropZone.addEventListener('click', () => {
+      dropZone.addEventListener('click', (e) => {
+        // fileInput lives inside dropZone on several pages. A programmatic
+        // fileInput.click() can bubble back to dropZone and recursively open
+        // the picker unless clicks that originate from the input are ignored.
+        if (e.target === fileInput) return;
+        e.preventDefault();
+        e.stopPropagation();
         fileInput.click();
       });
 
@@ -275,7 +281,10 @@
   function setupDragDrop(dropZone, fileInput, callback) {
     if (!dropZone || !fileInput) return;
 
-    dropZone.addEventListener('click', () => {
+    dropZone.addEventListener('click', (e) => {
+      if (e.target === fileInput) return;
+      e.preventDefault();
+      e.stopPropagation();
       fileInput.click();
     });
 

@@ -36,47 +36,71 @@ document.addEventListener('DOMContentLoaded', async () => {
       this.updateUI();
 
       try {
+        const jsPDF = window.jspdf?.jsPDF;
+        if (!jsPDF) throw new Error('jsPDF 加载失败，请检查网络后重试');
+
         const pageSize = document.getElementById('page-size')?.value || 'auto';
-        const margin = parseInt(document.getElementById('margin')?.value || '10');
+        const marginMm = Math.max(0, parseInt(document.getElementById('margin')?.value || '10', 10));
         const orientation = document.getElementById('orientation')?.value || 'portrait';
-
-        // 使用 Canvas 生成简单的 PDF 预览图片
-        this.updateProgress(50, 100, '正在处理图片...');
-
-        // 演示模式：生成一个包含所有图片信息的 HTML 页面
-        // 实际项目需要集成 jsPDF 等库
-
         const files = this.state.files;
-        let htmlContent = `
-          <div style="text-align:center;padding:20px;">
-            <div style="font-size:48px;margin-bottom:12px;">✅</div>
-            <h4 style="margin:0 0 16px 0;">生成完成！</h4>
-            <p style="color:var(--text-muted);margin-bottom:20px;">
-              ${files.length} 张图片已处理
-            </p>
-            <p style="color:var(--text-muted);margin-bottom:20px;font-size:14px;">
-              (演示模式: 当前生成包含图片预览)
-            </p>
-          </div>
-          <div style="margin-top:20px;display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;">
-        `;
+
+        if (files.length === 0) {
+          this.showMessage('请先选择图片', 'warning');
+          return;
+        }
+
+        let pdf = null;
 
         for (let i = 0; i < files.length; i++) {
-          const url = URL.createObjectURL(files[i]);
-          htmlContent += `
-            <div style="border:1px solid var(--border);border-radius:8px;overflow:hidden;">
-              <img src="${url}" style="width:100%;aspect-ratio:4/5;object-fit:cover;border-bottom:1px solid var(--border);">
-              <div style="padding:12px;">
-                <div style="font-size:14px;font-weight:500;">第 ${i + 1} 张</div>
-                <div style="font-size:12px;color:var(--text-muted);">${files[i].name}</div>
-              </div>
-            </div>
-          `;
-        }
-        htmlContent += '</div>';
-        
-        this.showResult(htmlContent);
+          this.updateProgress(i + 1, files.length, `正在处理第 ${i + 1} 张图片...`);
+          const image = await this.fileToImageData(files[i]);
 
+          let pageWidthMm;
+          let pageHeightMm;
+          if (pageSize === 'a4') {
+            const isLandscape = orientation === 'landscape';
+            pageWidthMm = isLandscape ? 297 : 210;
+            pageHeightMm = isLandscape ? 210 : 297;
+          } else {
+            // 96 CSS px ≈ 25.4 mm; keep the PDF page close to the image size.
+            pageWidthMm = image.width * 25.4 / 96;
+            pageHeightMm = image.height * 25.4 / 96;
+          }
+
+          if (!pdf) {
+            pdf = new jsPDF({ unit: 'mm', format: [pageWidthMm, pageHeightMm], orientation: pageWidthMm > pageHeightMm ? 'landscape' : 'portrait' });
+          } else {
+            pdf.addPage([pageWidthMm, pageHeightMm], pageWidthMm > pageHeightMm ? 'landscape' : 'portrait');
+          }
+
+          const usableWidth = Math.max(1, pageWidthMm - marginMm * 2);
+          const usableHeight = Math.max(1, pageHeightMm - marginMm * 2);
+          const scale = Math.min(usableWidth / image.width, usableHeight / image.height);
+          const drawWidth = image.width * scale;
+          const drawHeight = image.height * scale;
+          const x = (pageWidthMm - drawWidth) / 2;
+          const y = (pageHeightMm - drawHeight) / 2;
+
+          pdf.addImage(image.dataUrl, image.format, x, y, drawWidth, drawHeight);
+        }
+
+        const blob = pdf.output('blob');
+        this.resultBlob = blob;
+        const filename = `images-${new Date().toISOString().slice(0, 10)}.pdf`;
+
+        this.showResult(`
+          <div style="text-align:center;padding:20px;">
+            <div style="font-size:48px;margin-bottom:12px;">✅</div>
+            <h4 style="margin:0 0 16px 0;">PDF 生成完成！</h4>
+            <p style="color:var(--text-muted);margin-bottom:20px;">已合并 ${files.length} 张图片</p>
+            <button class="btn btn-primary" id="download-pdf-btn">下载 PDF</button>
+          </div>
+        `);
+        document.getElementById('download-pdf-btn')?.addEventListener('click', () => {
+          this.downloadBlob(blob, filename);
+        });
+
+        this.downloadBlob(blob, filename);
       } catch (err) {
         console.error('Generate failed:', err);
         this.showMessage('生成失败: ' + err.message, 'error');
@@ -84,6 +108,46 @@ document.addEventListener('DOMContentLoaded', async () => {
 
       this.state.isProcessing = false;
       this.updateUI();
+    }
+
+    fileToImageData(file) {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        const objectUrl = URL.createObjectURL(file);
+
+        img.onload = () => {
+          try {
+            const width = img.naturalWidth || img.width;
+            const height = img.naturalHeight || img.height;
+            const canvas = document.createElement('canvas');
+            canvas.width = width;
+            canvas.height = height;
+            const ctx = canvas.getContext('2d');
+            ctx.fillStyle = '#fff';
+            ctx.fillRect(0, 0, width, height);
+            ctx.drawImage(img, 0, 0);
+
+            const isPng = file.type === 'image/png';
+            resolve({
+              width,
+              height,
+              dataUrl: canvas.toDataURL(isPng ? 'image/png' : 'image/jpeg', 0.92),
+              format: isPng ? 'PNG' : 'JPEG'
+            });
+          } catch (err) {
+            reject(err);
+          } finally {
+            URL.revokeObjectURL(objectUrl);
+          }
+        };
+
+        img.onerror = () => {
+          URL.revokeObjectURL(objectUrl);
+          reject(new Error(`图片加载失败: ${file.name}`));
+        };
+
+        img.src = objectUrl;
+      });
     }
   }
 
