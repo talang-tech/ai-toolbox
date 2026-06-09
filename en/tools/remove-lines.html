@@ -44,7 +44,11 @@
 </div>
 <div class="tool-panel">
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px"><div><label>Input:</label><textarea id="rlInput" style="min-height:300px"></textarea></div><div><label>Output:</label><textarea id="rlOutput" readonly style="min-height:300px"></textarea></div></div><div style="margin-top:12px;display:flex;gap:12px;align-items:center;flex-wrap:wrap"><label><input type="checkbox" id="rlEmpty" checked>Remove empty lines</label><label><input type="checkbox" id="rlBlank" checked>Remove whitespace-only lines</label><label><input type="checkbox" id="rlLeading" checked>Trim leading</label><label><input type="checkbox" id="rlTrailing" checked>Trim trailing</label><label><input type="checkbox" id="rlConsecutive">Remove consecutive spaces</label><button class="btn" id="rlProcess">Process</button><button class="btn btn-secondary" id="rlCopy">Copy</button></div>
-</div>
+</div><section class="article" style="margin-top:20px;border:1px solid var(--border);background:var(--bg-light);border-radius:12px;padding:16px">
+  <h2 style="margin-top:0">Privacy note</h2>
+  <p>This tool runs in your browser. Your input, files, JSON, JWT, images, PDFs, passwords, hashes, or text are not uploaded to an AI Toolbox server.</p>
+  <p>Basic analytics may record page views and conversion clicks, but user input and file content are not tracked.</p>
+</section>
 <article class="article" style="margin-top:32px">
   <h2>About this tool</h2>
   <p>Clean up empty lines, leading/trailing whitespace, extra spaces. Useful for: formatting copied code, cleaning PDF exports, removing useless blank lines from logs.</p>

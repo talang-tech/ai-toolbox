@@ -39,15 +39,15 @@
       const totalHosts = Math.max(0, broadcastInt - networkInt - 1);
       
       const fields = [
-        isEN ? ['Network Address' : '网络地址', intToIp(networkInt) + '/' + cidr],
-        isEN ? ['Netmask' : '子网掩码', intToIp(maskInt)],
-        isEN ? ['Wildcard Mask' : '反掩码', intToIp(~maskInt >>> 0)],
-        isEN ? ['First Usable' : '第一个可用', cidr >= 31 ? '-' : intToIp(firstUsableInt)],
-        isEN ? ['Last Usable' : '最后一个可用', cidr >= 31 ? '-' : intToIp(lastUsableInt)],
-        isEN ? ['Broadcast' : '广播地址', cidr === 32 ? '-' : intToIp(broadcastInt)],
-        isEN ? ['Total Hosts' : '可用主机数', totalHosts.toString()],
-        isEN ? ['CIDR Notation' : 'CIDR 表示', '/' + cidr],
-        isEN ? ['Binary Mask' : '掩码二进制', maskInt.toString(2).padStart(32, '0').match(/.{8}/g).join('.')],
+        [isEN ? 'Network Address' : '网络地址', intToIp(networkInt) + '/' + cidr],
+        [isEN ? 'Netmask' : '子网掩码', intToIp(maskInt)],
+        [isEN ? 'Wildcard Mask' : '反掩码', intToIp(~maskInt >>> 0)],
+        [isEN ? 'First Usable' : '第一个可用', cidr >= 31 ? '-' : intToIp(firstUsableInt)],
+        [isEN ? 'Last Usable' : '最后一个可用', cidr >= 31 ? '-' : intToIp(lastUsableInt)],
+        [isEN ? 'Broadcast' : '广播地址', cidr === 32 ? '-' : intToIp(broadcastInt)],
+        [isEN ? 'Total Hosts' : '可用主机数', totalHosts.toString()],
+        [isEN ? 'CIDR Notation' : 'CIDR 表示', '/' + cidr],
+        [isEN ? 'Binary Mask' : '掩码二进制', maskInt.toString(2).padStart(32, '0').match(/.{8}/g).join('.')],
       ];
       
       let html = `<table style="width:100%;border-collapse:collapse;">`;

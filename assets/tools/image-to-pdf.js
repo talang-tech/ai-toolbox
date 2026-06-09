@@ -3,7 +3,7 @@
  * 使用 ToolBase 基类实现 - 重构版 v2.0
  */
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
   'use strict';
 
 

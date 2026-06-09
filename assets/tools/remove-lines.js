@@ -31,7 +31,7 @@
     output.value = result.join('\n');
     
     const removed = lines.length - result.length;
-    showToast((isEN ? `Processed! Removed ${removed} lines` : `已处理! 移除 ${removed} 行`);
+    showToast(isEN ? `Processed! Removed ${removed} lines` : `已处理! 移除 ${removed} 行`);
   }
 
   processBtn.addEventListener('click', process);

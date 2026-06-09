@@ -320,7 +320,8 @@ def privacy_notice(slug, lang):
         "json-formatter", "jwt-decoder", "hash-generator", "password-generator",
         "pdf-merge", "pdf-split", "pdf-to-image", "pdf-extract-text", "image-to-pdf",
         "image-compress", "image-convert", "image-resize", "image-watermark", "image-base64",
-        "url-encoder", "text-dedup", "yaml-formatter", "xml-formatter"
+        "url-encoder", "text-dedup", "text-sort", "text-replace", "text-diff", "remove-lines",
+        "yaml-formatter", "xml-formatter"
     }
     if slug not in sensitive:
         return ""

@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
             lines.forEach(line => {
                 const match = line.match(/^(\s*)([^:]+):\s*(.*)$/);
                 if (match) {
-                    const [_, indent, key, value = match;
+                    const [_, indent, key, value] = match;
                     const k = key.trim();
                     let v = value.trim();
                     

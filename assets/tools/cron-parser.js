@@ -18,7 +18,7 @@
 
   function getNextRuns(expr, count = 5) {
     const parts = parseCron(expr);
-    const [minExpr, hourExpr, dayExpr, monthExpr, dowExpr = parts;
+    const [minExpr, hourExpr, dayExpr, monthExpr, dowExpr] = parts;
     
     const result = [];
     let now = new Date();
@@ -28,7 +28,7 @@
       if (expr === '*') return true;
       if (expr.includes(',')) return expr.split(',').some(v => String(val) === v.trim());
       if (expr.includes('-')) {
-        const [start, end = expr.split('-').map(Number);
+        const [start, end] = expr.split('-').map(Number);
         return val >= start && val <= end;
       }
       if (expr.startsWith('*/')) {
@@ -46,7 +46,7 @@
         matches(now.getHours(), hourExpr) &&
         matches(now.getDate(), dayExpr) &&
         matches(now.getMonth() + 1, monthExpr) &&
-        matches(now.getDay(), dowExpr === '7' ? 0 : (dowExpr === '*' ? true : (dowExpr === '0' ? 0 : dowExpr))
+        matches(now.getDay(), dowExpr === '7' ? '0' : dowExpr)
       ) {
         result.push(new Date(now));
       }

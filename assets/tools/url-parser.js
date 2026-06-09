@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Parse query params
             const params = [];
             url.searchParams.forEach((value, key) => {
-                params.push(`${key} = ${value}`;
+                params.push(`${key} = ${value}`);
             });
 
             // Format output
@@ -38,7 +38,7 @@ ${url.pathname.split('/').filter(Boolean).map((p, i) => `  [${i}] ${p}`).join('\
 
 Search Query: ${url.search || '(none)'}
 Query Parameters:
-${params.length > 0 ? params.map(p => `  ${p}').join('\n') : '  (none)'}
+${params.length > 0 ? params.map(p => `  ${p}`).join('\n') : '  (none)'}
 
 Hash:         ${url.hash || '(none)'}
 Username:   ${url.username || '(none)'}
@@ -54,7 +54,7 @@ Decoded path: ${decodeURIComponent(url.pathname)}
 
             output.value = result;
         } catch (e) {
-            output.value = `Error: ${e.message}\n\nPlease enter a valid URL including the protocol (http:// or https://);
+            output.value = `Error: ${e.message}\n\nPlease enter a valid URL including the protocol (http:// or https://)`;
         }
     }
 

@@ -36,6 +36,8 @@ AI Toolbox 的定位不是 AI 导航站，而是一个 **privacy-first browser t
 | Regex Tester | [正则测试](https://tools.talang.fun/tools/regex-tester) | [Regex Tester](https://tools.talang.fun/en/tools/regex-tester) |
 | YAML Formatter / Validator | [YAML 格式化/校验](https://tools.talang.fun/tools/yaml-formatter) | [YAML Formatter](https://tools.talang.fun/en/tools/yaml-formatter) |
 | XML Formatter / Minifier | [XML 格式化/压缩](https://tools.talang.fun/tools/xml-formatter) | [XML Formatter](https://tools.talang.fun/en/tools/xml-formatter) |
+| Text Sorter | [文本排序](https://tools.talang.fun/tools/text-sort) | [Text Sorter](https://tools.talang.fun/en/tools/text-sort) |
+| Text Find & Replace | [文本批量替换](https://tools.talang.fun/tools/text-replace) | [Text Find & Replace](https://tools.talang.fun/en/tools/text-replace) |
 | Unix Timestamp | [时间戳转换](https://tools.talang.fun/tools/timestamp) | [Timestamp Converter](https://tools.talang.fun/en/tools/timestamp) |
 | Hash Generator | [MD5 / SHA 哈希](https://tools.talang.fun/tools/hash-generator) | [Hash Generator](https://tools.talang.fun/en/tools/hash-generator) |
 | Password Generator | [密码生成器](https://tools.talang.fun/tools/password-generator) | [Password Generator](https://tools.talang.fun/en/tools/password-generator) |
@@ -45,11 +47,11 @@ AI Toolbox 的定位不是 AI 导航站，而是一个 **privacy-first browser t
 
 ---
 
-## Current Tools: 49+
+## Current Tools: 51
 
 | Category | Tools |
 |----------|-------|
-| 📝 Text | Word counter, case converter, text diff, text deduplication, blank-line remover, Chinese lorem ipsum |
+| 📝 Text | Word counter, case converter, text diff, text deduplication, blank-line remover, Chinese lorem ipsum, text sorter, text find & replace |
 | 💻 Developer | JSON formatter, regex tester, timestamp converter, base converter, JWT decoder, JSON ↔ CSV, color converter, HTML entity encoder/decoder, JSONPath, URL parser, YAML formatter/validator, XML formatter/minifier, Markdown preview, QR decoder, Cron parser, IP subnet calculator |
 | 📋 JSON | JSON to TypeScript, JSON to Go struct, JSON ↔ YAML |
 | 🔐 Encode / Convert | Base64, URL encoder/decoder, hash generator |
@@ -87,11 +89,11 @@ python3 -m http.server 8000
 # Open http://localhost:8000
 ```
 
-Run tests:
+Run tests and code checks:
 
 ```bash
 python3 scripts/run_tests.py
-python3 scripts/seo_analyzer.py
+python3 scripts/code_linter.py
 ```
 
 ---
@@ -126,7 +128,7 @@ ai-toolbox/
 │   └── tools/<tool>.js           # Tool-specific browser logic
 ├── scripts/
 │   ├── run_tests.py              # Basic test runner
-│   ├── seo_analyzer.py           # SEO / performance checks
+│   ├── code_linter.py            # Code quality and structure checks
 │   └── baidu_submit.py           # Baidu URL push helper
 ├── docs/
 │   └── BAIDU_SUBMIT.md           # Baidu URL submission automation

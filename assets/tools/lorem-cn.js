@@ -46,7 +46,7 @@
     let remaining = count;
     
     while (remaining > 0) {
-      const text = corpus[Math.floor(Math.random() * corpus.length);
+      const text = corpus[Math.floor(Math.random() * corpus.length)];
       if (text.length <= remaining) {
         result.push(text);
         remaining -= text.length;
