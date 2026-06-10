@@ -1204,6 +1204,75 @@
       ]
     },
     {
+      "slug": "string-escape",
+      "category": "dev",
+      "icon": "\\\\",
+      "name_zh": "字符串转义/反转义",
+      "name_en": "String Escape / Unescape",
+      "short_zh": "JSON、JavaScript、URL、HTML 字符串转义与反转义",
+      "short_en": "Escape and unescape JSON, JavaScript, URL and HTML strings",
+      "keywords_zh": "字符串转义,字符串反转义,json转义,javascript转义,斜杠转义,unicode转义,escape unescape",
+      "keywords_en": "string escape,string unescape,json escape,javascript escape,unicode escape,backslash escape,escape unescape",
+      "long_zh": "<p>免费的在线字符串转义/反转义工具，支持 JSON 字符串、JavaScript 字符串、URL 编码、HTML 实体、Unicode \\uXXXX 等常见格式。适合处理接口参数、日志文本、代码片段、配置文件中的特殊字符。</p><p>所有转换都在浏览器本地完成，输入内容不会上传到服务器。</p>",
+      "long_en": "<p>Free online string escape/unescape tool for JSON strings, JavaScript strings, URL encoding, HTML entities and Unicode \\uXXXX sequences. Useful for API parameters, logs, code snippets and config files with special characters.</p><p>All conversion runs locally in your browser. Your input is never uploaded.</p>",
+      "ui_zh": "<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:16px\"><div><label>输入字符串:</label><textarea id=\"seInput\" style=\"min-height:280px;font-family:monospace;font-size:13px\" placeholder=\"粘贴需要转义或反转义的字符串...\">{\"message\":\"Hello\\n中文 & <tag>\"}</textarea></div><div><label>输出结果:</label><textarea id=\"seOutput\" style=\"min-height:280px;font-family:monospace;font-size:13px\" readonly placeholder=\"转换结果...\"></textarea></div></div><div style=\"margin-top:12px;display:flex;gap:12px;align-items:center;flex-wrap:wrap\"><label>格式 <select id=\"seMode\" style=\"width:auto\"><option value=\"json\">JSON 字符串</option><option value=\"js\">JavaScript 字符串</option><option value=\"unicode\">Unicode \\uXXXX</option><option value=\"url\">URL 编码</option><option value=\"html\">HTML 实体</option></select></label><button class=\"btn\" id=\"seEscape\">转义</button><button class=\"btn\" id=\"seUnescape\">反转义</button><button class=\"btn btn-secondary\" id=\"seCopy\">复制结果</button><button class=\"btn btn-secondary\" id=\"seClear\">清空</button></div><div id=\"seStatus\" style=\"margin-top:8px;color:var(--text-dim);font-size:13px\"></div>",
+      "ui_en": "<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:16px\"><div><label>Input string:</label><textarea id=\"seInput\" style=\"min-height:280px;font-family:monospace;font-size:13px\" placeholder=\"Paste a string to escape or unescape...\">{\"message\":\"Hello\\n中文 & <tag>\"}</textarea></div><div><label>Output:</label><textarea id=\"seOutput\" style=\"min-height:280px;font-family:monospace;font-size:13px\" readonly placeholder=\"Converted result...\"></textarea></div></div><div style=\"margin-top:12px;display:flex;gap:12px;align-items:center;flex-wrap:wrap\"><label>Format <select id=\"seMode\" style=\"width:auto\"><option value=\"json\">JSON string</option><option value=\"js\">JavaScript string</option><option value=\"unicode\">Unicode \\uXXXX</option><option value=\"url\">URL encoding</option><option value=\"html\">HTML entities</option></select></label><button class=\"btn\" id=\"seEscape\">Escape</button><button class=\"btn\" id=\"seUnescape\">Unescape</button><button class=\"btn btn-secondary\" id=\"seCopy\">Copy Result</button><button class=\"btn btn-secondary\" id=\"seClear\">Clear</button></div><div id=\"seStatus\" style=\"margin-top:8px;color:var(--text-dim);font-size:13px\"></div>",
+      "related": [
+        "html-entity",
+        "url-encoder",
+        "json-formatter",
+        "text-replace"
+      ],
+      "seo_title_zh": "字符串转义/反转义 | JSON JS URL Unicode 在线转换",
+      "seo_title_en": "String Escape / Unescape | JSON JS URL Unicode Converter",
+      "features_zh": [
+        "JSON 字符串转义与反转义",
+        "JavaScript 反斜杠转义处理",
+        "Unicode \\uXXXX 编码与解码",
+        "URL encode/decode",
+        "HTML 实体编码与解码",
+        "错误提示与一键复制",
+        "浏览器本地处理，数据不上传"
+      ],
+      "features_en": [
+        "JSON string escape and unescape",
+        "JavaScript backslash escape handling",
+        "Unicode \\uXXXX encode/decode",
+        "URL encode/decode",
+        "HTML entity encode/decode",
+        "Error messages and one-click copy",
+        "Browser-local processing, no upload"
+      ],
+      "faq_zh": [
+        [
+          "JSON 转义和 JavaScript 转义有什么区别？",
+          "JSON 字符串会严格使用 JSON.stringify 的规则；JavaScript 模式会额外处理常见反斜杠转义，适合代码片段和日志。"
+        ],
+        [
+          "能处理中文和 Emoji 吗？",
+          "可以。Unicode 模式会把非 ASCII 字符转换为 \\uXXXX，遇到 Emoji 等代理对也会保持可逆。"
+        ],
+        [
+          "内容会上传吗？",
+          "不会。所有转义和反转义都在浏览器本地完成。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "What is the difference between JSON and JavaScript escaping?",
+          "JSON mode follows JSON.stringify rules strictly; JavaScript mode handles common backslash escapes for code snippets and logs."
+        ],
+        [
+          "Can it handle Chinese and emoji?",
+          "Yes. Unicode mode converts non-ASCII characters to \\uXXXX while keeping surrogate pairs reversible."
+        ],
+        [
+          "Is my input uploaded?",
+          "No. All escaping and unescaping happens locally in your browser."
+        ]
+      ]
+    },
+    {
       "slug": "jsonpath",
       "icon": "🔍",
       "category": "dev",
@@ -1331,6 +1400,75 @@
         [
           "Are IPv6 addresses supported?",
           "Yes, standard IPv6 format URLs are supported."
+        ]
+      ]
+    },
+    {
+      "slug": "url-query-builder",
+      "category": "dev",
+      "icon": "🔗",
+      "name_zh": "URL Query Builder",
+      "name_en": "URL Query Builder",
+      "short_zh": "可视化编辑 URL 查询参数，生成、解析和复制完整链接",
+      "short_en": "Visually edit URL query parameters, generate, parse and copy full links",
+      "keywords_zh": "URL Query Builder,URL参数构建,query string builder,URL参数生成,链接参数编辑,UTM参数生成",
+      "keywords_en": "URL query builder,query string builder,URL parameter builder,URL params generator,UTM builder,query editor",
+      "long_zh": "<p>免费的 URL Query Builder，可视化添加、编辑、删除查询参数，并自动生成完整 URL 和 query string。支持从现有链接解析参数、参数编码、重复键、UTM 参数模板。</p><p>适合调试 API、构造带筛选条件的链接、生成活动追踪 URL。所有处理在浏览器本地完成。</p>",
+      "long_en": "<p>Free URL Query Builder to visually add, edit and remove query parameters, then generate a full URL or query string. Supports parsing existing links, parameter encoding, repeated keys and UTM templates.</p><p>Great for API debugging, filter links and campaign tracking URLs. Everything runs locally in your browser.</p>",
+      "ui_zh": "<div><label>基础 URL 或完整 URL:</label><div style=\"display:flex;gap:10px;margin-top:8px\"><input id=\"uqBase\" type=\"text\" style=\"flex:1;font-family:monospace\" value=\"https://tools.talang.fun/search?q=json&lang=zh\"><button class=\"btn\" id=\"uqParse\">解析 URL</button></div></div><div style=\"margin-top:14px;display:flex;gap:10px;flex-wrap:wrap\"><button class=\"btn btn-secondary\" id=\"uqAdd\">添加参数</button><button class=\"btn btn-secondary\" id=\"uqUtm\">添加 UTM 模板</button><button class=\"btn btn-secondary\" id=\"uqClear\">清空参数</button></div><div style=\"overflow:auto;margin-top:14px\"><table style=\"width:100%;border-collapse:collapse\"><thead><tr><th style=\"text-align:left;padding:8px;border-bottom:1px solid var(--border)\">参数名</th><th style=\"text-align:left;padding:8px;border-bottom:1px solid var(--border)\">参数值</th><th style=\"padding:8px;border-bottom:1px solid var(--border)\">操作</th></tr></thead><tbody id=\"uqRows\"></tbody></table></div><div style=\"margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:16px\"><div><label>完整 URL:</label><textarea id=\"uqFull\" style=\"min-height:110px;font-family:monospace;font-size:13px\" readonly></textarea><button class=\"btn btn-secondary\" id=\"uqCopyFull\" style=\"margin-top:8px\">复制完整 URL</button></div><div><label>Query String:</label><textarea id=\"uqQuery\" style=\"min-height:110px;font-family:monospace;font-size:13px\" readonly></textarea><button class=\"btn btn-secondary\" id=\"uqCopyQuery\" style=\"margin-top:8px\">复制 Query</button></div></div><div id=\"uqStatus\" style=\"margin-top:8px;color:var(--text-dim);font-size:13px\"></div>",
+      "ui_en": "<div><label>Base URL or full URL:</label><div style=\"display:flex;gap:10px;margin-top:8px\"><input id=\"uqBase\" type=\"text\" style=\"flex:1;font-family:monospace\" value=\"https://tools.talang.fun/search?q=json&lang=en\"><button class=\"btn\" id=\"uqParse\">Parse URL</button></div></div><div style=\"margin-top:14px;display:flex;gap:10px;flex-wrap:wrap\"><button class=\"btn btn-secondary\" id=\"uqAdd\">Add Param</button><button class=\"btn btn-secondary\" id=\"uqUtm\">Add UTM Template</button><button class=\"btn btn-secondary\" id=\"uqClear\">Clear Params</button></div><div style=\"overflow:auto;margin-top:14px\"><table style=\"width:100%;border-collapse:collapse\"><thead><tr><th style=\"text-align:left;padding:8px;border-bottom:1px solid var(--border)\">Key</th><th style=\"text-align:left;padding:8px;border-bottom:1px solid var(--border)\">Value</th><th style=\"padding:8px;border-bottom:1px solid var(--border)\">Action</th></tr></thead><tbody id=\"uqRows\"></tbody></table></div><div style=\"margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:16px\"><div><label>Full URL:</label><textarea id=\"uqFull\" style=\"min-height:110px;font-family:monospace;font-size:13px\" readonly></textarea><button class=\"btn btn-secondary\" id=\"uqCopyFull\" style=\"margin-top:8px\">Copy Full URL</button></div><div><label>Query String:</label><textarea id=\"uqQuery\" style=\"min-height:110px;font-family:monospace;font-size:13px\" readonly></textarea><button class=\"btn btn-secondary\" id=\"uqCopyQuery\" style=\"margin-top:8px\">Copy Query</button></div></div><div id=\"uqStatus\" style=\"margin-top:8px;color:var(--text-dim);font-size:13px\"></div>",
+      "related": [
+        "url-parser",
+        "url-encoder",
+        "json-formatter",
+        "base64"
+      ],
+      "seo_title_zh": "URL Query Builder | 在线 URL 参数构建与解析工具",
+      "seo_title_en": "URL Query Builder | Online URL Parameter Builder and Parser",
+      "features_zh": [
+        "从完整 URL 解析查询参数",
+        "可视化添加/编辑/删除参数",
+        "自动 URL 编码",
+        "支持重复参数名",
+        "一键添加 UTM 模板",
+        "复制完整 URL 或 query string",
+        "浏览器本地处理，链接不上传"
+      ],
+      "features_en": [
+        "Parse query parameters from a full URL",
+        "Visually add/edit/remove params",
+        "Automatic URL encoding",
+        "Repeated parameter names supported",
+        "One-click UTM template",
+        "Copy full URL or query string",
+        "Browser-local processing, no upload"
+      ],
+      "faq_zh": [
+        [
+          "Query string 前面的问号要复制吗？",
+          "工具会同时提供完整 URL 和 query string。query string 输出不包含问号，便于粘贴到代码里。"
+        ],
+        [
+          "支持重复参数名吗？",
+          "支持。多个同名参数会按行保留，例如 tag=a&tag=b。"
+        ],
+        [
+          "适合生成 UTM 链接吗？",
+          "适合。点击 UTM 模板后填写 source、medium、campaign 等字段即可。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "Should I copy the leading question mark?",
+          "The tool provides both full URL and query string. The query string output does not include the question mark for easier use in code."
+        ],
+        [
+          "Are repeated parameter names supported?",
+          "Yes. Multiple params with the same key are preserved, for example tag=a&tag=b."
+        ],
+        [
+          "Can it generate UTM links?",
+          "Yes. Use the UTM template button and fill source, medium and campaign fields."
         ]
       ]
     },

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>URL Query Builder - URL Query Builder | 在线 URL 参数构建与解析工具 | AI 工具盒子</title>
+<meta name="description" content="免费在线URL Query Builder工具，可视化编辑 URL 查询参数，生成、解析和复制完整链接。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="URL Query Builder,URL参数构建,query string builder,URL参数生成,链接参数编辑,UTM参数生成">
+<link rel="canonical" href="https://tools.talang.fun/tools/url-query-builder">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/url-query-builder">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/url-query-builder">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/url-query-builder">
+<meta property="og:title" content="URL Query Builder - URL Query Builder | 在线 URL 参数构建与解析工具 | AI 工具盒子">
+<meta property="og:description" content="免费在线URL Query Builder工具，可视化编辑 URL 查询参数，生成、解析和复制完整链接。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/url-query-builder">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "URL Query Builder", "description": "免费在线URL Query Builder工具，可视化编辑 URL 查询参数，生成、解析和复制完整链接。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/url-query-builder", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "可视化编辑 URL 查询参数，生成、解析和复制完整链接", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/tools/url-query-builder" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🔗</div>
+  <h1>URL Query Builder</h1>
+  <p>可视化编辑 URL 查询参数，生成、解析和复制完整链接</p>
+</div>
+<div class="tool-panel">
+<div><label>基础 URL 或完整 URL:</label><div style="display:flex;gap:10px;margin-top:8px"><input id="uqBase" type="text" style="flex:1;font-family:monospace" value="https://tools.talang.fun/search?q=json&lang=zh"><button class="btn" id="uqParse">解析 URL</button></div></div><div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap"><button class="btn btn-secondary" id="uqAdd">添加参数</button><button class="btn btn-secondary" id="uqUtm">添加 UTM 模板</button><button class="btn btn-secondary" id="uqClear">清空参数</button></div><div style="overflow:auto;margin-top:14px"><table style="width:100%;border-collapse:collapse"><thead><tr><th style="text-align:left;padding:8px;border-bottom:1px solid var(--border)">参数名</th><th style="text-align:left;padding:8px;border-bottom:1px solid var(--border)">参数值</th><th style="padding:8px;border-bottom:1px solid var(--border)">操作</th></tr></thead><tbody id="uqRows"></tbody></table></div><div style="margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:16px"><div><label>完整 URL:</label><textarea id="uqFull" style="min-height:110px;font-family:monospace;font-size:13px" readonly></textarea><button class="btn btn-secondary" id="uqCopyFull" style="margin-top:8px">复制完整 URL</button></div><div><label>Query String:</label><textarea id="uqQuery" style="min-height:110px;font-family:monospace;font-size:13px" readonly></textarea><button class="btn btn-secondary" id="uqCopyQuery" style="margin-top:8px">复制 Query</button></div></div><div id="uqStatus" style="margin-top:8px;color:var(--text-dim);font-size:13px"></div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>免费的 URL Query Builder，可视化添加、编辑、删除查询参数，并自动生成完整 URL 和 query string。支持从现有链接解析参数、参数编码、重复键、UTM 参数模板。</p><p>适合调试 API、构造带筛选条件的链接、生成活动追踪 URL。所有处理在浏览器本地完成。</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>从完整 URL 解析查询参数</li><li>可视化添加/编辑/删除参数</li><li>自动 URL 编码</li><li>支持重复参数名</li><li>一键添加 UTM 模板</li><li>复制完整 URL 或 query string</li><li>浏览器本地处理，链接不上传</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">Query string 前面的问号要复制吗？</h3><p>工具会同时提供完整 URL 和 query string。query string 输出不包含问号，便于粘贴到代码里。</p><h3 style="margin-top:20px;margin-bottom:8px">支持重复参数名吗？</h3><p>支持。多个同名参数会按行保留，例如 tag=a&tag=b。</p><h3 style="margin-top:20px;margin-bottom:8px">适合生成 UTM 链接吗？</h3><p>适合。点击 UTM 模板后填写 source、medium、campaign 等字段即可。</p></section>
+<section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/url-parser" class="tool-card"><div class="icon">🔗</div><h3>URL 参数解析</h3><p>拆解 URL 显示协议主机路径参数表</p></a><a href="/tools/url-encoder" class="tool-card"><div class="icon">🔗</div><h3>URL 编解码</h3><p>URL 编码与解码，处理特殊字符和中文</p></a><a href="/tools/json-formatter" class="tool-card"><div class="icon">{ }</div><h3>JSON 格式化</h3><p>JSON 美化、压缩、校验，错误位置精准定位</p></a><a href="/tools/base64" class="tool-card"><div class="icon">🔣</div><h3>Base64 编解码</h3><p>Base64 字符串和文件互转，UTF-8 安全</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/url-query-builder.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>

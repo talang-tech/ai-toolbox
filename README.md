@@ -38,6 +38,8 @@ AI Toolbox 的定位不是 AI 导航站，而是一个 **privacy-first browser t
 | XML Formatter / Minifier | [XML 格式化/压缩](https://tools.talang.fun/tools/xml-formatter) | [XML Formatter](https://tools.talang.fun/en/tools/xml-formatter) |
 | Text Sorter | [文本排序](https://tools.talang.fun/tools/text-sort) | [Text Sorter](https://tools.talang.fun/en/tools/text-sort) |
 | Text Find & Replace | [文本批量替换](https://tools.talang.fun/tools/text-replace) | [Text Find & Replace](https://tools.talang.fun/en/tools/text-replace) |
+| String Escape / Unescape | [字符串转义/反转义](https://tools.talang.fun/tools/string-escape) | [String Escape](https://tools.talang.fun/en/tools/string-escape) |
+| URL Query Builder | [URL 参数构建](https://tools.talang.fun/tools/url-query-builder) | [URL Query Builder](https://tools.talang.fun/en/tools/url-query-builder) |
 | Unix Timestamp | [时间戳转换](https://tools.talang.fun/tools/timestamp) | [Timestamp Converter](https://tools.talang.fun/en/tools/timestamp) |
 | Hash Generator | [MD5 / SHA 哈希](https://tools.talang.fun/tools/hash-generator) | [Hash Generator](https://tools.talang.fun/en/tools/hash-generator) |
 | Password Generator | [密码生成器](https://tools.talang.fun/tools/password-generator) | [Password Generator](https://tools.talang.fun/en/tools/password-generator) |
@@ -47,12 +49,12 @@ AI Toolbox 的定位不是 AI 导航站，而是一个 **privacy-first browser t
 
 ---
 
-## Current Tools: 51
+## Current Tools: 53
 
 | Category | Tools |
 |----------|-------|
 | 📝 Text | Word counter, case converter, text diff, text deduplication, blank-line remover, Chinese lorem ipsum, text sorter, text find & replace |
-| 💻 Developer | JSON formatter, regex tester, timestamp converter, base converter, JWT decoder, JSON ↔ CSV, color converter, HTML entity encoder/decoder, JSONPath, URL parser, YAML formatter/validator, XML formatter/minifier, Markdown preview, QR decoder, Cron parser, IP subnet calculator |
+| 💻 Developer | JSON formatter, regex tester, timestamp converter, base converter, JWT decoder, JSON ↔ CSV, color converter, HTML entity encoder/decoder, string escape/unescape, JSONPath, URL parser, URL query builder, YAML formatter/validator, XML formatter/minifier, Markdown preview, QR decoder, Cron parser, IP subnet calculator |
 | 📋 JSON | JSON to TypeScript, JSON to Go struct, JSON ↔ YAML |
 | 🔐 Encode / Convert | Base64, URL encoder/decoder, hash generator |
 | ✨ Generators | Password generator, UUID generator, QR code generator, random string generator |

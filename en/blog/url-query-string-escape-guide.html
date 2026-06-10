@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>URL Query Builder and String Escaping: Practical Guide for APIs, UTM Links and Logs | AI Toolbox</title>
+<meta name="description" content="Learn the differences between URL query strings, encodeURIComponent, JSON/JavaScript/Unicode/HTML escaping, and why sensitive text should be processed locally in the browser.">
+<meta name="keywords" content="URL query builder,query string builder,string escape,JSON escape,JavaScript escape,URL encoding,UTM parameters,browser local tools">
+<link rel="canonical" href="https://tools.talang.fun/en/blog/url-query-string-escape-guide">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/blog/url-query-string-escape-guide">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/blog/url-query-string-escape-guide">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/blog/url-query-string-escape-guide">
+<meta property="og:title" content="URL Query Builder and String Escaping: Practical Guide for APIs, UTM Links and Logs | AI Toolbox">
+<meta property="og:description" content="Learn the differences between URL query strings, encodeURIComponent, JSON/JavaScript/Unicode/HTML escaping, and why sensitive text should be processed locally in the browser.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/en/blog/url-query-string-escape-guide">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "URL Query Builder and String Escaping: Practical Guide for APIs, UTM Links and Logs", "description": "Learn the differences between URL query strings, encodeURIComponent, JSON/JavaScript/Unicode/HTML escaping, and why sensitive text should be processed locally in the browser.", "author": {"@type": "Organization", "name": "AI Toolbox"}, "datePublished": "2026-06-10", "url": "https://tools.talang.fun/en/blog/url-query-string-escape-guide"}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/en/" class="logo"><span class="logo-icon">🛠️</span>AI Toolbox</a>
+    <nav class="nav">
+      <a href="/en/">Home</a>
+      <a href="/en/#tools">All Tools</a>
+      <a href="/en/blog/">Blog</a>
+      <a href="/en/about">About</a>
+      <a href="/en/sponsor">Sponsor</a>
+      <a href="https://tools.talang.fun/blog/url-query-string-escape-guide" class="lang-switch">中文</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<article class="article">
+  <p style="margin-bottom:8px"><a href="/en/blog/" style="color:var(--muted)">← Back to blog</a></p>
+  <h1>URL Query Builder and String Escaping: Practical Guide for APIs, UTM Links and Logs</h1>
+  <p style="color:var(--muted);margin-bottom:24px">2026-06-10 · 8 min read</p>
+  <p>API debugging, campaign links and log analysis often run into two deceptively simple problems:</p>
+<ol>
+<li>how to build URL query parameters correctly;</li>
+<li>how to escape newlines, quotes, Chinese text, emoji and HTML tags in strings.</li>
+</ol>
+<p>A small mistake can drop parameters, break request signatures, make logs impossible to reproduce, or leak sensitive tokens into a random online tool.</p>
+<h2>A query string is not just string concatenation</h2>
+<p>A URL with query parameters looks like this:</p>
+<pre><code class="lang-text">
+https://example.com/search?q=json+formatter&amp;lang=en&amp;tag=tool&amp;tag=seo
+</code></pre>
+<p>There are several details:</p>
+<ul>
+<li>both keys and values need URL encoding;</li>
+<li>spaces may appear as <code>%20</code> or <code>+</code>;</li>
+<li>repeated keys are valid, for example <code>tag=tool&tag=seo</code>;</li>
+<li>the <code>#hash</code> fragment is not part of the query;</li>
+<li>hand-written strings often miss <code>?</code>, <code>&</code> or encoding.</li>
+</ul>
+<p>For API debugging or campaign links, it is safer to use <a href="/en/tools/url-query-builder">URL Query Builder</a>: parse an existing URL, edit key/value rows visually, then copy either the full URL or the query string.</p>
+<h2>UTM parameters should be templated</h2>
+<p>Common UTM parameters include:</p>
+<pre><code class="lang-text">
+utm_source=github
+utm_medium=readme
+utm_campaign=ai_toolbox_launch
+utm_content=json_tools
+utm_term=json_formatter
+</code></pre>
+<p>Writing them by hand often leads to inconsistent names, unencoded spaces or messy campaign values. URL Query Builder includes a UTM template. For early sites, UTM is a low-friction way to understand source context, but it should not be confused with real ad network or affiliate code before commercial terms are confirmed.</p>
+<h2>String escaping: JSON, JS, URL and HTML are different</h2>
+<p>People often say "escape this string" as if there were one universal rule. There is not.</p>
+<h3>JSON string escaping</h3>
+<p>JSON needs newlines and quotes escaped:</p>
+<pre><code class="lang-json">
+"Hello\n\"AI Toolbox\""
+</code></pre>
+<p>This is useful for API payloads, request logs and config snippets.</p>
+<h3>JavaScript string escaping</h3>
+<p>JavaScript snippets may also involve single quotes, backslashes and control characters. When copying logs into code to reproduce a bug, JS string escaping is often the right target.</p>
+<h3>URL encoding</h3>
+<p>URL parameters cannot contain raw <code>&</code>, <code>?</code>, <code>#</code> or spaces. Use <code>encodeURIComponent</code> style encoding:</p>
+<pre><code class="lang-text">
+hello world &amp; json → hello%20world%20%26%20json
+</code></pre>
+<h3>HTML entities</h3>
+<p>To display <code><script></code> as text instead of executing it, use HTML entities:</p>
+<pre><code class="lang-html">
+&amp;lt;script&amp;gt;alert(1)&amp;lt;/script&amp;gt;
+</code></pre>
+<p>Use <a href="/en/tools/string-escape">String Escape / Unescape</a> to handle JSON, JavaScript, Unicode, URL and HTML modes in one place.</p>
+<h2>Why local processing matters</h2>
+<p>URLs and strings often include:</p>
+<ul>
+<li>API tokens, JWTs and signed parameters;</li>
+<li>internal domains, service names and debug flags;</li>
+<li>user IDs, order IDs and email addresses;</li>
+<li>error logs, stack traces and business fields;</li>
+<li>campaign links that are not public yet.</li>
+</ul>
+<p>These operations do not require server-side compute. The safest default is browser-local processing. AI Toolbox tools are static pages plus frontend JavaScript; your input is not uploaded to our servers.</p>
+<h2>Recommended workflow</h2>
+<ul>
+<li>Break down an existing link: <a href="/en/tools/url-parser">URL Parser</a>;</li>
+<li>Build or edit parameters: <a href="/en/tools/url-query-builder">URL Query Builder</a>;</li>
+<li>Encode a single text fragment: <a href="/en/tools/url-encoder">URL Encoder/Decoder</a>;</li>
+<li>Escape JSON/JS/Unicode/HTML strings: <a href="/en/tools/string-escape">String Escape / Unescape</a>;</li>
+<li>Clean API responses: <a href="/en/tools/json-formatter">JSON Formatter</a>.</li>
+</ul>
+<p>If your team frequently handles internal APIs and logs, consider deploying these tools privately to reduce the risk of pasting sensitive content into random websites. AI Toolbox also supports <a href="/en/sponsor">private deployment and custom browser-local tools</a>.</p>
+  <section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>Need a private toolbox or custom browser tool?</h2>
+  <p>AI Toolbox can be adapted for internal workflows, private deployment, sponsored categories, or custom privacy-first utilities.</p>
+  <p><a href="/en/sponsor" data-event="conversion_cta_click" data-label="en_partner_custom_tool_cta">View partnership and custom tool options →</a></p>
+</section>
+</article>
+</main>
+<footer class="site-footer">
+  © 2026 AI Toolbox · Free online AI & developer tools · <a href='/en/about'>About</a> · <a href='/en/sponsor'>Sponsor</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('Copied!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>

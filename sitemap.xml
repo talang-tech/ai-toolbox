@@ -44,10 +44,14 @@
   <url><loc>https://tools.talang.fun/en/tools/text-dedup</loc><lastmod>2026-06-09</lastmod><priority>0.8</priority></url>
   <url><loc>https://tools.talang.fun/tools/html-entity</loc><lastmod>2026-06-09</lastmod><priority>0.8</priority></url>
   <url><loc>https://tools.talang.fun/en/tools/html-entity</loc><lastmod>2026-06-09</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/tools/string-escape</loc><lastmod>2026-06-10</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/en/tools/string-escape</loc><lastmod>2026-06-10</lastmod><priority>0.8</priority></url>
   <url><loc>https://tools.talang.fun/tools/jsonpath</loc><lastmod>2026-06-09</lastmod><priority>0.8</priority></url>
   <url><loc>https://tools.talang.fun/en/tools/jsonpath</loc><lastmod>2026-06-09</lastmod><priority>0.8</priority></url>
   <url><loc>https://tools.talang.fun/tools/url-parser</loc><lastmod>2026-06-09</lastmod><priority>0.8</priority></url>
   <url><loc>https://tools.talang.fun/en/tools/url-parser</loc><lastmod>2026-06-09</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/tools/url-query-builder</loc><lastmod>2026-06-10</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/en/tools/url-query-builder</loc><lastmod>2026-06-10</lastmod><priority>0.8</priority></url>
   <url><loc>https://tools.talang.fun/tools/xml-formatter</loc><lastmod>2026-06-09</lastmod><priority>0.8</priority></url>
   <url><loc>https://tools.talang.fun/en/tools/xml-formatter</loc><lastmod>2026-06-09</lastmod><priority>0.8</priority></url>
   <url><loc>https://tools.talang.fun/tools/markdown-preview</loc><lastmod>2026-06-09</lastmod><priority>0.8</priority></url>
@@ -110,6 +114,7 @@
   <url><loc>https://tools.talang.fun/en/tools/text-sort</loc><lastmod>2026-06-09</lastmod><priority>0.8</priority></url>
   <url><loc>https://tools.talang.fun/tools/text-replace</loc><lastmod>2026-06-09</lastmod><priority>0.8</priority></url>
   <url><loc>https://tools.talang.fun/en/tools/text-replace</loc><lastmod>2026-06-09</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/blog/url-query-string-escape-guide</loc><lastmod>2026-06-10</lastmod><priority>0.7</priority></url>
   <url><loc>https://tools.talang.fun/blog/image-to-pdf-guide</loc><lastmod>2026-06-09</lastmod><priority>0.7</priority></url>
   <url><loc>https://tools.talang.fun/blog/yaml-xml-formatter-guide</loc><lastmod>2026-06-08</lastmod><priority>0.7</priority></url>
   <url><loc>https://tools.talang.fun/blog/pdf-tools-privacy-guide</loc><lastmod>2026-06-07</lastmod><priority>0.7</priority></url>
@@ -125,6 +130,7 @@
   <url><loc>https://tools.talang.fun/blog/base64-explained</loc><lastmod>2026-05-11</lastmod><priority>0.7</priority></url>
   <url><loc>https://tools.talang.fun/blog/uuid-v4-vs-v7</loc><lastmod>2026-05-10</lastmod><priority>0.7</priority></url>
   <url><loc>https://tools.talang.fun/blog/regex-cheatsheet</loc><lastmod>2026-05-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://tools.talang.fun/en/blog/url-query-string-escape-guide</loc><lastmod>2026-06-10</lastmod><priority>0.7</priority></url>
   <url><loc>https://tools.talang.fun/en/blog/image-to-pdf-guide</loc><lastmod>2026-06-09</lastmod><priority>0.7</priority></url>
   <url><loc>https://tools.talang.fun/en/blog/yaml-xml-formatter-guide</loc><lastmod>2026-06-08</lastmod><priority>0.7</priority></url>
   <url><loc>https://tools.talang.fun/en/blog/pdf-tools-privacy-guide</loc><lastmod>2026-06-07</lastmod><priority>0.7</priority></url>
