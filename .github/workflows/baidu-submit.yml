@@ -31,7 +31,8 @@ jobs:
           python-version: "3.x"
 
       - name: Validate generated sitemap
-        run: python3 - <<'PY'
+        run: |
+          python3 - <<'PY'
           import xml.etree.ElementTree as ET
           data = open('sitemap.xml', encoding='utf-8').read()
           root = ET.fromstring(data)
