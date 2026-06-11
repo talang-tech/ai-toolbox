@@ -1606,6 +1606,144 @@
       ]
     },
     {
+      "slug": "markdown-to-html",
+      "category": "dev",
+      "icon": "↔️",
+      "name_zh": "Markdown 转 HTML",
+      "name_en": "Markdown to HTML",
+      "short_zh": "将 Markdown 转换为干净 HTML，支持预览、复制和下载",
+      "short_en": "Convert Markdown to clean HTML with preview, copy, and download",
+      "keywords_zh": "Markdown转HTML,md转html,Markdown在线转换,HTML预览,Markdown解析器,Markdown导出HTML",
+      "keywords_en": "markdown to html, md to html, online markdown converter, html preview, markdown parser, export markdown html",
+      "long_zh": "<p>免费在线 Markdown 转 HTML 工具，适合把 README、博客草稿、文档片段快速转换为可复制的 HTML。支持标题、列表、引用、代码块、表格、链接、图片、粗体、斜体和删除线。</p><p>转换和预览都在浏览器本地完成，文档内容不会上传到服务器。默认开启安全模式，会转义原始 HTML，适合处理来自外部的 Markdown 文本。</p>",
+      "long_en": "<p>Free online Markdown to HTML converter for README files, blog drafts, documentation snippets, and publishing workflows. Supports headings, lists, blockquotes, code blocks, tables, links, images, bold, italic, and strikethrough.</p><p>Conversion and preview run locally in your browser. Your Markdown is not uploaded. Safe mode is enabled by default to escape raw HTML when processing untrusted Markdown.</p>",
+      "ui_zh": "<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:16px\"><div><label>Markdown 输入:</label><textarea id=\"mthInput\" style=\"min-height:360px;font-family:monospace;font-size:13px\" placeholder=\"粘贴 Markdown 内容...\"></textarea></div><div><label>HTML 输出:</label><textarea id=\"mthOutput\" style=\"min-height:360px;font-family:monospace;font-size:13px\" readonly placeholder=\"转换后的 HTML...\"></textarea></div></div><div style=\"margin-top:12px;display:flex;gap:12px;align-items:center;flex-wrap:wrap\"><label><input type=\"checkbox\" id=\"mthSafeMode\" checked> 安全模式：转义原始 HTML</label><button class=\"btn\" id=\"mthConvert\">转换</button><button class=\"btn btn-secondary\" id=\"mthCopy\">复制 HTML</button><button class=\"btn btn-secondary\" id=\"mthDownload\">下载 HTML</button><button class=\"btn btn-secondary\" id=\"mthClear\">清空</button></div><div id=\"mthStatus\" style=\"margin-top:8px;color:var(--text-dim);font-size:13px\"></div><h3 style=\"margin-top:20px\">预览</h3><div id=\"mthPreview\" style=\"min-height:220px;padding:16px;border:1px solid var(--border);border-radius:8px;background:white;color:#111;overflow:auto\"></div>",
+      "ui_en": "<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:16px\"><div><label>Markdown input:</label><textarea id=\"mthInput\" style=\"min-height:360px;font-family:monospace;font-size:13px\" placeholder=\"Paste Markdown content...\"></textarea></div><div><label>HTML output:</label><textarea id=\"mthOutput\" style=\"min-height:360px;font-family:monospace;font-size:13px\" readonly placeholder=\"Converted HTML...\"></textarea></div></div><div style=\"margin-top:12px;display:flex;gap:12px;align-items:center;flex-wrap:wrap\"><label><input type=\"checkbox\" id=\"mthSafeMode\" checked> Safe mode: escape raw HTML</label><button class=\"btn\" id=\"mthConvert\">Convert</button><button class=\"btn btn-secondary\" id=\"mthCopy\">Copy HTML</button><button class=\"btn btn-secondary\" id=\"mthDownload\">Download HTML</button><button class=\"btn btn-secondary\" id=\"mthClear\">Clear</button></div><div id=\"mthStatus\" style=\"margin-top:8px;color:var(--text-dim);font-size:13px\"></div><h3 style=\"margin-top:20px\">Preview</h3><div id=\"mthPreview\" style=\"min-height:220px;padding:16px;border:1px solid var(--border);border-radius:8px;background:white;color:#111;overflow:auto\"></div>",
+      "related": [
+        "markdown-preview",
+        "html-entity",
+        "word-counter",
+        "text-replace"
+      ],
+      "seo_title_zh": "Markdown 转 HTML | 在线 MD 转 HTML 预览与复制",
+      "seo_title_en": "Markdown to HTML | Online MD to HTML Preview & Copy",
+      "features_zh": [
+        "Markdown 一键转 HTML",
+        "实时 HTML 预览",
+        "复制 HTML 片段",
+        "下载完整 HTML 文件",
+        "支持表格、代码块、引用和链接",
+        "安全模式转义原始 HTML",
+        "浏览器本地处理，文档不上传"
+      ],
+      "features_en": [
+        "Convert Markdown to HTML in one click",
+        "Live HTML preview",
+        "Copy HTML snippet",
+        "Download a complete HTML file",
+        "Supports tables, code blocks, blockquotes, and links",
+        "Safe mode escapes raw HTML",
+        "Browser local processing, no document upload"
+      ],
+      "faq_zh": [
+        [
+          "支持 GitHub Flavored Markdown 吗？",
+          "支持常用 GFM 子集，包括表格、删除线、代码块和列表。任务列表等高级语法会逐步补齐。"
+        ],
+        [
+          "Markdown 内容会上传吗？",
+          "不会。转换、预览、复制和下载都在浏览器本地完成。"
+        ],
+        [
+          "安全模式有什么作用？",
+          "安全模式会转义原始 HTML，降低粘贴外部 Markdown 时把脚本或危险标签渲染出来的风险。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "Does it support GitHub Flavored Markdown?",
+          "It supports a practical GFM subset including tables, strikethrough, code blocks, and lists. Advanced syntax such as task lists may be added later."
+        ],
+        [
+          "Is my Markdown uploaded?",
+          "No. Conversion, preview, copy, and download all happen locally in your browser."
+        ],
+        [
+          "What does safe mode do?",
+          "Safe mode escapes raw HTML to reduce the risk of rendering scripts or unsafe tags from untrusted Markdown."
+        ]
+      ]
+    },
+    {
+      "slug": "csv-viewer",
+      "category": "dev",
+      "icon": "📈",
+      "name_zh": "CSV 查看器/转表格",
+      "name_en": "CSV Viewer & Table Converter",
+      "short_zh": "解析 CSV/TSV 为表格，可复制 HTML 表格或 JSON",
+      "short_en": "Parse CSV/TSV into a table, copy as HTML table or JSON",
+      "keywords_zh": "CSV查看器,CSV转表格,CSV转HTML,CSV转JSON,TSV查看器,在线CSV解析,表格预览",
+      "keywords_en": "csv viewer,csv to table,csv to html,csv to json,tsv viewer,online csv parser,table preview",
+      "long_zh": "<p>免费在线 CSV 查看器和表格转换工具，可把 CSV、TSV 或自定义分隔符数据解析为可滚动表格，并复制为 HTML 表格或 JSON 数组。支持引号字段、字段内逗号、双引号转义和表头识别。</p><p>所有解析和转换都在浏览器本地完成，适合预览导出的报表、运营数据、后台列表和简单数据清洗片段，不会上传原始表格内容。</p>",
+      "long_en": "<p>Free online CSV viewer and table converter. Parse CSV, TSV, or custom-delimited data into a scrollable table, then copy it as an HTML table or JSON array. Supports quoted fields, commas inside fields, escaped double quotes, and header detection.</p><p>All parsing and conversion happen locally in your browser, making it useful for exported reports, admin lists, and lightweight data cleanup without uploading the raw table.</p>",
+      "ui_zh": "<div><label>CSV 输入:</label><textarea id=\"csvInput\" style=\"min-height:260px;font-family:monospace;font-size:13px\" placeholder=\"粘贴 CSV / TSV 内容...\"></textarea></div><div style=\"margin-top:12px;display:flex;gap:12px;align-items:center;flex-wrap:wrap\"><label>分隔符 <select id=\"csvDelimiter\" style=\"width:auto\"><option value=\",\">逗号 ,</option><option value=\";\">分号 ;</option><option value=\"tab\">Tab</option><option value=\"|\">竖线 |</option><option value=\"custom\">自定义</option></select></label><input id=\"csvCustomDelimiter\" type=\"text\" maxlength=\"4\" value=\",\" style=\"width:80px\"><label><input type=\"checkbox\" id=\"csvHasHeader\" checked> 第一行为表头</label><button class=\"btn\" id=\"csvParse\">解析预览</button><button class=\"btn btn-secondary\" id=\"csvCopyTable\">复制 HTML 表格</button><button class=\"btn btn-secondary\" id=\"csvCopyJson\">复制 JSON</button><button class=\"btn btn-secondary\" id=\"csvDownload\">下载 JSON</button><button class=\"btn btn-secondary\" id=\"csvClear\">清空</button></div><div id=\"csvStatus\" style=\"margin-top:8px;color:var(--text-dim);font-size:13px\"></div><div id=\"csvPreview\" style=\"margin-top:16px\"></div>",
+      "ui_en": "<div><label>CSV input:</label><textarea id=\"csvInput\" style=\"min-height:260px;font-family:monospace;font-size:13px\" placeholder=\"Paste CSV / TSV content...\"></textarea></div><div style=\"margin-top:12px;display:flex;gap:12px;align-items:center;flex-wrap:wrap\"><label>Delimiter <select id=\"csvDelimiter\" style=\"width:auto\"><option value=\",\">Comma ,</option><option value=\";\">Semicolon ;</option><option value=\"tab\">Tab</option><option value=\"|\">Pipe |</option><option value=\"custom\">Custom</option></select></label><input id=\"csvCustomDelimiter\" type=\"text\" maxlength=\"4\" value=\",\" style=\"width:80px\"><label><input type=\"checkbox\" id=\"csvHasHeader\" checked> First row is header</label><button class=\"btn\" id=\"csvParse\">Parse Preview</button><button class=\"btn btn-secondary\" id=\"csvCopyTable\">Copy HTML table</button><button class=\"btn btn-secondary\" id=\"csvCopyJson\">Copy JSON</button><button class=\"btn btn-secondary\" id=\"csvDownload\">Download JSON</button><button class=\"btn btn-secondary\" id=\"csvClear\">Clear</button></div><div id=\"csvStatus\" style=\"margin-top:8px;color:var(--text-dim);font-size:13px\"></div><div id=\"csvPreview\" style=\"margin-top:16px\"></div>",
+      "related": [
+        "json-csv",
+        "json-formatter",
+        "text-sort",
+        "text-dedup"
+      ],
+      "seo_title_zh": "CSV 查看器 | CSV 转 HTML 表格/JSON",
+      "seo_title_en": "CSV Viewer | CSV to HTML Table / JSON",
+      "features_zh": [
+        "CSV/TSV 在线表格预览",
+        "支持逗号、分号、Tab、竖线和自定义分隔符",
+        "识别第一行为表头",
+        "复制为 HTML table",
+        "复制或下载 JSON 数组",
+        "支持引号字段和字段内逗号",
+        "浏览器本地处理，表格数据不上传"
+      ],
+      "features_en": [
+        "Preview CSV/TSV as an online table",
+        "Supports comma, semicolon, Tab, pipe, and custom delimiters",
+        "Detect first row as header",
+        "Copy as HTML table",
+        "Copy or download JSON array",
+        "Supports quoted fields and commas inside fields",
+        "Browser local processing, no table data upload"
+      ],
+      "faq_zh": [
+        [
+          "支持字段里包含逗号吗？",
+          "支持。用双引号包裹的字段可以包含逗号，例如 \"Product, Growth\"。"
+        ],
+        [
+          "可以处理 TSV 吗？",
+          "可以，在分隔符下拉框中选择 Tab 即可解析 TSV。"
+        ],
+        [
+          "数据会上传到服务器吗？",
+          "不会。CSV 解析、表格预览和 JSON 转换都在浏览器本地执行。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "Can it parse commas inside fields?",
+          "Yes. Fields wrapped in double quotes may contain commas, for example \"Product, Growth\"."
+        ],
+        [
+          "Can it handle TSV files?",
+          "Yes. Select Tab in the delimiter dropdown to parse TSV content."
+        ],
+        [
+          "Is data uploaded to a server?",
+          "No. CSV parsing, table preview, and JSON conversion all run locally in your browser."
+        ]
+      ]
+    },
+    {
       "slug": "qr-decode",
       "icon": "📸",
       "category": "dev",

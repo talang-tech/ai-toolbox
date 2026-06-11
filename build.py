@@ -321,7 +321,7 @@ def privacy_notice(slug, lang):
         "pdf-merge", "pdf-split", "pdf-to-image", "pdf-extract-text", "image-to-pdf",
         "image-compress", "image-convert", "image-resize", "image-watermark", "image-base64",
         "url-encoder", "text-dedup", "text-sort", "text-replace", "text-diff", "remove-lines",
-        "yaml-formatter", "xml-formatter"
+        "yaml-formatter", "xml-formatter", "markdown-to-html", "csv-viewer"
     }
     if slug not in sensitive:
         return ""

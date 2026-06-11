@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>CSV 查看器/转表格 - CSV 查看器 | CSV 转 HTML 表格/JSON | AI 工具盒子</title>
+<meta name="description" content="免费在线CSV 查看器/转表格工具，解析 CSV/TSV 为表格，可复制 HTML 表格或 JSON。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="CSV查看器,CSV转表格,CSV转HTML,CSV转JSON,TSV查看器,在线CSV解析,表格预览">
+<link rel="canonical" href="https://tools.talang.fun/tools/csv-viewer">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/csv-viewer">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/csv-viewer">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/csv-viewer">
+<meta property="og:title" content="CSV 查看器/转表格 - CSV 查看器 | CSV 转 HTML 表格/JSON | AI 工具盒子">
+<meta property="og:description" content="免费在线CSV 查看器/转表格工具，解析 CSV/TSV 为表格，可复制 HTML 表格或 JSON。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/csv-viewer">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "CSV 查看器/转表格", "description": "免费在线CSV 查看器/转表格工具，解析 CSV/TSV 为表格，可复制 HTML 表格或 JSON。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/csv-viewer", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "解析 CSV/TSV 为表格，可复制 HTML 表格或 JSON", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/tools/csv-viewer" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">📈</div>
+  <h1>CSV 查看器/转表格</h1>
+  <p>解析 CSV/TSV 为表格，可复制 HTML 表格或 JSON</p>
+</div>
+<div class="tool-panel">
+<div><label>CSV 输入:</label><textarea id="csvInput" style="min-height:260px;font-family:monospace;font-size:13px" placeholder="粘贴 CSV / TSV 内容..."></textarea></div><div style="margin-top:12px;display:flex;gap:12px;align-items:center;flex-wrap:wrap"><label>分隔符 <select id="csvDelimiter" style="width:auto"><option value=",">逗号 ,</option><option value=";">分号 ;</option><option value="tab">Tab</option><option value="|">竖线 |</option><option value="custom">自定义</option></select></label><input id="csvCustomDelimiter" type="text" maxlength="4" value="," style="width:80px"><label><input type="checkbox" id="csvHasHeader" checked> 第一行为表头</label><button class="btn" id="csvParse">解析预览</button><button class="btn btn-secondary" id="csvCopyTable">复制 HTML 表格</button><button class="btn btn-secondary" id="csvCopyJson">复制 JSON</button><button class="btn btn-secondary" id="csvDownload">下载 JSON</button><button class="btn btn-secondary" id="csvClear">清空</button></div><div id="csvStatus" style="margin-top:8px;color:var(--text-dim);font-size:13px"></div><div id="csvPreview" style="margin-top:16px"></div>
+</div><section class="article" style="margin-top:20px;border:1px solid var(--border);background:var(--bg-light);border-radius:12px;padding:16px">
+  <h2 style="margin-top:0">隐私说明</h2>
+  <p>这个工具在你的浏览器中运行。你输入的内容、文件、JSON、JWT、图片、PDF、密码、哈希或文本不会上传到 AI 工具盒子的服务器。</p>
+  <p>站点可能记录基础访问量和转化点击事件，但不会追踪用户输入内容或文件内容。</p>
+</section>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>免费在线 CSV 查看器和表格转换工具，可把 CSV、TSV 或自定义分隔符数据解析为可滚动表格，并复制为 HTML 表格或 JSON 数组。支持引号字段、字段内逗号、双引号转义和表头识别。</p><p>所有解析和转换都在浏览器本地完成，适合预览导出的报表、运营数据、后台列表和简单数据清洗片段，不会上传原始表格内容。</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>CSV/TSV 在线表格预览</li><li>支持逗号、分号、Tab、竖线和自定义分隔符</li><li>识别第一行为表头</li><li>复制为 HTML table</li><li>复制或下载 JSON 数组</li><li>支持引号字段和字段内逗号</li><li>浏览器本地处理，表格数据不上传</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">支持字段里包含逗号吗？</h3><p>支持。用双引号包裹的字段可以包含逗号，例如 "Product, Growth"。</p><h3 style="margin-top:20px;margin-bottom:8px">可以处理 TSV 吗？</h3><p>可以，在分隔符下拉框中选择 Tab 即可解析 TSV。</p><h3 style="margin-top:20px;margin-bottom:8px">数据会上传到服务器吗？</h3><p>不会。CSV 解析、表格预览和 JSON 转换都在浏览器本地执行。</p></section>
+<section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/json-csv" class="tool-card"><div class="icon">🔄</div><h3>JSON ↔ CSV 转换</h3><p>JSON 数组与 CSV 表格格式双向转换，支持含逗号/引号的复杂内容</p></a><a href="/tools/json-formatter" class="tool-card"><div class="icon">{ }</div><h3>JSON 格式化</h3><p>JSON 美化、压缩、校验，错误位置精准定位</p></a><a href="/tools/text-sort" class="tool-card"><div class="icon">🔤</div><h3>文本排序</h3><p>按字母、数字、长度或自定义规则排序文本行</p></a><a href="/tools/text-dedup" class="tool-card"><div class="icon">🧹</div><h3>文本去重</h3><p>移除重复行，统计移除数量和百分比</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/csv-viewer.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>

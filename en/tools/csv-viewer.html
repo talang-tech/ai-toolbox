@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>CSV Viewer & Table Converter - CSV Viewer | CSV to HTML Table / JSON | AI Toolbox</title>
+<meta name="description" content="Free online csv viewer & table converter. Parse CSV/TSV into a table, copy as HTML table or JSON. Fast, secure, and works in your browser without downloading.">
+<meta name="keywords" content="csv viewer,csv to table,csv to html,csv to json,tsv viewer,online csv parser,table preview">
+<link rel="canonical" href="https://tools.talang.fun/en/tools/csv-viewer">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/csv-viewer">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/csv-viewer">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/csv-viewer">
+<meta property="og:title" content="CSV Viewer & Table Converter - CSV Viewer | CSV to HTML Table / JSON | AI Toolbox">
+<meta property="og:description" content="Free online csv viewer & table converter. Parse CSV/TSV into a table, copy as HTML table or JSON. Fast, secure, and works in your browser without downloading.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/en/tools/csv-viewer">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "CSV Viewer & Table Converter", "description": "Free online csv viewer & table converter. Parse CSV/TSV into a table, copy as HTML table or JSON. Fast, secure, and works in your browser without downloading.", "url": "https://tools.talang.fun/en/tools/csv-viewer", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "Parse CSV/TSV into a table, copy as HTML table or JSON", "inLanguage": "en", "author": {"@type": "Organization", "name": "AI Toolbox"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/en/" class="logo"><span class="logo-icon">🛠️</span>AI Toolbox</a>
+    <nav class="nav">
+      <a href="/en/">Home</a>
+      <a href="/en/#tools">All Tools</a>
+      <a href="/en/blog/">Blog</a>
+      <a href="/en/about">About</a>
+      <a href="/en/sponsor">Sponsor</a>
+      <a href="https://tools.talang.fun/tools/csv-viewer" class="lang-switch">中文</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">📈</div>
+  <h1>CSV Viewer & Table Converter</h1>
+  <p>Parse CSV/TSV into a table, copy as HTML table or JSON</p>
+</div>
+<div class="tool-panel">
+<div><label>CSV input:</label><textarea id="csvInput" style="min-height:260px;font-family:monospace;font-size:13px" placeholder="Paste CSV / TSV content..."></textarea></div><div style="margin-top:12px;display:flex;gap:12px;align-items:center;flex-wrap:wrap"><label>Delimiter <select id="csvDelimiter" style="width:auto"><option value=",">Comma ,</option><option value=";">Semicolon ;</option><option value="tab">Tab</option><option value="|">Pipe |</option><option value="custom">Custom</option></select></label><input id="csvCustomDelimiter" type="text" maxlength="4" value="," style="width:80px"><label><input type="checkbox" id="csvHasHeader" checked> First row is header</label><button class="btn" id="csvParse">Parse Preview</button><button class="btn btn-secondary" id="csvCopyTable">Copy HTML table</button><button class="btn btn-secondary" id="csvCopyJson">Copy JSON</button><button class="btn btn-secondary" id="csvDownload">Download JSON</button><button class="btn btn-secondary" id="csvClear">Clear</button></div><div id="csvStatus" style="margin-top:8px;color:var(--text-dim);font-size:13px"></div><div id="csvPreview" style="margin-top:16px"></div>
+</div><section class="article" style="margin-top:20px;border:1px solid var(--border);background:var(--bg-light);border-radius:12px;padding:16px">
+  <h2 style="margin-top:0">Privacy note</h2>
+  <p>This tool runs in your browser. Your input, files, JSON, JWT, images, PDFs, passwords, hashes, or text are not uploaded to an AI Toolbox server.</p>
+  <p>Basic analytics may record page views and conversion clicks, but user input and file content are not tracked.</p>
+</section>
+<article class="article" style="margin-top:32px">
+  <h2>About this tool</h2>
+  <p>Free online CSV viewer and table converter. Parse CSV, TSV, or custom-delimited data into a scrollable table, then copy it as an HTML table or JSON array. Supports quoted fields, commas inside fields, escaped double quotes, and header detection.</p><p>All parsing and conversion happen locally in your browser, making it useful for exported reports, admin lists, and lightweight data cleanup without uploading the raw table.</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>Key Features</h2><ul><li>Preview CSV/TSV as an online table</li><li>Supports comma, semicolon, Tab, pipe, and custom delimiters</li><li>Detect first row as header</li><li>Copy as HTML table</li><li>Copy or download JSON array</li><li>Supports quoted fields and commas inside fields</li><li>Browser local processing, no table data upload</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>Frequently Asked Questions</h2><h3 style="margin-top:20px;margin-bottom:8px">Can it parse commas inside fields?</h3><p>Yes. Fields wrapped in double quotes may contain commas, for example "Product, Growth".</p><h3 style="margin-top:20px;margin-bottom:8px">Can it handle TSV files?</h3><p>Yes. Select Tab in the delimiter dropdown to parse TSV content.</p><h3 style="margin-top:20px;margin-bottom:8px">Is data uploaded to a server?</h3><p>No. CSV parsing, table preview, and JSON conversion all run locally in your browser.</p></section>
+<section class="related"><h3>Related Tools</h3><div class="tools-grid"><a href="/en/tools/json-csv" class="tool-card"><div class="icon">🔄</div><h3>JSON ↔ CSV Converter</h3><p>Bidirectional JSON array ↔ CSV table conversion, supports complex values with commas/quotes</p></a><a href="/en/tools/json-formatter" class="tool-card"><div class="icon">{ }</div><h3>JSON Formatter</h3><p>Beautify, minify, and validate JSON with precise error location</p></a><a href="/en/tools/text-sort" class="tool-card"><div class="icon">🔤</div><h3>Text Sorter</h3><p>Sort text lines alphabetically, numerically, by length, or reverse</p></a><a href="/en/tools/text-dedup" class="tool-card"><div class="icon">🧹</div><h3>Text Deduplicator</h3><p>Remove duplicate lines, count lines removed and percentage</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>Need a private toolbox or custom browser tool?</h2>
+  <p>AI Toolbox can be adapted for internal workflows, private deployment, sponsored categories, or custom privacy-first utilities.</p>
+  <p><a href="/en/sponsor" data-event="conversion_cta_click" data-label="en_partner_custom_tool_cta">View partnership and custom tool options →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/csv-viewer.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI Toolbox · Free online AI & developer tools · <a href='/en/about'>About</a> · <a href='/en/sponsor'>Sponsor</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('Copied!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>
