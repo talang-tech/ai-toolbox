@@ -15,10 +15,31 @@
     leftError: isEN ? 'Left JSON error: ' : '左侧 JSON 错误：',
     rightError: isEN ? 'Right JSON error: ' : '右侧 JSON 错误：',
     identical: isEN ? '✓ Identical' : '✓ 完全相同',
-    diff: (a, b, c) => isEN ? `Found ${a} different nodes, ${b} added, ${c} removed` : `发现 ${a} 处不同，${b} 处新增，${c} 处删除`,
+    diff: (total, added, removed, types) => isEN ? `Found ${total} differences, ${added} added, ${removed} removed, ${types} type changes` : `发现 ${total} 处差异，${added} 处新增，${removed} 处删除，${types} 处类型变化`,
     copied: isEN ? 'Diff summary copied.' : '差异摘要已复制。',
     copyFail: isEN ? 'Copy failed.' : '复制失败。',
   };
+
+  function injectStyles() {
+    if (document.getElementById('jdStyles')) return;
+    const style = document.createElement('style');
+    style.id = 'jdStyles';
+    style.textContent = `
+      .jd-summary,.jd-identical{padding:10px 12px;border-radius:8px;margin-bottom:10px;background:var(--bg);border:1px solid var(--border)}
+      .jd-identical{color:var(--success);font-weight:600}
+      .jd-table{width:100%;border-collapse:collapse;font-size:13px;background:var(--card-bg);border:1px solid var(--border);border-radius:8px;overflow:hidden}
+      .jd-table th,.jd-table td{border-bottom:1px solid var(--border);padding:8px;vertical-align:top;text-align:left}
+      .jd-table th{background:var(--bg);font-weight:600}
+      .jd-path{font-family:Consolas,monospace;white-space:nowrap}
+      .jd-value{white-space:pre-wrap;font-family:Consolas,monospace}
+      .jd-missing{color:var(--text-dim);font-style:italic}
+      .jd-added .jd-label,.jd-new{color:var(--success)}
+      .jd-removed .jd-label,.jd-old{color:var(--error)}
+      .jd-type .jd-label{color:var(--warning)}
+      @media (max-width: 720px){.jd-table{display:block;overflow-x:auto}.jd-path{white-space:normal}}
+    `;
+    document.head.appendChild(style);
+  }
 
   function escape(s) {
     return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -85,7 +106,8 @@
       else changed++;
     });
 
-    const summary = '<div class="jd-summary">' + t.diff(changed, added, removed) + '</div>';
+    const types = diffs.filter(d => d.type === 'type').length;
+    const summary = '<div class="jd-summary">' + t.diff(diffs.length, added, removed, types) + '</div>';
 
     const rows = diffs.map(d => {
       const typeClass = 'jd-' + d.type;
@@ -135,6 +157,7 @@
     }
 
     const diffs = deepDiff(left, right, []);
+    injectStyles();
     output.innerHTML = renderDiff(diffs);
 
     const changed = diffs.filter(d => d.type === 'changed').length;
@@ -145,7 +168,8 @@
       status.textContent = t.identical;
       status.style.color = 'var(--success)';
     } else {
-      status.textContent = t.diff(changed, added, removed);
+      const types = diffs.filter(d => d.type === 'type').length;
+      status.textContent = t.diff(diffs.length, added, removed, types);
       status.style.color = 'var(--text-dim)';
     }
   }

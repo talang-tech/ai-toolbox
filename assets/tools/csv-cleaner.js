@@ -91,7 +91,6 @@
     });
 
     let filterNote = '';
-    let initialCount = parsedRows.filter(r => !r.empty).length;
 
     // Remove empty rows
     if (removeEmptyOpt) {
@@ -101,21 +100,7 @@
       if (removed > 0) filterNote += t.removedEmpty.replace('{n}', removed);
     }
 
-    // Remove duplicate rows
-    if (removeDupOpt) {
-      const seen = new Set();
-      const before = parsedRows.length;
-      parsedRows = parsedRows.filter(r => {
-        const key = r.fields.join('|');
-        if (seen.has(key)) return false;
-        seen.add(key);
-        return true;
-      });
-      const removed = before - parsedRows.length;
-      if (removed > 0) filterNote += t.removedDup.replace('{n}', removed);
-    }
-
-    // Clean each field
+    // Clean each field before deduplication so rows differing only by spaces/tags can match.
     const cleanedRows = parsedRows.map(r => {
       let fields = r.fields.map(f => {
         let val = f;
@@ -133,8 +118,23 @@
       return { fields, empty: false };
     });
 
+    let rowsForOutput = cleanedRows;
+    // Remove duplicate rows after cleaning.
+    if (removeDupOpt) {
+      const seen = new Set();
+      const before = rowsForOutput.length;
+      rowsForOutput = rowsForOutput.filter(r => {
+        const key = JSON.stringify(r.fields);
+        if (seen.has(key)) return false;
+        seen.add(key);
+        return true;
+      });
+      const removed = before - rowsForOutput.length;
+      if (removed > 0) filterNote += t.removedDup.replace('{n}', removed);
+    }
+
     // Only output non-empty cleaned rows
-    const outRows = cleanedRows.filter(r => r.fields.some(f => f !== ''));
+    const outRows = rowsForOutput.filter(r => r.fields.some(f => f !== ''));
     if (outRows.length === 0) {
       status.textContent = isEN ? 'No data after cleaning.' : '清洗后没有数据。';
       status.style.color = 'var(--warning)';
