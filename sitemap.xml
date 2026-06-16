@@ -116,6 +116,10 @@
   <url><loc>https://tools.talang.fun/en/tools/image-to-pdf</loc><lastmod>2026-06-11</lastmod><priority>0.8</priority></url>
   <url><loc>https://tools.talang.fun/tools/text-sort</loc><lastmod>2026-06-11</lastmod><priority>0.8</priority></url>
   <url><loc>https://tools.talang.fun/en/tools/text-sort</loc><lastmod>2026-06-11</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/tools/json-diff</loc><lastmod>2026-06-16</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/en/tools/json-diff</loc><lastmod>2026-06-16</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/tools/csv-cleaner</loc><lastmod>2026-06-16</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/en/tools/csv-cleaner</loc><lastmod>2026-06-16</lastmod><priority>0.8</priority></url>
   <url><loc>https://tools.talang.fun/tools/text-replace</loc><lastmod>2026-06-11</lastmod><priority>0.8</priority></url>
   <url><loc>https://tools.talang.fun/en/tools/text-replace</loc><lastmod>2026-06-11</lastmod><priority>0.8</priority></url>
   <url><loc>https://tools.talang.fun/blog/browser-local-office-toolbox-guide</loc><lastmod>2026-06-13</lastmod><priority>0.7</priority></url>

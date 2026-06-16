@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>CSV 清洗 - CSV 清洗 | 在线 CSV 数据清洗工具 | AI 工具盒子</title>
+<meta name="description" content="免费在线CSV 清洗工具，修剪空格、去重、移除空行、规范化 CSV 格式。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="CSV 清洗,CSV 去重,CSV 数据清洗,CSV 清理,CSV 规范化,在线CSV清洗,CSV trim,CSV clean,数据清洗工具,CSV 工具">
+<link rel="canonical" href="https://tools.talang.fun/tools/csv-cleaner">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/csv-cleaner">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/csv-cleaner">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/csv-cleaner">
+<meta property="og:title" content="CSV 清洗 - CSV 清洗 | 在线 CSV 数据清洗工具 | AI 工具盒子">
+<meta property="og:description" content="免费在线CSV 清洗工具，修剪空格、去重、移除空行、规范化 CSV 格式。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/csv-cleaner">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "CSV 清洗", "description": "免费在线CSV 清洗工具，修剪空格、去重、移除空行、规范化 CSV 格式。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/csv-cleaner", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "修剪空格、去重、移除空行、规范化 CSV 格式", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/tools/csv-cleaner" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🧹</div>
+  <h1>CSV 清洗</h1>
+  <p>修剪空格、去重、移除空行、规范化 CSV 格式</p>
+</div>
+<div class="tool-panel">
+<div style="margin-bottom:12px"><label style="font-size:13px;font-weight:600">输入 CSV</label><textarea id="ccInput" style="width:100%;min-height:200px;font-family:Consolas,monospace;font-size:13px" placeholder="name, email, role&#10;Alice , alice@test.com , Developer&#10;Bob,bob@test.com, Designer&#10;Alice , alice@test.com , Developer&#10;"></textarea></div><div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:12px"><label><input type="checkbox" id="ccTrim" checked> 修剪首尾空格</label><label><input type="checkbox" id="ccRemoveEmpty" checked> 移除空行</label><label><input type="checkbox" id="ccRemoveDup"> 移除重复行</label><label><input type="checkbox" id="ccNormalize"> 规范化引号</label><label><input type="checkbox" id="ccStrip"> 去除 HTML 标签</label><label><input type="checkbox" id="ccCollapse"> 合并多余空格</label></div><div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px"><button class="btn" id="ccClean">清洗数据</button><button class="btn btn-secondary" id="ccCopy">复制结果</button></div><div id="ccStatus" style="margin-top:8px;font-size:13px;margin-bottom:8px"></div><label style="font-size:13px;font-weight:600">清洗结果</label><textarea id="ccOutput" style="width:100%;min-height:200px;font-family:Consolas,monospace;font-size:13px" readonly placeholder="清洗后的 CSV 将显示在这里..."></textarea>
+</div><section class="article" style="margin-top:20px;border:1px solid var(--border);background:var(--bg-light);border-radius:12px;padding:16px">
+  <h2 style="margin-top:0">隐私说明</h2>
+  <p>这个工具在你的浏览器中运行。你输入的内容、文件、JSON、JWT、图片、PDF、密码、哈希或文本不会上传到 AI 工具盒子的服务器。</p>
+  <p>站点可能记录基础访问量和转化点击事件，但不会追踪用户输入内容或文件内容。</p>
+</section>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>CSV 数据清洗工具帮助你快速清理和规范化 CSV 文件。支持修剪前后空格、移除空行、去重、规范化引号格式、去除 HTML 标签和合并多余空格等清洗操作。处理后的 CSV 保持标准格式，可直接用于数据库导入、数据分析或文件转换。</p><p>所有处理在浏览器本地完成，数据不会被上传。</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>修剪单元格首尾空格</li><li>自动移除空行</li><li>全行去重</li><li>引号格式规范化</li><li>去除 HTML 标签</li><li>合并多余连续空格</li><li>一键复制清洗结果</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">清洗后引号格式变了？</h3><p>规范化引号选项会将多余的外层包裹引号移除，同时保留含逗号、换行或引号本身的字段的引号。</p><h3 style="margin-top:20px;margin-bottom:8px">可以处理大文件吗？</h3><p>只要浏览器内存允许即可。建议一次处理不超过 50MB 的 CSV 文件。</p><h3 style="margin-top:20px;margin-bottom:8px">数据会上传吗？</h3><p>不会。所有清洗在浏览器本地完成，适合处理含敏感信息的 CSV 数据。</p></section>
+<section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/csv-viewer" class="tool-card"><div class="icon">📈</div><h3>CSV 查看器/转表格</h3><p>解析 CSV/TSV 为表格，可复制 HTML 表格或 JSON</p></a><a href="/tools/text-replace" class="tool-card"><div class="icon">🔄</div><h3>文本批量替换</h3><p>批量查找替换文本，支持正则表达式和大小写选项</p></a><a href="/tools/text-dedup" class="tool-card"><div class="icon">🧹</div><h3>文本去重</h3><p>移除重复行，统计移除数量和百分比</p></a><a href="/tools/remove-lines" class="tool-card"><div class="icon">🧹</div><h3>空行清理</h3><p>移除空行、去前后空格、去多余空格</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/csv-cleaner.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>

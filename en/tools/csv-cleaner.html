@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>CSV Cleaner - CSV Cleaner | Online CSV Data Cleaning Tool | AI Toolbox</title>
+<meta name="description" content="Free online csv cleaner. Trim spaces, remove duplicates/empty rows, normalize CSV format. Fast, secure, and works in your browser without downloading.">
+<meta name="keywords" content="CSV cleaner, CSV deduplicate, CSV clean, CSV trim, CSV normalize, data cleaning tool, online CSV cleaner">
+<link rel="canonical" href="https://tools.talang.fun/en/tools/csv-cleaner">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/csv-cleaner">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/csv-cleaner">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/csv-cleaner">
+<meta property="og:title" content="CSV Cleaner - CSV Cleaner | Online CSV Data Cleaning Tool | AI Toolbox">
+<meta property="og:description" content="Free online csv cleaner. Trim spaces, remove duplicates/empty rows, normalize CSV format. Fast, secure, and works in your browser without downloading.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/en/tools/csv-cleaner">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "CSV Cleaner", "description": "Free online csv cleaner. Trim spaces, remove duplicates/empty rows, normalize CSV format. Fast, secure, and works in your browser without downloading.", "url": "https://tools.talang.fun/en/tools/csv-cleaner", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "Trim spaces, remove duplicates/empty rows, normalize CSV format", "inLanguage": "en", "author": {"@type": "Organization", "name": "AI Toolbox"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/en/" class="logo"><span class="logo-icon">🛠️</span>AI Toolbox</a>
+    <nav class="nav">
+      <a href="/en/">Home</a>
+      <a href="/en/#tools">All Tools</a>
+      <a href="/en/blog/">Blog</a>
+      <a href="/en/about">About</a>
+      <a href="/en/sponsor">Sponsor</a>
+      <a href="https://tools.talang.fun/tools/csv-cleaner" class="lang-switch">中文</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🧹</div>
+  <h1>CSV Cleaner</h1>
+  <p>Trim spaces, remove duplicates/empty rows, normalize CSV format</p>
+</div>
+<div class="tool-panel">
+<div style="margin-bottom:12px"><label style="font-size:13px;font-weight:600">Input CSV</label><textarea id="ccInput" style="width:100%;min-height:200px;font-family:Consolas,monospace;font-size:13px" placeholder="name, email, role&#10;Alice , alice@test.com , Developer&#10;Bob,bob@test.com, Designer&#10;Alice , alice@test.com , Developer&#10;"></textarea></div><div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:12px"><label><input type="checkbox" id="ccTrim" checked> Trim whitespace</label><label><input type="checkbox" id="ccRemoveEmpty" checked> Remove empty rows</label><label><input type="checkbox" id="ccRemoveDup"> Remove duplicates</label><label><input type="checkbox" id="ccNormalize"> Normalize quotes</label><label><input type="checkbox" id="ccStrip"> Strip HTML tags</label><label><input type="checkbox" id="ccCollapse"> Collapse whitespace</label></div><div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px"><button class="btn" id="ccClean">Clean</button><button class="btn btn-secondary" id="ccCopy">Copy Result</button></div><div id="ccStatus" style="margin-top:8px;font-size:13px;margin-bottom:8px"></div><label style="font-size:13px;font-weight:600">Cleaned Result</label><textarea id="ccOutput" style="width:100%;min-height:200px;font-family:Consolas,monospace;font-size:13px" readonly placeholder="Cleaned CSV will appear here..."></textarea>
+</div><section class="article" style="margin-top:20px;border:1px solid var(--border);background:var(--bg-light);border-radius:12px;padding:16px">
+  <h2 style="margin-top:0">Privacy note</h2>
+  <p>This tool runs in your browser. Your input, files, JSON, JWT, images, PDFs, passwords, hashes, or text are not uploaded to an AI Toolbox server.</p>
+  <p>Basic analytics may record page views and conversion clicks, but user input and file content are not tracked.</p>
+</section>
+<article class="article" style="margin-top:32px">
+  <h2>About this tool</h2>
+  <p>CSV data cleaner helps you quickly clean and normalize CSV files. Supports trimming whitespace, removing empty rows, deduplication, quote normalization, HTML tag removal, and whitespace collapsing. The output CSV is standardized and ready for database import, data analysis, or file conversion.</p><p>All processing happens locally. Your data stays on your device.</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>Key Features</h2><ul><li>Trim leading/trailing whitespace</li><li>Auto-remove empty rows</li><li>Deduplicate full rows</li><li>Normalize quote formatting</li><li>Strip HTML tags from fields</li><li>Collapse consecutive whitespace</li><li>One-click copy cleaned result</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>Frequently Asked Questions</h2><h3 style="margin-top:20px;margin-bottom:8px">My quotes changed after cleaning?</h3><p>The normalize option removes unnecessary outer quotes while preserving quotes for fields containing commas, newlines, or quotes.</p><h3 style="margin-top:20px;margin-bottom:8px">Can it handle large files?</h3><p>As long as browser memory allows. We recommend processing CSV files up to 50MB at a time.</p><h3 style="margin-top:20px;margin-bottom:8px">Is data uploaded?</h3><p>No. All cleaning happens locally, safe for sensitive data.</p></section>
+<section class="related"><h3>Related Tools</h3><div class="tools-grid"><a href="/en/tools/csv-viewer" class="tool-card"><div class="icon">📈</div><h3>CSV Viewer & Table Converter</h3><p>Parse CSV/TSV into a table, copy as HTML table or JSON</p></a><a href="/en/tools/text-replace" class="tool-card"><div class="icon">🔄</div><h3>Text Find & Replace</h3><p>Batch find and replace text with regex and case options</p></a><a href="/en/tools/text-dedup" class="tool-card"><div class="icon">🧹</div><h3>Text Deduplicator</h3><p>Remove duplicate lines, count lines removed and percentage</p></a><a href="/en/tools/remove-lines" class="tool-card"><div class="icon">🧹</div><h3>Remove Empty Lines</h3><p>Remove empty lines, trim whitespace, remove consecutive spaces</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>Need a private toolbox or custom browser tool?</h2>
+  <p>AI Toolbox can be adapted for internal workflows, private deployment, sponsored categories, or custom privacy-first utilities.</p>
+  <p><a href="/en/sponsor" data-event="conversion_cta_click" data-label="en_partner_custom_tool_cta">View partnership and custom tool options →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/csv-cleaner.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI Toolbox · Free online AI & developer tools · <a href='/en/about'>About</a> · <a href='/en/sponsor'>Sponsor</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('Copied!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>

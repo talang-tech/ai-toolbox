@@ -317,11 +317,11 @@ def conversion_cta(lang):
 def privacy_notice(slug, lang):
     """Sensitive-tool privacy note. Keep it concise and visible near the tool UI."""
     sensitive = {
-        "json-formatter", "jwt-decoder", "hash-generator", "password-generator",
+        "json-formatter", "json-diff", "jwt-decoder", "hash-generator", "password-generator",
         "pdf-merge", "pdf-split", "pdf-to-image", "pdf-extract-text", "image-to-pdf",
         "image-compress", "image-convert", "image-resize", "image-watermark", "image-base64",
         "url-encoder", "text-dedup", "text-sort", "text-replace", "text-diff", "remove-lines",
-        "yaml-formatter", "xml-formatter", "markdown-to-html", "csv-viewer"
+        "yaml-formatter", "xml-formatter", "markdown-to-html", "csv-viewer", "csv-cleaner"
     }
     if slug not in sensitive:
         return ""

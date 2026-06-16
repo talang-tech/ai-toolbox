@@ -109,6 +109,8 @@ JSON Schema 适合把接口契约写成可验证规则：
 
 JSON Diff 的价值在于把差异压缩到最小范围：新增字段、删除字段、值变化、数组项变化、类型变化。这样排查时不用在几百行 JSON 里来回滚动。
 
+可以使用 [JSON 对比工具](/tools/json-diff) 直接在浏览器中完成结构化的 JSON 差异对比。
+
 如果只是文本层面对比，也可以用 [文本对比](/tools/text-diff)。但 JSON 对比最好先格式化并按结构理解，否则字段顺序变化、缩进变化会制造大量噪音。
 
 ## 第四步：用 JSONPath 提取关键字段
@@ -130,7 +132,7 @@ JSON Diff 的价值在于把差异压缩到最小范围：新增字段、删除�
 1. **格式化**：用 [JSON 格式化](/tools/json-formatter) 确认 JSON 语法正确；
 2. **压缩/复制**：需要贴回接口工具时，压缩成一行；
 3. **Schema 校验**：用 JSON Schema 规则检查字段、类型和必填项；
-4. **差异对比**：用 JSON Diff 对比正常/异常样本；
+4. **差异对比**：用 [JSON 对比](/tools/json-diff) 对比正常/异常样本；
 5. **字段提取**：用 [JSONPath](/tools/jsonpath) 抽取关键字段；
 6. **格式转换**：必要时用 [JSON 与 CSV 转换](/tools/json-csv) 输出给产品、测试或运营查看。
 
@@ -156,7 +158,7 @@ JSON 很容易被低估风险。看起来只是结构化文本，里面却可能
 
 - JSON Schema 生成器：从示例 JSON 反推基础 Schema；
 - JSON Schema 校验器：本地校验数据与 Schema；
-- JSON Diff：结构化展示新增、删除和值变化；
+- [JSON 对比](/tools/json-diff)：结构化展示新增、删除和值变化；
 - JSON Patch 生成器：把两份 JSON 的差异转为 patch；
 - JSON Mock 数据生成：根据 Schema 生成测试样本。
 
@@ -170,7 +172,7 @@ JSON 很容易被低估风险。看起来只是结构化文本，里面却可能
 
 - 先格式化，确认语法；
 - 再用 Schema 校验契约；
-- 然后用 Diff 对比样本；
+- 然后用 [JSON 对比](/tools/json-diff) 对比样本；
 - 最后用 JSONPath 聚焦字段。
 
 这样能把“感觉哪里不对”变成可定位、可复现、可沟通的问题。对于包含用户数据、日志和内部配置的 JSON，尽量选择浏览器本地处理，减少不必要的数据外传。
