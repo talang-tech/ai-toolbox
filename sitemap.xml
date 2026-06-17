@@ -28,6 +28,8 @@
   <url><loc>https://tools.talang.fun/en/tools/password-generator</loc><lastmod>2026-06-16</lastmod><priority>0.8</priority></url>
   <url><loc>https://tools.talang.fun/tools/uuid-generator</loc><lastmod>2026-06-16</lastmod><priority>0.8</priority></url>
   <url><loc>https://tools.talang.fun/en/tools/uuid-generator</loc><lastmod>2026-06-16</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/tools/markdown-table</loc><lastmod>2026-06-17</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/en/tools/markdown-table</loc><lastmod>2026-06-17</lastmod><priority>0.8</priority></url>
   <url><loc>https://tools.talang.fun/tools/qr-code</loc><lastmod>2026-06-16</lastmod><priority>0.8</priority></url>
   <url><loc>https://tools.talang.fun/en/tools/qr-code</loc><lastmod>2026-06-16</lastmod><priority>0.8</priority></url>
   <url><loc>https://tools.talang.fun/tools/timestamp</loc><lastmod>2026-06-16</lastmod><priority>0.8</priority></url>
@@ -118,6 +120,8 @@
   <url><loc>https://tools.talang.fun/en/tools/text-sort</loc><lastmod>2026-06-16</lastmod><priority>0.8</priority></url>
   <url><loc>https://tools.talang.fun/tools/json-diff</loc><lastmod>2026-06-16</lastmod><priority>0.8</priority></url>
   <url><loc>https://tools.talang.fun/en/tools/json-diff</loc><lastmod>2026-06-16</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/tools/json-schema-validator</loc><lastmod>2026-06-17</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/en/tools/json-schema-validator</loc><lastmod>2026-06-17</lastmod><priority>0.8</priority></url>
   <url><loc>https://tools.talang.fun/tools/csv-cleaner</loc><lastmod>2026-06-16</lastmod><priority>0.8</priority></url>
   <url><loc>https://tools.talang.fun/en/tools/csv-cleaner</loc><lastmod>2026-06-16</lastmod><priority>0.8</priority></url>
   <url><loc>https://tools.talang.fun/tools/text-replace</loc><lastmod>2026-06-16</lastmod><priority>0.8</priority></url>

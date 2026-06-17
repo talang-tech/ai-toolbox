@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>JSON Schema 入门：从零理解数据校验规范 | AI 工具盒子</title>
+<meta name="description" content="JSON Schema 入门教程，讲解什么是 JSON Schema、基础语法、常用校验规则（type、required、pattern、format、enum）、高级用法（allOf/oneOf/if-then-else），以及在线校验工具推荐。">
+<meta name="keywords" content="JSON Schema入门,JSON Schema教程,JSON数据校验,Schema语法,JSON Schema Draft-07,在线JSON Schema校验,JSON验证工具,API接口校验,数据结构验证">
+<link rel="canonical" href="https://tools.talang.fun/blog/json-schema-guide">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/blog/json-schema-guide">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/blog/json-schema-guide">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/blog/json-schema-guide">
+<meta property="og:title" content="JSON Schema 入门：从零理解数据校验规范 | AI 工具盒子">
+<meta property="og:description" content="JSON Schema 入门教程，讲解什么是 JSON Schema、基础语法、常用校验规则，以及在线校验工具推荐。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/blog/json-schema-guide">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "JSON Schema 入门：从零理解数据校验规范", "description": "JSON Schema 入门教程，讲解什么是 JSON Schema、基础语法、常用校验规则，以及在线校验工具推荐。", "author": {"@type": "Organization", "name": "AI 工具盒子"}, "datePublished": "2026-06-17", "url": "https://tools.talang.fun/blog/json-schema-guide"}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/blog/json-schema-guide" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<article class="article">
+<h1>JSON Schema 入门：从零理解数据校验规范</h1>
+<p class="post-meta" style="color:#888;font-size:14px;margin-bottom:24px">2026-06-17 · AI 工具盒子</p>
+
+<p>在 API 开发、配置文件管理、数据集成等场景中，我们经常需要确保 JSON 数据符合特定的结构和约束。JSON Schema 正是为了解决这个问题而生——一种声明式的 JSON 数据描述语言，让你用 JSON 本身来描述 JSON 数据的规则。</p>
+
+<h2>什么是 JSON Schema？</h2>
+<p>JSON Schema 是一个描述 JSON 数据格式的规范。它像一套「数据说明书」，定义一个 JSON 对象应该包含哪些字段、每个字段的类型、哪些字段必填、值的格式和范围等。然后你就可以用工具自动检查数据是否「符合说明书」。</p>
+<p>JSON Schema 是 <strong>自描述的</strong>：用 JSON 格式写规则，校验 JSON 数据。当前主流版本是 <strong>Draft-07</strong>，许多在线工具和服务（如 JSON Schema 校验器）都支持它。</p>
+
+<h2>快速上手：第一个 Schema</h2>
+<p>假设我们有一个用户注册 API，期望接收这样的 JSON：</p>
+<pre><code>{
+  "name": "张三",
+  "email": "zhangsan@example.com",
+  "age": 28
+}</code></pre>
+<p>用 JSON Schema 描述它：</p>
+<pre><code>{
+  "type": "object",
+  "required": ["name", "email", "age"],
+  "properties": {
+    "name": { "type": "string" },
+    "email": { "type": "string", "format": "email" },
+    "age": { "type": "integer", "minimum": 0, "maximum": 150 }
+  }
+}</code></pre>
+<p>这个 Schema 规定了：数据必须是对象 (object)；三个字段必填 (required)；name 是字符串；email 必须是合法的 email 格式；age 是整数且范围 0-150。</p>
+
+<h2>基础校验规则详解</h2>
+
+<h3>类型检查 (type)</h3>
+<p><code>type</code> 是最基础也最常用的校验规则，支持七种类型：<code>string</code>、<code>number</code>、<code>integer</code>、<code>object</code>、<code>array</code>、<code>boolean</code>、<code>null</code>。JSON Schema 把 <code>integer</code> 和 <code>number</code> 分开对待——整型是 number 的子集。</p>
+
+<h3>必填字段 (required)</h3>
+<p><code>required</code> 是一个字符串数组，列出必须在数据中出现的字段名：</p>
+<pre><code>{
+  "type": "object",
+  "required": ["id", "created_at"]
+}</code></pre>
+
+<h3>字符串约束 (pattern / minLength / maxLength / format)</h3>
+<p>JSON Schema 支持多种字符串校验方式：</p>
+<pre><code>{
+  "type": "object",
+  "properties": {
+    "phone": { "type": "string", "pattern": "^1[3-9]\\d{9}$" },
+    "bio": { "type": "string", "minLength": 10, "maxLength": 500 },
+    "website": { "type": "string", "format": "uri" },
+    "uuid": { "type": "string", "format": "uuid" }
+  }
+}</code></pre>
+<p><code>format</code> 支持 email、uri、date-time、uuid、ipv4、hostname 等常用格式。</p>
+
+<h3>数值约束 (minimum / maximum / multipleOf)</h3>
+<pre><code>{
+  "type": "object",
+  "properties": {
+    "price": { "type": "number", "minimum": 0.01, "exclusiveMinimum": true },
+    "quantity": { "type": "integer", "minimum": 1, "maximum": 999 },
+    "batch": { "type": "integer", "multipleOf": 10 }
+  }
+}</code></pre>
+
+<h3>枚举 (enum)</h3>
+<p>限制值必须在枚举列表中：</p>
+<pre><code>{
+  "type": "object",
+  "properties": {
+    "status": { "type": "string", "enum": ["active", "inactive", "suspended"] }
+  }
+}</code></pre>
+
+<h2>数组校验</h2>
+<p>JSON Schema 对数组的校验非常灵活，可以分别校验每个元素：</p>
+<pre><code>{
+  "type": "array",
+  "items": { "type": "string" },
+  "minItems": 1,
+  "maxItems": 10,
+  "uniqueItems": true
+}</code></pre>
+<p>也可以使用「元组」形式：</p>
+<pre><code>{
+  "type": "array",
+  "items": [
+    { "type": "string" },
+    { "type": "integer" },
+    { "type": "boolean" }
+  ],
+  "additionalItems": false
+}</code></pre>
+
+<h2>对象高级校验</h2>
+
+<h3>additionalProperties</h3>
+<p>默认情况下，JSON 对象可以包含 Schema 未声明的额外字段。用 <code>additionalProperties: false</code> 可以禁止：</p>
+<pre><code>{
+  "type": "object",
+  "properties": {
+    "name": { "type": "string" },
+    "email": { "type": "string", "format": "email" }
+  },
+  "additionalProperties": false
+}</code></pre>
+
+<h3>propertyNames</h3>
+<p>用正则限制属性名格式：</p>
+<pre><code>{
+  "type": "object",
+  "propertyNames": { "pattern": "^[a-z_][a-z0-9_]*$" }
+}</code></pre>
+
+<h2>组合校验：allOf / anyOf / oneOf / not</h2>
+<p>JSON Schema 支持逻辑组合多个子 Schema：</p>
+<ul>
+<li><strong>allOf</strong>：子 Schema 全部通过才算通过</li>
+<li><strong>anyOf</strong>：至少一个子 Schema 通过</li>
+<li><strong>oneOf</strong>：恰好一个子 Schema 通过</li>
+<li><strong>not</strong>：不能匹配子 Schema</li>
+</ul>
+<p>举例：用户可以是普通用户或 VIP，但只能是一种：</p>
+<pre><code>{
+  "oneOf": [
+    { "properties": { "role": { "const": "user" } }, "required": ["role"] },
+    { "properties": { "role": { "const": "vip" }, "vip_level": { "type": "integer" } }, "required": ["role", "vip_level"] }
+  ]
+}</code></pre>
+
+<h2>if-then-else 条件校验</h2>
+<p>JSON Schema Draft-07 最强大的新特性之一：</p>
+<pre><code>{
+  "type": "object",
+  "properties": {
+    "type": { "enum": ["individual", "company"] },
+    "tax_id": { "type": "string" },
+    "personal_id": { "type": "string" }
+  },
+  "if": { "properties": { "type": { "const": "company" } } },
+  "then": { "required": ["tax_id"] },
+  "else": { "required": ["personal_id"] }
+}</code></pre>
+
+<h2>实际应用场景</h2>
+<h3>1. API 响应校验</h3>
+<p>前后端联调时，用 JSON Schema 校验 API 响应是否「遵守合约」，快速定位少字段、类型不对、格式非法等问题。配合 <a href="/tools/json-schema-validator">在线 JSON Schema 校验器</a> 可以不用安装任何工具。</p>
+
+<h3>2. 配置文件验证</h3>
+<p>给项目中的 JSON 配置文件（如 <code>config.json</code>）编写 Schema，在启动时自动验证配置完整性。</p>
+
+<h3>3. 表单规则描述</h3>
+<p>用 JSON Schema 描述表单校验规则，前端和后端共用同一套 Schema，避免校验逻辑不一致。</p>
+
+<h3>4. 数据质量检查</h3>
+<p>数据管道中对每批数据做 Schema 校验，确保字段格式符合预期，及早拦截脏数据。</p>
+
+<h2>在线验证</h2>
+<p>无需安装，打开 <a href="/tools/json-schema-validator">JSON Schema 校验器</a> 即可在浏览器中体验。粘贴 Schema 和数据，一键校验，所有数据留在本地，适合处理敏感业务数据。</p>
+
+<hr>
+<p>相关工具：<a href="/tools/json-schema-validator">JSON Schema 校验器</a> · <a href="/tools/json-formatter">JSON 格式化</a> · <a href="/tools/json-diff">JSON Diff</a> · <a href="/tools/jsonpath">JSONPath 提取</a></p>
+</article>
+</main>
+<iframe src="/sponsor.html" style="width:100%;border:none;height:180px" loading="lazy" title="sponsor"></iframe>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>© 2026 AI 工具盒子 - <a href="https://github.com/talang-tech/ai-toolbox">GitHub</a> - <a href="/about">关于</a> - <a href="/sponsor">合作</a> - <a href="/privacy">隐私</a></p>
+  </div>
+</footer>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+</body>
+</html>

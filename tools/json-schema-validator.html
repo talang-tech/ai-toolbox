@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>JSON Schema 校验 - JSON Schema 校验器 | 在线 JSON Schema 验证工具 | AI 工具盒子 | AI 工具盒子</title>
+<meta name="description" content="免费在线JSON Schema 校验工具，根据 JSON Schema 标准校验 JSON 数据结构，支持 Draft-07。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="JSON Schema 校验,JSON Schema 验证,JSON 校验器,Schema Validator,JSON 模式匹配,JSON 数据校验,在线 JSON Schema,JSON 约束检查">
+<link rel="canonical" href="https://tools.talang.fun/tools/json-schema-validator">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/json-schema-validator">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/json-schema-validator">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/json-schema-validator">
+<meta property="og:title" content="JSON Schema 校验 - JSON Schema 校验器 | 在线 JSON Schema 验证工具 | AI 工具盒子 | AI 工具盒子">
+<meta property="og:description" content="免费在线JSON Schema 校验工具，根据 JSON Schema 标准校验 JSON 数据结构，支持 Draft-07。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/json-schema-validator">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "JSON Schema 校验", "description": "免费在线JSON Schema 校验工具，根据 JSON Schema 标准校验 JSON 数据结构，支持 Draft-07。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/json-schema-validator", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "根据 JSON Schema 标准校验 JSON 数据结构，支持 Draft-07", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/tools/json-schema-validator" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">✓</div>
+  <h1>JSON Schema 校验</h1>
+  <p>根据 JSON Schema 标准校验 JSON 数据结构，支持 Draft-07</p>
+</div>
+<div class="tool-panel">
+<div style="margin-bottom:12px"><label style="font-size:13px;font-weight:600">JSON Schema</label><textarea id="jsvSchema" style="width:100%;min-height:180px;font-family:Consolas,monospace;font-size:13px" placeholder='{
+  "type": "object",
+  "required": ["name", "email", "age"],
+  "properties": {
+    "name": {"type": "string"},
+    "email": {"type": "string", "format": "email"},
+    "age": {"type": "integer", "minimum": 0, "maximum": 150}
+  }
+}'></textarea></div><div style="margin-bottom:12px"><label style="font-size:13px;font-weight:600">JSON 数据</label><textarea id="jsvData" style="width:100%;min-height:180px;font-family:Consolas,monospace;font-size:13px" placeholder='{"name": "Alice", "email": "alice@test.com", "age": 30}'></textarea></div><div style="display:flex;gap:8px;margin-bottom:12px"><button class="btn" id="jsvValidate">校验 Validate</button><button class="btn btn-secondary" id="jsvCopy">复制结果</button></div><div style="margin-top:8px"><label style="font-size:13px;font-weight:600">校验结果</label><textarea id="jsvOutput" readonly style="width:100%;min-height:120px;font-family:Consolas,monospace;font-size:13px;background:var(--bg)" placeholder='校验通过 ✓ 或错误详情 ✗'></textarea></div><div style="margin-top:8px;font-size:12px;color:#666">提示：Ctrl+Enter / Cmd+Enter 快速校验</div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>JSON Schema 校验工具帮助你根据 JSON Schema 标准（Draft-07）检查 JSON 数据是否符合预期的结构和约束。支持类型检查、required 属性、pattern 正则匹配、enum 枚举、minimum/maximum 范围、array items 与 uniqueItems、allOf/anyOf/oneOf/if-then-else、format（email/uri/date-time/uuid/ipv4/hostname）、additionalProperties 等多种校验规则。</p><p>无论是 API 响应校验、配置文件验证还是数据测试，这个工具都能精准定位不符合 Schema 的字段和原因。</p><p>所有处理在浏览器本地完成，数据不会上传到服务器。</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>支持 JSON Schema Draft-07 核心规范</li><li>类型检查：string、number、integer、object、array、boolean、null</li><li>字符串约束：minLength、maxLength、pattern、format（email/uri/uuid 等）</li><li>数值约束：minimum、maximum、multipleOf</li><li>数组约束：minItems、maxItems、uniqueItems、contains</li><li>条件校验：allOf、anyOf、oneOf、not、if-then-else</li><li>对象约束：required、properties、additionalProperties、dependencies</li><li>精准错误定位，显示具体路径和原因</li><li>Ctrl+Enter 快捷键快速校验</li><li>纯本地处理，数据零上传</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">支持 JSON Schema 哪个版本？</h3><p>支持 JSON Schema Draft-07（2019-09 的大部分核心功能）。Draft-2020-12 的部分新功能如 prefixItems 暂不支持。</p><h3 style="margin-top:20px;margin-bottom:8px">校验规则能覆盖什么场景？</h3><p>日常常见的 API 校验、配置验证、数据测试都能覆盖。支持 type、required、pattern、format、enum、数值范围、数组约束、条件式（if-then-else）等。</p><h3 style="margin-top:20px;margin-bottom:8px">数据会被上传到服务器吗？</h3><p>不会。所有处理 100% 在浏览器本地执行，数据不会离开你的设备。</p><h3 style="margin-top:20px;margin-bottom:8px">最大支持多大 JSON？</h3><p>受浏览器内存限制，建议在几百 KB 以内。超大 JSON（数 MB）可能出现卡顿。</p><h3 style="margin-top:20px;margin-bottom:8px">和 JSON 格式化工具什么区别？</h3><p>JSON 格式化侧重格式化和压缩；JSON Schema 校验侧重根据 Schema 验证数据结构是否正确，两者互补使用效果更佳。</p><h3 style="margin-top:20px;margin-bottom:8px">如何快速使用？</h3><p>在 Schema 或数据输入框按 Ctrl+Enter（Mac: Cmd+Enter）即可快速校验。</p></section>
+<section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/json-formatter" class="tool-card"><div class="icon">{ }</div><h3>JSON 格式化</h3><p>JSON 美化、压缩、校验，错误位置精准定位</p></a><a href="/tools/json-diff" class="tool-card"><div class="icon">↔</div><h3>JSON 对比</h3><p>深层比较两个 JSON 的差异，精准定位新增/删除/修改项</p></a><a href="/tools/json-to-yaml" class="tool-card"><div class="icon">📊</div><h3>JSON ↔ YAML 互转</h3><p>JSON 与 YAML 格式相互转换</p></a><a href="/tools/jsonpath" class="tool-card"><div class="icon">🔍</div><h3>JSONPath 提取</h3><p>用 $.path 语法快速从 JSON 中提取需要的数据</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/json-schema-validator.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>
