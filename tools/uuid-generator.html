@@ -4,15 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
-<title>UUID 生成器 - UUID 生成器 | UUID v4/v7 在线生成 | AI 工具盒子</title>
-<meta name="description" content="免费在线UUID 生成器工具，生成 UUID v4 / v7（标准格式）。快速、安全、无需下载，浏览器中直接使用。">
-<meta name="keywords" content="UUID,UUID 生成,GUID,uuid v4,uuid v7">
+<title>UUID / ULID / NanoID 生成器 - UUID / ULID / NanoID 在线生成器 | 多种唯一标识符 | AI 工具盒子</title>
+<meta name="description" content="免费在线UUID / ULID / NanoID 生成器工具，生成 UUID v4/v7、ULID、NanoID、CUID、Snowflake。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="UUID,UUID 生成,GUID,ULID,NanoID,CUID,Snowflake,唯一ID,分布式ID">
 <link rel="canonical" href="https://tools.talang.fun/tools/uuid-generator">
 <link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/uuid-generator">
 <link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/uuid-generator">
 <link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/uuid-generator">
-<meta property="og:title" content="UUID 生成器 - UUID 生成器 | UUID v4/v7 在线生成 | AI 工具盒子">
-<meta property="og:description" content="免费在线UUID 生成器工具，生成 UUID v4 / v7（标准格式）。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:title" content="UUID / ULID / NanoID 生成器 - UUID / ULID / NanoID 在线生成器 | 多种唯一标识符 | AI 工具盒子">
+<meta property="og:description" content="免费在线UUID / ULID / NanoID 生成器工具，生成 UUID v4/v7、ULID、NanoID、CUID、Snowflake。快速、安全、无需下载，浏览器中直接使用。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://tools.talang.fun/tools/uuid-generator">
 <meta name="twitter:card" content="summary">
@@ -20,7 +20,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "UUID 生成器", "description": "免费在线UUID 生成器工具，生成 UUID v4 / v7（标准格式）。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/uuid-generator", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "生成 UUID v4 / v7（标准格式）", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "UUID / ULID / NanoID 生成器", "description": "免费在线UUID / ULID / NanoID 生成器工具，生成 UUID v4/v7、ULID、NanoID、CUID、Snowflake。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/uuid-generator", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "生成 UUID v4/v7、ULID、NanoID、CUID、Snowflake", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
 </head>
 <body>
 <header class="site-header">
@@ -39,18 +39,18 @@
 <main class="container">
 <div class="tool-header">
   <div class="icon">🆔</div>
-  <h1>UUID 生成器</h1>
-  <p>生成 UUID v4 / v7（标准格式）</p>
+  <h1>UUID / ULID / NanoID 生成器</h1>
+  <p>生成 UUID v4/v7、ULID、NanoID、CUID、Snowflake</p>
 </div>
 <div class="tool-panel">
-<div class="input-row"><label>版本:</label><select id="version" style="width:120px"><option value="4">v4 (随机)</option><option value="7">v7 (时间序)</option></select><label>数量:</label><input type="number" id="count" value="5" min="1" max="100" style="width:80px"><button class="btn" id="genBtn">生成</button></div><textarea id="output" readonly style="min-height:200px"></textarea><button class="btn btn-secondary" id="copyBtn" style="margin-top:8px">📋 复制</button>
+<div class="input-row"><label>类型:</label><select id="uuid-type" style="width:160px"><option value="uuid-v4">UUID v4 (随机)</option><option value="uuid-v7">UUID v7 (时间序)</option><option value="uuid-v1">UUID v1 (时间)</option><option value="uuid-v5">UUID v5 (SHA-1)</option><option value="ulid">ULID (26字符)</option><option value="nanoid">NanoID (21字符)</option><option value="cuid">CUID (~25字符)</option><option value="snowflake">Snowflake (64位)</option></select><label>数量:</label><input type="number" id="uuid-count" value="5" min="1" max="100" style="width:80px"><button class="btn" id="genBtn">生成</button></div><p style="margin:4px 0;font-size:13px;color:var(--text-muted)" id="type-info"></p><textarea id="uuid-output" readonly style="min-height:200px"></textarea><p class="tool-privacy-notice" style="margin-top:8px;font-size:13px;color:var(--text-muted)">🔒 所有生成在浏览器本地完成，不会上传任何数据到服务器</p><button class="btn btn-secondary" id="copyBtn" style="margin-top:8px">📋 复制</button>
 </div>
 <article class="article" style="margin-top:32px">
   <h2>关于这个工具</h2>
-  <p>UUID（通用唯一标识符）是一个 128 位的标识符，碰撞概率极低，常用作数据库主键、分布式系统 ID。</p><p>本工具支持 v4（完全随机）和 v7（基于时间戳，可排序）。可一次生成多个。</p>
+  <p>本工具支持多种唯一标识符格式，全部在浏览器本地生成，无需网络传输。</p><p><strong>UUID</strong> — 128位标准标识符，v4（随机）、v7（时间排序）、v1、v5。</p><p><strong>ULID</strong> — 26字符 Base32 Crockford 编码，时间可排序，比 UUID 更短。</p><p><strong>NanoID</strong> — 21字符 URL 安全标识符（A-Za-z0-9_-）。</p><p><strong>CUID</strong> — 水平缩放的短唯一 ID（约25字符）。</p><p><strong>Snowflake</strong> — Twitter/X Snowflake 风格的 64 位整数 ID。</p>
 </article>
-<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>生成 UUID v4（随机）</li><li>生成 UUID v7（时间排序）</li><li>批量生成多个 UUID</li><li>一键复制全部</li><li>大小写格式选择</li></ul></section>
-<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">UUID v4 和 v7 有什么区别？</h3><p>v4 是完全随机的；v7 包含时间戳前缀，可按生成时间排序，适合数据库主键。</p><h3 style="margin-top:20px;margin-bottom:8px">UUID 会重复吗？</h3><p>理论上存在重复可能，但概率极低，实际使用中可以忽略不计。</p><h3 style="margin-top:20px;margin-bottom:8px">UUID 长度是多少？</h3><p>标准 UUID 是 36 个字符（包含 4 个连字符），32 个十六进制数字。</p></section>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>UUID v4（完全随机）、v7（时间排序）、v1、v5</li><li>ULID — 26字符 Base32 Crockford 编码，时间可排序</li><li>NanoID — 21字符 URL 安全</li><li>CUID — 水平缩放的短 ID</li><li>Snowflake — 64位 Twitter 风格 ID</li><li>批量生成最多 100 个</li><li>隐私优先：所有生成在浏览器本地完成</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">UUID 和 ULID 有什么区别？</h3><p>UUID 是 128 位标准，ULID 也是 128 位但只有 26 字符且时间可排序，更短更易读。</p><h3 style="margin-top:20px;margin-bottom:8px">NanoID 比 UUID 好在哪？</h3><p>NanoID 更短（21字符 vs 36字符），URL 安全，适合短链接、ID 字段。</p><h3 style="margin-top:20px;margin-bottom:8px">Snowflake ID 是什么？</h3><p>Twitter 设计的 64 位整数 ID，包含时间戳+工作节点+序列号，适合分布式数据库主键。</p><h3 style="margin-top:20px;margin-bottom:8px">这些 ID 生成需要联网吗？</h3><p>完全不需要。所有生成逻辑在浏览器中本地执行，不上传任何数据。</p></section>
 <section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/password-generator" class="tool-card"><div class="icon">🔑</div><h3>密码生成器</h3><p>生成强随机密码，可自定义长度和字符类型</p></a><a href="/tools/hash-generator" class="tool-card"><div class="icon">🔐</div><h3>哈希生成器</h3><p>生成 MD5、SHA-1、SHA-256、SHA-512 哈希值</p></a></div></section>
 <section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
   <h2>需要内部工具箱、私有化部署或定制工具？</h2>

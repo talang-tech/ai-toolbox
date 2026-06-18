@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>ULID vs UUID vs NanoID：唯一 ID 格式对比与选型指南 | AI 工具盒子</title>
+<meta name="description" content="ULID、UUID、NanoID、CUID、Snowflake 五种唯一 ID 格式的深度对比，包括生成原理、性能、排序特性、数据库适用场景，以及在线生成工具推荐。">
+<meta name="keywords" content="ULID,UUID,NanoID,CUID,Snowflake,唯一ID生成,分布式ID,数据库主键设计">
+<link rel="canonical" href="https://tools.talang.fun/blog/ulid-uuid-nanoid-comparison">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/blog/ulid-uuid-nanoid-comparison">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/blog/ulid-uuid-nanoid-comparison">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/blog/ulid-uuid-nanoid-comparison">
+<meta property="og:title" content="ULID vs UUID vs NanoID：唯一 ID 格式对比与选型指南 | AI 工具盒子">
+<meta property="og:description" content="ULID、UUID、NanoID、CUID、Snowflake 五种唯一 ID 格式的深度对比，包括生成原理、性能、排序特性、数据库适用场景，以及在线生成工具推荐。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/blog/ulid-uuid-nanoid-comparison">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "ULID vs UUID vs NanoID：唯一 ID 格式对比与选型指南", "description": "ULID、UUID、NanoID、CUID、Snowflake 五种唯一 ID 格式的深度对比，包括生成原理、性能、排序特性、数据库适用场景，以及在线生成工具推荐。", "author": {"@type": "Organization", "name": "AI 工具盒子"}, "datePublished": "2026-06-18", "url": "https://tools.talang.fun/blog/ulid-uuid-nanoid-comparison"}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/blog/ulid-uuid-nanoid-comparison" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<article class="article">
+  <p style="margin-bottom:8px"><a href="/blog/" style="color:var(--muted)">← 返回博客</a></p>
+  <h1>ULID vs UUID vs NanoID：唯一 ID 格式对比与选型指南</h1>
+  <p style="color:var(--muted);margin-bottom:24px">2026-06-18 · 5 分钟阅读</p>
+  <h2>为什么需要了解多种 ID 格式？</h2>
+<p>在分布式系统、数据库主键设计、日志追踪等场景中，"生成唯一标识符"是每个开发者都会遇到的基础需求。但唯一 ID 并非只有 UUID v4 一种选择。</p>
+<p>不同的 ID 格式在长度、排序性、可读性、生成速度和存储效率上差异显著。选错了格式，可能在数据库百万级数据后才发现索引碎片化严重、查询变慢。</p>
+<h2>主流 ID 格式速览</h2>
+<table><thead><tr>
+<th>格式</th>
+<th>长度</th>
+<th>排序性</th>
+<th>生成速度</th>
+<th>适用场景</th>
+</tr></thead><tbody>
+<tr>
+<td>UUID v4</td>
+<td>36 字符</td>
+<td>❌ 无</td>
+<td>快</td>
+<td>通用唯一标识</td>
+</tr>
+<tr>
+<td>UUID v7</td>
+<td>36 字符</td>
+<td>✅ 时间</td>
+<td>快</td>
+<td>数据库主键</td>
+</tr>
+<tr>
+<td>ULID</td>
+<td>26 字符</td>
+<td>✅ 时间</td>
+<td>快</td>
+<td>可排序的短ID</td>
+</tr>
+<tr>
+<td>NanoID</td>
+<td>21 字符</td>
+<td>❌ 无</td>
+<td>极快</td>
+<td>短链接、URL</td>
+</tr>
+<tr>
+<td>CUID</td>
+<td>~25 字符</td>
+<td>✅ 水平</td>
+<td>快</td>
+<td>多进程 ID</td>
+</tr>
+<tr>
+<td>Snowflake</td>
+<td>19 位数字</td>
+<td>✅ 时间</td>
+<td>快</td>
+<td>分布式 ID</td>
+</tr>
+</tbody></table>
+<h2>各格式详解</h2>
+<h3>UUID — 久经考验的标准</h3>
+<p>UUID（Universally Unique Identifier）是 128 位标识符的国际标准（RFC 4122）。最常用的是 v4（完全随机）和 v7（基于时间戳+随机）。</p>
+<p><strong>优点：</strong></p>
+<ul>
+<li>广泛支持，几乎所有语言都有标准库</li>
+<li>碰撞概率极低</li>
+<li>v7 版本可按生成时间排序，适合 B-tree 索引</li>
+</ul>
+<p><strong>缺点：</strong></p>
+<ul>
+<li>36 个字符（含连字符），存储较贵</li>
+<li>v4 完全随机，B-tree 索引容易碎片化</li>
+</ul>
+<h3>ULID — 短而有序的替代品</h3>
+<p>ULID（Universally Unique Lexicographically Sortable Identifier）是 128 位的压缩编码标识符，使用 Crockford 的 Base32 编码（不含 I、L、O、U，避免混淆）。</p>
+<p><strong>ULID 的典型形态：</strong> <code>01ARZ3NDEKTSV4RRFFQ69G5FAV</code></p>
+<ul>
+<li>前 10 个字符：毫秒级时间戳（Base32 编码）</li>
+<li>后 16 个字符：随机</li>
+</ul>
+<p><strong>关键优势：</strong></p>
+<ul>
+<li>只有 26 个字符，比 UUID 短 28%</li>
+<li>字典序排序即等于时间排序</li>
+<li>不包含敏感字符，可安全用于 URL 和文件名</li>
+<li>可转化为 UUID 格式</li>
+</ul>
+<h3>NanoID — 为现代 Web 而生</h3>
+<p>NanoID 不是 128 位标准，而是一个可自定义长度和字母表的紧凑 ID 生成器。默认 21 字符，使用 URL 安全的 A-Za-z0-9_- 字母表。</p>
+<p><strong>NanoID 的优势：</strong></p>
+<ul>
+<li>仅 21 字符，极其紧凑</li>
+<li>生成速度极快（比 UUID 快 60%）</li>
+<li>URL 安全，无特殊字符</li>
+<li>可自定义长度满足碰撞概率要求</li>
+</ul>
+<h2>如何选择？</h2>
+<h3>场景 1：用户 ID 或通用标识 → UUID v4</h3>
+<p>如果只是需要一个"很不可能重复"的 ID，且不关心排序，UUID v4 是最安全的选择。</p>
+<h3>场景 2：数据库主键 → UUID v7 或 ULID</h3>
+<p>数据库主键需要按顺序插入以保持 B-tree 索引效率。UUID v7 和 ULID 都支持时间排序。</p>
+<ul>
+<li><strong>用 MySQL/PostgreSQL 的 UUID 类型</strong> → 选 UUID v7</li>
+<li><strong>需要更短的 ID</strong> → 选 ULID（26 字符 vs 36 字符）</li>
+<li><strong>需要存为 bigint</strong> → 选 Snowflake（64 位整数）</li>
+</ul>
+<h3>场景 3：短链接 / URL 友好 → NanoID</h3>
+<p>只需要 8-14 字符就能达到可接受的碰撞概率，而且 URL 安全不需要编码。</p>
+<h3>场景 4：水平扩展多节点 → CUID 或 Snowflake</h3>
+<p>当 ID 生成器需要在多个进程或节点上运行时，CUID（包含主机指纹）和 Snowflake（包含工作节点 ID）都能避免跨节点冲突。</p>
+<h2>本地生成才是正道</h2>
+<p>无论选择哪种格式，都应该在本地生成而非依赖远程 API。</p>
+<p><strong>为什么？</strong></p>
+<ul>
+<li>零延迟：本地生成不依赖网络</li>
+<li>隐私安全：ID 生成不需要将任何上下文发送到服务器</li>
+<li>离线可用：没有网络也能生成</li>
+<li>无限次使用：无配额、无限制</li>
+</ul>
+<p>我们的 <a href="https://tools.talang.fun/tools/uuid-generator">在线 ID 生成器</a> 支持全部 8 种 ID 格式，所有生成在浏览器本地完成，无需网络传输，完全隐私优先。</p>
+<h2>总结</h2>
+<table><thead><tr>
+<th>你的需求</th>
+<th>推荐格式</th>
+</tr></thead><tbody>
+<tr>
+<td>只要一个唯一 ID</td>
+<td>UUID v4</td>
+</tr>
+<tr>
+<td>需要数据库主键</td>
+<td>UUID v7 或 ULID</td>
+</tr>
+<tr>
+<td>要最短的 ID</td>
+<td>NanoID</td>
+</tr>
+<tr>
+<td>需要整数主键</td>
+<td>Snowflake</td>
+</tr>
+<tr>
+<td>多节点生成</td>
+<td>CUID 或 Snowflake</td>
+</tr>
+</tbody></table>
+<p>没有万能的 ID 格式，只有最适合你的场景的那一个。</p>
+  <section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+</article>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>
