@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>Cron Expression Generator - Cron Expression Generator | Online Cron Generator | AI Toolbox</title>
+<meta name="description" content="Free online cron expression generator. Generate cron expressions from common presets or friendly descriptions. Fast, secure, and works in your browser without downloading.">
+<meta name="keywords" content="cron generator, cron expression generator, cron schedule generator, crontab generator, cron maker, cron builder, cron job creator">
+<link rel="canonical" href="https://tools.talang.fun/en/tools/cron-generator">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/cron-generator">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/cron-generator">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/cron-generator">
+<meta property="og:title" content="Cron Expression Generator - Cron Expression Generator | Online Cron Generator | AI Toolbox">
+<meta property="og:description" content="Free online cron expression generator. Generate cron expressions from common presets or friendly descriptions. Fast, secure, and works in your browser without downloading.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/en/tools/cron-generator">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Cron Expression Generator", "description": "Free online cron expression generator. Generate cron expressions from common presets or friendly descriptions. Fast, secure, and works in your browser without downloading.", "url": "https://tools.talang.fun/en/tools/cron-generator", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "Generate cron expressions from common presets or friendly descriptions", "inLanguage": "en", "author": {"@type": "Organization", "name": "AI Toolbox"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/en/" class="logo"><span class="logo-icon">🛠️</span>AI Toolbox</a>
+    <nav class="nav">
+      <a href="/en/">Home</a>
+      <a href="/en/#tools">All Tools</a>
+      <a href="/en/blog/">Blog</a>
+      <a href="/en/about">About</a>
+      <a href="/en/sponsor">Sponsor</a>
+      <a href="https://tools.talang.fun/tools/cron-generator" class="lang-switch">中文</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">⏰</div>
+  <h1>Cron Expression Generator</h1>
+  <p>Generate cron expressions from common presets or friendly descriptions</p>
+</div>
+<div class="tool-panel">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:24px"><div><label>Select Preset:</label><select id="cgPreset" style="width:100%"><option value="">Manual input</option><option value="*/1 * * * *">Every minute</option><option value="0 * * * *">Every hour</option><option value="0 */2 * * *">Every 2 hours</option><option value="0 0 * * *">Daily at midnight</option><option value="0 3 * * *">Daily at 3 AM</option><option value="0 9 * * *">Daily at 9 AM</option><option value="0 0 * * 1">Weekly Monday</option><option value="0 0 1 * *">Monthly 1st</option><option value="0 0 1 1 *">Yearly Jan 1</option><option value="*/5 * * * *">Every 5 minutes</option><option value="0 0,12 * * *">Noon and midnight</option><option value="30 4 * * 1-5">Weekdays at 4:30</option><option value="*/30 9-17 * * 1-5">Weekdays 9-17 every 30min</option></select></div><div style="margin-top:16px"><label>Natural Language:</label><div class="input-row"><input type="text" id="cgNatural" placeholder="every 15 min, every 2 hours, daily at 3 AM..."></div><button class="btn" id="cgParseNatural" style="margin-top:8px">Generate</button></div></div><div><label>Manual Setup:</label><div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px"><div><label style="font-size:12px;color:var(--text-dim)">Minute (0-59)</label><input type="text" id="cgMin" value="*" style="font-family:monospace"></div><div><label style="font-size:12px;color:var(--text-dim)">Hour (0-23)</label><input type="text" id="cgHour" value="*" style="font-family:monospace"></div><div><label style="font-size:12px;color:var(--text-dim)">Day (1-31)</label><input type="text" id="cgDay" value="*" style="font-family:monospace"></div><div><label style="font-size:12px;color:var(--text-dim)">Month (1-12)</label><input type="text" id="cgMonth" value="*" style="font-family:monospace"></div><div style="grid-column:1/-1"><label style="font-size:12px;color:var(--text-dim)">Weekday (0-7, 0=Sun)</label><input type="text" id="cgDow" value="*" style="font-family:monospace"></div></div><button class="btn" id="cgBuild" style="margin-top:12px">Build</button></div></div><div id="cgResult" style="margin-top:16px"></div><div id="cgNextRuns" style="margin-top:12px"></div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>About this tool</h2>
+  <p>Free online Cron Expression Generator. Generate cron expressions quickly from common presets (every minute, hourly, daily, etc.) or from human-friendly descriptions. Ready to use in Linux crontab, CI/CD, and scheduling tools.</p><p>All computation happens locally in your browser.</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>Key Features</h2><ul><li>12 common Cron presets for one-click generation</li><li>Natural language description to Cron expressions</li><li>Manual 5-field input to generate expressions</li><li>Real-time validation with next run time display</li><li>One-click copy</li><li>100% browser local processing</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>Frequently Asked Questions</h2><h3 style="margin-top:20px;margin-bottom:8px">What is the basic cron expression format?</h3><p>Standard 5-field format: minute hour day-of-month month day-of-week.</p><h3 style="margin-top:20px;margin-bottom:8px">How to represent every N time?</h3><p>Use / operator, e.g. */5 means every 5 minutes, 0 */2 means every 2 hours.</p><h3 style="margin-top:20px;margin-bottom:8px">What if both day-of-month and day-of-week are set?</h3><p>It is OR logic. Either condition triggers execution.</p><h3 style="margin-top:20px;margin-bottom:8px">Where can I use the generated expression?</h3><p>Linux crontab, cloud function triggers, CI/CD schedules, Kubernetes CronJob.</p><h3 style="margin-top:20px;margin-bottom:8px">Does it support second-level expressions?</h3><p>This tool generates standard 5-field crontab format without seconds.</p></section>
+<section class="related"><h3>Related Tools</h3><div class="tools-grid"><a href="/en/tools/cron-parser" class="tool-card"><div class="icon">⏰</div><h3>Cron Parser</h3><p>*/5 * * * * → show next 5 run times</p></a><a href="/en/tools/timestamp-converter" class="tool-card"><div class="icon">🔧</div><h3>Timestamp Converter</h3><p>Convert Unix timestamps to human-readable dates and vice versa. Support seconds, milliseconds, and microseconds. Multiple timezones support.</p></a><a href="/en/tools/timestamp" class="tool-card"><div class="icon">⏱️</div><h3>Unix Timestamp Converter</h3><p>Convert between Unix timestamps (seconds/ms) and human-readable dates</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>Need a private toolbox or custom browser tool?</h2>
+  <p>AI Toolbox can be adapted for internal workflows, private deployment, sponsored categories, or custom privacy-first utilities.</p>
+  <p><a href="/en/sponsor" data-event="conversion_cta_click" data-label="en_partner_custom_tool_cta">View partnership and custom tool options →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/cron-generator.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI Toolbox · Free online AI & developer tools · <a href='/en/about'>About</a> · <a href='/en/sponsor'>Sponsor</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('Copied!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>
