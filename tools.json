@@ -569,6 +569,158 @@
       ]
     },
     {
+      "slug": "rot13-cipher",
+      "category": "encode",
+      "icon": "🔄",
+      "name_zh": "ROT13 / 凯撒密码",
+      "name_en": "ROT13 / Caesar Cipher",
+      "short_zh": "ROT13、ROT47、ROT5 文本转换，凯撒移位密码",
+      "short_en": "ROT13, ROT47, ROT5 text transformation, Caesar shift cipher",
+      "keywords_zh": "ROT13,凯撒密码,ROT47,ROT5,Caesar cipher,移位密码,ROT13解码",
+      "keywords_en": "rot13, caesar cipher, rot47, rot5, text cipher, shift cipher, rot13 decoder",
+      "long_zh": "<p>ROT13 是一种简单的字母替换密码，将字母前后各移 13 位（A↔N, B↔O...）。在互联网上常用于隐藏剧透、谜底等非敏感内容。</p><p>本工具支持多种变体：<ul><li><strong>ROT13</strong>：仅处理 A-Z/a-z 字母，往返一次即还原</li><li><strong>ROT47</strong>：处理所有可打印 ASCII 字符（33-126 码位）</li><li><strong>ROT5</strong>：仅处理数字 0-9</li><li><strong>ROT13+5</strong>：字母用 ROT13，数字用 ROT5</li><li><strong>凯撒移位</strong>：用户可自定义移位位数（1-25）</li></ul></p><p>所有计算在浏览器本地完成，不上传任何数据。</p>",
+      "long_en": "<p>ROT13 is a simple letter substitution cipher that shifts each letter by 13 places (A↔N, B↔O...). Commonly used online to hide spoilers, puzzle answers, and non-sensitive content.</p><p>This tool supports multiple variants:<ul><li><strong>ROT13</strong>: Letters A-Z/a-z only, applying twice returns original</li><li><strong>ROT47</strong>: All printable ASCII (codes 33-126)</li><li><strong>ROT5</strong>: Digits 0-9 only</li><li><strong>ROT13+5</strong>: ROT13 for letters + ROT5 for digits</li><li><strong>Caesar Shift</strong>: Custom shift amount (1-25)</li></ul></p><p>All computation happens locally in your browser — no data is uploaded.</p>",
+      "ui_zh": "<div style=\"display:flex;flex-direction:column;gap:12px\"><textarea id=\"rot13-input\" placeholder=\"输入要转换的文本...\" rows=\"6\"></textarea><div id=\"cipher-mode\" style=\"display:flex;flex-wrap:wrap;gap:8px\"><label title=\"ROT13\"><input type=\"radio\" name=\"mode\" value=\"rot13\" checked> ROT13</label><label title=\"ROT47\"><input type=\"radio\" name=\"mode\" value=\"rot47\"> ROT47</label><label title=\"ROT5\"><input type=\"radio\" name=\"mode\" value=\"rot5\"> ROT5</label><label title=\"ROT13+5\"><input type=\"radio\" name=\"mode\" value=\"rot135\"> ROT13+5</label><label title=\"凯撒移位\"><input type=\"radio\" name=\"mode\" value=\"caesar\"> 凯撒</label><span id=\"caesar-control\" style=\"display:none;align-items:center;gap:4px\"><label>移位:</label><input type=\"number\" id=\"caesar-shift\" value=\"3\" min=\"1\" max=\"25\" style=\"width:60px;padding:4px;border:1px solid var(--border);border-radius:4px;\"></span></div><div style=\"display:flex;gap:8px\"><button class=\"btn\" id=\"rot13-encode\">转换</button><button class=\"btn btn-secondary\" id=\"rot13-clear\">清空</button></div><textarea id=\"rot13-output\" readonly placeholder=\"转换结果...\" rows=\"6\"></textarea><button class=\"btn btn-secondary\" id=\"rot13-copy\" style=\"margin-top:4px\">📋 复制</button></div>",
+      "ui_en": "<div style=\"display:flex;flex-direction:column;gap:12px\"><textarea id=\"rot13-input\" placeholder=\"Enter text to transform...\" rows=\"6\"></textarea><div id=\"cipher-mode\" style=\"display:flex;flex-wrap:wrap;gap:8px\"><label title=\"ROT13\"><input type=\"radio\" name=\"mode\" value=\"rot13\" checked> ROT13</label><label title=\"ROT47\"><input type=\"radio\" name=\"mode\" value=\"rot47\"> ROT47</label><label title=\"ROT5\"><input type=\"radio\" name=\"mode\" value=\"rot5\"> ROT5</label><label title=\"ROT13+5\"><input type=\"radio\" name=\"mode\" value=\"rot135\"> ROT13+5</label><label title=\"Caesar Shift\"><input type=\"radio\" name=\"mode\" value=\"caesar\"> Caesar</label><span id=\"caesar-control\" style=\"display:none;align-items:center;gap:4px\"><label>Shift:</label><input type=\"number\" id=\"caesar-shift\" value=\"3\" min=\"1\" max=\"25\" style=\"width:60px;padding:4px;border:1px solid var(--border);border-radius:4px;\"></span></div><div style=\"display:flex;gap:8px\"><button class=\"btn\" id=\"rot13-encode\">Transform</button><button class=\"btn btn-secondary\" id=\"rot13-clear\">Clear</button></div><textarea id=\"rot13-output\" readonly placeholder=\"Result...\" rows=\"6\"></textarea><button class=\"btn btn-secondary\" id=\"rot13-copy\" style=\"margin-top:4px\">📋 Copy</button></div>",
+      "related": [
+        "base64",
+        "hash-generator",
+        "string-escape"
+      ],
+      "seo_title_zh": "ROT13 凯撒密码在线转换 | ROT47/ROT5 文本加密解密工具",
+      "seo_title_en": "ROT13 Caesar Cipher Online | ROT47 ROT5 Text Encoder Decoder",
+      "features_zh": [
+        "ROT13 字母旋转移位（A↔N）",
+        "ROT47 全 ASCII 字符转换",
+        "ROT5 数字加密/解密",
+        "ROT13+5 字母+数字混合转换",
+        "凯撒移位支持自定义位数（1-25）",
+        "转换即显示结果，实时预览",
+        "完全本地处理，不上传数据"
+      ],
+      "features_en": [
+        "ROT13 letter rotation (A↔N)",
+        "ROT47 full ASCII character transformation",
+        "ROT5 digit encryption/decryption",
+        "ROT13+5 combined letter and digit cipher",
+        "Custom Caesar shift amount (1-25)",
+        "Instant transformation results",
+        "100% local processing, no data upload"
+      ],
+      "faq_zh": [
+        [
+          "ROT13 是加密吗？",
+          "不是。ROT13 是一种非常简单的替换密码（恺撒密码的特殊形式），不能用于安全加密。任何知道 ROT13 的人都可以轻易还原。"
+        ],
+        [
+          "为什么 ROT13 两次就还原？",
+          "因为字母表有 26 个字母，移位 13 后正好是半圈。再执行一次 ROT13 就回到原文。"
+        ],
+        [
+          "ROT47 和 ROT13 有什么区别？",
+          "ROT13 只处理字母 A-Z/a-z；ROT47 处理所有可打印 ASCII 字符（码位 33-126），范围更广。"
+        ],
+        [
+          "ROT5 处理什么？",
+          "ROT5 只处理数字 0-9，将每个数字移位 5 位（0↔5, 1↔6...），常用于隐藏电话号码中的数字。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "Is ROT13 encryption?",
+          "No. ROT13 is a very simple substitution cipher (a special case of Caesar cipher). It is not secure encryption — anyone who knows ROT13 can easily reverse it."
+        ],
+        [
+          "Why does applying ROT13 twice restore the original?",
+          "Because there are 26 letters in the alphabet, shifting by 13 is exactly half the alphabet. Applying ROT13 twice returns the original text."
+        ],
+        [
+          "What is the difference between ROT47 and ROT13?",
+          "ROT13 only processes letters A-Z/a-z; ROT47 processes all printable ASCII characters (codes 33-126), covering a much wider range."
+        ],
+        [
+          "What does ROT5 do?",
+          "ROT5 only processes digits 0-9, shifting each digit by 5 (0↔5, 1↔6...). It is often used to obfuscate numbers like phone digits in spoilers."
+        ]
+      ]
+    },
+    {
+      "slug": "punycode-converter",
+      "category": "encode",
+      "icon": "🌐",
+      "name_zh": "Punycode / 中文域名转换",
+      "name_en": "Punycode / IDN Converter",
+      "short_zh": "国际化域名 Punycode 与 Unicode 互转，支持中文字符",
+      "short_en": "Convert between Punycode and Unicode for internationalized domain names",
+      "keywords_zh": "Punycode,中文域名,域名编码,国际化域名,IDN,中文.com,xn-- 转换",
+      "keywords_en": "punycode converter, IDN converter, international domain name, punycode decoder, punycode encoder, xn--",
+      "long_zh": "<p>国际化域名（IDN）允许使用中文、日文、韩文等非 ASCII 字符作为域名。Punycode 是将这些字符转换为 ASCII 字符的编码方法，域名系统通过 Punycode 兼容现有 DNS 协议。</p><p>例如：<code>中文.com</code> → <code>xn--4gqw0a.com</code></p><p>本工具支持 Punycode 与 Unicode 双向转换，自动检测输入类型。所有操作在浏览器本地完成。</p>",
+      "long_en": "<p>Internationalized Domain Names (IDN) allow non-ASCII characters (Chinese, Japanese, Korean, etc.) in domain names. Punycode is the encoding method that converts these characters to ASCII, making them compatible with the existing DNS protocol.</p><p>Example: <code>中文.com</code> → <code>xn--4gqw0a.com</code></p><p>This tool converts between Punycode and Unicode in both directions, auto-detecting the input type. All processing is done locally in your browser.</p>",
+      "ui_zh": "<div style=\"display:flex;flex-direction:column;gap:12px\"><textarea id=\"punycode-input\" placeholder=\"输入 Unicode 域名（如 中文.com）或 Punycode（如 xn--4gqw0a.com）...\" rows=\"4\"></textarea><div style=\"display:flex;gap:8px\"><button class=\"btn\" id=\"punycode-encode\">编码为 Punycode →</button><button class=\"btn\" id=\"punycode-decode\">← 解码为 Unicode</button><button class=\"btn btn-secondary\" id=\"punycode-clear\">清空</button></div><div id=\"punycode-results\" style=\"margin-top:8px\"><div style=\"background:var(--bg-light);border-radius:8px;padding:16px\"><div style=\"color:var(--text-muted);font-size:13px;margin-bottom:4px\">Punycode：</div><code id=\"punycode-result-enc\" style=\"word-break:break-all\">—</code></div><div style=\"background:var(--bg-light);border-radius:8px;padding:16px;margin-top:8px\"><div style=\"color:var(--text-muted);font-size:13px;margin-bottom:4px\">Unicode：</div><code id=\"punycode-result-dec\" style=\"word-break:break-all\">—</code></div></div></div>",
+      "ui_en": "<div style=\"display:flex;flex-direction:column;gap:12px\"><textarea id=\"punycode-input\" placeholder=\"Enter Unicode domain (e.g., 中文.com) or Punycode (e.g., xn--4gqw0a.com)...\" rows=\"4\"></textarea><div style=\"display:flex;gap:8px\"><button class=\"btn\" id=\"punycode-encode\">Encode to Punycode →</button><button class=\"btn\" id=\"punycode-decode\">← Decode to Unicode</button><button class=\"btn btn-secondary\" id=\"punycode-clear\">Clear</button></div><div id=\"punycode-results\" style=\"margin-top:8px\"><div style=\"background:var(--bg-light);border-radius:8px;padding:16px\"><div style=\"color:var(--text-muted);font-size:13px;margin-bottom:4px\">Punycode:</div><code id=\"punycode-result-enc\" style=\"word-break:break-all\">—</code></div><div style=\"background:var(--bg-light);border-radius:8px;padding:16px;margin-top:8px\"><div style=\"color:var(--text-muted);font-size:13px;margin-bottom:4px\">Unicode:</div><code id=\"punycode-result-dec\" style=\"word-break:break-all\">—</code></div></div></div>",
+      "related": [
+        "url-encoder",
+        "base64",
+        "html-entity"
+      ],
+      "seo_title_zh": "Punycode 中文域名转换 | IDN 国际化域名在线编码解码",
+      "seo_title_en": "Punycode Converter | IDN International Domain Name Encoder Decoder",
+      "features_zh": [
+        "Unicode 域名编码为 Punycode",
+        "Punycode 解码为 Unicode",
+        "支持中、日、韩等多语言字符",
+        "自动检测输入类型",
+        "支持完整域名和单个标签",
+        "浏览器本地处理，不上传域名",
+        "一键复制结果"
+      ],
+      "features_en": [
+        "Encode Unicode domain to Punycode",
+        "Decode Punycode to Unicode",
+        "Support Chinese, Japanese, Korean and other scripts",
+        "Auto-detect input type",
+        "Support full domain names and individual labels",
+        "100% local processing, no domain data uploaded",
+        "One-click copy results"
+      ],
+      "faq_zh": [
+        [
+          "什么是 Punycode？",
+          "Punycode 是一种将 Unicode 字符编码为 ASCII 字符的方法，用于国际化域名（IDN）。以 xn-- 开头。"
+        ],
+        [
+          "Punycode 安全吗？",
+          "Punycode 只是编码，不是加密。所有人名都是公开可见的，但某些同形异义字可能被用于钓鱼攻击（Homograph Attack）。"
+        ],
+        [
+          "哪些浏览器支持中文域名？",
+          "所有现代浏览器都支持 IDN，可在地址栏直接输入中文域名。浏览器会自动转换为 Punycode 发送给 DNS。"
+        ],
+        [
+          "什么是 xn-- 前缀？",
+          "Punycode 编码以 xn-- 为前缀，DNS 系统通过此前缀识别这是一个 IDN 编码的域名标签。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "What is Punycode?",
+          "Punycode is a method to encode Unicode characters as ASCII for Internationalized Domain Names (IDN). Punycode domains start with xn--."
+        ],
+        [
+          "Is Punycode secure?",
+          "Punycode is encoding, not encryption. All characters are publicly visible. However, homoglyph characters may be used for phishing attacks (Homograph Attack)."
+        ],
+        [
+          "Which browsers support Chinese domains?",
+          "All modern browsers support IDN. You can type Chinese characters directly in the address bar, and the browser converts to Punycode automatically for DNS resolution."
+        ],
+        [
+          "What is the xn-- prefix?",
+          "Punycode encoding starts with the xn-- prefix. The DNS system uses this prefix to recognize an encoded IDN label."
+        ]
+      ]
+    },
+    {
       "slug": "password-generator",
       "category": "generate",
       "icon": "🔑",

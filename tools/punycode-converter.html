@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>Punycode / 中文域名转换 - Punycode 中文域名转换 | IDN 国际化域名在线编码解码 | AI 工具盒子</title>
+<meta name="description" content="免费在线Punycode / 中文域名转换工具，国际化域名 Punycode 与 Unicode 互转，支持中文字符。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="Punycode,中文域名,域名编码,国际化域名,IDN,中文.com,xn-- 转换">
+<link rel="canonical" href="https://tools.talang.fun/tools/punycode-converter">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/punycode-converter">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/punycode-converter">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/punycode-converter">
+<meta property="og:title" content="Punycode / 中文域名转换 - Punycode 中文域名转换 | IDN 国际化域名在线编码解码 | AI 工具盒子">
+<meta property="og:description" content="免费在线Punycode / 中文域名转换工具，国际化域名 Punycode 与 Unicode 互转，支持中文字符。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/punycode-converter">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Punycode / 中文域名转换", "description": "免费在线Punycode / 中文域名转换工具，国际化域名 Punycode 与 Unicode 互转，支持中文字符。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/punycode-converter", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "国际化域名 Punycode 与 Unicode 互转，支持中文字符", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/tools/punycode-converter" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🌐</div>
+  <h1>Punycode / 中文域名转换</h1>
+  <p>国际化域名 Punycode 与 Unicode 互转，支持中文字符</p>
+</div>
+<div class="tool-panel">
+<div style="display:flex;flex-direction:column;gap:12px"><textarea id="punycode-input" placeholder="输入 Unicode 域名（如 中文.com）或 Punycode（如 xn--4gqw0a.com）..." rows="4"></textarea><div style="display:flex;gap:8px"><button class="btn" id="punycode-encode">编码为 Punycode →</button><button class="btn" id="punycode-decode">← 解码为 Unicode</button><button class="btn btn-secondary" id="punycode-clear">清空</button></div><div id="punycode-results" style="margin-top:8px"><div style="background:var(--bg-light);border-radius:8px;padding:16px"><div style="color:var(--text-muted);font-size:13px;margin-bottom:4px">Punycode：</div><code id="punycode-result-enc" style="word-break:break-all">—</code></div><div style="background:var(--bg-light);border-radius:8px;padding:16px;margin-top:8px"><div style="color:var(--text-muted);font-size:13px;margin-bottom:4px">Unicode：</div><code id="punycode-result-dec" style="word-break:break-all">—</code></div></div></div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>国际化域名（IDN）允许使用中文、日文、韩文等非 ASCII 字符作为域名。Punycode 是将这些字符转换为 ASCII 字符的编码方法，域名系统通过 Punycode 兼容现有 DNS 协议。</p><p>例如：<code>中文.com</code> → <code>xn--4gqw0a.com</code></p><p>本工具支持 Punycode 与 Unicode 双向转换，自动检测输入类型。所有操作在浏览器本地完成。</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>Unicode 域名编码为 Punycode</li><li>Punycode 解码为 Unicode</li><li>支持中、日、韩等多语言字符</li><li>自动检测输入类型</li><li>支持完整域名和单个标签</li><li>浏览器本地处理，不上传域名</li><li>一键复制结果</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">什么是 Punycode？</h3><p>Punycode 是一种将 Unicode 字符编码为 ASCII 字符的方法，用于国际化域名（IDN）。以 xn-- 开头。</p><h3 style="margin-top:20px;margin-bottom:8px">Punycode 安全吗？</h3><p>Punycode 只是编码，不是加密。所有人名都是公开可见的，但某些同形异义字可能被用于钓鱼攻击（Homograph Attack）。</p><h3 style="margin-top:20px;margin-bottom:8px">哪些浏览器支持中文域名？</h3><p>所有现代浏览器都支持 IDN，可在地址栏直接输入中文域名。浏览器会自动转换为 Punycode 发送给 DNS。</p><h3 style="margin-top:20px;margin-bottom:8px">什么是 xn-- 前缀？</h3><p>Punycode 编码以 xn-- 为前缀，DNS 系统通过此前缀识别这是一个 IDN 编码的域名标签。</p></section>
+<section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/url-encoder" class="tool-card"><div class="icon">🔗</div><h3>URL 编解码</h3><p>URL 编码与解码，处理特殊字符和中文</p></a><a href="/tools/base64" class="tool-card"><div class="icon">🔣</div><h3>Base64 编解码</h3><p>Base64 字符串和文件互转，UTF-8 安全</p></a><a href="/tools/html-entity" class="tool-card"><div class="icon">🏷️</div><h3>HTML 实体编解码</h3><p>&lt; 与 < 互转，支持常用命名实体和数字实体</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/punycode-converter.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>

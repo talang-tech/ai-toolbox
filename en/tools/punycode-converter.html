@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>Punycode / IDN Converter - Punycode Converter | IDN International Domain Name Encoder Decoder | AI Toolbox</title>
+<meta name="description" content="Free online punycode / idn converter. Convert between Punycode and Unicode for internationalized domain names. Fast, secure, and works in your browser without downloading.">
+<meta name="keywords" content="punycode converter, IDN converter, international domain name, punycode decoder, punycode encoder, xn--">
+<link rel="canonical" href="https://tools.talang.fun/en/tools/punycode-converter">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/punycode-converter">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/punycode-converter">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/punycode-converter">
+<meta property="og:title" content="Punycode / IDN Converter - Punycode Converter | IDN International Domain Name Encoder Decoder | AI Toolbox">
+<meta property="og:description" content="Free online punycode / idn converter. Convert between Punycode and Unicode for internationalized domain names. Fast, secure, and works in your browser without downloading.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/en/tools/punycode-converter">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Punycode / IDN Converter", "description": "Free online punycode / idn converter. Convert between Punycode and Unicode for internationalized domain names. Fast, secure, and works in your browser without downloading.", "url": "https://tools.talang.fun/en/tools/punycode-converter", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "Convert between Punycode and Unicode for internationalized domain names", "inLanguage": "en", "author": {"@type": "Organization", "name": "AI Toolbox"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/en/" class="logo"><span class="logo-icon">🛠️</span>AI Toolbox</a>
+    <nav class="nav">
+      <a href="/en/">Home</a>
+      <a href="/en/#tools">All Tools</a>
+      <a href="/en/blog/">Blog</a>
+      <a href="/en/about">About</a>
+      <a href="/en/sponsor">Sponsor</a>
+      <a href="https://tools.talang.fun/tools/punycode-converter" class="lang-switch">中文</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🌐</div>
+  <h1>Punycode / IDN Converter</h1>
+  <p>Convert between Punycode and Unicode for internationalized domain names</p>
+</div>
+<div class="tool-panel">
+<div style="display:flex;flex-direction:column;gap:12px"><textarea id="punycode-input" placeholder="Enter Unicode domain (e.g., 中文.com) or Punycode (e.g., xn--4gqw0a.com)..." rows="4"></textarea><div style="display:flex;gap:8px"><button class="btn" id="punycode-encode">Encode to Punycode →</button><button class="btn" id="punycode-decode">← Decode to Unicode</button><button class="btn btn-secondary" id="punycode-clear">Clear</button></div><div id="punycode-results" style="margin-top:8px"><div style="background:var(--bg-light);border-radius:8px;padding:16px"><div style="color:var(--text-muted);font-size:13px;margin-bottom:4px">Punycode:</div><code id="punycode-result-enc" style="word-break:break-all">—</code></div><div style="background:var(--bg-light);border-radius:8px;padding:16px;margin-top:8px"><div style="color:var(--text-muted);font-size:13px;margin-bottom:4px">Unicode:</div><code id="punycode-result-dec" style="word-break:break-all">—</code></div></div></div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>About this tool</h2>
+  <p>Internationalized Domain Names (IDN) allow non-ASCII characters (Chinese, Japanese, Korean, etc.) in domain names. Punycode is the encoding method that converts these characters to ASCII, making them compatible with the existing DNS protocol.</p><p>Example: <code>中文.com</code> → <code>xn--4gqw0a.com</code></p><p>This tool converts between Punycode and Unicode in both directions, auto-detecting the input type. All processing is done locally in your browser.</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>Key Features</h2><ul><li>Encode Unicode domain to Punycode</li><li>Decode Punycode to Unicode</li><li>Support Chinese, Japanese, Korean and other scripts</li><li>Auto-detect input type</li><li>Support full domain names and individual labels</li><li>100% local processing, no domain data uploaded</li><li>One-click copy results</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>Frequently Asked Questions</h2><h3 style="margin-top:20px;margin-bottom:8px">What is Punycode?</h3><p>Punycode is a method to encode Unicode characters as ASCII for Internationalized Domain Names (IDN). Punycode domains start with xn--.</p><h3 style="margin-top:20px;margin-bottom:8px">Is Punycode secure?</h3><p>Punycode is encoding, not encryption. All characters are publicly visible. However, homoglyph characters may be used for phishing attacks (Homograph Attack).</p><h3 style="margin-top:20px;margin-bottom:8px">Which browsers support Chinese domains?</h3><p>All modern browsers support IDN. You can type Chinese characters directly in the address bar, and the browser converts to Punycode automatically for DNS resolution.</p><h3 style="margin-top:20px;margin-bottom:8px">What is the xn-- prefix?</h3><p>Punycode encoding starts with the xn-- prefix. The DNS system uses this prefix to recognize an encoded IDN label.</p></section>
+<section class="related"><h3>Related Tools</h3><div class="tools-grid"><a href="/en/tools/url-encoder" class="tool-card"><div class="icon">🔗</div><h3>URL Encoder/Decoder</h3><p>Encode/decode URLs, handle special characters and Unicode</p></a><a href="/en/tools/base64" class="tool-card"><div class="icon">🔣</div><h3>Base64 Encoder/Decoder</h3><p>Encode/decode Base64 strings and files, UTF-8 safe</p></a><a href="/en/tools/html-entity" class="tool-card"><div class="icon">🏷️</div><h3>HTML Entity Encoder/Decoder</h3><p>Encode/decode HTML entities: &lt; ↔ <, &copy; ↔ ©</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>Need a private toolbox or custom browser tool?</h2>
+  <p>AI Toolbox can be adapted for internal workflows, private deployment, sponsored categories, or custom privacy-first utilities.</p>
+  <p><a href="/en/sponsor" data-event="conversion_cta_click" data-label="en_partner_custom_tool_cta">View partnership and custom tool options →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/punycode-converter.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI Toolbox · Free online AI & developer tools · <a href='/en/about'>About</a> · <a href='/en/sponsor'>Sponsor</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('Copied!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>
