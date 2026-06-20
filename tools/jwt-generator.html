@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>JWT 在线生成器 - JWT 在线生成器 | 免费 JWT Token 生成工具 | AI 工具盒子</title>
+<meta name="description" content="免费在线JWT 在线生成器工具，免费在线生成 JWT Token，支持 HS256/HS384/HS512，自定义Header/Payload。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="JWT生成,JWT生成器,jwt token,JSON Web Token生成,jwt签名,HS256,jwt工具,在线生成jwt">
+<link rel="canonical" href="https://tools.talang.fun/tools/jwt-generator">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/jwt-generator">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/jwt-generator">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/jwt-generator">
+<meta property="og:title" content="JWT 在线生成器 - JWT 在线生成器 | 免费 JWT Token 生成工具 | AI 工具盒子">
+<meta property="og:description" content="免费在线JWT 在线生成器工具，免费在线生成 JWT Token，支持 HS256/HS384/HS512，自定义Header/Payload。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/jwt-generator">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "JWT 在线生成器", "description": "免费在线JWT 在线生成器工具，免费在线生成 JWT Token，支持 HS256/HS384/HS512，自定义Header/Payload。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/jwt-generator", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "免费在线生成 JWT Token，支持 HS256/HS384/HS512，自定义Header/Payload", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/tools/jwt-generator" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🔑</div>
+  <h1>JWT 在线生成器</h1>
+  <p>免费在线生成 JWT Token，支持 HS256/HS384/HS512，自定义Header/Payload</p>
+</div>
+<div class="tool-panel">
+<div style="margin-bottom:16px"><label>算法:</label><select id="jwtgAlgo" style="width:100%"><option value="HS256">HS256</option><option value="HS384">HS384</option><option value="HS512">HS512</option></select></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:16px"><div><label>Header (JSON):</label><textarea id="jwtgHeader" style="min-height:100px;font-family:monospace;font-size:12px">{"alg":"HS256","typ":"JWT"}</textarea></div><div><label>Payload (JSON):</label><textarea id="jwtgPayload" style="min-height:100px;font-family:monospace;font-size:12px">{"sub":"1234567890","name":"John Doe"}</textarea></div></div><div style="margin-top:12px"><label>密钥 (Secret):</label><input type="text" id="jwtgSecret" value="your-256-bit-secret" style="width:100%;font-family:monospace"></div><div class="input-row" style="margin-top:12px"><label><input type="checkbox" id="jwtgIat" checked> 添加 iat (签发时间)</label><label style="margin-left:20px">过期时间 (秒): <input type="number" id="jwtgExp" value="3600" min="0" style="width:80px"></label></div><button class="btn" id="jwtgGenerate" style="margin-top:12px">生成 JWT</button><div style="margin-top:16px"><label>生成的 Token:</label><textarea id="jwtgOutput" readonly style="min-height:60px;font-family:monospace;font-size:12px;word-break:break-all"></textarea><button class="btn" id="jwtgCopy" style="margin-top:6px">📋 复制 Token</button></div><div id="jwtgDecoded"></div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>免费在线 JWT（JSON Web Token）生成器。支持 HS256 / HS384 / HS512 签名算法，可自定义 Header 和 Payload，自动添加 iat 和 exp 时间戳。</p><p>所有签名计算在浏览器端通过 Web Crypto API 安全完成，密钥不会上传到服务器。</p><p>生成的 Token 可直接用于 API 认证测试、开发调试等场景。</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>支持 HS256 / HS384 / HS512 签名算法</li><li>可编辑 Header 和 Payload JSON</li><li>支持自动添加 iat（签发时间）和 exp（过期时间）</li><li>使用 Web Crypto API 纯前端签名，密钥不上传</li><li>实时预览生成的 Token 结构，一键复制</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">JWT 和普通 Token 有什么区别？</h3><p>JWT 是自包含的 Token 格式，包含 JSON 格式的声明信息（claims），可以携带用户身份、权限等数据。</p><h3 style="margin-top:20px;margin-bottom:8px">密钥安全吗？</h3><p>所有签名计算在浏览器内通过 Web Crypto API 完成，密钥不会被传输到任何服务器。</p><h3 style="margin-top:20px;margin-bottom:8px">HS256 和 RS256 有什么区别？</h3><p>HS256 使用同一个密钥签名和验证（对称加密），适合内部使用。RS256 使用公私钥对，适合跨系统认证。</p><h3 style="margin-top:20px;margin-bottom:8px">token 可以用于生产环境吗？</h3><p>本工具生成的 token 建议用于开发调试。生产环境应使用服务端 JWT 库生成和管理 token。</p><h3 style="margin-top:20px;margin-bottom:8px">支持不对称加密（RS/ES）吗？</h3><p>当前版本支持 HS256/HS384/HS512 对称签名算法。不对称加密建议使用服务端 JWT 库生成。</p></section>
+<section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/jwt-decoder" class="tool-card"><div class="icon">🔐</div><h3>JWT 在线解码</h3><p>解码 JSON Web Token Header 和 Payload，纯前端处理不上传</p></a><a href="/tools/hash-generator" class="tool-card"><div class="icon">🔐</div><h3>哈希生成器</h3><p>生成 MD5、SHA-1、SHA-256、SHA-512 哈希值</p></a><a href="/tools/random-string" class="tool-card"><div class="icon">🎲</div><h3>随机字符串生成</h3><p>自定义长度和字符集生成密码/随机字符串</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/jwt-generator.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>
