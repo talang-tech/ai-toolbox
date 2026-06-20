@@ -23,3 +23,6 @@ venv/
 # Logs
 *.log
 seo_performance_report.txt
+
+# OpenClaw local agent scratch files
+.openclaw/

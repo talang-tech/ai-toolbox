@@ -185,15 +185,18 @@ def home_page(lang):
     is_en = lang == "en"
     canonical = f"{SITE_URL}/en/" if is_en else f"{SITE_URL}/"
     title = "AI Toolbox - Free Online AI & Developer Tools" if is_en else "AI 工具盒子 - 免费在线 AI 与开发者工具集合"
+    tool_count = len(TOOLS)
     desc = (
-        "Free, fast, privacy-first online tools: JSON formatter, Base64, word counter, regex tester, password generator, QR code, and more. No signup required."
+        f"Free, fast, privacy-first online tools: JSON formatter, Base64, JWT generator, regex patterns, "
+        f"word counter, CSS/JS formatter, QR code, image and PDF tools. {tool_count}+ tools. No signup required."
         if is_en else
-        "免费、极速、隐私优先的在线工具集：JSON 格式化、Base64 编解码、字数统计、正则测试、密码生成、二维码等。无需注册，所有处理在浏览器本地完成。"
+        f"免费、极速、隐私优先的在线工具集：JSON 格式化、Base64 编解码、JWT 生成、正则模式库、"
+        f"字数统计、CSS/JS 格式化、二维码、图片处理、PDF 工具等 {tool_count}+ 工具。无需注册，全部在浏览器本地完成。"
     )
     keywords = (
-        "online tools, free tools, JSON formatter, Base64 encoder, regex tester, password generator, QR code generator, developer tools, AI tools"
+        "online tools, free tools, JSON formatter, Base64 encoder, JWT generator, regex patterns, regex tester, password generator, QR code generator, developer tools, AI tools"
         if is_en else
-        "在线工具,免费工具,JSON 格式化,Base64 编解码,正则测试,密码生成,二维码生成,开发者工具,AI 工具"
+        "在线工具,免费工具,JSON 格式化,Base64 编解码,JWT 生成,正则模式库,正则测试,密码生成,二维码,开发者工具,AI 工具"
     )
     hero_h1 = "AI Toolbox" if is_en else "AI 工具盒子"
     hero_p = (
