@@ -140,6 +140,10 @@
   <url><loc>https://tools.talang.fun/en/tools/regex-pattern-library</loc><lastmod>2026-06-20</lastmod><priority>0.8</priority></url>
   <url><loc>https://tools.talang.fun/tools/jwt-generator</loc><lastmod>2026-06-20</lastmod><priority>0.8</priority></url>
   <url><loc>https://tools.talang.fun/en/tools/jwt-generator</loc><lastmod>2026-06-20</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/tools/json-sorter</loc><lastmod>2026-06-21</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/en/tools/json-sorter</loc><lastmod>2026-06-21</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/tools/text-statistics</loc><lastmod>2026-06-21</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/en/tools/text-statistics</loc><lastmod>2026-06-21</lastmod><priority>0.8</priority></url>
   <url><loc>https://tools.talang.fun/blog/ulid-uuid-nanoid-comparison</loc><lastmod>2026-06-18</lastmod><priority>0.7</priority></url>
   <url><loc>https://tools.talang.fun/blog/browser-local-office-toolbox-guide</loc><lastmod>2026-06-13</lastmod><priority>0.7</priority></url>
   <url><loc>https://tools.talang.fun/blog/json-schema-diff-local-guide</loc><lastmod>2026-06-12</lastmod><priority>0.7</priority></url>

@@ -4320,6 +4320,170 @@
       ],
       "ui_zh": "<div style=\"margin-bottom:16px\"><label>算法:</label><select id=\"jwtgAlgo\" style=\"width:100%\"><option value=\"HS256\">HS256</option><option value=\"HS384\">HS384</option><option value=\"HS512\">HS512</option></select></div><div style=\"display:grid;grid-template-columns:1fr 1fr;gap:16px\"><div><label>Header (JSON):</label><textarea id=\"jwtgHeader\" style=\"min-height:100px;font-family:monospace;font-size:12px\">{\"alg\":\"HS256\",\"typ\":\"JWT\"}</textarea></div><div><label>Payload (JSON):</label><textarea id=\"jwtgPayload\" style=\"min-height:100px;font-family:monospace;font-size:12px\">{\"sub\":\"1234567890\",\"name\":\"John Doe\"}</textarea></div></div><div style=\"margin-top:12px\"><label>密钥 (Secret):</label><input type=\"text\" id=\"jwtgSecret\" value=\"your-256-bit-secret\" style=\"width:100%;font-family:monospace\"></div><div class=\"input-row\" style=\"margin-top:12px\"><label><input type=\"checkbox\" id=\"jwtgIat\" checked> 添加 iat (签发时间)</label><label style=\"margin-left:20px\">过期时间 (秒): <input type=\"number\" id=\"jwtgExp\" value=\"3600\" min=\"0\" style=\"width:80px\"></label></div><button class=\"btn\" id=\"jwtgGenerate\" style=\"margin-top:12px\">生成 JWT</button><div style=\"margin-top:16px\"><label>生成的 Token:</label><textarea id=\"jwtgOutput\" readonly style=\"min-height:60px;font-family:monospace;font-size:12px;word-break:break-all\"></textarea><button class=\"btn\" id=\"jwtgCopy\" style=\"margin-top:6px\">📋 复制 Token</button></div><div id=\"jwtgDecoded\"></div>",
       "ui_en": "<div style=\"margin-bottom:16px\"><label>Algorithm:</label><select id=\"jwtgAlgo\" style=\"width:100%\"><option value=\"HS256\">HS256</option><option value=\"HS384\">HS384</option><option value=\"HS512\">HS512</option></select></div><div style=\"display:grid;grid-template-columns:1fr 1fr;gap:16px\"><div><label>Header (JSON):</label><textarea id=\"jwtgHeader\" style=\"min-height:100px;font-family:monospace;font-size:12px\">{\"alg\":\"HS256\",\"typ\":\"JWT\"}</textarea></div><div><label>Payload (JSON):</label><textarea id=\"jwtgPayload\" style=\"min-height:100px;font-family:monospace;font-size:12px\">{\"sub\":\"1234567890\",\"name\":\"John Doe\"}</textarea></div></div><div style=\"margin-top:12px\"><label>Secret:</label><input type=\"text\" id=\"jwtgSecret\" value=\"your-256-bit-secret\" style=\"width:100%;font-family:monospace\"></div><div class=\"input-row\" style=\"margin-top:12px\"><label><input type=\"checkbox\" id=\"jwtgIat\" checked> Add iat (issued at)</label><label style=\"margin-left:20px\">Expire (seconds): <input type=\"number\" id=\"jwtgExp\" value=\"3600\" min=\"0\" style=\"width:80px\"></label></div><button class=\"btn\" id=\"jwtgGenerate\" style=\"margin-top:12px\">Generate JWT</button><div style=\"margin-top:16px\"><label>Generated Token:</label><textarea id=\"jwtgOutput\" readonly style=\"min-height:60px;font-family:monospace;font-size:12px;word-break:break-all\"></textarea><button class=\"btn\" id=\"jwtgCopy\" style=\"margin-top:6px\">📋 Copy Token</button></div><div id=\"jwtgDecoded\"></div>"
+    },
+    {
+      "slug": "json-sorter",
+      "category": "json",
+      "icon": "🔀",
+      "name_zh": "JSON 排序",
+      "name_en": "JSON Sorter",
+      "short_zh": "按字母序排序 JSON 键值、数组元素，支持嵌套和自定义顺序",
+      "short_en": "Sort JSON keys and array elements alphabetically, with nested and custom order support",
+      "keywords_zh": "JSON排序,JSON键排序,JSON数组排序,JSON排序工具,JSON alphabet",
+      "keywords_en": "JSON sorter, sort JSON keys, sort JSON array, JSON alphabetize, JSON sort online",
+      "long_zh": "<p>免费的在线 JSON 排序工具，支持多种排序方式：按字母序重排 JSON 对象键值、按字母/数字排序数组元素、自定义排序顺序。处理嵌套 JSON 结构时自动递归排序。</p><p>所有处理在浏览器本地完成，数据不会上传到任何服务器。</p>",
+      "long_en": "<p>Free online JSON sorter with multiple modes: alphabetically sort JSON object keys, sort array elements by letter or number, custom sort order. Automatically recurses into nested structures.</p><p>All processing happens locally in your browser. No data is uploaded.</p>",
+      "ui_zh": "<textarea id=\"input\" placeholder=\"粘贴 JSON 数据...\" style=\"min-height:200px\"></textarea><div class=\"btn-group\" style=\"margin-top:12px\"><button class=\"btn\" id=\"sortKeysBtn\">按字母排序键</button><button class=\"btn\" id=\"sortValuesBtn\">排序数组元素</button><button class=\"btn\" id=\"reverseKeysBtn\">逆序排列键</button><button class=\"btn btn-secondary\" id=\"deepSortBtn\">递归排序全部</button></div><div class=\"input-row\" style=\"margin-top:12px\"><label><input type=\"checkbox\" id=\"caseSensitive\" checked> 区分大小写</label><label style=\"margin-left:20px\"><input type=\"checkbox\" id=\"numericSort\"> 数字排序</label></div><textarea id=\"output\" readonly placeholder=\"排序结果...\" style=\"margin-top:12px;min-height:200px\"></textarea><div id=\"msg\" style=\"margin-top:8px;font-size:13px\"></div>",
+      "ui_en": "<textarea id=\"input\" placeholder=\"Paste JSON here...\" style=\"min-height:200px\"></textarea><div class=\"btn-group\" style=\"margin-top:12px\"><button class=\"btn\" id=\"sortKeysBtn\">Sort Keys A→Z</button><button class=\"btn\" id=\"sortValuesBtn\">Sort Array Elements</button><button class=\"btn\" id=\"reverseKeysBtn\">Reverse Keys</button><button class=\"btn btn-secondary\" id=\"deepSortBtn\">Recursive Sort All</button></div><div class=\"input-row\" style=\"margin-top:12px\"><label><input type=\"checkbox\" id=\"caseSensitive\" checked> Case sensitive</label><label style=\"margin-left:20px\"><input type=\"checkbox\" id=\"numericSort\"> Numeric sort</label></div><textarea id=\"output\" readonly placeholder=\"Sorted JSON...\" style=\"margin-top:12px;min-height:200px\"></textarea><div id=\"msg\" style=\"margin-top:8px;font-size:13px\"></div>",
+      "related": [
+        "json-formatter",
+        "json-diff",
+        "json-to-yaml"
+      ],
+      "seo_title_zh": "JSON 排序工具 | 在线 JSON 键/数组排序",
+      "seo_title_en": "JSON Sorter | Sort JSON Keys & Arrays Online",
+      "features_zh": [
+        "按字母序排序 JSON 对象键",
+        "排序 JSON 数组元素（字母/数字）",
+        "递归排序嵌套 JSON 结构",
+        "区分/不区分大小写选项",
+        "一键复制排序结果",
+        "浏览器本地处理，数据安全"
+      ],
+      "features_en": [
+        "Sort JSON object keys alphabetically",
+        "Sort JSON array elements (text/numeric)",
+        "Recursive sort for nested structures",
+        "Case-sensitive and insensitive modes",
+        "One-click copy sorted result",
+        "Browser local processing, data stays safe"
+      ],
+      "faq_zh": [
+        [
+          "排序会修改原始 JSON 吗？",
+          "不会。排序只影响输出结果，原始输入不变。"
+        ],
+        [
+          "支持多大的 JSON 文件？",
+          "只要浏览器内存允许，可处理数 MB 的 JSON 文件。"
+        ],
+        [
+          "数组元素如何排序？",
+          "默认按字符串字母序排序，勾选「数字排序」后按数值排序。"
+        ],
+        [
+          "数据会上传到服务器吗？",
+          "不会。所有处理在浏览器本地完成，数据不会上传。"
+        ],
+        [
+          "嵌套对象也能排序吗？",
+          "可以。递归排序模式会处理所有层级的嵌套对象和数组。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "Does sorting modify the original JSON?",
+          "No. Sorting only affects the output. Your original input stays unchanged."
+        ],
+        [
+          "What JSON size is supported?",
+          "As long as browser memory allows, files of several MB can be processed."
+        ],
+        [
+          "How are array elements sorted?",
+          "By default text alphabetically. Check 'Numeric sort' for numeric sorting."
+        ],
+        [
+          "Is data uploaded to server?",
+          "No. All processing happens locally in your browser."
+        ],
+        [
+          "Are nested objects sorted too?",
+          "Yes. Recursive sort mode handles nested objects and arrays at all levels."
+        ]
+      ]
+    },
+    {
+      "slug": "text-statistics",
+      "category": "text",
+      "icon": "📈",
+      "name_zh": "文本统计与分析",
+      "name_en": "Text Statistics Analyzer",
+      "short_zh": "深度分析文本：字数、句子、段落、阅读时间、高频词、可读性评分",
+      "short_en": "Deep text analysis: characters, sentences, paragraphs, reading time, word frequency, readability score",
+      "keywords_zh": "文本分析,文本统计,高频词,阅读时间,可读性,句子统计,段落统计,文字分析",
+      "keywords_en": "text analysis, text statistics, word frequency, reading time, readability score, sentence count, paragraph analysis",
+      "long_zh": "<p>免费的在线文本统计与分析工具，超越基本的字数统计。实时分析：字符数（含/不含空格/中/英）、单词数、句子数、段落数、阅读时间、高频词汇排名、词语长度分布、以及中英文可读性评分。</p><p>所有分析在浏览器本地完成，文本不会上传到任何服务器。适合写作者、编辑、学生、SEO 优化人员使用。</p>",
+      "long_en": "<p>Free online text statistics analyzer that goes beyond basic word count. Real-time analysis: character count (with/without spaces, CJK/alphabetic), word count, sentence count, paragraph count, estimated reading time, top frequent words, word length distribution, and readability scores.</p><p>All analysis happens locally in your browser. Perfect for writers, editors, students, and SEO professionals.</p>",
+      "ui_zh": "<textarea id=\"input\" placeholder=\"在此输入或粘贴文本...\" style=\"min-height:250px\"></textarea><div class=\"stats\" id=\"statGrid\"></div><div class=\"btn-group\" style=\"margin-top:16px\"><button class=\"btn\" id=\"freqBtn\">查看高频词</button><button class=\"btn\" id=\"clearBtn\" style=\"background:transparent;color:var(--text-dim)\">清空</button></div><div id=\"analysisResult\"></div>",
+      "ui_en": "<textarea id=\"input\" placeholder=\"Type or paste text here...\" style=\"min-height:250px\"></textarea><div class=\"stats\" id=\"statGrid\"></div><div class=\"btn-group\" style=\"margin-top:16px\"><button class=\"btn\" id=\"freqBtn\">Show Word Frequency</button><button class=\"btn\" id=\"clearBtn\" style=\"background:transparent;color:var(--text-dim)\">Clear</button></div><div id=\"analysisResult\"></div>",
+      "related": [
+        "word-counter",
+        "case-converter",
+        "text-diff"
+      ],
+      "seo_title_zh": "文本统计与分析工具 | 高频词/阅读时间/可读性分析",
+      "seo_title_en": "Text Statistics Analyzer | Word Frequency, Reading Time, Readability",
+      "features_zh": [
+        "实时统计字符数（总/不含空格/中文/英文）",
+        "统计单词数、句子数、段落数",
+        "估算阅读时间（分钟）",
+        "高频词汇排名（可调节最小词长）",
+        "词语长度分布可视化",
+        "中英文可读性评分（Flesch / 中文简单率）"
+      ],
+      "features_en": [
+        "Real-time char count (total/no-space/CJK/alphabetic)",
+        "Word count, sentence count, paragraph count",
+        "Estimated reading time (minutes)",
+        "Top frequent word ranking with adjustable min word length",
+        "Word length distribution chart",
+        "Readability score (Flesch / Chinese simplicity ratio)"
+      ],
+      "faq_zh": [
+        [
+          "和字数统计工具有什么区别？",
+          "字数统计工具做基础计数；本工具深入分析高频词、阅读时间、可读性评分等写作指标。"
+        ],
+        [
+          "支持中文文本分析吗？",
+          "支持。中文按字和词分析，同时支持中英文混合文本。"
+        ],
+        [
+          "高频词分析是怎么做的？",
+          "自动统计出现次数最多的前20个单词/词语，可过滤短词。"
+        ],
+        [
+          "数据会上传到服务器吗？",
+          "不会。所有分析在浏览器本地完成。"
+        ],
+        [
+          "句子识别准确吗？",
+          "以句号、问号、感叹号、省略号等中文标点为分割点，准确率较高。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "What's the difference from Word Counter?",
+          "Word Counter does basic counting; this tool provides deep analysis like word frequency, reading time, and readability scores."
+        ],
+        [
+          "Does it support Chinese text?",
+          "Yes. Chinese text is analyzed by characters and words. Mixed Chinese-English text is supported."
+        ],
+        [
+          "How does word frequency work?",
+          "It counts occurrences and shows the top 20 most frequent words, with minimum word length filtering."
+        ],
+        [
+          "Is data uploaded to server?",
+          "No. All analysis is done locally in your browser."
+        ],
+        [
+          "How accurate is sentence detection?",
+          "It splits on punctuation marks (. ? ! ...). Accuracy is high for well-punctuated text."
+        ]
+      ]
     }
   ]
 }
