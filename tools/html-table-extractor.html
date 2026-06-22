@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>HTML 表格提取器 - HTML 表格提取工具 | 在线 HTML Table 转 CSV/JSON/Markdown | AI 工具盒子</title>
+<meta name="description" content="免费在线HTML 表格提取器工具，从 HTML 页面提取表格数据，导出为 CSV/JSON/Markdown。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="HTML表格提取,表格转CSV,表格转JSON,web scraping,网页数据提取,HTML table parser">
+<link rel="canonical" href="https://tools.talang.fun/tools/html-table-extractor">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/html-table-extractor">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/html-table-extractor">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/html-table-extractor">
+<meta property="og:title" content="HTML 表格提取器 - HTML 表格提取工具 | 在线 HTML Table 转 CSV/JSON/Markdown | AI 工具盒子">
+<meta property="og:description" content="免费在线HTML 表格提取器工具，从 HTML 页面提取表格数据，导出为 CSV/JSON/Markdown。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/html-table-extractor">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "HTML 表格提取器", "description": "免费在线HTML 表格提取器工具，从 HTML 页面提取表格数据，导出为 CSV/JSON/Markdown。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/html-table-extractor", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "从 HTML 页面提取表格数据，导出为 CSV/JSON/Markdown", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/tools/html-table-extractor" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">📋</div>
+  <h1>HTML 表格提取器</h1>
+  <p>从 HTML 页面提取表格数据，导出为 CSV/JSON/Markdown</p>
+</div>
+<div class="tool-panel">
+<div style="margin-bottom:12px"><label style="font-size:13px;font-weight:600">HTML 代码（粘贴包含 &lt;table&gt; 的 HTML）</label><textarea id="hte-input" style="width:100%;min-height:200px;font-family:Consolas,monospace;font-size:13px" placeholder="粘贴包含 HTML 表格的代码..."></textarea></div><div style="display:flex;gap:12px;align-items:center;margin-bottom:12px"><label>输出格式: <select id="hte-format"><option value="csv">CSV</option><option value="json">JSON</option><option value="markdown">Markdown 表格</option></select></label><button class="btn" id="hte-extract-btn">提取表格</button><span style="font-size:12px;color:var(--text-muted)">Ctrl+Enter 快速提取</span></div><div id="hte-status" style="font-size:13px;color:var(--text-dim);margin-bottom:8px"></div><div id="hte-preview" style="margin-bottom:12px"></div><div><label style="font-size:13px;font-weight:600">提取结果</label><textarea id="hte-output" readonly style="width:100%;min-height:180px;font-family:Consolas,monospace;font-size:13px" placeholder="结果将显示在这里..."></textarea></div><button class="btn btn-secondary" id="hte-copy-btn" style="margin-top:8px">📋 复制结果</button>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>HTML 表格提取器帮助你将包含 <code>&lt;table&gt;</code> 标签的 HTML 代码中的表格数据一键提取并转换为 CSV、JSON 或 Markdown 表格格式。</p><p>使用场景：从网页文档复制表格数据到 Excel/数据库、抓取网页上的统计表格、快速比较多个 HTML 表格、从邮件/文档中提取表格数据。</p><p>支持 colspan（跨列合并）处理。所有解析在浏览器本地完成，不上传任何数据。</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>从 HTML <table> 标签提取表格数据</li><li>支持导出为 CSV、JSON、Markdown 表格</li><li>预览原始表格结构</li><li>支持跨列合并 (colspan)</li><li>自动检测多个表格分别提取</li><li>Ctrl+Enter 快捷键执行</li><li>浏览器本地处理，数据不上传</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">如何获取要提取的 HTML？</h3><p>在浏览器中打开网页，右键点击表格区域，选择「检查」(Inspect)，复制包含 <table> 的 HTML 代码粘贴到输入框。</p><h3 style="margin-top:20px;margin-bottom:8px">支持 rowspan（跨行合并）吗？</h3><p>目前支持 colspan（跨列合并），不支持 rowspan。rowspan 的表格建议手动调整后再提取。</p><h3 style="margin-top:20px;margin-bottom:8px">提取多个表格时结果怎么排序？</h3><p>按在 HTML 中出现的顺序排列，每个表格之间用注释分隔。</p><h3 style="margin-top:20px;margin-bottom:8px">数据会上传到服务器吗？</h3><p>不会。所有解析在浏览器本地完成，不会上传任何 HTML 或表格数据。</p><h3 style="margin-top:20px;margin-bottom:8px">提取的 JSON 格式是怎样的？</h3><p>以第一行为表头构建对象数组，每行对应一个对象，表头作为键名。</p></section>
+<section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/csv-viewer" class="tool-card"><div class="icon">📈</div><h3>CSV 查看器/转表格</h3><p>解析 CSV/TSV 为表格，可复制 HTML 表格或 JSON</p></a><a href="/tools/csv-cleaner" class="tool-card"><div class="icon">🧹</div><h3>CSV 清洗</h3><p>修剪空格、去重、移除空行、规范化 CSV 格式</p></a><a href="/tools/json-csv" class="tool-card"><div class="icon">🔄</div><h3>JSON ↔ CSV 转换</h3><p>JSON 数组与 CSV 表格格式双向转换，支持含逗号/引号的复杂内容</p></a><a href="/tools/markdown-table" class="tool-card"><div class="icon">📊</div><h3>Markdown 表格生成器</h3><p>将 CSV、TSV 或文本快速转换为 Markdown 格式表格</p></a><a href="/tools/json-formatter" class="tool-card"><div class="icon">{ }</div><h3>JSON 格式化</h3><p>JSON 美化、压缩、校验，错误位置精准定位</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/html-table-extractor.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>
