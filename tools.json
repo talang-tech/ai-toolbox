@@ -44,6 +44,7 @@
           "html-encoder",
           "html-entity",
           "html-table-extractor",
+          "html-minifier",
           "ip-subnet",
           "json-csv",
           "json-formatter",
@@ -99,7 +100,8 @@
           "json-sorter",
           "json-to-go",
           "json-to-ts",
-          "json-to-yaml"
+          "json-to-yaml",
+          "csv-to-json"
         ]
       },
       "image": {
