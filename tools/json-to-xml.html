@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>JSON 转 XML - JSON 转 XML 在线转换工具 | 数据格式互换 | AI 工具盒子 | AI 工具盒子</title>
+<meta name="description" content="免费在线JSON 转 XML工具，将 JSON 数据一键转换为 XML 格式，支持自定义根元素名称和缩进。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="JSON转XML,JSON转换XML,JSON XML互转,数据格式转换,JSON转XML在线,API数据转换,JSON格式化,XML生成器">
+<link rel="canonical" href="https://tools.talang.fun/tools/json-to-xml">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/json-to-xml">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/json-to-xml">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/json-to-xml">
+<meta property="og:title" content="JSON 转 XML - JSON 转 XML 在线转换工具 | 数据格式互换 | AI 工具盒子 | AI 工具盒子">
+<meta property="og:description" content="免费在线JSON 转 XML工具，将 JSON 数据一键转换为 XML 格式，支持自定义根元素名称和缩进。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/json-to-xml">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "JSON 转 XML", "description": "免费在线JSON 转 XML工具，将 JSON 数据一键转换为 XML 格式，支持自定义根元素名称和缩进。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/json-to-xml", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "将 JSON 数据一键转换为 XML 格式，支持自定义根元素名称和缩进", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/tools/json-to-xml" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🔀</div>
+  <h1>JSON 转 XML</h1>
+  <p>将 JSON 数据一键转换为 XML 格式，支持自定义根元素名称和缩进</p>
+</div>
+<div class="tool-panel">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px"><div><label>JSON 输入:</label><textarea id="jsonInput" style="min-height:450px;font-family:monospace;font-size:13px" placeholder="粘贴 JSON..."></textarea></div><div><label>XML 输出:</label><textarea id="xmlOutput" style="min-height:450px;font-family:monospace;font-size:13px" readonly placeholder="转换后的 XML..." spellcheck="false"></textarea></div></div><div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:12px"><button class="btn" id="convertBtn">转换为 XML</button><button class="btn btn-secondary" id="copyBtn">复制 XML</button><button class="btn btn-secondary" id="clearBtn">清空</button><span style="margin-left:auto"><label style="margin-right:6px">根元素:</label><input id="rootName" type="text" value="root" style="width:80px;padding:4px 8px;border:1px solid var(--border);border-radius:4px"><label style="margin:0 6px 0 16px">缩进:</label><select id="indentSelect" style="padding:4px 8px;border:1px solid var(--border);border-radius:4px"><option value="2">2 空格</option><option value="4">4 空格</option></select></span></div><div id="status" style="margin-top:12px;color:var(--text-dim)"></div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>免费的 JSON 转 XML 在线转换工具。支持任意嵌套的 JSON 对象和数组，自动生成格式规范的 XML 文档。你可以自定义根元素名称和缩进大小（2/4 空格），输出带 XML 声明的标准 XML 文本。</p><p>所有转换在浏览器本地完成，你的数据不会上传到服务器。适合 API 数据格式转换、配置文件互转、数据迁移等场景。</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>将 JSON 对象/数组转换为格式规范的 XML</li><li>支持任意嵌套深度的 JSON 结构</li><li>自定义根元素名称</li><li>可配置缩进（2 或 4 空格）</li><li>自动生成 XML 声明（version/encoding）</li><li>自动过滤注释和空行</li><li>浏览器本地处理，数据不上传</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">支持多深的 JSON 嵌套？</h3><p>没有深度限制。工具递归遍历所有层级，任意深度的嵌套 JSON 都可以转换为 XML。</p><h3 style="margin-top:20px;margin-bottom:8px">敏感数据安全吗？</h3><p>完全安全。所有转换在浏览器本地完成，数据不会离开你的电脑。</p><h3 style="margin-top:20px;margin-bottom:8px">JSON 数组怎么转 XML？</h3><p>数组中的每个元素都会以原始元素名称重复出现。例如 {"items": [1,2,3]} 会生成 &lt;items&gt;1&lt;/items&gt;&lt;items&gt;2&lt;/items&gt;&lt;items&gt;3&lt;/items&gt;。</p><h3 style="margin-top:20px;margin-bottom:8px">为什么我的 XML 标签名变了？</h3><p>XML 元素名称不能以数字开头，不能包含空格和特殊字符。不支持的字符会被替换为下划线，数字开头的名称会被加前缀。</p></section>
+<section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/xml-formatter" class="tool-card"><div class="icon">🧩</div><h3>XML 格式化/压缩</h3><p>在线格式化、校验和压缩 XML，支持本地解析错误提示</p></a><a href="/tools/json-to-yaml" class="tool-card"><div class="icon">📊</div><h3>JSON ↔ YAML 互转</h3><p>JSON 与 YAML 格式相互转换</p></a><a href="/tools/json-formatter" class="tool-card"><div class="icon">{ }</div><h3>JSON 格式化</h3><p>JSON 美化、压缩、校验，错误位置精准定位</p></a><a href="/tools/yaml-to-json" class="tool-card"><div class="icon">🔄</div><h3>YAML 转 JSON</h3><p>将 YAML 配置文件一键转换为 JSON 格式，支持 Docker/K8s 配置</p></a><a href="/tools/json-schema-validator" class="tool-card"><div class="icon">✓</div><h3>JSON Schema 校验</h3><p>根据 JSON Schema 标准校验 JSON 数据结构，支持 Draft-07</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/json-to-xml.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>

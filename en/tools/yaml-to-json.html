@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>YAML to JSON Converter - YAML to JSON Converter Online | Docker/K8s Config Format Tool | AI Toolbox</title>
+<meta name="description" content="Free online yaml to json converter. Convert YAML config files to JSON format, supporting Docker Compose, K8s, and CI/CD configs. Fast, secure, and works in your browser without downloading.">
+<meta name="keywords" content="YAML to JSON,YAML converter,YAML to JSON online,config converter,Docker Compose to JSON,Kubernetes YAML to JSON,YML to JSON,format converter">
+<link rel="canonical" href="https://tools.talang.fun/en/tools/yaml-to-json">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/yaml-to-json">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/yaml-to-json">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/yaml-to-json">
+<meta property="og:title" content="YAML to JSON Converter - YAML to JSON Converter Online | Docker/K8s Config Format Tool | AI Toolbox">
+<meta property="og:description" content="Free online yaml to json converter. Convert YAML config files to JSON format, supporting Docker Compose, K8s, and CI/CD configs. Fast, secure, and works in your browser without downloading.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/en/tools/yaml-to-json">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "YAML to JSON Converter", "description": "Free online yaml to json converter. Convert YAML config files to JSON format, supporting Docker Compose, K8s, and CI/CD configs. Fast, secure, and works in your browser without downloading.", "url": "https://tools.talang.fun/en/tools/yaml-to-json", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "Convert YAML config files to JSON format, supporting Docker Compose, K8s, and CI/CD configs", "inLanguage": "en", "author": {"@type": "Organization", "name": "AI Toolbox"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/en/" class="logo"><span class="logo-icon">🛠️</span>AI Toolbox</a>
+    <nav class="nav">
+      <a href="/en/">Home</a>
+      <a href="/en/#tools">All Tools</a>
+      <a href="/en/blog/">Blog</a>
+      <a href="/en/about">About</a>
+      <a href="/en/sponsor">Sponsor</a>
+      <a href="https://tools.talang.fun/tools/yaml-to-json" class="lang-switch">中文</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🔄</div>
+  <h1>YAML to JSON Converter</h1>
+  <p>Convert YAML config files to JSON format, supporting Docker Compose, K8s, and CI/CD configs</p>
+</div>
+<div class="tool-panel">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px"><div><label>YAML input:</label><textarea id="yamlInput" style="min-height:450px;font-family:monospace;font-size:13px" placeholder="Paste YAML config..."></textarea></div><div><label>JSON output:</label><textarea id="jsonOutput" style="min-height:450px;font-family:monospace;font-size:13px" readonly placeholder="Converted JSON..."></textarea></div></div><div class="input-row" style="margin-top:12px"><button class="btn" id="convertBtn">Convert to JSON</button><button class="btn btn-secondary" id="copyBtn">Copy JSON</button><button class="btn btn-secondary" id="clearBtn">Clear</button></div><div id="status" style="margin-top:12px;color:var(--text-dim)"></div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>About this tool</h2>
+  <p>Free online YAML to JSON converter for Docker Compose, Kubernetes, GitHub Actions, CI/CD, OpenAPI and other YAML config files. Supports basic data types, nested objects, arrays (lists), multi-line strings (block scalars), and comment filtering.</p><p>All conversion runs locally in your browser — your config content is never uploaded to a server. Note: this is a lightweight YAML parser for common config scenarios. It <strong>does not</strong> support YAML anchors/aliases, tags, or advanced merge keys. Use a dedicated YAML library for full spec support.</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>Key Features</h2><ul><li>Convert YAML to its equivalent JSON representation</li><li>Support nested objects and arrays (lists)</li><li>Support multi-line strings (block scalar - | >)</li><li>Automatically filters comments and empty lines</li><li>Browser-local processing, config data stays on your machine</li><li>Auto-converts as you type</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>Frequently Asked Questions</h2><h3 style="margin-top:20px;margin-bottom:8px">Is my config data safe?</h3><p>This tool runs entirely in your browser. Your config is never sent to any server. It's safe to paste files containing secrets or API keys.</p><h3 style="margin-top:20px;margin-bottom:8px">Does it support all YAML syntax?</h3><p>It supports common config scenarios: key-value pairs, nested objects, arrays, multi-line strings, and comment filtering. It does NOT support anchors/aliases, tags, merge keys (<<), or complex multi-document YAML. Use js-yaml for full spec parsing.</p><h3 style="margin-top:20px;margin-bottom:8px">What's the difference from the JSON to YAML tool?</h3><p>JSON to YAML generates YAML from JSON. This tool does the reverse — converting YAML configs to JSON format for those who prefer or need JSON output.</p></section>
+<section class="related"><h3>Related Tools</h3><div class="tools-grid"><a href="/en/tools/yaml-formatter" class="tool-card"><div class="icon">🧾</div><h3>YAML Formatter & Validator</h3><p>Format YAML configs and validate indentation, colons, duplicate keys, and common syntax issues locally</p></a><a href="/en/tools/json-to-yaml" class="tool-card"><div class="icon">📊</div><h3>JSON ↔ YAML</h3><p>Convert JSON to YAML and YAML to JSON instantly. Preserve data types, formatting options, and live preview of both formats side by side.</p></a><a href="/en/tools/json-formatter" class="tool-card"><div class="icon">{ }</div><h3>JSON Formatter</h3><p>Beautify, minify, and validate JSON with precise error location</p></a><a href="/en/tools/xml-formatter" class="tool-card"><div class="icon">🧩</div><h3>XML Formatter & Minifier</h3><p>Format, validate, and minify XML locally with parser error messages</p></a><a href="/en/tools/json-to-xml" class="tool-card"><div class="icon">🔀</div><h3>JSON to XML Converter</h3><p>Convert JSON data to XML format with customizable root element name and indentation</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>Need a private toolbox or custom browser tool?</h2>
+  <p>AI Toolbox can be adapted for internal workflows, private deployment, sponsored categories, or custom privacy-first utilities.</p>
+  <p><a href="/en/sponsor" data-event="conversion_cta_click" data-label="en_partner_custom_tool_cta">View partnership and custom tool options →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/yaml-to-json.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI Toolbox · Free online AI & developer tools · <a href='/en/about'>About</a> · <a href='/en/sponsor'>Sponsor</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('Copied!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>

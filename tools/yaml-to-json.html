@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>YAML 转 JSON - YAML 转 JSON 在线转换器 | Docker/K8s 配置格式互转 | AI 工具盒子</title>
+<meta name="description" content="免费在线YAML 转 JSON工具，将 YAML 配置文件一键转换为 JSON 格式，支持 Docker/K8s 配置。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="YAML转JSON,YAML转换,YAML配置,JSON转换,配置文件格式转换,Docker Compose转JSON,Kubernetes转JSON,YML转JSON">
+<link rel="canonical" href="https://tools.talang.fun/tools/yaml-to-json">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/yaml-to-json">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/yaml-to-json">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/yaml-to-json">
+<meta property="og:title" content="YAML 转 JSON - YAML 转 JSON 在线转换器 | Docker/K8s 配置格式互转 | AI 工具盒子">
+<meta property="og:description" content="免费在线YAML 转 JSON工具，将 YAML 配置文件一键转换为 JSON 格式，支持 Docker/K8s 配置。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/yaml-to-json">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "YAML 转 JSON", "description": "免费在线YAML 转 JSON工具，将 YAML 配置文件一键转换为 JSON 格式，支持 Docker/K8s 配置。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/yaml-to-json", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "将 YAML 配置文件一键转换为 JSON 格式，支持 Docker/K8s 配置", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/tools/yaml-to-json" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🔄</div>
+  <h1>YAML 转 JSON</h1>
+  <p>将 YAML 配置文件一键转换为 JSON 格式，支持 Docker/K8s 配置</p>
+</div>
+<div class="tool-panel">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px"><div><label>YAML 输入:</label><textarea id="yamlInput" style="min-height:450px;font-family:monospace;font-size:13px" placeholder="粘贴 YAML 配置..."></textarea></div><div><label>JSON 输出:</label><textarea id="jsonOutput" style="min-height:450px;font-family:monospace;font-size:13px" readonly placeholder="转换后的 JSON..."></textarea></div></div><div class="input-row" style="margin-top:12px"><button class="btn" id="convertBtn">转换为 JSON</button><button class="btn btn-secondary" id="copyBtn">复制 JSON</button><button class="btn btn-secondary" id="clearBtn">清空</button></div><div id="status" style="margin-top:12px;color:var(--text-dim)"></div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>免费的 YAML 转 JSON 在线工具，适合将 Docker Compose、Kubernetes、GitHub Actions、CI/CD、OpenAPI 等 YAML 配置文件转换为 JSON 格式。支持基本数据类型、嵌套对象、数组（列表）、多行字符串（block scalar），以及注释过滤。</p><p>所有转换在浏览器本地完成，你的配置内容不会上传到服务器。注意：本工具为轻量级 YAML 解析器，覆盖常见配置场景，<strong>不支持</strong> YAML 锚点/别名、标签、高级 merge key 等复杂语法。如需完整 YAML 支持，请使用专用 YAML 库。</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>将 YAML 转换为其等价的 JSON 格式</li><li>支持嵌套对象和数组（列表）结构</li><li>支持多行字符串（Block Scalar - | >）</li><li>自动过滤注释和空行</li><li>浏览器本地处理，配置不上传</li><li>输入自动转换，无需点击按钮</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">上传后我的配置安全吗？</h3><p>本工具完全在浏览器本地运行，你的配置内容不会发送到任何服务器。可以放心粘贴包含密钥或敏感信息的 YAML 文件。</p><h3 style="margin-top:20px;margin-bottom:8px">支持所有 YAML 语法吗？</h3><p>支持常见配置场景：键值对、嵌套对象、数组、多行字符串、注释过滤。不支持锚点/别名、标签（!!str 等）、merge key（<<）、复杂 multi-document。如果需要完整 YAML 解析，建议使用 js-yaml 等专用库。</p><h3 style="margin-top:20px;margin-bottom:8px">和 JSON 转 YAML 工具有什么区别？</h3><p>JSON 转 YAML 是将 JSON 数据生成 YAML 格式。这个工具方向相反，把 YAML 配置转成 JSON，适合偏好 JSON 格式或需要 JSON 输出的场景。</p></section>
+<section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/yaml-formatter" class="tool-card"><div class="icon">🧾</div><h3>YAML 格式化/校验</h3><p>在线格式化 YAML 配置并检查缩进、冒号和常见语法问题</p></a><a href="/tools/json-to-yaml" class="tool-card"><div class="icon">📊</div><h3>JSON ↔ YAML 互转</h3><p>JSON 与 YAML 格式相互转换</p></a><a href="/tools/json-formatter" class="tool-card"><div class="icon">{ }</div><h3>JSON 格式化</h3><p>JSON 美化、压缩、校验，错误位置精准定位</p></a><a href="/tools/xml-formatter" class="tool-card"><div class="icon">🧩</div><h3>XML 格式化/压缩</h3><p>在线格式化、校验和压缩 XML，支持本地解析错误提示</p></a><a href="/tools/json-to-xml" class="tool-card"><div class="icon">🔀</div><h3>JSON 转 XML</h3><p>将 JSON 数据一键转换为 XML 格式，支持自定义根元素名称和缩进</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/yaml-to-json.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>

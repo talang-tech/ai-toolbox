@@ -63,7 +63,8 @@
           "url-parser",
           "url-query-builder",
           "xml-formatter",
-          "yaml-formatter"
+          "yaml-formatter",
+          "yaml-to-json"
         ]
       },
       "encode": {
@@ -101,6 +102,7 @@
           "json-to-go",
           "json-to-ts",
           "json-to-yaml",
+          "json-to-xml",
           "csv-to-json"
         ]
       },
@@ -5099,6 +5101,151 @@
         [
           "Is my data uploaded?",
           "No. All processing happens locally in your browser."
+        ]
+      ]
+    },
+    {
+      "slug": "yaml-to-json",
+      "category": "dev",
+      "icon": "🔄",
+      "name_zh": "YAML 转 JSON",
+      "name_en": "YAML to JSON Converter",
+      "short_zh": "将 YAML 配置文件一键转换为 JSON 格式，支持 Docker/K8s 配置",
+      "short_en": "Convert YAML config files to JSON format, supporting Docker Compose, K8s, and CI/CD configs",
+      "keywords_zh": "YAML转JSON,YAML转换,YAML配置,JSON转换,配置文件格式转换,Docker Compose转JSON,Kubernetes转JSON,YML转JSON",
+      "keywords_en": "YAML to JSON,YAML converter,YAML to JSON online,config converter,Docker Compose to JSON,Kubernetes YAML to JSON,YML to JSON,format converter",
+      "long_zh": "<p>免费的 YAML 转 JSON 在线工具，适合将 Docker Compose、Kubernetes、GitHub Actions、CI/CD、OpenAPI 等 YAML 配置文件转换为 JSON 格式。支持基本数据类型、嵌套对象、数组（列表）、多行字符串（block scalar），以及注释过滤。</p><p>所有转换在浏览器本地完成，你的配置内容不会上传到服务器。注意：本工具为轻量级 YAML 解析器，覆盖常见配置场景，<strong>不支持</strong> YAML 锚点/别名、标签、高级 merge key 等复杂语法。如需完整 YAML 支持，请使用专用 YAML 库。</p>",
+      "long_en": "<p>Free online YAML to JSON converter for Docker Compose, Kubernetes, GitHub Actions, CI/CD, OpenAPI and other YAML config files. Supports basic data types, nested objects, arrays (lists), multi-line strings (block scalars), and comment filtering.</p><p>All conversion runs locally in your browser — your config content is never uploaded to a server. Note: this is a lightweight YAML parser for common config scenarios. It <strong>does not</strong> support YAML anchors/aliases, tags, or advanced merge keys. Use a dedicated YAML library for full spec support.</p>",
+      "ui_zh": "<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:16px\"><div><label>YAML 输入:</label><textarea id=\"yamlInput\" style=\"min-height:450px;font-family:monospace;font-size:13px\" placeholder=\"粘贴 YAML 配置...\"></textarea></div><div><label>JSON 输出:</label><textarea id=\"jsonOutput\" style=\"min-height:450px;font-family:monospace;font-size:13px\" readonly placeholder=\"转换后的 JSON...\"></textarea></div></div><div class=\"input-row\" style=\"margin-top:12px\"><button class=\"btn\" id=\"convertBtn\">转换为 JSON</button><button class=\"btn btn-secondary\" id=\"copyBtn\">复制 JSON</button><button class=\"btn btn-secondary\" id=\"clearBtn\">清空</button></div><div id=\"status\" style=\"margin-top:12px;color:var(--text-dim)\"></div>",
+      "ui_en": "<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:16px\"><div><label>YAML input:</label><textarea id=\"yamlInput\" style=\"min-height:450px;font-family:monospace;font-size:13px\" placeholder=\"Paste YAML config...\"></textarea></div><div><label>JSON output:</label><textarea id=\"jsonOutput\" style=\"min-height:450px;font-family:monospace;font-size:13px\" readonly placeholder=\"Converted JSON...\"></textarea></div></div><div class=\"input-row\" style=\"margin-top:12px\"><button class=\"btn\" id=\"convertBtn\">Convert to JSON</button><button class=\"btn btn-secondary\" id=\"copyBtn\">Copy JSON</button><button class=\"btn btn-secondary\" id=\"clearBtn\">Clear</button></div><div id=\"status\" style=\"margin-top:12px;color:var(--text-dim)\"></div>",
+      "related": [
+        "yaml-formatter",
+        "json-to-yaml",
+        "json-formatter",
+        "xml-formatter",
+        "json-to-xml"
+      ],
+      "seo_title_zh": "YAML 转 JSON 在线转换器 | Docker/K8s 配置格式互转",
+      "seo_title_en": "YAML to JSON Converter Online | Docker/K8s Config Format Tool",
+      "features_zh": [
+        "将 YAML 转换为其等价的 JSON 格式",
+        "支持嵌套对象和数组（列表）结构",
+        "支持多行字符串（Block Scalar - | >）",
+        "自动过滤注释和空行",
+        "浏览器本地处理，配置不上传",
+        "输入自动转换，无需点击按钮"
+      ],
+      "features_en": [
+        "Convert YAML to its equivalent JSON representation",
+        "Support nested objects and arrays (lists)",
+        "Support multi-line strings (block scalar - | >)",
+        "Automatically filters comments and empty lines",
+        "Browser-local processing, config data stays on your machine",
+        "Auto-converts as you type"
+      ],
+      "faq_zh": [
+        [
+          "上传后我的配置安全吗？",
+          "本工具完全在浏览器本地运行，你的配置内容不会发送到任何服务器。可以放心粘贴包含密钥或敏感信息的 YAML 文件。"
+        ],
+        [
+          "支持所有 YAML 语法吗？",
+          "支持常见配置场景：键值对、嵌套对象、数组、多行字符串、注释过滤。不支持锚点/别名、标签（!!str 等）、merge key（<<）、复杂 multi-document。如果需要完整 YAML 解析，建议使用 js-yaml 等专用库。"
+        ],
+        [
+          "和 JSON 转 YAML 工具有什么区别？",
+          "JSON 转 YAML 是将 JSON 数据生成 YAML 格式。这个工具方向相反，把 YAML 配置转成 JSON，适合偏好 JSON 格式或需要 JSON 输出的场景。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "Is my config data safe?",
+          "This tool runs entirely in your browser. Your config is never sent to any server. It's safe to paste files containing secrets or API keys."
+        ],
+        [
+          "Does it support all YAML syntax?",
+          "It supports common config scenarios: key-value pairs, nested objects, arrays, multi-line strings, and comment filtering. It does NOT support anchors/aliases, tags, merge keys (<<), or complex multi-document YAML. Use js-yaml for full spec parsing."
+        ],
+        [
+          "What's the difference from the JSON to YAML tool?",
+          "JSON to YAML generates YAML from JSON. This tool does the reverse — converting YAML configs to JSON format for those who prefer or need JSON output."
+        ]
+      ]
+    },
+    {
+      "slug": "json-to-xml",
+      "category": "json",
+      "icon": "🔀",
+      "name_zh": "JSON 转 XML",
+      "name_en": "JSON to XML Converter",
+      "short_zh": "将 JSON 数据一键转换为 XML 格式，支持自定义根元素名称和缩进",
+      "short_en": "Convert JSON data to XML format with customizable root element name and indentation",
+      "keywords_zh": "JSON转XML,JSON转换XML,JSON XML互转,数据格式转换,JSON转XML在线,API数据转换,JSON格式化,XML生成器",
+      "keywords_en": "JSON to XML,JSON to XML converter,JSON XML conversion,data format converter,JSON to XML online,API data conversion,XML generator,format transformer",
+      "long_zh": "<p>免费的 JSON 转 XML 在线转换工具。支持任意嵌套的 JSON 对象和数组，自动生成格式规范的 XML 文档。你可以自定义根元素名称和缩进大小（2/4 空格），输出带 XML 声明的标准 XML 文本。</p><p>所有转换在浏览器本地完成，你的数据不会上传到服务器。适合 API 数据格式转换、配置文件互转、数据迁移等场景。</p>",
+      "long_en": "<p>Free online JSON to XML converter. Handles arbitrarily nested JSON objects and arrays, automatically generating well-formatted XML documents. Customize the root element name and indentation (2/4 spaces), and get standard XML with a declaration.</p><p>All conversion runs locally in your browser — your data never leaves your machine. Ideal for API data format transformation, config file conversion, and data migration tasks.</p>",
+      "ui_zh": "<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:16px\"><div><label>JSON 输入:</label><textarea id=\"jsonInput\" style=\"min-height:450px;font-family:monospace;font-size:13px\" placeholder=\"粘贴 JSON...\"></textarea></div><div><label>XML 输出:</label><textarea id=\"xmlOutput\" style=\"min-height:450px;font-family:monospace;font-size:13px\" readonly placeholder=\"转换后的 XML...\" spellcheck=\"false\"></textarea></div></div><div style=\"display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:12px\"><button class=\"btn\" id=\"convertBtn\">转换为 XML</button><button class=\"btn btn-secondary\" id=\"copyBtn\">复制 XML</button><button class=\"btn btn-secondary\" id=\"clearBtn\">清空</button><span style=\"margin-left:auto\"><label style=\"margin-right:6px\">根元素:</label><input id=\"rootName\" type=\"text\" value=\"root\" style=\"width:80px;padding:4px 8px;border:1px solid var(--border);border-radius:4px\"><label style=\"margin:0 6px 0 16px\">缩进:</label><select id=\"indentSelect\" style=\"padding:4px 8px;border:1px solid var(--border);border-radius:4px\"><option value=\"2\">2 空格</option><option value=\"4\">4 空格</option></select></span></div><div id=\"status\" style=\"margin-top:12px;color:var(--text-dim)\"></div>",
+      "ui_en": "<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:16px\"><div><label>JSON input:</label><textarea id=\"jsonInput\" style=\"min-height:450px;font-family:monospace;font-size:13px\" placeholder=\"Paste JSON...\"></textarea></div><div><label>XML output:</label><textarea id=\"xmlOutput\" style=\"min-height:450px;font-family:monospace;font-size:13px\" readonly placeholder=\"Converted XML...\" spellcheck=\"false\"></textarea></div></div><div style=\"display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:12px\"><button class=\"btn\" id=\"convertBtn\">Convert to XML</button><button class=\"btn btn-secondary\" id=\"copyBtn\">Copy XML</button><button class=\"btn btn-secondary\" id=\"clearBtn\">Clear</button><span style=\"margin-left:auto\"><label style=\"margin-right:6px\">Root:</label><input id=\"rootName\" type=\"text\" value=\"root\" style=\"width:80px;padding:4px 8px;border:1px solid var(--border);border-radius:4px\"><label style=\"margin:0 6px 0 16px\">Indent:</label><select id=\"indentSelect\" style=\"padding:4px 8px;border:1px solid var(--border);border-radius:4px\"><option value=\"2\">2 spaces</option><option value=\"4\">4 spaces</option></select></span></div><div id=\"status\" style=\"margin-top:12px;color:var(--text-dim)\"></div>",
+      "related": [
+        "xml-formatter",
+        "json-to-yaml",
+        "json-formatter",
+        "yaml-to-json",
+        "json-schema-validator"
+      ],
+      "seo_title_zh": "JSON 转 XML 在线转换工具 | 数据格式互换 | AI 工具盒子",
+      "seo_title_en": "JSON to XML Converter Online | Data Format Converter | AI Toolbox",
+      "features_zh": [
+        "将 JSON 对象/数组转换为格式规范的 XML",
+        "支持任意嵌套深度的 JSON 结构",
+        "自定义根元素名称",
+        "可配置缩进（2 或 4 空格）",
+        "自动生成 XML 声明（version/encoding）",
+        "自动过滤注释和空行",
+        "浏览器本地处理，数据不上传"
+      ],
+      "features_en": [
+        "Convert JSON objects/arrays to well-formatted XML",
+        "Support arbitrarily nested JSON structures",
+        "Customizable root element name",
+        "Configurable indentation (2 or 4 spaces)",
+        "Auto-generate XML declaration (version/encoding)",
+        "Browser-local processing, data stays on your machine"
+      ],
+      "faq_zh": [
+        [
+          "支持多深的 JSON 嵌套？",
+          "没有深度限制。工具递归遍历所有层级，任意深度的嵌套 JSON 都可以转换为 XML。"
+        ],
+        [
+          "敏感数据安全吗？",
+          "完全安全。所有转换在浏览器本地完成，数据不会离开你的电脑。"
+        ],
+        [
+          "JSON 数组怎么转 XML？",
+          "数组中的每个元素都会以原始元素名称重复出现。例如 {\"items\": [1,2,3]} 会生成 &lt;items&gt;1&lt;/items&gt;&lt;items&gt;2&lt;/items&gt;&lt;items&gt;3&lt;/items&gt;。"
+        ],
+        [
+          "为什么我的 XML 标签名变了？",
+          "XML 元素名称不能以数字开头，不能包含空格和特殊字符。不支持的字符会被替换为下划线，数字开头的名称会被加前缀。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "How deep nesting does it support?",
+          "No depth limit. The tool recursively traverses all levels — arbitrarily nested JSON can be converted."
+        ],
+        [
+          "Is my sensitive data safe?",
+          "Completely safe. All processing runs locally in your browser. Data never leaves your machine."
+        ],
+        [
+          "How are JSON arrays converted?",
+          "Each array element repeats the original element name. For example {\"items\": [1,2,3]} produces &lt;items&gt;1&lt;/items&gt;&lt;items&gt;2&lt;/items&gt;&lt;items&gt;3&lt;/items&gt;."
+        ],
+        [
+          "Why did my XML tag name change?",
+          "XML element names cannot start with digits or contain spaces/special chars. Unsupported characters are replaced with underscores; digit-starting names get a prefix."
         ]
       ]
     }
