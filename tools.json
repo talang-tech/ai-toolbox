@@ -337,7 +337,8 @@
       "related": [
         "base64",
         "json-diff",
-        "url-encoder"
+        "url-encoder",
+        "json-to-csv"
       ],
       "seo_title_zh": "JSON 格式化 | 在线 JSON 美化/压缩/校验",
       "seo_title_en": "JSON Formatter | Online JSON Beautify/Minify/Validate",
@@ -1287,7 +1288,8 @@
       "ui_en": "<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:16px\"><div><label>JSON:</label><textarea id=\"jsonCsvJson\" style=\"min-height:260px;font-family:monospace;font-size:12px\">[{\"name\":\"Alice\",\"age\":30},{\"name\":\"Bob\",\"age\":25}]</textarea><button class=\"btn\" id=\"toCsvBtn\" style=\"margin-top:8px\">→ to CSV</button></div><div><label>CSV:</label><textarea id=\"jsonCsvCsv\" style=\"min-height:260px;font-family:monospace;font-size:12px\">name,age\nAlice,30\nBob,25</textarea><button class=\"btn\" id=\"toJsonBtn\" style=\"margin-top:8px\">→ to JSON</button></div></div><div id=\"jsonCsvMsg\" style=\"margin-top:8px\"></div>",
       "related": [
         "json-formatter",
-        "base64"
+        "base64",
+        "json-to-csv"
       ],
       "seo_title_zh": "JSON CSV 转换 | 在线 JSON 和 CSV 互转",
       "seo_title_en": "JSON CSV Converter | Online JSON to CSV and CSV to JSON",
@@ -1481,7 +1483,8 @@
       "related": [
         "url-encoder",
         "base64",
-        "json-formatter"
+        "json-formatter",
+        "html-stripper"
       ],
       "seo_title_zh": "HTML 实体编解码 | HTML 特殊字符转义",
       "seo_title_en": "HTML Entity Encoder Decoder | HTML Special Character Escape",
@@ -2907,7 +2910,9 @@
       "keywords_en": "JSON ↔ YAML,online tool",
       "ui_zh": "<textarea id=\"input\" style=\"min-height:250px\" placeholder=\"输入...\"></textarea><div class=\"btn-group\" style=\"margin-top:12px\"><button class=\"btn\" id=\"process\">处理</button></div><textarea id=\"output\" style=\"min-height:250px;margin-top:12px\" readonly placeholder=\"结果...\"></textarea>",
       "ui_en": "<textarea id=\"input\" style=\"min-height:250px\" placeholder=\"输入...\"></textarea><div class=\"btn-group\" style=\"margin-top:12px\"><button class=\"btn\" id=\"process\">处理</button></div><textarea id=\"output\" style=\"min-height:250px;margin-top:12px\" readonly placeholder=\"结果...\"></textarea>",
-      "related": [],
+      "related": [
+        "json-to-csv"
+      ],
       "seo_title_zh": "JSON ↔ YAML 互转 | 在线工具",
       "seo_title_en": "JSON ↔ YAML | Online Tool",
       "features_en": [],
@@ -2973,7 +2978,9 @@
       "keywords_en": "HTML Encoder,online tool",
       "ui_zh": "<textarea id=\"input\" style=\"min-height:250px\" placeholder=\"输入...\"></textarea><div class=\"btn-group\" style=\"margin-top:12px\"><button class=\"btn\" id=\"process\">处理</button></div><textarea id=\"output\" style=\"min-height:250px;margin-top:12px\" readonly placeholder=\"结果...\"></textarea>",
       "ui_en": "<textarea id=\"input\" style=\"min-height:250px\" placeholder=\"输入...\"></textarea><div class=\"btn-group\" style=\"margin-top:12px\"><button class=\"btn\" id=\"process\">处理</button></div><textarea id=\"output\" style=\"min-height:250px;margin-top:12px\" readonly placeholder=\"结果...\"></textarea>",
-      "related": [],
+      "related": [
+        "html-stripper"
+      ],
       "seo_title_zh": "HTML 转义编码 | 在线工具",
       "seo_title_en": "HTML Encoder | Online Tool",
       "features_en": [],
@@ -4666,7 +4673,8 @@
         "csv-cleaner",
         "json-csv",
         "markdown-table",
-        "json-formatter"
+        "json-formatter",
+        "html-stripper"
       ],
       "seo_title_zh": "HTML 表格提取工具 | 在线 HTML Table 转 CSV/JSON/Markdown",
       "seo_title_en": "HTML Table Extractor | Online Table to CSV/JSON/Markdown Converter",
@@ -4837,7 +4845,8 @@
         "csv-viewer",
         "csv-cleaner",
         "json-formatter",
-        "json-to-yaml"
+        "json-to-yaml",
+        "json-to-csv"
       ],
       "seo_title_zh": "CSV 转 JSON 工具 | 在线 CSV ↔ JSON 互转",
       "seo_title_en": "CSV to JSON Converter | Online CSV ↔ JSON Converter Tool",
@@ -4913,6 +4922,183 @@
         [
           "Can I convert JSON back to CSV?",
           "This tool converts CSV→JSON only. Use 'JSON to CSV' for the reverse direction."
+        ]
+      ]
+    },
+    {
+      "slug": "html-stripper",
+      "category": "text",
+      "icon": "🧹",
+      "name_zh": "HTML 标签去除",
+      "name_en": "HTML Tag Stripper",
+      "short_zh": "从 HTML 中提取纯文本，去除 HTML 标签和样式",
+      "short_en": "Extract clean text from HTML - strip tags, decode entities",
+      "keywords_zh": "HTML标签去除,HTML转纯文本,去除HTML标记,HTML清理,网页文本提取,去除HTML标签,HTML Stripper,html提取文字",
+      "keywords_en": "html tag stripper, strip html tags, html to text, remove html tags, html cleaner, extract text from html, html entity decoder",
+      "long_zh": "<p>免费的在线 HTML 标签去除工具。一键去除 HTML 代码中的所有标签、样式和脚本，提取纯净的文字内容。常用于：从网页复制内容时去掉格式污染、从邮件模板中提取文案、从富文本编辑器中获取纯文本。</p><p>支持三种模式：仅去除标签保留内容、去除标签及内容（如 script/style）、仅解码 HTML 实体。支持保留换行结构、合并多余空格。</p><p>所有处理在浏览器本地完成，HTML 代码不会上传到任何服务器。</p>",
+      "long_en": "<p>Free online HTML Tag Stripper. Instantly remove all HTML tags to extract clean text. Perfect for: removing formatting from web copies, extracting text from email templates, getting plain text from rich editors.</p><p>Three modes: strip tags (keep text), strip tags+content (remove script/style), decode HTML entities only. Options to preserve line breaks and collapse spaces.</p><p>100% browser local, no data upload.</p>",
+      "ui_zh": "<div style=\"margin-bottom:12px\"><label style=\"font-size:13px;font-weight:600\">HTML 代码</label><textarea id=\"hs-input\" style=\"width:100%;min-height:200px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"粘贴包含 HTML 标签的代码...\"></textarea></div><div style=\"display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:12px\"><label><input type=\"radio\" name=\"hs-mode\" id=\"hs-mode-strip\" checked> 去除标签 (保留内容)</label><label><input type=\"radio\" name=\"hs-mode\" id=\"hs-mode-all\"> 去除标签+内容</label><label><input type=\"radio\" name=\"hs-mode\" id=\"hs-mode-entities\"> 仅解码 HTML 实体</label></div><div style=\"display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:12px\"><label><input type=\"checkbox\" id=\"hs-preserve-newlines\" checked> 保留换行结构</label><label><input type=\"checkbox\" id=\"hs-collapse\" checked> 合并多余空格</label><button class=\"btn\" id=\"hs-strip-btn\">🧹 提取纯文本</button><span style=\"font-size:12px;color:var(--text-muted)\">Ctrl+Enter</span></div><div id=\"hs-stats\" style=\"font-size:13px;color:var(--text-dim);margin-bottom:8px;display:flex;gap:16px\"></div><div id=\"hs-status\" style=\"font-size:13px;margin-bottom:8px;display:none\"></div><div><label style=\"font-size:13px;font-weight:600\">提取结果</label><textarea id=\"hs-output\" readonly style=\"width:100%;min-height:180px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"纯文本结果将显示在这里...\"></textarea></div><div style=\"display:flex;gap:8px;margin-top:8px\"><button class=\"btn btn-secondary\" id=\"hs-copy-btn\">📋 复制结果</button><button class=\"btn btn-secondary\" id=\"hs-clear-btn\">🗑️ 清空</button></div>",
+      "ui_en": "<div style=\"margin-bottom:12px\"><label style=\"font-size:13px;font-weight:600\">HTML Code</label><textarea id=\"hs-input\" style=\"width:100%;min-height:200px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"Paste HTML with tags...\"></textarea></div><div style=\"display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:12px\"><label><input type=\"radio\" name=\"hs-mode\" id=\"hs-mode-strip\" checked> Strip tags (keep text)</label><label><input type=\"radio\" name=\"hs-mode\" id=\"hs-mode-all\"> Strip tags &amp; content</label><label><input type=\"radio\" name=\"hs-mode\" id=\"hs-mode-entities\"> Decode entities only</label></div><div style=\"display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:12px\"><label><input type=\"checkbox\" id=\"hs-preserve-newlines\" checked> Preserve line breaks</label><label><input type=\"checkbox\" id=\"hs-collapse\" checked> Collapse spaces</label><button class=\"btn\" id=\"hs-strip-btn\">🧹 Extract Text</button><span style=\"font-size:12px;color:var(--text-muted)\">Ctrl+Enter</span></div><div id=\"hs-stats\" style=\"font-size:13px;color:var(--text-dim);margin-bottom:8px;display:flex;gap:16px\"></div><div id=\"hs-status\" style=\"font-size:13px;margin-bottom:8px;display:none\"></div><div><label style=\"font-size:13px;font-weight:600\">Extracted Text</label><textarea id=\"hs-output\" readonly style=\"width:100%;min-height:180px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"Plain text appears here...\"></textarea></div><div style=\"display:flex;gap:8px;margin-top:8px\"><button class=\"btn btn-secondary\" id=\"hs-copy-btn\">📋 Copy</button><button class=\"btn btn-secondary\" id=\"hs-clear-btn\">🗑️ Clear</button></div>",
+      "related": [
+        "html-entity",
+        "html-encoder",
+        "html-table-extractor",
+        "text-dedup",
+        "text-statistics"
+      ],
+      "seo_title_zh": "HTML 标签去除工具 | 在线 HTML 转纯文本",
+      "seo_title_en": "HTML Tag Stripper | Online HTML to Plain Text Converter",
+      "features_zh": [
+        "一键去除所有 HTML 标签，保留纯净文字",
+        "三种模式：仅去标签、去标签+内容、仅解码实体",
+        "支持保留/去除换行结构",
+        "支持合并多余空格",
+        "自动解码 HTML 实体",
+        "实时预览统计：字符数对比、压缩比例",
+        "Ctrl+Enter 快捷键执行",
+        "浏览器本地处理，HTML 代码不上传"
+      ],
+      "features_en": [
+        "Remove all HTML tags in one click",
+        "Three modes: strip tags, strip content, decode only",
+        "Preserve or remove line breaks",
+        "Collapse extra whitespace option",
+        "Auto-decode HTML entities",
+        "Live preview with character count comparison",
+        "Ctrl+Enter keyboard shortcut",
+        "100% browser-local, no data upload"
+      ],
+      "faq_zh": [
+        [
+          "HTML 标签去除和 HTML 编码转换有什么不同？",
+          "标签去除是删除 &lt;div&gt; 这样的标记保留文字；HTML 编码转换是将 &amp;lt; 这样的实体转为正常字符。本工具同时支持这两种操作。"
+        ],
+        [
+          "什么情况下需要用'去除标签+内容'模式？",
+          "当你想完全移除 script、style、noscript、svg 等标签及其内部内容时使用。"
+        ],
+        [
+          "保留换行结构是什么意思？",
+          "开启后，&lt;p&gt;、&lt;br&gt; 等块级标签会替换为换行符，保留段落结构。"
+        ],
+        [
+          "数据会上传到服务器吗？",
+          "不会。所有处理在浏览器本地完成。"
+        ],
+        [
+          "支持多大量？",
+          "浏览器内存允许范围内均可处理。建议超过 10MB 的大文件分多次处理。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "What's the difference between stripping and encoding?",
+          "Stripping removes tags like &lt;div&gt;. Encoding converts entities like &amp;lt; to characters."
+        ],
+        [
+          "When to use 'Strip tags & content' mode?",
+          "To remove script/style/svg tags and their inner content."
+        ],
+        [
+          "What does 'Preserve line breaks' do?",
+          "Block tags become newlines, preserving paragraph structure."
+        ],
+        [
+          "Is data uploaded?",
+          "No. All processing happens locally in your browser."
+        ],
+        [
+          "How large can input be?",
+          "As large as browser memory allows."
+        ]
+      ]
+    },
+    {
+      "slug": "json-to-csv",
+      "category": "json",
+      "icon": "📊",
+      "name_zh": "JSON 转 CSV",
+      "name_en": "JSON to CSV Converter",
+      "short_zh": "将 JSON 数组或对象一键转换为 CSV 表格格式",
+      "short_en": "Convert JSON arrays or objects to CSV format in one click",
+      "keywords_zh": "JSON转CSV,json to csv,JSON转换CSV,在线JSON转CSV,JSON数据转表格,JSON导出CSV,json转csv在线,JSON格式化输出,API数据导出CSV",
+      "keywords_en": "json to csv, json to csv online, convert json to csv, json export csv, json array to csv, api response to csv, json to excel",
+      "long_zh": "<p>免费的在线 JSON 转 CSV 工具。将 JSON 数组或对象一键转换为逗号分隔的 CSV 表格格式。支持复杂嵌套对象的扁平化处理，常用于：API 响应数据导出到 Excel/WPS、数据库查询结果转表格、数据分析前的格式转换。</p><p>支持自定义分隔符（逗号、制表符、分号、竖线等），可选择是否包含表头行，支持嵌套对象扁平化处理为点号分隔的列名。</p><p>所有处理在浏览器本地完成，JSON 数据不会上传到任何服务器。</p>",
+      "long_en": "<p>Free online JSON to CSV converter. Convert JSON arrays or objects to CSV format. Supports nested object flattening. Perfect for exporting API responses to Excel, converting database results to tables, data analysis prep.</p><p>Custom delimiter (comma, tab, semicolon, pipe), optional headers, nested flattening with dot-path column names.</p><p>100% browser local, no data upload.</p>",
+      "ui_zh": "<div style=\"margin-bottom:12px\"><label style=\"font-size:13px;font-weight:600\">JSON 数据</label><textarea id=\"j2c-input\" style=\"width:100%;min-height:200px;font-family:Consolas,monospace;font-size:13px\" placeholder='粘贴 JSON 数据... 例如: [{&quot;name&quot;: &quot;Alice&quot;, &quot;age&quot;: 30}]'></textarea></div><div style=\"display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:12px\"><label>输出格式: <select id=\"j2c-format\"><option value=\"flat\">平铺 (每对象一行)</option><option value=\"nested\">嵌套扁平化 (点号路径)</option></select></label><label>分隔符: <select id=\"j2c-delimiter\"><option value=\",\">逗号 ,</option><option value=\"\\t\">制表符</option><option value=\";\">分号 ;</option><option value=\"|\">竖线 |</option></select></label><label><input type=\"checkbox\" id=\"j2c-headers\" checked> 包含表头</label><button class=\"btn\" id=\"j2c-convert-btn\">🔄 转换为 CSV</button><span style=\"font-size:12px;color:var(--text-muted)\">Ctrl+Enter</span></div><div id=\"j2c-status\" style=\"font-size:13px;margin-bottom:8px;display:none\"></div><div><label style=\"font-size:13px;font-weight:600\">CSV 结果</label><textarea id=\"j2c-output\" readonly style=\"width:100%;min-height:200px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"CSV 结果将显示在这里...\"></textarea></div><div style=\"display:flex;gap:8px;margin-top:8px\"><button class=\"btn btn-secondary\" id=\"j2c-copy-btn\">📋 复制结果</button><button class=\"btn btn-secondary\" id=\"j2c-clear-btn\">🗑️ 清空</button></div>",
+      "ui_en": "<div style=\"margin-bottom:12px\"><label style=\"font-size:13px;font-weight:600\">JSON Data</label><textarea id=\"j2c-input\" style=\"width:100%;min-height:200px;font-family:Consolas,monospace;font-size:13px\" placeholder='Paste JSON data... e.g. [{&quot;name&quot;: &quot;Alice&quot;, &quot;age&quot;: 30}]'></textarea></div><div style=\"display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:12px\"><label>Format: <select id=\"j2c-format\"><option value=\"flat\">Flat (one per row)</option><option value=\"nested\">Nested flatten (dot paths)</option></select></label><label>Delimiter: <select id=\"j2c-delimiter\"><option value=\",\">Comma ,</option><option value=\"\\t\">Tab</option><option value=\";\">Semicolon ;</option><option value=\"|\">Pipe |</option></select></label><label><input type=\"checkbox\" id=\"j2c-headers\" checked> Include headers</label><button class=\"btn\" id=\"j2c-convert-btn\">🔄 Convert</button><span style=\"font-size:12px;color:var(--text-muted)\">Ctrl+Enter</span></div><div id=\"j2c-status\" style=\"font-size:13px;margin-bottom:8px;display:none\"></div><div><label style=\"font-size:13px;font-weight:600\">CSV Output</label><textarea id=\"j2c-output\" readonly style=\"width:100%;min-height:200px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"CSV output appears here...\"></textarea></div><div style=\"display:flex;gap:8px;margin-top:8px\"><button class=\"btn btn-secondary\" id=\"j2c-copy-btn\">📋 Copy</button><button class=\"btn btn-secondary\" id=\"j2c-clear-btn\">🗑️ Clear</button></div>",
+      "related": [
+        "csv-to-json",
+        "json-csv",
+        "csv-viewer",
+        "csv-cleaner",
+        "json-formatter",
+        "json-to-yaml"
+      ],
+      "seo_title_zh": "JSON 转 CSV 工具 | 在线 JSON 转 Excel 表格格式",
+      "seo_title_en": "JSON to CSV Converter | Online JSON to Excel Format Tool",
+      "features_zh": [
+        "支持 JSON 数组和单个对象",
+        "自动检测并提取所有字段作为列",
+        "支持嵌套对象扁平化（点号路径列名）",
+        "支持简单值数组（每个值一行）",
+        "自定义分隔符：逗号、制表符、分号、竖线",
+        "可选择是否包含表头行",
+        "Ctrl+Enter 快捷键执行",
+        "浏览器本地处理，JSON 数据不上传"
+      ],
+      "features_en": [
+        "Supports JSON arrays and single objects",
+        "Auto-detect all fields as columns",
+        "Nested object flattening (dot-path columns)",
+        "Array of simple values support",
+        "Custom delimiter: comma, tab, semicolon, pipe",
+        "Optional headers row",
+        "Ctrl+Enter shortcut",
+        "100% browser-local, no data upload"
+      ],
+      "faq_zh": [
+        [
+          "支持嵌套的 JSON 对象吗？",
+          "支持。选择「嵌套扁平化」模式，嵌套的字段会用点号路径作为列名，如 user.address.city。"
+        ],
+        [
+          "JSON 转 CSV 后中文会乱码吗？",
+          "不会。输出的 CSV 是 UTF-8 编码，用 Excel 打开时记得选择 UTF-8 编码。"
+        ],
+        [
+          "我的 JSON 只有一个对象怎么办？",
+          "单个对象也会被转为单行 CSV，方便查看对象结构。"
+        ],
+        [
+          "分隔符如何选择？",
+          "默认逗号适用于 Excel。如果字段值里可能出现逗号，建议用制表符。"
+        ],
+        [
+          "数据会上传到服务器吗？",
+          "不会。所有处理在浏览器本地完成。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "Does it support nested objects?",
+          "Yes. Use 'Nested flatten' mode to flatten nested objects like user.address.city."
+        ],
+        [
+          "Will Chinese text be garbled?",
+          "No. Output is UTF-8 encoded. When opening in Excel, select UTF-8 encoding."
+        ],
+        [
+          "What if my JSON has only one object?",
+          "Single objects are converted to one CSV row. Perfect for inspecting structure."
+        ],
+        [
+          "How to choose delimiter?",
+          "Comma works for Excel. Use tab if your data contains commas."
+        ],
+        [
+          "Is my data uploaded?",
+          "No. All processing happens locally in your browser."
         ]
       ]
     }

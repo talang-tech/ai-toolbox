@@ -152,6 +152,11 @@
   <url><loc>https://tools.talang.fun/en/tools/html-minifier</loc><lastmod>2026-06-23</lastmod><priority>0.8</priority></url>
   <url><loc>https://tools.talang.fun/tools/csv-to-json</loc><lastmod>2026-06-23</lastmod><priority>0.8</priority></url>
   <url><loc>https://tools.talang.fun/en/tools/csv-to-json</loc><lastmod>2026-06-23</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/tools/html-stripper</loc><lastmod>2026-06-24</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/en/tools/html-stripper</loc><lastmod>2026-06-24</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/tools/json-to-csv</loc><lastmod>2026-06-24</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/en/tools/json-to-csv</loc><lastmod>2026-06-24</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/blog/html-stripper-json-to-csv-guide</loc><lastmod>2026-06-24</lastmod><priority>0.7</priority></url>
   <url><loc>https://tools.talang.fun/blog/ulid-uuid-nanoid-comparison</loc><lastmod>2026-06-18</lastmod><priority>0.7</priority></url>
   <url><loc>https://tools.talang.fun/blog/browser-local-office-toolbox-guide</loc><lastmod>2026-06-13</lastmod><priority>0.7</priority></url>
   <url><loc>https://tools.talang.fun/blog/json-schema-diff-local-guide</loc><lastmod>2026-06-12</lastmod><priority>0.7</priority></url>
@@ -172,6 +177,7 @@
   <url><loc>https://tools.talang.fun/blog/base64-explained</loc><lastmod>2026-05-11</lastmod><priority>0.7</priority></url>
   <url><loc>https://tools.talang.fun/blog/uuid-v4-vs-v7</loc><lastmod>2026-05-10</lastmod><priority>0.7</priority></url>
   <url><loc>https://tools.talang.fun/blog/regex-cheatsheet</loc><lastmod>2026-05-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://tools.talang.fun/en/blog/html-stripper-json-to-csv-guide</loc><lastmod>2026-06-24</lastmod><priority>0.7</priority></url>
   <url><loc>https://tools.talang.fun/en/blog/ulid-uuid-nanoid-comparison</loc><lastmod>2026-06-18</lastmod><priority>0.7</priority></url>
   <url><loc>https://tools.talang.fun/en/blog/browser-local-office-toolbox-guide</loc><lastmod>2026-06-13</lastmod><priority>0.7</priority></url>
   <url><loc>https://tools.talang.fun/en/blog/json-schema-diff-local-guide</loc><lastmod>2026-06-12</lastmod><priority>0.7</priority></url>

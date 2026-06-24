@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>HTML Stripper and JSON to CSV: Two New Data Cleaning Tools | AI Toolbox</title>
+<meta name="description" content="Two new privacy-first tools added to AI Toolbox: HTML Tag Stripper with 3 modes and JSON to CSV with nested object flattening. All processing happens locally.">
+<meta name="keywords" content="html tag stripper, json to csv, html to plain text, data cleaning, browser local processing, new tools">
+<link rel="canonical" href="https://tools.talang.fun/en/blog/html-stripper-json-to-csv-guide">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/blog/html-stripper-json-to-csv-guide">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/blog/html-stripper-json-to-csv-guide">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/blog/html-stripper-json-to-csv-guide">
+<meta property="og:title" content="HTML Stripper and JSON to CSV: Two New Data Cleaning Tools | AI Toolbox">
+<meta property="og:description" content="Two new privacy-first tools added to AI Toolbox: HTML Tag Stripper with 3 modes and JSON to CSV with nested object flattening. All processing happens locally.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/en/blog/html-stripper-json-to-csv-guide">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "HTML Stripper and JSON to CSV: Two New Data Cleaning Tools", "description": "Two new privacy-first tools added to AI Toolbox: HTML Tag Stripper with 3 modes and JSON to CSV with nested object flattening. All processing happens locally.", "author": {"@type": "Organization", "name": "AI Toolbox"}, "datePublished": "2026-06-24", "url": "https://tools.talang.fun/en/blog/html-stripper-json-to-csv-guide"}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/en/" class="logo"><span class="logo-icon">🛠️</span>AI Toolbox</a>
+    <nav class="nav">
+      <a href="/en/">Home</a>
+      <a href="/en/#tools">All Tools</a>
+      <a href="/en/blog/">Blog</a>
+      <a href="/en/about">About</a>
+      <a href="/en/sponsor">Sponsor</a>
+      <a href="https://tools.talang.fun/blog/html-stripper-json-to-csv-guide" class="lang-switch">中文</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<article class="article">
+  <p style="margin-bottom:8px"><a href="/en/blog/" style="color:var(--muted)">← Back to blog</a></p>
+  <h1>HTML Stripper and JSON to CSV: Two New Data Cleaning Tools</h1>
+  <p style="color:var(--muted);margin-bottom:24px">2026-06-24 · 4 min read</p>
+  <p>AI Toolbox just shipped two new high-demand utilities: <strong>HTML Tag Stripper</strong> and <strong>JSON to CSV Converter</strong>. Both are common data cleaning tasks that benefit from browser-local processing.</p>
+<h2>🧹 HTML Tag Stripper</h2>
+<p>Copying content from a web page often brings along markup fragments. Manually removing <code><div></code>s, <code><span></code>s, inline styles, and comment blocks is tedious and error-prone.</p>
+<p><a href="/en/tools/html-stripper">HTML Tag Stripper</a> lets you paste HTML and extract clean text in one click.</p>
+<h3>Three Processing Modes</h3>
+<ol>
+<li><strong>Strip tags (keep content)</strong>: Removes tags like <code><div></code>, <code><span></code>, <code><p></code> while preserving their inner text. Perfect for cleaning content copied from rich editors.</li>
+<li><strong>Strip tags & content</strong>: Also removes <code><script></code>, <code><style></code>, <code><svg></code>, <code><noscript></code>, <code><template></code> and their contents. Useful for extracting body text while discarding tracking and styling.</li>
+<li><strong>Decode entities only</strong>: Converts <code>&amp;</code> to <code>&</code>, <code>&lt;</code> to <code><</code>, <code>&nbsp;</code> to space, without touching any tags.</li>
+</ol>
+<h3>Options</h3>
+<ul>
+<li><strong>Preserve line breaks</strong>: Block-level tags become newlines, preserving paragraph structure</li>
+<li><strong>Collapse spaces</strong>: Compress consecutive spaces into one for cleaner output</li>
+</ul>
+<h3>Live Statistics</h3>
+<p>The tool shows before/after character counts and compression ratio in real-time — so you know exactly how much markup you've stripped.</p>
+<h2>📊 JSON to CSV Converter</h2>
+<p>JSON is great for machines; CSV is great for humans (and Excel). <a href="/en/tools/json-to-csv">JSON to CSV Converter</a> bridges the gap.</p>
+<h3>Key Features</h3>
+<ul>
+<li><strong>Arrays & single objects</strong>: Arrays become multiple rows; single objects become one row</li>
+<li><strong>Auto-detect columns</strong>: All unique keys across objects become CSV headers</li>
+<li><strong>Two formats</strong>:</li>
+</ul>
+<p>  - <strong>Flat mode</strong>: One row per object, all keys as columns</p>
+<p>  - <strong>Nested flatten</strong>: Dot-path column names like <code>user.address.city</code></p>
+<ul>
+<li><strong>Simple value arrays</strong>: <code>["a", "b"]</code> becomes one value per row</li>
+</ul>
+<h3>Delimiter Options</h3>
+<table><thead><tr>
+<th>Delimiter</th>
+<th>Best For</th>
+</tr></thead><tbody>
+<tr>
+<td>Comma <code>,</code></td>
+<td>Excel/WPS — universal</td>
+</tr>
+<tr>
+<td>Tab <code>\t</code></td>
+<td>Data containing commas</td>
+</tr>
+<tr>
+<td>Semicolon <code>;</code></td>
+<td>Regional Excel CSV defaults</td>
+</tr>
+<tr>
+<td>Pipe `</td>
+<td>`</td>
+<td>Logs and CLI tools</td>
+</tr>
+</tbody></table>
+<h3>Use Cases</h3>
+<ul>
+<li>Export API JSON responses to Excel for non-technical teams</li>
+<li>Convert database query results to CSV for analysis</li>
+<li>Visualize nested config fields — flatten to see all available paths</li>
+<li>Prepare test data in table format for QA</li>
+</ul>
+<h2>Privacy</h2>
+<p>Both tools are 100% browser-local. Your HTML and JSON data never leave your device. No registration, no uploads, no server round-trips.</p>
+<h2>Related Tools</h2>
+<ul>
+<li><a href="/en/tools/csv-to-json">CSV to JSON Converter</a> — the reverse direction</li>
+<li><a href="/en/tools/json-formatter">JSON Formatter</a> — validate and beautify JSON</li>
+<li><a href="/en/tools/html-entity">HTML Entity Encoder/Decoder</a> — encode/decode HTML entities</li>
+<li><a href="/en/tools/html-table-extractor">HTML Table Extractor</a> — extract <code><table></code> data to CSV/JSON/Markdown</li>
+<li><a href="/en/tools/csv-viewer">CSV Viewer</a> — display CSV as a table in-browser</li>
+</ul>
+  <section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>Need a private toolbox or custom browser tool?</h2>
+  <p>AI Toolbox can be adapted for internal workflows, private deployment, sponsored categories, or custom privacy-first utilities.</p>
+  <p><a href="/en/sponsor" data-event="conversion_cta_click" data-label="en_partner_custom_tool_cta">View partnership and custom tool options →</a></p>
+</section>
+</article>
+</main>
+<footer class="site-footer">
+  © 2026 AI Toolbox · Free online AI & developer tools · <a href='/en/about'>About</a> · <a href='/en/sponsor'>Sponsor</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('Copied!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>

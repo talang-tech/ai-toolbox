@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>HTML 标签快速去除与 JSON 转 CSV：两个高频数据整理新工具 | AI 工具盒子</title>
+<meta name="description" content="新上线 HTML 标签去除工具和 JSON 转 CSV 工具，支持三种标签处理模式、嵌套对象扁平化，均在浏览器本地处理数据。">
+<meta name="keywords" content="HTML标签去除,JSON转CSV,HTML转纯文本,数据整理,本地处理,新工具上线">
+<link rel="canonical" href="https://tools.talang.fun/blog/html-stripper-json-to-csv-guide">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/blog/html-stripper-json-to-csv-guide">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/blog/html-stripper-json-to-csv-guide">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/blog/html-stripper-json-to-csv-guide">
+<meta property="og:title" content="HTML 标签快速去除与 JSON 转 CSV：两个高频数据整理新工具 | AI 工具盒子">
+<meta property="og:description" content="新上线 HTML 标签去除工具和 JSON 转 CSV 工具，支持三种标签处理模式、嵌套对象扁平化，均在浏览器本地处理数据。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/blog/html-stripper-json-to-csv-guide">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "HTML 标签快速去除与 JSON 转 CSV：两个高频数据整理新工具", "description": "新上线 HTML 标签去除工具和 JSON 转 CSV 工具，支持三种标签处理模式、嵌套对象扁平化，均在浏览器本地处理数据。", "author": {"@type": "Organization", "name": "AI 工具盒子"}, "datePublished": "2026-06-24", "url": "https://tools.talang.fun/blog/html-stripper-json-to-csv-guide"}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/blog/html-stripper-json-to-csv-guide" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<article class="article">
+  <p style="margin-bottom:8px"><a href="/blog/" style="color:var(--muted)">← 返回博客</a></p>
+  <h1>HTML 标签快速去除与 JSON 转 CSV：两个高频数据整理新工具</h1>
+  <p style="color:var(--muted);margin-bottom:24px">2026-06-24 · 5 分钟阅读</p>
+  <p>AI Toolbox 今天新增两个高频工具：<strong>HTML 标签去除器</strong> 和 <strong>JSON 转 CSV 转换器</strong>。这两个场景都是开发者日常数据整理中的高频需求，而且天然适合浏览器本地处理——完全不需要把数据上传到服务器。</p>
+<h2>🧹 HTML 标签去除器</h2>
+<p>复制网页内容时经常带进一堆 markup，导致粘贴到文档、邮件或编辑器时全是标签和样式残片。手动清理不仅慢，还容易漏。</p>
+<p><a href="/tools/html-stripper">HTML 标签去除工具</a> 让你粘贴 HTML 代码，一键提取纯文本。</p>
+<h3>三种处理模式</h3>
+<ol>
+<li><strong>去除标签（保留内容）</strong>：只删掉 <code><div></code>、<code><span></code>、<code><p></code> 等标签，保留文字内容。适合从富文本编辑器或网页复制内容后清理格式。</li>
+<li><strong>去除标签+内容</strong>：同时移除 <code><script></code>、<code><style></code>、<code><svg></code>、<code><noscript></code>、<code><template></code> 等标签及其内部内容。适合提取网页正文时顺便去掉埋点和样式定义。</li>
+<li><strong>仅解码 HTML 实体</strong>：不删除标签，只将 <code>&amp;</code>、<code>&lt;</code>、<code>&nbsp;</code> 等实体转换为正常字符。适合需要保留 HTML 结构但又要正常显示特殊符号的场景。</li>
+</ol>
+<h3>实用选项</h3>
+<ul>
+<li><strong>保留换行结构</strong>：开启后，<code><p></code>、<code><br></code>、<code><div></code>、<code><h1-h6></code> 等块级标签被替换为换行符，保留段落结构。关闭后所有内容连成一段。</li>
+<li><strong>合并多余空格</strong>：自动把连续空格压成一个，让输出更干净。</li>
+</ul>
+<h3>实时统计</h3>
+<p>粘贴 HTML 后，工具实时显示处理前后的字符数对比和压缩比例，方便评估清理效果。</p>
+<h3>适用场景</h3>
+<ul>
+<li>从网页复制内容粘贴到 Word、邮件、微信公众号编辑器前去掉格式</li>
+<li>从邮件模板的 HTML 源文件中提取纯文本文案</li>
+<li>从前端项目代码中提取多语言文案（去掉 JSX/模板标签）</li>
+<li>从爬虫临时抓取的 HTML 片段中提取正文做粗略阅读</li>
+</ul>
+<h2>📊 JSON 转 CSV 转换器</h2>
+<p>很多场景都需要把 JSON 数据导出为表格格式——API 响应结果想贴到 Excel 里看看，数据库查询的 JSON 输出要发给同事做数据分析，或者只是想看一眼嵌套对象长什么样。</p>
+<p><a href="/tools/json-to-csv">JSON 转 CSV 工具</a> 把 JSON 数组或单个对象转成逗号分隔的 CSV。</p>
+<h3>核心能力</h3>
+<ul>
+<li><strong>支持 JSON 数组和单个对象</strong>：数组每对象一行，单个对象转为单行 CSV</li>
+<li><strong>自动提取所有字段作为列</strong>：合并所有对象中的 key，动态生成表头</li>
+<li><strong>两种格式模式</strong>：</li>
+</ul>
+<p>  - <strong>平铺模式</strong>：每个对象一行，所有 key 作为列</p>
+<p>  - <strong>嵌套扁平化</strong>：嵌套对象用点号路径作为列名，例如 <code>user.address.city</code>、<code>profile.avatar.url</code></p>
+<ul>
+<li><strong>支持简单值数组</strong>：<code>["a", "b", "c"]</code> 每个值一行</li>
+</ul>
+<h3>分隔符选择</h3>
+<table><thead><tr>
+<th>分隔符</th>
+<th>适用场景</th>
+</tr></thead><tbody>
+<tr>
+<td>逗号 <code>,</code></td>
+<td>Excel/WPS 默认格式，最通用</td>
+</tr>
+<tr>
+<td>制表符 <code>\t</code></td>
+<td>字段值可能含逗号时的安全选择</td>
+</tr>
+<tr>
+<td>分号 <code>;</code></td>
+<td>Excel 中某些区域设置中 CSV 默认分隔符</td>
+</tr>
+<tr>
+<td>竖线 `\</td>
+<td>`</td>
+<td>日志文件或 CLI 工具中常用</td>
+</tr>
+</tbody></table>
+<h3>典型场景</h3>
+<ul>
+<li>API 响应 JSON 导出为 Excel 表格，非技术团队也能直接看</li>
+<li>数据库查询结果（JSON 格式）转 CSV 后导入分析工具</li>
+<li>嵌套配置文件的字段结构可视化——扁平化后一眼看清所有可用字段</li>
+<li>测试数据从 JSON 转为表格格式给 QA 团队使用</li>
+<li>把复杂 JSON 转成简单表格，方便发给非技术同事填写补充</li>
+</ul>
+<h2>隐私说明</h2>
+<p>两个工具的处理逻辑都在浏览器 JavaScript 中完成，粘贴的 HTML 或 JSON 数据不会离开你的设备。不需要注册、不需要下载、不需要付费。</p>
+<h2>更多相关工具</h2>
+<p>如果你经常处理数据格式转换，也可以试试这些工具：</p>
+<ul>
+<li><a href="/tools/csv-to-json">CSV ↔ JSON 互转</a> — 反向转换</li>
+<li><a href="/tools/html-entity">HTML 编码/解码</a> — HTML 实体的双向转换</li>
+<li><a href="/tools/html-table-extractor">HTML 表格提取器</a> — 从 HTML <code><table></code> 标签提取结构化表格</li>
+<li><a href="/tools/json-formatter">JSON 格式化</a> — 美化和校验 JSON</li>
+<li><a href="/tools/json-to-yaml">JSON 转 YAML</a> — JSON ↔ YAML 格式转换</li>
+<li><a href="/tools/csv-viewer">CSV 查看器</a> — 在浏览器中把 CSV 显示为表格</li>
+</ul>
+  <section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+</article>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>
