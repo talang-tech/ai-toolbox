@@ -24,6 +24,7 @@
           "text-replace",
           "text-sort",
           "text-statistics",
+          "csv-to-markdown",
           "word-counter"
         ]
       },
@@ -53,6 +54,7 @@
           "jwt-generator",
           "markdown-preview",
           "markdown-to-html",
+          "html-to-markdown",
           "qr-decode",
           "regex-pattern-library",
           "regex-tester",
@@ -64,7 +66,9 @@
           "url-query-builder",
           "xml-formatter",
           "yaml-formatter",
-          "yaml-to-json"
+          "yaml-to-json",
+          "css-gradient-generator",
+          "html-to-jsx"
         ]
       },
       "encode": {
@@ -88,7 +92,8 @@
           "password-generator",
           "qr-code",
           "random-string",
-          "uuid-generator"
+          "uuid-generator",
+          "slug-generator"
         ]
       },
       "json": {
@@ -98,6 +103,7 @@
         "tools": [
           "json-diff",
           "json-schema-validator",
+          "json-schema-generator",
           "json-sorter",
           "json-to-go",
           "json-to-ts",
@@ -2008,6 +2014,93 @@
       ]
     },
     {
+      "slug": "html-to-markdown",
+      "category": "dev",
+      "icon": "↔️",
+      "name_zh": "HTML 转 Markdown",
+      "name_en": "HTML to Markdown",
+      "short_zh": "将 HTML 转换为 Markdown 格式，支持预览、复制和下载",
+      "short_en": "Convert HTML to Markdown format with preview, copy, and download",
+      "keywords_zh": "HTML转Markdown,html转md,在线HTML转换,网页转Markdown,HTML解析,HTML转文本,HTML清理",
+      "keywords_en": "html to markdown, html to md, online html converter, web page to markdown, html parser, html to text, html cleaner",
+      "long_zh": "<p>免费在线 HTML 转 Markdown 工具。将 HTML 网页、富文本片段或代码片段快速转换为整洁的 Markdown 格式。适合：<ul><li>从网页复制内容转换为 Markdown 笔记</li><li>将 HTML 邮件转换为 Markdown</li><li>从富文本编辑器提取 Markdown 内容</li><li>清理 HTML 格式保留纯文本标记</li></ul></p><p>转换完全在浏览器本地完成，内容不会上传到服务器。</p>",
+      "long_en": "<p>Free online HTML to Markdown converter. Quickly convert HTML pages, rich text snippets, or code fragments into clean Markdown format. Perfect for:<ul><li>Converting web content to Markdown notes</li><li>Converting HTML emails to Markdown</li><li>Extracting Markdown from rich text editors</li><li>Cleaning HTML while preserving text markup</li></ul></p><p>Conversion runs entirely in your browser. Your content is never uploaded.</p>",
+      "ui_zh": "<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:16px\"><div><label>HTML 输入:</label><textarea id=\"htmInput\" style=\"min-height:360px;font-family:monospace;font-size:13px\" placeholder=\"粘贴 HTML 内容...\"></textarea></div><div><label>Markdown 输出:</label><textarea id=\"htmOutput\" style=\"min-height:360px;font-family:monospace;font-size:13px\" readonly placeholder=\"转换后的 Markdown...\"></textarea></div></div><div style=\"margin-top:12px;display:flex;gap:12px;align-items:center;flex-wrap:wrap\"><button class=\"btn\" id=\"htmConvert\">转换</button><button class=\"btn btn-secondary\" id=\"htmCopy\">复制 Markdown</button><button class=\"btn btn-secondary\" id=\"htmDownload\">下载 .md</button><button class=\"btn btn-secondary\" id=\"htmClear\">清空</button></div><div id=\"htmStatus\" style=\"margin-top:8px;color:var(--text-dim);font-size:13px\"></div><h3 style=\"margin-top:20px\">预览</h3><div id=\"htmPreview\" style=\"min-height:160px;padding:16px;border:1px solid var(--border);border-radius:8px;background:white;color:#111;overflow:auto;line-height:1.6\"></div><div style=\"margin-top:8px;font-size:12px;color:#666\">提示：Ctrl+Enter / Cmd+Enter 快速转换</div>",
+      "ui_en": "<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:16px\"><div><label>HTML input:</label><textarea id=\"htmInput\" style=\"min-height:360px;font-family:monospace;font-size:13px\" placeholder=\"Paste HTML content...\"></textarea></div><div><label>Markdown output:</label><textarea id=\"htmOutput\" style=\"min-height:360px;font-family:monospace;font-size:13px\" readonly placeholder=\"Converted Markdown...\"></textarea></div></div><div style=\"margin-top:12px;display:flex;gap:12px;align-items:center;flex-wrap:wrap\"><button class=\"btn\" id=\"htmConvert\">Convert</button><button class=\"btn btn-secondary\" id=\"htmCopy\">Copy Markdown</button><button class=\"btn btn-secondary\" id=\"htmDownload\">Download .md</button><button class=\"btn btn-secondary\" id=\"htmClear\">Clear</button></div><div id=\"htmStatus\" style=\"margin-top:8px;color:var(--text-dim);font-size:13px\"></div><h3 style=\"margin-top:20px\">Preview</h3><div id=\"htmPreview\" style=\"min-height:160px;padding:16px;border:1px solid var(--border);border-radius:8px;background:white;color:#111;overflow:auto;line-height:1.6\"></div><div style=\"margin-top:8px;font-size:12px;color:#666\">Tip: Ctrl+Enter / Cmd+Enter to convert</div>",
+      "related": [
+        "markdown-to-html",
+        "markdown-preview",
+        "html-entity",
+        "html-stripper"
+      ],
+      "seo_title_zh": "HTML 转 Markdown | 在线 HTML 转 MD 工具",
+      "seo_title_en": "HTML to Markdown | Online HTML to MD Converter",
+      "features_zh": [
+        "HTML 一键转 Markdown",
+        "支持标题 h1-h6、段落、列表",
+        "支持表格转换",
+        "支持链接、图片、代码块",
+        "加粗、斜体、删除线转换",
+        "实时 Markdown 预览",
+        "复制或下载 .md 文件",
+        "浏览器本地处理，内容不上传"
+      ],
+      "features_en": [
+        "Convert HTML to Markdown in one click",
+        "Supports headings h1-h6, paragraphs, lists",
+        "Table conversion support",
+        "Links, images, and code blocks",
+        "Bold, italic, strikethrough conversion",
+        "Live Markdown preview",
+        "Copy or download .md file",
+        "Browser local processing, no upload"
+      ],
+      "faq_zh": [
+        [
+          "支持哪些 HTML 标签？",
+          "支持主流块级标签：h1-h6、p、ul/ol、blockquote、pre/code、table、hr、div；内联标签：a、img、strong/b、em/i、del/s、code。"
+        ],
+        [
+          "HTML 内容会上传吗？",
+          "不会。所有转换和预览都在浏览器本地完成，数据不会离开你的设备。"
+        ],
+        [
+          "转换后的 Markdown 可以在哪里使用？",
+          "可在 GitHub README、Markdown 笔记、博客草稿、Notion、Obsidian 等任何 Markdown 编辑器中使用。"
+        ],
+        [
+          "支持 HTML 表格吗？",
+          "支持。HTML table 会被转换为 Markdown 表格格式。"
+        ],
+        [
+          "脚本和样式会被保留吗？",
+          "不会。script 和 style 标签会被自动移除，保证输出干净。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "Which HTML tags are supported?",
+          "Major block tags: h1-h6, p, ul/ol, blockquote, pre/code, table, hr, div; inline tags: a, img, strong/b, em/i, del/s, code."
+        ],
+        [
+          "Is my HTML content uploaded?",
+          "No. All conversion and preview happen locally in your browser. Your data never leaves your device."
+        ],
+        [
+          "Where can I use the converted Markdown?",
+          "GitHub README, Markdown notes, blog drafts, Notion, Obsidian, or any Markdown editor."
+        ],
+        [
+          "Does it support HTML tables?",
+          "Yes. HTML tables are converted to Markdown table format."
+        ],
+        [
+          "Are scripts and styles preserved?",
+          "No. script and style tags are automatically removed for clean output."
+        ]
+      ]
+    },
+    {
       "slug": "csv-viewer",
       "category": "dev",
       "icon": "📈",
@@ -3845,6 +3938,95 @@
       ]
     },
     {
+      "slug": "json-schema-generator",
+      "category": "json",
+      "icon": "📋",
+      "name_zh": "JSON Schema 生成器",
+      "name_en": "JSON Schema Generator",
+      "short_zh": "从 JSON 数据样本自动生成 JSON Schema（Draft-07）",
+      "short_en": "Auto-generate JSON Schema (Draft-07) from sample JSON data",
+      "keywords_zh": "JSON Schema 生成,JSON 模式生成,JSON Schema 生成器,schema 自动生成,JSON 数据结构,JSON 转 Schema,数据模型生成,JSON 转 JSON Schema",
+      "keywords_en": "json schema generator, json schema from json, auto generate schema, json to schema, schema generator from json, json data model, generate json schema online",
+      "long_zh": "<p>JSON Schema 生成器帮助你从 JSON 数据样本自动生成 JSON Schema（Draft-07 规范）。适合：<ul><li>API 开发中从响应数据自动生成 Schema 文档</li><li>为配置文件生成数据结构约束</li><li>数据库记录结构定义</li><li>前端类型定义的前置步骤</li></ul></p><p>支持智能类型推断（integer/number/string 自动识别）、optional/required 属性推断、数组元素类型分析、嵌套对象递归处理，以及常见格式（email、uri、date-time、uuid）自动识别。</p><p>所有处理在浏览器本地完成，数据不会上传到服务器。</p>",
+      "long_en": "<p>JSON Schema Generator automatically generates JSON Schema (Draft-07) from sample JSON data. Perfect for:<ul><li>Generating Schema docs from API response data</li><li>Creating data structure constraints for config files</li><li>Database record structure definitions</li><li>A preparatory step for frontend type definitions</li></ul></p><p>Features smart type inference (integer/number/string auto-detection), optional/required property inference, array item type analysis, nested object recursion, and automatic format detection (email, uri, date-time, uuid).</p><p>All processing happens locally in your browser. Your data stays on your device.</p>",
+      "ui_zh": "<div style=\"margin-bottom:12px\"><label style=\"font-size:13px;font-weight:600\">JSON 数据样本</label><textarea id=\"jsgInput\" style=\"width:100%;min-height:220px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"粘贴一个 JSON 对象或数组...\"></textarea></div><div style=\"display:flex;flex-wrap:wrap;gap:12px;margin-bottom:12px;align-items:center\"><label><input type=\"checkbox\" id=\"jsgInferType\" checked> 智能类型推断</label><label><input type=\"checkbox\" id=\"jsgRequired\" checked> 标记 required 属性</label><label><input type=\"checkbox\" id=\"jsgDescriptions\" checked> 生成描述</label><button class=\"btn\" id=\"jsgGenerate\">生成 Schema</button><button class=\"btn btn-secondary\" id=\"jsgCopy\">复制 Schema</button><button class=\"btn btn-secondary\" id=\"jsgClear\">清空</button></div><div id=\"jsgStatus\" style=\"margin-top:4px;font-size:13px;margin-bottom:8px\"></div><label style=\"font-size:13px;font-weight:600\">生成的 JSON Schema（Draft-07）</label><textarea id=\"jsgOutput\" style=\"width:100%;min-height:240px;font-family:Consolas,monospace;font-size:13px;background:var(--bg)\" readonly placeholder=\"JSON Schema 将显示在这里...\"></textarea><div style=\"margin-top:8px;font-size:12px;color:#666\">提示：Ctrl+Enter / Cmd+Enter 快速生成</div>",
+      "ui_en": "<div style=\"margin-bottom:12px\"><label style=\"font-size:13px;font-weight:600\">Sample JSON Data</label><textarea id=\"jsgInput\" style=\"width:100%;min-height:220px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"Paste a JSON object or array...\"></textarea></div><div style=\"display:flex;flex-wrap:wrap;gap:12px;margin-bottom:12px;align-items:center\"><label><input type=\"checkbox\" id=\"jsgInferType\" checked> Smart type inference</label><label><input type=\"checkbox\" id=\"jsgRequired\" checked> Mark required properties</label><label><input type=\"checkbox\" id=\"jsgDescriptions\" checked> Generate descriptions</label><button class=\"btn\" id=\"jsgGenerate\">Generate Schema</button><button class=\"btn btn-secondary\" id=\"jsgCopy\">Copy Schema</button><button class=\"btn btn-secondary\" id=\"jsgClear\">Clear</button></div><div id=\"jsgStatus\" style=\"margin-top:4px;font-size:13px;margin-bottom:8px\"></div><label style=\"font-size:13px;font-weight:600\">Generated JSON Schema (Draft-07)</label><textarea id=\"jsgOutput\" style=\"width:100%;min-height:240px;font-family:Consolas,monospace;font-size:13px;background:var(--bg)\" readonly placeholder=\"JSON Schema will appear here...\"></textarea><div style=\"margin-top:8px;font-size:12px;color:#666\">Tip: Ctrl+Enter / Cmd+Enter to generate</div>",
+      "related": [
+        "json-formatter",
+        "json-schema-validator",
+        "json-to-ts",
+        "json-to-go"
+      ],
+      "seo_title_zh": "JSON Schema 生成器 | 从 JSON 样本自动生成 Schema",
+      "seo_title_en": "JSON Schema Generator | Auto-generate from Sample JSON",
+      "features_zh": [
+        "从 JSON 数据样本自动生成 Schema",
+        "支持嵌套对象递归生成",
+        "数组元素类型自动分析",
+        "智能类型推断（integer/number/string）",
+        "自动识别 email、uri、date-time、uuid 格式",
+        "optional/required 属性推断",
+        "additionalProperties 约束标记",
+        "Ctrl+Enter 快捷键快速生成",
+        "纯本地处理，数据零上传"
+      ],
+      "features_en": [
+        "Auto-generate Schema from JSON sample data",
+        "Nested object recursive generation",
+        "Array element type auto-analysis",
+        "Smart type inference (integer/number/string)",
+        "Auto-detect email, uri, date-time, uuid formats",
+        "Optional/required property inference",
+        "additionalProperties constraint marking",
+        "Ctrl+Enter shortcut for quick generation",
+        "100% local processing, zero data upload"
+      ],
+      "faq_zh": [
+        [
+          "生成的 Schema 是哪个版本？",
+          "默认生成 Draft-07（2019-09）兼容的 Schema，这是当前最广泛支持的版本。"
+        ],
+        [
+          "能处理嵌套对象吗？",
+          "可以。工具会递归处理所有嵌套的对象和数组，最大递归深度 10 层。"
+        ],
+        [
+          "为什么有的属性没出现在 required 里？",
+          "null 或 undefined 值的属性会被视为 optional，不会标记为 required。"
+        ],
+        [
+          "和 JSON Schema 校验器有什么区别？",
+          "生成器从样本数据反向生成 Schema 约束；校验器用已定义的 Schema 验证数据。两者是互补的逆向流程。"
+        ],
+        [
+          "数据会被上传吗？",
+          "不会。所有处理都在浏览器本地完成，数据不会离开你的设备。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "Which Schema version is generated?",
+          "Draft-07 (2019-09) compatible Schema by default, which is the most widely supported version."
+        ],
+        [
+          "Does it handle nested objects?",
+          "Yes. The tool recursively processes all nested objects and arrays up to a maximum depth of 10 levels."
+        ],
+        [
+          "Why are some properties not in required?",
+          "Properties with null or undefined values are treated as optional and not marked as required."
+        ],
+        [
+          "How is this different from the Schema Validator?",
+          "Generator creates Schema constraints from sample data; Validator checks data against an existing Schema. They are complementary reverse processes."
+        ],
+        [
+          "Is my data uploaded?",
+          "No. All processing happens locally in your browser. Your data never leaves your device."
+        ]
+      ]
+    },
+    {
       "slug": "csv-cleaner",
       "category": "text",
       "icon": "🧹",
@@ -5246,6 +5428,279 @@
         [
           "Why did my XML tag name change?",
           "XML element names cannot start with digits or contain spaces/special chars. Unsupported characters are replaced with underscores; digit-starting names get a prefix."
+        ]
+      ]
+    },
+    {
+      "slug": "css-gradient-generator",
+      "icon": "🌈",
+      "category": "dev",
+      "name_zh": "CSS 渐变生成器",
+      "name_en": "CSS Gradient Generator",
+      "short_zh": "在线生成 CSS 线性与径向渐变，实时预览并复制代码",
+      "short_en": "Generate CSS linear & radial gradients with live preview and one-click copy",
+      "long_zh": "<p>免费的在线 CSS 渐变生成器。选择两种颜色、渐变角度和类型（线性/径向），实时预览效果，一键生成对应的 CSS 代码。</p><p>预设多种常用渐变方案（日落、海洋、极光、霓虹、森林等），适合网页设计师和前端开发者快速配色。所有处理在浏览器本地完成。</p>",
+      "long_en": "<p>Free online CSS gradient generator. Pick two colors, gradient angle, and type (linear/radial) - see the result live and copy the CSS code instantly.</p><p>Includes presets for popular gradient schemes (sunset, ocean, aurora, neon, forest, etc.). Perfect for web designers and frontend developers. Everything runs locally in your browser.</p>",
+      "keywords_zh": "css渐变,css gradient,线性渐变,径向渐变,渐变生成器,背景渐变",
+      "keywords_en": "css gradient, linear gradient, radial gradient, gradient generator, css background gradient",
+      "ui_zh": "<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:24px\"><div><label>颜色1:</label><div class=\"input-row\"><input type=\"color\" id=\"gradColor1\" value=\"#6366f1\"><input type=\"text\" id=\"gradColor1Text\" value=\"#6366f1\" style=\"width:100px;margin-left:8px;font-family:monospace\"></div><div style=\"margin-top:12px\"><label>颜色2:</label><div class=\"input-row\"><input type=\"color\" id=\"gradColor2\" value=\"#ec4899\"><input type=\"text\" id=\"gradColor2Text\" value=\"#ec4899\" style=\"width:100px;margin-left:8px;font-family:monospace\"></div></div><div style=\"margin-top:12px\"><label>渐变类型:</label><div><label style=\"margin-right:12px\"><input type=\"radio\" name=\"gradType\" id=\"gradTypeLinear\" checked>线性</label><label><input type=\"radio\" name=\"gradType\" id=\"gradTypeRadial\">径向</label></div></div><div style=\"margin-top:12px\"><label>角度:<span id=\"gradAngleVal\">90</span></label><input type=\"range\" id=\"gradAngle\" min=\"0\" max=\"360\" value=\"90\" style=\"width:100%\"></div><div style=\"margin-top:16px\"><div class=\"btn-group\"><button class=\"btn\" id=\"gradCopy\">复制#1</button><button class=\"btn btn-secondary\" id=\"gradCopyCss\">复制CSS</button></div></div></div><div style=\"display:flex;align-items:center;justify-content:center\"><div id=\"gradPreview\" style=\"width:100%;height:200px;border-radius:16px;border:2px solid var(--border);box-shadow:0 8px 32px rgba(0,0,0,0.2)\"></div></div></div><div style=\"margin-top:20px\"><label>CSS代码:</label><textarea id=\"gradCssOutput\" readonly style=\"width:100%;min-height:60px;font-family:Consolas,monospace;font-size:13px;background:var(--bg-light);border:1px solid var(--border);border-radius:8px;padding:10px;box-sizing:border-box\"></textarea></div><div style=\"margin-top:16px\"><label>预设:</label><div style=\"display:flex;flex-wrap:wrap;gap:8px;margin-top:8px\"><button class=\"btn btn-secondary grad-preset\" data-c1=\"#667eea\" data-c2=\"#764ba2\" data-angle=\"135\">日落</button><button class=\"btn btn-secondary grad-preset\" data-c1=\"#2193b0\" data-c2=\"#6dd5ed\" data-angle=\"90\">海洋</button><button class=\"btn btn-secondary grad-preset\" data-c1=\"#11998e\" data-c2=\"#38ef7d\" data-angle=\"135\">森林</button><button class=\"btn btn-secondary grad-preset\" data-c1=\"#fc5c7d\" data-c2=\"#6a82fb\" data-angle=\"315\">晚霞</button><button class=\"btn btn-secondary grad-preset\" data-c1=\"#00b4db\" data-c2=\"#0083b0\" data-angle=\"180\">深海</button><button class=\"btn btn-secondary grad-preset\" data-c1=\"#1a1a2e\" data-c2=\"#16213e\" data-angle=\"45\" data-type=\"radial\">夜空</button><button class=\"btn btn-secondary grad-preset\" data-c1=\"#f12711\" data-c2=\"#f5af19\" data-angle=\"90\">火焰</button><button class=\"btn btn-secondary grad-preset\" data-c1=\"#7F00FF\" data-c2=\"#E100FF\" data-angle=\"135\">霓虹</button><button class=\"btn btn-secondary grad-preset\" data-c1=\"#0f0c29\" data-c2=\"#302b63\" data-angle=\"135\">城市</button><button class=\"btn btn-secondary grad-preset\" data-c1=\"#c31432\" data-c2=\"#240b36\" data-angle=\"315\">红酒</button><button class=\"btn btn-secondary grad-preset\" data-c1=\"#667eea\" data-c2=\"#764ba2\" data-angle=\"45\" data-type=\"radial\">极光</button><button class=\"btn btn-secondary grad-preset\" data-c1=\"#f093fb\" data-c2=\"#f5576c\" data-angle=\"90\">樱花</button></div></div>",
+      "ui_en": "<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:24px\"><div><label>Color1:</label><div class=\"input-row\"><input type=\"color\" id=\"gradColor1\" value=\"#6366f1\"><input type=\"text\" id=\"gradColor1Text\" value=\"#6366f1\" style=\"width:100px;margin-left:8px;font-family:monospace\"></div><div style=\"margin-top:12px\"><label>Color2:</label><div class=\"input-row\"><input type=\"color\" id=\"gradColor2\" value=\"#ec4899\"><input type=\"text\" id=\"gradColor2Text\" value=\"#ec4899\" style=\"width:100px;margin-left:8px;font-family:monospace\"></div></div><div style=\"margin-top:12px\"><label>Type:</label><div><label style=\"margin-right:12px\"><input type=\"radio\" name=\"gradType\" id=\"gradTypeLinear\" checked>Linear</label><label><input type=\"radio\" name=\"gradType\" id=\"gradTypeRadial\">Radial</label></div></div><div style=\"margin-top:12px\"><label>Angle:<span id=\"gradAngleVal\">90</span></label><input type=\"range\" id=\"gradAngle\" min=\"0\" max=\"360\" value=\"90\" style=\"width:100%\"></div><div style=\"margin-top:16px\"><div class=\"btn-group\"><button class=\"btn\" id=\"gradCopy\">Copy#1</button><button class=\"btn btn-secondary\" id=\"gradCopyCss\">Copy CSS</button></div></div></div><div style=\"display:flex;align-items:center;justify-content:center\"><div id=\"gradPreview\" style=\"width:100%;height:200px;border-radius:16px;border:2px solid var(--border);box-shadow:0 8px 32px rgba(0,0,0,0.2)\"></div></div></div><div style=\"margin-top:20px\"><label>CSS:</label><textarea id=\"gradCssOutput\" readonly style=\"width:100%;min-height:60px;font-family:Consolas,monospace;font-size:13px;background:var(--bg-light);border:1px solid var(--border);border-radius:8px;padding:10px;box-sizing:border-box\"></textarea></div><div style=\"margin-top:16px\"><label>Presets:</label><div style=\"display:flex;flex-wrap:wrap;gap:8px;margin-top:8px\"><button class=\"btn btn-secondary grad-preset\" data-c1=\"#667eea\" data-c2=\"#764ba2\" data-angle=\"135\">Sunset</button><button class=\"btn btn-secondary grad-preset\" data-c1=\"#2193b0\" data-c2=\"#6dd5ed\" data-angle=\"90\">Ocean</button><button class=\"btn btn-secondary grad-preset\" data-c1=\"#11998e\" data-c2=\"#38ef7d\" data-angle=\"135\">Forest</button><button class=\"btn btn-secondary grad-preset\" data-c1=\"#fc5c7d\" data-c2=\"#6a82fb\" data-angle=\"315\">Dusk</button><button class=\"btn btn-secondary grad-preset\" data-c1=\"#00b4db\" data-c2=\"#0083b0\" data-angle=\"180\">Deep Sea</button><button class=\"btn btn-secondary grad-preset\" data-c1=\"#1a1a2e\" data-c2=\"#16213e\" data-angle=\"45\" data-type=\"radial\">Night Sky</button><button class=\"btn btn-secondary grad-preset\" data-c1=\"#f12711\" data-c2=\"#f5af19\" data-angle=\"90\">Fire</button><button class=\"btn btn-secondary grad-preset\" data-c1=\"#7F00FF\" data-c2=\"#E100FF\" data-angle=\"135\">Neon</button><button class=\"btn btn-secondary grad-preset\" data-c1=\"#0f0c29\" data-c2=\"#302b63\" data-angle=\"135\">City</button><button class=\"btn btn-secondary grad-preset\" data-c1=\"#c31432\" data-c2=\"#240b36\" data-angle=\"315\">Wine</button><button class=\"btn btn-secondary grad-preset\" data-c1=\"#667eea\" data-c2=\"#764ba2\" data-angle=\"45\" data-type=\"radial\">Aurora</button><button class=\"btn btn-secondary grad-preset\" data-c1=\"#f093fb\" data-c2=\"#f5576c\" data-angle=\"90\">Sakura</button></div></div>",
+      "related": [
+        "color-converter",
+        "color-name-finder"
+      ],
+      "seo_title_zh": "CSS渐变生成器|线性/径向渐变在线工具",
+      "seo_title_en": "CSS Gradient Generator|Linear & Radial Gradient Online",
+      "features_zh": [
+        "支持线性和径向渐变",
+        "颜色选择器实时选取颜色",
+        "角度调节滑块(0-360)",
+        "12种预设渐变配色方案",
+        "一键复制CSS代码",
+        "实时预览渐变效果"
+      ],
+      "features_en": [
+        "Linear and radial gradient support",
+        "Color picker",
+        "Angle slider(0-360)",
+        "12 preset schemes",
+        "One-click CSS copy",
+        "Real-time preview"
+      ],
+      "faq_zh": [
+        [
+          "线性与径向区别?",
+          "线性沿直线过渡;径向从中心扩散。"
+        ],
+        [
+          "CSS渐变用在哪?",
+          "背景、边框、遮罩、文字渐变。"
+        ],
+        [
+          "数据上传吗?",
+          "不会,浏览器本地处理。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "Linear vs radial?",
+          "Linear=straight line; Radial=from center."
+        ],
+        [
+          "Where to use?",
+          "Backgrounds,borders,masks,text."
+        ],
+        [
+          "Data uploaded?",
+          "No,all local."
+        ]
+      ]
+    },
+    {
+      "slug": "slug-generator",
+      "icon": "🔗",
+      "category": "generate",
+      "name_zh": "URL Slug生成器",
+      "name_en": "URL Slug Generator",
+      "short_zh": "将标题或短语转换为SEO友好的URL slug",
+      "short_en": "Convert titles and phrases into SEO-friendly URL slugs",
+      "long_zh": "<p>免费的在线URL Slug生成器。将文章标题、产品名或任意文本转换为SEO友好的URL别名。自动去除特殊字符、统一大小写、替换空格为分隔符。</p><p>支持自定义分隔符、控制最大长度、切换小写。适用于WordPress别名、GitHub仓库名、CMS永久链接。所有处理在浏览器本地完成。</p>",
+      "long_en": "<p>Free online URL slug generator. Convert article titles or any text into SEO-friendly URL aliases. Strips special characters, normalizes case, replaces spaces with separators.</p><p>Supports custom separators, max length control, lowercase toggle. Ideal for WordPress slugs, GitHub repos, route paths. All processing locally in your browser.</p>",
+      "keywords_zh": "url slug,slug生成器,短链接别名,URL优化,seo友好链接",
+      "keywords_en": "url slug, slug generator, seo friendly url, permalink generator, clean url",
+      "ui_zh": "<div class=\"input-row\"><label>输入文本:</label><textarea id=\"slugInput\" placeholder=\"输入文章标题或短语...\" style=\"width:100%;min-height:80px;font-size:15px;box-sizing:border-box\"></textarea></div><div style=\"display:flex;flex-wrap:wrap;gap:12px;margin-top:12px\"><label><input type=\"checkbox\" id=\"slugLower\" checked>转小写</label><label>分隔符:<select id=\"slugSeparator\"><option value=\"-\">-连字符</option><option value=\"_\">_下划线</option><option value=\".\">.点号</option></select></label><label>最大长度:<input type=\"number\" id=\"slugMaxLen\" value=\"80\" min=\"10\" max=\"200\" style=\"width:70px\"></label></div><div style=\"margin-top:16px\"><label>Slug:</label><div style=\"display:flex;gap:8px;align-items:center\"><input type=\"text\" id=\"slugOutput\" readonly style=\"flex:1;font-size:16px;font-family:Consolas,monospace;box-sizing:border-box\"><button class=\"btn\" id=\"slugCopy\">复制Slug</button></div></div><div style=\"margin-top:12px;padding:12px;background:var(--bg-light);border-radius:8px;font-size:13px;color:var(--text-muted)\">预览:<code id=\"slugPreviewLink\" style=\"color:var(--primary)\"></code></div>",
+      "ui_en": "<div class=\"input-row\"><label>Input:</label><textarea id=\"slugInput\" placeholder=\"Enter article title...\" style=\"width:100%;min-height:80px;font-size:15px;box-sizing:border-box\"></textarea></div><div style=\"display:flex;flex-wrap:wrap;gap:12px;margin-top:12px\"><label><input type=\"checkbox\" id=\"slugLower\" checked>Lowercase</label><label>Separator:<select id=\"slugSeparator\"><option value=\"-\">-Hyphen</option><option value=\"_\">_Underscore</option><option value=\".\">.Dot</option></select></label><label>Max Length:<input type=\"number\" id=\"slugMaxLen\" value=\"80\" min=\"10\" max=\"200\" style=\"width:70px\"></label></div><div style=\"margin-top:16px\"><label>Slug:</label><div style=\"display:flex;gap:8px;align-items:center\"><input type=\"text\" id=\"slugOutput\" readonly style=\"flex:1;font-size:16px;font-family:Consolas,monospace;box-sizing:border-box\"><button class=\"btn\" id=\"slugCopy\">Copy Slug</button></div></div><div style=\"margin-top:12px;padding:12px;background:var(--bg-light);border-radius:8px;font-size:13px;color:var(--text-muted)\">Preview:<code id=\"slugPreviewLink\" style=\"color:var(--primary)\"></code></div>",
+      "related": [
+        "url-encoder",
+        "url-parser",
+        "timestamp-converter"
+      ],
+      "seo_title_zh": "URL Slug生成器|在线生成SEO友好链接别名",
+      "seo_title_en": "URL Slug Generator|SEO Friendly Link Online",
+      "features_zh": [
+        "支持自定义分隔符",
+        "转小写选项",
+        "最大长度控制",
+        "自动去除特殊字符",
+        "Unicode标准化",
+        "实时预览URL"
+      ],
+      "features_en": [
+        "Custom separator",
+        "Lowercase option",
+        "Max length control",
+        "Strip special chars",
+        "Unicode normalization",
+        "Live URL preview"
+      ],
+      "faq_zh": [
+        [
+          "什么是URL Slug?",
+          "URL中可读的部分,如example.com/my-slug中的my-slug。"
+        ],
+        [
+          "连字符还是下划线?",
+          "Google推荐连字符(-)。"
+        ],
+        [
+          "数据上传吗?",
+          "不会,浏览器本地处理。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "What is URL slug?",
+          "Readable part of URL, like my-slug in example.com/my-slug."
+        ],
+        [
+          "Hyphen or underscore?",
+          "Google recommends hyphen(-)."
+        ],
+        [
+          "Data uploaded?",
+          "No,all local."
+        ]
+      ]
+    },
+    {
+      "slug": "csv-to-markdown",
+      "category": "text",
+      "icon": "📊",
+      "name_zh": "CSV 转 Markdown 表格",
+      "name_en": "CSV to Markdown Table",
+      "short_zh": "将 CSV 数据快速转换为 Markdown 表格格式，支持预览、复制和下载",
+      "short_en": "Convert CSV data to Markdown table format with preview, copy, and download",
+      "keywords_zh": "CSV转Markdown,CSV转表格,CSV to Markdown,在线CSV转换,CSV格式化,csv表格,Excel转Markdown",
+      "keywords_en": "csv to markdown, csv to table, csv converter, online csv to markdown, csv formatter, csv table generator, excel to markdown",
+      "long_zh": "<p>免费在线 CSV 转 Markdown 表格工具。将剪贴板中的 CSV 数据、Excel 导出的 CSV 文件、数据库查询结果等一键转换为整洁的 Markdown 表格格式。支持自定义分隔符、表头/无表头模式、列对齐方式。</p><ul><li><strong>开发者</strong>：将数据库导出结果直接转为 Markdown 放入 README</li><li><strong>写作者</strong>：将表格数据转为 Markdown 嵌入博客或文档</li><li><strong>分析师</strong>：将统计数据转为易于分享的格式化表格</li></ul><p>所有转换在浏览器本地完成，数据不会上传。</p>",
+      "long_en": "<p>Free online CSV to Markdown table converter. Convert CSV data from your clipboard, Excel exports, database query results, and more into clean Markdown tables. Supports custom delimiters, header/no-header mode, and column alignment.</p><ul><li><strong>Developers</strong>: turn database results into README-ready tables</li><li><strong>Writers</strong>: embed tabular data in blog posts or docs</li><li><strong>Analysts</strong>: format statistics as shareable tables</li></ul><p>All processing is local — your data never leaves your browser.</p>",
+      "ui_zh": "<div style=\"margin-bottom:12px;display:flex;gap:12px;flex-wrap:wrap;align-items:center\"><label>分隔符: <select id=\"csv2md-delimiter\"><option value=\",\">逗号 ,</option><option value=\"\\t\">制表符 \\t</option><option value=\";\">分号 ;</option><option value=\"|\">竖线 |</option></select></label><label><input type=\"checkbox\" id=\"csv2md-header\" checked> 首行为表头</label><label>对齐: <select id=\"csv2md-align\"><option value=\"default\">默认</option><option value=\"left\">左对齐</option><option value=\"center\">居中</option><option value=\"right\">右对齐</option></select></label><label><input type=\"checkbox\" id=\"csv2md-trim\" checked> 去除空格</label></div><textarea id=\"csv2md-input\" style=\"min-height:200px;font-family:monospace;font-size:13px\" placeholder=\"粘贴 CSV 数据...\"></textarea><div style=\"margin-top:12px;display:flex;gap:12px;align-items:center;flex-wrap:wrap\"><button class=\"btn\" id=\"csv2md-convert\">转换</button><button class=\"btn btn-secondary\" id=\"csv2md-copy\">复制 Markdown</button><button class=\"btn btn-secondary\" id=\"csv2md-download\">下载 .md</button><button class=\"btn btn-secondary\" id=\"csv2md-clear\">清空</button></div><div id=\"csv2md-status\" style=\"margin-top:8px;color:var(--text-dim);font-size:13px\"></div><h3 style=\"margin-top:20px\">预览</h3><div id=\"csv2md-preview\" style=\"min-height:120px;padding:12px;border:1px solid var(--border);border-radius:8px;overflow:auto\"></div>",
+      "ui_en": "<div style=\"margin-bottom:12px;display:flex;gap:12px;flex-wrap:wrap;align-items:center\"><label>Delimiter: <select id=\"csv2md-delimiter\"><option value=\",\">Comma ,</option><option value=\"\\t\">Tab \\t</option><option value=\";\">Semicolon ;</option><option value=\"|\">Pipe |</option></select></label><label><input type=\"checkbox\" id=\"csv2md-header\" checked> Header row</label><label>Align: <select id=\"csv2md-align\"><option value=\"default\">Default</option><option value=\"left\">Left</option><option value=\"center\">Center</option><option value=\"right\">Right</option></select></label><label><input type=\"checkbox\" id=\"csv2md-trim\" checked> Trim cells</label></div><textarea id=\"csv2md-input\" style=\"min-height:200px;font-family:monospace;font-size:13px\" placeholder=\"Paste CSV data...\"></textarea><div style=\"margin-top:12px;display:flex;gap:12px;align-items:center;flex-wrap:wrap\"><button class=\"btn\" id=\"csv2md-convert\">Convert</button><button class=\"btn btn-secondary\" id=\"csv2md-copy\">Copy Markdown</button><button class=\"btn btn-secondary\" id=\"csv2md-download\">Download .md</button><button class=\"btn btn-secondary\" id=\"csv2md-clear\">Clear</button></div><div id=\"csv2md-status\" style=\"margin-top:8px;color:var(--text-dim);font-size:13px\"></div><h3 style=\"margin-top:20px\">Preview</h3><div id=\"csv2md-preview\" style=\"min-height:120px;padding:12px;border:1px solid var(--border);border-radius:8px;overflow:auto\"></div>",
+      "related": [
+        "markdown-table",
+        "csv-viewer",
+        "csv-cleaner",
+        "csv-to-json"
+      ],
+      "seo_title_zh": "CSV 转 Markdown 表格 | 在线 CSV 转 MD 工具",
+      "seo_title_en": "CSV to Markdown Table | Online CSV to MD Converter",
+      "features_zh": [
+        "一键 CSV 转 Markdown 表格",
+        "支持逗号、制表符、分号分隔符",
+        "表头/无表头模式",
+        "左/中/右列对齐",
+        "自动处理引号包裹的数据",
+        "实时 HTML 表格预览",
+        "复制或下载 .md 文件",
+        "浏览器本地处理，数据不上传"
+      ],
+      "features_en": [
+        "One-click CSV to Markdown table",
+        "Support comma, tab, semicolon delimiters",
+        "Header/no-header mode",
+        "Left/center/right column alignment",
+        "Auto-handles quoted data",
+        "Live HTML table preview",
+        "Copy or download .md file",
+        "Browser local processing, no upload"
+      ],
+      "faq_zh": [
+        [
+          "支持 Excel 文件吗？",
+          "不支持直接上传 Excel 文件，建议在 Excel 中另存为 CSV（逗号分隔）格式后再使用此工具。"
+        ],
+        [
+          "数据会泄露吗？",
+          "不会，所有处理在浏览器本地完成，数据不会上传到任何服务器。"
+        ],
+        [
+          "CSV 中有引号怎么办？",
+          "工具会自动处理引号包裹的字段，包括字段内包含逗号或换行的情况。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "Does it support Excel files?",
+          "Direct Excel upload is not supported. Export your data as CSV from Excel first and paste it here."
+        ],
+        [
+          "Is my data safe?",
+          "Yes. Everything runs locally in your browser. No data is sent to any server."
+        ],
+        [
+          "What about quoted CSV fields?",
+          "The tool handles quoted fields automatically, including commas and newlines within quotes."
+        ]
+      ]
+    },
+    {
+      "slug": "html-to-jsx",
+      "category": "dev",
+      "icon": "⚛️",
+      "name_zh": "HTML 转 JSX",
+      "name_en": "HTML to JSX",
+      "short_zh": "将 HTML 转换为 React JSX 语法，处理 className、style、属性映射等",
+      "short_en": "Convert HTML to React JSX syntax — handles className, style objects, attribute mapping, and more",
+      "keywords_zh": "HTML转JSX,React JSX转换,HTML转React,JSX转换器,在线JSX转换,HTML to JSX,React组件",
+      "keywords_en": "html to jsx, react jsx converter, html to react, jsx transformer, online jsx converter, react component generator",
+      "long_zh": "<p>免费在线 HTML 转 JSX 转换工具。将普通 HTML 一键转换为 React JSX 语法，自动处理：</p><ul><li><code>class</code> → <code>className</code></li><li><code>style</code> 字符串 → JSX 对象语法</li><li><code>for</code> → <code>htmlFor</code></li><li>自闭合标签（img/br/input 等）</li><li>内联样式转为驼峰命名对象</li><li>布尔属性处理</li></ul><p>所有处理在浏览器本地完成，内含示例代码供参考。</p>",
+      "long_en": "<p>Free online HTML to JSX converter. Turn plain HTML into React JSX syntax in one click, with automatic handling of:</p><ul><li><code>class</code> → <code>className</code></li><li><code>style</code> strings → JSX style objects</li><li><code>for</code> → <code>htmlFor</code></li><li>Self-closing tags (img/br/input etc.)</li><li>Inline styles to camelCase objects</li><li>Boolean attributes</li></ul><p>All processing runs locally in your browser. Sample code included to get started.</p>",
+      "ui_zh": "<div style=\"margin-bottom:12px;display:flex;gap:12px;flex-wrap:wrap;align-items:center\"><label><input type=\"checkbox\" id=\"html2jsx-fragment\" checked> 作为片段（无完整 HTML 结构）</label><label><input type=\"checkbox\" id=\"html2jsx-inline\"> 紧凑输出（去缩进）</label></div><div style=\"display:grid;grid-template-columns:1fr 1fr;gap:16px\"><div><label>HTML 输入:</label><textarea id=\"html2jsx-input\" style=\"min-height:360px;font-family:monospace;font-size:13px\" placeholder=\"粘贴 HTML 内容...\"></textarea></div><div><label>JSX 输出:</label><textarea id=\"html2jsx-output\" style=\"min-height:360px;font-family:monospace;font-size:13px\" readonly placeholder=\"转换后的 JSX...\"></textarea></div></div><div style=\"margin-top:12px;display:flex;gap:12px;align-items:center;flex-wrap:wrap\"><button class=\"btn\" id=\"html2jsx-convert\">转换</button><button class=\"btn btn-secondary\" id=\"html2jsx-copy\">复制 JSX</button><button class=\"btn btn-secondary\" id=\"html2jsx-clear\">清空</button></div><div id=\"html2jsx-status\" style=\"margin-top:8px;color:var(--text-dim);font-size:13px\"></div>",
+      "ui_en": "<div style=\"margin-bottom:12px;display:flex;gap:12px;flex-wrap:wrap;align-items:center\"><label><input type=\"checkbox\" id=\"html2jsx-fragment\" checked> As fragment (no full HTML structure)</label><label><input type=\"checkbox\" id=\"html2jsx-inline\"> Compact output (no indentation)</label></div><div style=\"display:grid;grid-template-columns:1fr 1fr;gap:16px\"><div><label>HTML input:</label><textarea id=\"html2jsx-input\" style=\"min-height:360px;font-family:monospace;font-size:13px\" placeholder=\"Paste HTML content...\"></textarea></div><div><label>JSX output:</label><textarea id=\"html2jsx-output\" style=\"min-height:360px;font-family:monospace;font-size:13px\" readonly placeholder=\"Converted JSX...\"></textarea></div></div><div style=\"margin-top:12px;display:flex;gap:12px;align-items:center;flex-wrap:wrap\"><button class=\"btn\" id=\"html2jsx-convert\">Convert</button><button class=\"btn btn-secondary\" id=\"html2jsx-copy\">Copy JSX</button><button class=\"btn btn-secondary\" id=\"html2jsx-clear\">Clear</button></div><div id=\"html2jsx-status\" style=\"margin-top:8px;color:var(--text-dim);font-size:13px\"></div>",
+      "related": [
+        "html-to-markdown",
+        "html-minifier",
+        "html-entity",
+        "html-stripper"
+      ],
+      "seo_title_zh": "HTML 转 JSX | 在线 HTML 转 React JSX 转换工具",
+      "seo_title_en": "HTML to JSX | Online HTML to React JSX Converter",
+      "features_zh": [
+        "一键 HTML 转 JSX 语法",
+        "自动 class 转 className",
+        "style 字符串转为 JSX 对象",
+        "自闭合标签自动处理",
+        "for → htmlFor 等属性映射",
+        "布尔属性自动识别",
+        "支持多根元素片段",
+        "浏览器本地处理，数据不上传"
+      ],
+      "features_en": [
+        "One-click HTML to JSX conversion",
+        "Auto class → className",
+        "Style strings to JSX objects",
+        "Self-closing tag handling",
+        "for → htmlFor attribute mapping",
+        "Boolean attribute recognition",
+        "Multi-root element fragment support",
+        "Browser local processing, no upload"
+      ],
+      "faq_zh": [
+        [
+          "JSX 和 HTML 有什么区别？",
+          "JSX 是 React 的模板语法扩展，使用 className 替代 class、camelCase 属性名、内联样式需写成对象等。此工具自动处理这些差异。"
+        ],
+        [
+          "SVG 也能转换吗？",
+          "可以，工具支持 SVG 标签和属性的转换，包括 viewBox 等特有属性。"
+        ],
+        [
+          "数据上传吗？",
+          "不会，所有转换在浏览器本地完成。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "What's the difference between JSX and HTML?",
+          "JSX is React's template syntax extension. It uses className instead of class, camelCase attribute names, and style objects. This tool handles all these differences automatically."
+        ],
+        [
+          "Can it convert SVG?",
+          "Yes, the tool handles SVG tags and attributes including viewBox and other SVG-specific attributes."
+        ],
+        [
+          "Is data uploaded?",
+          "No. All conversion happens locally in your browser."
         ]
       ]
     }

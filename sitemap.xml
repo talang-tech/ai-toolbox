@@ -64,6 +64,8 @@
   <url><loc>https://tools.talang.fun/en/tools/markdown-preview</loc><lastmod>2026-06-24</lastmod><priority>0.8</priority></url>
   <url><loc>https://tools.talang.fun/tools/markdown-to-html</loc><lastmod>2026-06-24</lastmod><priority>0.8</priority></url>
   <url><loc>https://tools.talang.fun/en/tools/markdown-to-html</loc><lastmod>2026-06-24</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/tools/html-to-markdown</loc><lastmod>2026-06-26</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/en/tools/html-to-markdown</loc><lastmod>2026-06-26</lastmod><priority>0.8</priority></url>
   <url><loc>https://tools.talang.fun/tools/csv-viewer</loc><lastmod>2026-06-24</lastmod><priority>0.8</priority></url>
   <url><loc>https://tools.talang.fun/en/tools/csv-viewer</loc><lastmod>2026-06-24</lastmod><priority>0.8</priority></url>
   <url><loc>https://tools.talang.fun/tools/qr-decode</loc><lastmod>2026-06-24</lastmod><priority>0.8</priority></url>
@@ -126,6 +128,8 @@
   <url><loc>https://tools.talang.fun/en/tools/json-diff</loc><lastmod>2026-06-24</lastmod><priority>0.8</priority></url>
   <url><loc>https://tools.talang.fun/tools/json-schema-validator</loc><lastmod>2026-06-24</lastmod><priority>0.8</priority></url>
   <url><loc>https://tools.talang.fun/en/tools/json-schema-validator</loc><lastmod>2026-06-24</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/tools/json-schema-generator</loc><lastmod>2026-06-26</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/en/tools/json-schema-generator</loc><lastmod>2026-06-26</lastmod><priority>0.8</priority></url>
   <url><loc>https://tools.talang.fun/tools/csv-cleaner</loc><lastmod>2026-06-24</lastmod><priority>0.8</priority></url>
   <url><loc>https://tools.talang.fun/en/tools/csv-cleaner</loc><lastmod>2026-06-24</lastmod><priority>0.8</priority></url>
   <url><loc>https://tools.talang.fun/tools/text-replace</loc><lastmod>2026-06-24</lastmod><priority>0.8</priority></url>
@@ -160,6 +164,16 @@
   <url><loc>https://tools.talang.fun/en/tools/yaml-to-json</loc><lastmod>2026-06-24</lastmod><priority>0.8</priority></url>
   <url><loc>https://tools.talang.fun/tools/json-to-xml</loc><lastmod>2026-06-24</lastmod><priority>0.8</priority></url>
   <url><loc>https://tools.talang.fun/en/tools/json-to-xml</loc><lastmod>2026-06-24</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/tools/css-gradient-generator</loc><lastmod>2026-06-25</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/en/tools/css-gradient-generator</loc><lastmod>2026-06-25</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/tools/slug-generator</loc><lastmod>2026-06-25</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/en/tools/slug-generator</loc><lastmod>2026-06-25</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/tools/csv-to-markdown</loc><lastmod>2026-06-27</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/en/tools/csv-to-markdown</loc><lastmod>2026-06-27</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/tools/html-to-jsx</loc><lastmod>2026-06-27</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/en/tools/html-to-jsx</loc><lastmod>2026-06-27</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/blog/html-to-jsx-guide</loc><lastmod>2026-06-27</lastmod><priority>0.7</priority></url>
+  <url><loc>https://tools.talang.fun/blog/css-gradient-guide</loc><lastmod>2026-06-25</lastmod><priority>0.7</priority></url>
   <url><loc>https://tools.talang.fun/blog/html-stripper-json-to-csv-guide</loc><lastmod>2026-06-24</lastmod><priority>0.7</priority></url>
   <url><loc>https://tools.talang.fun/blog/ulid-uuid-nanoid-comparison</loc><lastmod>2026-06-18</lastmod><priority>0.7</priority></url>
   <url><loc>https://tools.talang.fun/blog/browser-local-office-toolbox-guide</loc><lastmod>2026-06-13</lastmod><priority>0.7</priority></url>
@@ -181,6 +195,8 @@
   <url><loc>https://tools.talang.fun/blog/base64-explained</loc><lastmod>2026-05-11</lastmod><priority>0.7</priority></url>
   <url><loc>https://tools.talang.fun/blog/uuid-v4-vs-v7</loc><lastmod>2026-05-10</lastmod><priority>0.7</priority></url>
   <url><loc>https://tools.talang.fun/blog/regex-cheatsheet</loc><lastmod>2026-05-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://tools.talang.fun/en/blog/html-to-jsx-guide</loc><lastmod>2026-06-27</lastmod><priority>0.7</priority></url>
+  <url><loc>https://tools.talang.fun/en/blog/css-gradient-guide</loc><lastmod>2026-06-25</lastmod><priority>0.7</priority></url>
   <url><loc>https://tools.talang.fun/en/blog/html-stripper-json-to-csv-guide</loc><lastmod>2026-06-24</lastmod><priority>0.7</priority></url>
   <url><loc>https://tools.talang.fun/en/blog/ulid-uuid-nanoid-comparison</loc><lastmod>2026-06-18</lastmod><priority>0.7</priority></url>
   <url><loc>https://tools.talang.fun/en/blog/browser-local-office-toolbox-guide</loc><lastmod>2026-06-13</lastmod><priority>0.7</priority></url>

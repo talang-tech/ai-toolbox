@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>JSON Schema 生成器 - JSON Schema 生成器 | 从 JSON 样本自动生成 Schema | AI 工具盒子</title>
+<meta name="description" content="免费在线JSON Schema 生成器工具，从 JSON 数据样本自动生成 JSON Schema（Draft-07）。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="JSON Schema 生成,JSON 模式生成,JSON Schema 生成器,schema 自动生成,JSON 数据结构,JSON 转 Schema,数据模型生成,JSON 转 JSON Schema">
+<link rel="canonical" href="https://tools.talang.fun/tools/json-schema-generator">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/json-schema-generator">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/json-schema-generator">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/json-schema-generator">
+<meta property="og:title" content="JSON Schema 生成器 - JSON Schema 生成器 | 从 JSON 样本自动生成 Schema | AI 工具盒子">
+<meta property="og:description" content="免费在线JSON Schema 生成器工具，从 JSON 数据样本自动生成 JSON Schema（Draft-07）。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/json-schema-generator">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "JSON Schema 生成器", "description": "免费在线JSON Schema 生成器工具，从 JSON 数据样本自动生成 JSON Schema（Draft-07）。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/json-schema-generator", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "从 JSON 数据样本自动生成 JSON Schema（Draft-07）", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/tools/json-schema-generator" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">📋</div>
+  <h1>JSON Schema 生成器</h1>
+  <p>从 JSON 数据样本自动生成 JSON Schema（Draft-07）</p>
+</div>
+<div class="tool-panel">
+<div style="margin-bottom:12px"><label style="font-size:13px;font-weight:600">JSON 数据样本</label><textarea id="jsgInput" style="width:100%;min-height:220px;font-family:Consolas,monospace;font-size:13px" placeholder="粘贴一个 JSON 对象或数组..."></textarea></div><div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:12px;align-items:center"><label><input type="checkbox" id="jsgInferType" checked> 智能类型推断</label><label><input type="checkbox" id="jsgRequired" checked> 标记 required 属性</label><label><input type="checkbox" id="jsgDescriptions" checked> 生成描述</label><button class="btn" id="jsgGenerate">生成 Schema</button><button class="btn btn-secondary" id="jsgCopy">复制 Schema</button><button class="btn btn-secondary" id="jsgClear">清空</button></div><div id="jsgStatus" style="margin-top:4px;font-size:13px;margin-bottom:8px"></div><label style="font-size:13px;font-weight:600">生成的 JSON Schema（Draft-07）</label><textarea id="jsgOutput" style="width:100%;min-height:240px;font-family:Consolas,monospace;font-size:13px;background:var(--bg)" readonly placeholder="JSON Schema 将显示在这里..."></textarea><div style="margin-top:8px;font-size:12px;color:#666">提示：Ctrl+Enter / Cmd+Enter 快速生成</div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>JSON Schema 生成器帮助你从 JSON 数据样本自动生成 JSON Schema（Draft-07 规范）。适合：<ul><li>API 开发中从响应数据自动生成 Schema 文档</li><li>为配置文件生成数据结构约束</li><li>数据库记录结构定义</li><li>前端类型定义的前置步骤</li></ul></p><p>支持智能类型推断（integer/number/string 自动识别）、optional/required 属性推断、数组元素类型分析、嵌套对象递归处理，以及常见格式（email、uri、date-time、uuid）自动识别。</p><p>所有处理在浏览器本地完成，数据不会上传到服务器。</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>从 JSON 数据样本自动生成 Schema</li><li>支持嵌套对象递归生成</li><li>数组元素类型自动分析</li><li>智能类型推断（integer/number/string）</li><li>自动识别 email、uri、date-time、uuid 格式</li><li>optional/required 属性推断</li><li>additionalProperties 约束标记</li><li>Ctrl+Enter 快捷键快速生成</li><li>纯本地处理，数据零上传</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">生成的 Schema 是哪个版本？</h3><p>默认生成 Draft-07（2019-09）兼容的 Schema，这是当前最广泛支持的版本。</p><h3 style="margin-top:20px;margin-bottom:8px">能处理嵌套对象吗？</h3><p>可以。工具会递归处理所有嵌套的对象和数组，最大递归深度 10 层。</p><h3 style="margin-top:20px;margin-bottom:8px">为什么有的属性没出现在 required 里？</h3><p>null 或 undefined 值的属性会被视为 optional，不会标记为 required。</p><h3 style="margin-top:20px;margin-bottom:8px">和 JSON Schema 校验器有什么区别？</h3><p>生成器从样本数据反向生成 Schema 约束；校验器用已定义的 Schema 验证数据。两者是互补的逆向流程。</p><h3 style="margin-top:20px;margin-bottom:8px">数据会被上传吗？</h3><p>不会。所有处理都在浏览器本地完成，数据不会离开你的设备。</p></section>
+<section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/json-formatter" class="tool-card"><div class="icon">{ }</div><h3>JSON 格式化</h3><p>JSON 美化、压缩、校验，错误位置精准定位</p></a><a href="/tools/json-schema-validator" class="tool-card"><div class="icon">✓</div><h3>JSON Schema 校验</h3><p>根据 JSON Schema 标准校验 JSON 数据结构，支持 Draft-07</p></a><a href="/tools/json-to-ts" class="tool-card"><div class="icon">📊</div><h3>JSON 转 TypeScript</h3><p>一键将 JSON 转换为 TypeScript 接口定义</p></a><a href="/tools/json-to-go" class="tool-card"><div class="icon">📊</div><h3>JSON 转 Go Struct</h3><p>在线将 JSON 转换为 Go 结构体定义</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/json-schema-generator.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>JSON Schema Generator - JSON Schema Generator | Auto-generate from Sample JSON | AI Toolbox</title>
+<meta name="description" content="Free online json schema generator. Auto-generate JSON Schema (Draft-07) from sample JSON data. Fast, secure, and works in your browser without downloading.">
+<meta name="keywords" content="json schema generator, json schema from json, auto generate schema, json to schema, schema generator from json, json data model, generate json schema online">
+<link rel="canonical" href="https://tools.talang.fun/en/tools/json-schema-generator">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/json-schema-generator">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/json-schema-generator">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/json-schema-generator">
+<meta property="og:title" content="JSON Schema Generator - JSON Schema Generator | Auto-generate from Sample JSON | AI Toolbox">
+<meta property="og:description" content="Free online json schema generator. Auto-generate JSON Schema (Draft-07) from sample JSON data. Fast, secure, and works in your browser without downloading.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/en/tools/json-schema-generator">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "JSON Schema Generator", "description": "Free online json schema generator. Auto-generate JSON Schema (Draft-07) from sample JSON data. Fast, secure, and works in your browser without downloading.", "url": "https://tools.talang.fun/en/tools/json-schema-generator", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "Auto-generate JSON Schema (Draft-07) from sample JSON data", "inLanguage": "en", "author": {"@type": "Organization", "name": "AI Toolbox"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/en/" class="logo"><span class="logo-icon">🛠️</span>AI Toolbox</a>
+    <nav class="nav">
+      <a href="/en/">Home</a>
+      <a href="/en/#tools">All Tools</a>
+      <a href="/en/blog/">Blog</a>
+      <a href="/en/about">About</a>
+      <a href="/en/sponsor">Sponsor</a>
+      <a href="https://tools.talang.fun/tools/json-schema-generator" class="lang-switch">中文</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">📋</div>
+  <h1>JSON Schema Generator</h1>
+  <p>Auto-generate JSON Schema (Draft-07) from sample JSON data</p>
+</div>
+<div class="tool-panel">
+<div style="margin-bottom:12px"><label style="font-size:13px;font-weight:600">Sample JSON Data</label><textarea id="jsgInput" style="width:100%;min-height:220px;font-family:Consolas,monospace;font-size:13px" placeholder="Paste a JSON object or array..."></textarea></div><div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:12px;align-items:center"><label><input type="checkbox" id="jsgInferType" checked> Smart type inference</label><label><input type="checkbox" id="jsgRequired" checked> Mark required properties</label><label><input type="checkbox" id="jsgDescriptions" checked> Generate descriptions</label><button class="btn" id="jsgGenerate">Generate Schema</button><button class="btn btn-secondary" id="jsgCopy">Copy Schema</button><button class="btn btn-secondary" id="jsgClear">Clear</button></div><div id="jsgStatus" style="margin-top:4px;font-size:13px;margin-bottom:8px"></div><label style="font-size:13px;font-weight:600">Generated JSON Schema (Draft-07)</label><textarea id="jsgOutput" style="width:100%;min-height:240px;font-family:Consolas,monospace;font-size:13px;background:var(--bg)" readonly placeholder="JSON Schema will appear here..."></textarea><div style="margin-top:8px;font-size:12px;color:#666">Tip: Ctrl+Enter / Cmd+Enter to generate</div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>About this tool</h2>
+  <p>JSON Schema Generator automatically generates JSON Schema (Draft-07) from sample JSON data. Perfect for:<ul><li>Generating Schema docs from API response data</li><li>Creating data structure constraints for config files</li><li>Database record structure definitions</li><li>A preparatory step for frontend type definitions</li></ul></p><p>Features smart type inference (integer/number/string auto-detection), optional/required property inference, array item type analysis, nested object recursion, and automatic format detection (email, uri, date-time, uuid).</p><p>All processing happens locally in your browser. Your data stays on your device.</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>Key Features</h2><ul><li>Auto-generate Schema from JSON sample data</li><li>Nested object recursive generation</li><li>Array element type auto-analysis</li><li>Smart type inference (integer/number/string)</li><li>Auto-detect email, uri, date-time, uuid formats</li><li>Optional/required property inference</li><li>additionalProperties constraint marking</li><li>Ctrl+Enter shortcut for quick generation</li><li>100% local processing, zero data upload</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>Frequently Asked Questions</h2><h3 style="margin-top:20px;margin-bottom:8px">Which Schema version is generated?</h3><p>Draft-07 (2019-09) compatible Schema by default, which is the most widely supported version.</p><h3 style="margin-top:20px;margin-bottom:8px">Does it handle nested objects?</h3><p>Yes. The tool recursively processes all nested objects and arrays up to a maximum depth of 10 levels.</p><h3 style="margin-top:20px;margin-bottom:8px">Why are some properties not in required?</h3><p>Properties with null or undefined values are treated as optional and not marked as required.</p><h3 style="margin-top:20px;margin-bottom:8px">How is this different from the Schema Validator?</h3><p>Generator creates Schema constraints from sample data; Validator checks data against an existing Schema. They are complementary reverse processes.</p><h3 style="margin-top:20px;margin-bottom:8px">Is my data uploaded?</h3><p>No. All processing happens locally in your browser. Your data never leaves your device.</p></section>
+<section class="related"><h3>Related Tools</h3><div class="tools-grid"><a href="/en/tools/json-formatter" class="tool-card"><div class="icon">{ }</div><h3>JSON Formatter</h3><p>Beautify, minify, and validate JSON with precise error location</p></a><a href="/en/tools/json-schema-validator" class="tool-card"><div class="icon">✓</div><h3>JSON Schema Validator</h3><p>Validate JSON data against JSON Schema (Draft-07 support)</p></a><a href="/en/tools/json-to-ts" class="tool-card"><div class="icon">📊</div><h3>JSON to TypeScript</h3><p>Convert JSON data to TypeScript interface definitions with one click. Support optional fields, type inference, and camelCase conversion.</p></a><a href="/en/tools/json-to-go" class="tool-card"><div class="icon">📊</div><h3>JSON to Go</h3><p>Convert JSON to Go struct definitions with proper tags. Support omitempty, inline, and custom naming conventions.</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>Need a private toolbox or custom browser tool?</h2>
+  <p>AI Toolbox can be adapted for internal workflows, private deployment, sponsored categories, or custom privacy-first utilities.</p>
+  <p><a href="/en/sponsor" data-event="conversion_cta_click" data-label="en_partner_custom_tool_cta">View partnership and custom tool options →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/json-schema-generator.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI Toolbox · Free online AI & developer tools · <a href='/en/about'>About</a> · <a href='/en/sponsor'>Sponsor</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('Copied!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>
