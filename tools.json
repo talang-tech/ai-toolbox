@@ -40,13 +40,17 @@
           "color-name-finder",
           "cron-generator",
           "cron-parser",
+          "css-gradient-generator",
           "css-minifier",
           "csv-viewer",
           "html-encoder",
           "html-entity",
-          "html-table-extractor",
           "html-minifier",
+          "html-table-extractor",
+          "html-to-jsx",
+          "html-to-markdown",
           "ip-subnet",
+          "js-minifier",
           "json-csv",
           "json-formatter",
           "jsonpath",
@@ -54,7 +58,6 @@
           "jwt-generator",
           "markdown-preview",
           "markdown-to-html",
-          "html-to-markdown",
           "qr-decode",
           "regex-pattern-library",
           "regex-tester",
@@ -62,13 +65,12 @@
           "string-escape",
           "timestamp",
           "timestamp-converter",
+          "toml-formatter",
           "url-parser",
           "url-query-builder",
           "xml-formatter",
           "yaml-formatter",
-          "yaml-to-json",
-          "css-gradient-generator",
-          "html-to-jsx"
+          "yaml-to-json"
         ]
       },
       "encode": {
@@ -2690,6 +2692,85 @@
       ]
     },
     {
+      "slug": "toml-formatter",
+      "category": "dev",
+      "icon": "⚙️",
+      "name_zh": "TOML 格式化",
+      "name_en": "TOML Formatter",
+      "short_zh": "TOML 配置文件格式化、验证排错，自动整理缩进与表结构",
+      "short_en": "TOML config file formatter and validator — indent, sort sections, and detect common errors",
+      "keywords_zh": "TOML格式化,TOML格式化工具,TOML验证,TOML配置,配置文件格式化,TOML美化,TOML formatter,toml格式,toml编辑器,在线toml",
+      "keywords_en": "toml formatter, toml validator, toml beautifier, toml config formatter, toml pretty print, toml format online, toml config file formatter",
+      "long_zh": "<p>免费的在线 TOML 格式化与验证工具。TOML 是一种广泛用于配置文件（如 Rust Cargo、Python pyproject.toml）的格式。</p><ul><li><strong>格式化</strong>：自动整理缩进、对齐等号、整理表格结构、清理多余空白行</li><li><strong>验证</strong>：检查空表头、无效键值对、制表符警告等常见问题</li></ul><p>适合：编辑 Rust Cargo.toml、Python pyproject.toml、VSCode 等工具的配置文件前后进行格式化清理。</p><p>所有处理在浏览器本地完成，配置文件内容不会上传到任何服务器。</p>",
+      "long_en": "<p>Free online TOML formatter and validator. TOML is widely used for configuration files (Rust Cargo, Python pyproject.toml, etc.).</p><ul><li><strong>Format</strong>: Auto-indent sections, align equals, organize table structure, clean extra whitespace</li><li><strong>Validate</strong>: Check for empty table headers, invalid key-value pairs, tab characters in values, and other common issues</li></ul><p>Perfect for: cleaning up Cargo.toml, pyproject.toml, or any TOML configuration before or after editing.</p><p>All processing happens locally in your browser — no data uploaded.</p>",
+      "ui_zh": "<label style=\"font-size:13px;font-weight:600\">TOML 内容</label><textarea id=\"toml-input\" style=\"width:100%;min-height:300px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"粘贴 TOML 配置内容...\"></textarea><div style=\"margin-top:12px;display:flex;gap:12px;align-items:center;flex-wrap:wrap\"><button class=\"btn\" id=\"toml-action-btn\">格式化</button><button class=\"btn btn-secondary\" id=\"toml-copy-btn\">📋 复制</button></div><div id=\"toml-status\" style=\"margin-top:8px;font-size:13px;color:var(--text-dim)\"></div><label style=\"font-size:13px;font-weight:600;margin-top:16px;display:block\">格式化输出</label><textarea id=\"toml-output\" readonly style=\"width:100%;min-height:300px;font-family:Consolas,monospace;font-size:13px;margin-top:4px\" placeholder=\"格式化后的 TOML...\"></textarea>",
+      "ui_en": "<label style=\"font-size:13px;font-weight:600\">TOML Content</label><textarea id=\"toml-input\" style=\"width:100%;min-height:300px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"Paste TOML configuration...\"></textarea><div style=\"margin-top:12px;display:flex;gap:12px;align-items:center;flex-wrap:wrap\"><button class=\"btn\" id=\"toml-action-btn\">Format</button><button class=\"btn btn-secondary\" id=\"toml-copy-btn\">📋 Copy</button></div><div id=\"toml-status\" style=\"margin-top:8px;font-size:13px;color:var(--text-dim)\"></div><label style=\"font-size:13px;font-weight:600;margin-top:16px;display:block\">Formatted Output</label><textarea id=\"toml-output\" readonly style=\"width:100%;min-height:300px;font-family:Consolas,monospace;font-size:13px;margin-top:4px\" placeholder=\"Formatted TOML output...\"></textarea>",
+      "related": [
+        "yaml-formatter",
+        "xml-formatter",
+        "json-formatter",
+        "sql-formatter"
+      ],
+      "seo_title_zh": "TOML 格式化工具 | 在线 TOML 配置文件格式化与验证",
+      "seo_title_en": "TOML Formatter | Online TOML Config File Formatter and Validator",
+      "features_zh": [
+        "TOML 一键格式化，自动整理缩进",
+        "表格 [section] 和 [[array]] 结构清晰排列",
+        "等号对齐，键值对整洁",
+        "基础语法验证：检查空表头、无效值",
+        "去除多余空行和行尾空格",
+        "支持标准 TOML 语法（多行字符串、内联表等）",
+        "浏览器本地处理，配置不上传",
+        "Ctrl+Enter 快捷键快速执行"
+      ],
+      "features_en": [
+        "One-click TOML formatting with auto-indentation",
+        "Clean [section] and [[array]] table structure",
+        "Aligned equals signs for key-value pairs",
+        "Basic validation: empty headers, invalid values",
+        "Remove extra blank lines and trailing whitespace",
+        "Supports standard TOML (multiline strings, inline tables)",
+        "Browser-local processing, config stays private",
+        "Ctrl+Enter keyboard shortcut for quick execution"
+      ],
+      "faq_zh": [
+        [
+          "TOML 和其他配置格式有什么区别？",
+          "TOML 设计目标是直观易读，类比 INI 但更强大。支持嵌套表、数组、日期等类型。常见于 Rust（Cargo.toml）和 Python（pyproject.toml）。"
+        ],
+        [
+          "格式化后会破坏注释吗？",
+          "不会。工具保留所有行内注释和行级注释，仅调整缩进和空白。"
+        ],
+        [
+          "支持 TOML v1.0 的所有功能吗？",
+          "工具支持常见 TOML 结构：表、行内表、数组、字符串、数字、布尔值、日期。部分高级特性（如点分隔键）有基础支持。"
+        ],
+        [
+          "数据会上传到服务器吗？",
+          "不会。所有格式化与验证完全在浏览器本地完成，配置内容不会离开你的设备。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "How is TOML different from other config formats?",
+          "TOML aims to be intuitive and readable — like INI but more powerful. Supports nested tables, arrays, dates, etc. Popular in Rust (Cargo.toml) and Python (pyproject.toml)."
+        ],
+        [
+          "Does formatting break comments?",
+          "No. The tool preserves all inline and line-level comments while adjusting indentation and whitespace."
+        ],
+        [
+          "Does it support all TOML v1.0 features?",
+          "The tool handles common TOML structures: tables, inline tables, arrays, strings, numbers, booleans, dates. Advanced features like dotted keys have basic support."
+        ],
+        [
+          "Is data uploaded?",
+          "No. All formatting and validation happens entirely in your browser. Your config never leaves your device."
+        ]
+      ]
+    },
+    {
       "slug": "yaml-formatter",
       "category": "dev",
       "icon": "🧾",
@@ -2707,6 +2788,7 @@
         "json-to-yaml",
         "json-formatter",
         "jsonpath",
+        "toml-formatter",
         "sql-formatter"
       ],
       "seo_title_zh": "YAML 格式化与语法校验 | Docker/K8s 配置本地处理",
@@ -4179,6 +4261,7 @@
       "related": [
         "markdown-to-html",
         "html-entity",
+        "js-minifier",
         "json-formatter",
         "xml-formatter",
         "yaml-formatter"
@@ -4589,6 +4672,93 @@
       "ui_en": "<div style=\"margin-bottom:16px\"><label>Algorithm:</label><select id=\"jwtgAlgo\" style=\"width:100%\"><option value=\"HS256\">HS256</option><option value=\"HS384\">HS384</option><option value=\"HS512\">HS512</option></select></div><div style=\"display:grid;grid-template-columns:1fr 1fr;gap:16px\"><div><label>Header (JSON):</label><textarea id=\"jwtgHeader\" style=\"min-height:100px;font-family:monospace;font-size:12px\">{\"alg\":\"HS256\",\"typ\":\"JWT\"}</textarea></div><div><label>Payload (JSON):</label><textarea id=\"jwtgPayload\" style=\"min-height:100px;font-family:monospace;font-size:12px\">{\"sub\":\"1234567890\",\"name\":\"John Doe\"}</textarea></div></div><div style=\"margin-top:12px\"><label>Secret:</label><input type=\"text\" id=\"jwtgSecret\" value=\"your-256-bit-secret\" style=\"width:100%;font-family:monospace\"></div><div class=\"input-row\" style=\"margin-top:12px\"><label><input type=\"checkbox\" id=\"jwtgIat\" checked> Add iat (issued at)</label><label style=\"margin-left:20px\">Expire (seconds): <input type=\"number\" id=\"jwtgExp\" value=\"3600\" min=\"0\" style=\"width:80px\"></label></div><button class=\"btn\" id=\"jwtgGenerate\" style=\"margin-top:12px\">Generate JWT</button><div style=\"margin-top:16px\"><label>Generated Token:</label><textarea id=\"jwtgOutput\" readonly style=\"min-height:60px;font-family:monospace;font-size:12px;word-break:break-all\"></textarea><button class=\"btn\" id=\"jwtgCopy\" style=\"margin-top:6px\">📋 Copy Token</button></div><div id=\"jwtgDecoded\"></div>"
     },
     {
+      "slug": "js-minifier",
+      "category": "dev",
+      "icon": "📦",
+      "name_zh": "JS 压缩/美化",
+      "name_en": "JS Minifier/Beautifier",
+      "short_zh": "JavaScript 代码一键压缩美化，去注释、去空白、格式化缩进",
+      "short_en": "JavaScript beautifier and minifier — compress or format JS with comment stripping and indentation",
+      "keywords_zh": "JS压缩,JS美化,JavaScript压缩,JavaScript美化,JS格式化器,js压缩工具,js minifier,js beautifier,JavaScript压缩工具,js压缩美化,代码压缩",
+      "keywords_en": "js minifier, js beautifier, javascript minifier, javascript formatter, js compressor, minify js, javascript beautifier, code minifier, js formatter online",
+      "long_zh": "<p>免费的在线 JavaScript 压缩与美化工具。支持两种模式：</p><ul><li><strong>压缩模式</strong>：移除单行/多行注释、去除多余空白与换行，大幅减小 JS 代码体积</li><li><strong>美化模式</strong>：添加正确缩进和换行，恢复杂乱 JS 代码的可读性</li></ul><p>适合：上线前压缩 JS 减小文件大小、从混淆代码恢复可读格式、批量整理脚本代码。</p><p>所有处理在浏览器本地完成，代码不会上传到任何服务器。</p>",
+      "long_en": "<p>Free online JavaScript minifier and beautifier. Two modes:</p><ul><li><strong>Minify</strong>: Strip line/block comments, extra whitespace, and line breaks — dramatically reduce JS file size.</li><li><strong>Beautify</strong>: Add proper indentation and line breaks for readable code.</li></ul><p>Perfect for: pre-deployment compression, recovering readable JS from minified scripts, batch formatting.</p><p>100% browser-local processing — no code uploaded.</p>",
+      "ui_zh": "<div class=\"mode-selector\" style=\"display:flex;gap:16px;margin-bottom:12px\"><label><input type=\"radio\" name=\"js-mode\" value=\"beautify\" checked> 美化</label><label><input type=\"radio\" name=\"js-mode\" value=\"minify\"> 压缩</label></div><label style=\"font-size:13px;font-weight:600\">JavaScript 代码</label><textarea id=\"js-input\" style=\"width:100%;min-height:220px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"粘贴 JS 代码...\"></textarea><button class=\"btn\" id=\"js-action-btn\" style=\"margin-top:12px\">执行</button><div id=\"js-stats\" style=\"margin-top:8px;font-size:13px;color:var(--text-dim)\"></div><textarea id=\"js-output\" readonly style=\"width:100%;min-height:220px;font-family:Consolas,monospace;font-size:13px;margin-top:8px\" placeholder=\"结果将显示在这里...\"></textarea><button class=\"btn btn-secondary\" id=\"js-copy-btn\" style=\"margin-top:8px\">📋 复制</button>",
+      "ui_en": "<div class=\"mode-selector\" style=\"display:flex;gap:16px;margin-bottom:12px\"><label><input type=\"radio\" name=\"js-mode\" value=\"beautify\" checked> Beautify</label><label><input type=\"radio\" name=\"js-mode\" value=\"minify\"> Minify</label></div><label style=\"font-size:13px;font-weight:600\">JavaScript Code</label><textarea id=\"js-input\" style=\"width:100%;min-height:220px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"Paste JS code...\"></textarea><button class=\"btn\" id=\"js-action-btn\" style=\"margin-top:12px\">Process</button><div id=\"js-stats\" style=\"margin-top:8px;font-size:13px;color:var(--text-dim)\"></div><textarea id=\"js-output\" readonly style=\"width:100%;min-height:220px;font-family:Consolas,monospace;font-size:13px;margin-top:8px\" placeholder=\"Result appears here...\"></textarea><button class=\"btn btn-secondary\" id=\"js-copy-btn\" style=\"margin-top:8px\">📋 Copy</button>",
+      "related": [
+        "code-formatter",
+        "css-minifier",
+        "html-minifier",
+        "string-escape"
+      ],
+      "seo_title_zh": "JS 压缩/美化工具 | 在线 JavaScript 格式化与压缩",
+      "seo_title_en": "JS Minifier & Beautifier | Online JavaScript Formatter and Compressor",
+      "features_zh": [
+        "JavaScript 一键美化格式化，嵌套缩进清晰",
+        "JS 压缩：去注释、去空白，大幅减小体积",
+        "支持单行/多行注释自动移除",
+        "压缩模式适合生产环境部署",
+        "未经混淆的代码压缩率 30%-50%",
+        "原大小 vs 压缩后大小对比",
+        "实时处理，无需上传服务器",
+        "Ctrl+Enter 快捷键快速执行"
+      ],
+      "features_en": [
+        "One-click JS beautify with nesting indentation",
+        "JS minify: strip comments, whitespace for smaller size",
+        "Single-line and multi-line comment removal",
+        "Minify mode for production deployment",
+        "30%-50% compression ratio on clean code",
+        "Before/after size comparison",
+        "Real-time processing, no upload needed",
+        "Ctrl+Enter shortcut for quick execution"
+      ],
+      "faq_zh": [
+        [
+          "JS 压缩后能正常工作吗？",
+          "压缩仅移除注释和空白，不影响代码逻辑执行。但极简化的压缩可能在某些极端情况下有问题，建议压缩后快速测试。"
+        ],
+        [
+          "压缩率一般能达到多少？",
+          "取决于注释和空白量。带大量注释和格式空白的代码可压缩 30%-50%。已被压缩的代码效果有限。"
+        ],
+        [
+          "美化后的代码结构和原代码一致吗？",
+          "美化通过添加缩进和换行改善可读性，但不会恢复丢失的变量名或注释。"
+        ],
+        [
+          "数据会上传到服务器吗？",
+          "不会。所有格式化与压缩完全在浏览器本地完成，代码不会离开你的设备。"
+        ],
+        [
+          "支持 ES6+/TypeScript 吗？",
+          "工具主要处理标准 JavaScript 语法。部分现代语法（如 JSX、TypeScript）可能不被正确处理。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "Does JS minification affect functionality?",
+          "No. Minification only removes comments and whitespace. Logic and execution remain unchanged. Quick testing after minification is recommended."
+        ],
+        [
+          "What compression ratio can I expect?",
+          "Code with lots of comments/whitespace can compress 30%-50%. Already minified code sees limited benefit."
+        ],
+        [
+          "Does beautify preserve original structure?",
+          "Beautify improves readability with indentation and line breaks, but won't recover lost variable names or comments."
+        ],
+        [
+          "Is data uploaded?",
+          "No. All processing happens entirely in your browser. Your code never leaves your device."
+        ],
+        [
+          "Does it support ES6+ or TypeScript?",
+          "This tool primarily handles standard JavaScript. Some modern syntax (JSX, TypeScript) may not be processed correctly."
+        ]
+      ]
+    },
+    {
       "slug": "json-sorter",
       "category": "json",
       "icon": "🔀",
@@ -4767,6 +4937,7 @@
       "ui_zh": "<div class=\"mode-selector\" style=\"display:flex;gap:16px;margin-bottom:12px\"><label><input type=\"radio\" name=\"css-mode\" value=\"beautify\" checked> 美化</label><label><input type=\"radio\" name=\"css-mode\" value=\"minify\"> 压缩</label></div><textarea id=\"css-input\" placeholder=\"粘贴 CSS 代码...\" style=\"min-height:200px\"></textarea><button class=\"btn\" id=\"css-action-btn\" style=\"margin-top:12px\">执行</button><div id=\"css-stats\" style=\"margin-top:8px;font-size:13px;color:var(--text-dim)\"></div><textarea id=\"css-output\" readonly style=\"min-height:200px;margin-top:8px\" placeholder=\"结果将显示在这里...\"></textarea><button class=\"btn btn-secondary\" id=\"css-copy-btn\" style=\"margin-top:8px\">📋 复制</button>",
       "ui_en": "<div class=\"mode-selector\" style=\"display:flex;gap:16px;margin-bottom:12px\"><label><input type=\"radio\" name=\"css-mode\" value=\"beautify\" checked> Beautify</label><label><input type=\"radio\" name=\"css-mode\" value=\"minify\"> Minify</label></div><textarea id=\"css-input\" placeholder=\"Paste CSS here...\" style=\"min-height:200px\"></textarea><button class=\"btn\" id=\"css-action-btn\" style=\"margin-top:12px\">Process</button><div id=\"css-stats\" style=\"margin-top:8px;font-size:13px;color:var(--text-dim)\"></div><textarea id=\"css-output\" readonly style=\"min-height:200px;margin-top:8px\" placeholder=\"Result appears here...\"></textarea><button class=\"btn btn-secondary\" id=\"css-copy-btn\" style=\"margin-top:8px\">📋 Copy</button>",
       "related": [
+        "js-minifier",
         "code-formatter",
         "string-escape",
         "html-entity"
@@ -4943,7 +5114,9 @@
         "css-minifier",
         "code-formatter",
         "html-entity",
-        "html-encoder"
+        "js-minifier",
+        "html-encoder",
+        "toml-formatter"
       ],
       "seo_title_zh": "HTML 压缩/美化工具 | 在线 HTML 格式化与压缩",
       "seo_title_en": "HTML Minifier & Beautifier | Online HTML Formatter and Compressor",
