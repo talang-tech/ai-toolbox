@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>JSON 展平/还原 - JSON 展平工具 | 在线 JSON Flatten/Unflatten 嵌套转点号 | AI 工具盒子</title>
+<meta name="description" content="免费在线JSON 展平/还原工具，嵌套 JSON 一键展平为点号键名，支持反向还原。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="JSON展平,JSON flatten,JSON展开,JSON点号表示,嵌套JSON转换,JSON扁平化,json flatten online, JSON unflatten, JSON深度展平,JSON键名合并">
+<link rel="canonical" href="https://tools.talang.fun/tools/json-flatten">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/json-flatten">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/json-flatten">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/json-flatten">
+<meta property="og:title" content="JSON 展平/还原 - JSON 展平工具 | 在线 JSON Flatten/Unflatten 嵌套转点号 | AI 工具盒子">
+<meta property="og:description" content="免费在线JSON 展平/还原工具，嵌套 JSON 一键展平为点号键名，支持反向还原。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/json-flatten">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "JSON 展平/还原", "description": "免费在线JSON 展平/还原工具，嵌套 JSON 一键展平为点号键名，支持反向还原。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/json-flatten", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "嵌套 JSON 一键展平为点号键名，支持反向还原", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/tools/json-flatten" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🔀</div>
+  <h1>JSON 展平/还原</h1>
+  <p>嵌套 JSON 一键展平为点号键名，支持反向还原</p>
+</div>
+<div class="tool-panel">
+<div class="mode-selector" style="display:flex;gap:16px;margin-bottom:12px"><label><input type="radio" name="jf-mode" value="flatten" checked> 展平</label><label><input type="radio" name="jf-mode" value="unflatten"> 还原</label></div><label style="font-size:13px;font-weight:600">JSON 内容</label><textarea id="jf-input" style="width:100%;min-height:220px;font-family:Consolas,monospace;font-size:13px" placeholder="粘贴 JSON..."></textarea><button class="btn" id="jf-action-btn" style="margin-top:12px">执行</button><div id="jf-stats" style="margin-top:8px;font-size:13px;color:var(--text-dim)"></div><textarea id="jf-output" readonly style="width:100%;min-height:220px;font-family:Consolas,monospace;font-size:13px;margin-top:8px" placeholder="结果将显示在这里..."></textarea><button class="btn btn-secondary" id="jf-copy-btn" style="margin-top:8px">📋 复制</button>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>免费在线 JSON 展平与还原工具。将深层嵌套的 JSON 对象展平为单层点号键名结构，也可将展平结果还原回原始嵌套格式。</p><ul><li><strong>展平模式</strong>：将嵌套 JSON 转换为点号分隔的键值对，如 <code>{"user": {"name": {"first": "John"}}}</code> → <code>{"user.name.first": "John"}</code></li><li><strong>还原模式</strong>：将展平后的点号键名 JSON 恢复为原始嵌套结构</li><li><strong>数组支持</strong>：正确处理 JSON 数组索引，如 <code>items.0.name</code></li></ul><p>适合：处理配置文件的扁平化、日志分析、数据 ETL 管道预处理、与 jq/flatten 库配合使用、API 响应解析。</p><p>所有处理在浏览器本地完成，数据不会上传到任何服务器。</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>多层嵌套 JSON 一键展平为点号键名</li><li>展平结果支持一键还原回嵌套结构</li><li>正确处理数组索引 (items.0.name)</li><li>自动检测并提示无效 JSON</li><li>实时处理结果预览和错误定位</li><li>展平前后键数量对比统计</li><li>一键复制结果 JSON</li><li>支持 Ctrl+Enter 快捷键</li><li>所有处理在浏览器本地完成</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">JSON 展平是什么意思？</h3><p>将嵌套的 JSON 对象转换为单层键值对，用点号表示层级关系。例如 {"a": {"b": "c"}} 展平后变为 {"a.b": "c"}。</p><h3 style="margin-top:20px;margin-bottom:8px">数组会怎么处理？</h3><p>数组元素会使用数字索引作为键名的一部分，例如 {"items": ["a", "b"]} 展平后变为 {"items.0": "a", "items.1": "b"}。</p><h3 style="margin-top:20px;margin-bottom:8px">展平后的 JSON 还能还原吗？</h3><p>可以。选择"还原"模式并粘贴展平后的 JSON，即可恢复为原始嵌套结构。</p><h3 style="margin-top:20px;margin-bottom:8px">数据会上传服务器吗？</h3><p>不会。所有操作完全在浏览器本地完成，数据不会离开你的设备。</p><h3 style="margin-top:20px;margin-bottom:8px">支持大 JSON 文件吗？</h3><p>支持。但建议 JSON 文件大小不要超过 5MB，以免影响浏览器响应速度。</p><h3 style="margin-top:20px;margin-bottom:8px">和 jq 的 flatten 有什么区别？</h3><p>结果类似，但本工具是图形化界面、不限平台，无需安装 jq，适合不熟悉命令行的用户。</p></section>
+<section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/json-formatter" class="tool-card"><div class="icon">{ }</div><h3>JSON 格式化</h3><p>JSON 美化、压缩、校验，错误位置精准定位</p></a><a href="/tools/json-diff" class="tool-card"><div class="icon">↔</div><h3>JSON 对比</h3><p>深层比较两个 JSON 的差异，精准定位新增/删除/修改项</p></a><a href="/tools/jsonpath" class="tool-card"><div class="icon">🔍</div><h3>JSONPath 提取</h3><p>用 $.path 语法快速从 JSON 中提取需要的数据</p></a><a href="/tools/json-sorter" class="tool-card"><div class="icon">🔀</div><h3>JSON 排序</h3><p>按字母序排序 JSON 键值、数组元素，支持嵌套和自定义顺序</p></a><a href="/tools/json-schema-validator" class="tool-card"><div class="icon">✓</div><h3>JSON Schema 校验</h3><p>根据 JSON Schema 标准校验 JSON 数据结构，支持 Draft-07</p></a><a href="/tools/json-to-yaml" class="tool-card"><div class="icon">📊</div><h3>JSON ↔ YAML 互转</h3><p>JSON 与 YAML 格式相互转换</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/json-flatten.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>

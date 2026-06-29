@@ -348,7 +348,8 @@
         "base64",
         "json-diff",
         "url-encoder",
-        "json-to-csv"
+        "json-to-csv",
+        "json-flatten"
       ],
       "seo_title_zh": "JSON 格式化 | 在线 JSON 美化/压缩/校验",
       "seo_title_en": "JSON Formatter | Online JSON Beautify/Minify/Validate",
@@ -1169,7 +1170,8 @@
       "ui_en": "<div><label>Binary (base 2):</label><div class=\"input-row\"><input type=\"text\" id=\"binInput\" placeholder=\"101010\"></div></div><div style=\"margin-top:12px\"><label>Octal (base 8):</label><div class=\"input-row\"><input type=\"text\" id=\"octInput\" placeholder=\"52\"></div></div><div style=\"margin-top:12px\"><label>Decimal (base 10):</label><div class=\"input-row\"><input type=\"text\" id=\"decInput\" placeholder=\"42\"></div></div><div style=\"margin-top:12px\"><label>Hexadecimal (base 16):</label><div class=\"input-row\"><input type=\"text\" id=\"hexInput\" placeholder=\"2a\"></div></div>",
       "related": [
         "timestamp",
-        "jwt-decoder"
+        "jwt-decoder",
+        "data-size-converter"
       ],
       "seo_title_zh": "进制转换 | 二进制/八进制/十进制/十六进制在线互转",
       "seo_title_en": "Base Converter | Binary/Octal/Decimal/Hex Online Conversion",
@@ -1362,7 +1364,9 @@
       "keywords_en": "color converter,hex to rgb,rgb to hex,color picker,web color codes",
       "ui_zh": "<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:24px\"><div><label>Hex 十六进制:</label><div class=\"input-row\"><input type=\"text\" id=\"colorHex\" placeholder=\"#6366f1\"></div><div style=\"margin-top:16px\"><label>R (红 0-255):</label><input type=\"range\" id=\"colorR\" min=\"0\" max=\"255\" step=\"1\" value=\"99\" style=\"width:100%\"> <span id=\"colorRVal\" style=\"display:inline-block;width:40px\">99</span></div><div style=\"margin-top:8px\"><label>G (绿 0-255):</label><input type=\"range\" id=\"colorG\" min=\"0\" max=\"255\" step=\"1\" value=\"102\" style=\"width:100%\"> <span id=\"colorGVal\" style=\"display:inline-block;width:40px\">102</span></div><div style=\"margin-top:8px\"><label>B (蓝 0-255):</label><input type=\"range\" id=\"colorB\" min=\"0\" max=\"255\" step=\"1\" value=\"241\" style=\"width:100%\"> <span id=\"colorBVal\" style=\"display:inline-block;width:40px\">241</span></div><div style=\"margin-top:16px\"><button class=\"btn\" id=\"colorSwap\">复制 Hex</button></div></div><div style=\"display:flex;align-items:center;justify-content:center\"><div id=\"colorPreview\" style=\"width:180px;height:180px;border-radius:16px;border:2px solid var(--border);display:flex;align-items:center;justify-content:center;color:white;font-weight:600;font-size:14px;text-shadow:0 1px 2px rgba(0,0,0,0.5);box-shadow:0 8px 32px rgba(0,0,0,0.2)\">—</div></div></div>",
       "ui_en": "<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:24px\"><div><label>Hex:</label><div class=\"input-row\"><input type=\"text\" id=\"colorHex\" placeholder=\"#6366f1\"></div><div style=\"margin-top:16px\"><label>R (Red 0-255):</label><input type=\"range\" id=\"colorR\" min=\"0\" max=\"255\" step=\"1\" value=\"99\" style=\"width:100%\"> <span id=\"colorRVal\" style=\"display:inline-block;width:40px\">99</span></div><div style=\"margin-top:8px\"><label>G (Green 0-255):</label><input type=\"range\" id=\"colorG\" min=\"0\" max=\"255\" step=\"1\" value=\"102\" style=\"width:100%\"> <span id=\"colorGVal\" style=\"display:inline-block;width:40px\">102</span></div><div style=\"margin-top:8px\"><label>B (Blue 0-255):</label><input type=\"range\" id=\"colorB\" min=\"0\" max=\"255\" step=\"1\" value=\"241\" style=\"width:100%\"> <span id=\"colorBVal\" style=\"display:inline-block;width:40px\">241</span></div><div style=\"margin-top:16px\"><button class=\"btn\" id=\"colorSwap\">Copy Hex</button></div></div><div style=\"display:flex;align-items:center;justify-content:center\"><div id=\"colorPreview\" style=\"width:180px;height:180px;border-radius:16px;border:2px solid var(--border);display:flex;align-items:center;justify-content:center;color:white;font-weight:600;font-size:14px;text-shadow:0 1px 2px rgba(0,0,0,0.5);box-shadow:0 8px 32px rgba(0,0,0,0.2)\">—</div></div></div>",
-      "related": [],
+      "related": [
+        "data-size-converter"
+      ],
       "seo_title_zh": "颜色转换 | HEX/RGB/HSL 在线互转",
       "seo_title_en": "Color Converter | HEX/RGB/HSL Online Conversion",
       "features_zh": [
@@ -1629,7 +1633,8 @@
       "related": [
         "json-csv",
         "json-diff",
-        "json-formatter"
+        "json-formatter",
+        "json-flatten"
       ],
       "seo_title_zh": "JSONPath 提取 | 在线 JSON 路径查询工具",
       "seo_title_en": "JSONPath Extractor | Online JSON Path Query Tool",
@@ -3871,7 +3876,8 @@
         "json-formatter",
         "jsonpath",
         "json-to-yaml",
-        "text-diff"
+        "text-diff",
+        "json-flatten"
       ],
       "seo_title_zh": "JSON 对比 | 在线 JSON Diff 差异对比工具",
       "seo_title_en": "JSON Diff | Online JSON Comparison Tool",
@@ -4759,6 +4765,85 @@
       ]
     },
     {
+      "slug": "data-size-converter",
+      "category": "dev",
+      "icon": "💾",
+      "name_zh": "数据大小转换",
+      "name_en": "Data Size Converter",
+      "short_zh": "字节、KB、MB、GB、TB、PB 之间自由换算",
+      "short_en": "Convert between bytes, KB, MB, GB, TB, PB — instant data size conversion",
+      "keywords_zh": "字节转换,KB转换,MB转换,GB转换,TB转换,数据大小转换,存储单位转换,byte转换,文件大小转换,容量转换器",
+      "keywords_en": "data size converter, byte converter, KB to MB, MB to GB, GB to TB, file size converter, storage converter, data unit converter, bytes converter online",
+      "long_zh": "<p>免费在线数据大小转换工具，支持字节（B）、千字节（KB）、兆字节（MB）、吉字节（GB）、太字节（TB）、拍字节（PB）之间任意互相转换。</p><ul><li><strong>精准转换</strong>：基于 1024 进制（二进制）和 1000 进制（十进制）双模式</li><li><strong>双向转换</strong>：输入任一单位，自动计算其他所有单位的值</li><li><strong>即时反馈</strong>：输入即转换，无需点击按钮</li></ul><p>适合：系统管理员、开发者估算存储空间、文件上传大小限制换算、云服务容量规划、网络带宽换算等场景。</p><p>所有计算在浏览器本地完成，数据不会上传到任何服务器。</p>",
+      "long_en": "<p>Free online data size converter supporting bytes (B), kilobytes (KB), megabytes (MB), gigabytes (GB), terabytes (TB), and petabytes (PB).</p><ul><li><strong>Accurate</strong>: Supports both binary (1024-base) and decimal (1000-base) modes</li><li><strong>Bidirectional</strong>: Input any value in any unit, see all others instantly</li><li><strong>Real-time</strong>: Updates as you type, no button needed</li></ul><p>Perfect for: sysadmins, developers estimating storage, file upload limits, cloud capacity planning, bandwidth calculations, and disk space management.</p><p>All processing is done locally in your browser — no data is uploaded.</p>",
+      "ui_zh": "<div class=\"mode-selector\" style=\"display:flex;gap:16px;margin-bottom:12px\"><label><input type=\"radio\" name=\"dsc-mode\" value=\"binary\" checked> 二进制 (1024)</label><label><input type=\"radio\" name=\"dsc-mode\" value=\"decimal\"> 十进制 (1000)</label></div><div id=\"dsc-converters\" style=\"display:flex;flex-direction:column;gap:8px\"></div>",
+      "ui_en": "<div class=\"mode-selector\" style=\"display:flex;gap:16px;margin-bottom:12px\"><label><input type=\"radio\" name=\"dsc-mode\" value=\"binary\" checked> Binary (1024)</label><label><input type=\"radio\" name=\"dsc-mode\" value=\"decimal\"> Decimal (1000)</label></div><div id=\"dsc-converters\" style=\"display:flex;flex-direction:column;gap:8px\"></div>",
+      "related": [
+        "base-converter",
+        "timestamp",
+        "color-converter",
+        "base64"
+      ],
+      "seo_title_zh": "数据大小转换器 | 在线字节/KB/MB/GB/TB/PB 换算工具",
+      "seo_title_en": "Data Size Converter | Online Byte/KB/MB/GB/TB/PB Conversion Tool",
+      "features_zh": [
+        "B/KB/MB/GB/TB/PB 六种单位实时互转",
+        "支持二进制 (1024) 和十进制 (1000) 两种进制",
+        "输入任意单位自动计算全部单位",
+        "显示转换前/后数值对比",
+        "一键复制任意单位结果",
+        "实时输入即时转换，无需等待",
+        "完全在浏览器本地计算",
+        "适合开发/运维/云服务容量规划"
+      ],
+      "features_en": [
+        "Real-time conversion across 6 data units",
+        "Binary (1024) and decimal (1000) mode",
+        "Auto-calculate all units from any input",
+        "Before/after value comparison",
+        "One-click copy for any unit result",
+        "Instant conversion as you type",
+        "100% browser-local computation",
+        "Perfect for dev/ops/cloud capacity planning"
+      ],
+      "faq_zh": [
+        [
+          "二进制和十进制有什么区别？",
+          "二进制（1024 进制）以 1 KB = 1024 Bytes 计算，是操作系统和内存常用的标准。十进制（1000 进制）以 1 KB = 1000 Bytes 计算，常用于硬盘厂商标称容量。差异会导致标称容量和实际容量不完全一致。"
+        ],
+        [
+          "1 GB 等于多少 MB？",
+          "二进制下 1 GB = 1024 MB，十进制下 1 GB = 1000 MB。"
+        ],
+        [
+          "这个工具有什么用？",
+          "适合换算文件大小（如 5 MB = 多少 KB）、云存储/服务器磁盘空间规划、网络带宽计算等场景。"
+        ],
+        [
+          "数据会上传服务器吗？",
+          "不会。所有转换完全在浏览器本地完成，数据不会离开你的设备。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "What is the difference between binary and decimal mode?",
+          "Binary (1024-base) uses 1 KB = 1024 Bytes, standard in OS and memory. Decimal (1000-base) uses 1 KB = 1000 Bytes, often used by hard drive manufacturers."
+        ],
+        [
+          "How many MB in 1 GB?",
+          "Binary: 1 GB = 1024 MB. Decimal: 1 GB = 1000 MB."
+        ],
+        [
+          "What is this tool used for?",
+          "File size conversion, cloud storage planning, disk space estimation, bandwidth calculations, and general data unit conversion."
+        ],
+        [
+          "Is data uploaded?",
+          "No. All conversion happens entirely in your browser. Your data never leaves your device."
+        ]
+      ]
+    },
+    {
       "slug": "json-sorter",
       "category": "json",
       "icon": "🔀",
@@ -4775,7 +4860,8 @@
       "related": [
         "json-formatter",
         "json-diff",
-        "json-to-yaml"
+        "json-to-yaml",
+        "json-flatten"
       ],
       "seo_title_zh": "JSON 排序工具 | 在线 JSON 键/数组排序",
       "seo_title_en": "JSON Sorter | Sort JSON Keys & Arrays Online",
@@ -5601,6 +5687,109 @@
         [
           "Why did my XML tag name change?",
           "XML element names cannot start with digits or contain spaces/special chars. Unsupported characters are replaced with underscores; digit-starting names get a prefix."
+        ]
+      ]
+    },
+    {
+      "slug": "json-flatten",
+      "category": "json",
+      "icon": "🔀",
+      "name_zh": "JSON 展平/还原",
+      "name_en": "JSON Flatten/Unflatten",
+      "short_zh": "嵌套 JSON 一键展平为点号键名，支持反向还原",
+      "short_en": "Flatten nested JSON into dot-notation keys, with one-click unflatten back",
+      "keywords_zh": "JSON展平,JSON flatten,JSON展开,JSON点号表示,嵌套JSON转换,JSON扁平化,json flatten online, JSON unflatten, JSON深度展平,JSON键名合并",
+      "keywords_en": "json flatten, unflatten json, json dot notation, nested json flattener, json flatten online, flatten json object, json key merge, json transform, jq alternative",
+      "long_zh": "<p>免费在线 JSON 展平与还原工具。将深层嵌套的 JSON 对象展平为单层点号键名结构，也可将展平结果还原回原始嵌套格式。</p><ul><li><strong>展平模式</strong>：将嵌套 JSON 转换为点号分隔的键值对，如 <code>{\"user\": {\"name\": {\"first\": \"John\"}}}</code> → <code>{\"user.name.first\": \"John\"}</code></li><li><strong>还原模式</strong>：将展平后的点号键名 JSON 恢复为原始嵌套结构</li><li><strong>数组支持</strong>：正确处理 JSON 数组索引，如 <code>items.0.name</code></li></ul><p>适合：处理配置文件的扁平化、日志分析、数据 ETL 管道预处理、与 jq/flatten 库配合使用、API 响应解析。</p><p>所有处理在浏览器本地完成，数据不会上传到任何服务器。</p>",
+      "long_en": "<p>Free online JSON flatten and unflatten tool. Transform deeply nested JSON objects into flat dot-notation key-value pairs, and restore them back to the original nested structure.</p><ul><li><strong>Flatten mode</strong>: Convert nested JSON to dot-separated keys, e.g. <code>{\"user\": {\"name\": {\"first\": \"John\"}}}</code> → <code>{\"user.name.first\": \"John\"}</code></li><li><strong>Unflatten mode</strong>: Restore flattened dot-notation keys back to the original nested structure</li><li><strong>Array support</strong>: Properly handles JSON array indices like <code>items.0.name</code></li></ul><p>Perfect for: configuration flattening, log analysis, ETL preprocessing, working with jq flatten libraries, API response parsing.</p><p>100% browser-local processing — your data never leaves your device.</p>",
+      "ui_zh": "<div class=\"mode-selector\" style=\"display:flex;gap:16px;margin-bottom:12px\"><label><input type=\"radio\" name=\"jf-mode\" value=\"flatten\" checked> 展平</label><label><input type=\"radio\" name=\"jf-mode\" value=\"unflatten\"> 还原</label></div><label style=\"font-size:13px;font-weight:600\">JSON 内容</label><textarea id=\"jf-input\" style=\"width:100%;min-height:220px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"粘贴 JSON...\"></textarea><button class=\"btn\" id=\"jf-action-btn\" style=\"margin-top:12px\">执行</button><div id=\"jf-stats\" style=\"margin-top:8px;font-size:13px;color:var(--text-dim)\"></div><textarea id=\"jf-output\" readonly style=\"width:100%;min-height:220px;font-family:Consolas,monospace;font-size:13px;margin-top:8px\" placeholder=\"结果将显示在这里...\"></textarea><button class=\"btn btn-secondary\" id=\"jf-copy-btn\" style=\"margin-top:8px\">📋 复制</button>",
+      "ui_en": "<div class=\"mode-selector\" style=\"display:flex;gap:16px;margin-bottom:12px\"><label><input type=\"radio\" name=\"jf-mode\" value=\"flatten\" checked> Flatten</label><label><input type=\"radio\" name=\"jf-mode\" value=\"unflatten\"> Unflatten</label></div><label style=\"font-size:13px;font-weight:600\">JSON Content</label><textarea id=\"jf-input\" style=\"width:100%;min-height:220px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"Paste JSON...\"></textarea><button class=\"btn\" id=\"jf-action-btn\" style=\"margin-top:12px\">Process</button><div id=\"jf-stats\" style=\"margin-top:8px;font-size:13px;color:var(--text-dim)\"></div><textarea id=\"jf-output\" readonly style=\"width:100%;min-height:220px;font-family:Consolas,monospace;font-size:13px;margin-top:8px\" placeholder=\"Result appears here...\"></textarea><button class=\"btn btn-secondary\" id=\"jf-copy-btn\" style=\"margin-top:8px\">📋 Copy</button>",
+      "related": [
+        "json-formatter",
+        "json-diff",
+        "jsonpath",
+        "json-sorter",
+        "json-schema-validator",
+        "json-to-yaml"
+      ],
+      "seo_title_zh": "JSON 展平工具 | 在线 JSON Flatten/Unflatten 嵌套转点号",
+      "seo_title_en": "JSON Flatten/Unflatten | Online Nested JSON Dot-Notation Converter",
+      "features_zh": [
+        "多层嵌套 JSON 一键展平为点号键名",
+        "展平结果支持一键还原回嵌套结构",
+        "正确处理数组索引 (items.0.name)",
+        "自动检测并提示无效 JSON",
+        "实时处理结果预览和错误定位",
+        "展平前后键数量对比统计",
+        "一键复制结果 JSON",
+        "支持 Ctrl+Enter 快捷键",
+        "所有处理在浏览器本地完成"
+      ],
+      "features_en": [
+        "Flatten deeply nested JSON into dot-notation keys",
+        "Unflatten back to original nested structure",
+        "Proper array index handling (items.0.name)",
+        "Auto-detect and highlight invalid JSON",
+        "Real-time result preview with error location",
+        "Before/after key count comparison",
+        "One-click copy result JSON",
+        "Ctrl+Enter shortcut support",
+        "100% browser-local processing"
+      ],
+      "faq_zh": [
+        [
+          "JSON 展平是什么意思？",
+          "将嵌套的 JSON 对象转换为单层键值对，用点号表示层级关系。例如 {\"a\": {\"b\": \"c\"}} 展平后变为 {\"a.b\": \"c\"}。"
+        ],
+        [
+          "数组会怎么处理？",
+          "数组元素会使用数字索引作为键名的一部分，例如 {\"items\": [\"a\", \"b\"]} 展平后变为 {\"items.0\": \"a\", \"items.1\": \"b\"}。"
+        ],
+        [
+          "展平后的 JSON 还能还原吗？",
+          "可以。选择\"还原\"模式并粘贴展平后的 JSON，即可恢复为原始嵌套结构。"
+        ],
+        [
+          "数据会上传服务器吗？",
+          "不会。所有操作完全在浏览器本地完成，数据不会离开你的设备。"
+        ],
+        [
+          "支持大 JSON 文件吗？",
+          "支持。但建议 JSON 文件大小不要超过 5MB，以免影响浏览器响应速度。"
+        ],
+        [
+          "和 jq 的 flatten 有什么区别？",
+          "结果类似，但本工具是图形化界面、不限平台，无需安装 jq，适合不熟悉命令行的用户。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "What does JSON flatten mean?",
+          "It transforms nested JSON objects into single-level key-value pairs using dot notation to represent hierarchy. E.g. {\"a\": {\"b\": \"c\"}} becomes {\"a.b\": \"c\"}."
+        ],
+        [
+          "How are arrays handled?",
+          "E.g. {\"items\": [\"a\", \"b\"]} becomes {\"items.0\": \"a\", \"items.1\": \"b\"}."
+        ],
+        [
+          "Can I unflatten back to the original?",
+          "Yes. Switch to Unflatten mode, paste the flattened JSON, and it will restore the original nested structure."
+        ],
+        [
+          "Is data uploaded?",
+          "No. All processing happens entirely in your browser. Your data never leaves your device."
+        ],
+        [
+          "Can it handle large JSON files?",
+          "Yes, but we recommend keeping files under 5MB for optimal browser performance."
+        ],
+        [
+          "How is this different from jq flatten?",
+          "Same concept, but graphical interface with no installation needed — great for users who prefer a visual tool over CLI."
+        ],
+        [
+          "Does it handle deeply nested objects?",
+          "Yes. There is no practical depth limit — any valid JSON structure can be flattened."
         ]
       ]
     },
