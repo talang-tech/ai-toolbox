@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>XML 转 JSON - XML 转 JSON | 在线 XML 转 JSON 转换工具 | AI 工具盒子</title>
+<meta name="description" content="免费在线XML 转 JSON工具，将 XML 数据快速转换为 JSON 格式，支持嵌套结构解析和自定义选项。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="XML转JSON,XML转换JSON,XML JSON互转,数据格式转换,XML解析,在线XML转换,数据类型转换,XML格式化">
+<link rel="canonical" href="https://tools.talang.fun/tools/xml-to-json">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/xml-to-json">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/xml-to-json">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/xml-to-json">
+<meta property="og:title" content="XML 转 JSON - XML 转 JSON | 在线 XML 转 JSON 转换工具 | AI 工具盒子">
+<meta property="og:description" content="免费在线XML 转 JSON工具，将 XML 数据快速转换为 JSON 格式，支持嵌套结构解析和自定义选项。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/xml-to-json">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "XML 转 JSON", "description": "免费在线XML 转 JSON工具，将 XML 数据快速转换为 JSON 格式，支持嵌套结构解析和自定义选项。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/xml-to-json", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "将 XML 数据快速转换为 JSON 格式，支持嵌套结构解析和自定义选项", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/tools/xml-to-json" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🔀</div>
+  <h1>XML 转 JSON</h1>
+  <p>将 XML 数据快速转换为 JSON 格式，支持嵌套结构解析和自定义选项</p>
+</div>
+<div class="tool-panel">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px"><div><label>XML 输入:</label><textarea id="xml2jsonInput" style="min-height:400px;font-family:monospace;font-size:13px" placeholder="粘贴 XML 内容..."></textarea></div><div><label>JSON 输出:</label><textarea id="xml2jsonOutput" style="min-height:400px;font-family:monospace;font-size:13px" readonly placeholder="转换后的 JSON..."></textarea></div></div><div style="margin-top:12px;display:flex;gap:12px;align-items:center;flex-wrap:wrap"><button class="btn" id="xml2jsonConvert">转换</button><button class="btn btn-secondary" id="xml2jsonCopy">复制 JSON</button><button class="btn btn-secondary" id="xml2jsonClear">清空</button><label style="margin-left:16px">缩进: <select id="xml2jsonIndent"><option value="2">2 空格</option><option value="4" selected>4 空格</option><option value="">紧凑输出</option></select></label><label><input type="checkbox" id="xml2jsonAttrPrefix" checked> 属性加 @ 前缀</label></div><div id="xml2jsonStatus" style="margin-top:8px;color:var(--text-dim);font-size:13px"></div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>免费在线 XML 转 JSON 转换工具。将 XML 数据一键转换为 JSON 格式，自动处理嵌套元素、属性、文本节点和数组。支持自定义转换选项，适合 API 集成、数据迁移和配置文件处理。</p><ul><li><strong>开发者</strong>：将 XML API 响应转换为 JSON 进行调试</li><li><strong>数据工程师</strong>：批量转换 XML 配置文件为 JSON 格式</li><li><strong>迁移场景</strong>：从 XML 架构迁移到 JSON 的数据中间件</li></ul><p>所有转换在浏览器本地完成，数据不会上传。支持自动检测数组节点、属性前缀标记（@）、命名空间处理等高级功能。</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>XML 一键转换为 JSON 格式</li><li>支持深度嵌套的 XML 结构</li><li>自动识别数组节点（相同标签）</li><li>属性文本节点正确分离</li><li>自定义缩进和紧凑输出</li><li>属性前缀标记开关（@ 符号）</li><li>复制、清空、错误提示</li><li>浏览器本地处理，数据不上传</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">XML 属性在 JSON 中怎么表示？</h3><p>默认情况下，属性会用 @ 前缀标记（如 @id）。可以通过去掉选项中的勾选来关闭此前缀。</p><h3 style="margin-top:20px;margin-bottom:8px">XML 和 JSON 的根本区别是什么？</h3><p>XML 有属性和命名空间的概念，JSON 只有键值对、数组和嵌套对象。转换时属性和文本节点会被适当映射为 JSON 结构。</p><h3 style="margin-top:20px;margin-bottom:8px">支持带命名空间的 XML 吗？</h3><p>支持。命名空间前缀会被保留为元素的属性或键名的一部分。对于复杂的命名空间转换，建议先验证结果。</p><h3 style="margin-top:20px;margin-bottom:8px">数据安全吗？</h3><p>全部处理在浏览器本地完成，数据不会上传到任何服务器。</p></section>
+<section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/json-to-xml" class="tool-card"><div class="icon">🔀</div><h3>JSON 转 XML</h3><p>将 JSON 数据一键转换为 XML 格式，支持自定义根元素名称和缩进</p></a><a href="/tools/xml-formatter" class="tool-card"><div class="icon">🧩</div><h3>XML 格式化/压缩</h3><p>在线格式化、校验和压缩 XML，支持本地解析错误提示</p></a><a href="/tools/yaml-to-json" class="tool-card"><div class="icon">🔄</div><h3>YAML 转 JSON</h3><p>将 YAML 配置文件一键转换为 JSON 格式，支持 Docker/K8s 配置</p></a><a href="/tools/json-formatter" class="tool-card"><div class="icon">{ }</div><h3>JSON 格式化</h3><p>JSON 美化、压缩、校验，错误位置精准定位</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/xml-to-json.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>

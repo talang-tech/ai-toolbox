@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>HTML 对比 - HTML 对比 | 在线 HTML 差异比较工具 | AI 工具盒子</title>
+<meta name="description" content="免费在线HTML 对比工具，比较两段 HTML 的差异，高亮新增/删除/修改的内容，支持结构和属性对比。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="HTML对比,HTML Diff,HTML差异比较,代码对比,网页对比,HTML版本对比,在线对比差异,HTML变更检测,前端审校">
+<link rel="canonical" href="https://tools.talang.fun/tools/html-diff">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/html-diff">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/html-diff">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/html-diff">
+<meta property="og:title" content="HTML 对比 - HTML 对比 | 在线 HTML 差异比较工具 | AI 工具盒子">
+<meta property="og:description" content="免费在线HTML 对比工具，比较两段 HTML 的差异，高亮新增/删除/修改的内容，支持结构和属性对比。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/html-diff">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "HTML 对比", "description": "免费在线HTML 对比工具，比较两段 HTML 的差异，高亮新增/删除/修改的内容，支持结构和属性对比。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/html-diff", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "比较两段 HTML 的差异，高亮新增/删除/修改的内容，支持结构和属性对比", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/tools/html-diff" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">📝</div>
+  <h1>HTML 对比</h1>
+  <p>比较两段 HTML 的差异，高亮新增/删除/修改的内容，支持结构和属性对比</p>
+</div>
+<div class="tool-panel">
+<div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:12px"><label><input type="radio" name="htmlDiffMode" id="htmlDiffLine" checked> 逐行对比</label><label><input type="radio" name="htmlDiffMode" id="htmlDiffStructured"> 结构对比</label></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:16px"><div><label>原始（旧）HTML:</label><textarea id="htmlDiffOld" style="min-height:350px;font-family:monospace;font-size:13px" placeholder="粘贴原始 HTML..."></textarea></div><div><label>修改（新）HTML:</label><textarea id="htmlDiffNew" style="min-height:350px;font-family:monospace;font-size:13px" placeholder="粘贴修改后的 HTML..."></textarea></div></div><div style="margin-top:12px;display:flex;gap:12px;align-items:center;flex-wrap:wrap"><button class="btn" id="htmlDiffCompare">对比</button><button class="btn btn-secondary" id="htmlDiffClear">清空</button></div><div id="htmlDiffStatus" style="margin-top:8px;color:var(--text-dim);font-size:13px"></div><h3 style="margin-top:20px">差异结果</h3><div id="htmlDiffResult" style="min-height:120px;padding:12px;border:1px solid var(--border);border-radius:8px;overflow:auto;font-family:monospace;font-size:13px;line-height:1.6;white-space:pre-wrap"></div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>免费在线 HTML 差异比较工具。将两段 HTML 内容进行逐行/逐结构对比，以绿色高亮新增内容、红色高亮删除内容。特别适合：</p><ul><li><strong>前端开发</strong>：对比模板文件不同版本间的结构性变化</li><li><strong>代码 Review</strong>：HTML 修改前后的差异审查</li><li><strong>CMS 内容管理</strong>：查看文章编辑前后的变化</li><li><strong>渲染对比</strong>：验证 HTML 模板渲染结果</li></ul><p>支持纯文本行对比和 HTML 结构化对比两种模式。所有处理在浏览器本地完成，数据不上传。</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>两段 HTML 差异高亮对比</li><li>逐行对比模式（LCS 算法）</li><li>HTML 结构对比模式</li><li>绿色高亮新增、红色高亮删除</li><li>带行号显示，轻松定位变更</li><li>快速复制差异结果</li><li>清晰的视觉分隔和状态提示</li><li>浏览器本地处理，数据不上传</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">逐行对比和结构对比有什么区别？</h3><p>逐行对比比较两段 HTML 每行文本的差异（类似 git diff），结构对比比较 DOM 元素结构的差异（忽略缩进和空白调整）。</p><h3 style="margin-top:20px;margin-bottom:8px">对比结果可以复制吗？</h3><p>可以，差异结果区域的内容可以直接选中复制，目前暂不支持一键复制差异。</p><h3 style="margin-top:20px;margin-bottom:8px">支持大文档吗？</h3><p>支持，但由于所有处理在浏览器本地完成，过大的文档可能导致浏览器响应变慢。建议对比 500 行以内的 HTML。</p><h3 style="margin-top:20px;margin-bottom:8px">数据会上传吗？</h3><p>不会，所有对比在浏览器本地完成，数据不会上传到任何服务器。</p></section>
+<section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/text-diff" class="tool-card"><div class="icon">🔍</div><h3>文本对比</h3><p>对比两段文本的差异，逐行高亮显示</p></a><a href="/tools/html-minifier" class="tool-card"><div class="icon">🔧</div><h3>HTML 压缩/美化</h3><p>HTML 代码格式化或压缩，去注释、去空白，支持缩进控制</p></a><a href="/tools/html-stripper" class="tool-card"><div class="icon">🧹</div><h3>HTML 标签去除</h3><p>从 HTML 中提取纯文本，去除 HTML 标签和样式</p></a><a href="/tools/code-formatter" class="tool-card"><div class="icon">📝</div><h3>代码格式化</h3><p>格式化 HTML / CSS / JavaScript 代码</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/html-diff.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>
