@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>INI 配置文件转换器 - INI JSON YAML TOML 格式互转 | 在线配置转换工具 | AI 工具盒子</title>
+<meta name="description" content="免费在线INI 配置文件转换器工具，INI 与 JSON、YAML、TOML 格式互转，支持嵌套节和注释处理。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="INI转JSON,INI转YAML,INI转TOML,INI配置文件转换,配置格式转换,INI解析,INI格式化,在线INI转换器,配置文件转JSON">
+<link rel="canonical" href="https://tools.talang.fun/tools/ini-converter">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/ini-converter">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/ini-converter">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/ini-converter">
+<meta property="og:title" content="INI 配置文件转换器 - INI JSON YAML TOML 格式互转 | 在线配置转换工具 | AI 工具盒子">
+<meta property="og:description" content="免费在线INI 配置文件转换器工具，INI 与 JSON、YAML、TOML 格式互转，支持嵌套节和注释处理。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/ini-converter">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "INI 配置文件转换器", "description": "免费在线INI 配置文件转换器工具，INI 与 JSON、YAML、TOML 格式互转，支持嵌套节和注释处理。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/ini-converter", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "INI 与 JSON、YAML、TOML 格式互转，支持嵌套节和注释处理", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/tools/ini-converter" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">⚙️</div>
+  <h1>INI 配置文件转换器</h1>
+  <p>INI 与 JSON、YAML、TOML 格式互转，支持嵌套节和注释处理</p>
+</div>
+<div class="tool-panel">
+<div style="margin-bottom:12px;display:flex;gap:8px;flex-wrap:wrap;align-items:center"><label style="font-size:13px">源格式：</label><select id="iniSourceFormat" style="padding:4px 8px;border:1px solid var(--border);border-radius:4px;background:var(--bg-card);color:var(--text)"><option value="ini">INI</option><option value="json">JSON</option><option value="yaml">YAML</option><option value="toml">TOML</option></select><label style="font-size:13px;margin-left:12px">目标格式：</label><select id="iniTargetFormat" style="padding:4px 8px;border:1px solid var(--border);border-radius:4px;background:var(--bg-card);color:var(--text)"><option value="json">JSON</option><option value="yaml">YAML</option><option value="toml">TOML</option><option value="ini">INI</option></select><label style="margin-left:12px;font-size:13px"><input type="checkbox" id="iniStripComments"> 去除注释</label></div><textarea id="iniInput" style="width:100%;min-height:220px;font-family:Consolas,monospace;font-size:13px" placeholder="粘贴源配置文件..."></textarea><div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap"><button class="btn" id="iniConvertBtn">转换</button><button class="btn btn-secondary" id="iniSwapBtn">⇄ 交换格式</button><button class="btn btn-secondary" id="iniClearBtn">清空</button></div><textarea id="iniOutput" readonly style="width:100%;min-height:220px;font-family:Consolas,monospace;font-size:13px;margin-top:12px" placeholder="转换结果..."></textarea><div id="iniMsg" style="margin-top:8px;font-size:13px"></div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>免费在线 INI 配置文件转换工具，支持 INI 与 JSON/YAML/TOML 之间的双向互转。自动处理嵌套节、注释去除、类型推断和缩进控制。</p><ul><li><strong>INI → JSON</strong>：转换为标准 JSON</li><li><strong>INI → YAML</strong>：适合 CI/CD 配置</li><li><strong>INI → TOML</strong>：兼容 Python/Go 项目</li><li><strong>反向转换</strong>：JSON/YAML/TOML → INI</li></ul><p>所有处理在浏览器本地完成。</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>支持 INI ↔ JSON/YAML/TOML 双向互转</li><li>自动处理嵌套节：section.sub.key</li><li>智能类型推断：数字/布尔值</li><li>保留或去除 INI 注释</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">嵌套节怎样处理？</h3><p>点号语法如 [database.replica] 解析为嵌套结构。</p><h3 style="margin-top:20px;margin-bottom:8px">数据安全吗？</h3><p>所有处理在浏览器本地完成，不上传。</p></section>
+<section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/json-to-yaml" class="tool-card"><div class="icon">📊</div><h3>JSON ↔ YAML 互转</h3><p>JSON 与 YAML 格式相互转换</p></a><a href="/tools/yaml-formatter" class="tool-card"><div class="icon">🧾</div><h3>YAML 格式化/校验</h3><p>在线格式化 YAML 配置并检查缩进、冒号和常见语法问题</p></a><a href="/tools/toml-formatter" class="tool-card"><div class="icon">⚙️</div><h3>TOML 格式化</h3><p>TOML 配置文件格式化、验证排错，自动整理缩进与表结构</p></a><a href="/tools/xml-formatter" class="tool-card"><div class="icon">🧩</div><h3>XML 格式化/压缩</h3><p>在线格式化、校验和压缩 XML，支持本地解析错误提示</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/ini-converter.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>

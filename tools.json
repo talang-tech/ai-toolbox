@@ -25,7 +25,9 @@
           "text-sort",
           "text-statistics",
           "csv-to-markdown",
-          "word-counter"
+          "word-counter",
+          "html-stripper",
+          "md-table-formatter"
         ]
       },
       "dev": {
@@ -70,7 +72,10 @@
           "url-query-builder",
           "xml-formatter",
           "yaml-formatter",
-          "yaml-to-json"
+          "yaml-to-json",
+          "data-size-converter",
+          "html-diff",
+          "ini-converter"
         ]
       },
       "encode": {
@@ -111,7 +116,10 @@
           "json-to-ts",
           "json-to-yaml",
           "json-to-xml",
-          "csv-to-json"
+          "csv-to-json",
+          "json-to-csv",
+          "json-flatten",
+          "xml-to-json"
         ]
       },
       "image": {
@@ -6305,6 +6313,116 @@
           "No. Everything runs locally in your browser."
         ]
       ]
+    },
+    {
+      "slug": "ini-converter",
+      "category": "dev",
+      "icon": "⚙️",
+      "name_zh": "INI 配置文件转换器",
+      "name_en": "INI Config Converter",
+      "short_zh": "INI 与 JSON、YAML、TOML 格式互转，支持嵌套节和注释处理",
+      "short_en": "Convert between INI and JSON, YAML, or TOML. Supports nested sections and comment handling.",
+      "keywords_zh": "INI转JSON,INI转YAML,INI转TOML,INI配置文件转换,配置格式转换,INI解析,INI格式化,在线INI转换器,配置文件转JSON",
+      "keywords_en": "ini to json, ini to yaml, ini to toml, config file converter, ini parser, ini formatter, online ini converter, config format conversion",
+      "long_zh": "<p>免费在线 INI 配置文件转换工具，支持 INI 与 JSON/YAML/TOML 之间的双向互转。自动处理嵌套节、注释去除、类型推断和缩进控制。</p><ul><li><strong>INI → JSON</strong>：转换为标准 JSON</li><li><strong>INI → YAML</strong>：适合 CI/CD 配置</li><li><strong>INI → TOML</strong>：兼容 Python/Go 项目</li><li><strong>反向转换</strong>：JSON/YAML/TOML → INI</li></ul><p>所有处理在浏览器本地完成。</p>",
+      "long_en": "<p>Free online INI config converter for bidirectional conversion between INI, JSON, YAML, and TOML. Handles nested sections, comment stripping, type inference, and indentation.</p><ul><li><strong>INI → JSON</strong>: Standard JSON output</li><li><strong>INI → YAML</strong>: For CI/CD pipelines</li><li><strong>INI → TOML</strong>: Modern Python/Go projects</li><li><strong>Reverse</strong>: JSON/YAML/TOML → INI</li></ul><p>All processing is local.</p>",
+      "seo_title_zh": "INI JSON YAML TOML 格式互转 | 在线配置转换工具",
+      "seo_title_en": "INI to JSON YAML TOML Converter - Free Online Config File Converter",
+      "features_zh": [
+        "支持 INI ↔ JSON/YAML/TOML 双向互转",
+        "自动处理嵌套节：section.sub.key",
+        "智能类型推断：数字/布尔值",
+        "保留或去除 INI 注释"
+      ],
+      "features_en": [
+        "Bidirectional INI ↔ JSON/YAML/TOML",
+        "Nested section parsing: section.sub.key",
+        "Smart type inference: numbers/booleans",
+        "Preserve or strip INI comments"
+      ],
+      "faq_zh": [
+        [
+          "嵌套节怎样处理？",
+          "点号语法如 [database.replica] 解析为嵌套结构。"
+        ],
+        [
+          "数据安全吗？",
+          "所有处理在浏览器本地完成，不上传。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "How are nested sections handled?",
+          "Dot-notation like [database.replica] parsed into nested structures."
+        ],
+        [
+          "Is my data safe?",
+          "All processing is local. No upload."
+        ]
+      ],
+      "related": [
+        "json-to-yaml",
+        "yaml-formatter",
+        "toml-formatter",
+        "xml-formatter"
+      ],
+      "ui_zh": "<div style=\"margin-bottom:12px;display:flex;gap:8px;flex-wrap:wrap;align-items:center\"><label style=\"font-size:13px\">源格式：</label><select id=\"iniSourceFormat\" style=\"padding:4px 8px;border:1px solid var(--border);border-radius:4px;background:var(--bg-card);color:var(--text)\"><option value=\"ini\">INI</option><option value=\"json\">JSON</option><option value=\"yaml\">YAML</option><option value=\"toml\">TOML</option></select><label style=\"font-size:13px;margin-left:12px\">目标格式：</label><select id=\"iniTargetFormat\" style=\"padding:4px 8px;border:1px solid var(--border);border-radius:4px;background:var(--bg-card);color:var(--text)\"><option value=\"json\">JSON</option><option value=\"yaml\">YAML</option><option value=\"toml\">TOML</option><option value=\"ini\">INI</option></select><label style=\"margin-left:12px;font-size:13px\"><input type=\"checkbox\" id=\"iniStripComments\"> 去除注释</label></div><textarea id=\"iniInput\" style=\"width:100%;min-height:220px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"粘贴源配置文件...\"></textarea><div style=\"margin-top:8px;display:flex;gap:8px;flex-wrap:wrap\"><button class=\"btn\" id=\"iniConvertBtn\">转换</button><button class=\"btn btn-secondary\" id=\"iniSwapBtn\">⇄ 交换格式</button><button class=\"btn btn-secondary\" id=\"iniClearBtn\">清空</button></div><textarea id=\"iniOutput\" readonly style=\"width:100%;min-height:220px;font-family:Consolas,monospace;font-size:13px;margin-top:12px\" placeholder=\"转换结果...\"></textarea><div id=\"iniMsg\" style=\"margin-top:8px;font-size:13px\"></div>",
+      "ui_en": "<div style=\"margin-bottom:12px;display:flex;gap:8px;flex-wrap:wrap;align-items:center\"><label style=\"font-size:13px\">From：</label><select id=\"iniSourceFormat\" style=\"padding:4px 8px;border:1px solid var(--border);border-radius:4px;background:var(--bg-card);color:var(--text)\"><option value=\"ini\">INI</option><option value=\"json\">JSON</option><option value=\"yaml\">YAML</option><option value=\"toml\">TOML</option></select><label style=\"font-size:13px;margin-left:12px\">To：</label><select id=\"iniTargetFormat\" style=\"padding:4px 8px;border:1px solid var(--border);border-radius:4px;background:var(--bg-card);color:var(--text)\"><option value=\"json\">JSON</option><option value=\"yaml\">YAML</option><option value=\"toml\">TOML</option><option value=\"ini\">INI</option></select><label style=\"margin-left:12px;font-size:13px\"><input type=\"checkbox\" id=\"iniStripComments\"> Strip comments</label></div><textarea id=\"iniInput\" style=\"width:100%;min-height:220px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"Paste config to convert...\"></textarea><div style=\"margin-top:8px;display:flex;gap:8px;flex-wrap:wrap\"><button class=\"btn\" id=\"iniConvertBtn\">Convert</button><button class=\"btn btn-secondary\" id=\"iniSwapBtn\">⇄ Swap</button><button class=\"btn btn-secondary\" id=\"iniClearBtn\">Clear</button></div><textarea id=\"iniOutput\" readonly style=\"width:100%;min-height:220px;font-family:Consolas,monospace;font-size:13px;margin-top:12px\" placeholder=\"Conversion result...\"></textarea><div id=\"iniMsg\" style=\"margin-top:8px;font-size:13px\"></div>"
+    },
+    {
+      "slug": "md-table-formatter",
+      "category": "text",
+      "icon": "📐",
+      "name_zh": "Markdown 表格格式化器",
+      "name_en": "Markdown Table Formatter",
+      "short_zh": "对齐、排序、美化 Markdown 表格，按列升序/降序排序",
+      "short_en": "Align, sort, and beautify Markdown tables. Sort columns ascending/descending.",
+      "keywords_zh": "Markdown表格格式化,Markdown表格排序,Markdown表格对齐,MD表格美化,Markdown表格整理,Markdown表格列排序,在线Markdown表格工具,README表格格式化,Markdown表格规范",
+      "keywords_en": "markdown table formatter, markdown table sorter, md table align, markdown table beautifier, online markdown table tool, sort markdown columns, format markdown table",
+      "long_zh": "<p>免费在线 Markdown 表格格式化工具，支持排序、对齐和美化。特别适合 GitHub README 和文档中的大型表格。</p><ul><li><strong>列排序</strong>：按任意列升序/降序</li><li><strong>对齐设置</strong>：左对齐、居中或右对齐</li><li><strong>规范输出</strong>：自动修复格式问题</li><li><strong>移除表格</strong>：转为纯文本</li></ul><p>所有处理在浏览器本地完成。</p>",
+      "long_en": "<p>Free online Markdown table formatter. Sort, align, and beautify existing tables. Perfect for GitHub README files and documentation.</p><ul><li><strong>Column sorting</strong>: Sort by any column ascending/descending</li><li><strong>Alignment control</strong>: Left, center, or right</li><li><strong>Canonical output</strong>: Auto-fix formatting issues</li><li><strong>Strip table</strong>: Convert to plain text</li></ul><p>All processing is local.</p>",
+      "seo_title_zh": "Markdown 表格格式化器 - 排序对齐美化 | 在线 MD 表格工具",
+      "seo_title_en": "Markdown Table Formatter - Sort, Align & Beautify | Free Online Tool",
+      "features_zh": [
+        "按任意列升序/降序排序",
+        "统一对齐：左/中/右",
+        "自动修复分隔行和列宽",
+        "转为纯文本（逗号或管道分隔）"
+      ],
+      "features_en": [
+        "Sort by any column ascending/descending",
+        "Unified alignment: left/center/right",
+        "Auto-fix separator rows and column widths",
+        "Convert to plain text (comma or pipe delimited)"
+      ],
+      "faq_zh": [
+        [
+          "支持什么表格格式？",
+          "标准 GFM 格式，需有分隔行和管道符。"
+        ],
+        [
+          "表头会被排序影响吗？",
+          "不会，表头始终保持在顶部。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "What format is supported?",
+          "GFM table format with separator row and pipe delimiters."
+        ],
+        [
+          "Does sorting affect headers?",
+          "No, headers stay at the top."
+        ]
+      ],
+      "related": [
+        "markdown-table",
+        "csv-to-markdown",
+        "markdown-preview",
+        "html-table-extractor"
+      ],
+      "ui_zh": "<div style=\"margin-bottom:12px\"><label style=\"font-size:13px;font-weight:600\">输入 Markdown 表格</label><textarea id=\"mdtInput\" style=\"width:100%;min-height:180px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"| A | B |\\n| --- | --- |\\n| 1 | 2 |\"></textarea></div><div style=\"display:flex;flex-wrap:wrap;gap:12px;margin-bottom:12px;align-items:center\"><label style=\"font-size:13px\">按列排序：</label><select id=\"mdtSortCol\" style=\"padding:4px 8px;border:1px solid var(--border);border-radius:4px;background:var(--bg-card);color:var(--text)\"><option value=\"0\">第 1 列</option></select><select id=\"mdtSortDir\" style=\"padding:4px 8px;border:1px solid var(--border);border-radius:4px;background:var(--bg-card);color:var(--text)\"><option value=\"asc\">升序</option><option value=\"desc\">降序</option></select><button class=\"btn\" id=\"mdtSortBtn\">排序</button><span style=\"opacity:0.5\">|</span><label style=\"font-size:13px\">对齐：</label><select id=\"mdtAlign\" style=\"padding:4px 8px;border:1px solid var(--border);border-radius:4px;background:var(--bg-card);color:var(--text)\"><option value=\"\">保持原样</option><option value=\"left\">左对齐</option><option value=\"center\">居中</option><option value=\"right\">右对齐</option></select><button class=\"btn\" id=\"mdtAlignBtn\">格式化</button><span style=\"opacity:0.5\">|</span><button class=\"btn btn-secondary\" id=\"mdtStripBtn\">转纯文本</button><button class=\"btn btn-secondary\" id=\"mdtCopyBtn\">复制</button></div><textarea id=\"mdtOutput\" readonly style=\"width:100%;min-height:180px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"结果...\"></textarea><div id=\"mdtMsg\" style=\"margin-top:8px;font-size:13px\"></div>",
+      "ui_en": "<div style=\"margin-bottom:12px\"><label style=\"font-size:13px;font-weight:600\">Input Markdown Table</label><textarea id=\"mdtInput\" style=\"width:100%;min-height:180px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"| A | B |\\n| --- | --- |\\n| 1 | 2 |\"></textarea></div><div style=\"display:flex;flex-wrap:wrap;gap:12px;margin-bottom:12px;align-items:center\"><label style=\"font-size:13px\">Sort by：</label><select id=\"mdtSortCol\" style=\"padding:4px 8px;border:1px solid var(--border);border-radius:4px;background:var(--bg-card);color:var(--text)\"><option value=\"0\">Column 1</option></select><select id=\"mdtSortDir\" style=\"padding:4px 8px;border:1px solid var(--border);border-radius:4px;background:var(--bg-card);color:var(--text)\"><option value=\"asc\">Asc</option><option value=\"desc\">Desc</option></select><button class=\"btn\" id=\"mdtSortBtn\">Sort</button><span style=\"opacity:0.5\">|</span><label style=\"font-size:13px\">Align：</label><select id=\"mdtAlign\" style=\"padding:4px 8px;border:1px solid var(--border);border-radius:4px;background:var(--bg-card);color:var(--text)\"><option value=\"\">Keep</option><option value=\"left\">Left</option><option value=\"center\">Center</option><option value=\"right\">Right</option></select><button class=\"btn\" id=\"mdtAlignBtn\">Format</button><span style=\"opacity:0.5\">|</span><button class=\"btn btn-secondary\" id=\"mdtStripBtn\">To Plain Text</button><button class=\"btn btn-secondary\" id=\"mdtCopyBtn\">Copy</button></div><textarea id=\"mdtOutput\" readonly style=\"width:100%;min-height:180px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"Result...\"></textarea><div id=\"mdtMsg\" style=\"margin-top:8px;font-size:13px\"></div>"
     }
   ]
 }

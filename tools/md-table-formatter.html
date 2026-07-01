@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>Markdown 表格格式化器 - Markdown 表格格式化器 - 排序对齐美化 | 在线 MD 表格工具 | AI 工具盒子</title>
+<meta name="description" content="免费在线Markdown 表格格式化器工具，对齐、排序、美化 Markdown 表格，按列升序/降序排序。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="Markdown表格格式化,Markdown表格排序,Markdown表格对齐,MD表格美化,Markdown表格整理,Markdown表格列排序,在线Markdown表格工具,README表格格式化,Markdown表格规范">
+<link rel="canonical" href="https://tools.talang.fun/tools/md-table-formatter">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/md-table-formatter">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/md-table-formatter">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/md-table-formatter">
+<meta property="og:title" content="Markdown 表格格式化器 - Markdown 表格格式化器 - 排序对齐美化 | 在线 MD 表格工具 | AI 工具盒子">
+<meta property="og:description" content="免费在线Markdown 表格格式化器工具，对齐、排序、美化 Markdown 表格，按列升序/降序排序。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/md-table-formatter">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Markdown 表格格式化器", "description": "免费在线Markdown 表格格式化器工具，对齐、排序、美化 Markdown 表格，按列升序/降序排序。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/md-table-formatter", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "对齐、排序、美化 Markdown 表格，按列升序/降序排序", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/tools/md-table-formatter" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">📐</div>
+  <h1>Markdown 表格格式化器</h1>
+  <p>对齐、排序、美化 Markdown 表格，按列升序/降序排序</p>
+</div>
+<div class="tool-panel">
+<div style="margin-bottom:12px"><label style="font-size:13px;font-weight:600">输入 Markdown 表格</label><textarea id="mdtInput" style="width:100%;min-height:180px;font-family:Consolas,monospace;font-size:13px" placeholder="| A | B |\n| --- | --- |\n| 1 | 2 |"></textarea></div><div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:12px;align-items:center"><label style="font-size:13px">按列排序：</label><select id="mdtSortCol" style="padding:4px 8px;border:1px solid var(--border);border-radius:4px;background:var(--bg-card);color:var(--text)"><option value="0">第 1 列</option></select><select id="mdtSortDir" style="padding:4px 8px;border:1px solid var(--border);border-radius:4px;background:var(--bg-card);color:var(--text)"><option value="asc">升序</option><option value="desc">降序</option></select><button class="btn" id="mdtSortBtn">排序</button><span style="opacity:0.5">|</span><label style="font-size:13px">对齐：</label><select id="mdtAlign" style="padding:4px 8px;border:1px solid var(--border);border-radius:4px;background:var(--bg-card);color:var(--text)"><option value="">保持原样</option><option value="left">左对齐</option><option value="center">居中</option><option value="right">右对齐</option></select><button class="btn" id="mdtAlignBtn">格式化</button><span style="opacity:0.5">|</span><button class="btn btn-secondary" id="mdtStripBtn">转纯文本</button><button class="btn btn-secondary" id="mdtCopyBtn">复制</button></div><textarea id="mdtOutput" readonly style="width:100%;min-height:180px;font-family:Consolas,monospace;font-size:13px" placeholder="结果..."></textarea><div id="mdtMsg" style="margin-top:8px;font-size:13px"></div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>免费在线 Markdown 表格格式化工具，支持排序、对齐和美化。特别适合 GitHub README 和文档中的大型表格。</p><ul><li><strong>列排序</strong>：按任意列升序/降序</li><li><strong>对齐设置</strong>：左对齐、居中或右对齐</li><li><strong>规范输出</strong>：自动修复格式问题</li><li><strong>移除表格</strong>：转为纯文本</li></ul><p>所有处理在浏览器本地完成。</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>按任意列升序/降序排序</li><li>统一对齐：左/中/右</li><li>自动修复分隔行和列宽</li><li>转为纯文本（逗号或管道分隔）</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">支持什么表格格式？</h3><p>标准 GFM 格式，需有分隔行和管道符。</p><h3 style="margin-top:20px;margin-bottom:8px">表头会被排序影响吗？</h3><p>不会，表头始终保持在顶部。</p></section>
+<section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/markdown-table" class="tool-card"><div class="icon">📊</div><h3>Markdown 表格生成器</h3><p>将 CSV、TSV 或文本快速转换为 Markdown 格式表格</p></a><a href="/tools/csv-to-markdown" class="tool-card"><div class="icon">📊</div><h3>CSV 转 Markdown 表格</h3><p>将 CSV 数据快速转换为 Markdown 表格格式，支持预览、复制和下载</p></a><a href="/tools/markdown-preview" class="tool-card"><div class="icon">📝</div><h3>Markdown 实时预览</h3><p>左边写 MD 右边实时预览渲染效果</p></a><a href="/tools/html-table-extractor" class="tool-card"><div class="icon">📋</div><h3>HTML 表格提取器</h3><p>从 HTML 页面提取表格数据，导出为 CSV/JSON/Markdown</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/md-table-formatter.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>INI Config Converter - INI to JSON YAML TOML Converter - Free Online Config File Converter | AI Toolbox</title>
+<meta name="description" content="Free online ini config converter. Convert between INI and JSON, YAML, or TOML. Supports nested sections and comment handling. Fast, secure, and works in your browser without downloading.">
+<meta name="keywords" content="ini to json, ini to yaml, ini to toml, config file converter, ini parser, ini formatter, online ini converter, config format conversion">
+<link rel="canonical" href="https://tools.talang.fun/en/tools/ini-converter">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/ini-converter">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/ini-converter">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/ini-converter">
+<meta property="og:title" content="INI Config Converter - INI to JSON YAML TOML Converter - Free Online Config File Converter | AI Toolbox">
+<meta property="og:description" content="Free online ini config converter. Convert between INI and JSON, YAML, or TOML. Supports nested sections and comment handling. Fast, secure, and works in your browser without downloading.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/en/tools/ini-converter">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "INI Config Converter", "description": "Free online ini config converter. Convert between INI and JSON, YAML, or TOML. Supports nested sections and comment handling. Fast, secure, and works in your browser without downloading.", "url": "https://tools.talang.fun/en/tools/ini-converter", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "Convert between INI and JSON, YAML, or TOML. Supports nested sections and comment handling.", "inLanguage": "en", "author": {"@type": "Organization", "name": "AI Toolbox"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/en/" class="logo"><span class="logo-icon">🛠️</span>AI Toolbox</a>
+    <nav class="nav">
+      <a href="/en/">Home</a>
+      <a href="/en/#tools">All Tools</a>
+      <a href="/en/blog/">Blog</a>
+      <a href="/en/about">About</a>
+      <a href="/en/sponsor">Sponsor</a>
+      <a href="https://tools.talang.fun/tools/ini-converter" class="lang-switch">中文</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">⚙️</div>
+  <h1>INI Config Converter</h1>
+  <p>Convert between INI and JSON, YAML, or TOML. Supports nested sections and comment handling.</p>
+</div>
+<div class="tool-panel">
+<div style="margin-bottom:12px;display:flex;gap:8px;flex-wrap:wrap;align-items:center"><label style="font-size:13px">From：</label><select id="iniSourceFormat" style="padding:4px 8px;border:1px solid var(--border);border-radius:4px;background:var(--bg-card);color:var(--text)"><option value="ini">INI</option><option value="json">JSON</option><option value="yaml">YAML</option><option value="toml">TOML</option></select><label style="font-size:13px;margin-left:12px">To：</label><select id="iniTargetFormat" style="padding:4px 8px;border:1px solid var(--border);border-radius:4px;background:var(--bg-card);color:var(--text)"><option value="json">JSON</option><option value="yaml">YAML</option><option value="toml">TOML</option><option value="ini">INI</option></select><label style="margin-left:12px;font-size:13px"><input type="checkbox" id="iniStripComments"> Strip comments</label></div><textarea id="iniInput" style="width:100%;min-height:220px;font-family:Consolas,monospace;font-size:13px" placeholder="Paste config to convert..."></textarea><div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap"><button class="btn" id="iniConvertBtn">Convert</button><button class="btn btn-secondary" id="iniSwapBtn">⇄ Swap</button><button class="btn btn-secondary" id="iniClearBtn">Clear</button></div><textarea id="iniOutput" readonly style="width:100%;min-height:220px;font-family:Consolas,monospace;font-size:13px;margin-top:12px" placeholder="Conversion result..."></textarea><div id="iniMsg" style="margin-top:8px;font-size:13px"></div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>About this tool</h2>
+  <p>Free online INI config converter for bidirectional conversion between INI, JSON, YAML, and TOML. Handles nested sections, comment stripping, type inference, and indentation.</p><ul><li><strong>INI → JSON</strong>: Standard JSON output</li><li><strong>INI → YAML</strong>: For CI/CD pipelines</li><li><strong>INI → TOML</strong>: Modern Python/Go projects</li><li><strong>Reverse</strong>: JSON/YAML/TOML → INI</li></ul><p>All processing is local.</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>Key Features</h2><ul><li>Bidirectional INI ↔ JSON/YAML/TOML</li><li>Nested section parsing: section.sub.key</li><li>Smart type inference: numbers/booleans</li><li>Preserve or strip INI comments</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>Frequently Asked Questions</h2><h3 style="margin-top:20px;margin-bottom:8px">How are nested sections handled?</h3><p>Dot-notation like [database.replica] parsed into nested structures.</p><h3 style="margin-top:20px;margin-bottom:8px">Is my data safe?</h3><p>All processing is local. No upload.</p></section>
+<section class="related"><h3>Related Tools</h3><div class="tools-grid"><a href="/en/tools/json-to-yaml" class="tool-card"><div class="icon">📊</div><h3>JSON ↔ YAML</h3><p>Convert JSON to YAML and YAML to JSON instantly. Preserve data types, formatting options, and live preview of both formats side by side.</p></a><a href="/en/tools/yaml-formatter" class="tool-card"><div class="icon">🧾</div><h3>YAML Formatter & Validator</h3><p>Format YAML configs and validate indentation, colons, duplicate keys, and common syntax issues locally</p></a><a href="/en/tools/toml-formatter" class="tool-card"><div class="icon">⚙️</div><h3>TOML Formatter</h3><p>TOML config file formatter and validator — indent, sort sections, and detect common errors</p></a><a href="/en/tools/xml-formatter" class="tool-card"><div class="icon">🧩</div><h3>XML Formatter & Minifier</h3><p>Format, validate, and minify XML locally with parser error messages</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>Need a private toolbox or custom browser tool?</h2>
+  <p>AI Toolbox can be adapted for internal workflows, private deployment, sponsored categories, or custom privacy-first utilities.</p>
+  <p><a href="/en/sponsor" data-event="conversion_cta_click" data-label="en_partner_custom_tool_cta">View partnership and custom tool options →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/ini-converter.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI Toolbox · Free online AI & developer tools · <a href='/en/about'>About</a> · <a href='/en/sponsor'>Sponsor</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('Copied!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>
