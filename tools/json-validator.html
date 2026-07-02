@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>JSON 验证器 - JSON 验证器 - 语法检查与错误定位 | 在线 JSON 校验工具 | AI 工具盒子</title>
+<meta name="description" content="免费在线JSON 验证器工具，验证 JSON 语法，高亮定位错误，格式化并显示行号。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="JSON验证,JSON语法检查,JSON格式化,JSON校验,JSON合法性检查,JSON解析错误定位,在线JSON验证器,JSON语法检测">
+<link rel="canonical" href="https://tools.talang.fun/tools/json-validator">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/json-validator">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/json-validator">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/json-validator">
+<meta property="og:title" content="JSON 验证器 - JSON 验证器 - 语法检查与错误定位 | 在线 JSON 校验工具 | AI 工具盒子">
+<meta property="og:description" content="免费在线JSON 验证器工具，验证 JSON 语法，高亮定位错误，格式化并显示行号。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/json-validator">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "JSON 验证器", "description": "免费在线JSON 验证器工具，验证 JSON 语法，高亮定位错误，格式化并显示行号。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/json-validator", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "验证 JSON 语法，高亮定位错误，格式化并显示行号", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/tools/json-validator" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">✅</div>
+  <h1>JSON 验证器</h1>
+  <p>验证 JSON 语法，高亮定位错误，格式化并显示行号</p>
+</div>
+<div class="tool-panel">
+<div style="margin-bottom:12px"><label style="font-size:13px;font-weight:600">输入 JSON</label><textarea id="jvInput" style="width:100%;min-height:220px;font-family:Consolas,monospace;font-size:13px;line-height:1.5" placeholder="在此粘贴 JSON 数据..."></textarea></div><div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:12px;align-items:center"><button class="btn" id="jvValidateBtn">验证</button><button class="btn btn-secondary" id="jvFormatBtn">格式化</button><button class="btn btn-secondary" id="jvMinifyBtn">压缩</button><button class="btn btn-secondary" id="jvCopyBtn">复制结果</button></div><div id="jvResult" style="position:relative"><textarea id="jvOutput" readonly style="width:100%;min-height:220px;font-family:Consolas,monospace;font-size:13px;line-height:1.5" placeholder="验证结果..."></textarea><div id="jvError" style="background:var(--bg-card);border:1px solid var(--error);border-radius:6px;padding:12px;margin-top:8px;display:none;font-family:Consolas,monospace;font-size:13px;line-height:1.6;white-space:pre-wrap;word-break:break-all"></div></div><div id="jvMsg" style="margin-top:8px;font-size:13px"></div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>免费的在线 JSON 验证器，快速检查 JSON 语法正确性。<strong>精确定位错误位置</strong>（行号、列号）、<strong>可视高亮</strong>错误片段。适合调试 API 或配置文件。</p><p>所有处理在浏览器本地完成，数据不会上传。</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>精确验证 JSON 语法，显示错误行号与列号</li><li>一键格式化（缩进 2/4 空格可切换）</li><li>一键压缩 JSON</li><li>错误高亮显示，点击可定位</li><li>显示 JSON 树深度和节点数统计</li><li>完全本地处理，数据不上传</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">JSON 验证和 JSON Schema 验证有什么区别？</h3><p>JSON 验证检查语法是否正确（如缺括号、逗号）。JSON Schema 验证检查数据结构是否符合预定义的 Schema 规则。</p><h3 style="margin-top:20px;margin-bottom:8px">支持大文件验证吗？</h3><p>支持，但超 10MB 的文件建议用本地工具处理。</p><h3 style="margin-top:20px;margin-bottom:8px">验证通过后一定能被后端解析吗？</h3><p>JSON 语法通过即合法 JSON，可被任何标准解析器正确解析。</p></section>
+<section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/json-formatter" class="tool-card"><div class="icon">{ }</div><h3>JSON 格式化</h3><p>JSON 美化、压缩、校验，错误位置精准定位</p></a><a href="/tools/json-schema-validator" class="tool-card"><div class="icon">✓</div><h3>JSON Schema 校验</h3><p>根据 JSON Schema 标准校验 JSON 数据结构，支持 Draft-07</p></a><a href="/tools/json-diff" class="tool-card"><div class="icon">↔</div><h3>JSON 对比</h3><p>深层比较两个 JSON 的差异，精准定位新增/删除/修改项</p></a><a href="/tools/json-to-yaml" class="tool-card"><div class="icon">📊</div><h3>JSON ↔ YAML 互转</h3><p>JSON 与 YAML 格式相互转换</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/json-validator.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>
