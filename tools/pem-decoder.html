@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>PEM 证书解码器 - PEM 证书解码器 | 在线 SSL 证书查看工具 | AI 工具盒子</title>
+<meta name="description" content="免费在线PEM 证书解码器工具，在线解码 PEM 证书、CSR、私钥，展示有效期、颁发者、Subject、SAN 等。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="PEM解码,PEM证书,SSL证书解码,CSR解码,证书查看,私钥解码,证书信息,在线证书解析,X.509,SSL/TLS,openssl在线">
+<link rel="canonical" href="https://tools.talang.fun/tools/pem-decoder">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/pem-decoder">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/pem-decoder">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/pem-decoder">
+<meta property="og:title" content="PEM 证书解码器 - PEM 证书解码器 | 在线 SSL 证书查看工具 | AI 工具盒子">
+<meta property="og:description" content="免费在线PEM 证书解码器工具，在线解码 PEM 证书、CSR、私钥，展示有效期、颁发者、Subject、SAN 等。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/pem-decoder">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "PEM 证书解码器", "description": "免费在线PEM 证书解码器工具，在线解码 PEM 证书、CSR、私钥，展示有效期、颁发者、Subject、SAN 等。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/pem-decoder", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "在线解码 PEM 证书、CSR、私钥，展示有效期、颁发者、Subject、SAN 等", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/tools/pem-decoder" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🔒</div>
+  <h1>PEM 证书解码器</h1>
+  <p>在线解码 PEM 证书、CSR、私钥，展示有效期、颁发者、Subject、SAN 等</p>
+</div>
+<div class="tool-panel">
+<div class="pem-tool"><textarea id="pem-input" placeholder="在此粘贴 PEM 格式内容...
+
+例如：
+-----BEGIN CERTIFICATE-----
+MIIBxTCCAS0CAQAwgY...
+-----END CERTIFICATE-----" style="width:100%;min-height:200px;font-family:monospace;font-size:13px;padding:12px;border:1px solid var(--border);border-radius:8px;background:var(--bg-code);resize:vertical"></textarea><div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap"><button class="btn" id="pem-decode">🔍 解码</button><button class="btn btn-secondary" id="pem-clear">清空</button><span style="margin-left:auto;font-size:13px;color:var(--text-dim);align-self:center"><span id="pem-type-display">等待输入...</span></span></div><div id="pem-result" style="margin-top:16px"></div><div style="margin-top:12px;padding:12px;background:var(--bg-warning-light);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-dim)"><strong>⚠️ 隐私提示</strong>：所有解析在浏览器本地完成，证书内容不会上传到任何服务器。请放心粘贴。</div></div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>免费的在线 PEM 证书解码器，无需安装 OpenSSL。<strong>解码 SSL/TLS 证书、CSR（证书签名请求）、私钥</strong>，展示完整的证书信息包括：Subject、颁发者、有效期、SAN（Subject Alternative Names）、公钥算法、签名算法、指纹等。</p><p>所有解析在浏览器本地完成，私钥和证书内容不会上传到服务器，安全可靠。</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>解码 SSL/TLS 证书、CSR、私钥</li><li>展示 Subject、颁发者、有效期、SAN</li><li>自动识别 PEM 类型（CERTIFICATE/CSR/PRIVATE KEY 等）</li><li>显示公钥算法、签名算法、指纹信息</li><li>浏览器本地解析，私钥不会上传</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">PEM 是什么格式？</h3><p>PEM 是一种基于 Base64 编码的证书格式，以 -----BEGIN CERTIFICATE----- 开头。</p><h3 style="margin-top:20px;margin-bottom:8px">证书信息会被上传吗？</h3><p>不会。所有解析在浏览器本地完成，不会离开你的设备。</p><h3 style="margin-top:20px;margin-bottom:8px">支持解码哪些类型？</h3><p>支持 CERTIFICATE、CERTIFICATE REQUEST（CSR）、PRIVATE KEY、PUBLIC KEY、X509 CRL 等。</p><h3 style="margin-top:20px;margin-bottom:8px">私钥解码安全吗？</h3><p>是的，仅展示元数据（算法、长度、指纹），不会输出私钥值本身。</p><h3 style="margin-top:20px;margin-bottom:8px">如何从服务器获取 PEM 证书？</h3><p>使用 openssl s_client -connect example.com:443 -showcerts 命令获取。</p></section>
+<section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/jwt-decoder" class="tool-card"><div class="icon">🔐</div><h3>JWT 在线解码</h3><p>解码 JSON Web Token Header 和 Payload，纯前端处理不上传</p></a><a href="/tools/base64" class="tool-card"><div class="icon">🔣</div><h3>Base64 编解码</h3><p>Base64 字符串和文件互转，UTF-8 安全</p></a><a href="/tools/hash-generator" class="tool-card"><div class="icon">🔐</div><h3>哈希生成器</h3><p>生成 MD5、SHA-1、SHA-256、SHA-512 哈希值</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/pem-decoder.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>

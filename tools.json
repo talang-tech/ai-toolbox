@@ -75,7 +75,9 @@
           "yaml-to-json",
           "data-size-converter",
           "html-diff",
-          "ini-converter"
+          "ini-converter",
+          "css-filter-generator",
+          "pem-decoder"
         ]
       },
       "encode": {
@@ -6561,6 +6563,167 @@
       ],
       "ui_zh": "<div style=\"margin-bottom:12px\"><label style=\"font-size:13px;font-weight:600\">输入文本</label><textarea id=\"ucInput\" style=\"width:100%;min-height:150px;font-family:Consolas,monospace;font-size:13px;line-height:1.5\" placeholder=\"粘贴文本或 Unicode 编码...\"></textarea></div><div style=\"display:flex;flex-wrap:wrap;gap:10px;margin-bottom:12px;align-items:center\"><label style=\"font-size:13px\">来源格式：</label><select id=\"ucFrom\" style=\"padding:4px 8px;border:1px solid var(--border);border-radius:4px;background:var(--bg-card);color:var(--text)\"><option value=\"auto\">自动检测</option><option value=\"text\">纯文本</option><option value=\"uescape\">\\uXXXX 转义</option><option value=\"hex\">十六进制 (FF)</option><option value=\"decimal\">十进制码点</option><option value=\"htmlentity\">HTML 实体</option></select><span style=\"opacity:0.5\">→</span><label style=\"font-size:13px\">目标格式：</label><select id=\"ucTo\" style=\"padding:4px 8px;border:1px solid var(--border);border-radius:4px;background:var(--bg-card);color:var(--text)\"><option value=\"text\">纯文本</option><option value=\"uescape\">\\uXXXX 转义</option><option value=\"hex\">十六进制 (FF)</option><option value=\"decimal\">十进制码点</option><option value=\"htmlentity\">HTML 实体</option></select><button class=\"btn\" id=\"ucConvertBtn\">转换</button></div><div style=\"margin-bottom:12px\"><textarea id=\"ucOutput\" readonly style=\"width:100%;min-height:150px;font-family:Consolas,monospace;font-size:13px;line-height:1.5\" placeholder=\"转换结果...\"></textarea></div><div style=\"display:flex;flex-wrap:wrap;gap:10px;margin-bottom:12px\"><button class=\"btn btn-secondary\" id=\"ucCopyBtn\">复制结果</button><span style=\"font-size:12px;opacity:0.6\" id=\"ucCharCount\"></span></div><div id=\"ucMsg\" style=\"margin-top:8px;font-size:13px\"></div>",
       "ui_en": "<div style=\"margin-bottom:12px\"><label style=\"font-size:13px;font-weight:600\">Input</label><textarea id=\"ucInput\" style=\"width:100%;min-height:150px;font-family:Consolas,monospace;font-size:13px;line-height:1.5\" placeholder=\"Paste text or Unicode encoding...\"></textarea></div><div style=\"display:flex;flex-wrap:wrap;gap:10px;margin-bottom:12px;align-items:center\"><label style=\"font-size:13px\">From:</label><select id=\"ucFrom\" style=\"padding:4px 8px;border:1px solid var(--border);border-radius:4px;background:var(--bg-card);color:var(--text)\"><option value=\"auto\">Auto-detect</option><option value=\"text\">Plain Text</option><option value=\"uescape\">\\uXXXX Escape</option><option value=\"hex\">Hex (FF)</option><option value=\"decimal\">Decimal Codepoint</option><option value=\"htmlentity\">HTML Entity</option></select><span style=\"opacity:0.5\">→</span><label style=\"font-size:13px\">To:</label><select id=\"ucTo\" style=\"padding:4px 8px;border:1px solid var(--border);border-radius:4px;background:var(--bg-card);color:var(--text)\"><option value=\"text\">Plain Text</option><option value=\"uescape\">\\uXXXX Escape</option><option value=\"hex\">Hex (FF)</option><option value=\"decimal\">Decimal Codepoint</option><option value=\"htmlentity\">HTML Entity</option></select><button class=\"btn\" id=\"ucConvertBtn\">Convert</button></div><div style=\"margin-bottom:12px\"><textarea id=\"ucOutput\" readonly style=\"width:100%;min-height:150px;font-family:Consolas,monospace;font-size:13px;line-height:1.5\" placeholder=\"Conversion result...\"></textarea></div><div style=\"display:flex;flex-wrap:wrap;gap:10px;margin-bottom:12px\"><button class=\"btn btn-secondary\" id=\"ucCopyBtn\">Copy</button><span style=\"font-size:12px;opacity:0.6\" id=\"ucCharCount\"></span></div><div id=\"ucMsg\" style=\"margin-top:8px;font-size:13px\"></div>"
+    },
+    {
+      "slug": "css-filter-generator",
+      "category": "dev",
+      "icon": "🎨",
+      "name_zh": "CSS 滤镜生成器",
+      "name_en": "CSS Filter Generator",
+      "short_zh": "可视化 CSS filter 生成器，实时预览模糊、亮度、对比度等滤镜效果",
+      "short_en": "Visual CSS filter generator with real-time preview for blur, brightness, contrast, and more",
+      "keywords_zh": "CSS滤镜生成器,CSS filter,滤镜生成,在线滤镜,blur,brightness,contrast,grayscale,hue-rotate,sepia,前端开发,CSS特效",
+      "keywords_en": "css filter generator, css filter builder, visual filter, blur, brightness, contrast, grayscale, hue-rotate, sepia, frontend tools",
+      "long_zh": "<p>免费的在线 CSS 滤镜生成器，通过可视化控件实时调整 <strong>blur、brightness、contrast、grayscale、hue-rotate、invert、opacity、saturate、sepia</strong> 等滤镜参数。预览区域实时显示效果，一键生成 CSS 代码。</p><p>所有处理在浏览器本地完成，图片不会上传到任何服务器，隐私安全有保障。</p>",
+      "long_en": "<p>Free online CSS filter generator — visually adjust <strong>blur, brightness, contrast, grayscale, hue-rotate, invert, opacity, saturate, sepia</strong> filter values with sliders. Real-time preview on a demo image, with one-click CSS code copy.</p><p>All processing runs locally in your browser. No images are uploaded to any server.</p>",
+      "ui_zh": "<div class=\"filter-tool\"><div class=\"filter-controls\" style=\"display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px\"><div class=\"control-group\"><label>模糊 (blur)</label><input type=\"range\" id=\"fl-blur\" min=\"0\" max=\"20\" step=\"0.5\" value=\"0\"><span class=\"val\" id=\"fl-blur-val\">0</span><span class=\"unit\">px</span></div><div class=\"control-group\"><label>亮度 (brightness)</label><input type=\"range\" id=\"fl-brightness\" min=\"0\" max=\"200\" step=\"1\" value=\"100\"><span class=\"val\" id=\"fl-brightness-val\">100</span><span class=\"unit\">%</span></div><div class=\"control-group\"><label>对比度 (contrast)</label><input type=\"range\" id=\"fl-contrast\" min=\"0\" max=\"200\" step=\"1\" value=\"100\"><span class=\"val\" id=\"fl-contrast-val\">100</span><span class=\"unit\">%</span></div><div class=\"control-group\"><label>灰度 (grayscale)</label><input type=\"range\" id=\"fl-grayscale\" min=\"0\" max=\"100\" step=\"1\" value=\"0\"><span class=\"val\" id=\"fl-grayscale-val\">0</span><span class=\"unit\">%</span></div><div class=\"control-group\"><label>色相旋转 (hue-rotate)</label><input type=\"range\" id=\"fl-hue\" min=\"0\" max=\"360\" step=\"1\" value=\"0\"><span class=\"val\" id=\"fl-hue-val\">0</span><span class=\"unit\">deg</span></div><div class=\"control-group\"><label>反色 (invert)</label><input type=\"range\" id=\"fl-invert\" min=\"0\" max=\"100\" step=\"1\" value=\"0\"><span class=\"val\" id=\"fl-invert-val\">0</span><span class=\"unit\">%</span></div><div class=\"control-group\"><label>不透明度 (opacity)</label><input type=\"range\" id=\"fl-opacity\" min=\"0\" max=\"100\" step=\"1\" value=\"100\"><span class=\"val\" id=\"fl-opacity-val\">100</span><span class=\"unit\">%</span></div><div class=\"control-group\"><label>饱和度 (saturate)</label><input type=\"range\" id=\"fl-saturate\" min=\"0\" max=\"200\" step=\"1\" value=\"100\"><span class=\"val\" id=\"fl-saturate-val\">100</span><span class=\"unit\">%</span></div><div class=\"control-group\"><label>棕褐色 (sepia)</label><input type=\"range\" id=\"fl-sepia\" min=\"0\" max=\"100\" step=\"1\" value=\"0\"><span class=\"val\" id=\"fl-sepia-val\">0</span><span class=\"unit\">%</span></div></div><div class=\"filter-preview\" style=\"margin-bottom:16px;text-align:center;padding:20px;background:var(--bg-light);border-radius:12px;overflow:hidden\"><img id=\"fl-preview-img\" src=\"https://picsum.photos/seed/filter/400/300\" alt=\"Preview\" style=\"max-width:100%;border-radius:8px;transition:filter 0.15s\" crossorigin=\"anonymous\"><p style=\"color:var(--text-dim);font-size:13px;margin-top:8px\">点击图片可切换示例</p></div><div class=\"filter-code\" style=\"background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:16px\"><div style=\"display:flex;justify-content:space-between;align-items:center;margin-bottom:8px\"><span style=\"font-weight:600\">CSS Filter 代码</span><button class=\"btn btn-sm\" id=\"fl-copy-css\">📋 复制</button></div><pre style=\"margin:0;padding:12px;background:var(--bg-code);border-radius:8px;font-size:13px;overflow-x:auto\"><code id=\"fl-css-output\">/* filters */</code></pre></div><div class=\"filter-reset\" style=\"margin-top:12px;text-align:center\"><button class=\"btn btn-secondary\" id=\"fl-reset\">重置所有滤镜</button></div></div>",
+      "ui_en": "<div class=\"filter-tool\"><div class=\"filter-controls\" style=\"display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px\"><div class=\"control-group\"><label>Blur</label><input type=\"range\" id=\"fl-blur\" min=\"0\" max=\"20\" step=\"0.5\" value=\"0\"><span class=\"val\" id=\"fl-blur-val\">0</span><span class=\"unit\">px</span></div><div class=\"control-group\"><label>Brightness</label><input type=\"range\" id=\"fl-brightness\" min=\"0\" max=\"200\" step=\"1\" value=\"100\"><span class=\"val\" id=\"fl-brightness-val\">100</span><span class=\"unit\">%</span></div><div class=\"control-group\"><label>Contrast</label><input type=\"range\" id=\"fl-contrast\" min=\"0\" max=\"200\" step=\"1\" value=\"100\"><span class=\"val\" id=\"fl-contrast-val\">100</span><span class=\"unit\">%</span></div><div class=\"control-group\"><label>Grayscale</label><input type=\"range\" id=\"fl-grayscale\" min=\"0\" max=\"100\" step=\"1\" value=\"0\"><span class=\"val\" id=\"fl-grayscale-val\">0</span><span class=\"unit\">%</span></div><div class=\"control-group\"><label>Hue-rotate</label><input type=\"range\" id=\"fl-hue\" min=\"0\" max=\"360\" step=\"1\" value=\"0\"><span class=\"val\" id=\"fl-hue-val\">0</span><span class=\"unit\">deg</span></div><div class=\"control-group\"><label>Invert</label><input type=\"range\" id=\"fl-invert\" min=\"0\" max=\"100\" step=\"1\" value=\"0\"><span class=\"val\" id=\"fl-invert-val\">0</span><span class=\"unit\">%</span></div><div class=\"control-group\"><label>Opacity</label><input type=\"range\" id=\"fl-opacity\" min=\"0\" max=\"100\" step=\"1\" value=\"100\"><span class=\"val\" id=\"fl-opacity-val\">100</span><span class=\"unit\">%</span></div><div class=\"control-group\"><label>Saturate</label><input type=\"range\" id=\"fl-saturate\" min=\"0\" max=\"200\" step=\"1\" value=\"100\"><span class=\"val\" id=\"fl-saturate-val\">100</span><span class=\"unit\">%</span></div><div class=\"control-group\"><label>Sepia</label><input type=\"range\" id=\"fl-sepia\" min=\"0\" max=\"100\" step=\"1\" value=\"0\"><span class=\"val\" id=\"fl-sepia-val\">0</span><span class=\"unit\">%</span></div></div><div class=\"filter-preview\" style=\"margin-bottom:16px;text-align:center;padding:20px;background:var(--bg-light);border-radius:12px;overflow:hidden\"><img id=\"fl-preview-img\" src=\"https://picsum.photos/seed/filter/400/300\" alt=\"Preview\" style=\"max-width:100%;border-radius:8px;transition:filter 0.15s\" crossorigin=\"anonymous\"><p style=\"color:var(--text-dim);font-size:13px;margin-top:8px\">Click image to cycle demo image</p></div><div class=\"filter-code\" style=\"background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:16px\"><div style=\"display:flex;justify-content:space-between;align-items:center;margin-bottom:8px\"><span style=\"font-weight:600\">CSS Filter Code</span><button class=\"btn btn-sm\" id=\"fl-copy-css\">📋 Copy</button></div><pre style=\"margin:0;padding:12px;background:var(--bg-code);border-radius:8px;font-size:13px;overflow-x:auto\"><code id=\"fl-css-output\">/* filters */</code></pre></div><div class=\"filter-reset\" style=\"margin-top:12px;text-align:center\"><button class=\"btn btn-secondary\" id=\"fl-reset\">Reset All Filters</button></div></div>",
+      "related": [
+        "css-gradient-generator",
+        "css-minifier",
+        "color-converter",
+        "color-name-finder"
+      ],
+      "seo_title_zh": "CSS 滤镜生成器 | 在线可视化 filter 工具",
+      "seo_title_en": "CSS Filter Generator | Visual Online Filter Builder",
+      "features_zh": [
+        "可视化滑块调节 9 种滤镜参数",
+        "实时预览效果（支持图片切换）",
+        "一键复制 CSS filter 代码",
+        "支持 blur、brightness、contrast 等",
+        "浏览器本地处理，图片不上传"
+      ],
+      "features_en": [
+        "Visual sliders for 9 filter parameters",
+        "Real-time preview with cycleable demo image",
+        "One-click copy CSS filter code",
+        "Supports blur, brightness, contrast, and more",
+        "Browser local processing, no data upload"
+      ],
+      "faq_zh": [
+        [
+          "CSS filter 支持哪些浏览器？",
+          "现代浏览器（Chrome、Firefox、Safari、Edge）均支持 CSS filter 属性。"
+        ],
+        [
+          "滤镜值可以叠加吗？",
+          "可以，多个滤镜会按顺序叠加生效。"
+        ],
+        [
+          "生成的代码可以直接用吗？",
+          "可以，直接复制到你的样式文件中使用。"
+        ],
+        [
+          "支持自定义图片吗？",
+          "当前为示例图片。可复制生成的 CSS filter 代码应用到你的图片上。"
+        ],
+        [
+          "数据会上传吗？",
+          "不会。所有处理在浏览器本地完成。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "Which browsers support CSS filter?",
+          "Modern browsers including Chrome, Firefox, Safari, and Edge all support CSS filter."
+        ],
+        [
+          "Can multiple filters be combined?",
+          "Yes, multiple filters stack in order and produce a single combined filter property value."
+        ],
+        [
+          "Can I use the generated code directly?",
+          "Yes, copy the CSS code and paste it directly into your stylesheet."
+        ],
+        [
+          "Does this tool upload images to a server?",
+          "No. All processing is done locally in your browser."
+        ],
+        [
+          "Is the effect consistent across browsers?",
+          "Most filters work consistently across modern browsers."
+        ]
+      ]
+    },
+    {
+      "slug": "pem-decoder",
+      "category": "dev",
+      "icon": "🔒",
+      "name_zh": "PEM 证书解码器",
+      "name_en": "PEM Certificate Decoder",
+      "short_zh": "在线解码 PEM 证书、CSR、私钥，展示有效期、颁发者、Subject、SAN 等",
+      "short_en": "Decode PEM certificates, CSRs, and private keys — show validity, issuer, subject, SAN, and more",
+      "keywords_zh": "PEM解码,PEM证书,SSL证书解码,CSR解码,证书查看,私钥解码,证书信息,在线证书解析,X.509,SSL/TLS,openssl在线",
+      "keywords_en": "pem decoder, certificate decoder, ssl certificate viewer, csr decoder, private key decoder, x.509 decoder, online certificate parser, openssl browser",
+      "long_zh": "<p>免费的在线 PEM 证书解码器，无需安装 OpenSSL。<strong>解码 SSL/TLS 证书、CSR（证书签名请求）、私钥</strong>，展示完整的证书信息包括：Subject、颁发者、有效期、SAN（Subject Alternative Names）、公钥算法、签名算法、指纹等。</p><p>所有解析在浏览器本地完成，私钥和证书内容不会上传到服务器，安全可靠。</p>",
+      "long_en": "<p>Free online PEM certificate decoder — no OpenSSL installation needed. <strong>Decode SSL/TLS certificates, CSRs (Certificate Signing Requests), and private keys</strong>. Display full certificate details: Subject, Issuer, validity period, SAN (Subject Alternative Names), public key algorithm, signature algorithm, fingerprint, and more.</p><p>All parsing is done locally in your browser. Your private keys and certificate data never leave your machine.</p>",
+      "ui_zh": "<div class=\"pem-tool\"><textarea id=\"pem-input\" placeholder=\"在此粘贴 PEM 格式内容...\n\n例如：\n-----BEGIN CERTIFICATE-----\nMIIBxTCCAS0CAQAwgY...\n-----END CERTIFICATE-----\" style=\"width:100%;min-height:200px;font-family:monospace;font-size:13px;padding:12px;border:1px solid var(--border);border-radius:8px;background:var(--bg-code);resize:vertical\"></textarea><div style=\"display:flex;gap:8px;margin-top:12px;flex-wrap:wrap\"><button class=\"btn\" id=\"pem-decode\">🔍 解码</button><button class=\"btn btn-secondary\" id=\"pem-clear\">清空</button><span style=\"margin-left:auto;font-size:13px;color:var(--text-dim);align-self:center\"><span id=\"pem-type-display\">等待输入...</span></span></div><div id=\"pem-result\" style=\"margin-top:16px\"></div><div style=\"margin-top:12px;padding:12px;background:var(--bg-warning-light);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-dim)\"><strong>⚠️ 隐私提示</strong>：所有解析在浏览器本地完成，证书内容不会上传到任何服务器。请放心粘贴。</div></div>",
+      "ui_en": "<div class=\"pem-tool\"><textarea id=\"pem-input\" placeholder=\"Paste PEM content here...\n\nFor example:\n-----BEGIN CERTIFICATE-----\nMIIBxTCCAS0CAQAwgY...\n-----END CERTIFICATE-----\" style=\"width:100%;min-height:200px;font-family:monospace;font-size:13px;padding:12px;border:1px solid var(--border);border-radius:8px;background:var(--bg-code);resize:vertical\"></textarea><div style=\"display:flex;gap:8px;margin-top:12px;flex-wrap:wrap\"><button class=\"btn\" id=\"pem-decode\">🔍 Decode</button><button class=\"btn btn-secondary\" id=\"pem-clear\">Clear</button><span style=\"margin-left:auto;font-size:13px;color:var(--text-dim);align-self:center\"><span id=\"pem-type-display\">Waiting for input...</span></span></div><div id=\"pem-result\" style=\"margin-top:16px\"></div><div style=\"margin-top:12px;padding:12px;background:var(--bg-warning-light);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-dim)\"><strong>⚠️ Privacy Notice</strong>: All parsing is done locally in your browser. Certificate data never leaves your device.</div></div>",
+      "related": [
+        "jwt-decoder",
+        "base64",
+        "hash-generator"
+      ],
+      "seo_title_zh": "PEM 证书解码器 | 在线 SSL 证书查看工具",
+      "seo_title_en": "PEM Certificate Decoder | Free Online SSL Certificate Viewer",
+      "features_zh": [
+        "解码 SSL/TLS 证书、CSR、私钥",
+        "展示 Subject、颁发者、有效期、SAN",
+        "自动识别 PEM 类型（CERTIFICATE/CSR/PRIVATE KEY 等）",
+        "显示公钥算法、签名算法、指纹信息",
+        "浏览器本地解析，私钥不会上传"
+      ],
+      "features_en": [
+        "Decode SSL/TLS certificates, CSRs, and private keys",
+        "Display Subject, Issuer, validity, and SAN",
+        "Auto-detect PEM type (CERTIFICATE/CSR/PRIVATE KEY etc.)",
+        "Show public key algorithm, signature algorithm, fingerprints",
+        "Browser-local parsing, private keys never uploaded"
+      ],
+      "faq_zh": [
+        [
+          "PEM 是什么格式？",
+          "PEM 是一种基于 Base64 编码的证书格式，以 -----BEGIN CERTIFICATE----- 开头。"
+        ],
+        [
+          "证书信息会被上传吗？",
+          "不会。所有解析在浏览器本地完成，不会离开你的设备。"
+        ],
+        [
+          "支持解码哪些类型？",
+          "支持 CERTIFICATE、CERTIFICATE REQUEST（CSR）、PRIVATE KEY、PUBLIC KEY、X509 CRL 等。"
+        ],
+        [
+          "私钥解码安全吗？",
+          "是的，仅展示元数据（算法、长度、指纹），不会输出私钥值本身。"
+        ],
+        [
+          "如何从服务器获取 PEM 证书？",
+          "使用 openssl s_client -connect example.com:443 -showcerts 命令获取。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "What is PEM format?",
+          "PEM is a Base64-encoded certificate format. It starts with -----BEGIN CERTIFICATE-----."
+        ],
+        [
+          "Is my certificate data uploaded?",
+          "No. All parsing is done locally via JavaScript in your browser."
+        ],
+        [
+          "What types can be decoded?",
+          "CERTIFICATE, CERTIFICATE REQUEST (CSR), PRIVATE KEY, PUBLIC KEY, X509 CRL, and more."
+        ],
+        [
+          "Is it safe to paste my private key?",
+          "Yes. Only metadata (algorithm, length, fingerprints) is extracted."
+        ],
+        [
+          "How to get PEM cert from a server?",
+          "Run: openssl s_client -connect example.com:443 -showcerts"
+        ]
+      ]
     }
   ]
 }

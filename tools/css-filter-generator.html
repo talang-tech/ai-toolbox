@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>CSS 滤镜生成器 - CSS 滤镜生成器 | 在线可视化 filter 工具 | AI 工具盒子</title>
+<meta name="description" content="免费在线CSS 滤镜生成器工具，可视化 CSS filter 生成器，实时预览模糊、亮度、对比度等滤镜效果。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="CSS滤镜生成器,CSS filter,滤镜生成,在线滤镜,blur,brightness,contrast,grayscale,hue-rotate,sepia,前端开发,CSS特效">
+<link rel="canonical" href="https://tools.talang.fun/tools/css-filter-generator">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/css-filter-generator">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/css-filter-generator">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/css-filter-generator">
+<meta property="og:title" content="CSS 滤镜生成器 - CSS 滤镜生成器 | 在线可视化 filter 工具 | AI 工具盒子">
+<meta property="og:description" content="免费在线CSS 滤镜生成器工具，可视化 CSS filter 生成器，实时预览模糊、亮度、对比度等滤镜效果。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/css-filter-generator">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "CSS 滤镜生成器", "description": "免费在线CSS 滤镜生成器工具，可视化 CSS filter 生成器，实时预览模糊、亮度、对比度等滤镜效果。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/css-filter-generator", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "可视化 CSS filter 生成器，实时预览模糊、亮度、对比度等滤镜效果", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/tools/css-filter-generator" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🎨</div>
+  <h1>CSS 滤镜生成器</h1>
+  <p>可视化 CSS filter 生成器，实时预览模糊、亮度、对比度等滤镜效果</p>
+</div>
+<div class="tool-panel">
+<div class="filter-tool"><div class="filter-controls" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px"><div class="control-group"><label>模糊 (blur)</label><input type="range" id="fl-blur" min="0" max="20" step="0.5" value="0"><span class="val" id="fl-blur-val">0</span><span class="unit">px</span></div><div class="control-group"><label>亮度 (brightness)</label><input type="range" id="fl-brightness" min="0" max="200" step="1" value="100"><span class="val" id="fl-brightness-val">100</span><span class="unit">%</span></div><div class="control-group"><label>对比度 (contrast)</label><input type="range" id="fl-contrast" min="0" max="200" step="1" value="100"><span class="val" id="fl-contrast-val">100</span><span class="unit">%</span></div><div class="control-group"><label>灰度 (grayscale)</label><input type="range" id="fl-grayscale" min="0" max="100" step="1" value="0"><span class="val" id="fl-grayscale-val">0</span><span class="unit">%</span></div><div class="control-group"><label>色相旋转 (hue-rotate)</label><input type="range" id="fl-hue" min="0" max="360" step="1" value="0"><span class="val" id="fl-hue-val">0</span><span class="unit">deg</span></div><div class="control-group"><label>反色 (invert)</label><input type="range" id="fl-invert" min="0" max="100" step="1" value="0"><span class="val" id="fl-invert-val">0</span><span class="unit">%</span></div><div class="control-group"><label>不透明度 (opacity)</label><input type="range" id="fl-opacity" min="0" max="100" step="1" value="100"><span class="val" id="fl-opacity-val">100</span><span class="unit">%</span></div><div class="control-group"><label>饱和度 (saturate)</label><input type="range" id="fl-saturate" min="0" max="200" step="1" value="100"><span class="val" id="fl-saturate-val">100</span><span class="unit">%</span></div><div class="control-group"><label>棕褐色 (sepia)</label><input type="range" id="fl-sepia" min="0" max="100" step="1" value="0"><span class="val" id="fl-sepia-val">0</span><span class="unit">%</span></div></div><div class="filter-preview" style="margin-bottom:16px;text-align:center;padding:20px;background:var(--bg-light);border-radius:12px;overflow:hidden"><img id="fl-preview-img" src="https://picsum.photos/seed/filter/400/300" alt="Preview" style="max-width:100%;border-radius:8px;transition:filter 0.15s" crossorigin="anonymous"><p style="color:var(--text-dim);font-size:13px;margin-top:8px">点击图片可切换示例</p></div><div class="filter-code" style="background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:16px"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><span style="font-weight:600">CSS Filter 代码</span><button class="btn btn-sm" id="fl-copy-css">📋 复制</button></div><pre style="margin:0;padding:12px;background:var(--bg-code);border-radius:8px;font-size:13px;overflow-x:auto"><code id="fl-css-output">/* filters */</code></pre></div><div class="filter-reset" style="margin-top:12px;text-align:center"><button class="btn btn-secondary" id="fl-reset">重置所有滤镜</button></div></div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>免费的在线 CSS 滤镜生成器，通过可视化控件实时调整 <strong>blur、brightness、contrast、grayscale、hue-rotate、invert、opacity、saturate、sepia</strong> 等滤镜参数。预览区域实时显示效果，一键生成 CSS 代码。</p><p>所有处理在浏览器本地完成，图片不会上传到任何服务器，隐私安全有保障。</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>可视化滑块调节 9 种滤镜参数</li><li>实时预览效果（支持图片切换）</li><li>一键复制 CSS filter 代码</li><li>支持 blur、brightness、contrast 等</li><li>浏览器本地处理，图片不上传</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">CSS filter 支持哪些浏览器？</h3><p>现代浏览器（Chrome、Firefox、Safari、Edge）均支持 CSS filter 属性。</p><h3 style="margin-top:20px;margin-bottom:8px">滤镜值可以叠加吗？</h3><p>可以，多个滤镜会按顺序叠加生效。</p><h3 style="margin-top:20px;margin-bottom:8px">生成的代码可以直接用吗？</h3><p>可以，直接复制到你的样式文件中使用。</p><h3 style="margin-top:20px;margin-bottom:8px">支持自定义图片吗？</h3><p>当前为示例图片。可复制生成的 CSS filter 代码应用到你的图片上。</p><h3 style="margin-top:20px;margin-bottom:8px">数据会上传吗？</h3><p>不会。所有处理在浏览器本地完成。</p></section>
+<section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/css-gradient-generator" class="tool-card"><div class="icon">🌈</div><h3>CSS 渐变生成器</h3><p>在线生成 CSS 线性与径向渐变，实时预览并复制代码</p></a><a href="/tools/css-minifier" class="tool-card"><div class="icon">🎨</div><h3>CSS 美化/压缩</h3><p>CSS 代码一键美化格式化或压缩，支持属性排序、颜色简写优化</p></a><a href="/tools/color-converter" class="tool-card"><div class="icon">🎨</div><h3>颜色转换</h3><p>Hex 十六进制颜色码与 RGB 互转，实时预览</p></a><a href="/tools/color-name-finder" class="tool-card"><div class="icon">🎨</div><h3>颜色名称查询</h3><p>输入 Hex/RGB 查找最近的颜色名称，浏览 CSS 命名色板</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/css-filter-generator.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>
