@@ -27,7 +27,8 @@
           "csv-to-markdown",
           "word-counter",
           "html-stripper",
-          "md-table-formatter"
+          "md-table-formatter",
+          "csv-editor"
         ]
       },
       "dev": {
@@ -107,7 +108,8 @@
           "random-string",
           "uuid-generator",
           "slug-generator",
-          "emoji-picker"
+          "emoji-picker",
+          "html-to-pdf"
         ]
       },
       "json": {
@@ -7014,6 +7016,164 @@
         [
           "Which formats?",
           "Hex (#RRGGBB)."
+        ]
+      ]
+    },
+    {
+      "slug": "csv-editor",
+      "category": "text",
+      "icon": "📊",
+      "name_zh": "CSV 在线编辑器",
+      "name_en": "CSV Editor",
+      "short_zh": "在线编辑 CSV 数据——可视化表格编辑、增删行列、实时预览",
+      "short_en": "Edit CSV data online — visual table editor, add/remove rows/columns, live preview",
+      "keywords_zh": "CSV 编辑器,在线 CSV 编辑,CSV 编辑工具,CSV 表格编辑,CSV 在线修改,CSV 单元格编辑,CSV 增删行列",
+      "keywords_en": "csv editor, online csv editor, csv table editor, csv data editor, csv cell editor, csv manager, csv editing tool",
+      "long_zh": "<p>免费的在线 CSV 编辑器。<strong>粘贴 CSV 文本即可自动解析为可编辑表格</strong>，支持直接点击单元格修改、增删行列、实时查看编辑后的 CSV 输出。</p><p>无需注册、不上传数据、完全本地运行。适合快速编辑 CSV 文件、清理少量数据、调整数据列顺序。</p>",
+      "long_en": "<p>Free online CSV editor. <strong>Paste CSV text and it auto-parses into an editable table</strong>. Click cells to edit, add/remove rows/columns, and see the CSV output update in real-time.</p><p>No signup, no data upload, fully local. Perfect for quick CSV edits, small data cleaning, and rearranging columns.</p>",
+      "ui_zh": "<div style=\"margin-bottom:12px\"><label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">输入 CSV</label><textarea id=\"ceInput\" style=\"width:100%;min-height:120px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"name,email,role&#10;张三,zhang@example.com,工程师&#10;李四,li@example.com,设计师\"></textarea><button class=\"btn\" id=\"ceParse\" style=\"margin-top:8px\">解析为表格</button></div><div id=\"ceEditor\"><div id=\"ceToolbar\" style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px\"><button class=\"btn btn-secondary\" id=\"ceAddRow\">➕ 添加行</button><button class=\"btn btn-secondary\" id=\"ceAddCol\">➕ 添加列</button><button class=\"btn btn-secondary\" id=\"ceDelRow\" style=\"color:var(--error)\">➖ 删除末行</button><button class=\"btn btn-secondary\" id=\"ceDelCol\" style=\"color:var(--error)\">➖ 删除末列</button></div><div id=\"ceTableWrap\" style=\"overflow:auto;border:1px solid var(--border);border-radius:8px\"><table id=\"ceTable\" style=\"width:100%;border-collapse:collapse;font-family:Consolas,monospace;font-size:13px\"></table></div></div><div style=\"margin-top:16px\"><label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">编辑后 CSV 输出</label><textarea id=\"ceOutput\" style=\"width:100%;min-height:120px;font-family:Consolas,monospace;font-size:13px\" readonly placeholder=\"编辑后的 CSV 将显示在这里\"></textarea><div style=\"display:flex;gap:8px;margin-top:8px\"><button class=\"btn btn-secondary\" id=\"ceCopy\">📋 复制 CSV</button><button class=\"btn btn-secondary\" id=\"ceDownload\">⬇️ 下载 CSV</button></div><div id=\"ceStats\" style=\"margin-top:6px;font-size:12px;color:var(--text-dim)\"></div></div>",
+      "ui_en": "<div style=\"margin-bottom:12px\"><label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">Input CSV</label><textarea id=\"ceInput\" style=\"width:100%;min-height:120px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"name,email,role&#10;Alice,alice@example.com,Engineer&#10;Bob,bob@example.com,Designer\"></textarea><button class=\"btn\" id=\"ceParse\" style=\"margin-top:8px\">Parse to Table</button></div><div id=\"ceEditor\"><div id=\"ceToolbar\" style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px\"><button class=\"btn btn-secondary\" id=\"ceAddRow\">➕ Add Row</button><button class=\"btn btn-secondary\" id=\"ceAddCol\">➕ Add Column</button><button class=\"btn btn-secondary\" id=\"ceDelRow\" style=\"color:var(--error)\">➖ Remove Last Row</button><button class=\"btn btn-secondary\" id=\"ceDelCol\" style=\"color:var(--error)\">➖ Remove Last Col</button></div><div id=\"ceTableWrap\" style=\"overflow:auto;border:1px solid var(--border);border-radius:8px\"><table id=\"ceTable\" style=\"width:100%;border-collapse:collapse;font-family:Consolas,monospace;font-size:13px\"></table></div></div><div style=\"margin-top:16px\"><label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">Edited CSV Output</label><textarea id=\"ceOutput\" style=\"width:100%;min-height:120px;font-family:Consolas,monospace;font-size:13px\" readonly placeholder=\"Edited CSV will appear here\"></textarea><div style=\"display:flex;gap:8px;margin-top:8px\"><button class=\"btn btn-secondary\" id=\"ceCopy\">📋 Copy CSV</button><button class=\"btn btn-secondary\" id=\"ceDownload\">⬇️ Download CSV</button></div><div id=\"ceStats\" style=\"margin-top:6px;font-size:12px;color:var(--text-dim)\"></div></div>",
+      "related": [
+        "csv-cleaner",
+        "csv-viewer",
+        "json-csv",
+        "csv-to-markdown"
+      ],
+      "seo_title_zh": "CSV 在线编辑器 | 免费 CSV 表格编辑工具",
+      "seo_title_en": "CSV Editor Online | Free CSV Table Editor Tool",
+      "features_zh": [
+        "粘贴 CSV 文本自动解析为可编辑表格",
+        "直接在单元格中点击编辑数据",
+        "添加/删除行和列",
+        "实时同步显示编辑后的 CSV 文本",
+        "一键复制或下载 CSV 文件",
+        "完全本地处理，数据不上传"
+      ],
+      "features_en": [
+        "Paste CSV and auto-parse into editable table",
+        "Click cells to edit data directly",
+        "Add/remove rows and columns",
+        "Live CSV output preview",
+        "One-click copy or download CSV",
+        "Fully local, no data upload"
+      ],
+      "faq_zh": [
+        [
+          "编辑后 CSV 格式会变吗？",
+          "编辑后的 CSV 使用标准格式输出：以逗号分隔，含逗号/换行的字段自动加引号包裹。"
+        ],
+        [
+          "支持哪些 CSV 分隔符？",
+          "目前支持逗号(,)分隔。检测到制表符时也支持 TSV。"
+        ],
+        [
+          "数据会上传到服务器吗？",
+          "不会。所有编辑处理在浏览器本地完成，数据不会离开你的设备。"
+        ],
+        [
+          "可以处理多少行数据？",
+          "没有硬性限制，但建议不超过 500 行以确保编辑流畅。大数据请使用专用 CSV 工具。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "Will the CSV format change after editing?",
+          "The output uses standard CSV: comma-separated, fields with commas/newlines auto-quoted."
+        ],
+        [
+          "What delimiters are supported?",
+          "Comma (,) is standard. Tab-delimited TSV is auto-detected."
+        ],
+        [
+          "Is my data uploaded?",
+          "No. All editing happens locally in your browser. Data stays on your device."
+        ],
+        [
+          "How many rows can I edit?",
+          "No hard limit, but ~500 rows recommended for smooth editing. Large data needs a dedicated tool."
+        ]
+      ]
+    },
+    {
+      "slug": "html-to-pdf",
+      "category": "generate",
+      "icon": "📄",
+      "name_zh": "HTML 转 PDF",
+      "name_en": "HTML to PDF",
+      "short_zh": "将 HTML 代码或网页内容在线转换为 PDF——纯浏览器本地处理",
+      "short_en": "Convert HTML or webpage content to PDF online — processed locally in browser",
+      "keywords_zh": "HTML 转 PDF,网页转PDF,在线HTML转PDF,PDF生成,HTML PDF转换,免费PDF工具,浏览器本地PDF",
+      "keywords_en": "html to pdf, webpage to pdf, online html to pdf converter, pdf generator, html pdf tool, free pdf converter",
+      "long_zh": "<p>免费的在线 HTML 转 PDF 工具。<strong>粘贴 HTML 代码或直接输入网页内容</strong>，利用浏览器内置打印功能生成 PDF。支持自定义纸张大小( A4 / Letter )和纵向/横向布局。</p><p>所有转换在浏览器本地完成，不会上传你的 HTML 内容。适合将文档、报表、发票等 HTML 内容导出为 PDF 存档、分享或打印。</p>",
+      "long_en": "<p>Free online HTML to PDF converter. <strong>Paste HTML code or web content</strong> and generate PDF using your browser's built-in print function. Supports custom paper size (A4/Letter) and portrait/landscape layout.</p><p>All conversion happens locally — your HTML never leaves your browser. Perfect for exporting documents, reports, invoices from HTML to PDF.</p>",
+      "ui_zh": "<div><div style=\"margin-bottom:12px\"><label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">HTML 内容</label><textarea id=\"hpInput\" style=\"width:100%;min-height:200px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"粘贴 HTML 代码...\">&lt;html&gt;&lt;body&gt;&lt;h1&gt;Hello, World!&lt;/h1&gt;&lt;p&gt;This is a test PDF.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</textarea></div><div style=\"display:flex;gap:16px;flex-wrap:wrap;margin-bottom:16px;align-items:center\"><label>纸张: <select id=\"hpPaper\" style=\"padding:6px 10px;border:1px solid var(--border);border-radius:6px;background:var(--card);color:var(--text)\"><option value=\"a4\">A4</option><option value=\"letter\">Letter</option></select></label><label>方向: <select id=\"hpOrientation\" style=\"padding:6px 10px;border:1px solid var(--border);border-radius:6px;background:var(--card);color:var(--text)\"><option value=\"portrait\">纵向</option><option value=\"landscape\">横向</option></select></label><label><input type=\"checkbox\" id=\"hpMargin\"> 无页边距</label><button class=\"btn\" id=\"hpGenerate\" style=\"margin-left:auto\">📄 生成 PDF</button></div><div id=\"hpStatus\" style=\"margin-top:8px;font-size:13px;color:var(--text-dim)\"></div></div>",
+      "ui_en": "<div><div style=\"margin-bottom:12px\"><label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">HTML Content</label><textarea id=\"hpInput\" style=\"width:100%;min-height:200px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"Paste HTML code...\">&lt;html&gt;&lt;body&gt;&lt;h1&gt;Hello, World!&lt;/h1&gt;&lt;p&gt;This is a test PDF.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</textarea></div><div style=\"display:flex;gap:16px;flex-wrap:wrap;margin-bottom:16px;align-items:center\"><label>Paper: <select id=\"hpPaper\" style=\"padding:6px 10px;border:1px solid var(--border);border-radius:6px;background:var(--card);color:var(--text)\"><option value=\"a4\">A4</option><option value=\"letter\">Letter</option></select></label><label>Layout: <select id=\"hpOrientation\" style=\"padding:6px 10px;border:1px solid var(--border);border-radius:6px;background:var(--card);color:var(--text)\"><option value=\"portrait\">Portrait</option><option value=\"landscape\">Landscape</option></select></label><label><input type=\"checkbox\" id=\"hpMargin\"> No Margins</label><button class=\"btn\" id=\"hpGenerate\" style=\"margin-left:auto\">📄 Generate PDF</button></div><div id=\"hpStatus\" style=\"margin-top:8px;font-size:13px;color:var(--text-dim)\"></div></div>",
+      "related": [
+        "image-to-pdf",
+        "pdf-merge",
+        "markdown-to-html",
+        "html-to-markdown"
+      ],
+      "seo_title_zh": "HTML 转 PDF | 在线免费 HTML 转 PDF 转换工具",
+      "seo_title_en": "HTML to PDF | Free Online HTML to PDF Converter",
+      "features_zh": [
+        "粘贴 HTML 代码即可生成 PDF",
+        "支持 A4 和 Letter 纸张大小",
+        "支持纵向和横向布局",
+        "可选无页边距模式",
+        "利用浏览器打印功能，无需服务器",
+        "完全本地处理，内容不上传"
+      ],
+      "features_en": [
+        "Paste HTML to generate PDF instantly",
+        "Supports A4 and Letter paper size",
+        "Portrait and landscape layout",
+        "Optional no-margin mode",
+        "Uses browser print API, no server needed",
+        "Fully local, content never uploaded"
+      ],
+      "faq_zh": [
+        [
+          "HTML 转 PDF 的质量如何？",
+          "利用浏览器的内置打印引擎生成 PDF，支持 CSS 样式、字体、图片，输出质量高。"
+        ],
+        [
+          "数据会上传到服务器吗？",
+          "不会。所有 HTML 处理和 PDF 生成都在浏览器本地完成，数据不会离开你的设备。"
+        ],
+        [
+          "支持图片和 CSS 样式吗？",
+          "支持。CSS 样式和图片引用需在 HTML 中使用内联或完整 URL。本地图片路径不受支持。"
+        ],
+        [
+          "生成的 PDF 可以保存打印吗？",
+          "可以。浏览器会弹出打印预览窗口，你可以另存为 PDF 或直接打印。"
+        ],
+        [
+          "HTML 代码有大小限制吗？",
+          "没有硬性限制，但建议不超过 2MB 以确保浏览器的渲染和打印性能。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "How is the PDF quality?",
+          "Uses the browser's built-in print engine, supporting CSS styles, fonts, images — high quality output."
+        ],
+        [
+          "Is data uploaded to a server?",
+          "No. All HTML processing and PDF generation happens locally in your browser."
+        ],
+        [
+          "Do images and CSS work?",
+          "Yes. CSS styles and image references must use inline styles or full URLs. Local file paths are not supported."
+        ],
+        [
+          "Can I save or print the PDF?",
+          "The browser opens the print preview dialog, where you can Save as PDF or print."
+        ],
+        [
+          "Is there a size limit?",
+          "No hard limit, but under 2MB is recommended for good browser rendering performance."
         ]
       ]
     }
