@@ -223,7 +223,8 @@
           "How large text is supported?",
           "Any size text that fits in browser memory can be processed."
         ]
-      ]
+      ],
+      "index": 0
     },
     {
       "slug": "case-converter",
@@ -280,7 +281,8 @@
           "What is snake_case?",
           "snake_case uses underscores to separate words, all lowercase, e.g.: user_name."
         ]
-      ]
+      ],
+      "index": 1
     },
     {
       "slug": "text-diff",
@@ -346,7 +348,8 @@
           "Can it compare code?",
           "Yes, especially suitable for comparing code differences."
         ]
-      ]
+      ],
+      "index": 2
     },
     {
       "slug": "json-formatter",
@@ -414,7 +417,8 @@
           "Is data uploaded to server?",
           "No. All processing happens locally in your browser."
         ]
-      ]
+      ],
+      "index": 3
     },
     {
       "slug": "regex-tester",
@@ -479,7 +483,8 @@
           "What's the difference between greedy and non-greedy?",
           "Greedy matches as much as possible; non-greedy (with ?) matches as little as possible."
         ]
-      ]
+      ],
+      "index": 4
     },
     {
       "slug": "base64",
@@ -544,7 +549,8 @@
           "Is Base64 encryption?",
           "No. Base64 is just encoding. Anyone can decode to get original data."
         ]
-      ]
+      ],
+      "index": 5
     },
     {
       "slug": "url-encoder",
@@ -607,7 +613,8 @@
           "What's the difference between encodeURI and encodeURIComponent?",
           "encodeURI doesn't encode URI reserved characters like :/?#[]@!$&'()*+,;=."
         ]
-      ]
+      ],
+      "index": 6
     },
     {
       "slug": "hash-generator",
@@ -672,7 +679,8 @@
           "What is hash collision?",
           "Two different inputs producing the same hash. Good hash algorithms have extremely low collision probability."
         ]
-      ]
+      ],
+      "index": 7
     },
     {
       "slug": "rot13-cipher",
@@ -748,7 +756,8 @@
           "What does ROT5 do?",
           "ROT5 only processes digits 0-9, shifting each digit by 5 (0↔5, 1↔6...). It is often used to obfuscate numbers like phone digits in spoilers."
         ]
-      ]
+      ],
+      "index": 8
     },
     {
       "slug": "punycode-converter",
@@ -824,7 +833,8 @@
           "What is the xn-- prefix?",
           "Punycode encoding starts with the xn-- prefix. The DNS system uses this prefix to recognize an encoded IDN label."
         ]
-      ]
+      ],
+      "index": 9
     },
     {
       "slug": "password-generator",
@@ -889,7 +899,8 @@
           "Are generated passwords logged?",
           "No. All passwords are generated locally in your browser and never uploaded."
         ]
-      ]
+      ],
+      "index": 10
     },
     {
       "slug": "uuid-generator",
@@ -964,7 +975,8 @@
           "Do these need internet to generate?",
           "Not at all. All generation happens locally in your browser, zero data uploaded."
         ]
-      ]
+      ],
+      "index": 11
     },
     {
       "slug": "markdown-table",
@@ -1039,7 +1051,8 @@
         "markdown-preview",
         "markdown-to-html",
         "csv-cleaner"
-      ]
+      ],
+      "index": 12
     },
     {
       "slug": "qr-code",
@@ -1104,7 +1117,8 @@
           "Do generated QR codes expire?",
           "No. QR code content is static and permanent."
         ]
-      ]
+      ],
+      "index": 13
     },
     {
       "slug": "timestamp",
@@ -1170,7 +1184,8 @@
           "What is the Year 2038 problem?",
           "32-bit signed integers will overflow on Jan 19, 2038. Most systems now use 64-bit timestamps."
         ]
-      ]
+      ],
+      "index": 14
     },
     {
       "slug": "base-converter",
@@ -1234,7 +1249,8 @@
           "How to convert negative numbers?",
           "Currently supports unsigned integers. Use two's complement for negatives."
         ]
-      ]
+      ],
+      "index": 15
     },
     {
       "slug": "jwt-decoder",
@@ -1300,7 +1316,8 @@
           "Is JWT encrypted?",
           "No. JWT is just Base64 encoded, anyone can decode and read its content."
         ]
-      ]
+      ],
+      "index": 16
     },
     {
       "slug": "json-csv",
@@ -1366,7 +1383,8 @@
           "How many rows are supported?",
           "As long as browser memory allows, tens of thousands of rows can be processed."
         ]
-      ]
+      ],
+      "index": 17
     },
     {
       "slug": "color-converter",
@@ -1430,7 +1448,8 @@
           "How to represent opacity?",
           "HEX uses #RRGGBBAA, RGB uses rgba(r, g, b, a)."
         ]
-      ]
+      ],
+      "index": 18
     },
     {
       "slug": "text-dedup",
@@ -1496,7 +1515,8 @@
           "How large text is supported?",
           "Hundreds of thousands of lines as browser memory permits."
         ]
-      ]
+      ],
+      "index": 19
     },
     {
       "slug": "html-entity",
@@ -1563,7 +1583,8 @@
           "Do Chinese characters need escaping?",
           "Generally not needed in UTF-8 encoding."
         ]
-      ]
+      ],
+      "index": 20
     },
     {
       "slug": "string-escape",
@@ -1632,7 +1653,8 @@
           "Is my input uploaded?",
           "No. All escaping and unescaping happens locally in your browser."
         ]
-      ]
+      ],
+      "index": 21
     },
     {
       "slug": "jsonpath",
@@ -1699,7 +1721,8 @@
           "Can it extract deeply nested fields?",
           "Yes, JSONPath supports any nesting level."
         ]
-      ]
+      ],
+      "index": 22
     },
     {
       "slug": "url-parser",
@@ -1765,7 +1788,8 @@
           "Are IPv6 addresses supported?",
           "Yes, standard IPv6 format URLs are supported."
         ]
-      ]
+      ],
+      "index": 23
     },
     {
       "slug": "url-query-builder",
@@ -1834,7 +1858,8 @@
           "Can it generate UTM links?",
           "Yes. Use the UTM template button and fill source, medium and campaign fields."
         ]
-      ]
+      ],
+      "index": 24
     },
     {
       "slug": "xml-formatter",
@@ -1901,7 +1926,8 @@
           "Does minifying XML change content?",
           "Minifying removes whitespace between tags. It usually preserves elements and attributes, but be careful if text nodes intentionally depend on whitespace."
         ]
-      ]
+      ],
+      "index": 25
     },
     {
       "slug": "markdown-preview",
@@ -1967,7 +1993,8 @@
           "Can it export HTML?",
           "Currently preview mode only. Export can be added later."
         ]
-      ]
+      ],
+      "index": 26
     },
     {
       "slug": "markdown-to-html",
@@ -2036,7 +2063,8 @@
           "What does safe mode do?",
           "Safe mode escapes raw HTML to reduce the risk of rendering scripts or unsafe tags from untrusted Markdown."
         ]
-      ]
+      ],
+      "index": 27
     },
     {
       "slug": "html-to-markdown",
@@ -2123,7 +2151,8 @@
           "Are scripts and styles preserved?",
           "No. script and style tags are automatically removed for clean output."
         ]
-      ]
+      ],
+      "index": 28
     },
     {
       "slug": "csv-viewer",
@@ -2193,7 +2222,8 @@
           "Is data uploaded to a server?",
           "No. CSV parsing, table preview, and JSON conversion all run locally in your browser."
         ]
-      ]
+      ],
+      "index": 29
     },
     {
       "slug": "qr-decode",
@@ -2256,7 +2286,8 @@
           "Can it read damaged QR codes?",
           "Damaged codes within error correction tolerance can be read."
         ]
-      ]
+      ],
+      "index": 30
     },
     {
       "slug": "cron-parser",
@@ -2319,7 +2350,8 @@
           "Is Quartz 6-field format supported?",
           "Standard 5-field crontab format is supported."
         ]
-      ]
+      ],
+      "index": 31
     },
     {
       "slug": "ip-subnet",
@@ -2384,7 +2416,8 @@
           "Is IPv6 supported?",
           "IPv4 currently supported, IPv6 can be added later."
         ]
-      ]
+      ],
+      "index": 32
     },
     {
       "slug": "lorem-cn",
@@ -2450,7 +2483,8 @@
           "Max character count?",
           "Recommended within 10000 chars, more allowed if browser performance permits."
         ]
-      ]
+      ],
+      "index": 33
     },
     {
       "slug": "random-string",
@@ -2516,7 +2550,8 @@
           "Can it include Chinese characters?",
           "ASCII charset only for now."
         ]
-      ]
+      ],
+      "index": 34
     },
     {
       "slug": "remove-lines",
@@ -2580,7 +2615,8 @@
           "Are large files supported?",
           "Any text size as browser memory permits."
         ]
-      ]
+      ],
+      "index": 35
     },
     {
       "slug": "json-to-ts",
@@ -2650,7 +2686,8 @@
           "Are large files supported?",
           "Yes, as long as browser memory allows."
         ]
-      ]
+      ],
+      "index": 36
     },
     {
       "slug": "sql-formatter",
@@ -2720,7 +2757,8 @@
           "Are large files supported?",
           "Yes, as long as browser memory allows."
         ]
-      ]
+      ],
+      "index": 37
     },
     {
       "slug": "toml-formatter",
@@ -2799,7 +2837,8 @@
           "Is data uploaded?",
           "No. All formatting and validation happens entirely in your browser. Your config never leaves your device."
         ]
-      ]
+      ],
+      "index": 38
     },
     {
       "slug": "yaml-formatter",
@@ -2867,7 +2906,8 @@
           "Why focus on indentation?",
           "YAML is indentation-sensitive. Tabs, odd indentation, list levels, and missing colons are among the most common real-world YAML issues."
         ]
-      ]
+      ],
+      "index": 39
     },
     {
       "slug": "base64-image",
@@ -2937,7 +2977,8 @@
           "Are large files supported?",
           "Yes, as long as browser memory allows."
         ]
-      ]
+      ],
+      "index": 40
     },
     {
       "slug": "json-to-go",
@@ -3007,7 +3048,8 @@
           "Are large files supported?",
           "Yes, as long as browser memory allows."
         ]
-      ]
+      ],
+      "index": 41
     },
     {
       "slug": "timestamp-converter",
@@ -3077,7 +3119,8 @@
           "Are large files supported?",
           "Yes, as long as browser memory allows."
         ]
-      ]
+      ],
+      "index": 42
     },
     {
       "slug": "json-to-yaml",
@@ -3145,7 +3188,8 @@
           "Are large files supported?",
           "Yes, as long as browser memory allows."
         ]
-      ]
+      ],
+      "index": 43
     },
     {
       "slug": "html-encoder",
@@ -3213,7 +3257,8 @@
           "Are large files supported?",
           "Yes, as long as browser memory allows."
         ]
-      ]
+      ],
+      "index": 44
     },
     {
       "slug": "image-compress",
@@ -3278,7 +3323,8 @@
           "How is the compressed image quality?",
           "Quality can be adjusted as needed. 80% quality usually reduces size by 50-70% with no visible difference."
         ]
-      ]
+      ],
+      "index": 45
     },
     {
       "slug": "image-convert",
@@ -3333,7 +3379,8 @@
         "image-compress",
         "image-filter",
         "image-base64"
-      ]
+      ],
+      "index": 46
     },
     {
       "slug": "image-resize",
@@ -3388,7 +3435,8 @@
         "image-compress",
         "image-watermark",
         "image-merge"
-      ]
+      ],
+      "index": 47
     },
     {
       "slug": "image-watermark",
@@ -3442,7 +3490,8 @@
         "image-merge",
         "image-convert",
         "image-resize"
-      ]
+      ],
+      "index": 48
     },
     {
       "slug": "image-base64",
@@ -3496,7 +3545,8 @@
         "base64-image",
         "image-convert",
         "base64"
-      ]
+      ],
+      "index": 49
     },
     {
       "slug": "image-merge",
@@ -3550,7 +3600,8 @@
         "image-convert",
         "image-resize",
         "image-watermark"
-      ]
+      ],
+      "index": 50
     },
     {
       "slug": "image-rotate",
@@ -3604,7 +3655,8 @@
         "image-convert",
         "image-resize",
         "image-filter"
-      ]
+      ],
+      "index": 51
     },
     {
       "slug": "image-filter",
@@ -3658,7 +3710,8 @@
         "image-convert",
         "image-resize",
         "image-rotate"
-      ]
+      ],
+      "index": 52
     },
     {
       "slug": "pdf-merge",
@@ -3710,7 +3763,8 @@
         "pdf-split",
         "image-to-pdf",
         "pdf-extract-text"
-      ]
+      ],
+      "index": 53
     },
     {
       "slug": "pdf-split",
@@ -3754,7 +3808,8 @@
         "pdf-merge",
         "image-to-pdf",
         "pdf-extract-text"
-      ]
+      ],
+      "index": 54
     },
     {
       "slug": "pdf-to-image",
@@ -3798,7 +3853,8 @@
         "image-to-pdf",
         "pdf-extract-text",
         "image-convert"
-      ]
+      ],
+      "index": 55
     },
     {
       "slug": "pdf-extract-text",
@@ -3842,7 +3898,8 @@
         "pdf-merge",
         "pdf-to-image",
         "image-to-pdf"
-      ]
+      ],
+      "index": 56
     },
     {
       "slug": "image-to-pdf",
@@ -3887,7 +3944,8 @@
         "pdf-split",
         "pdf-to-image",
         "image-convert"
-      ]
+      ],
+      "index": 57
     },
     {
       "slug": "text-sort",
@@ -3956,7 +4014,8 @@
           "Is my text uploaded to a server?",
           "No. All sorting happens locally in your browser. Your data never leaves your device."
         ]
-      ]
+      ],
+      "index": 58
     },
     {
       "slug": "json-diff",
@@ -4024,7 +4083,8 @@
           "Is data uploaded?",
           "No. All comparison happens locally, safe for sensitive data."
         ]
-      ]
+      ],
+      "index": 59
     },
     {
       "slug": "json-schema-validator",
@@ -4123,7 +4183,8 @@
         "json-diff",
         "json-to-yaml",
         "jsonpath"
-      ]
+      ],
+      "index": 60
     },
     {
       "slug": "json-schema-generator",
@@ -4212,7 +4273,8 @@
           "Is my data uploaded?",
           "No. All processing happens locally in your browser. Your data never leaves your device."
         ]
-      ]
+      ],
+      "index": 61
     },
     {
       "slug": "csv-cleaner",
@@ -4281,7 +4343,8 @@
           "Is data uploaded?",
           "No. All cleaning happens locally, safe for sensitive data."
         ]
-      ]
+      ],
+      "index": 62
     },
     {
       "slug": "text-replace",
@@ -4348,7 +4411,8 @@
           "Is my text uploaded to a server?",
           "No. All replacement happens locally in your browser, safe for sensitive content."
         ]
-      ]
+      ],
+      "index": 63
     },
     {
       "slug": "code-formatter",
@@ -4469,7 +4533,8 @@
           "Why use this instead of editor extensions?",
           "No installation needed—open the browser and go."
         ]
-      ]
+      ],
+      "index": 64
     },
     {
       "slug": "color-name-finder",
@@ -4540,7 +4605,8 @@
         ]
       ],
       "ui_zh": "<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:24px\"><div><label>颜色值 (Hex / RGB):</label><div class=\"input-row\"><input type=\"text\" id=\"cnfInput\" placeholder=\"#ff6347 或 rgb(255,99,71)\"></div><div style=\"display:flex;gap:8px;margin-top:12px\"><button class=\"btn\" id=\"cnfSearch\">查找颜色名称</button><button class=\"btn\" id=\"cnfCopyName\">复制名称</button></div><div id=\"cnfResult\" style=\"margin-top:16px\"></div></div><div style=\"display:flex;align-items:center;justify-content:center\"><div id=\"cnfPreview\" style=\"width:180px;height:180px;border-radius:16px;border:2px solid var(--border);display:flex;align-items:center;justify-content:center;color:white;font-weight:600;font-size:14px;text-shadow:0 1px 2px rgba(0,0,0,0.5);box-shadow:0 8px 32px rgba(0,0,0,0.2)\">输入颜色预览</div></div></div><div style=\"margin-top:24px\"><label>搜索颜色名称:</label><input type=\"text\" id=\"cnfFilter\" placeholder=\"red, blue, green... \"></div><div id=\"cnfPalette\" style=\"margin-top:12px;display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:8px\"></div>",
-      "ui_en": "<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:24px\"><div><label>Color Value (Hex / RGB):</label><div class=\"input-row\"><input type=\"text\" id=\"cnfInput\" placeholder=\"#ff6347 or rgb(255,99,71)\"></div><div style=\"display:flex;gap:8px;margin-top:12px\"><button class=\"btn\" id=\"cnfSearch\">Find Name</button><button class=\"btn\" id=\"cnfCopyName\">Copy Name</button></div><div id=\"cnfResult\" style=\"margin-top:16px\"></div></div><div style=\"display:flex;align-items:center;justify-content:center\"><div id=\"cnfPreview\" style=\"width:180px;height:180px;border-radius:16px;border:2px solid var(--border);display:flex;align-items:center;justify-content:center;color:white;font-weight:600;font-size:14px;text-shadow:0 1px 2px rgba(0,0,0,0.5);box-shadow:0 8px 32px rgba(0,0,0,0.2)\">Preview</div></div></div><div style=\"margin-top:24px\"><label>Filter color names:</label><input type=\"text\" id=\"cnfFilter\" placeholder=\"red, blue, green... \"></div><div id=\"cnfPalette\" style=\"margin-top:12px;display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:8px\"></div>"
+      "ui_en": "<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:24px\"><div><label>Color Value (Hex / RGB):</label><div class=\"input-row\"><input type=\"text\" id=\"cnfInput\" placeholder=\"#ff6347 or rgb(255,99,71)\"></div><div style=\"display:flex;gap:8px;margin-top:12px\"><button class=\"btn\" id=\"cnfSearch\">Find Name</button><button class=\"btn\" id=\"cnfCopyName\">Copy Name</button></div><div id=\"cnfResult\" style=\"margin-top:16px\"></div></div><div style=\"display:flex;align-items:center;justify-content:center\"><div id=\"cnfPreview\" style=\"width:180px;height:180px;border-radius:16px;border:2px solid var(--border);display:flex;align-items:center;justify-content:center;color:white;font-weight:600;font-size:14px;text-shadow:0 1px 2px rgba(0,0,0,0.5);box-shadow:0 8px 32px rgba(0,0,0,0.2)\">Preview</div></div></div><div style=\"margin-top:24px\"><label>Filter color names:</label><input type=\"text\" id=\"cnfFilter\" placeholder=\"red, blue, green... \"></div><div id=\"cnfPalette\" style=\"margin-top:12px;display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:8px\"></div>",
+      "index": 65
     },
     {
       "slug": "cron-generator",
@@ -4622,7 +4688,8 @@
         ]
       ],
       "ui_zh": "<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:24px\"><div><label>选择预设:</label><select id=\"cgPreset\" style=\"width:100%\"><option value=\"\">手动输入参数</option><option value=\"*/1 * * * *\">每分钟</option><option value=\"0 * * * *\">每小时整</option><option value=\"0 */2 * * *\">每 2 小时</option><option value=\"0 0 * * *\">每天午夜</option><option value=\"0 3 * * *\">每天凌晨 3 点</option><option value=\"0 9 * * *\">每天上午 9 点</option><option value=\"0 0 * * 1\">每周一午夜</option><option value=\"0 0 1 * *\">每月 1 号</option><option value=\"0 0 1 1 *\">每年 1 月 1 日</option><option value=\"*/5 * * * *\">每 5 分钟</option><option value=\"0 0,12 * * *\">每天中午和午夜</option><option value=\"30 4 * * 1-5\">工作日凌晨 4:30</option><option value=\"*/30 9-17 * * 1-5\">工作日 9-17 点每 30 分</option></select></div><div style=\"margin-top:16px\"><label>自然语言描述:</label><div class=\"input-row\"><input type=\"text\" id=\"cgNatural\" placeholder=\"每15分钟、每隔2小时、每天凌晨3点...\"></div><button class=\"btn\" id=\"cgParseNatural\" style=\"margin-top:8px\">生成</button></div></div><div><label>手动设置:</label><div style=\"display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px\"><div><label style=\"font-size:12px;color:var(--text-dim)\">分钟 (0-59)</label><input type=\"text\" id=\"cgMin\" value=\"*\" style=\"font-family:monospace\"></div><div><label style=\"font-size:12px;color:var(--text-dim)\">小时 (0-23)</label><input type=\"text\" id=\"cgHour\" value=\"*\" style=\"font-family:monospace\"></div><div><label style=\"font-size:12px;color:var(--text-dim)\">日期 (1-31)</label><input type=\"text\" id=\"cgDay\" value=\"*\" style=\"font-family:monospace\"></div><div><label style=\"font-size:12px;color:var(--text-dim)\">月份 (1-12)</label><input type=\"text\" id=\"cgMonth\" value=\"*\" style=\"font-family:monospace\"></div><div style=\"grid-column:1/-1\"><label style=\"font-size:12px;color:var(--text-dim)\">星期 (0-7, 0=周日)</label><input type=\"text\" id=\"cgDow\" value=\"*\" style=\"font-family:monospace\"></div></div><button class=\"btn\" id=\"cgBuild\" style=\"margin-top:12px\">生成表达式</button></div></div><div id=\"cgResult\" style=\"margin-top:16px\"></div><div id=\"cgNextRuns\" style=\"margin-top:12px\"></div>",
-      "ui_en": "<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:24px\"><div><label>Select Preset:</label><select id=\"cgPreset\" style=\"width:100%\"><option value=\"\">Manual input</option><option value=\"*/1 * * * *\">Every minute</option><option value=\"0 * * * *\">Every hour</option><option value=\"0 */2 * * *\">Every 2 hours</option><option value=\"0 0 * * *\">Daily at midnight</option><option value=\"0 3 * * *\">Daily at 3 AM</option><option value=\"0 9 * * *\">Daily at 9 AM</option><option value=\"0 0 * * 1\">Weekly Monday</option><option value=\"0 0 1 * *\">Monthly 1st</option><option value=\"0 0 1 1 *\">Yearly Jan 1</option><option value=\"*/5 * * * *\">Every 5 minutes</option><option value=\"0 0,12 * * *\">Noon and midnight</option><option value=\"30 4 * * 1-5\">Weekdays at 4:30</option><option value=\"*/30 9-17 * * 1-5\">Weekdays 9-17 every 30min</option></select></div><div style=\"margin-top:16px\"><label>Natural Language:</label><div class=\"input-row\"><input type=\"text\" id=\"cgNatural\" placeholder=\"every 15 min, every 2 hours, daily at 3 AM...\"></div><button class=\"btn\" id=\"cgParseNatural\" style=\"margin-top:8px\">Generate</button></div></div><div><label>Manual Setup:</label><div style=\"display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px\"><div><label style=\"font-size:12px;color:var(--text-dim)\">Minute (0-59)</label><input type=\"text\" id=\"cgMin\" value=\"*\" style=\"font-family:monospace\"></div><div><label style=\"font-size:12px;color:var(--text-dim)\">Hour (0-23)</label><input type=\"text\" id=\"cgHour\" value=\"*\" style=\"font-family:monospace\"></div><div><label style=\"font-size:12px;color:var(--text-dim)\">Day (1-31)</label><input type=\"text\" id=\"cgDay\" value=\"*\" style=\"font-family:monospace\"></div><div><label style=\"font-size:12px;color:var(--text-dim)\">Month (1-12)</label><input type=\"text\" id=\"cgMonth\" value=\"*\" style=\"font-family:monospace\"></div><div style=\"grid-column:1/-1\"><label style=\"font-size:12px;color:var(--text-dim)\">Weekday (0-7, 0=Sun)</label><input type=\"text\" id=\"cgDow\" value=\"*\" style=\"font-family:monospace\"></div></div><button class=\"btn\" id=\"cgBuild\" style=\"margin-top:12px\">Build</button></div></div><div id=\"cgResult\" style=\"margin-top:16px\"></div><div id=\"cgNextRuns\" style=\"margin-top:12px\"></div>"
+      "ui_en": "<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:24px\"><div><label>Select Preset:</label><select id=\"cgPreset\" style=\"width:100%\"><option value=\"\">Manual input</option><option value=\"*/1 * * * *\">Every minute</option><option value=\"0 * * * *\">Every hour</option><option value=\"0 */2 * * *\">Every 2 hours</option><option value=\"0 0 * * *\">Daily at midnight</option><option value=\"0 3 * * *\">Daily at 3 AM</option><option value=\"0 9 * * *\">Daily at 9 AM</option><option value=\"0 0 * * 1\">Weekly Monday</option><option value=\"0 0 1 * *\">Monthly 1st</option><option value=\"0 0 1 1 *\">Yearly Jan 1</option><option value=\"*/5 * * * *\">Every 5 minutes</option><option value=\"0 0,12 * * *\">Noon and midnight</option><option value=\"30 4 * * 1-5\">Weekdays at 4:30</option><option value=\"*/30 9-17 * * 1-5\">Weekdays 9-17 every 30min</option></select></div><div style=\"margin-top:16px\"><label>Natural Language:</label><div class=\"input-row\"><input type=\"text\" id=\"cgNatural\" placeholder=\"every 15 min, every 2 hours, daily at 3 AM...\"></div><button class=\"btn\" id=\"cgParseNatural\" style=\"margin-top:8px\">Generate</button></div></div><div><label>Manual Setup:</label><div style=\"display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px\"><div><label style=\"font-size:12px;color:var(--text-dim)\">Minute (0-59)</label><input type=\"text\" id=\"cgMin\" value=\"*\" style=\"font-family:monospace\"></div><div><label style=\"font-size:12px;color:var(--text-dim)\">Hour (0-23)</label><input type=\"text\" id=\"cgHour\" value=\"*\" style=\"font-family:monospace\"></div><div><label style=\"font-size:12px;color:var(--text-dim)\">Day (1-31)</label><input type=\"text\" id=\"cgDay\" value=\"*\" style=\"font-family:monospace\"></div><div><label style=\"font-size:12px;color:var(--text-dim)\">Month (1-12)</label><input type=\"text\" id=\"cgMonth\" value=\"*\" style=\"font-family:monospace\"></div><div style=\"grid-column:1/-1\"><label style=\"font-size:12px;color:var(--text-dim)\">Weekday (0-7, 0=Sun)</label><input type=\"text\" id=\"cgDow\" value=\"*\" style=\"font-family:monospace\"></div></div><button class=\"btn\" id=\"cgBuild\" style=\"margin-top:12px\">Build</button></div></div><div id=\"cgResult\" style=\"margin-top:16px\"></div><div id=\"cgNextRuns\" style=\"margin-top:12px\"></div>",
+      "index": 66
     },
     {
       "slug": "regex-pattern-library",
@@ -4695,7 +4762,8 @@
         ]
       ],
       "ui_zh": "<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px\"><div><label>选择分类:</label><select id=\"rplCategory\" style=\"width:100%\"></select></div></div><div id=\"rplPatternList\" style=\"margin-bottom:20px;max-height:360px;overflow-y:auto\"></div><div id=\"rplBuilder\" style=\"margin-bottom:20px\"></div><div style=\"margin-top:20px;padding-top:20px;border-top:1px solid var(--border)\"><label>自定义正则:</label><input type=\"text\" id=\"rplCustomPattern\" placeholder=\"输入或修改正则表达式...\" style=\"width:100%;font-family:monospace\"><div class=\"input-row\" style=\"margin-top:8px\"><label>标志:</label><input type=\"text\" id=\"rplTestFlags\" value=\"g\" style=\"width:80px;font-family:monospace\"><label style=\"margin-left:16px\">测试文本:</label></div><textarea id=\"rplTestInput\" placeholder=\"输入测试文本...\" style=\"min-height:100px;margin-top:8px\"></textarea><div style=\"margin-top:8px;font-size:13px;color:var(--text-dim)\" id=\"rplResultCount\"></div><div id=\"rplTestResult\" style=\"margin-top:8px\"></div></div>",
-      "ui_en": "<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px\"><div><label>Category:</label><select id=\"rplCategory\" style=\"width:100%\"></select></div></div><div id=\"rplPatternList\" style=\"margin-bottom:20px;max-height:360px;overflow-y:auto\"></div><div id=\"rplBuilder\" style=\"margin-bottom:20px\"></div><div style=\"margin-top:20px;padding-top:20px;border-top:1px solid var(--border)\"><label>Custom Pattern:</label><input type=\"text\" id=\"rplCustomPattern\" placeholder=\"Enter or modify regex...\" style=\"width:100%;font-family:monospace\"><div class=\"input-row\" style=\"margin-top:8px\"><label>Flags:</label><input type=\"text\" id=\"rplTestFlags\" value=\"g\" style=\"width:80px;font-family:monospace\"><label style=\"margin-left:16px\">Test Text:</label></div><textarea id=\"rplTestInput\" placeholder=\"Enter test text...\" style=\"min-height:100px;margin-top:8px\"></textarea><div style=\"margin-top:8px;font-size:13px;color:var(--text-dim)\" id=\"rplResultCount\"></div><div id=\"rplTestResult\" style=\"margin-top:8px\"></div></div>"
+      "ui_en": "<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px\"><div><label>Category:</label><select id=\"rplCategory\" style=\"width:100%\"></select></div></div><div id=\"rplPatternList\" style=\"margin-bottom:20px;max-height:360px;overflow-y:auto\"></div><div id=\"rplBuilder\" style=\"margin-bottom:20px\"></div><div style=\"margin-top:20px;padding-top:20px;border-top:1px solid var(--border)\"><label>Custom Pattern:</label><input type=\"text\" id=\"rplCustomPattern\" placeholder=\"Enter or modify regex...\" style=\"width:100%;font-family:monospace\"><div class=\"input-row\" style=\"margin-top:8px\"><label>Flags:</label><input type=\"text\" id=\"rplTestFlags\" value=\"g\" style=\"width:80px;font-family:monospace\"><label style=\"margin-left:16px\">Test Text:</label></div><textarea id=\"rplTestInput\" placeholder=\"Enter test text...\" style=\"min-height:100px;margin-top:8px\"></textarea><div style=\"margin-top:8px;font-size:13px;color:var(--text-dim)\" id=\"rplResultCount\"></div><div id=\"rplTestResult\" style=\"margin-top:8px\"></div></div>",
+      "index": 67
     },
     {
       "slug": "jwt-generator",
@@ -4775,7 +4843,8 @@
         ]
       ],
       "ui_zh": "<div style=\"margin-bottom:16px\"><label>算法:</label><select id=\"jwtgAlgo\" style=\"width:100%\"><option value=\"HS256\">HS256</option><option value=\"HS384\">HS384</option><option value=\"HS512\">HS512</option></select></div><div style=\"display:grid;grid-template-columns:1fr 1fr;gap:16px\"><div><label>Header (JSON):</label><textarea id=\"jwtgHeader\" style=\"min-height:100px;font-family:monospace;font-size:12px\">{\"alg\":\"HS256\",\"typ\":\"JWT\"}</textarea></div><div><label>Payload (JSON):</label><textarea id=\"jwtgPayload\" style=\"min-height:100px;font-family:monospace;font-size:12px\">{\"sub\":\"1234567890\",\"name\":\"John Doe\"}</textarea></div></div><div style=\"margin-top:12px\"><label>密钥 (Secret):</label><input type=\"text\" id=\"jwtgSecret\" value=\"your-256-bit-secret\" style=\"width:100%;font-family:monospace\"></div><div class=\"input-row\" style=\"margin-top:12px\"><label><input type=\"checkbox\" id=\"jwtgIat\" checked> 添加 iat (签发时间)</label><label style=\"margin-left:20px\">过期时间 (秒): <input type=\"number\" id=\"jwtgExp\" value=\"3600\" min=\"0\" style=\"width:80px\"></label></div><button class=\"btn\" id=\"jwtgGenerate\" style=\"margin-top:12px\">生成 JWT</button><div style=\"margin-top:16px\"><label>生成的 Token:</label><textarea id=\"jwtgOutput\" readonly style=\"min-height:60px;font-family:monospace;font-size:12px;word-break:break-all\"></textarea><button class=\"btn\" id=\"jwtgCopy\" style=\"margin-top:6px\">📋 复制 Token</button></div><div id=\"jwtgDecoded\"></div>",
-      "ui_en": "<div style=\"margin-bottom:16px\"><label>Algorithm:</label><select id=\"jwtgAlgo\" style=\"width:100%\"><option value=\"HS256\">HS256</option><option value=\"HS384\">HS384</option><option value=\"HS512\">HS512</option></select></div><div style=\"display:grid;grid-template-columns:1fr 1fr;gap:16px\"><div><label>Header (JSON):</label><textarea id=\"jwtgHeader\" style=\"min-height:100px;font-family:monospace;font-size:12px\">{\"alg\":\"HS256\",\"typ\":\"JWT\"}</textarea></div><div><label>Payload (JSON):</label><textarea id=\"jwtgPayload\" style=\"min-height:100px;font-family:monospace;font-size:12px\">{\"sub\":\"1234567890\",\"name\":\"John Doe\"}</textarea></div></div><div style=\"margin-top:12px\"><label>Secret:</label><input type=\"text\" id=\"jwtgSecret\" value=\"your-256-bit-secret\" style=\"width:100%;font-family:monospace\"></div><div class=\"input-row\" style=\"margin-top:12px\"><label><input type=\"checkbox\" id=\"jwtgIat\" checked> Add iat (issued at)</label><label style=\"margin-left:20px\">Expire (seconds): <input type=\"number\" id=\"jwtgExp\" value=\"3600\" min=\"0\" style=\"width:80px\"></label></div><button class=\"btn\" id=\"jwtgGenerate\" style=\"margin-top:12px\">Generate JWT</button><div style=\"margin-top:16px\"><label>Generated Token:</label><textarea id=\"jwtgOutput\" readonly style=\"min-height:60px;font-family:monospace;font-size:12px;word-break:break-all\"></textarea><button class=\"btn\" id=\"jwtgCopy\" style=\"margin-top:6px\">📋 Copy Token</button></div><div id=\"jwtgDecoded\"></div>"
+      "ui_en": "<div style=\"margin-bottom:16px\"><label>Algorithm:</label><select id=\"jwtgAlgo\" style=\"width:100%\"><option value=\"HS256\">HS256</option><option value=\"HS384\">HS384</option><option value=\"HS512\">HS512</option></select></div><div style=\"display:grid;grid-template-columns:1fr 1fr;gap:16px\"><div><label>Header (JSON):</label><textarea id=\"jwtgHeader\" style=\"min-height:100px;font-family:monospace;font-size:12px\">{\"alg\":\"HS256\",\"typ\":\"JWT\"}</textarea></div><div><label>Payload (JSON):</label><textarea id=\"jwtgPayload\" style=\"min-height:100px;font-family:monospace;font-size:12px\">{\"sub\":\"1234567890\",\"name\":\"John Doe\"}</textarea></div></div><div style=\"margin-top:12px\"><label>Secret:</label><input type=\"text\" id=\"jwtgSecret\" value=\"your-256-bit-secret\" style=\"width:100%;font-family:monospace\"></div><div class=\"input-row\" style=\"margin-top:12px\"><label><input type=\"checkbox\" id=\"jwtgIat\" checked> Add iat (issued at)</label><label style=\"margin-left:20px\">Expire (seconds): <input type=\"number\" id=\"jwtgExp\" value=\"3600\" min=\"0\" style=\"width:80px\"></label></div><button class=\"btn\" id=\"jwtgGenerate\" style=\"margin-top:12px\">Generate JWT</button><div style=\"margin-top:16px\"><label>Generated Token:</label><textarea id=\"jwtgOutput\" readonly style=\"min-height:60px;font-family:monospace;font-size:12px;word-break:break-all\"></textarea><button class=\"btn\" id=\"jwtgCopy\" style=\"margin-top:6px\">📋 Copy Token</button></div><div id=\"jwtgDecoded\"></div>",
+      "index": 68
     },
     {
       "slug": "js-minifier",
@@ -4862,7 +4931,8 @@
           "Does it support ES6+ or TypeScript?",
           "This tool primarily handles standard JavaScript. Some modern syntax (JSX, TypeScript) may not be processed correctly."
         ]
-      ]
+      ],
+      "index": 69
     },
     {
       "slug": "data-size-converter",
@@ -4941,7 +5011,8 @@
           "Is data uploaded?",
           "No. All conversion happens entirely in your browser. Your data never leaves your device."
         ]
-      ]
+      ],
+      "index": 70
     },
     {
       "slug": "json-sorter",
@@ -5024,7 +5095,8 @@
           "Are nested objects sorted too?",
           "Yes. Recursive sort mode handles nested objects and arrays at all levels."
         ]
-      ]
+      ],
+      "index": 71
     },
     {
       "slug": "text-statistics",
@@ -5106,7 +5178,8 @@
           "How accurate is sentence detection?",
           "It splits on punctuation marks (. ? ! ...). Accuracy is high for well-punctuated text."
         ]
-      ]
+      ],
+      "index": 72
     },
     {
       "slug": "css-minifier",
@@ -5193,7 +5266,8 @@
           "Does it support SCSS or Less?",
           "This tool primarily handles native CSS. Some SCSS/Less syntax may not be processed correctly."
         ]
-      ]
+      ],
+      "index": 73
     },
     {
       "slug": "html-table-extractor",
@@ -5280,7 +5354,8 @@
           "What's the JSON output format?",
           "First row is used as headers, creating an array of objects with header names as keys."
         ]
-      ]
+      ],
+      "index": 74
     },
     {
       "slug": "html-minifier",
@@ -5367,7 +5442,8 @@
           "Does it support JSX or template syntax?",
           "This tool primarily handles standard HTML. JSX, Vue templates, etc. may not work correctly."
         ]
-      ]
+      ],
+      "index": 75
     },
     {
       "slug": "csv-to-json",
@@ -5466,7 +5542,8 @@
           "Can I convert JSON back to CSV?",
           "This tool converts CSV→JSON only. Use 'JSON to CSV' for the reverse direction."
         ]
-      ]
+      ],
+      "index": 76
     },
     {
       "slug": "html-stripper",
@@ -5554,7 +5631,8 @@
           "How large can input be?",
           "As large as browser memory allows."
         ]
-      ]
+      ],
+      "index": 77
     },
     {
       "slug": "json-to-csv",
@@ -5643,7 +5721,8 @@
           "Is my data uploaded?",
           "No. All processing happens locally in your browser."
         ]
-      ]
+      ],
+      "index": 78
     },
     {
       "slug": "yaml-to-json",
@@ -5711,7 +5790,8 @@
           "What's the difference from the JSON to YAML tool?",
           "JSON to YAML generates YAML from JSON. This tool does the reverse — converting YAML configs to JSON format for those who prefer or need JSON output."
         ]
-      ]
+      ],
+      "index": 79
     },
     {
       "slug": "json-to-xml",
@@ -5788,7 +5868,8 @@
           "Why did my XML tag name change?",
           "XML element names cannot start with digits or contain spaces/special chars. Unsupported characters are replaced with underscores; digit-starting names get a prefix."
         ]
-      ]
+      ],
+      "index": 80
     },
     {
       "slug": "json-flatten",
@@ -5891,7 +5972,8 @@
           "Does it handle deeply nested objects?",
           "Yes. There is no practical depth limit — any valid JSON structure can be flattened."
         ]
-      ]
+      ],
+      "index": 81
     },
     {
       "slug": "css-gradient-generator",
@@ -5956,7 +6038,8 @@
           "Data uploaded?",
           "No,all local."
         ]
-      ]
+      ],
+      "index": 82
     },
     {
       "slug": "slug-generator",
@@ -6022,7 +6105,8 @@
           "Data uploaded?",
           "No,all local."
         ]
-      ]
+      ],
+      "index": 83
     },
     {
       "slug": "csv-to-markdown",
@@ -6093,7 +6177,8 @@
           "What about quoted CSV fields?",
           "The tool handles quoted fields automatically, including commas and newlines within quotes."
         ]
-      ]
+      ],
+      "index": 84
     },
     {
       "slug": "html-to-jsx",
@@ -6164,7 +6249,8 @@
           "Is data uploaded?",
           "No. All conversion happens locally in your browser."
         ]
-      ]
+      ],
+      "index": 85
     },
     {
       "slug": "xml-to-json",
@@ -6243,7 +6329,8 @@
           "Is my data safe?",
           "Everything runs locally in your browser. No data is sent to any server."
         ]
-      ]
+      ],
+      "index": 86
     },
     {
       "slug": "html-diff",
@@ -6322,7 +6409,8 @@
           "Is my data uploaded?",
           "No. Everything runs locally in your browser."
         ]
-      ]
+      ],
+      "index": 87
     },
     {
       "slug": "ini-converter",
@@ -6377,7 +6465,8 @@
         "xml-formatter"
       ],
       "ui_zh": "<div style=\"margin-bottom:12px;display:flex;gap:8px;flex-wrap:wrap;align-items:center\"><label style=\"font-size:13px\">源格式：</label><select id=\"iniSourceFormat\" style=\"padding:4px 8px;border:1px solid var(--border);border-radius:4px;background:var(--bg-card);color:var(--text)\"><option value=\"ini\">INI</option><option value=\"json\">JSON</option><option value=\"yaml\">YAML</option><option value=\"toml\">TOML</option></select><label style=\"font-size:13px;margin-left:12px\">目标格式：</label><select id=\"iniTargetFormat\" style=\"padding:4px 8px;border:1px solid var(--border);border-radius:4px;background:var(--bg-card);color:var(--text)\"><option value=\"json\">JSON</option><option value=\"yaml\">YAML</option><option value=\"toml\">TOML</option><option value=\"ini\">INI</option></select><label style=\"margin-left:12px;font-size:13px\"><input type=\"checkbox\" id=\"iniStripComments\"> 去除注释</label></div><textarea id=\"iniInput\" style=\"width:100%;min-height:220px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"粘贴源配置文件...\"></textarea><div style=\"margin-top:8px;display:flex;gap:8px;flex-wrap:wrap\"><button class=\"btn\" id=\"iniConvertBtn\">转换</button><button class=\"btn btn-secondary\" id=\"iniSwapBtn\">⇄ 交换格式</button><button class=\"btn btn-secondary\" id=\"iniClearBtn\">清空</button></div><textarea id=\"iniOutput\" readonly style=\"width:100%;min-height:220px;font-family:Consolas,monospace;font-size:13px;margin-top:12px\" placeholder=\"转换结果...\"></textarea><div id=\"iniMsg\" style=\"margin-top:8px;font-size:13px\"></div>",
-      "ui_en": "<div style=\"margin-bottom:12px;display:flex;gap:8px;flex-wrap:wrap;align-items:center\"><label style=\"font-size:13px\">From：</label><select id=\"iniSourceFormat\" style=\"padding:4px 8px;border:1px solid var(--border);border-radius:4px;background:var(--bg-card);color:var(--text)\"><option value=\"ini\">INI</option><option value=\"json\">JSON</option><option value=\"yaml\">YAML</option><option value=\"toml\">TOML</option></select><label style=\"font-size:13px;margin-left:12px\">To：</label><select id=\"iniTargetFormat\" style=\"padding:4px 8px;border:1px solid var(--border);border-radius:4px;background:var(--bg-card);color:var(--text)\"><option value=\"json\">JSON</option><option value=\"yaml\">YAML</option><option value=\"toml\">TOML</option><option value=\"ini\">INI</option></select><label style=\"margin-left:12px;font-size:13px\"><input type=\"checkbox\" id=\"iniStripComments\"> Strip comments</label></div><textarea id=\"iniInput\" style=\"width:100%;min-height:220px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"Paste config to convert...\"></textarea><div style=\"margin-top:8px;display:flex;gap:8px;flex-wrap:wrap\"><button class=\"btn\" id=\"iniConvertBtn\">Convert</button><button class=\"btn btn-secondary\" id=\"iniSwapBtn\">⇄ Swap</button><button class=\"btn btn-secondary\" id=\"iniClearBtn\">Clear</button></div><textarea id=\"iniOutput\" readonly style=\"width:100%;min-height:220px;font-family:Consolas,monospace;font-size:13px;margin-top:12px\" placeholder=\"Conversion result...\"></textarea><div id=\"iniMsg\" style=\"margin-top:8px;font-size:13px\"></div>"
+      "ui_en": "<div style=\"margin-bottom:12px;display:flex;gap:8px;flex-wrap:wrap;align-items:center\"><label style=\"font-size:13px\">From：</label><select id=\"iniSourceFormat\" style=\"padding:4px 8px;border:1px solid var(--border);border-radius:4px;background:var(--bg-card);color:var(--text)\"><option value=\"ini\">INI</option><option value=\"json\">JSON</option><option value=\"yaml\">YAML</option><option value=\"toml\">TOML</option></select><label style=\"font-size:13px;margin-left:12px\">To：</label><select id=\"iniTargetFormat\" style=\"padding:4px 8px;border:1px solid var(--border);border-radius:4px;background:var(--bg-card);color:var(--text)\"><option value=\"json\">JSON</option><option value=\"yaml\">YAML</option><option value=\"toml\">TOML</option><option value=\"ini\">INI</option></select><label style=\"margin-left:12px;font-size:13px\"><input type=\"checkbox\" id=\"iniStripComments\"> Strip comments</label></div><textarea id=\"iniInput\" style=\"width:100%;min-height:220px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"Paste config to convert...\"></textarea><div style=\"margin-top:8px;display:flex;gap:8px;flex-wrap:wrap\"><button class=\"btn\" id=\"iniConvertBtn\">Convert</button><button class=\"btn btn-secondary\" id=\"iniSwapBtn\">⇄ Swap</button><button class=\"btn btn-secondary\" id=\"iniClearBtn\">Clear</button></div><textarea id=\"iniOutput\" readonly style=\"width:100%;min-height:220px;font-family:Consolas,monospace;font-size:13px;margin-top:12px\" placeholder=\"Conversion result...\"></textarea><div id=\"iniMsg\" style=\"margin-top:8px;font-size:13px\"></div>",
+      "index": 88
     },
     {
       "slug": "md-table-formatter",
@@ -6432,7 +6521,8 @@
         "html-table-extractor"
       ],
       "ui_zh": "<div style=\"margin-bottom:12px\"><label style=\"font-size:13px;font-weight:600\">输入 Markdown 表格</label><textarea id=\"mdtInput\" style=\"width:100%;min-height:180px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"| A | B |\\n| --- | --- |\\n| 1 | 2 |\"></textarea></div><div style=\"display:flex;flex-wrap:wrap;gap:12px;margin-bottom:12px;align-items:center\"><label style=\"font-size:13px\">按列排序：</label><select id=\"mdtSortCol\" style=\"padding:4px 8px;border:1px solid var(--border);border-radius:4px;background:var(--bg-card);color:var(--text)\"><option value=\"0\">第 1 列</option></select><select id=\"mdtSortDir\" style=\"padding:4px 8px;border:1px solid var(--border);border-radius:4px;background:var(--bg-card);color:var(--text)\"><option value=\"asc\">升序</option><option value=\"desc\">降序</option></select><button class=\"btn\" id=\"mdtSortBtn\">排序</button><span style=\"opacity:0.5\">|</span><label style=\"font-size:13px\">对齐：</label><select id=\"mdtAlign\" style=\"padding:4px 8px;border:1px solid var(--border);border-radius:4px;background:var(--bg-card);color:var(--text)\"><option value=\"\">保持原样</option><option value=\"left\">左对齐</option><option value=\"center\">居中</option><option value=\"right\">右对齐</option></select><button class=\"btn\" id=\"mdtAlignBtn\">格式化</button><span style=\"opacity:0.5\">|</span><button class=\"btn btn-secondary\" id=\"mdtStripBtn\">转纯文本</button><button class=\"btn btn-secondary\" id=\"mdtCopyBtn\">复制</button></div><textarea id=\"mdtOutput\" readonly style=\"width:100%;min-height:180px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"结果...\"></textarea><div id=\"mdtMsg\" style=\"margin-top:8px;font-size:13px\"></div>",
-      "ui_en": "<div style=\"margin-bottom:12px\"><label style=\"font-size:13px;font-weight:600\">Input Markdown Table</label><textarea id=\"mdtInput\" style=\"width:100%;min-height:180px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"| A | B |\\n| --- | --- |\\n| 1 | 2 |\"></textarea></div><div style=\"display:flex;flex-wrap:wrap;gap:12px;margin-bottom:12px;align-items:center\"><label style=\"font-size:13px\">Sort by：</label><select id=\"mdtSortCol\" style=\"padding:4px 8px;border:1px solid var(--border);border-radius:4px;background:var(--bg-card);color:var(--text)\"><option value=\"0\">Column 1</option></select><select id=\"mdtSortDir\" style=\"padding:4px 8px;border:1px solid var(--border);border-radius:4px;background:var(--bg-card);color:var(--text)\"><option value=\"asc\">Asc</option><option value=\"desc\">Desc</option></select><button class=\"btn\" id=\"mdtSortBtn\">Sort</button><span style=\"opacity:0.5\">|</span><label style=\"font-size:13px\">Align：</label><select id=\"mdtAlign\" style=\"padding:4px 8px;border:1px solid var(--border);border-radius:4px;background:var(--bg-card);color:var(--text)\"><option value=\"\">Keep</option><option value=\"left\">Left</option><option value=\"center\">Center</option><option value=\"right\">Right</option></select><button class=\"btn\" id=\"mdtAlignBtn\">Format</button><span style=\"opacity:0.5\">|</span><button class=\"btn btn-secondary\" id=\"mdtStripBtn\">To Plain Text</button><button class=\"btn btn-secondary\" id=\"mdtCopyBtn\">Copy</button></div><textarea id=\"mdtOutput\" readonly style=\"width:100%;min-height:180px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"Result...\"></textarea><div id=\"mdtMsg\" style=\"margin-top:8px;font-size:13px\"></div>"
+      "ui_en": "<div style=\"margin-bottom:12px\"><label style=\"font-size:13px;font-weight:600\">Input Markdown Table</label><textarea id=\"mdtInput\" style=\"width:100%;min-height:180px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"| A | B |\\n| --- | --- |\\n| 1 | 2 |\"></textarea></div><div style=\"display:flex;flex-wrap:wrap;gap:12px;margin-bottom:12px;align-items:center\"><label style=\"font-size:13px\">Sort by：</label><select id=\"mdtSortCol\" style=\"padding:4px 8px;border:1px solid var(--border);border-radius:4px;background:var(--bg-card);color:var(--text)\"><option value=\"0\">Column 1</option></select><select id=\"mdtSortDir\" style=\"padding:4px 8px;border:1px solid var(--border);border-radius:4px;background:var(--bg-card);color:var(--text)\"><option value=\"asc\">Asc</option><option value=\"desc\">Desc</option></select><button class=\"btn\" id=\"mdtSortBtn\">Sort</button><span style=\"opacity:0.5\">|</span><label style=\"font-size:13px\">Align：</label><select id=\"mdtAlign\" style=\"padding:4px 8px;border:1px solid var(--border);border-radius:4px;background:var(--bg-card);color:var(--text)\"><option value=\"\">Keep</option><option value=\"left\">Left</option><option value=\"center\">Center</option><option value=\"right\">Right</option></select><button class=\"btn\" id=\"mdtAlignBtn\">Format</button><span style=\"opacity:0.5\">|</span><button class=\"btn btn-secondary\" id=\"mdtStripBtn\">To Plain Text</button><button class=\"btn btn-secondary\" id=\"mdtCopyBtn\">Copy</button></div><textarea id=\"mdtOutput\" readonly style=\"width:100%;min-height:180px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"Result...\"></textarea><div id=\"mdtMsg\" style=\"margin-top:8px;font-size:13px\"></div>",
+      "index": 89
     },
     {
       "slug": "json-validator",
@@ -6499,7 +6589,8 @@
         "json-to-yaml"
       ],
       "ui_zh": "<div style=\"margin-bottom:12px\"><label style=\"font-size:13px;font-weight:600\">输入 JSON</label><textarea id=\"jvInput\" style=\"width:100%;min-height:220px;font-family:Consolas,monospace;font-size:13px;line-height:1.5\" placeholder=\"在此粘贴 JSON 数据...\"></textarea></div><div style=\"display:flex;flex-wrap:wrap;gap:10px;margin-bottom:12px;align-items:center\"><button class=\"btn\" id=\"jvValidateBtn\">验证</button><button class=\"btn btn-secondary\" id=\"jvFormatBtn\">格式化</button><button class=\"btn btn-secondary\" id=\"jvMinifyBtn\">压缩</button><button class=\"btn btn-secondary\" id=\"jvCopyBtn\">复制结果</button></div><div id=\"jvResult\" style=\"position:relative\"><textarea id=\"jvOutput\" readonly style=\"width:100%;min-height:220px;font-family:Consolas,monospace;font-size:13px;line-height:1.5\" placeholder=\"验证结果...\"></textarea><div id=\"jvError\" style=\"background:var(--bg-card);border:1px solid var(--error);border-radius:6px;padding:12px;margin-top:8px;display:none;font-family:Consolas,monospace;font-size:13px;line-height:1.6;white-space:pre-wrap;word-break:break-all\"></div></div><div id=\"jvMsg\" style=\"margin-top:8px;font-size:13px\"></div>",
-      "ui_en": "<div style=\"margin-bottom:12px\"><label style=\"font-size:13px;font-weight:600\">Input JSON</label><textarea id=\"jvInput\" style=\"width:100%;min-height:220px;font-family:Consolas,monospace;font-size:13px;line-height:1.5\" placeholder=\"Paste JSON data here...\"></textarea></div><div style=\"display:flex;flex-wrap:wrap;gap:10px;margin-bottom:12px;align-items:center\"><button class=\"btn\" id=\"jvValidateBtn\">Validate</button><button class=\"btn btn-secondary\" id=\"jvFormatBtn\">Format</button><button class=\"btn btn-secondary\" id=\"jvMinifyBtn\">Minify</button><button class=\"btn btn-secondary\" id=\"jvCopyBtn\">Copy</button></div><div id=\"jvResult\" style=\"position:relative\"><textarea id=\"jvOutput\" readonly style=\"width:100%;min-height:220px;font-family:Consolas,monospace;font-size:13px;line-height:1.5\" placeholder=\"Validation result...\"></textarea><div id=\"jvError\" style=\"background:var(--bg-card);border:1px solid var(--error);border-radius:6px;padding:12px;margin-top:8px;display:none;font-family:Consolas,monospace;font-size:13px;line-height:1.6;white-space:pre-wrap;word-break:break-all\"></div></div><div id=\"jvMsg\" style=\"margin-top:8px;font-size:13px\"></div>"
+      "ui_en": "<div style=\"margin-bottom:12px\"><label style=\"font-size:13px;font-weight:600\">Input JSON</label><textarea id=\"jvInput\" style=\"width:100%;min-height:220px;font-family:Consolas,monospace;font-size:13px;line-height:1.5\" placeholder=\"Paste JSON data here...\"></textarea></div><div style=\"display:flex;flex-wrap:wrap;gap:10px;margin-bottom:12px;align-items:center\"><button class=\"btn\" id=\"jvValidateBtn\">Validate</button><button class=\"btn btn-secondary\" id=\"jvFormatBtn\">Format</button><button class=\"btn btn-secondary\" id=\"jvMinifyBtn\">Minify</button><button class=\"btn btn-secondary\" id=\"jvCopyBtn\">Copy</button></div><div id=\"jvResult\" style=\"position:relative\"><textarea id=\"jvOutput\" readonly style=\"width:100%;min-height:220px;font-family:Consolas,monospace;font-size:13px;line-height:1.5\" placeholder=\"Validation result...\"></textarea><div id=\"jvError\" style=\"background:var(--bg-card);border:1px solid var(--error);border-radius:6px;padding:12px;margin-top:8px;display:none;font-family:Consolas,monospace;font-size:13px;line-height:1.6;white-space:pre-wrap;word-break:break-all\"></div></div><div id=\"jvMsg\" style=\"margin-top:8px;font-size:13px\"></div>",
+      "index": 90
     },
     {
       "slug": "unicode-converter",
@@ -6568,7 +6659,8 @@
         "punycode-converter"
       ],
       "ui_zh": "<div style=\"margin-bottom:12px\"><label style=\"font-size:13px;font-weight:600\">输入文本</label><textarea id=\"ucInput\" style=\"width:100%;min-height:150px;font-family:Consolas,monospace;font-size:13px;line-height:1.5\" placeholder=\"粘贴文本或 Unicode 编码...\"></textarea></div><div style=\"display:flex;flex-wrap:wrap;gap:10px;margin-bottom:12px;align-items:center\"><label style=\"font-size:13px\">来源格式：</label><select id=\"ucFrom\" style=\"padding:4px 8px;border:1px solid var(--border);border-radius:4px;background:var(--bg-card);color:var(--text)\"><option value=\"auto\">自动检测</option><option value=\"text\">纯文本</option><option value=\"uescape\">\\uXXXX 转义</option><option value=\"hex\">十六进制 (FF)</option><option value=\"decimal\">十进制码点</option><option value=\"htmlentity\">HTML 实体</option></select><span style=\"opacity:0.5\">→</span><label style=\"font-size:13px\">目标格式：</label><select id=\"ucTo\" style=\"padding:4px 8px;border:1px solid var(--border);border-radius:4px;background:var(--bg-card);color:var(--text)\"><option value=\"text\">纯文本</option><option value=\"uescape\">\\uXXXX 转义</option><option value=\"hex\">十六进制 (FF)</option><option value=\"decimal\">十进制码点</option><option value=\"htmlentity\">HTML 实体</option></select><button class=\"btn\" id=\"ucConvertBtn\">转换</button></div><div style=\"margin-bottom:12px\"><textarea id=\"ucOutput\" readonly style=\"width:100%;min-height:150px;font-family:Consolas,monospace;font-size:13px;line-height:1.5\" placeholder=\"转换结果...\"></textarea></div><div style=\"display:flex;flex-wrap:wrap;gap:10px;margin-bottom:12px\"><button class=\"btn btn-secondary\" id=\"ucCopyBtn\">复制结果</button><span style=\"font-size:12px;opacity:0.6\" id=\"ucCharCount\"></span></div><div id=\"ucMsg\" style=\"margin-top:8px;font-size:13px\"></div>",
-      "ui_en": "<div style=\"margin-bottom:12px\"><label style=\"font-size:13px;font-weight:600\">Input</label><textarea id=\"ucInput\" style=\"width:100%;min-height:150px;font-family:Consolas,monospace;font-size:13px;line-height:1.5\" placeholder=\"Paste text or Unicode encoding...\"></textarea></div><div style=\"display:flex;flex-wrap:wrap;gap:10px;margin-bottom:12px;align-items:center\"><label style=\"font-size:13px\">From:</label><select id=\"ucFrom\" style=\"padding:4px 8px;border:1px solid var(--border);border-radius:4px;background:var(--bg-card);color:var(--text)\"><option value=\"auto\">Auto-detect</option><option value=\"text\">Plain Text</option><option value=\"uescape\">\\uXXXX Escape</option><option value=\"hex\">Hex (FF)</option><option value=\"decimal\">Decimal Codepoint</option><option value=\"htmlentity\">HTML Entity</option></select><span style=\"opacity:0.5\">→</span><label style=\"font-size:13px\">To:</label><select id=\"ucTo\" style=\"padding:4px 8px;border:1px solid var(--border);border-radius:4px;background:var(--bg-card);color:var(--text)\"><option value=\"text\">Plain Text</option><option value=\"uescape\">\\uXXXX Escape</option><option value=\"hex\">Hex (FF)</option><option value=\"decimal\">Decimal Codepoint</option><option value=\"htmlentity\">HTML Entity</option></select><button class=\"btn\" id=\"ucConvertBtn\">Convert</button></div><div style=\"margin-bottom:12px\"><textarea id=\"ucOutput\" readonly style=\"width:100%;min-height:150px;font-family:Consolas,monospace;font-size:13px;line-height:1.5\" placeholder=\"Conversion result...\"></textarea></div><div style=\"display:flex;flex-wrap:wrap;gap:10px;margin-bottom:12px\"><button class=\"btn btn-secondary\" id=\"ucCopyBtn\">Copy</button><span style=\"font-size:12px;opacity:0.6\" id=\"ucCharCount\"></span></div><div id=\"ucMsg\" style=\"margin-top:8px;font-size:13px\"></div>"
+      "ui_en": "<div style=\"margin-bottom:12px\"><label style=\"font-size:13px;font-weight:600\">Input</label><textarea id=\"ucInput\" style=\"width:100%;min-height:150px;font-family:Consolas,monospace;font-size:13px;line-height:1.5\" placeholder=\"Paste text or Unicode encoding...\"></textarea></div><div style=\"display:flex;flex-wrap:wrap;gap:10px;margin-bottom:12px;align-items:center\"><label style=\"font-size:13px\">From:</label><select id=\"ucFrom\" style=\"padding:4px 8px;border:1px solid var(--border);border-radius:4px;background:var(--bg-card);color:var(--text)\"><option value=\"auto\">Auto-detect</option><option value=\"text\">Plain Text</option><option value=\"uescape\">\\uXXXX Escape</option><option value=\"hex\">Hex (FF)</option><option value=\"decimal\">Decimal Codepoint</option><option value=\"htmlentity\">HTML Entity</option></select><span style=\"opacity:0.5\">→</span><label style=\"font-size:13px\">To:</label><select id=\"ucTo\" style=\"padding:4px 8px;border:1px solid var(--border);border-radius:4px;background:var(--bg-card);color:var(--text)\"><option value=\"text\">Plain Text</option><option value=\"uescape\">\\uXXXX Escape</option><option value=\"hex\">Hex (FF)</option><option value=\"decimal\">Decimal Codepoint</option><option value=\"htmlentity\">HTML Entity</option></select><button class=\"btn\" id=\"ucConvertBtn\">Convert</button></div><div style=\"margin-bottom:12px\"><textarea id=\"ucOutput\" readonly style=\"width:100%;min-height:150px;font-family:Consolas,monospace;font-size:13px;line-height:1.5\" placeholder=\"Conversion result...\"></textarea></div><div style=\"display:flex;flex-wrap:wrap;gap:10px;margin-bottom:12px\"><button class=\"btn btn-secondary\" id=\"ucCopyBtn\">Copy</button><span style=\"font-size:12px;opacity:0.6\" id=\"ucCharCount\"></span></div><div id=\"ucMsg\" style=\"margin-top:8px;font-size:13px\"></div>",
+      "index": 91
     },
     {
       "slug": "css-filter-generator",
@@ -6649,7 +6741,8 @@
           "Is the effect consistent across browsers?",
           "Most filters work consistently across modern browsers."
         ]
-      ]
+      ],
+      "index": 92
     },
     {
       "slug": "pem-decoder",
@@ -6729,7 +6822,8 @@
           "How to get PEM cert from a server?",
           "Run: openssl s_client -connect example.com:443 -showcerts"
         ]
-      ]
+      ],
+      "index": 93
     },
     {
       "slug": "http-status",
@@ -6811,7 +6905,8 @@
           "Does this tool need network requests?",
           "No. All status code data is embedded in the page — it works offline."
         ]
-      ]
+      ],
+      "index": 94
     },
     {
       "slug": "emoji-picker",
@@ -6885,7 +6980,8 @@
           "Can I search for specific emojis?",
           "Yes! Type keywords like 'heart', 'smile', or 'sun' in the search box."
         ]
-      ]
+      ],
+      "index": 95
     },
     {
       "slug": "html-table-generator",
@@ -6953,7 +7049,8 @@
           "Data uploaded?",
           "No. Everything stays in your browser."
         ]
-      ]
+      ],
+      "index": 96
     },
     {
       "slug": "color-palette",
@@ -7016,6 +7113,73 @@
         [
           "Which formats?",
           "Hex (#RRGGBB)."
+        ]
+      ],
+      "index": 97
+    },
+    {
+      "index": 98,
+      "slug": "color-picker",
+      "icon": "🎨",
+      "category": "dev",
+      "name_zh": "颜色选择器",
+      "name_en": "Color Picker",
+      "short_zh": "可视化选色，支持 HEX/RGB/HSL/HSV，实时预览",
+      "short_en": "Visual color picker with HEX/RGB/HSL/HSV support and live preview",
+      "keywords_zh": "颜色选择器,取色器,color picker,十六进制颜色,RGB,HSL,调色板",
+      "keywords_en": "color picker,hex color,rgb color,hsl color,color wheel,eyedropper",
+      "long_zh": "<p>免费的在线颜色选择器，支持可视化选色和多种色彩模式（HEX、RGB、HSL、HSV）。实时预览颜色，复制格式代码，适合设计师和开发者快速获取颜色值。</p><p>所有颜色计算在浏览器本地完成，不会上传到任何服务器。</p>",
+      "long_en": "<p>Free online color picker with visual color selection. Supports HEX, RGB, HSL, and HSV color modes. Live preview, easy copy. Perfect for designers and developers.</p><p>All color processing happens locally in your browser — nothing is uploaded.</p>",
+      "ui_zh": "<div style=\"display:grid;grid-template-columns:250px 1fr;gap:24px\"><div><input type=\"color\" id=\"cpColor\" value=\"#4A90D9\" style=\"width:220px;height:220px;border:none;cursor:pointer;padding:0\"><div style=\"margin-top:8px;display:flex;gap:8px;flex-wrap:wrap\"><button class=\"btn btn-sm\" data-cp=\"#FF0000\" style=\"width:32px;height:32px;background:#FF0000;border:1px solid #ddd;border-radius:4px;cursor:pointer\"></button><button class=\"btn btn-sm\" data-cp=\"#00AA00\" style=\"width:32px;height:32px;background:#00AA00;border:1px solid #ddd;border-radius:4px;cursor:pointer\"></button><button class=\"btn btn-sm\" data-cp=\"#0000FF\" style=\"width:32px;height:32px;background:#0000FF;border:1px solid #ddd;border-radius:4px;cursor:pointer\"></button><button class=\"btn btn-sm\" data-cp=\"#FFD700\" style=\"width:32px;height:32px;background:#FFD700;border:1px solid #ddd;border-radius:4px;cursor:pointer\"></button><button class=\"btn btn-sm\" data-cp=\"#FF69B4\" style=\"width:32px;height:32px;background:#FF69B4;border:1px solid #ddd;border-radius:4px;cursor:pointer\"></button><button class=\"btn btn-sm\" data-cp=\"#00CED1\" style=\"width:32px;height:32px;background:#00CED1;border:1px solid #ddd;border-radius:4px;cursor:pointer\"></button><button class=\"btn btn-sm\" data-cp=\"#8B4513\" style=\"width:32px;height:32px;background:#8B4513;border:1px solid #ddd;border-radius:4px;cursor:pointer\"></button><button class=\"btn btn-sm\" data-cp=\"#7B68EE\" style=\"width:32px;height:32px;background:#7B68EE;border:1px solid #ddd;border-radius:4px;cursor:pointer\"></button></div></div><div><div style=\"display:grid;grid-template-columns:1fr 1fr;gap:12px\"><div><label>HEX</label><div style=\"display:flex;gap:4px\"><input id=\"cpHex\" value=\"#4A90D9\" style=\"flex:1;font-family:mono\"><button class=\"btn btn-sm\" id=\"cpCopyHex\" title=\"复制\">📋</button></div></div><div><label>RGB</label><div style=\"display:flex;gap:4px\"><input id=\"cpRGB\" value=\"rgb(74,144,217)\" style=\"flex:1;font-family:mono\"><button class=\"btn btn-sm\" id=\"cpCopyRGB\" title=\"复制\">📋</button></div></div><div><label>HSL</label><div style=\"display:flex;gap:4px\"><input id=\"cpHSL\" value=\"hsl(211,65%,57%)\" style=\"flex:1;font-family:mono\"><button class=\"btn btn-sm\" id=\"cpCopyHSL\" title=\"复制\">📋</button></div></div><div><label>HSV</label><div style=\"display:flex;gap:4px\"><input id=\"cpHSV\" value=\"hsv(211,66%,85%)\" style=\"flex:1;font-family:mono\"><button class=\"btn btn-sm\" id=\"cpCopyHSV\" title=\"复制\">📋</button></div></div></div><div style=\"margin-top:16px;padding:16px;border-radius:8px;text-align:center;font-size:18px\" id=\"cpPreview\">Color Preview 颜色预览</div></div></div>",
+      "ui_en": "<div style=\"display:grid;grid-template-columns:250px 1fr;gap:24px\"><div><input type=\"color\" id=\"cpColor\" value=\"#4A90D9\" style=\"width:220px;height:220px;border:none;cursor:pointer;padding:0\"><div style=\"margin-top:8px;display:flex;gap:8px;flex-wrap:wrap\"><button class=\"btn btn-sm\" data-cp=\"#FF0000\" style=\"width:32px;height:32px;background:#FF0000;border:1px solid #ddd;border-radius:4px;cursor:pointer\"></button><button class=\"btn btn-sm\" data-cp=\"#00AA00\" style=\"width:32px;height:32px;background:#00AA00;border:1px solid #ddd;border-radius:4px;cursor:pointer\"></button><button class=\"btn btn-sm\" data-cp=\"#0000FF\" style=\"width:32px;height:32px;background:#0000FF;border:1px solid #ddd;border-radius:4px;cursor:pointer\"></button><button class=\"btn btn-sm\" data-cp=\"#FFD700\" style=\"width:32px;height:32px;background:#FFD700;border:1px solid #ddd;border-radius:4px;cursor:pointer\"></button><button class=\"btn btn-sm\" data-cp=\"#FF69B4\" style=\"width:32px;height:32px;background:#FF69B4;border:1px solid #ddd;border-radius:4px;cursor:pointer\"></button><button class=\"btn btn-sm\" data-cp=\"#00CED1\" style=\"width:32px;height:32px;background:#00CED1;border:1px solid #ddd;border-radius:4px;cursor:pointer\"></button><button class=\"btn btn-sm\" data-cp=\"#8B4513\" style=\"width:32px;height:32px;background:#8B4513;border:1px solid #ddd;border-radius:4px;cursor:pointer\"></button><button class=\"btn btn-sm\" data-cp=\"#7B68EE\" style=\"width:32px;height:32px;background:#7B68EE;border:1px solid #ddd;border-radius:4px;cursor:pointer\"></button></div></div><div><div style=\"display:grid;grid-template-columns:1fr 1fr;gap:12px\"><div><label>HEX</label><div style=\"display:flex;gap:4px\"><input id=\"cpHex\" value=\"#4A90D9\" style=\"flex:1;font-family:mono\"><button class=\"btn btn-sm\" id=\"cpCopyHex\" title=\"Copy\">📋</button></div></div><div><label>RGB</label><div style=\"display:flex;gap:4px\"><input id=\"cpRGB\" value=\"rgb(74,144,217)\" style=\"flex:1;font-family:mono\"><button class=\"btn btn-sm\" id=\"cpCopyRGB\" title=\"Copy\">📋</button></div></div><div><label>HSL</label><div style=\"display:flex;gap:4px\"><input id=\"cpHSL\" value=\"hsl(211,65%,57%)\" style=\"flex:1;font-family:mono\"><button class=\"btn btn-sm\" id=\"cpCopyHSL\" title=\"Copy\">📋</button></div></div><div><label>HSV</label><div style=\"display:flex;gap:4px\"><input id=\"cpHSV\" value=\"hsv(211,66%,85%)\" style=\"flex:1;font-family:mono\"><button class=\"btn btn-sm\" id=\"cpCopyHSV\" title=\"Copy\">📋</button></div></div></div><div style=\"margin-top:16px;padding:16px;border-radius:8px;text-align:center;font-size:18px\" id=\"cpPreview\">Color Preview</div></div></div>",
+      "related": [
+        "color-converter",
+        "color-palette",
+        "color-name-finder",
+        "css-gradient-generator"
+      ],
+      "seo_title_zh": "在线颜色选择器 | HEX/RGB/HSL 颜色取色工具",
+      "seo_title_en": "Online Color Picker | HEX RGB HSL Color Picking Tool",
+      "features_zh": [
+        "可视化取色",
+        "HEX / RGB / HSL / HSV 四种模式",
+        "一键复制颜色值",
+        "快速色板预设",
+        "实时预览"
+      ],
+      "features_en": [
+        "Visual color picking",
+        "HEX / RGB / HSL / HSV modes",
+        "One-click copy",
+        "Quick palette presets",
+        "Live preview"
+      ],
+      "faq_zh": [
+        [
+          "怎么获取颜色值？",
+          "点击左侧颜色选择器，或点击预设色块，右侧会显示对应 HEX/RGB/HSL/HSV 值，点击 📋 按钮即可复制。"
+        ],
+        [
+          "HEX、RGB、HSL 有什么区别？",
+          "HEX 是 16 进制表示法；RGB 是红绿蓝分量值；HSL 是色相/饱和度/亮度，更符合人类直觉。"
+        ],
+        [
+          "这个工具在浏览器里处理数据吗？",
+          "是的，所有颜色计算都在你的浏览器中完成，不上传任何数据。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "How do I get the color value?",
+          "Click the color picker on the left, or click a preset swatch. HEX/RGB/HSL/HSV values appear on the right — click 📋 to copy."
+        ],
+        [
+          "What's the difference between HEX, RGB, HSL?",
+          "HEX is hexadecimal notation; RGB is red/green/blue components; HSL is hue/saturation/lightness, more intuitive for humans."
+        ],
+        [
+          "Is my data processed locally?",
+          "Yes, all color processing happens in your browser. Nothing is uploaded."
         ]
       ]
     },
@@ -7092,7 +7256,8 @@
           "How many rows can I edit?",
           "No hard limit, but ~500 rows recommended for smooth editing. Large data needs a dedicated tool."
         ]
-      ]
+      ],
+      "index": 99
     },
     {
       "slug": "html-to-pdf",
@@ -7174,6 +7339,82 @@
         [
           "Is there a size limit?",
           "No hard limit, but under 2MB is recommended for good browser rendering performance."
+        ]
+      ],
+      "index": 100
+    },
+    {
+      "index": 101,
+      "slug": "html-preview",
+      "icon": "🔍",
+      "category": "dev",
+      "name_zh": "HTML 实时预览",
+      "name_en": "HTML Live Preview",
+      "short_zh": "实时渲染 HTML/CSS/JS，所见即所得",
+      "short_en": "Live HTML/CSS/JS renderer — what you see is what you get",
+      "keywords_zh": "html预览,html在线预览,前端调试,html运行,css预览,js预览,html渲染",
+      "keywords_en": "html preview,html live preview,html renderer,css preview,js playground,html sandbox",
+      "long_zh": "<p>免费的在线 HTML 实时预览工具，边写边看渲染效果。支持 HTML、CSS、JavaScript，适合前端开发调试、原型设计、代码片段测试。</p><p>所有代码在你的浏览器中通过 iframe sandbox 运行，不发送到任何服务器。</p>",
+      "long_en": "<p>Free online HTML live preview tool. Write HTML, CSS, and JavaScript and see the rendered result instantly. Great for prototyping, testing code snippets, and learning frontend development.</p><p>All code runs in an iframe sandbox in your browser — nothing is sent to any server.</p>",
+      "ui_zh": "<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:16px;min-height:400px\"><div style=\"display:flex;flex-direction:column\"><label>HTML / CSS / JS</label><textarea id=\"hpInput\" style=\"flex:1;min-height:350px;font-family:monospace;font-size:13px\" placeholder=\"&lt;!DOCTYPE html&gt;&#10;&lt;html&gt;&#10;&lt;head&gt;&#10;&lt;style&gt;&#10;  body { font-family: sans-serif; padding: 20px; }&#10;&lt;/style&gt;&#10;&lt;/head&gt;&#10;&lt;body&gt;&#10;  &lt;h1&gt;Hello, World!&lt;/h1&gt;&#10;  &lt;p&gt;Start editing HTML here...&lt;/p&gt;&#10;&lt;/body&gt;&#10;&lt;/html&gt;</textarea></div><div style=\"display:flex;flex-direction:column\"><label>预览 Preview</label><iframe id=\"hpPreview\" style=\"flex:1;min-height:350px;border:1px solid #ddd;border-radius:4px;background:#fff\" sandbox=\"allow-scripts\"></iframe></div></div><div style=\"margin-top:12px;display:flex;gap:12px\"><button class=\"btn\" id=\"hpRun\">▶ 运行 Run</button><button class=\"btn btn-secondary\" id=\"hpClear\">清空 Clear</button><button class=\"btn btn-secondary\" id=\"hpCopy\">复制代码</button></div>",
+      "ui_en": "<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:16px;min-height:400px\"><div style=\"display:flex;flex-direction:column\"><label>HTML / CSS / JS</label><textarea id=\"hpInput\" style=\"flex:1;min-height:350px;font-family:monospace;font-size:13px\" placeholder=\"&lt;!DOCTYPE html&gt;&#10;&lt;html&gt;&#10;&lt;head&gt;&#10;&lt;style&gt;&#10;  body { font-family: sans-serif; padding: 20px; }&#10;&lt;/style&gt;&#10;&lt;/head&gt;&#10;&lt;body&gt;&#10;  &lt;h1&gt;Hello, World!&lt;/h1&gt;&#10;  &lt;p&gt;Start editing HTML here...&lt;/p&gt;&#10;&lt;/body&gt;&#10;&lt;/html&gt;</textarea></div><div style=\"display:flex;flex-direction:column\"><label>Preview</label><iframe id=\"hpPreview\" style=\"flex:1;min-height:350px;border:1px solid #ddd;border-radius:4px;background:#fff\" sandbox=\"allow-scripts\"></iframe></div></div><div style=\"margin-top:12px;display:flex;gap:12px\"><button class=\"btn\" id=\"hpRun\">▶ Run</button><button class=\"btn btn-secondary\" id=\"hpClear\">Clear</button><button class=\"btn btn-secondary\" id=\"hpCopy\">Copy Code</button></div>",
+      "related": [
+        "html-entity",
+        "html-minifier",
+        "html-stripper",
+        "html-formatter",
+        "markdown-preview"
+      ],
+      "seo_title_zh": "HTML 实时预览 | 在线 HTML/CSS/JS 渲染工具",
+      "seo_title_en": "HTML Live Preview | Online HTML CSS JS Renderer",
+      "features_zh": [
+        "HTML/CSS/JS 实时渲染",
+        "iframe sandbox 安全隔离",
+        "一键运行/刷新",
+        "支持完整 HTML 文档",
+        "纯浏览器本地处理"
+      ],
+      "features_en": [
+        "Live HTML/CSS/JS rendering",
+        "iframe sandbox isolation",
+        "One-click run/refresh",
+        "Full HTML document support",
+        "100% browser-local processing"
+      ],
+      "faq_zh": [
+        [
+          "支持哪些前端技术？",
+          "支持 HTML5、CSS3、JavaScript（ES6+），以及所有浏览器原生支持的 Web API。"
+        ],
+        [
+          "代码安全吗？",
+          "预览在 iframe sandbox 中运行，与主站隔离。所有代码仅在浏览器本地执行，不发送到服务器。"
+        ],
+        [
+          "为什么有些 API 不能用？",
+          "sandbox=allow-scripts 限制了某些功能（如弹窗、表单提交）。你可以在预览中自行修改 sandbox 属性。"
+        ],
+        [
+          "可以保存代码吗？",
+          "目前不支持自动保存，建议复制代码到本地文件保存。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "What technologies are supported?",
+          "HTML5, CSS3, JavaScript (ES6+), and all browser-native Web APIs."
+        ],
+        [
+          "Is my code safe?",
+          "The preview runs in an iframe sandbox isolated from the main site. All code runs locally in your browser."
+        ],
+        [
+          "Why can't some APIs be used?",
+          "The sandbox=allow-scripts attribute restricts certain features (popups, form submissions). You can modify the sandbox attribute for testing."
+        ],
+        [
+          "Can I save my code?",
+          "Auto-save is not supported yet. Copy your code to a local file for persistence."
         ]
       ]
     }
