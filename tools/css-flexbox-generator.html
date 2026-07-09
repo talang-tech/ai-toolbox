@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>CSS Flexbox 生成器 - CSS Flexbox 在线生成器 | 可视化 Flex 布局工具 | AI 工具盒子</title>
+<meta name="description" content="免费在线CSS Flexbox 生成器工具，可视化生成 CSS Flexbox 布局代码，支持全部常见属性。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="CSS Flexbox,flex布局,弹性盒子,flexbox生成器,CSS布局,前端工具,可视化布局,flex容器,flex子元素,对齐方式">
+<link rel="canonical" href="https://tools.talang.fun/tools/css-flexbox-generator">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/css-flexbox-generator">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/css-flexbox-generator">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/css-flexbox-generator">
+<meta property="og:title" content="CSS Flexbox 生成器 - CSS Flexbox 在线生成器 | 可视化 Flex 布局工具 | AI 工具盒子">
+<meta property="og:description" content="免费在线CSS Flexbox 生成器工具，可视化生成 CSS Flexbox 布局代码，支持全部常见属性。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/css-flexbox-generator">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "CSS Flexbox 生成器", "description": "免费在线CSS Flexbox 生成器工具，可视化生成 CSS Flexbox 布局代码，支持全部常见属性。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/css-flexbox-generator", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "可视化生成 CSS Flexbox 布局代码，支持全部常见属性", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/tools/css-flexbox-generator" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">📐</div>
+  <h1>CSS Flexbox 生成器</h1>
+  <p>可视化生成 CSS Flexbox 布局代码，支持全部常见属性</p>
+</div>
+<div class="tool-panel">
+<div class="flexbox-gen"><div style="display:grid;grid-template-columns:1fr 1fr;gap:20px"><div class="card" style="padding:16px"><h3 style="margin:0 0 12px 0;font-size:15px">容器属性</h3><div class="input-row"><label>方向</label><select id="fg-direction"><option value="row">row</option><option value="row-reverse">row-reverse</option><option value="column">column</option><option value="column-reverse">column-reverse</option></select></div><div class="input-row"><label>主轴对齐</label><select id="fg-justify"><option value="flex-start" selected>flex-start</option><option value="flex-end">flex-end</option><option value="center">center</option><option value="space-between">space-between</option><option value="space-around">space-around</option><option value="space-evenly">space-evenly</option></select></div><div class="input-row"><label>交叉轴对齐</label><select id="fg-align"><option value="stretch" selected>stretch</option><option value="flex-start">flex-start</option><option value="flex-end">flex-end</option><option value="center">center</option><option value="baseline">baseline</option></select></div><div class="input-row"><label>换行</label><select id="fg-wrap"><option value="nowrap" selected>nowrap</option><option value="wrap">wrap</option><option value="wrap-reverse">wrap-reverse</option></select></div><div class="input-row"><label>多行对齐</label><select id="fg-align-content"><option value="stretch" selected>stretch</option><option value="flex-start">flex-start</option><option value="flex-end">flex-end</option><option value="center">center</option><option value="space-between">space-between</option><option value="space-around">space-around</option></select></div><div class="input-row"><label>间距</label><input type="range" id="fg-gap" min="0" max="40" value="10"><span id="fg-gap-val">10px</span></div><div class="input-row"><label>子元素数</label><input type="range" id="fg-items" min="2" max="8" value="4"><span id="fg-items-val">4</span></div></div><div class="card" style="padding:16px"><h3 style="margin:0 0 12px 0;font-size:15px">子元素属性</h3><div class="input-row"><label>flex-grow</label><input type="range" id="fg-grow" min="0" max="5" value="0"><span id="fg-grow-val">0</span></div><div class="input-row"><label>flex-shrink</label><input type="range" id="fg-shrink" min="0" max="5" value="1"><span id="fg-shrink-val">1</span></div><div class="input-row"><label>flex-basis</label><select id="fg-basis"><option value="auto" selected>auto</option><option value="0">0</option><option value="100px">100px</option><option value="200px">200px</option><option value="30%">30%</option><option value="50%">50%</option></select></div><div class="input-row"><label>单个对齐</label><select id="fg-align-self"><option value="auto" selected>auto</option><option value="flex-start">flex-start</option><option value="flex-end">flex-end</option><option value="center">center</option><option value="stretch">stretch</option><option value="baseline">baseline</option></select></div><div class="input-row"><label>子项宽高</label><input type="range" id="fg-item-size" min="20" max="120" value="60"><span id="fg-item-size-val">60px</span></div></div></div><div id="fg-preview" style="min-height:200px;border:2px dashed var(--border);border-radius:8px;padding:8px;margin-top:16px;display:flex;overflow:hidden"></div><div style="margin-top:12px;display:flex;gap:16px;align-items:center"><button class="btn" id="fg-copy-css">📋 复制 CSS</button></div><textarea id="fg-css-output" readonly style="min-height:120px;margin-top:8px;font-family:monospace;font-size:13px"></textarea><p class="tool-privacy-notice" style="margin-top:8px;font-size:13px;color:var(--text-muted)">🔒 所有 CSS 生成在浏览器本地完成，无需网络</p></div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>免费在线 CSS Flexbox 布局生成器。通过可视化界面调整 flex 容器和子元素属性，实时预览效果，一键复制生成的 CSS 代码。</p><p>支持 flex-direction、justify-content、align-items、flex-wrap、gap、align-content 等容器属性，以及 flex-grow、flex-shrink、flex-basis、align-self 等子元素属性。所有计算在浏览器本地完成，无需上传任何数据。</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>可视化调整 flex-direction、justify-content、align-items</li><li>支持 flex-wrap、gap、align-content</li><li>flex-grow / flex-shrink / flex-basis / align-self</li><li>实时预览和自动生成 CSS 代码</li><li>一键复制</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">flexbox 和 grid 有什么区别？</h3><p>Flexbox 是一维，Grid 是二维。</p><h3 style="margin-top:20px;margin-bottom:8px">justify-content 和 align-items 有什么区别？</h3><p>justify-content 主轴，align-items 交叉轴。</p><h3 style="margin-top:20px;margin-bottom:8px">需要联网吗？</h3><p>不需要，纯浏览器本地。</p></section>
+<section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/css-gradient-generator" class="tool-card"><div class="icon">🌈</div><h3>CSS 渐变生成器</h3><p>在线生成 CSS 线性与径向渐变，实时预览并复制代码</p></a><a href="/tools/css-filter-generator" class="tool-card"><div class="icon">🎨</div><h3>CSS 滤镜生成器</h3><p>可视化 CSS filter 生成器，实时预览模糊、亮度、对比度等滤镜效果</p></a><a href="/tools/css-minifier" class="tool-card"><div class="icon">🎨</div><h3>CSS 美化/压缩</h3><p>CSS 代码一键美化格式化或压缩，支持属性排序、颜色简写优化</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/css-flexbox-generator.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>

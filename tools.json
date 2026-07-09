@@ -81,7 +81,9 @@
           "pem-decoder",
           "http-status",
           "html-table-generator",
-          "color-palette"
+          "color-palette",
+          "css-flexbox-generator",
+          "svg-optimizer"
         ]
       },
       "encode": {
@@ -7415,6 +7417,138 @@
         [
           "Can I save my code?",
           "Auto-save is not supported yet. Copy your code to a local file for persistence."
+        ]
+      ]
+    },
+    {
+      "index": 102,
+      "slug": "css-flexbox-generator",
+      "icon": "📐",
+      "category": "dev",
+      "name_zh": "CSS Flexbox 生成器",
+      "name_en": "CSS Flexbox Generator",
+      "short_zh": "可视化生成 CSS Flexbox 布局代码，支持全部常见属性",
+      "short_en": "Visual CSS Flexbox layout generator",
+      "keywords_zh": "CSS Flexbox,flex布局,弹性盒子,flexbox生成器,CSS布局,前端工具,可视化布局,flex容器,flex子元素,对齐方式",
+      "keywords_en": "css flexbox, flexbox generator, flex layout, flex container, align items, justify content, css layout tool, flex direction, flex wrap, flex grow",
+      "long_zh": "<p>免费在线 CSS Flexbox 布局生成器。通过可视化界面调整 flex 容器和子元素属性，实时预览效果，一键复制生成的 CSS 代码。</p><p>支持 flex-direction、justify-content、align-items、flex-wrap、gap、align-content 等容器属性，以及 flex-grow、flex-shrink、flex-basis、align-self 等子元素属性。所有计算在浏览器本地完成，无需上传任何数据。</p>",
+      "long_en": "<p>Free online CSS Flexbox layout generator. Adjust flex container and flex item properties through a visual interface, see live preview, and copy the generated CSS code with one click.</p><p>Supports flex-direction, justify-content, align-items, flex-wrap, gap, align-content, flex-grow, flex-shrink, flex-basis, align-self and more. All processing happens locally in your browser.</p>",
+      "ui_zh": "<div class=\"flexbox-gen\"><div style=\"display:grid;grid-template-columns:1fr 1fr;gap:20px\"><div class=\"card\" style=\"padding:16px\"><h3 style=\"margin:0 0 12px 0;font-size:15px\">容器属性</h3><div class=\"input-row\"><label>方向</label><select id=\"fg-direction\"><option value=\"row\">row</option><option value=\"row-reverse\">row-reverse</option><option value=\"column\">column</option><option value=\"column-reverse\">column-reverse</option></select></div><div class=\"input-row\"><label>主轴对齐</label><select id=\"fg-justify\"><option value=\"flex-start\" selected>flex-start</option><option value=\"flex-end\">flex-end</option><option value=\"center\">center</option><option value=\"space-between\">space-between</option><option value=\"space-around\">space-around</option><option value=\"space-evenly\">space-evenly</option></select></div><div class=\"input-row\"><label>交叉轴对齐</label><select id=\"fg-align\"><option value=\"stretch\" selected>stretch</option><option value=\"flex-start\">flex-start</option><option value=\"flex-end\">flex-end</option><option value=\"center\">center</option><option value=\"baseline\">baseline</option></select></div><div class=\"input-row\"><label>换行</label><select id=\"fg-wrap\"><option value=\"nowrap\" selected>nowrap</option><option value=\"wrap\">wrap</option><option value=\"wrap-reverse\">wrap-reverse</option></select></div><div class=\"input-row\"><label>多行对齐</label><select id=\"fg-align-content\"><option value=\"stretch\" selected>stretch</option><option value=\"flex-start\">flex-start</option><option value=\"flex-end\">flex-end</option><option value=\"center\">center</option><option value=\"space-between\">space-between</option><option value=\"space-around\">space-around</option></select></div><div class=\"input-row\"><label>间距</label><input type=\"range\" id=\"fg-gap\" min=\"0\" max=\"40\" value=\"10\"><span id=\"fg-gap-val\">10px</span></div><div class=\"input-row\"><label>子元素数</label><input type=\"range\" id=\"fg-items\" min=\"2\" max=\"8\" value=\"4\"><span id=\"fg-items-val\">4</span></div></div><div class=\"card\" style=\"padding:16px\"><h3 style=\"margin:0 0 12px 0;font-size:15px\">子元素属性</h3><div class=\"input-row\"><label>flex-grow</label><input type=\"range\" id=\"fg-grow\" min=\"0\" max=\"5\" value=\"0\"><span id=\"fg-grow-val\">0</span></div><div class=\"input-row\"><label>flex-shrink</label><input type=\"range\" id=\"fg-shrink\" min=\"0\" max=\"5\" value=\"1\"><span id=\"fg-shrink-val\">1</span></div><div class=\"input-row\"><label>flex-basis</label><select id=\"fg-basis\"><option value=\"auto\" selected>auto</option><option value=\"0\">0</option><option value=\"100px\">100px</option><option value=\"200px\">200px</option><option value=\"30%\">30%</option><option value=\"50%\">50%</option></select></div><div class=\"input-row\"><label>单个对齐</label><select id=\"fg-align-self\"><option value=\"auto\" selected>auto</option><option value=\"flex-start\">flex-start</option><option value=\"flex-end\">flex-end</option><option value=\"center\">center</option><option value=\"stretch\">stretch</option><option value=\"baseline\">baseline</option></select></div><div class=\"input-row\"><label>子项宽高</label><input type=\"range\" id=\"fg-item-size\" min=\"20\" max=\"120\" value=\"60\"><span id=\"fg-item-size-val\">60px</span></div></div></div><div id=\"fg-preview\" style=\"min-height:200px;border:2px dashed var(--border);border-radius:8px;padding:8px;margin-top:16px;display:flex;overflow:hidden\"></div><div style=\"margin-top:12px;display:flex;gap:16px;align-items:center\"><button class=\"btn\" id=\"fg-copy-css\">📋 复制 CSS</button></div><textarea id=\"fg-css-output\" readonly style=\"min-height:120px;margin-top:8px;font-family:monospace;font-size:13px\"></textarea><p class=\"tool-privacy-notice\" style=\"margin-top:8px;font-size:13px;color:var(--text-muted)\">🔒 所有 CSS 生成在浏览器本地完成，无需网络</p></div>",
+      "ui_en": "<div class=\"flexbox-gen\"><div style=\"display:grid;grid-template-columns:1fr 1fr;gap:20px\"><div class=\"card\" style=\"padding:16px\"><h3 style=\"margin:0 0 12px 0;font-size:15px\">Container</h3><div class=\"input-row\"><label>Direction</label><select id=\"fg-direction\"><option value=\"row\">row</option><option value=\"row-reverse\">row-reverse</option><option value=\"column\">column</option><option value=\"column-reverse\">column-reverse</option></select></div><div class=\"input-row\"><label>Justify</label><select id=\"fg-justify\"><option value=\"flex-start\" selected>flex-start</option><option value=\"flex-end\">flex-end</option><option value=\"center\">center</option><option value=\"space-between\">space-between</option><option value=\"space-around\">space-around</option><option value=\"space-evenly\">space-evenly</option></select></div><div class=\"input-row\"><label>Align</label><select id=\"fg-align\"><option value=\"stretch\" selected>stretch</option><option value=\"flex-start\">flex-start</option><option value=\"flex-end\">flex-end</option><option value=\"center\">center</option><option value=\"baseline\">baseline</option></select></div><div class=\"input-row\"><label>Wrap</label><select id=\"fg-wrap\"><option value=\"nowrap\" selected>nowrap</option><option value=\"wrap\">wrap</option><option value=\"wrap-reverse\">wrap-reverse</option></select></div><div class=\"input-row\"><label>Align Content</label><select id=\"fg-align-content\"><option value=\"stretch\" selected>stretch</option><option value=\"flex-start\">flex-start</option><option value=\"flex-end\">flex-end</option><option value=\"center\">center</option><option value=\"space-between\">space-between</option><option value=\"space-around\">space-around</option></select></div><div class=\"input-row\"><label>Gap</label><input type=\"range\" id=\"fg-gap\" min=\"0\" max=\"40\" value=\"10\"><span id=\"fg-gap-val\">10px</span></div><div class=\"input-row\"><label>Items</label><input type=\"range\" id=\"fg-items\" min=\"2\" max=\"8\" value=\"4\"><span id=\"fg-items-val\">4</span></div></div><div class=\"card\" style=\"padding:16px\"><h3 style=\"margin:0 0 12px 0;font-size:15px\">Flex Items</h3><div class=\"input-row\"><label>flex-grow</label><input type=\"range\" id=\"fg-grow\" min=\"0\" max=\"5\" value=\"0\"><span id=\"fg-grow-val\">0</span></div><div class=\"input-row\"><label>flex-shrink</label><input type=\"range\" id=\"fg-shrink\" min=\"0\" max=\"5\" value=\"1\"><span id=\"fg-shrink-val\">1</span></div><div class=\"input-row\"><label>flex-basis</label><select id=\"fg-basis\"><option value=\"auto\" selected>auto</option><option value=\"0\">0</option><option value=\"100px\">100px</option><option value=\"200px\">200px</option><option value=\"30%\">30%</option><option value=\"50%\">50%</option></select></div><div class=\"input-row\"><label>Align Self</label><select id=\"fg-align-self\"><option value=\"auto\" selected>auto</option><option value=\"flex-start\">flex-start</option><option value=\"flex-end\">flex-end</option><option value=\"center\">center</option><option value=\"stretch\">stretch</option><option value=\"baseline\">baseline</option></select></div><div class=\"input-row\"><label>Item size</label><input type=\"range\" id=\"fg-item-size\" min=\"20\" max=\"120\" value=\"60\"><span id=\"fg-item-size-val\">60px</span></div></div></div><div id=\"fg-preview\" style=\"min-height:200px;border:2px dashed var(--border);border-radius:8px;padding:8px;margin-top:16px;display:flex;overflow:hidden\"></div><div style=\"margin-top:12px;display:flex;gap:16px;align-items:center\"><button class=\"btn\" id=\"fg-copy-css\">📋 Copy CSS</button></div><textarea id=\"fg-css-output\" readonly style=\"min-height:120px;margin-top:8px;font-family:monospace;font-size:13px\"></textarea><p class=\"tool-privacy-notice\" style=\"margin-top:8px;font-size:13px;color:var(--text-muted)\">🔒 All CSS is generated locally in your browser, no network needed</p></div>",
+      "related": [
+        "css-gradient-generator",
+        "css-filter-generator",
+        "css-minifier"
+      ],
+      "seo_title_zh": "CSS Flexbox 在线生成器 | 可视化 Flex 布局工具",
+      "seo_title_en": "CSS Flexbox Online Generator | Visual Flex Layout Tool",
+      "features_zh": [
+        "可视化调整 flex-direction、justify-content、align-items",
+        "支持 flex-wrap、gap、align-content",
+        "flex-grow / flex-shrink / flex-basis / align-self",
+        "实时预览和自动生成 CSS 代码",
+        "一键复制"
+      ],
+      "features_en": [
+        "Visual flex container properties",
+        "Flex-wrap, gap, align-content",
+        "Flex-grow/shrink/basis and align-self",
+        "Live preview with auto-generated CSS",
+        "One-click copy"
+      ],
+      "faq_zh": [
+        [
+          "flexbox 和 grid 有什么区别？",
+          "Flexbox 是一维，Grid 是二维。"
+        ],
+        [
+          "justify-content 和 align-items 有什么区别？",
+          "justify-content 主轴，align-items 交叉轴。"
+        ],
+        [
+          "需要联网吗？",
+          "不需要，纯浏览器本地。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "Flexbox vs Grid?",
+          "Flexbox is 1D, Grid is 2D."
+        ],
+        [
+          "Justify-content vs align-items?",
+          "Main axis vs cross axis."
+        ],
+        [
+          "Needs internet?",
+          "No, fully local."
+        ]
+      ]
+    },
+    {
+      "index": 103,
+      "slug": "svg-optimizer",
+      "icon": "🖼️",
+      "category": "dev",
+      "name_zh": "SVG 优化器",
+      "name_en": "SVG Optimizer",
+      "short_zh": "压缩和优化 SVG 文件，去除冗余属性，减小文件体积",
+      "short_en": "Compress and optimize SVG files, reduce file size",
+      "keywords_zh": "SVG优化,SVG压缩,SVG缩小,SVG清理,svg optimizer,svg minifier,svg cleaner,svg size reducer,SVG文件压缩",
+      "keywords_en": "svg optimizer, svg minifier, svg compressor, svg cleaner, svg size reducer, svg prettifier, svg formatter, svg optimization",
+      "long_zh": "<p>免费的在线 SVG 优化工具。支持粘贴 SVG 代码或上传 SVG 文件，自动去除冗余属性、合并路径、清理空分组和样式、压缩数字精度，在保持视觉效果不变的前提下尽可能减小文件体积。</p><p>所有优化都在浏览器本地完成，SVG 文件不会上传到任何服务器，适合对隐私敏感的 SVG 图标、插画和图形资源。</p>",
+      "long_en": "<p>Free online SVG optimizer. Paste SVG code or upload an SVG file. Automatically removes redundant attributes, merges paths, cleans up empty groups and unused styles, rounds number precision — all while preserving visual appearance.</p><p>All optimization happens locally in your browser. Your SVG files never leave your machine. Perfect for optimizing SVG icons, illustrations, and graphics for production use.</p>",
+      "ui_zh": "<div class=\"svg-opt\"><div style=\"display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px\"><label class=\"btn btn-secondary\" style=\"cursor:pointer\">📁 上传 SVG<input type=\"file\" id=\"svg-input\" accept=\".svg,image/svg+xml\" style=\"display:none\"></label><button class=\"btn\" id=\"svg-optimize\">⚡ 优化</button><button class=\"btn\" id=\"svg-format\">✨ 格式化</button><button class=\"btn btn-secondary\" id=\"svg-copy\">📋 复制</button><button class=\"btn btn-secondary\" id=\"svg-download\">⬇ 下载</button></div><textarea id=\"svg-input-area\" style=\"min-height:200px;font-family:monospace;font-size:13px\" placeholder=\"在此粘贴 SVG 代码，或上传 SVG 文件...\"></textarea><div style=\"margin-top:8px;display:flex;gap:16px;font-size:13px;color:var(--text-muted)\"><span>原始: <strong id=\"svg-size-before\">0</strong> B</span><span>优化后: <strong id=\"svg-size-after\">0</strong> B</span><span>节省: <strong id=\"svg-savings\">0%</strong></span></div><p class=\"tool-privacy-notice\" style=\"margin-top:8px;font-size:13px;color:var(--text-muted)\">🔒 所有 SVG 优化在浏览器本地完成，不上传任何文件</p></div>",
+      "ui_en": "<div class=\"svg-opt\"><div style=\"display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px\"><label class=\"btn btn-secondary\" style=\"cursor:pointer\">📁 Upload SVG<input type=\"file\" id=\"svg-input\" accept=\".svg,image/svg+xml\" style=\"display:none\"></label><button class=\"btn\" id=\"svg-optimize\">⚡ Optimize</button><button class=\"btn\" id=\"svg-format\">✨ Format</button><button class=\"btn btn-secondary\" id=\"svg-copy\">📋 Copy</button><button class=\"btn btn-secondary\" id=\"svg-download\">⬇ Download</button></div><textarea id=\"svg-input-area\" style=\"min-height:200px;font-family:monospace;font-size:13px\" placeholder=\"Paste SVG code here, or upload an SVG file...\"></textarea><div style=\"margin-top:8px;display:flex;gap:16px;font-size:13px;color:var(--text-muted)\"><span>Original: <strong id=\"svg-size-before\">0</strong> B</span><span>Optimized: <strong id=\"svg-size-after\">0</strong> B</span><span>Saved: <strong id=\"svg-savings\">0%</strong></span></div><p class=\"tool-privacy-notice\" style=\"margin-top:8px;font-size:13px;color:var(--text-muted)\">🔒 All SVG optimization is done locally in your browser, no files uploaded</p></div>",
+      "related": [
+        "html-minifier",
+        "css-minifier",
+        "js-minifier"
+      ],
+      "seo_title_zh": "SVG 在线优化器 | 压缩和清理 SVG 文件",
+      "seo_title_en": "SVG Online Optimizer | Compress and Clean SVG Files",
+      "features_zh": [
+        "去除冗余属性",
+        "合并路径",
+        "清理空分组和样式",
+        "压缩数字精度",
+        "文件上传和粘贴",
+        "隐私优先"
+      ],
+      "features_en": [
+        "Remove redundant attributes",
+        "Merge paths",
+        "Clean up empty groups",
+        "Round number precision",
+        "File upload and paste",
+        "Privacy-first"
+      ],
+      "faq_zh": [
+        [
+          "优化后效果会变吗？",
+          "视觉上一致，只是去掉冗余。"
+        ],
+        [
+          "支持哪些 SVG 特性？",
+          "标准 SVG 元素和属性。"
+        ],
+        [
+          "文件会上传吗？",
+          "不会，所有处理在浏览器本地。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "Does optimization change appearance?",
+          "No, visually identical."
+        ],
+        [
+          "What SVG features are supported?",
+          "Standard SVG elements and attributes."
+        ],
+        [
+          "Are files uploaded?",
+          "No, all processing is local."
         ]
       ]
     }
