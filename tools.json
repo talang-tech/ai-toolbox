@@ -28,7 +28,8 @@
           "word-counter",
           "html-stripper",
           "md-table-formatter",
-          "csv-editor"
+          "csv-editor",
+          "lorem-ipsum"
         ]
       },
       "dev": {
@@ -83,7 +84,8 @@
           "html-table-generator",
           "color-palette",
           "css-flexbox-generator",
-          "svg-optimizer"
+          "svg-optimizer",
+          "css-grid-generator"
         ]
       },
       "encode": {
@@ -7549,6 +7551,156 @@
         [
           "Are files uploaded?",
           "No, all processing is local."
+        ]
+      ]
+    },
+    {
+      "index": 104,
+      "slug": "css-grid-generator",
+      "icon": "🔲",
+      "category": "dev",
+      "name_zh": "CSS Grid 生成器",
+      "name_en": "CSS Grid Generator",
+      "short_zh": "可视化生成 CSS Grid 布局代码，支持行列数量、间距、对齐方式",
+      "short_en": "Visual CSS Grid layout generator",
+      "keywords_zh": "CSS Grid,grid布局,网格布局,grid生成器,CSS布局,前端工具,可视化布局,grid容器,grid模板列,grid模板行",
+      "keywords_en": "css grid, css grid generator, grid layout, grid template, css grid tool, visual grid generator, grid container, grid template columns",
+      "long_zh": "<p>免费在线 CSS Grid 布局生成器。通过可视化界面调整 grid 容器属性，实时预览网格效果，一键复制生成的 CSS 代码。</p><p>支持 grid-template-columns、grid-template-rows、gap、justify-items、align-items、justify-content、align-content 等所有常用 CSS Grid 属性。支持 auto 和固定尺寸两种模板模式。所有计算在浏览器本地完成，无需上传任何数据。</p>",
+      "long_en": "<p>Free online CSS Grid layout generator. Adjust grid container properties through a visual interface, see live grid preview, and copy the generated CSS code with one click.</p><p>Supports grid-template-columns, grid-template-rows, gap, justify-items, align-items, justify-content, align-content and all common CSS Grid properties. Supports both auto and fixed-size template modes. All processing is done locally in your browser - zero data uploaded.</p>",
+      "ui_zh": "<div class=\"grid-gen\"><div style=\"display:grid;grid-template-columns:1fr 1fr;gap:20px\"><div class=\"card\" style=\"padding:16px\"><h3 style=\"margin:0 0 12px 0;font-size:15px\">容器属性</h3><div class=\"input-row\"><label>列数</label><input type=\"range\" id=\"gg-columns\" min=\"1\" max=\"8\" value=\"3\"><span id=\"gg-columns-val\">3</span></div><div class=\"input-row\"><label>行数</label><input type=\"range\" id=\"gg-rows\" min=\"1\" max=\"8\" value=\"3\"><span id=\"gg-rows-val\">3</span></div><div class=\"input-row\"><label>列间距</label><input type=\"range\" id=\"gg-col-gap\" min=\"0\" max=\"40\" value=\"10\"><span id=\"gg-col-gap-val\">10px</span></div><div class=\"input-row\"><label>行间距</label><input type=\"range\" id=\"gg-row-gap\" min=\"0\" max=\"40\" value=\"10\"><span id=\"gg-row-gap-val\">10px</span></div><div class=\"input-row\"><label>模板类型</label><select id=\"gg-template-type\"><option value=\"auto\">auto (1fr)</option><option value=\"fixed\">固定尺寸</option></select></div><div class=\"input-row\"><label>列宽</label><input type=\"text\" id=\"gg-col-sizes\" value=\"1fr\" style=\"width:80px;padding:4px 8px;border:1px solid var(--border);border-radius:4px\"></div><div class=\"input-row\"><label>行高</label><input type=\"text\" id=\"gg-row-sizes\" value=\"1fr\" style=\"width:80px;padding:4px 8px;border:1px solid var(--border);border-radius:4px\"></div></div><div class=\"card\" style=\"padding:16px\"><h3 style=\"margin:0 0 12px 0;font-size:15px\">项目与对齐</h3><div class=\"input-row\"><label>项目数量</label><input type=\"range\" id=\"gg-item-count\" min=\"1\" max=\"64\" value=\"6\"><span id=\"gg-item-count-val\">6</span></div><div class=\"input-row\"><label>justify-items</label><select id=\"gg-justify-items\"><option value=\"stretch\" selected>stretch</option><option value=\"start\">start</option><option value=\"end\">end</option><option value=\"center\">center</option></select></div><div class=\"input-row\"><label>align-items</label><select id=\"gg-align-items\"><option value=\"stretch\" selected>stretch</option><option value=\"start\">start</option><option value=\"end\">end</option><option value=\"center\">center</option></select></div><div class=\"input-row\"><label>justify-content</label><select id=\"gg-justify-content\"><option value=\"start\" selected>start</option><option value=\"end\">end</option><option value=\"center\">center</option><option value=\"stretch\">stretch</option><option value=\"space-around\">space-around</option><option value=\"space-between\">space-between</option><option value=\"space-evenly\">space-evenly</option></select></div><div class=\"input-row\"><label>align-content</label><select id=\"gg-align-content\"><option value=\"stretch\" selected>stretch</option><option value=\"start\">start</option><option value=\"end\">end</option><option value=\"center\">center</option><option value=\"space-around\">space-around</option><option value=\"space-between\">space-between</option><option value=\"space-evenly\">space-evenly</option></select></div></div></div><div id=\"gg-preview\" style=\"min-height:200px;border:2px dashed var(--border);border-radius:8px;padding:8px;margin-top:16px;overflow:hidden\"></div><div style=\"margin-top:12px;display:flex;gap:16px;align-items:center\"><button class=\"btn\" id=\"gg-copy-css\">📋 复制 CSS</button></div><textarea id=\"gg-css-output\" readonly style=\"min-height:120px;margin-top:8px;font-family:monospace;font-size:13px\"></textarea><p class=\"tool-privacy-notice\" style=\"margin-top:8px;font-size:13px;color:var(--text-muted)\">🔒 所有 CSS 生成在浏览器本地完成，无需网络</p></div>",
+      "ui_en": "<div class=\"grid-gen\"><div style=\"display:grid;grid-template-columns:1fr 1fr;gap:20px\"><div class=\"card\" style=\"padding:16px\"><h3 style=\"margin:0 0 12px 0;font-size:15px\">Container Properties</h3><div class=\"input-row\"><label>Columns</label><input type=\"range\" id=\"gg-columns\" min=\"1\" max=\"8\" value=\"3\"><span id=\"gg-columns-val\">3</span></div><div class=\"input-row\"><label>Rows</label><input type=\"range\" id=\"gg-rows\" min=\"1\" max=\"8\" value=\"3\"><span id=\"gg-rows-val\">3</span></div><div class=\"input-row\"><label>Column Gap</label><input type=\"range\" id=\"gg-col-gap\" min=\"0\" max=\"40\" value=\"10\"><span id=\"gg-col-gap-val\">10px</span></div><div class=\"input-row\"><label>Row Gap</label><input type=\"range\" id=\"gg-row-gap\" min=\"0\" max=\"40\" value=\"10\"><span id=\"gg-row-gap-val\">10px</span></div><div class=\"input-row\"><label>Template Type</label><select id=\"gg-template-type\"><option value=\"auto\">auto (1fr)</option><option value=\"fixed\">Fixed Size</option></select></div><div class=\"input-row\"><label>Col Width</label><input type=\"text\" id=\"gg-col-sizes\" value=\"1fr\" style=\"width:80px;padding:4px 8px;border:1px solid var(--border);border-radius:4px\"></div><div class=\"input-row\"><label>Row Height</label><input type=\"text\" id=\"gg-row-sizes\" value=\"1fr\" style=\"width:80px;padding:4px 8px;border:1px solid var(--border);border-radius:4px\"></div></div><div class=\"card\" style=\"padding:16px\"><h3 style=\"margin:0 0 12px 0;font-size:15px\">Items &amp; Alignment</h3><div class=\"input-row\"><label>Items Count</label><input type=\"range\" id=\"gg-item-count\" min=\"1\" max=\"64\" value=\"6\"><span id=\"gg-item-count-val\">6</span></div><div class=\"input-row\"><label>justify-items</label><select id=\"gg-justify-items\"><option value=\"stretch\" selected>stretch</option><option value=\"start\">start</option><option value=\"end\">end</option><option value=\"center\">center</option></select></div><div class=\"input-row\"><label>align-items</label><select id=\"gg-align-items\"><option value=\"stretch\" selected>stretch</option><option value=\"start\">start</option><option value=\"end\">end</option><option value=\"center\">center</option></select></div><div class=\"input-row\"><label>justify-content</label><select id=\"gg-justify-content\"><option value=\"start\" selected>start</option><option value=\"end\">end</option><option value=\"center\">center</option><option value=\"stretch\">stretch</option><option value=\"space-around\">space-around</option><option value=\"space-between\">space-between</option><option value=\"space-evenly\">space-evenly</option></select></div><div class=\"input-row\"><label>align-content</label><select id=\"gg-align-content\"><option value=\"stretch\" selected>stretch</option><option value=\"start\">start</option><option value=\"end\">end</option><option value=\"center\">center</option><option value=\"space-around\">space-around</option><option value=\"space-between\">space-between</option><option value=\"space-evenly\">space-evenly</option></select></div></div></div><div id=\"gg-preview\" style=\"min-height:200px;border:2px dashed var(--border);border-radius:8px;padding:8px;margin-top:16px;overflow:hidden\"></div><div style=\"margin-top:12px;display:flex;gap:16px;align-items:center\"><button class=\"btn\" id=\"gg-copy-css\">📋 Copy CSS</button></div><textarea id=\"gg-css-output\" readonly style=\"min-height:120px;margin-top:8px;font-family:monospace;font-size:13px\"></textarea><p class=\"tool-privacy-notice\" style=\"margin-top:8px;font-size:13px;color:var(--text-muted)\">🔒 All CSS generated locally in your browser, no network needed</p></div>",
+      "related": [
+        "css-flexbox-generator",
+        "css-gradient-generator",
+        "css-filter-generator"
+      ],
+      "seo_title_zh": "CSS Grid 生成器 - 在线网格布局生成 | CSS Grid Generator",
+      "seo_title_en": "CSS Grid Generator | Online Grid Layout Tool",
+      "features_zh": [
+        "可视化配置行列数量、间距、对齐方式",
+        "支持 auto (1fr) 和固定尺寸两种模板模式",
+        "实时预览网格效果",
+        "一键复制生成 CSS 代码",
+        "支持 justify-items / align-items / justify-content / align-content",
+        "隐私优先：所有计算在浏览器本地完成"
+      ],
+      "features_en": [
+        "Visual grid configuration: rows, columns, gap, alignment",
+        "Supports auto (1fr) and fixed-size template modes",
+        "Real-time grid preview",
+        "One-click CSS code copy",
+        "Supports justify-items, align-items, justify-content, align-content",
+        "Privacy-first: all processing in your browser"
+      ],
+      "faq_zh": [
+        [
+          "CSS Grid 和 Flexbox 有什么区别？",
+          "Grid 是二维布局（行和列同时控制），Flexbox 是一维布局（行或列）。Grid 适合整体页面布局，Flexbox 适合组件内部排列。"
+        ],
+        [
+          "什么是 1fr 单位？",
+          "1fr 是 CSS Grid 的弹性单位，代表剩余空间的一份。1fr 1fr 1fr 表示三列均分剩余宽度。"
+        ],
+        [
+          "gap 和 grid-gap 有什么区别？",
+          "gap 是标准属性，grid-gap 已废弃。建议使用 gap 同时设置行间距和列间距。"
+        ],
+        [
+          "justify-content 和 justify-items 有什么区别？",
+          "justify-content 控制整个网格在容器中的水平对齐，justify-items 控制网格内项目的水平对齐。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "What's the difference between CSS Grid and Flexbox?",
+          "Grid is 2D (rows and columns simultaneously), Flexbox is 1D (row or column). Grid is for page layout, Flexbox for component arrangement."
+        ],
+        [
+          "What is the 1fr unit?",
+          "1fr is a CSS Grid flexible unit representing one fraction of available space. 1fr 1fr 1fr means 3 equal columns."
+        ],
+        [
+          "What's the difference between gap and grid-gap?",
+          "gap is the standard property; grid-gap is deprecated. Use gap to set both row and column gaps."
+        ],
+        [
+          "What's the difference between justify-content and justify-items?",
+          "justify-content controls the grid horizontal alignment within the container; justify-items controls item alignment within their cells."
+        ]
+      ]
+    },
+    {
+      "index": 105,
+      "slug": "lorem-ipsum",
+      "icon": "📝",
+      "category": "text",
+      "name_zh": "Lorem Ipsum 生成器",
+      "name_en": "Lorem Ipsum Generator",
+      "short_zh": "生成经典拉丁语 Lorem Ipsum 占位文本，支持单词/句子/段落/列表",
+      "short_en": "Generate classic Latin Lorem Ipsum placeholder text",
+      "keywords_zh": "Lorem Ipsum,乱数假文,占位文本,假文生成,占位文字,lorem ipsum生成器,排版填充,设计原型,文本填充",
+      "keywords_en": "lorem ipsum generator, placeholder text, dummy text, lorem ipsum, text filler, content placeholder, mockup text",
+      "long_zh": "<p>免费在线 Lorem Ipsum 生成器。生成经典拉丁语占位文本，用于排版设计、UI 原型、网站模板中的内容填充。</p><p>支持单词、句子、段落、列表四种输出模式，可控制生成数量，支持纯文本和 HTML 格式输出。所有生成在浏览器本地完成，无需网络。</p>",
+      "long_en": "<p>Free online Lorem Ipsum generator. Generate classic Latin placeholder text for typography mockups, UI prototypes, and website template content fill.</p><p>Supports words, sentences, paragraphs, and list output modes. Control generation quantity, copy as plain text or HTML. All generation happens locally in your browser - zero data sent to any server.</p>",
+      "ui_zh": "<div class=\"lorem-gen\"><div style=\"display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin-bottom:12px\"><label>类型:</label><select id=\"li-type\" style=\"padding:8px;border:1px solid var(--border);border-radius:6px\"><option value=\"words\">单词</option><option value=\"sentences\">句子</option><option value=\"paragraphs\" selected>段落</option><option value=\"list\">列表</option></select><label>数量:</label><input type=\"number\" id=\"li-count\" value=\"3\" min=\"1\" max=\"10000\" style=\"width:80px;padding:8px;border:1px solid var(--border);border-radius:6px\"><label>格式:</label><select id=\"li-format\" style=\"padding:8px;border:1px solid var(--border);border-radius:6px\"><option value=\"txt\">纯文本</option><option value=\"html\">HTML</option></select><button class=\"btn\" id=\"li-gen\">生成</button><button class=\"btn btn-secondary\" id=\"li-copy\">📋 复制</button></div><textarea id=\"li-output\" readonly style=\"min-height:250px;font-family:Georgia,serif;font-size:15px;line-height:1.8\"></textarea><p class=\"tool-privacy-notice\" style=\"margin-top:8px;font-size:13px;color:var(--text-muted)\">🔒 所有生成在浏览器本地完成，无需网络</p></div>",
+      "ui_en": "<div class=\"lorem-gen\"><div style=\"display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin-bottom:12px\"><label>Type:</label><select id=\"li-type\" style=\"padding:8px;border:1px solid var(--border);border-radius:6px\"><option value=\"words\">Words</option><option value=\"sentences\">Sentences</option><option value=\"paragraphs\" selected>Paragraphs</option><option value=\"list\">List</option></select><label>Count:</label><input type=\"number\" id=\"li-count\" value=\"3\" min=\"1\" max=\"10000\" style=\"width:80px;padding:8px;border:1px solid var(--border);border-radius:6px\"><label>Format:</label><select id=\"li-format\" style=\"padding:8px;border:1px solid var(--border);border-radius:6px\"><option value=\"txt\">Plain Text</option><option value=\"html\">HTML</option></select><button class=\"btn\" id=\"li-gen\">Generate</button><button class=\"btn btn-secondary\" id=\"li-copy\">📋 Copy</button></div><textarea id=\"li-output\" readonly style=\"min-height:250px;font-family:Georgia,serif;font-size:15px;line-height:1.8\"></textarea><p class=\"tool-privacy-notice\" style=\"margin-top:8px;font-size:13px;color:var(--text-muted)\">🔒 All generation happens locally in your browser, no network needed</p></div>",
+      "related": [
+        "lorem-cn",
+        "word-counter",
+        "text-statistics"
+      ],
+      "seo_title_zh": "Lorem Ipsum 生成器 - 在线占位文本生成器",
+      "seo_title_en": "Lorem Ipsum Generator | Online Placeholder Text Tool",
+      "features_zh": [
+        "支持单词、句子、段落、列表四种输出模式",
+        "可控制生成数量（最大10000）",
+        "支持纯文本和 HTML 格式输出",
+        "经典拉丁语词汇库，包含常用开头语",
+        "一键复制",
+        "隐私优先：所有生成在浏览器本地完成"
+      ],
+      "features_en": [
+        "Supports words, sentences, paragraphs, and list output modes",
+        "Control generation quantity (up to 10000)",
+        "Plain text and HTML output formats",
+        "Classic Latin vocabulary with common starters",
+        "One-click copy",
+        "Privacy-first: all generation in your browser"
+      ],
+      "faq_zh": [
+        [
+          "Lorem Ipsum 是什么意思？",
+          "Lorem Ipsum 是拉丁文占位文本，源自西塞罗的《论善恶》，用于排版设计中的内容填充。"
+        ],
+        [
+          "能生成多少段落？",
+          "最多可生成 50 段落或 10000 个单词，充分满足各种排版需求。"
+        ],
+        [
+          "支持 HTML 格式吗？",
+          "支持。可以选择纯文本或 HTML 格式输出。"
+        ],
+        [
+          "生成需要上传数据吗？",
+          "不需要。所有生成在浏览器本地完成，不会上传任何数据。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "What is Lorem Ipsum?",
+          "Lorem Ipsum is Latin placeholder text derived from Cicero's 'De Finibus', used for typesetting and design mockups."
+        ],
+        [
+          "How many paragraphs can I generate?",
+          "Up to 50 paragraphs or 10000 words, enough for most layout needs."
+        ],
+        [
+          "Does it support HTML output?",
+          "Yes. You can choose between plain text and HTML format output."
+        ],
+        [
+          "Does this upload my data?",
+          "Not at all. All generation happens locally in your browser, zero data uploaded."
         ]
       ]
     }
