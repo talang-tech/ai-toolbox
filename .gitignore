@@ -26,3 +26,6 @@ seo_performance_report.txt
 
 # OpenClaw local agent scratch files
 .openclaw/
+
+# Helper scripts (add_tool.py etc.)
+scripts/add_tool*.py

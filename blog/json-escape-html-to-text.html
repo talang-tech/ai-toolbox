@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>JSON 转义 & HTML 转纯文本：两个实用新工具上线 | AI 工具盒子</title>
+<meta name="description" content="AI 工具盒子新增 JSON 字符串转义/反转义工具和 HTML 转纯文本提取工具，开发者日常必备，全部浏览器本地处理。">
+<meta name="keywords" content="JSON转义,HTML转纯文本,JSON字符串,网页内容提取,在线工具,开发者工具">
+<link rel="canonical" href="https://tools.talang.fun/blog/json-escape-html-to-text">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/blog/json-escape-html-to-text">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/blog/json-escape-html-to-text">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/blog/json-escape-html-to-text">
+<meta property="og:title" content="JSON 转义 & HTML 转纯文本：两个实用新工具上线 | AI 工具盒子">
+<meta property="og:description" content="AI 工具盒子新增 JSON 字符串转义/反转义工具和 HTML 转纯文本提取工具，开发者日常必备，全部浏览器本地处理。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/blog/json-escape-html-to-text">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "JSON 转义 & HTML 转纯文本：两个实用新工具上线", "description": "AI 工具盒子新增 JSON 字符串转义/反转义工具和 HTML 转纯文本提取工具，开发者日常必备，全部浏览器本地处理。", "author": {"@type": "Organization", "name": "AI 工具盒子"}, "datePublished": "2026-07-11", "url": "https://tools.talang.fun/blog/json-escape-html-to-text"}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/blog/json-escape-html-to-text" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<article class="article">
+  <p style="margin-bottom:8px"><a href="/blog/" style="color:var(--muted)">← 返回博客</a></p>
+  <h1>JSON 转义 & HTML 转纯文本：两个实用新工具上线</h1>
+  <p style="color:var(--muted);margin-bottom:24px">2026-07-11 · 4 分钟阅读</p>
+  <p>今天上线了两个开发者日常高频使用的工具：<strong>JSON 转义/反转义工具</strong> 和 <strong>HTML 转纯文本工具</strong>。</p>
+<h2>JSON 转义/反转义工具</h2>
+<p>把 JSON 嵌入代码字符串是编程中的常见操作。无论是 JavaScript 中拼接字符串、Python 日志中打印 JSON 对象，还是将 JSON 作为 API 参数传递，都需要先转义 JSON 中的特殊字符。</p>
+<p>这个工具提供两个核心功能：</p>
+<ul>
+<li><strong>转义</strong>：将 JSON 文本转换成字符串字面量格式，自动添加引号，转义换行符、引号、反斜杠等字符</li>
+<li><strong>反转义</strong>：将转义后的字符串还原为可读的 JSON 文本，并自动验证 JSON 有效性</li>
+</ul>
+<h3>使用场景</h3>
+<ul>
+<li><strong>调试日志</strong>：把 JSON 打印到日志文件，用 <code>JSON.stringify()</code> 转义后写入</li>
+<li><strong>代码嵌入</strong>：将 JSON 配置嵌入到 JavaScript/Python 代码字符串中</li>
+<li><strong>API 测试</strong>：从 API 返回的 JSON 中提取字符串，需要先反转义</li>
+<li><strong>代码生成</strong>：生成包含 JSON 字面量的代码片段</li>
+</ul>
+<h3>示例</h3>
+<p>输入 JSON：</p>
+<pre><code class="lang-json">
+{"name": "张三", "age": 30, "bio": "你好\n世界"}
+</code></pre>
+<p>转义后：</p>
+<pre><code class="lang-">
+"{\"name\": \"张三\", \"age\": 30, \"bio\": \"你好\\n世界\"}"
+</code></pre>
+<h2>HTML 转纯文本工具</h2>
+<p>从网页复制内容经常带着大量 HTML 标签和样式，手动清理很麻烦。HTML 转纯文本工具可以一键提取干净文本。</p>
+<p>功能亮点：</p>
+<ul>
+<li><strong>自动去除</strong>所有 HTML 标签、脚本、样式</li>
+<li><strong>保留链接</strong>：可选择显示为"文本(URL)"格式</li>
+<li><strong>标题标记</strong>：可选择用 <code>#</code> 格式保留标题层级</li>
+<li><strong>智能换行</strong>：块级元素自动换行，保持可读性</li>
+<li><strong>统计信息</strong>：显示字符缩减率和处理耗时</li>
+</ul>
+<h3>使用场景</h3>
+<ul>
+<li><strong>整理网页内容</strong>：从文章中提取文字，去除干扰元素</li>
+<li><strong>清理富文本粘贴</strong>：从 Word 或网页复制内容时，去除格式</li>
+<li><strong>邮件内容提取</strong>：从 HTML 邮件中提取纯文本</li>
+<li><strong>内容分析</strong>：统计网页正文字数、关键词密度</li>
+</ul>
+<h2>关于隐私</h2>
+<p>两个工具的所有处理都在浏览器本地完成，<strong>文本不会上传到任何服务器</strong>。你可以放心使用，即使处理敏感数据也不会泄露。</p>
+<hr>
+<p>访问 <a href="https://tools.talang.fun">AI 工具盒子</a> 体验新工具，全部免费，无需注册。</p>
+  <section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+</article>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>
