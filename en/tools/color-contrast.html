@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>Color Contrast Checker - Color Contrast Checker - WCAG Accessibility Contrast Ratio Tool | AI Toolbox</title>
+<meta name="description" content="Free online color contrast checker. Check WCAG contrast ratio between foreground and background for accessibility. Fast, secure, and works in your browser without downloading.">
+<meta name="keywords" content="color contrast checker, WCAG contrast, accessibility contrast, color contrast ratio, AA contrast, AAA contrast, web accessibility, color compliance, contrast ratio calculator">
+<link rel="canonical" href="https://tools.talang.fun/en/tools/color-contrast">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/color-contrast">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/color-contrast">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/color-contrast">
+<meta property="og:title" content="Color Contrast Checker - Color Contrast Checker - WCAG Accessibility Contrast Ratio Tool | AI Toolbox">
+<meta property="og:description" content="Free online color contrast checker. Check WCAG contrast ratio between foreground and background for accessibility. Fast, secure, and works in your browser without downloading.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/en/tools/color-contrast">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Color Contrast Checker", "description": "Free online color contrast checker. Check WCAG contrast ratio between foreground and background for accessibility. Fast, secure, and works in your browser without downloading.", "url": "https://tools.talang.fun/en/tools/color-contrast", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "Check WCAG contrast ratio between foreground and background for accessibility", "inLanguage": "en", "author": {"@type": "Organization", "name": "AI Toolbox"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/en/" class="logo"><span class="logo-icon">🛠️</span>AI Toolbox</a>
+    <nav class="nav">
+      <a href="/en/">Home</a>
+      <a href="/en/#tools">All Tools</a>
+      <a href="/en/blog/">Blog</a>
+      <a href="/en/about">About</a>
+      <a href="/en/sponsor">Sponsor</a>
+      <a href="https://tools.talang.fun/tools/color-contrast" class="lang-switch">中文</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">👁️</div>
+  <h1>Color Contrast Checker</h1>
+  <p>Check WCAG contrast ratio between foreground and background for accessibility</p>
+</div>
+<div class="tool-panel">
+<div class="tool-controls"><div style="display:flex;flex-wrap:wrap;gap:16px;margin-bottom:16px"><div style="flex:1;min-width:200px"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px">Foreground (Text)</label><div style="display:flex;gap:8px;align-items:center"><input type="color" id="cc-fg-picker" value="#333333" style="width:44px;height:44px;border:1px solid var(--border);border-radius:6px;cursor:pointer;padding:0"><input type="text" id="cc-fg-input" value="#333333" style="flex:1;padding:8px;font-size:14px;font-family:monospace;border:1px solid var(--border);border-radius:6px;background:var(--bg-card)" placeholder="#333333"></div></div><div style="flex:1;min-width:200px"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px">Background</label><div style="display:flex;gap:8px;align-items:center"><input type="color" id="cc-bg-picker" value="#ffffff" style="width:44px;height:44px;border:1px solid var(--border);border-radius:6px;cursor:pointer;padding:0"><input type="text" id="cc-bg-input" value="#ffffff" style="flex:1;padding:8px;font-size:14px;font-family:monospace;border:1px solid var(--border);border-radius:6px;background:var(--bg-card)" placeholder="#ffffff"></div></div></div><div id="cc-result" style="display:flex;flex-wrap:wrap;gap:16px;margin-bottom:16px;padding:16px;background:var(--bg-subtle);border-radius:8px"><div style="flex:1;min-width:150px;text-align:center"><div style="font-size:36px;font-weight:bold" id="cc-ratio">--:1</div><div style="font-size:12px;color:#888;margin-top:4px">Contrast Ratio</div></div><div style="flex:1;min-width:130px;text-align:center"><div style="font-size:24px;font-weight:bold" id="cc-aa">--</div><div style="font-size:12px;color:#888;margin-top:4px">WCAG AA Normal 4.5:1</div></div><div style="flex:1;min-width:130px;text-align:center"><div style="font-size:24px;font-weight:bold" id="cc-aa-large">--</div><div style="font-size:12px;color:#888;margin-top:4px">WCAG AA Large 3:1</div></div><div style="flex:1;min-width:130px;text-align:center"><div style="font-size:24px;font-weight:bold" id="cc-aaa">--</div><div style="font-size:12px;color:#888;margin-top:4px">WCAG AAA Normal 7:1</div></div><div style="flex:1;min-width:130px;text-align:center"><div style="font-size:24px;font-weight:bold" id="cc-aaa-large">--</div><div style="font-size:12px;color:#888;margin-top:4px">WCAG AAA Large 4.5:1</div></div></div><div id="cc-preview" style="display:flex;justify-content:center;align-items:center;min-height:100px;padding:20px;border-radius:8px;margin-bottom:12px;background:#ffffff" class="cc-preview-box"><span style="font-size:24px;font-weight:bold;color:#333333">Sample Text 示例文字</span></div></div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>About this tool</h2>
+  <p>Free online color contrast checker. <strong>Check contrast ratio against WCAG 2.2 standards</strong> to ensure your website or app is readable by everyone, including users with visual impairments.</p><p>Supports HEX, RGB, HSL color input. Real-time contrast ratio display with automatic AA (4.5:1 normal / 3:1 large) and AAA (7:1 normal / 4.5:1 large) compliance checking.</p><p>All processing is done locally in your browser — no data upload needed.</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>Key Features</h2><ul><li>Support HEX, RGB, HSL color input formats</li><li>Real-time contrast ratio calculation</li><li>Auto-check WCAG AA and AAA compliance</li><li>Support normal and large text standards</li><li>Visual preview with sample text</li><li>100% local processing, no data upload</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>Frequently Asked Questions</h2><h3 style="margin-top:20px;margin-bottom:8px">What is WCAG contrast standard?</h3><p>WCAG defines minimum contrast ratios: AA requires 4.5:1 for normal text and 3:1 for large text; AAA requires 7:1 for normal text and 4.5:1 for large text.</p><h3 style="margin-top:20px;margin-bottom:8px">How is contrast ratio calculated?</h3><p>Contrast ratio = (L1 + 0.05) / (L2 + 0.05) where L1 is lighter color luminance, L2 is darker. Relative luminance uses sRGB color space.</p><h3 style="margin-top:20px;margin-bottom:8px">When is AA standard required?</h3><p>AA is the minimum legal accessibility requirement for most websites and apps. At least AA compliance is recommended.</p><h3 style="margin-top:20px;margin-bottom:8px">What if contrast fails?</h3><p>Darken foreground or lighten background to improve ratio. Dark text on light backgrounds typically works best.</p><h3 style="margin-top:20px;margin-bottom:8px">Is my data uploaded to a server?</h3><p>No. All processing is done locally in your browser. Color data never leaves your computer.</p></section>
+<section class="related"><h3>Related Tools</h3><div class="tools-grid"><a href="/en/tools/color-converter" class="tool-card"><div class="icon">🎨</div><h3>Color Converter</h3><p>Hex ↔ RGB color conversion with live preview</p></a><a href="/en/tools/color-picker" class="tool-card"><div class="icon">🎨</div><h3>Color Picker</h3><p>Visual color picker with HEX/RGB/HSL/HSV support and live preview</p></a><a href="/en/tools/color-palette" class="tool-card"><div class="icon">🎨</div><h3>Color Palette Generator</h3><p>Generate harmonious color palettes - complementary, analogous, triadic, tetradic, monochromatic</p></a><a href="/en/tools/color-name-finder" class="tool-card"><div class="icon">🎨</div><h3>Color Name Finder</h3><p>Find closest named CSS color from Hex/RGB input, browse color palette</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>Need a private toolbox or custom browser tool?</h2>
+  <p>AI Toolbox can be adapted for internal workflows, private deployment, sponsored categories, or custom privacy-first utilities.</p>
+  <p><a href="/en/sponsor" data-event="conversion_cta_click" data-label="en_partner_custom_tool_cta">View partnership and custom tool options →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/color-contrast.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI Toolbox · Free online AI & developer tools · <a href='/en/about'>About</a> · <a href='/en/sponsor'>Sponsor</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('Copied!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>

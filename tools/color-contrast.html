@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>颜色对比度检查器 - 颜色对比度检查器 - WCAG 无障碍色彩对比度在线检测工具 | AI 工具盒子</title>
+<meta name="description" content="免费在线颜色对比度检查器工具，检查前景色与背景色的 WCAG 对比度，确保无障碍可读性。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="颜色对比度,WCAG对比度,无障碍颜色,颜色检查,对比度检查,AA标准,AAA标准,色彩无障碍,前景色背景色,WCAG AA,WCAG AAA,颜色对比度计算器">
+<link rel="canonical" href="https://tools.talang.fun/tools/color-contrast">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/color-contrast">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/color-contrast">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/color-contrast">
+<meta property="og:title" content="颜色对比度检查器 - 颜色对比度检查器 - WCAG 无障碍色彩对比度在线检测工具 | AI 工具盒子">
+<meta property="og:description" content="免费在线颜色对比度检查器工具，检查前景色与背景色的 WCAG 对比度，确保无障碍可读性。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/color-contrast">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "颜色对比度检查器", "description": "免费在线颜色对比度检查器工具，检查前景色与背景色的 WCAG 对比度，确保无障碍可读性。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/color-contrast", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "检查前景色与背景色的 WCAG 对比度，确保无障碍可读性", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/tools/color-contrast" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">👁️</div>
+  <h1>颜色对比度检查器</h1>
+  <p>检查前景色与背景色的 WCAG 对比度，确保无障碍可读性</p>
+</div>
+<div class="tool-panel">
+<div class="tool-controls"><div style="display:flex;flex-wrap:wrap;gap:16px;margin-bottom:16px"><div style="flex:1;min-width:200px"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px">前景色（文字色）</label><div style="display:flex;gap:8px;align-items:center"><input type="color" id="cc-fg-picker" value="#333333" style="width:44px;height:44px;border:1px solid var(--border);border-radius:6px;cursor:pointer;padding:0"><input type="text" id="cc-fg-input" value="#333333" style="flex:1;padding:8px;font-size:14px;font-family:monospace;border:1px solid var(--border);border-radius:6px;background:var(--bg-card)" placeholder="#333333"></div></div><div style="flex:1;min-width:200px"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px">背景色</label><div style="display:flex;gap:8px;align-items:center"><input type="color" id="cc-bg-picker" value="#ffffff" style="width:44px;height:44px;border:1px solid var(--border);border-radius:6px;cursor:pointer;padding:0"><input type="text" id="cc-bg-input" value="#ffffff" style="flex:1;padding:8px;font-size:14px;font-family:monospace;border:1px solid var(--border);border-radius:6px;background:var(--bg-card)" placeholder="#ffffff"></div></div></div><div id="cc-result" style="display:flex;flex-wrap:wrap;gap:16px;margin-bottom:16px;padding:16px;background:var(--bg-subtle);border-radius:8px"><div style="flex:1;min-width:150px;text-align:center"><div style="font-size:36px;font-weight:bold" id="cc-ratio">--:1</div><div style="font-size:12px;color:#888;margin-top:4px">对比度比例</div></div><div style="flex:1;min-width:130px;text-align:center"><div style="font-size:24px;font-weight:bold" id="cc-aa">--</div><div style="font-size:12px;color:#888;margin-top:4px">WCAG AA 普通文本 4.5:1</div></div><div style="flex:1;min-width:130px;text-align:center"><div style="font-size:24px;font-weight:bold" id="cc-aa-large">--</div><div style="font-size:12px;color:#888;margin-top:4px">WCAG AA 大号文本 3:1</div></div><div style="flex:1;min-width:130px;text-align:center"><div style="font-size:24px;font-weight:bold" id="cc-aaa">--</div><div style="font-size:12px;color:#888;margin-top:4px">WCAG AAA 普通文本 7:1</div></div><div style="flex:1;min-width:130px;text-align:center"><div style="font-size:24px;font-weight:bold" id="cc-aaa-large">--</div><div style="font-size:12px;color:#888;margin-top:4px">WCAG AAA 大号文本 4.5:1</div></div></div><div id="cc-preview" style="display:flex;justify-content:center;align-items:center;min-height:100px;padding:20px;border-radius:8px;margin-bottom:12px;background:#ffffff" class="cc-preview-box"><span style="font-size:24px;font-weight:bold;color:#333333">示例文字 Sample Text</span></div></div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>免费的在线颜色对比度检查器。<strong>根据 WCAG 2.2 标准检查前景色和背景色的对比度</strong>，确保网站、应用或设计对所有人（包括视觉障碍用户）都是可读的。</p><p>支持 HEX、RGB、HSL 颜色输入。实时显示对比度比例，自动判断是否满足 AA 标准（4.5:1 普通文本 / 3:1 大号文本）和 AAA 标准（7:1 普通文本 / 4.5:1 大号文本）。</p><p>所有处理在浏览器本地完成，无需上传数据。</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>支持 HEX、RGB、HSL 颜色格式输入</li><li>实时计算对比度比例</li><li>自动判断 WCAG AA 和 AAA 标准</li><li>支持普通文本和大号文本标准</li><li>视觉效果预览（文字示例）</li><li>完全本地处理，数据不上传</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">什么是 WCAG 对比度标准？</h3><p>WCAG 定义了文本和背景的最小对比度：AA 标准要求普通文本 4.5:1，大号文本 3:1；AAA 标准要求普通文本 7:1，大号文本 4.5:1。</p><h3 style="margin-top:20px;margin-bottom:8px">如何计算对比度比例？</h3><p>对比度比例 = (L1 + 0.05) / (L2 + 0.05)，其中 L1 是较亮颜色的相对亮度，L2 是较暗颜色的相对亮度。相对亮度根据 sRGB 色彩空间计算。</p><h3 style="margin-top:20px;margin-bottom:8px">什么情况下需要 AA 标准？</h3><p>AA 标准是大多数网站和应用的法定最低无障碍要求。建议至少达到 AA 标准。</p><h3 style="margin-top:20px;margin-bottom:8px">对比度不达标怎么办？</h3><p>加深前景色或提亮背景色可提高对比度。工具提供实时反馈，深色文字配浅色背景通常更容易满足要求。</p><h3 style="margin-top:20px;margin-bottom:8px">数据会上传到服务器吗？</h3><p>不会。所有处理完全在浏览器本地完成，颜色数据不会离开你的电脑。</p></section>
+<section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/color-converter" class="tool-card"><div class="icon">🎨</div><h3>颜色转换</h3><p>Hex 十六进制颜色码与 RGB 互转，实时预览</p></a><a href="/tools/color-picker" class="tool-card"><div class="icon">🎨</div><h3>颜色选择器</h3><p>可视化选色，支持 HEX/RGB/HSL/HSV，实时预览</p></a><a href="/tools/color-palette" class="tool-card"><div class="icon">🎨</div><h3>配色方案生成器</h3><p>从任意颜色生成和谐配色方案——互补、类似、三角、四角、单色</p></a><a href="/tools/color-name-finder" class="tool-card"><div class="icon">🎨</div><h3>颜色名称查询</h3><p>输入 Hex/RGB 查找最近的颜色名称，浏览 CSS 命名色板</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/color-contrast.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>
