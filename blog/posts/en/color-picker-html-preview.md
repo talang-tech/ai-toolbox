@@ -1,3 +1,8 @@
+---
+title: Color Picker & HTML Live Preview: Two New Tools Launched
+date: 2026-07-08
+---
+
 # Color Picker & HTML Live Preview: Two New Tools Launched
 
 Date: 2026-07-08

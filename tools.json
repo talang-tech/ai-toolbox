@@ -87,7 +87,9 @@
           "css-flexbox-generator",
           "svg-optimizer",
           "css-grid-generator",
-          "css-animation"
+          "css-animation",
+          "html-to-svg",
+          "css-inliner"
         ]
       },
       "encode": {
@@ -8111,6 +8113,192 @@
       "index": 110,
       "ui_zh": "<div class=\"tool-controls\"><div class=\"input-row\"><label>动画类型</label><select id=\"ca-type\" style=\"flex:1;padding:8px;font-size:14px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card)\"><option value=\"fadeIn\">淡入</option><option value=\"fadeOut\">淡出</option><option value=\"slideInLeft\">从左滑入</option><option value=\"slideInRight\">从右滑入</option><option value=\"slideInUp\">从下滑入</option><option value=\"slideInDown\">从上滑入</option><option value=\"slideOutLeft\">向左滑出</option><option value=\"slideOutRight\">向右滑出</option><option value=\"bounce\">弹跳</option><option value=\"shake\">抖动</option><option value=\"rotate\">旋转</option><option value=\"pulse\">脉冲</option><option value=\"flip\">翻转</option><option value=\"zoomIn\">放大进入</option><option value=\"zoomOut\">缩小退出</option><option value=\"heartBeat\">心跳</option></select></div><div style=\"display:flex;flex-wrap:wrap;gap:12px;margin:12px 0\"><div style=\"flex:1;min-width:100px\"><label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">时长 (s)</label><input type=\"number\" id=\"ca-duration\" value=\"1\" min=\"0.1\" max=\"30\" step=\"0.1\" style=\"width:100%;padding:8px;font-size:14px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card)\"></div><div style=\"flex:1;min-width:120px\"><label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">缓动函数</label><select id=\"ca-timing\" style=\"width:100%;padding:8px;font-size:14px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card)\"><option value=\"ease\">ease</option><option value=\"ease-in\">ease-in</option><option value=\"ease-out\">ease-out</option><option value=\"ease-in-out\">ease-in-out</option><option value=\"linear\">linear</option><option value=\"cubic-bezier(0.68,-0.55,0.265,1.55)\">bounce out</option></select></div><div style=\"flex:1;min-width:80px\"><label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">延迟 (s)</label><input type=\"number\" id=\"ca-delay\" value=\"0\" min=\"0\" max=\"30\" step=\"0.1\" style=\"width:100%;padding:8px;font-size:14px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card)\"></div></div><div style=\"display:flex;flex-wrap:wrap;gap:12px;margin:12px 0\"><div style=\"flex:1;min-width:100px\"><label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">播放次数</label><select id=\"ca-iteration\" style=\"width:100%;padding:8px;font-size:14px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card)\"><option value=\"1\">1 次</option><option value=\"2\">2 次</option><option value=\"3\">3 次</option><option value=\"infinite\">无限循环</option></select></div><div style=\"flex:1;min-width:100px\"><label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">方向</label><select id=\"ca-direction\" style=\"width:100%;padding:8px;font-size:14px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card)\"><option value=\"normal\">normal</option><option value=\"reverse\">reverse</option><option value=\"alternate\">alternate</option><option value=\"alternate-reverse\">alternate-reverse</option></select></div><div style=\"flex:1;min-width:100px\"><label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">填充模式</label><select id=\"ca-fill\" style=\"width:100%;padding:8px;font-size:14px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card)\"><option value=\"none\">none</option><option value=\"forwards\">forwards</option><option value=\"backwards\">backwards</option><option value=\"both\">both</option></select></div></div></div><div id=\"ca-preview\" style=\"display:flex;justify-content:center;align-items:center;min-height:120px;margin:12px 0;padding:20px;background:var(--bg-subtle);border:1px solid var(--border);border-radius:8px;overflow:hidden\"><div style=\"font-size:28px;font-weight:bold\">预览</div></div><div style=\"display:flex;gap:8px;margin:8px 0\"><button class=\"btn btn-secondary\" id=\"ca-copy-btn\">📋 复制 CSS</button></div><div><textarea id=\"ca-output\" readonly style=\"width:100%;min-height:180px;font-family:Consolas,monospace;font-size:13px;line-height:1.5;background:var(--bg-subtle);border:1px solid var(--border);border-radius:6px;padding:12px\" placeholder=\"CSS 代码将显示在这里...\"></textarea></div><div id=\"ca-status\" style=\"margin-top:8px;font-size:13px;color:var(--text-muted)\"></div>",
       "ui_en": "<div class=\"tool-controls\"><div class=\"input-row\"><label>Animation</label><select id=\"ca-type\" style=\"flex:1;padding:8px;font-size:14px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card)\"><option value=\"fadeIn\">Fade In</option><option value=\"fadeOut\">Fade Out</option><option value=\"slideInLeft\">Slide In Left</option><option value=\"slideInRight\">Slide In Right</option><option value=\"slideInUp\">Slide In Up</option><option value=\"slideInDown\">Slide In Down</option><option value=\"slideOutLeft\">Slide Out Left</option><option value=\"slideOutRight\">Slide Out Right</option><option value=\"bounce\">Bounce</option><option value=\"shake\">Shake</option><option value=\"rotate\">Rotate</option><option value=\"pulse\">Pulse</option><option value=\"flip\">Flip</option><option value=\"zoomIn\">Zoom In</option><option value=\"zoomOut\">Zoom Out</option><option value=\"heartBeat\">Heart Beat</option></select></div><div style=\"display:flex;flex-wrap:wrap;gap:12px;margin:12px 0\"><div style=\"flex:1;min-width:100px\"><label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">Duration (s)</label><input type=\"number\" id=\"ca-duration\" value=\"1\" min=\"0.1\" max=\"30\" step=\"0.1\" style=\"width:100%;padding:8px;font-size:14px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card)\"></div><div style=\"flex:1;min-width:120px\"><label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">Easing</label><select id=\"ca-timing\" style=\"width:100%;padding:8px;font-size:14px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card)\"><option value=\"ease\">ease</option><option value=\"ease-in\">ease-in</option><option value=\"ease-out\">ease-out</option><option value=\"ease-in-out\">ease-in-out</option><option value=\"linear\">linear</option><option value=\"cubic-bezier(0.68,-0.55,0.265,1.55)\">bounce out</option></select></div><div style=\"flex:1;min-width:80px\"><label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">Delay (s)</label><input type=\"number\" id=\"ca-delay\" value=\"0\" min=\"0\" max=\"30\" step=\"0.1\" style=\"width:100%;padding:8px;font-size:14px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card)\"></div></div><div style=\"display:flex;flex-wrap:wrap;gap:12px;margin:12px 0\"><div style=\"flex:1;min-width:100px\"><label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">Iteration</label><select id=\"ca-iteration\" style=\"width:100%;padding:8px;font-size:14px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card)\"><option value=\"1\">1</option><option value=\"2\">2</option><option value=\"3\">3</option><option value=\"infinite\">Infinite</option></select></div><div style=\"flex:1;min-width:100px\"><label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">Direction</label><select id=\"ca-direction\" style=\"width:100%;padding:8px;font-size:14px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card)\"><option value=\"normal\">normal</option><option value=\"reverse\">reverse</option><option value=\"alternate\">alternate</option><option value=\"alternate-reverse\">alternate-reverse</option></select></div><div style=\"flex:1;min-width:100px\"><label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">Fill Mode</label><select id=\"ca-fill\" style=\"width:100%;padding:8px;font-size:14px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card)\"><option value=\"none\">none</option><option value=\"forwards\">forwards</option><option value=\"backwards\">backwards</option><option value=\"both\">both</option></select></div></div></div><div id=\"ca-preview\" style=\"display:flex;justify-content:center;align-items:center;min-height:120px;margin:12px 0;padding:20px;background:var(--bg-subtle);border:1px solid var(--border);border-radius:8px;overflow:hidden\"><div style=\"font-size:28px;font-weight:bold\">Preview</div></div><div style=\"display:flex;gap:8px;margin:8px 0\"><button class=\"btn btn-secondary\" id=\"ca-copy-btn\">📋 Copy CSS</button></div><div><textarea id=\"ca-output\" readonly style=\"width:100%;min-height:180px;font-family:Consolas,monospace;font-size:13px;line-height:1.5;background:var(--bg-subtle);border:1px solid var(--border);border-radius:6px;padding:12px\" placeholder=\"CSS code will appear here...\"></textarea></div><div id=\"ca-status\" style=\"margin-top:8px;font-size:13px;color:var(--text-muted)\"></div>"
+    },
+    {
+      "slug": "html-to-svg",
+      "category": "dev",
+      "icon": "🖼️",
+      "name_zh": "HTML 转 SVG",
+      "name_en": "HTML to SVG Converter",
+      "short_zh": "将 HTML 代码片段转换为 SVG 矢量图形，支持复制和下载",
+      "short_en": "Convert HTML snippets to SVG vector graphics with copy and download support",
+      "keywords_zh": "HTML转SVG,HTML to SVG,HTML转矢量图,HTML渲染,svg生成,html到svg,html转图片,svg转换器,html截图,html转矢量,前端工具,在线html转svg",
+      "keywords_en": "html to svg, html to svg converter, convert html to svg, html to vector, svg generator, html renderer, online html to svg, html to svg tool, html2svg",
+      "long_zh": "<p>免费的在线 HTML 转 SVG 工具。<strong>将 HTML 代码片段转换为可缩放矢量图形(SVG)</strong>。使用 SVG 的 foreignObject 技术将 HTML 嵌入 SVG，保留文本可选中、可搜索特性。</p><p>适合：将 UI 组件导出为矢量图用于文档、将 HTML 表格/图表转为 SVG 用于报告、设计稿交付、演示文稿中的代码片段展示。</p><p>所有处理在浏览器本地完成，无需上传数据。</p>",
+      "long_en": "<p>Free online HTML to SVG converter. <strong>Transform HTML snippets into scalable vector graphics (SVG)</strong> using SVG foreignObject technology. Text remains selectable and searchable.</p><p>Perfect for: exporting UI components as vector graphics for documentation, converting HTML tables/charts to SVG for reports, design handoff, and code snippet displays in presentations.</p><p>All processing is done locally in your browser.</p>",
+      "seo_title_zh": "HTML 转 SVG 在线工具 | 免费将 HTML 代码转换为矢量图形",
+      "seo_title_en": "HTML to SVG Converter - Free Online HTML to Vector Graphics Tool",
+      "features_zh": [
+        "将 HTML 代码片段转换为标准 SVG 格式",
+        "保留文本可选中、可搜索特性",
+        "支持自定义 SVG 宽度和高度",
+        "一键复制 SVG 代码或下载 SVG 文件",
+        "预览转换效果，所见即所得",
+        "完全本地处理，数据不上传服务器"
+      ],
+      "features_en": [
+        "Convert HTML snippets to standard SVG format",
+        "Keeps text selectable and searchable",
+        "Customizable SVG width and height",
+        "One-click copy SVG code or download SVG file",
+        "Real-time preview of conversion results",
+        "100% local processing, no data upload"
+      ],
+      "faq_zh": [
+        [
+          "HTML 转 SVG 的原理是什么？",
+          "使用 SVG 的 foreignObject 元素，可以直接在 SVG 中嵌入 HTML 内容。文本保持可选中、可搜索状态。注意：部分复杂 CSS 效果可能不支持。"
+        ],
+        [
+          "哪些 HTML 和 CSS 特性支持？",
+          "基础 HTML 标签、CSS 样式、字体、颜色、边距等均支持。不支持外部资源加载、iframe、JavaScript 交互。"
+        ],
+        [
+          "转换后的 SVG 可以缩放吗？",
+          "可以。SVG 是矢量格式，可以无限缩放而不失真，适合印刷和 Retina 显示屏。"
+        ],
+        [
+          "数据安全吗？",
+          "完全安全。所有处理在浏览器本地完成，没有任何数据上传到服务器。"
+        ],
+        [
+          "支持中文内容吗？",
+          "支持。SVG 使用 UTF-8 编码，中文等 Unicode 字符完整保留。"
+        ],
+        [
+          "可以下载为文件吗？",
+          "可以。点击下载按钮即可保存为 .svg 文件，可在浏览器、设计软件中直接打开。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "How does HTML to SVG conversion work?",
+          "It uses SVG's foreignObject element to embed HTML directly inside SVG. Text remains selectable and searchable. Note: some complex CSS effects may not be supported."
+        ],
+        [
+          "Which HTML and CSS features are supported?",
+          "Basic HTML tags, CSS styles, fonts, colors, margins are supported. External resources, iframes, and JavaScript interactions are not supported."
+        ],
+        [
+          "Can the SVG be scaled?",
+          "Yes. SVG is a vector format that can be scaled infinitely without quality loss, ideal for print and Retina displays."
+        ],
+        [
+          "Is my data safe?",
+          "Completely safe. All processing is done locally in your browser. No data is uploaded."
+        ],
+        [
+          "Does it support Chinese content?",
+          "Yes. SVG uses UTF-8 encoding, so Chinese and other Unicode characters are fully preserved."
+        ],
+        [
+          "Can I download as a file?",
+          "Yes. Click the download button to save as .svg file, which can be opened in browsers and design software."
+        ]
+      ],
+      "related": [
+        "svg-optimizer",
+        "html-preview",
+        "html-to-markdown",
+        "html-to-jsx",
+        "html-minifier"
+      ],
+      "index": 111,
+      "ui_zh": "<div class=\"tool-controls\">\n<div style=\"display:flex;flex-wrap:wrap;gap:12px;margin-bottom:12px\">\n<div style=\"flex:1;min-width:100px\">\n<label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">SVG 宽度 (px)</label>\n<input type=\"number\" id=\"hs-width\" value=\"800\" min=\"100\" max=\"4000\" step=\"10\" style=\"width:100%;padding:8px;font-size:14px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card)\">\n</div>\n<div style=\"flex:1;min-width:100px\">\n<label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">SVG 高度 (px)</label>\n<input type=\"number\" id=\"hs-height\" value=\"600\" min=\"100\" max=\"4000\" step=\"10\" style=\"width:100%;padding:8px;font-size:14px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card)\">\n</div>\n</div>\n<div style=\"margin-bottom:8px;display:flex;gap:8px;flex-wrap:wrap\">\n<button class=\"btn\" id=\"hs-convert\">🔄 转换</button>\n<button class=\"btn btn-secondary\" id=\"hs-copy\">📋 复制 SVG 代码</button>\n<button class=\"btn btn-secondary\" id=\"hs-download\">⬇️ 下载 SVG</button>\n<button class=\"btn btn-secondary\" id=\"hs-clear\">🗑️ 清空</button>\n</div>\n<div style=\"display:flex;gap:12px;flex-wrap:wrap\">\n<div style=\"flex:1;min-width:300px\">\n<label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">HTML 代码</label>\n<textarea id=\"hs-input\" style=\"width:100%;min-height:250px;font-family:Consolas,monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card);resize:vertical\" placeholder=\"粘贴 HTML 代码，如：&lt;h1&gt;Hello World&lt;/h1&gt;&lt;p&gt;这是一段文本。&lt;/p&gt;\"></textarea>\n</div>\n<div style=\"flex:1;min-width:300px\">\n<label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">SVG 输出</label>\n<textarea id=\"hs-output\" readonly style=\"width:100%;min-height:250px;font-family:Consolas,monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-subtle);resize:vertical\" placeholder=\"SVG 代码将显示在这里...\"></textarea>\n</div>\n</div>\n<div id=\"hs-preview\" style=\"display:none\"></div>\n<div id=\"hs-msg\" style=\"margin-top:8px;font-size:13px\"></div>\n<div style=\"margin-top:12px;padding:8px 12px;background:var(--bg-warning-light);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-dim)\"><strong>🔒 隐私提示</strong>：所有处理在浏览器本地完成，数据不会上传到服务器。</div>\n</div>",
+      "ui_en": "<div class=\"tool-controls\">\n<div style=\"display:flex;flex-wrap:wrap;gap:12px;margin-bottom:12px\">\n<div style=\"flex:1;min-width:100px\">\n<label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">SVG Width (px)</label>\n<input type=\"number\" id=\"hs-width\" value=\"800\" min=\"100\" max=\"4000\" step=\"10\" style=\"width:100%;padding:8px;font-size:14px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card)\">\n</div>\n<div style=\"flex:1;min-width:100px\">\n<label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">SVG Height (px)</label>\n<input type=\"number\" id=\"hs-height\" value=\"600\" min=\"100\" max=\"4000\" step=\"10\" style=\"width:100%;padding:8px;font-size:14px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card)\">\n</div>\n</div>\n<div style=\"margin-bottom:8px;display:flex;gap:8px;flex-wrap:wrap\">\n<button class=\"btn\" id=\"hs-convert\">🔄 Convert</button>\n<button class=\"btn btn-secondary\" id=\"hs-copy\">📋 Copy SVG Code</button>\n<button class=\"btn btn-secondary\" id=\"hs-download\">⬇️ Download SVG</button>\n<button class=\"btn btn-secondary\" id=\"hs-clear\">🗑️ Clear</button>\n</div>\n<div style=\"display:flex;gap:12px;flex-wrap:wrap\">\n<div style=\"flex:1;min-width:300px\">\n<label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">HTML Code</label>\n<textarea id=\"hs-input\" style=\"width:100%;min-height:250px;font-family:Consolas,monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card);resize:vertical\" placeholder=\"Paste HTML code, e.g.: &lt;h1&gt;Hello World&lt;/h1&gt;&lt;p&gt;This is a paragraph.&lt;/p&gt;\"></textarea>\n</div>\n<div style=\"flex:1;min-width:300px\">\n<label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">SVG Output</label>\n<textarea id=\"hs-output\" readonly style=\"width:100%;min-height:250px;font-family:Consolas,monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-subtle);resize:vertical\" placeholder=\"SVG code will appear here...\"></textarea>\n</div>\n</div>\n<div id=\"hs-preview\" style=\"display:none\"></div>\n<div id=\"hs-msg\" style=\"margin-top:8px;font-size:13px\"></div>\n<div style=\"margin-top:12px;padding:8px 12px;background:var(--bg-warning-light);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-dim)\"><strong>🔒 Privacy</strong>: All processing is local. No data upload.</div>\n</div>"
+    },
+    {
+      "slug": "css-inliner",
+      "category": "dev",
+      "icon": "✉️",
+      "name_zh": "CSS 内联转换器",
+      "name_en": "CSS Inliner",
+      "short_zh": "将 HTML 中的 CSS 样式规则内联到每个元素的 style 属性中，用于邮件 HTML",
+      "short_en": "Inline CSS styles from style tags into HTML element style attributes, ideal for email HTML",
+      "keywords_zh": "CSS内联,inline CSS,CSS inliner,邮件HTML,邮件样式嵌入,HTML样式内联,email CSS,样式内联,邮件兼容,HTML转行内样式,行内样式转换,邮件模板,css to inline",
+      "keywords_en": "css inliner, inline css, css to inline styles, email css, html inline styles, css inline tool, email html, style inliner, inline css converter, html email",
+      "long_zh": "<p>免费的在线 CSS 内联转换工具。<strong>将 HTML 中 &lt;style&gt; 标签定义的 CSS 规则自动内联到每个元素的 style 属性中</strong>，解决邮件客户端（如 Outlook、Gmail）不支持外部和嵌入式样式的问题。</p><p>支持 class 和 id 选择器、基础媒体查询、伪类（hover/active 等）作为单独属性保留。适合邮件营销、HTML 邮件模板开发、电子邮件兼容性处理。</p><p>所有处理在浏览器本地完成。</p>",
+      "long_en": "<p>Free online CSS inliner tool. <strong>Automatically inline CSS rules from &lt;style&gt; tags into each element's style attribute</strong>, solving email client compatibility issues where external and embedded styles are not supported.</p><p>Supports class and ID selectors, basic media queries, and pseudo-classes (hover/active etc.) as separate attributes. Perfect for email marketing, HTML email template development, and email compatibility.</p><p>All processing is done locally in your browser.</p>",
+      "seo_title_zh": "CSS 内联转换器 | 在线 HTML 邮件样式内联工具",
+      "seo_title_en": "CSS Inliner - Free Online HTML Email Style Inliner Tool",
+      "features_zh": [
+        "自动将 &lt;style&gt; 块中的 CSS 内联到 HTML 元素",
+        "支持 class 和 id 选择器匹配",
+        "支持媒体查询保留为独立样式块",
+        "支持伪类（:hover、:active 等）保留",
+        "一键复制或下载内联后的 HTML",
+        "完全本地处理，数据不上传"
+      ],
+      "features_en": [
+        "Automatically inline CSS from &lt;style&gt; blocks into HTML elements",
+        "Supports class and ID selector matching",
+        "Preserves media queries as separate style blocks",
+        "Preserves pseudo-classes (:hover, :active, etc.)",
+        "One-click copy or download inlined HTML",
+        "100% local processing, no data upload"
+      ],
+      "faq_zh": [
+        [
+          "为什么要内联 CSS？",
+          "多数邮件客户端（Outlook、Gmail、Yahoo Mail）不支持 &lt;style&gt; 标签中的 CSS，只能识别内联 style 属性。内联后邮件在各种客户端中显示一致。"
+        ],
+        [
+          "支持哪些 CSS 选择器？",
+          "支持 class（.class）、id（#id）、标签选择器（div、p）。复杂选择器如 :nth-child、:not() 不支持。"
+        ],
+        [
+          "伪类如何处理？",
+          "伪类（:hover、:active、:focus 等）会保留在 &lt;style&gt; 块中，因为内联样式不支持伪类。同时生成基础内联样式作为回退。"
+        ],
+        [
+          "媒体查询会被删除吗？",
+          "不会。媒体查询会保留在独立的 &lt;style&gt; 块中，不会内联，以确保响应式邮件在支持媒体查询的客户端中正常工作。"
+        ],
+        [
+          "数据安全吗？",
+          "完全安全。所有处理在浏览器本地完成，没有数据上传到服务器。"
+        ],
+        [
+          "支持复杂的 CSS 框架吗？",
+          "支持基础的 CSS 框架（如 Bootstrap 的部分类）。但过于复杂的选择器组合或 CSS 函数可能无法完全解析。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "Why do I need to inline CSS?",
+          "Most email clients (Outlook, Gmail, Yahoo Mail) don't support CSS in &lt;style&gt; tags. They only recognize inline style attributes. Inlining ensures consistent rendering across email clients."
+        ],
+        [
+          "Which CSS selectors are supported?",
+          "Class (.class), ID (#id), and tag selectors (div, p) are supported. Complex selectors like :nth-child or :not() are not supported."
+        ],
+        [
+          "What about pseudo-classes?",
+          "Pseudo-classes (:hover, :active, :focus, etc.) are preserved in their own &lt;style&gt; block since inline styles can't represent them. Base inline styles are generated as fallback."
+        ],
+        [
+          "Are media queries removed?",
+          "No. Media queries are preserved in a separate &lt;style&gt; block to ensure responsive emails work in clients that support them."
+        ],
+        [
+          "Is my data safe?",
+          "Completely safe. All processing is local in your browser. No data is uploaded to any server."
+        ],
+        [
+          "Does it support CSS frameworks?",
+          "Basic CSS framework classes (like Bootstrap) are supported. However, very complex selector combinations or CSS functions may not be fully parsed."
+        ]
+      ],
+      "related": [
+        "css-minifier",
+        "html-minifier",
+        "html-preview",
+        "css-filter-generator",
+        "css-animation"
+      ],
+      "index": 112,
+      "ui_zh": "<div class=\"tool-controls\">\n<div style=\"margin-bottom:8px;display:flex;gap:8px;flex-wrap:wrap\">\n<button class=\"btn\" id=\"ci-convert\">🔄 内联 CSS</button>\n<button class=\"btn btn-secondary\" id=\"ci-copy\">📋 复制结果</button>\n<button class=\"btn btn-secondary\" id=\"ci-download\">⬇️ 下载 HTML</button>\n<button class=\"btn btn-secondary\" id=\"ci-clear\">🗑️ 清空</button>\n<label style=\"display:flex;align-items:center;gap:4px;font-size:13px;margin-left:8px\"><input type=\"checkbox\" id=\"ci-preview\" checked> 预览</label>\n</div>\n<div style=\"display:flex;gap:12px;flex-wrap:wrap\">\n<div style=\"flex:1;min-width:300px\">\n<label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">HTML 代码（含 CSS）</label>\n<textarea id=\"ci-input\" style=\"width:100%;min-height:300px;font-family:Consolas,monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card);resize:vertical\" placeholder=\"粘贴包含 &lt;style&gt; 的 HTML 代码...\n\n示例：\n&lt;style&gt;\n  .btn { background: blue; color: white; padding: 10px; }\n  .btn:hover { background: darkblue; }\n&lt;/style&gt;\n&lt;div class=&quot;btn&quot;&gt;按钮&lt;/div&gt;\"></textarea>\n</div>\n<div style=\"flex:1;min-width:300px\">\n<label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">内联后结果</label>\n<textarea id=\"ci-output\" readonly style=\"width:100%;min-height:300px;font-family:Consolas,monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-subtle);resize:vertical\" placeholder=\"内联后的 HTML 将显示在这里...\"></textarea>\n</div>\n</div>\n<div id=\"ci-preview-wrap\" style=\"margin-top:12px;border:1px solid var(--border);border-radius:8px;overflow:hidden;display:none\">\n<iframe id=\"ci-preview-frame\" style=\"width:100%;height:200px;border:none;background:#fff\"></iframe>\n</div>\n<div id=\"ci-msg\" style=\"margin-top:8px;font-size:13px\"></div>\n<div style=\"margin-top:12px;padding:8px 12px;background:var(--bg-warning-light);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-dim)\"><strong>🔒 隐私提示</strong>：所有处理在浏览器本地完成，数据不会上传到服务器。</div>\n</div>",
+      "ui_en": "<div class=\"tool-controls\">\n<div style=\"margin-bottom:8px;display:flex;gap:8px;flex-wrap:wrap\">\n<button class=\"btn\" id=\"ci-convert\">🔄 Inline CSS</button>\n<button class=\"btn btn-secondary\" id=\"ci-copy\">📋 Copy Result</button>\n<button class=\"btn btn-secondary\" id=\"ci-download\">⬇️ Download HTML</button>\n<button class=\"btn btn-secondary\" id=\"ci-clear\">🗑️ Clear</button>\n<label style=\"display:flex;align-items:center;gap:4px;font-size:13px;margin-left:8px\"><input type=\"checkbox\" id=\"ci-preview\" checked> Preview</label>\n</div>\n<div style=\"display:flex;gap:12px;flex-wrap:wrap\">\n<div style=\"flex:1;min-width:300px\">\n<label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">HTML with CSS</label>\n<textarea id=\"ci-input\" style=\"width:100%;min-height:300px;font-family:Consolas,monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card);resize:vertical\" placeholder=\"Paste HTML with &lt;style&gt; tags...\n\nExample:\n&lt;style&gt;\n  .btn { background: blue; color: white; padding: 10px; }\n  .btn:hover { background: darkblue; }\n&lt;/style&gt;\n&lt;div class=&quot;btn&quot;&gt;Button&lt;/div&gt;\"></textarea>\n</div>\n<div style=\"flex:1;min-width:300px\">\n<label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">Inlined Result</label>\n<textarea id=\"ci-output\" readonly style=\"width:100%;min-height:300px;font-family:Consolas,monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-subtle);resize:vertical\" placeholder=\"Inlined HTML will appear here...\"></textarea>\n</div>\n</div>\n<div id=\"ci-preview-wrap\" style=\"margin-top:12px;border:1px solid var(--border);border-radius:8px;overflow:hidden;display:none\">\n<iframe id=\"ci-preview-frame\" style=\"width:100%;height:200px;border:none;background:#fff\"></iframe>\n</div>\n<div id=\"ci-msg\" style=\"margin-top:8px;font-size:13px\"></div>\n<div style=\"margin-top:12px;padding:8px 12px;background:var(--bg-warning-light);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-dim)\"><strong>🔒 Privacy</strong>: All processing is local. No data upload.</div>\n</div>"
     }
   ]
 }

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>HTML to SVG Converter - HTML to SVG Converter - Free Online HTML to Vector Graphics Tool | AI Toolbox</title>
+<meta name="description" content="Free online html to svg converter. Convert HTML snippets to SVG vector graphics with copy and download support. Fast, secure, and works in your browser without downloading.">
+<meta name="keywords" content="html to svg, html to svg converter, convert html to svg, html to vector, svg generator, html renderer, online html to svg, html to svg tool, html2svg">
+<link rel="canonical" href="https://tools.talang.fun/en/tools/html-to-svg">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/html-to-svg">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/html-to-svg">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/html-to-svg">
+<meta property="og:title" content="HTML to SVG Converter - HTML to SVG Converter - Free Online HTML to Vector Graphics Tool | AI Toolbox">
+<meta property="og:description" content="Free online html to svg converter. Convert HTML snippets to SVG vector graphics with copy and download support. Fast, secure, and works in your browser without downloading.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/en/tools/html-to-svg">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "HTML to SVG Converter", "description": "Free online html to svg converter. Convert HTML snippets to SVG vector graphics with copy and download support. Fast, secure, and works in your browser without downloading.", "url": "https://tools.talang.fun/en/tools/html-to-svg", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "Convert HTML snippets to SVG vector graphics with copy and download support", "inLanguage": "en", "author": {"@type": "Organization", "name": "AI Toolbox"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/en/" class="logo"><span class="logo-icon">🛠️</span>AI Toolbox</a>
+    <nav class="nav">
+      <a href="/en/">Home</a>
+      <a href="/en/#tools">All Tools</a>
+      <a href="/en/blog/">Blog</a>
+      <a href="/en/about">About</a>
+      <a href="/en/sponsor">Sponsor</a>
+      <a href="https://tools.talang.fun/tools/html-to-svg" class="lang-switch">中文</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🖼️</div>
+  <h1>HTML to SVG Converter</h1>
+  <p>Convert HTML snippets to SVG vector graphics with copy and download support</p>
+</div>
+<div class="tool-panel">
+<div class="tool-controls">
+<div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:12px">
+<div style="flex:1;min-width:100px">
+<label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px">SVG Width (px)</label>
+<input type="number" id="hs-width" value="800" min="100" max="4000" step="10" style="width:100%;padding:8px;font-size:14px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card)">
+</div>
+<div style="flex:1;min-width:100px">
+<label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px">SVG Height (px)</label>
+<input type="number" id="hs-height" value="600" min="100" max="4000" step="10" style="width:100%;padding:8px;font-size:14px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card)">
+</div>
+</div>
+<div style="margin-bottom:8px;display:flex;gap:8px;flex-wrap:wrap">
+<button class="btn" id="hs-convert">🔄 Convert</button>
+<button class="btn btn-secondary" id="hs-copy">📋 Copy SVG Code</button>
+<button class="btn btn-secondary" id="hs-download">⬇️ Download SVG</button>
+<button class="btn btn-secondary" id="hs-clear">🗑️ Clear</button>
+</div>
+<div style="display:flex;gap:12px;flex-wrap:wrap">
+<div style="flex:1;min-width:300px">
+<label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px">HTML Code</label>
+<textarea id="hs-input" style="width:100%;min-height:250px;font-family:Consolas,monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card);resize:vertical" placeholder="Paste HTML code, e.g.: &lt;h1&gt;Hello World&lt;/h1&gt;&lt;p&gt;This is a paragraph.&lt;/p&gt;"></textarea>
+</div>
+<div style="flex:1;min-width:300px">
+<label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px">SVG Output</label>
+<textarea id="hs-output" readonly style="width:100%;min-height:250px;font-family:Consolas,monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-subtle);resize:vertical" placeholder="SVG code will appear here..."></textarea>
+</div>
+</div>
+<div id="hs-preview" style="display:none"></div>
+<div id="hs-msg" style="margin-top:8px;font-size:13px"></div>
+<div style="margin-top:12px;padding:8px 12px;background:var(--bg-warning-light);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-dim)"><strong>🔒 Privacy</strong>: All processing is local. No data upload.</div>
+</div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>About this tool</h2>
+  <p>Free online HTML to SVG converter. <strong>Transform HTML snippets into scalable vector graphics (SVG)</strong> using SVG foreignObject technology. Text remains selectable and searchable.</p><p>Perfect for: exporting UI components as vector graphics for documentation, converting HTML tables/charts to SVG for reports, design handoff, and code snippet displays in presentations.</p><p>All processing is done locally in your browser.</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>Key Features</h2><ul><li>Convert HTML snippets to standard SVG format</li><li>Keeps text selectable and searchable</li><li>Customizable SVG width and height</li><li>One-click copy SVG code or download SVG file</li><li>Real-time preview of conversion results</li><li>100% local processing, no data upload</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>Frequently Asked Questions</h2><h3 style="margin-top:20px;margin-bottom:8px">How does HTML to SVG conversion work?</h3><p>It uses SVG's foreignObject element to embed HTML directly inside SVG. Text remains selectable and searchable. Note: some complex CSS effects may not be supported.</p><h3 style="margin-top:20px;margin-bottom:8px">Which HTML and CSS features are supported?</h3><p>Basic HTML tags, CSS styles, fonts, colors, margins are supported. External resources, iframes, and JavaScript interactions are not supported.</p><h3 style="margin-top:20px;margin-bottom:8px">Can the SVG be scaled?</h3><p>Yes. SVG is a vector format that can be scaled infinitely without quality loss, ideal for print and Retina displays.</p><h3 style="margin-top:20px;margin-bottom:8px">Is my data safe?</h3><p>Completely safe. All processing is done locally in your browser. No data is uploaded.</p><h3 style="margin-top:20px;margin-bottom:8px">Does it support Chinese content?</h3><p>Yes. SVG uses UTF-8 encoding, so Chinese and other Unicode characters are fully preserved.</p><h3 style="margin-top:20px;margin-bottom:8px">Can I download as a file?</h3><p>Yes. Click the download button to save as .svg file, which can be opened in browsers and design software.</p></section>
+<section class="related"><h3>Related Tools</h3><div class="tools-grid"><a href="/en/tools/svg-optimizer" class="tool-card"><div class="icon">🖼️</div><h3>SVG Optimizer</h3><p>Compress and optimize SVG files, reduce file size</p></a><a href="/en/tools/html-preview" class="tool-card"><div class="icon">🔍</div><h3>HTML Live Preview</h3><p>Live HTML/CSS/JS renderer — what you see is what you get</p></a><a href="/en/tools/html-to-markdown" class="tool-card"><div class="icon">↔️</div><h3>HTML to Markdown</h3><p>Convert HTML to Markdown format with preview, copy, and download</p></a><a href="/en/tools/html-to-jsx" class="tool-card"><div class="icon">⚛️</div><h3>HTML to JSX</h3><p>Convert HTML to React JSX syntax — handles className, style objects, attribute mapping, and more</p></a><a href="/en/tools/html-minifier" class="tool-card"><div class="icon">🔧</div><h3>HTML Minifier/Beautifier</h3><p>HTML beautifier and minifier — format or compress markup with indentation control</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>Need a private toolbox or custom browser tool?</h2>
+  <p>AI Toolbox can be adapted for internal workflows, private deployment, sponsored categories, or custom privacy-first utilities.</p>
+  <p><a href="/en/sponsor" data-event="conversion_cta_click" data-label="en_partner_custom_tool_cta">View partnership and custom tool options →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/html-to-svg.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI Toolbox · Free online AI & developer tools · <a href='/en/about'>About</a> · <a href='/en/sponsor'>Sponsor</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('Copied!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>

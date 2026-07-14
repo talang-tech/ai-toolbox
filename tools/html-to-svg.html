@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>HTML 转 SVG - HTML 转 SVG 在线工具 | 免费将 HTML 代码转换为矢量图形 | AI 工具盒子</title>
+<meta name="description" content="免费在线HTML 转 SVG工具，将 HTML 代码片段转换为 SVG 矢量图形，支持复制和下载。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="HTML转SVG,HTML to SVG,HTML转矢量图,HTML渲染,svg生成,html到svg,html转图片,svg转换器,html截图,html转矢量,前端工具,在线html转svg">
+<link rel="canonical" href="https://tools.talang.fun/tools/html-to-svg">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/html-to-svg">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/html-to-svg">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/html-to-svg">
+<meta property="og:title" content="HTML 转 SVG - HTML 转 SVG 在线工具 | 免费将 HTML 代码转换为矢量图形 | AI 工具盒子">
+<meta property="og:description" content="免费在线HTML 转 SVG工具，将 HTML 代码片段转换为 SVG 矢量图形，支持复制和下载。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/html-to-svg">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "HTML 转 SVG", "description": "免费在线HTML 转 SVG工具，将 HTML 代码片段转换为 SVG 矢量图形，支持复制和下载。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/html-to-svg", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "将 HTML 代码片段转换为 SVG 矢量图形，支持复制和下载", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/tools/html-to-svg" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🖼️</div>
+  <h1>HTML 转 SVG</h1>
+  <p>将 HTML 代码片段转换为 SVG 矢量图形，支持复制和下载</p>
+</div>
+<div class="tool-panel">
+<div class="tool-controls">
+<div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:12px">
+<div style="flex:1;min-width:100px">
+<label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px">SVG 宽度 (px)</label>
+<input type="number" id="hs-width" value="800" min="100" max="4000" step="10" style="width:100%;padding:8px;font-size:14px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card)">
+</div>
+<div style="flex:1;min-width:100px">
+<label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px">SVG 高度 (px)</label>
+<input type="number" id="hs-height" value="600" min="100" max="4000" step="10" style="width:100%;padding:8px;font-size:14px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card)">
+</div>
+</div>
+<div style="margin-bottom:8px;display:flex;gap:8px;flex-wrap:wrap">
+<button class="btn" id="hs-convert">🔄 转换</button>
+<button class="btn btn-secondary" id="hs-copy">📋 复制 SVG 代码</button>
+<button class="btn btn-secondary" id="hs-download">⬇️ 下载 SVG</button>
+<button class="btn btn-secondary" id="hs-clear">🗑️ 清空</button>
+</div>
+<div style="display:flex;gap:12px;flex-wrap:wrap">
+<div style="flex:1;min-width:300px">
+<label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px">HTML 代码</label>
+<textarea id="hs-input" style="width:100%;min-height:250px;font-family:Consolas,monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card);resize:vertical" placeholder="粘贴 HTML 代码，如：&lt;h1&gt;Hello World&lt;/h1&gt;&lt;p&gt;这是一段文本。&lt;/p&gt;"></textarea>
+</div>
+<div style="flex:1;min-width:300px">
+<label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px">SVG 输出</label>
+<textarea id="hs-output" readonly style="width:100%;min-height:250px;font-family:Consolas,monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-subtle);resize:vertical" placeholder="SVG 代码将显示在这里..."></textarea>
+</div>
+</div>
+<div id="hs-preview" style="display:none"></div>
+<div id="hs-msg" style="margin-top:8px;font-size:13px"></div>
+<div style="margin-top:12px;padding:8px 12px;background:var(--bg-warning-light);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-dim)"><strong>🔒 隐私提示</strong>：所有处理在浏览器本地完成，数据不会上传到服务器。</div>
+</div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>免费的在线 HTML 转 SVG 工具。<strong>将 HTML 代码片段转换为可缩放矢量图形(SVG)</strong>。使用 SVG 的 foreignObject 技术将 HTML 嵌入 SVG，保留文本可选中、可搜索特性。</p><p>适合：将 UI 组件导出为矢量图用于文档、将 HTML 表格/图表转为 SVG 用于报告、设计稿交付、演示文稿中的代码片段展示。</p><p>所有处理在浏览器本地完成，无需上传数据。</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>将 HTML 代码片段转换为标准 SVG 格式</li><li>保留文本可选中、可搜索特性</li><li>支持自定义 SVG 宽度和高度</li><li>一键复制 SVG 代码或下载 SVG 文件</li><li>预览转换效果，所见即所得</li><li>完全本地处理，数据不上传服务器</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">HTML 转 SVG 的原理是什么？</h3><p>使用 SVG 的 foreignObject 元素，可以直接在 SVG 中嵌入 HTML 内容。文本保持可选中、可搜索状态。注意：部分复杂 CSS 效果可能不支持。</p><h3 style="margin-top:20px;margin-bottom:8px">哪些 HTML 和 CSS 特性支持？</h3><p>基础 HTML 标签、CSS 样式、字体、颜色、边距等均支持。不支持外部资源加载、iframe、JavaScript 交互。</p><h3 style="margin-top:20px;margin-bottom:8px">转换后的 SVG 可以缩放吗？</h3><p>可以。SVG 是矢量格式，可以无限缩放而不失真，适合印刷和 Retina 显示屏。</p><h3 style="margin-top:20px;margin-bottom:8px">数据安全吗？</h3><p>完全安全。所有处理在浏览器本地完成，没有任何数据上传到服务器。</p><h3 style="margin-top:20px;margin-bottom:8px">支持中文内容吗？</h3><p>支持。SVG 使用 UTF-8 编码，中文等 Unicode 字符完整保留。</p><h3 style="margin-top:20px;margin-bottom:8px">可以下载为文件吗？</h3><p>可以。点击下载按钮即可保存为 .svg 文件，可在浏览器、设计软件中直接打开。</p></section>
+<section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/svg-optimizer" class="tool-card"><div class="icon">🖼️</div><h3>SVG 优化器</h3><p>压缩和优化 SVG 文件，去除冗余属性，减小文件体积</p></a><a href="/tools/html-preview" class="tool-card"><div class="icon">🔍</div><h3>HTML 实时预览</h3><p>实时渲染 HTML/CSS/JS，所见即所得</p></a><a href="/tools/html-to-markdown" class="tool-card"><div class="icon">↔️</div><h3>HTML 转 Markdown</h3><p>将 HTML 转换为 Markdown 格式，支持预览、复制和下载</p></a><a href="/tools/html-to-jsx" class="tool-card"><div class="icon">⚛️</div><h3>HTML 转 JSX</h3><p>将 HTML 转换为 React JSX 语法，处理 className、style、属性映射等</p></a><a href="/tools/html-minifier" class="tool-card"><div class="icon">🔧</div><h3>HTML 压缩/美化</h3><p>HTML 代码格式化或压缩，去注释、去空白，支持缩进控制</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/html-to-svg.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>
