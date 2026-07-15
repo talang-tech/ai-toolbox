@@ -89,7 +89,8 @@
           "css-grid-generator",
           "css-animation",
           "html-to-svg",
-          "css-inliner"
+          "css-inliner",
+          "yaml-validator"
         ]
       },
       "encode": {
@@ -117,7 +118,8 @@
           "uuid-generator",
           "slug-generator",
           "emoji-picker",
-          "html-to-pdf"
+          "html-to-pdf",
+          "ulid-generator"
         ]
       },
       "json": {
@@ -8299,6 +8301,186 @@
       "index": 112,
       "ui_zh": "<div class=\"tool-controls\">\n<div style=\"margin-bottom:8px;display:flex;gap:8px;flex-wrap:wrap\">\n<button class=\"btn\" id=\"ci-convert\">🔄 内联 CSS</button>\n<button class=\"btn btn-secondary\" id=\"ci-copy\">📋 复制结果</button>\n<button class=\"btn btn-secondary\" id=\"ci-download\">⬇️ 下载 HTML</button>\n<button class=\"btn btn-secondary\" id=\"ci-clear\">🗑️ 清空</button>\n<label style=\"display:flex;align-items:center;gap:4px;font-size:13px;margin-left:8px\"><input type=\"checkbox\" id=\"ci-preview\" checked> 预览</label>\n</div>\n<div style=\"display:flex;gap:12px;flex-wrap:wrap\">\n<div style=\"flex:1;min-width:300px\">\n<label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">HTML 代码（含 CSS）</label>\n<textarea id=\"ci-input\" style=\"width:100%;min-height:300px;font-family:Consolas,monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card);resize:vertical\" placeholder=\"粘贴包含 &lt;style&gt; 的 HTML 代码...\n\n示例：\n&lt;style&gt;\n  .btn { background: blue; color: white; padding: 10px; }\n  .btn:hover { background: darkblue; }\n&lt;/style&gt;\n&lt;div class=&quot;btn&quot;&gt;按钮&lt;/div&gt;\"></textarea>\n</div>\n<div style=\"flex:1;min-width:300px\">\n<label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">内联后结果</label>\n<textarea id=\"ci-output\" readonly style=\"width:100%;min-height:300px;font-family:Consolas,monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-subtle);resize:vertical\" placeholder=\"内联后的 HTML 将显示在这里...\"></textarea>\n</div>\n</div>\n<div id=\"ci-preview-wrap\" style=\"margin-top:12px;border:1px solid var(--border);border-radius:8px;overflow:hidden;display:none\">\n<iframe id=\"ci-preview-frame\" style=\"width:100%;height:200px;border:none;background:#fff\"></iframe>\n</div>\n<div id=\"ci-msg\" style=\"margin-top:8px;font-size:13px\"></div>\n<div style=\"margin-top:12px;padding:8px 12px;background:var(--bg-warning-light);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-dim)\"><strong>🔒 隐私提示</strong>：所有处理在浏览器本地完成，数据不会上传到服务器。</div>\n</div>",
       "ui_en": "<div class=\"tool-controls\">\n<div style=\"margin-bottom:8px;display:flex;gap:8px;flex-wrap:wrap\">\n<button class=\"btn\" id=\"ci-convert\">🔄 Inline CSS</button>\n<button class=\"btn btn-secondary\" id=\"ci-copy\">📋 Copy Result</button>\n<button class=\"btn btn-secondary\" id=\"ci-download\">⬇️ Download HTML</button>\n<button class=\"btn btn-secondary\" id=\"ci-clear\">🗑️ Clear</button>\n<label style=\"display:flex;align-items:center;gap:4px;font-size:13px;margin-left:8px\"><input type=\"checkbox\" id=\"ci-preview\" checked> Preview</label>\n</div>\n<div style=\"display:flex;gap:12px;flex-wrap:wrap\">\n<div style=\"flex:1;min-width:300px\">\n<label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">HTML with CSS</label>\n<textarea id=\"ci-input\" style=\"width:100%;min-height:300px;font-family:Consolas,monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card);resize:vertical\" placeholder=\"Paste HTML with &lt;style&gt; tags...\n\nExample:\n&lt;style&gt;\n  .btn { background: blue; color: white; padding: 10px; }\n  .btn:hover { background: darkblue; }\n&lt;/style&gt;\n&lt;div class=&quot;btn&quot;&gt;Button&lt;/div&gt;\"></textarea>\n</div>\n<div style=\"flex:1;min-width:300px\">\n<label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">Inlined Result</label>\n<textarea id=\"ci-output\" readonly style=\"width:100%;min-height:300px;font-family:Consolas,monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-subtle);resize:vertical\" placeholder=\"Inlined HTML will appear here...\"></textarea>\n</div>\n</div>\n<div id=\"ci-preview-wrap\" style=\"margin-top:12px;border:1px solid var(--border);border-radius:8px;overflow:hidden;display:none\">\n<iframe id=\"ci-preview-frame\" style=\"width:100%;height:200px;border:none;background:#fff\"></iframe>\n</div>\n<div id=\"ci-msg\" style=\"margin-top:8px;font-size:13px\"></div>\n<div style=\"margin-top:12px;padding:8px 12px;background:var(--bg-warning-light);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-dim)\"><strong>🔒 Privacy</strong>: All processing is local. No data upload.</div>\n</div>"
+    },
+    {
+      "slug": "ulid-generator",
+      "category": "generate",
+      "icon": "🆔",
+      "name_zh": "ULID 生成器",
+      "name_en": "ULID Generator",
+      "short_zh": "在线生成 ULID（通用唯一字典序排序标识符），可自定义时间戳、批量生成和复制",
+      "short_en": "Generate ULIDs uniquely lexicographically sortable identifiers online with custom timestamps and batch generation",
+      "keywords_zh": "ULID生成器,ULID在线,ULID是什么,唯一标识符,字典序排序ID,时间戳排序ID,ULID vs UUID,ULID批量生成,分布式ID,唯一ID生成器,有序UUID,全局唯一标识符,Crockford Base32",
+      "keywords_en": "ULID generator,ULID online,ULID vs UUID,unique identifier,lexicographically sortable ID,timestamp sortable ID,distributed ID,unique ID generator,Crockford Base32,ordered UUID",
+      "long_zh": "<p>免费的在线 ULID 生成器。<strong>ULID（Universally Unique Lexicographically Sortable Identifier）</strong>是一种比 UUID 更好的替代方案——它们按时间排序，用 Crockford 的 Base32 编码（比 UUID 更短），且区分大小写友好的字符串表示。</p><p>ULID 的 26 字符编码包含 10 字符时间戳（毫秒精度，编码至 48 位）和 16 字符随机数。支持自定义时间戳生成、批量生成（1-100 个）、按时间戳排序、复制和下载。所有处理在浏览器本地完成。</p>",
+      "long_en": "<p>Free online ULID generator. <strong>ULID (Universally Unique Lexicographically Sortable Identifier)</strong> is a better alternative to UUID—they are sortable by time, use Crockford Base32 encoding (shorter than UUID), and present a case-insensitive-friendly string representation.</p><p>A 26-character ULID consists of a 10-character timestamp (millisecond precision, 48-bit) and 16 random characters. Custom timestamp, batch generation (1-100), sort by timestamp, copy, and download. All processing is local.</p>",
+      "seo_title_zh": "ULID 生成器 - 在线生成唯一字典序排序标识符",
+      "seo_title_en": "ULID Generator - Generate Universally Unique Lexicographically Sortable IDs Online",
+      "features_zh": [
+        "生成符合 ULID 规范的 26 字符唯一标识符",
+        "支持自定义时间戳生成 ULID",
+        "批量生成 1-100 个 ULID，按时间排序",
+        "一键复制单个或全部 ULID",
+        "下载为 TXT 或 JSON 格式",
+        "显示 ULID 各部分说明：时间戳和随机数",
+        "浏览器本地处理，无数据上传"
+      ],
+      "features_en": [
+        "Generate ULID-compliant 26-character unique identifiers",
+        "Custom timestamp-based ULID generation",
+        "Batch generate 1-100 ULIDs, sorted by time",
+        "One-click copy single or all ULIDs",
+        "Download as TXT or JSON format",
+        "Display ULID component breakdown: timestamp and random parts",
+        "Browser-local processing, no data upload"
+      ],
+      "faq_zh": [
+        [
+          "ULID 和 UUID 有什么区别？",
+          "ULID 是字典序可排序的，UUID v4 不是。ULID 使用 Crockford Base32 编码（26 字符），比 UUID 的 36 字符短。ULID 只有大写字母，区分大小写更友好。ULID 包含毫秒精度时间戳，可反向解码出时间。"
+        ],
+        [
+          "ULID 适合什么场景？",
+          "分布式数据库主键、消息队列消息 ID、日志追踪 ID、时序数据排序、需要唯一且可排序 ID 的任何场景。"
+        ],
+        [
+          "ULID 的随机性足够吗？",
+          "ULID 有 80 位随机数，总共约 1.2x10^24 种组合，碰撞概率极低，适合大多数分布式场景。"
+        ],
+        [
+          "能反向解码 ULID 中的时间吗？",
+          "可以。ULID 的前 10 个字符编码了毫秒精度的时间戳，可通过解码 Base32 得到毫秒数。"
+        ],
+        [
+          "数据会上传到服务器吗？",
+          "不会。ULID 完全在浏览器本地生成，不使用任何网络请求。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "What is the difference between ULID and UUID?",
+          "ULIDs are lexicographically sortable; UUID v4 is not. ULIDs use Crockford Base32 (26 chars), shorter than UUID's 36. ULIDs are uppercase-only and case-insensitive-friendly. They encode a millisecond-precision timestamp that can be decoded back to a date."
+        ],
+        [
+          "What are ULIDs good for?",
+          "Distributed database primary keys, message queue IDs, log tracing IDs, time-series sorting, any scenario needing unique+sortable IDs."
+        ],
+        [
+          "Are ULIDs random enough?",
+          "ULIDs have 80 bits of randomness (~1.2x10^24 combinations), making collisions extremely unlikely for most distributed use cases."
+        ],
+        [
+          "Can I decode the timestamp from a ULID?",
+          "Yes. The first 10 characters encode a millisecond-precision timestamp. Decode the Base32 to get the millisecond epoch value."
+        ],
+        [
+          "Is my data uploaded?",
+          "No. ULIDs are generated entirely locally in your browser with no network requests."
+        ]
+      ],
+      "related": [
+        "uuid-generator",
+        "random-string",
+        "slug-generator",
+        "timestamp-converter"
+      ],
+      "index": 113,
+      "ui_zh": "<div class=\"tool-controls\">\n<div style=\"margin-bottom:12px;display:flex;gap:16px;flex-wrap:wrap;align-items:end\">\n<div style=\"flex:1;min-width:160px\"><label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">生成数量</label><input type=\"number\" id=\"ug-count\" value=\"1\" min=\"1\" max=\"100\" step=\"1\" style=\"width:100%;padding:8px;font-size:14px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card)\"></div>\n<div style=\"flex:2;min-width:200px\"><label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">自定义时间戳（可选）</label><input type=\"datetime-local\" id=\"ug-timestamp\" style=\"width:100%;padding:8px;font-size:14px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card)\"></div>\n</div>\n<div style=\"margin-bottom:8px;display:flex;gap:8px;flex-wrap:wrap\"><button class=\"btn\" id=\"ug-generate\">🔄 生成 ULID</button><button class=\"btn btn-secondary\" id=\"ug-copy-all\">📋 复制全部</button><button class=\"btn btn-secondary\" id=\"ug-download-txt\">⬇️ 下载 TXT</button><button class=\"btn btn-secondary\" id=\"ug-download-json\">📄 下载 JSON</button><button class=\"btn btn-secondary\" id=\"ug-clear\">🗑️ 清空</button></div>\n<div style=\"margin-bottom:8px;display:flex;gap:8px\"><label style=\"font-size:13px;display:flex;align-items:center;gap:4px\"><input type=\"checkbox\" id=\"ug-sort\" checked> 按时间排序</label></div>\n<div><label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">生成的 ULID</label><textarea id=\"ug-output\" style=\"width:100%;min-height:300px;font-family:Consolas,monospace;font-size:14px;padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card);resize:vertical\" readonly placeholder=\"点击「生成 ULID」按钮...\"></textarea></div>\n<div id=\"ug-info\" style=\"margin-top:8px;font-size:13px;color:var(--text-dim);line-height:1.6\"></div>\n<div id=\"ug-msg\" style=\"margin-top:4px;font-size:13px\"></div>\n<div style=\"margin-top:12px;padding:8px 12px;background:var(--bg-warning-light);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-dim)\"><strong>🔒 隐私提示</strong>：所有处理在浏览器本地完成，数据不会上传到服务器。</div>\n</div>",
+      "ui_en": "<div class=\"tool-controls\">\n<div style=\"margin-bottom:12px;display:flex;gap:16px;flex-wrap:wrap;align-items:end\">\n<div style=\"flex:1;min-width:160px\"><label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">Count</label><input type=\"number\" id=\"ug-count\" value=\"1\" min=\"1\" max=\"100\" step=\"1\" style=\"width:100%;padding:8px;font-size:14px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card)\"></div>\n<div style=\"flex:2;min-width:200px\"><label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">Custom Timestamp (optional)</label><input type=\"datetime-local\" id=\"ug-timestamp\" style=\"width:100%;padding:8px;font-size:14px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card)\"></div>\n</div>\n<div style=\"margin-bottom:8px;display:flex;gap:8px;flex-wrap:wrap\"><button class=\"btn\" id=\"ug-generate\">🔄 Generate ULIDs</button><button class=\"btn btn-secondary\" id=\"ug-copy-all\">📋 Copy All</button><button class=\"btn btn-secondary\" id=\"ug-download-txt\">⬇️ Download TXT</button><button class=\"btn btn-secondary\" id=\"ug-download-json\">📄 Download JSON</button><button class=\"btn btn-secondary\" id=\"ug-clear\">🗑️ Clear</button></div>\n<div style=\"margin-bottom:8px;display:flex;gap:8px\"><label style=\"font-size:13px;display:flex;align-items:center;gap:4px\"><input type=\"checkbox\" id=\"ug-sort\" checked> Sort by time</label></div>\n<div><label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">Generated ULIDs</label><textarea id=\"ug-output\" style=\"width:100%;min-height:300px;font-family:Consolas,monospace;font-size:14px;padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card);resize:vertical\" readonly placeholder=\"Click Generate ULIDs button...\"></textarea></div>\n<div id=\"ug-info\" style=\"margin-top:8px;font-size:13px;color:var(--text-dim);line-height:1.6\"></div>\n<div id=\"ug-msg\" style=\"margin-top:4px;font-size:13px\"></div>\n<div style=\"margin-top:12px;padding:8px 12px;background:var(--bg-warning-light);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-dim)\"><strong>🔒 Privacy</strong>: All processing is local. No data upload.</div>\n</div>"
+    },
+    {
+      "slug": "yaml-validator",
+      "category": "dev",
+      "icon": "✅",
+      "name_zh": "YAML 语法验证器",
+      "name_en": "YAML Syntax Validator",
+      "short_zh": "深度检查 YAML 语法错误，检测重复键、缩进问题、无效值类型和常见配置陷阱",
+      "short_en": "Deep-check YAML syntax, detect duplicate keys, indentation issues, invalid value types, and common config pitfalls",
+      "keywords_zh": "YAML验证器,YAML语法检查,YAML错误检测,YAML调试,YAML在线检查,YAML校验,YML语法检查,配置文件验证,Docker Compose验证,Kubernetes YAML检查,Ansible YAML,缩进检查,重复键检测",
+      "keywords_en": "YAML validator,YAML syntax checker,YAML error detection,YAML linter,online YAML validator,YAML config checker,Docker Compose validation,Kubernetes YAML check,Ansible YAML,indentation check,duplicate key detection",
+      "long_zh": "<p>免费的在线 YAML 语法验证器。<strong>深度检查 YAML 配置文件的语法问题</strong>，包括缩进错误、重复键、缺少冒号、无效值类型、未闭合引号、列表缩进不一致等常见问题。</p><p>区别于 YAML 格式化工具，本工具专注于<strong>问题检测和错误定位</strong>，针对每个问题给出具体行号和修复建议。适合 Docker Compose、Kubernetes、Ansible、GitHub Actions、OpenAPI 等配置文件的调试和排查。</p><p>所有处理在浏览器本地完成，配置内容不会上传到服务器。</p>",
+      "long_en": "<p>Free online YAML syntax validator. <strong>Deep-check YAML configuration files for syntax issues</strong> including indentation errors, duplicate keys, missing colons, invalid value types, unclosed quotes, and inconsistent list indentation.</p><p>Unlike a YAML formatter, this tool focuses on <strong>error detection and pinpointing</strong>, giving line numbers and repair suggestions for each issue. Perfect for debugging Docker Compose, Kubernetes, Ansible, GitHub Actions, OpenAPI, and other config files.</p><p>All processing is done locally in your browser. Your config content is never uploaded.</p>",
+      "seo_title_zh": "YAML 语法验证器 - 在线检查 YAML 配置文件错误",
+      "seo_title_en": "YAML Syntax Validator - Check YAML Config Errors Online",
+      "features_zh": [
+        "检测 Tab 缩进（YAML 应使用空格）",
+        "检测奇数缩进和层级不一致",
+        "检测重复键（同层级相同键名）",
+        "检测缺少冒号和值",
+        "检测未闭合的引号",
+        "检测无效的布尔值、数字和空值格式",
+        "检测列表缩进不一致",
+        "每个问题附带行号和修复建议",
+        "一键复制错误报告",
+        "浏览器本地处理，配置内容不上传"
+      ],
+      "features_en": [
+        "Detect tab indentation (YAML expects spaces)",
+        "Detect odd indentation and inconsistent levels",
+        "Detect duplicate keys (same key name in same scope)",
+        "Detect missing colons and values",
+        "Detect unclosed quotes",
+        "Detect invalid boolean, number, and null value formats",
+        "Detect inconsistent list indentation",
+        "Line numbers and fix suggestions for each issue",
+        "One-click copy error report",
+        "Browser-local processing, config content not uploaded"
+      ],
+      "faq_zh": [
+        [
+          "YAML 验证器和格式化器有什么区别？",
+          "格式化器侧重让 YAML 变整洁；验证器专注发现和定位问题。已经格式良好的 YAML 但运行报错，用验证器检查。如果 YAML 很乱，先用格式化器。"
+        ],
+        [
+          "支持 Docker Compose 和 Kubernetes 的 YAML 吗？",
+          "支持。Docker Compose、Kubernetes、Ansible、GitHub Actions、OpenAPI 的 YAML 配置都可以用本工具验证常见语法问题。"
+        ],
+        [
+          "能检测出所有 YAML 错误吗？",
+          "本工具是轻量级语法检查器，覆盖缩进、重复键、引号、格式等最常见问题。复杂结构如锚点、标签、多行块标量可能只做保守检查。"
+        ],
+        [
+          "配置中的密钥会被上传吗？",
+          "不会。所有验证在浏览器本地执行，输入内容不会上传到服务器。"
+        ],
+        [
+          "为什么缩进问题最重要？",
+          "YAML 对缩进极其敏感。线上配置错误 90% 以上是缩进问题：Tab 和空格混用、缩进层级不一致、列表缩进错位等。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "What is the difference between YAML validator and formatter?",
+          "A formatter makes YAML look clean. A validator finds problems. If your YAML looks correct but fails, use the validator. If it is messy, use the formatter first."
+        ],
+        [
+          "Does it support Docker Compose and Kubernetes YAML?",
+          "Yes. Docker Compose, Kubernetes, Ansible, GitHub Actions, OpenAPI, and other YAML configs can all be validated."
+        ],
+        [
+          "Can it detect all YAML errors?",
+          "This is a lightweight checker covering indentation, duplicate keys, quotes, and formatting. Complex structures like anchors, tags, and block scalars are checked conservatively."
+        ],
+        [
+          "Will my secrets be uploaded?",
+          "No. All validation runs locally. Input is never uploaded."
+        ],
+        [
+          "Why is indentation the most important?",
+          "Over 90% of real-world YAML config errors are indentation issues: mixing tabs and spaces, inconsistent levels, and misaligned list items."
+        ]
+      ],
+      "related": [
+        "yaml-formatter",
+        "yaml-to-json",
+        "json-formatter",
+        "json-validator",
+        "xml-formatter",
+        "toml-formatter"
+      ],
+      "index": 114,
+      "ui_zh": "<div class=\"tool-controls\">\n<div style=\"margin-bottom:8px;display:flex;gap:8px;flex-wrap:wrap\">\n<button class=\"btn\" id=\"yv-validate\">🔍 验证 YAML</button>\n<button class=\"btn btn-secondary\" id=\"yv-copy\">📋 复制报告</button>\n<button class=\"btn btn-secondary\" id=\"yv-clear\">🗑️ 清空</button>\n</div>\n<div style=\"display:flex;gap:12px;flex-wrap:wrap\">\n<div style=\"flex:1;min-width:300px\">\n<label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">YAML 输入</label>\n<textarea id=\"yv-input\" style=\"width:100%;min-height:400px;font-family:Consolas,monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card);resize:vertical\" placeholder=\"粘贴 YAML 配置进行验证...\"></textarea>\n</div>\n<div style=\"flex:1;min-width:300px\">\n<label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">验证结果</label>\n<textarea id=\"yv-output\" readonly style=\"width:100%;min-height:400px;font-family:Consolas,monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-subtle);resize:vertical\" placeholder=\"验证结果将显示在这里...\"></textarea>\n</div>\n</div>\n<div id=\"yv-summary\" style=\"margin-top:8px;font-size:13px;font-weight:600\"></div>\n<div id=\"yv-msg\" style=\"margin-top:4px;font-size:13px\"></div>\n<div style=\"margin-top:12px;padding:8px 12px;background:var(--bg-warning-light);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-dim)\"><strong>🔒 隐私提示</strong>：所有处理在浏览器本地完成，数据不会上传到服务器。</div>\n</div>",
+      "ui_en": "<div class=\"tool-controls\">\n<div style=\"margin-bottom:8px;display:flex;gap:8px;flex-wrap:wrap\">\n<button class=\"btn\" id=\"yv-validate\">🔍 Validate YAML</button>\n<button class=\"btn btn-secondary\" id=\"yv-copy\">📋 Copy Report</button>\n<button class=\"btn btn-secondary\" id=\"yv-clear\">🗑️ Clear</button>\n</div>\n<div style=\"display:flex;gap:12px;flex-wrap:wrap\">\n<div style=\"flex:1;min-width:300px\">\n<label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">YAML Input</label>\n<textarea id=\"yv-input\" style=\"width:100%;min-height:400px;font-family:Consolas,monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card);resize:vertical\" placeholder=\"Paste YAML config to validate...\"></textarea>\n</div>\n<div style=\"flex:1;min-width:300px\">\n<label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">Validation Results</label>\n<textarea id=\"yv-output\" readonly style=\"width:100%;min-height:400px;font-family:Consolas,monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-subtle);resize:vertical\" placeholder=\"Validation results will appear here...\"></textarea>\n</div>\n</div>\n<div id=\"yv-summary\" style=\"margin-top:8px;font-size:13px;font-weight:600\"></div>\n<div id=\"yv-msg\" style=\"margin-top:4px;font-size:13px\"></div>\n<div style=\"margin-top:12px;padding:8px 12px;background:var(--bg-warning-light);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-dim)\"><strong>🔒 Privacy</strong>: All processing is local. No data upload.</div>\n</div>"
     }
   ]
 }

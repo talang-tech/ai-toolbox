@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>YAML 语法验证器 - YAML 语法验证器 - 在线检查 YAML 配置文件错误 | AI 工具盒子</title>
+<meta name="description" content="免费在线YAML 语法验证器工具，深度检查 YAML 语法错误，检测重复键、缩进问题、无效值类型和常见配置陷阱。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="YAML验证器,YAML语法检查,YAML错误检测,YAML调试,YAML在线检查,YAML校验,YML语法检查,配置文件验证,Docker Compose验证,Kubernetes YAML检查,Ansible YAML,缩进检查,重复键检测">
+<link rel="canonical" href="https://tools.talang.fun/tools/yaml-validator">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/yaml-validator">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/yaml-validator">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/yaml-validator">
+<meta property="og:title" content="YAML 语法验证器 - YAML 语法验证器 - 在线检查 YAML 配置文件错误 | AI 工具盒子">
+<meta property="og:description" content="免费在线YAML 语法验证器工具，深度检查 YAML 语法错误，检测重复键、缩进问题、无效值类型和常见配置陷阱。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/yaml-validator">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "YAML 语法验证器", "description": "免费在线YAML 语法验证器工具，深度检查 YAML 语法错误，检测重复键、缩进问题、无效值类型和常见配置陷阱。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/yaml-validator", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "深度检查 YAML 语法错误，检测重复键、缩进问题、无效值类型和常见配置陷阱", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/tools/yaml-validator" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">✅</div>
+  <h1>YAML 语法验证器</h1>
+  <p>深度检查 YAML 语法错误，检测重复键、缩进问题、无效值类型和常见配置陷阱</p>
+</div>
+<div class="tool-panel">
+<div class="tool-controls">
+<div style="margin-bottom:8px;display:flex;gap:8px;flex-wrap:wrap">
+<button class="btn" id="yv-validate">🔍 验证 YAML</button>
+<button class="btn btn-secondary" id="yv-copy">📋 复制报告</button>
+<button class="btn btn-secondary" id="yv-clear">🗑️ 清空</button>
+</div>
+<div style="display:flex;gap:12px;flex-wrap:wrap">
+<div style="flex:1;min-width:300px">
+<label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px">YAML 输入</label>
+<textarea id="yv-input" style="width:100%;min-height:400px;font-family:Consolas,monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card);resize:vertical" placeholder="粘贴 YAML 配置进行验证..."></textarea>
+</div>
+<div style="flex:1;min-width:300px">
+<label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px">验证结果</label>
+<textarea id="yv-output" readonly style="width:100%;min-height:400px;font-family:Consolas,monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-subtle);resize:vertical" placeholder="验证结果将显示在这里..."></textarea>
+</div>
+</div>
+<div id="yv-summary" style="margin-top:8px;font-size:13px;font-weight:600"></div>
+<div id="yv-msg" style="margin-top:4px;font-size:13px"></div>
+<div style="margin-top:12px;padding:8px 12px;background:var(--bg-warning-light);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-dim)"><strong>🔒 隐私提示</strong>：所有处理在浏览器本地完成，数据不会上传到服务器。</div>
+</div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>免费的在线 YAML 语法验证器。<strong>深度检查 YAML 配置文件的语法问题</strong>，包括缩进错误、重复键、缺少冒号、无效值类型、未闭合引号、列表缩进不一致等常见问题。</p><p>区别于 YAML 格式化工具，本工具专注于<strong>问题检测和错误定位</strong>，针对每个问题给出具体行号和修复建议。适合 Docker Compose、Kubernetes、Ansible、GitHub Actions、OpenAPI 等配置文件的调试和排查。</p><p>所有处理在浏览器本地完成，配置内容不会上传到服务器。</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>检测 Tab 缩进（YAML 应使用空格）</li><li>检测奇数缩进和层级不一致</li><li>检测重复键（同层级相同键名）</li><li>检测缺少冒号和值</li><li>检测未闭合的引号</li><li>检测无效的布尔值、数字和空值格式</li><li>检测列表缩进不一致</li><li>每个问题附带行号和修复建议</li><li>一键复制错误报告</li><li>浏览器本地处理，配置内容不上传</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">YAML 验证器和格式化器有什么区别？</h3><p>格式化器侧重让 YAML 变整洁；验证器专注发现和定位问题。已经格式良好的 YAML 但运行报错，用验证器检查。如果 YAML 很乱，先用格式化器。</p><h3 style="margin-top:20px;margin-bottom:8px">支持 Docker Compose 和 Kubernetes 的 YAML 吗？</h3><p>支持。Docker Compose、Kubernetes、Ansible、GitHub Actions、OpenAPI 的 YAML 配置都可以用本工具验证常见语法问题。</p><h3 style="margin-top:20px;margin-bottom:8px">能检测出所有 YAML 错误吗？</h3><p>本工具是轻量级语法检查器，覆盖缩进、重复键、引号、格式等最常见问题。复杂结构如锚点、标签、多行块标量可能只做保守检查。</p><h3 style="margin-top:20px;margin-bottom:8px">配置中的密钥会被上传吗？</h3><p>不会。所有验证在浏览器本地执行，输入内容不会上传到服务器。</p><h3 style="margin-top:20px;margin-bottom:8px">为什么缩进问题最重要？</h3><p>YAML 对缩进极其敏感。线上配置错误 90% 以上是缩进问题：Tab 和空格混用、缩进层级不一致、列表缩进错位等。</p></section>
+<section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/yaml-formatter" class="tool-card"><div class="icon">🧾</div><h3>YAML 格式化/校验</h3><p>在线格式化 YAML 配置并检查缩进、冒号和常见语法问题</p></a><a href="/tools/yaml-to-json" class="tool-card"><div class="icon">🔄</div><h3>YAML 转 JSON</h3><p>将 YAML 配置文件一键转换为 JSON 格式，支持 Docker/K8s 配置</p></a><a href="/tools/json-formatter" class="tool-card"><div class="icon">{ }</div><h3>JSON 格式化</h3><p>JSON 美化、压缩、校验，错误位置精准定位</p></a><a href="/tools/json-validator" class="tool-card"><div class="icon">✅</div><h3>JSON 验证器</h3><p>验证 JSON 语法，高亮定位错误，格式化并显示行号</p></a><a href="/tools/xml-formatter" class="tool-card"><div class="icon">🧩</div><h3>XML 格式化/压缩</h3><p>在线格式化、校验和压缩 XML，支持本地解析错误提示</p></a><a href="/tools/toml-formatter" class="tool-card"><div class="icon">⚙️</div><h3>TOML 格式化</h3><p>TOML 配置文件格式化、验证排错，自动整理缩进与表结构</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/yaml-validator.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>

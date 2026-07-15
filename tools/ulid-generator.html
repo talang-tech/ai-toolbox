@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>ULID 生成器 - ULID 生成器 - 在线生成唯一字典序排序标识符 | AI 工具盒子</title>
+<meta name="description" content="免费在线ULID 生成器工具，在线生成 ULID（通用唯一字典序排序标识符），可自定义时间戳、批量生成和复制。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="ULID生成器,ULID在线,ULID是什么,唯一标识符,字典序排序ID,时间戳排序ID,ULID vs UUID,ULID批量生成,分布式ID,唯一ID生成器,有序UUID,全局唯一标识符,Crockford Base32">
+<link rel="canonical" href="https://tools.talang.fun/tools/ulid-generator">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/ulid-generator">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/ulid-generator">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/ulid-generator">
+<meta property="og:title" content="ULID 生成器 - ULID 生成器 - 在线生成唯一字典序排序标识符 | AI 工具盒子">
+<meta property="og:description" content="免费在线ULID 生成器工具，在线生成 ULID（通用唯一字典序排序标识符），可自定义时间戳、批量生成和复制。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/ulid-generator">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "ULID 生成器", "description": "免费在线ULID 生成器工具，在线生成 ULID（通用唯一字典序排序标识符），可自定义时间戳、批量生成和复制。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/ulid-generator", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "在线生成 ULID（通用唯一字典序排序标识符），可自定义时间戳、批量生成和复制", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/tools/ulid-generator" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🆔</div>
+  <h1>ULID 生成器</h1>
+  <p>在线生成 ULID（通用唯一字典序排序标识符），可自定义时间戳、批量生成和复制</p>
+</div>
+<div class="tool-panel">
+<div class="tool-controls">
+<div style="margin-bottom:12px;display:flex;gap:16px;flex-wrap:wrap;align-items:end">
+<div style="flex:1;min-width:160px"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px">生成数量</label><input type="number" id="ug-count" value="1" min="1" max="100" step="1" style="width:100%;padding:8px;font-size:14px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card)"></div>
+<div style="flex:2;min-width:200px"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px">自定义时间戳（可选）</label><input type="datetime-local" id="ug-timestamp" style="width:100%;padding:8px;font-size:14px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card)"></div>
+</div>
+<div style="margin-bottom:8px;display:flex;gap:8px;flex-wrap:wrap"><button class="btn" id="ug-generate">🔄 生成 ULID</button><button class="btn btn-secondary" id="ug-copy-all">📋 复制全部</button><button class="btn btn-secondary" id="ug-download-txt">⬇️ 下载 TXT</button><button class="btn btn-secondary" id="ug-download-json">📄 下载 JSON</button><button class="btn btn-secondary" id="ug-clear">🗑️ 清空</button></div>
+<div style="margin-bottom:8px;display:flex;gap:8px"><label style="font-size:13px;display:flex;align-items:center;gap:4px"><input type="checkbox" id="ug-sort" checked> 按时间排序</label></div>
+<div><label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px">生成的 ULID</label><textarea id="ug-output" style="width:100%;min-height:300px;font-family:Consolas,monospace;font-size:14px;padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card);resize:vertical" readonly placeholder="点击「生成 ULID」按钮..."></textarea></div>
+<div id="ug-info" style="margin-top:8px;font-size:13px;color:var(--text-dim);line-height:1.6"></div>
+<div id="ug-msg" style="margin-top:4px;font-size:13px"></div>
+<div style="margin-top:12px;padding:8px 12px;background:var(--bg-warning-light);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-dim)"><strong>🔒 隐私提示</strong>：所有处理在浏览器本地完成，数据不会上传到服务器。</div>
+</div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>免费的在线 ULID 生成器。<strong>ULID（Universally Unique Lexicographically Sortable Identifier）</strong>是一种比 UUID 更好的替代方案——它们按时间排序，用 Crockford 的 Base32 编码（比 UUID 更短），且区分大小写友好的字符串表示。</p><p>ULID 的 26 字符编码包含 10 字符时间戳（毫秒精度，编码至 48 位）和 16 字符随机数。支持自定义时间戳生成、批量生成（1-100 个）、按时间戳排序、复制和下载。所有处理在浏览器本地完成。</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>生成符合 ULID 规范的 26 字符唯一标识符</li><li>支持自定义时间戳生成 ULID</li><li>批量生成 1-100 个 ULID，按时间排序</li><li>一键复制单个或全部 ULID</li><li>下载为 TXT 或 JSON 格式</li><li>显示 ULID 各部分说明：时间戳和随机数</li><li>浏览器本地处理，无数据上传</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">ULID 和 UUID 有什么区别？</h3><p>ULID 是字典序可排序的，UUID v4 不是。ULID 使用 Crockford Base32 编码（26 字符），比 UUID 的 36 字符短。ULID 只有大写字母，区分大小写更友好。ULID 包含毫秒精度时间戳，可反向解码出时间。</p><h3 style="margin-top:20px;margin-bottom:8px">ULID 适合什么场景？</h3><p>分布式数据库主键、消息队列消息 ID、日志追踪 ID、时序数据排序、需要唯一且可排序 ID 的任何场景。</p><h3 style="margin-top:20px;margin-bottom:8px">ULID 的随机性足够吗？</h3><p>ULID 有 80 位随机数，总共约 1.2x10^24 种组合，碰撞概率极低，适合大多数分布式场景。</p><h3 style="margin-top:20px;margin-bottom:8px">能反向解码 ULID 中的时间吗？</h3><p>可以。ULID 的前 10 个字符编码了毫秒精度的时间戳，可通过解码 Base32 得到毫秒数。</p><h3 style="margin-top:20px;margin-bottom:8px">数据会上传到服务器吗？</h3><p>不会。ULID 完全在浏览器本地生成，不使用任何网络请求。</p></section>
+<section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/uuid-generator" class="tool-card"><div class="icon">🆔</div><h3>UUID / ULID / NanoID 生成器</h3><p>生成 UUID v4/v7、ULID、NanoID、CUID、Snowflake</p></a><a href="/tools/random-string" class="tool-card"><div class="icon">🎲</div><h3>随机字符串生成</h3><p>自定义长度和字符集生成密码/随机字符串</p></a><a href="/tools/slug-generator" class="tool-card"><div class="icon">🔗</div><h3>URL Slug生成器</h3><p>将标题或短语转换为SEO友好的URL slug</p></a><a href="/tools/timestamp-converter" class="tool-card"><div class="icon">🔧</div><h3>时间戳转换</h3><p>Unix 时间戳与日期时间相互转换</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/ulid-generator.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>

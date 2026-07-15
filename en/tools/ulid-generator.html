@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>ULID Generator - ULID Generator - Generate Universally Unique Lexicographically Sortable IDs Online | AI Toolbox</title>
+<meta name="description" content="Free online ulid generator. Generate ULIDs uniquely lexicographically sortable identifiers online with custom timestamps and batch generation. Fast, secure, and works in your browser without downloading.">
+<meta name="keywords" content="ULID generator,ULID online,ULID vs UUID,unique identifier,lexicographically sortable ID,timestamp sortable ID,distributed ID,unique ID generator,Crockford Base32,ordered UUID">
+<link rel="canonical" href="https://tools.talang.fun/en/tools/ulid-generator">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/ulid-generator">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/ulid-generator">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/ulid-generator">
+<meta property="og:title" content="ULID Generator - ULID Generator - Generate Universally Unique Lexicographically Sortable IDs Online | AI Toolbox">
+<meta property="og:description" content="Free online ulid generator. Generate ULIDs uniquely lexicographically sortable identifiers online with custom timestamps and batch generation. Fast, secure, and works in your browser without downloading.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/en/tools/ulid-generator">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "ULID Generator", "description": "Free online ulid generator. Generate ULIDs uniquely lexicographically sortable identifiers online with custom timestamps and batch generation. Fast, secure, and works in your browser without downloading.", "url": "https://tools.talang.fun/en/tools/ulid-generator", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "Generate ULIDs uniquely lexicographically sortable identifiers online with custom timestamps and batch generation", "inLanguage": "en", "author": {"@type": "Organization", "name": "AI Toolbox"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/en/" class="logo"><span class="logo-icon">🛠️</span>AI Toolbox</a>
+    <nav class="nav">
+      <a href="/en/">Home</a>
+      <a href="/en/#tools">All Tools</a>
+      <a href="/en/blog/">Blog</a>
+      <a href="/en/about">About</a>
+      <a href="/en/sponsor">Sponsor</a>
+      <a href="https://tools.talang.fun/tools/ulid-generator" class="lang-switch">中文</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🆔</div>
+  <h1>ULID Generator</h1>
+  <p>Generate ULIDs uniquely lexicographically sortable identifiers online with custom timestamps and batch generation</p>
+</div>
+<div class="tool-panel">
+<div class="tool-controls">
+<div style="margin-bottom:12px;display:flex;gap:16px;flex-wrap:wrap;align-items:end">
+<div style="flex:1;min-width:160px"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px">Count</label><input type="number" id="ug-count" value="1" min="1" max="100" step="1" style="width:100%;padding:8px;font-size:14px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card)"></div>
+<div style="flex:2;min-width:200px"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px">Custom Timestamp (optional)</label><input type="datetime-local" id="ug-timestamp" style="width:100%;padding:8px;font-size:14px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card)"></div>
+</div>
+<div style="margin-bottom:8px;display:flex;gap:8px;flex-wrap:wrap"><button class="btn" id="ug-generate">🔄 Generate ULIDs</button><button class="btn btn-secondary" id="ug-copy-all">📋 Copy All</button><button class="btn btn-secondary" id="ug-download-txt">⬇️ Download TXT</button><button class="btn btn-secondary" id="ug-download-json">📄 Download JSON</button><button class="btn btn-secondary" id="ug-clear">🗑️ Clear</button></div>
+<div style="margin-bottom:8px;display:flex;gap:8px"><label style="font-size:13px;display:flex;align-items:center;gap:4px"><input type="checkbox" id="ug-sort" checked> Sort by time</label></div>
+<div><label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px">Generated ULIDs</label><textarea id="ug-output" style="width:100%;min-height:300px;font-family:Consolas,monospace;font-size:14px;padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card);resize:vertical" readonly placeholder="Click Generate ULIDs button..."></textarea></div>
+<div id="ug-info" style="margin-top:8px;font-size:13px;color:var(--text-dim);line-height:1.6"></div>
+<div id="ug-msg" style="margin-top:4px;font-size:13px"></div>
+<div style="margin-top:12px;padding:8px 12px;background:var(--bg-warning-light);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-dim)"><strong>🔒 Privacy</strong>: All processing is local. No data upload.</div>
+</div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>About this tool</h2>
+  <p>Free online ULID generator. <strong>ULID (Universally Unique Lexicographically Sortable Identifier)</strong> is a better alternative to UUID—they are sortable by time, use Crockford Base32 encoding (shorter than UUID), and present a case-insensitive-friendly string representation.</p><p>A 26-character ULID consists of a 10-character timestamp (millisecond precision, 48-bit) and 16 random characters. Custom timestamp, batch generation (1-100), sort by timestamp, copy, and download. All processing is local.</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>Key Features</h2><ul><li>Generate ULID-compliant 26-character unique identifiers</li><li>Custom timestamp-based ULID generation</li><li>Batch generate 1-100 ULIDs, sorted by time</li><li>One-click copy single or all ULIDs</li><li>Download as TXT or JSON format</li><li>Display ULID component breakdown: timestamp and random parts</li><li>Browser-local processing, no data upload</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>Frequently Asked Questions</h2><h3 style="margin-top:20px;margin-bottom:8px">What is the difference between ULID and UUID?</h3><p>ULIDs are lexicographically sortable; UUID v4 is not. ULIDs use Crockford Base32 (26 chars), shorter than UUID's 36. ULIDs are uppercase-only and case-insensitive-friendly. They encode a millisecond-precision timestamp that can be decoded back to a date.</p><h3 style="margin-top:20px;margin-bottom:8px">What are ULIDs good for?</h3><p>Distributed database primary keys, message queue IDs, log tracing IDs, time-series sorting, any scenario needing unique+sortable IDs.</p><h3 style="margin-top:20px;margin-bottom:8px">Are ULIDs random enough?</h3><p>ULIDs have 80 bits of randomness (~1.2x10^24 combinations), making collisions extremely unlikely for most distributed use cases.</p><h3 style="margin-top:20px;margin-bottom:8px">Can I decode the timestamp from a ULID?</h3><p>Yes. The first 10 characters encode a millisecond-precision timestamp. Decode the Base32 to get the millisecond epoch value.</p><h3 style="margin-top:20px;margin-bottom:8px">Is my data uploaded?</h3><p>No. ULIDs are generated entirely locally in your browser with no network requests.</p></section>
+<section class="related"><h3>Related Tools</h3><div class="tools-grid"><a href="/en/tools/uuid-generator" class="tool-card"><div class="icon">🆔</div><h3>UUID / ULID / NanoID Generator</h3><p>Generate UUID v4/v7, ULID, NanoID, CUID, Snowflake</p></a><a href="/en/tools/random-string" class="tool-card"><div class="icon">🎲</div><h3>Random String Generator</h3><p>Generate passwords/random strings with custom length and charset</p></a><a href="/en/tools/slug-generator" class="tool-card"><div class="icon">🔗</div><h3>URL Slug Generator</h3><p>Convert titles and phrases into SEO-friendly URL slugs</p></a><a href="/en/tools/timestamp-converter" class="tool-card"><div class="icon">🔧</div><h3>Timestamp Converter</h3><p>Convert Unix timestamps to human-readable dates and vice versa. Support seconds, milliseconds, and microseconds. Multiple timezones support.</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>Need a private toolbox or custom browser tool?</h2>
+  <p>AI Toolbox can be adapted for internal workflows, private deployment, sponsored categories, or custom privacy-first utilities.</p>
+  <p><a href="/en/sponsor" data-event="conversion_cta_click" data-label="en_partner_custom_tool_cta">View partnership and custom tool options →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/ulid-generator.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI Toolbox · Free online AI & developer tools · <a href='/en/about'>About</a> · <a href='/en/sponsor'>Sponsor</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('Copied!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>
