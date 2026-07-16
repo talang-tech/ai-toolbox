@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>Binary/Hex/ASCII Converter - Online Number Base Converter | AI Toolbox</title>
+<meta name="description" content="Free online binary/hex/ascii converter. Convert between binary, hex, ASCII, decimal, octal formats with byte array view. Fast, secure, and works in your browser without downloading.">
+<meta name="keywords" content="binary to hex, binary to ASCII, hex to binary, ASCII to binary, decimal to binary, octal converter, byte array, number base converter, text encoding">
+<link rel="canonical" href="https://tools.talang.fun/en/tools/binary-hex-ascii">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/binary-hex-ascii">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/binary-hex-ascii">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/binary-hex-ascii">
+<meta property="og:title" content="Binary/Hex/ASCII Converter - Online Number Base Converter | AI Toolbox">
+<meta property="og:description" content="Free online binary/hex/ascii converter. Convert between binary, hex, ASCII, decimal, octal formats with byte array view. Fast, secure, and works in your browser without downloading.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/en/tools/binary-hex-ascii">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Binary/Hex/ASCII Converter", "description": "Free online binary/hex/ascii converter. Convert between binary, hex, ASCII, decimal, octal formats with byte array view. Fast, secure, and works in your browser without downloading.", "url": "https://tools.talang.fun/en/tools/binary-hex-ascii", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "Convert between binary, hex, ASCII, decimal, octal formats with byte array view", "inLanguage": "en", "author": {"@type": "Organization", "name": "AI Toolbox"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/en/" class="logo"><span class="logo-icon">🛠️</span>AI Toolbox</a>
+    <nav class="nav">
+      <a href="/en/">Home</a>
+      <a href="/en/#tools">All Tools</a>
+      <a href="/en/blog/">Blog</a>
+      <a href="/en/about">About</a>
+      <a href="/en/sponsor">Sponsor</a>
+      <a href="https://tools.talang.fun/tools/binary-hex-ascii" class="lang-switch">中文</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🔢</div>
+  <h1>Binary/Hex/ASCII Converter</h1>
+  <p>Convert between binary, hex, ASCII, decimal, octal formats with byte array view</p>
+</div>
+<div class="tool-panel">
+<div style="margin-bottom:12px"><label style="font-size:13px;font-weight:600">Input</label><textarea id="bha-input" style="width:100%;min-height:120px;font-family:Consolas,monospace;font-size:13px;line-height:1.5" placeholder="Enter binary, hex, decimal, octal or text..."></textarea></div><div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:12px;align-items:center"><label style="font-size:13px">From:</label><select id="bha-from" style="padding:4px 8px;border:1px solid var(--border);border-radius:4px;background:var(--bg-card);color:var(--text)"><option value="auto">Auto-detect</option><option value="binary">Binary (2)</option><option value="octal">Octal (8)</option><option value="decimal">Decimal (10)</option><option value="hex">Hex (16)</option><option value="text">ASCII/Text</option><option value="bytes">Byte Array (0xXX)</option></select><span style="opacity:0.5">→</span><label style="font-size:13px">To:</label><select id="bha-to" style="padding:4px 8px;border:1px solid var(--border);border-radius:4px;background:var(--bg-card);color:var(--text)"><option value="binary">Binary (2)</option><option value="octal">Octal (8)</option><option value="decimal">Decimal (10)</option><option value="hex">Hex (16)</option><option value="text">ASCII/Text</option><option value="bytes">Byte Array (0xXX)</option></select><button class="btn" id="bha-convert">Convert</button></div><div style="margin-bottom:12px"><label style="font-size:13px;font-weight:600">Result</label><textarea id="bha-output" readonly style="width:100%;min-height:120px;font-family:Consolas,monospace;font-size:13px;line-height:1.5" placeholder="Conversion result..."></textarea></div><div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:12px"><button class="btn btn-secondary" id="bha-copy">📋 Copy</button><button class="btn btn-secondary" id="bha-swap">🔄 Swap</button></div><div id="bha-info" style="margin-top:8px;font-size:13px;color:var(--text-dim);line-height:1.6"></div><div id="bha-msg" style="margin-top:4px;font-size:13px"></div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>About this tool</h2>
+  <p>Free online binary/hex/ASCII converter. 100% client-side processing.</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>Key Features</h2><ul><li>Convert between binary hex decimal octal</li><li>ASCII text to/from any base encoding</li><li>Byte array 0xXX format viewing</li><li>BigInt support for large numbers</li><li>Smart space delimiter handling</li><li>One-click copy results</li><li>100% local processing no data upload</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>Frequently Asked Questions</h2><h3 style="margin-top:20px;margin-bottom:8px">How do I convert between bases</h3><p>Select source and target format enter your value</p><h3 style="margin-top:20px;margin-bottom:8px">What is the maximum number supported</h3><p>Uses JavaScript BigInt handling arbitrarily large integers</p><h3 style="margin-top:20px;margin-bottom:8px">How to convert ASCII text to binary</h3><p>Select source Text and target Binary then enter text</p><h3 style="margin-top:20px;margin-bottom:8px">Is data uploaded to servers</h3><p>No All processing is done locally in your browser</p></section>
+<section class="related"><h3>Related Tools</h3><div class="tools-grid"><a href="/en/tools/unicode-converter" class="tool-card"><div class="icon">🔤</div><h3>Unicode Converter</h3><p>Convert between Unicode encodings: \uXXXX, hex, decimal, HTML entities</p></a><a href="/en/tools/base-converter" class="tool-card"><div class="icon">🔢</div><h3>Base Converter</h3><p>Real-time conversion between binary, octal, decimal, hexadecimal</p></a><a href="/en/tools/url-encoder" class="tool-card"><div class="icon">🔗</div><h3>URL Encoder/Decoder</h3><p>Encode/decode URLs, handle special characters and Unicode</p></a><a href="/en/tools/html-encoder" class="tool-card"><div class="icon">🔧</div><h3>HTML Encoder</h3><p>Encode and decode HTML special characters. Prevent XSS attacks, display code examples, and safely embed HTML in text content.</p></a><a href="/en/tools/data-size-converter" class="tool-card"><div class="icon">💾</div><h3>Data Size Converter</h3><p>Convert between bytes, KB, MB, GB, TB, PB — instant data size conversion</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>Need a private toolbox or custom browser tool?</h2>
+  <p>AI Toolbox can be adapted for internal workflows, private deployment, sponsored categories, or custom privacy-first utilities.</p>
+  <p><a href="/en/sponsor" data-event="conversion_cta_click" data-label="en_partner_custom_tool_cta">View partnership and custom tool options →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/binary-hex-ascii.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI Toolbox · Free online AI & developer tools · <a href='/en/about'>About</a> · <a href='/en/sponsor'>Sponsor</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('Copied!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>

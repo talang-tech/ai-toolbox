@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>MIME 类型查询 - 文件扩展名查Content-Type | 在线工具 | AI 工具盒子</title>
+<meta name="description" content="免费在线MIME 类型查询工具，查询文件扩展名对应的MIME类型Content-Type和文件格式信息支持搜索和反向查找。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="MIME类型查询,Content-Type,文件扩展名,MIME类型列表,文件格式,媒体类型,HTTP Content-Type,在线MIME查询">
+<link rel="canonical" href="https://tools.talang.fun/tools/mime-type">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/mime-type">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/mime-type">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/mime-type">
+<meta property="og:title" content="MIME 类型查询 - 文件扩展名查Content-Type | 在线工具 | AI 工具盒子">
+<meta property="og:description" content="免费在线MIME 类型查询工具，查询文件扩展名对应的MIME类型Content-Type和文件格式信息支持搜索和反向查找。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/mime-type">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "MIME 类型查询", "description": "免费在线MIME 类型查询工具，查询文件扩展名对应的MIME类型Content-Type和文件格式信息支持搜索和反向查找。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/mime-type", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "查询文件扩展名对应的MIME类型Content-Type和文件格式信息支持搜索和反向查找", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/tools/mime-type" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">📄</div>
+  <h1>MIME 类型查询</h1>
+  <p>查询文件扩展名对应的MIME类型Content-Type和文件格式信息支持搜索和反向查找</p>
+</div>
+<div class="tool-panel">
+<div style="margin-bottom:16px"><label style="font-size:13px;font-weight:600">搜索</label><input type="text" id="mt-search" placeholder="输入扩展名（如 .json、.png）或 MIME 类型（如 application/json）" style="width:100%;padding:10px 12px;font-size:14px;border:1px solid var(--border);border-radius:8px;background:var(--bg-card);color:var(--text);box-sizing:border-box"></div><div style="margin-bottom:12px;display:flex;flex-wrap:wrap;gap:6px"><button class="btn btn-sm" data-mt-cat="all">全部</button><button class="btn btn-sm" data-mt-cat="text">文本</button><button class="btn btn-sm" data-mt-cat="image">图片</button><button class="btn btn-sm" data-mt-cat="audio">音频</button><button class="btn btn-sm" data-mt-cat="video">视频</button><button class="btn btn-sm" data-mt-cat="application">应用</button><button class="btn btn-sm" data-mt-cat="multipart">复合</button><span id="mt-count" style="font-size:13px;color:var(--text-dim);margin-left:auto;align-self:center"></span></div><div style="max-height:500px;overflow-y:auto;border:1px solid var(--border);border-radius:8px"><table id="mt-table" style="width:100%;border-collapse:collapse"><thead><tr><th style="text-align:left;padding:10px 12px;border-bottom:1px solid var(--border);font-size:13px;position:sticky;top:0;background:var(--bg)">扩展名</th><th style="text-align:left;padding:10px 12px;border-bottom:1px solid var(--border);font-size:13px;position:sticky;top:0;background:var(--bg)">MIME 类型</th><th style="text-align:left;padding:10px 12px;border-bottom:1px solid var(--border);font-size:13px;position:sticky;top:0;background:var(--bg)">说明</th><th style="text-align:center;padding:10px 12px;border-bottom:1px solid var(--border);font-size:13px;position:sticky;top:0;background:var(--bg)">操作</th></tr></thead><tbody id="mt-tbody"></tbody></table></div><div id="mt-msg" style="margin-top:8px;font-size:13px"></div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>免费的在线MIME类型查询工具。通过文件扩展名快速查找对应的MIME类型(Content-Type)，也支持反向搜索。内置200+常见MIME类型数据库。</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>按文件扩展名查询MIME类型</li><li>按MIME类型反向查询扩展名</li><li>搜索所有字段</li><li>内置200+常见MIME类型数据库</li><li>按大类浏览</li><li>一键复制MIME类型</li><li>完全本地查询无需网络请求</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">MIME类型是什么</h3><p>MIME是互联网标准用于标识文件格式和内容类型在HTTP传输中通过Content-Type头传递</p><h3 style="margin-top:20px;margin-bottom:8px">数据会上传到服务器吗</h3><p>不会所有MIME类型数据在浏览器本地查询无需任何网络请求</p></section>
+<section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/http-status" class="tool-card"><div class="icon">🔣</div><h3>HTTP 状态码查询</h3><p>查询 HTTP 状态码含义、原因及处理建议，涵盖 1xx-5xx 所有标准状态码</p></a><a href="/tools/data-size-converter" class="tool-card"><div class="icon">💾</div><h3>数据大小转换</h3><p>字节、KB、MB、GB、TB、PB 之间自由换算</p></a><a href="/tools/base64-image" class="tool-card"><div class="icon">🔧</div><h3>图片 Base64 编码</h3><p>将图片转换为 Base64 Data URL</p></a><a href="/tools/html-encoder" class="tool-card"><div class="icon">🔧</div><h3>HTML 转义编码</h3><p>HTML 特殊字符转义与反转义</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/mime-type.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>

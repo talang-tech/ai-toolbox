@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>二进制/十六进制/ASCII 转换完全指南：开发者必备的进制转换工具 | AI 工具盒子</title>
+<meta name="description" content="深入理解二进制、十六进制、ASCII、十进制、八进制之间的转换原理，以及在线进制转换工具的使用技巧。适合开发者调试网络协议、查看文件编码的实用指南。">
+<meta name="keywords" content="进制转换,二进制转十六进制,ASCII转二进制,字节数组,十六进制转十进制,在线进制转换器,开发者工具">
+<link rel="canonical" href="https://tools.talang.fun/blog/binary-hex-ascii-guide">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/blog/binary-hex-ascii-guide">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/blog/binary-hex-ascii-guide">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/blog/binary-hex-ascii-guide">
+<meta property="og:title" content="二进制/十六进制/ASCII 转换完全指南：开发者必备的进制转换工具 | AI 工具盒子">
+<meta property="og:description" content="深入理解二进制、十六进制、ASCII、十进制、八进制之间的转换原理，以及在线进制转换工具的使用技巧。适合开发者调试网络协议、查看文件编码的实用指南。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/blog/binary-hex-ascii-guide">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "二进制/十六进制/ASCII 转换完全指南：开发者必备的进制转换工具", "description": "深入理解二进制、十六进制、ASCII、十进制、八进制之间的转换原理，以及在线进制转换工具的使用技巧。适合开发者调试网络协议、查看文件编码的实用指南。", "author": {"@type": "Organization", "name": "AI 工具盒子"}, "datePublished": "2026-07-16", "url": "https://tools.talang.fun/blog/binary-hex-ascii-guide"}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/blog/binary-hex-ascii-guide" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<article class="article">
+  <p style="margin-bottom:8px"><a href="/blog/" style="color:var(--muted)">← 返回博客</a></p>
+  <h1>二进制/十六进制/ASCII 转换完全指南：开发者必备的进制转换工具</h1>
+  <p style="color:var(--muted);margin-bottom:24px">2026-07-16 · 5 分钟阅读</p>
+  <h2>为什么需要进制转换工具？</h2>
+<p>在开发工作中，进制转换是最常见的需求之一。调试网络协议时看到的十六进制报文、分析二进制文件时的字节数组、配置颜色值时的十六进制 RGB、查看日志时的 ASCII 编码——这些场景都需要开发者灵活地在不同进制之间切换。</p>
+<p>大部分操作系统自带的计算器虽然支持进制转换，但功能有限，不支持批量转换、文本编码转进制、字节数组格式等高级功能。一个专门的在线工具可以大幅提升效率。</p>
+<h2>常见进制转换场景</h2>
+<h3>1. 网络协议调试</h3>
+<p>HTTP 请求的二进制数据包、TCP 报文、WebSocket 帧——这些底层协议调试最常见的就是十六进制和二进制之间的转换。例如：</p>
+<ul>
+<li>十六进制 <code>48656C6C6F</code> → ASCII 文本 <code>Hello</code></li>
+<li>二进制 <code>01001000 01101001</code> → 十进制 <code>72 105</code> → ASCII <code>Hi</code></li>
+</ul>
+<h3>2. 文件编码分析</h3>
+<p>查看文件头（magic number）来判断文件类型：</p>
+<ul>
+<li>PDF 文件头：<code>25 50 44 46</code> (十六进制) → <code>%PDF</code> (ASCII)</li>
+<li>PNG 文件头：<code>89 50 4E 47</code> → <code>.PNG</code></li>
+<li>ZIP 文件头：<code>50 4B 03 04</code> → <code>PK..</code></li>
+</ul>
+<h3>3. 颜色值转换</h3>
+<p>Web 开发中常需要在十六进制和十进制 RGB 之间转换：</p>
+<ul>
+<li><code>#FF5733</code> → 十六进制 <code>FF 57 33</code> → 十进制 <code>255 87 51</code></li>
+<li>二进制 <code>11111111 01010111 00110011</code> → RGB(255, 87, 51)</li>
+</ul>
+<h3>4. 字节数组操作</h3>
+<p>在嵌入式开发、C/C++ 编程中，字节数组是常见的数据格式：</p>
+<ul>
+<li>字节数组 <code>0x48 0x65 0x6C 0x6C 0x6F</code> → 字符串 <code>Hello</code></li>
+<li>字符串 <code>世界</code> → 字节数组 (UTF-8) <code>0xE4 0xB8 0x96 0xE7 0x95 0x8C</code></li>
+</ul>
+<h2>常用进制对照速查</h2>
+<table><thead><tr>
+<th>十进制</th>
+<th>二进制</th>
+<th>十六进制</th>
+<th>八进制</th>
+</tr></thead><tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>10</td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr>
+<td>8</td>
+<td>1000</td>
+<td>8</td>
+<td>10</td>
+</tr>
+<tr>
+<td>10</td>
+<td>1010</td>
+<td>A</td>
+<td>12</td>
+</tr>
+<tr>
+<td>15</td>
+<td>1111</td>
+<td>F</td>
+<td>17</td>
+</tr>
+<tr>
+<td>16</td>
+<td>10000</td>
+<td>10</td>
+<td>20</td>
+</tr>
+<tr>
+<td>255</td>
+<td>11111111</td>
+<td>FF</td>
+<td>377</td>
+</tr>
+</tbody></table>
+<h2>使用 AI 工具盒子的进制转换器</h2>
+<p>我们的<a href="/tools/binary-hex-ascii">二进制/十六进制/ASCII 转换器</a>提供了以下特性：</p>
+<ul>
+<li><strong>6 种格式互转</strong>：二进制、八进制、十进制、十六进制、ASCII 文本、字节数组，一键转换</li>
+<li><strong>自动检测格式</strong>：粘贴数据后自动识别来源格式，无需手动选择</li>
+<li><strong>大数支持</strong>：基于 JavaScript BigInt，可处理任意大的整数</li>
+<li><strong>文本编码转换</strong>：中文字符自动显示 Unicode 编码的多种进制表示</li>
+<li><strong>字节数组格式</strong>：支持 <code>0xXX</code> 格式的输入和输出，适合嵌入式开发</li>
+<li><strong>智能分隔符</strong>：自动识别空格、逗号、换行符分隔的输入</li>
+</ul>
+<p>所有处理在浏览器本地完成，数据不会上传到服务器。</p>
+<h2>进制转换技巧</h2>
+<ol>
+<li><strong>十六进制快速转十进制</strong>：<code>0xFF</code> = 15×16 + 15 = 255，<code>0xA0</code> = 10×16 + 0 = 160</li>
+<li><strong>二进制快速转十六进制</strong>：每 4 位二进制对应 1 位十六进制，<code>1101 1010</code> = <code>DA</code></li>
+<li><strong>十进制转十六进制</strong>：除以 16 取余数，从后往前排列</li>
+<li><strong>ASCII 码记住关键值</strong>：<code>A</code>=65(0x41)、<code>a</code>=97(0x61)、<code>0</code>=48(0x30)、空格=32(0x20)</li>
+</ol>
+<h2>内部工具定制</h2>
+<p>如果你的团队需要定制化的进制转换工具（如特定格式的字节数组输出、批量文件分析、私有化部署），欢迎<a href="/sponsor">联系我们</a>了解更多。</p>
+  <section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+</article>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>

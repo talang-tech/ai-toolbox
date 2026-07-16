@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>二进制/十六进制/ASCII 转换器 - 在线进制互转工具 | AI 工具盒子</title>
+<meta name="description" content="免费在线二进制/十六进制/ASCII 转换器工具，二进制、十六进制、ASCII、十进制、八进制互转，支持文本编码转换和字节数组查看。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="二进制转十六进制,二进制转ASCII,十六进制转二进制,ASCII转二进制,十进制转二进制,八进制转换,字节数组,二进制编码,进制转换,在线进制转换器,文本编码转换">
+<link rel="canonical" href="https://tools.talang.fun/tools/binary-hex-ascii">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/binary-hex-ascii">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/binary-hex-ascii">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/binary-hex-ascii">
+<meta property="og:title" content="二进制/十六进制/ASCII 转换器 - 在线进制互转工具 | AI 工具盒子">
+<meta property="og:description" content="免费在线二进制/十六进制/ASCII 转换器工具，二进制、十六进制、ASCII、十进制、八进制互转，支持文本编码转换和字节数组查看。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/binary-hex-ascii">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "二进制/十六进制/ASCII 转换器", "description": "免费在线二进制/十六进制/ASCII 转换器工具，二进制、十六进制、ASCII、十进制、八进制互转，支持文本编码转换和字节数组查看。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/binary-hex-ascii", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "二进制、十六进制、ASCII、十进制、八进制互转，支持文本编码转换和字节数组查看", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/tools/binary-hex-ascii" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🔢</div>
+  <h1>二进制/十六进制/ASCII 转换器</h1>
+  <p>二进制、十六进制、ASCII、十进制、八进制互转，支持文本编码转换和字节数组查看</p>
+</div>
+<div class="tool-panel">
+<div style="margin-bottom:12px"><label style="font-size:13px;font-weight:600">输入值</label><textarea id="bha-input" style="width:100%;min-height:120px;font-family:Consolas,monospace;font-size:13px;line-height:1.5" placeholder="输入二进制、十六进制、十进制、八进制或文本..."></textarea></div><div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:12px;align-items:center"><label style="font-size:13px">来源格式：</label><select id="bha-from" style="padding:4px 8px;border:1px solid var(--border);border-radius:4px;background:var(--bg-card);color:var(--text)"><option value="auto">自动检测</option><option value="binary">二进制 (2)</option><option value="octal">八进制 (8)</option><option value="decimal">十进制 (10)</option><option value="hex">十六进制 (16)</option><option value="text">ASCII/文本</option><option value="bytes">字节数组 (0xXX)</option></select><span style="opacity:0.5">→</span><label style="font-size:13px">目标格式：</label><select id="bha-to" style="padding:4px 8px;border:1px solid var(--border);border-radius:4px;background:var(--bg-card);color:var(--text)"><option value="binary">二进制 (2)</option><option value="octal">八进制 (8)</option><option value="decimal">十进制 (10)</option><option value="hex">十六进制 (16)</option><option value="text">ASCII/文本</option><option value="bytes">字节数组 (0xXX)</option></select><button class="btn" id="bha-convert">转换</button></div><div style="margin-bottom:12px"><label style="font-size:13px;font-weight:600">转换结果</label><textarea id="bha-output" readonly style="width:100%;min-height:120px;font-family:Consolas,monospace;font-size:13px;line-height:1.5" placeholder="转换结果..."></textarea></div><div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:12px"><button class="btn btn-secondary" id="bha-copy">📋 复制结果</button><button class="btn btn-secondary" id="bha-swap">🔄 互换来源/目标</button></div><div id="bha-info" style="margin-top:8px;font-size:13px;color:var(--text-dim);line-height:1.6"></div><div id="bha-msg" style="margin-top:4px;font-size:13px"></div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>免费的在线二进制/十六进制/ASCII 转换工具。在二进制、十六进制、十进制、八进制、ASCII 文本之间任意互转，支持字节数组显示和编辑。适合开发者调试网络协议、查看文件编码、学习计算机基础。</p><p>所有处理在浏览器本地完成，数据不会上传。</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>二进制十六进制十进制八进制互转</li><li>ASCII文本与各进制编码互转</li><li>字节数组(0xXX)格式查看</li><li>支持大数BigInt精确转换</li><li>空格分隔符智能处理</li><li>一键复制结果</li><li>完全本地处理数据不上传</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">二进制十六进制十进制之间怎么转换</h3><p>选择来源和目标格式输入数值即可自动转换</p><h3 style="margin-top:20px;margin-bottom:8px">支持的最大数字是多少</h3><p>支持JavaScript BigInt可处理任意大整数</p><h3 style="margin-top:20px;margin-bottom:8px">ASCII文本如何转换为二进制</h3><p>选择来源为文本目标为二进制输入文本即可</p><h3 style="margin-top:20px;margin-bottom:8px">数据会上传到服务器吗</h3><p>不会所有转换完全在浏览器本地完成</p></section>
+<section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/unicode-converter" class="tool-card"><div class="icon">🔤</div><h3>Unicode 转换器</h3><p>Unicode 编码互转：\uXXXX、十六进制、十进制、HTML 实体</p></a><a href="/tools/base-converter" class="tool-card"><div class="icon">🔢</div><h3>进制转换</h3><p>二进制、八进制、十进制、十六进制实时互转</p></a><a href="/tools/url-encoder" class="tool-card"><div class="icon">🔗</div><h3>URL 编解码</h3><p>URL 编码与解码，处理特殊字符和中文</p></a><a href="/tools/html-encoder" class="tool-card"><div class="icon">🔧</div><h3>HTML 转义编码</h3><p>HTML 特殊字符转义与反转义</p></a><a href="/tools/data-size-converter" class="tool-card"><div class="icon">💾</div><h3>数据大小转换</h3><p>字节、KB、MB、GB、TB、PB 之间自由换算</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/binary-hex-ascii.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>
