@@ -92,7 +92,9 @@
           "css-inliner",
           "yaml-validator",
           "css-validator",
-          "html-validator"
+          "html-validator",
+          "graphql-formatter",
+          "css-to-js"
         ]
       },
       "encode": {
@@ -8860,6 +8862,149 @@
       "ui_zh": "<div class=\"tool-controls\"><div style=\"margin-bottom:8px;display:flex;gap:8px;flex-wrap:wrap\"><button class=\"btn\" id=\"hv-validate\">🔍 验证 HTML</button><button class=\"btn btn-secondary\" id=\"hv-copy\">📋 复制报告</button><button class=\"btn btn-secondary\" id=\"hv-clear\">🗑️ 清空</button></div><div style=\"display:flex;gap:12px;flex-wrap:wrap\"><div style=\"flex:1;min-width:300px\"><label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">HTML 输入</label><textarea id=\"hv-input\" style=\"width:100%;min-height:400px;font-family:Consolas,monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card);resize:vertical\" placeholder=\"粘贴 HTML 代码进行验证...\"></textarea></div><div style=\"flex:1;min-width:300px\"><label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">验证结果</label><textarea id=\"hv-output\" readonly style=\"width:100%;min-height:400px;font-family:Consolas,monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-subtle);resize:vertical\" placeholder=\"验证结果将显示在这里...\"></textarea></div></div><div id=\"hv-msg\" style=\"margin-top:8px;font-size:13px;min-height:20px\"></div></div>",
       "ui_en": "<div class=\"tool-controls\"><div style=\"margin-bottom:8px;display:flex;gap:8px;flex-wrap:wrap\"><button class=\"btn\" id=\"hv-validate\">🔍 Validate HTML</button><button class=\"btn btn-secondary\" id=\"hv-copy\">📋 Copy Report</button><button class=\"btn btn-secondary\" id=\"hv-clear\">🗑️ Clear</button></div><div style=\"display:flex;gap:12px;flex-wrap:wrap\"><div style=\"flex:1;min-width:300px\"><label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">HTML Input</label><textarea id=\"hv-input\" style=\"width:100%;min-height:400px;font-family:Consolas,monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card);resize:vertical\" placeholder=\"Paste HTML code to validate...\"></textarea></div><div style=\"flex:1;min-width:300px\"><label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">Validation Result</label><textarea id=\"hv-output\" readonly style=\"width:100%;min-height:400px;font-family:Consolas,monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-subtle);resize:vertical\" placeholder=\"Validation results will appear here...\"></textarea></div></div><div id=\"hv-msg\" style=\"margin-top:8px;font-size:13px;min-height:20px\"></div></div>",
       "index": 118
+    },
+    {
+      "slug": "graphql-formatter",
+      "category": "dev",
+      "icon": "⚡",
+      "name_zh": "GraphQL 格式化器",
+      "name_en": "GraphQL Formatter",
+      "short_zh": "格式化 GraphQL 查询/变更/订阅语句，基本语法验证，支持操作命名检查和选择集检测",
+      "short_en": "Format GraphQL queries/mutations/subscriptions, basic syntax validation, operation naming check, empty selection set detection",
+      "keywords_zh": "GraphQL格式化器,GraphQL格式化,GraphQL美化,GraphQL语法检查,GraphQL验证,GraphQL查询格式化,GraphQL Schema格式化,GraphQL格式化在线,GraphQL Formatter,GraphQL工具,API工具,GraphQL查询美化,GraphQL缩进,GraphQL代码格式化",
+      "keywords_en": "GraphQL formatter,GraphQL beautifier,GraphQL validator,GraphQL syntax checker,GraphQL query formatter,GraphQL schema formatter,GraphQL formatting tool,GraphQL pretty print,GraphQL API tool,GraphQL query beautifier,online GraphQL formatter,GraphQL indent,GraphQL code formatter",
+      "long_zh": "<p>免费的在线 <strong>GraphQL 格式化器</strong>，帮助开发者快速格式化 GraphQL 查询、变更、订阅语句，并附有基本语法验证功能。</p><p>支持 query/mutation/subscription 操作格式化，正确处理字符串、块字符串和注释，输出整洁的缩进格式。同时提供基本的语法检查。</p><p>所有处理在浏览器本地完成，代码不会上传到服务器。</p>",
+      "long_en": "<p>Free online <strong>GraphQL Formatter</strong> to quickly format GraphQL queries, mutations, and subscriptions with basic syntax validation.</p><p>Supports query/mutation/subscription operation formatting, handles strings, block strings, and comments, outputs clean indented formatting with basic syntax checks.</p><p>100% client-side processing, your code never leaves your browser.</p>",
+      "seo_title_zh": "GraphQL 格式化器 - 在线格式化 GraphQL 查询语句",
+      "seo_title_en": "GraphQL Formatter - Online GraphQL Query Format & Beautify",
+      "features_zh": [
+        "格式化 query/mutation/subscription 操作",
+        "正确处理字符串和注释",
+        "整洁的缩进输出格式",
+        "基本语法验证 ( 括号匹配)",
+        "操作命名建议",
+        "空选择集 {} 检测",
+        "指令 @ 前缀检测",
+        "复制格式化结果",
+        "一键清空重新输入",
+        "浏览器本地处理，代码不上传"
+      ],
+      "features_en": [
+        "Format query/mutation/subscription operations",
+        "Handle strings and comments correctly",
+        "Clean indented output formatting",
+        "Basic syntax validation (brace matching)",
+        "Operation naming suggestions",
+        "Empty selection set {} detection",
+        "Directive @ prefix detection",
+        "Copy formatted results",
+        "One-click clear and re-enter",
+        "Browser-local processing, no code upload"
+      ],
+      "faq_zh": [
+        [
+          "GraphQL 格式化器支持哪些操作类型？",
+          "支持 query、mutation 和 subscription 三种操作类型的格式化。"
+        ],
+        [
+          "数据会被上传到服务器吗？",
+          "不会。所有格式化在浏览器本地完成。"
+        ],
+        [
+          "支持快捷键操作吗？",
+          "支持。在输入框中按 Ctrl+Enter 即可快速格式化。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "What operation types does the GraphQL formatter support?",
+          "It supports formatting of query, mutation, and subscription operations."
+        ],
+        [
+          "Is my data uploaded to a server?",
+          "No. All formatting is done locally in your browser."
+        ],
+        [
+          "Does it support keyboard shortcuts?",
+          "Yes. Press Ctrl+Enter (Mac: Cmd+Enter) to quickly format."
+        ]
+      ],
+      "related": [
+        "json-formatter",
+        "yaml-formatter",
+        "xml-formatter",
+        "sql-formatter",
+        "code-formatter"
+      ],
+      "index": 119,
+      "ui_zh": "<div class=\"tool-controls\"><div style=\"margin-bottom:8px;display:flex;gap:8px;flex-wrap:wrap\"><button class=\"btn\" id=\"gql-format-btn\">⚡ 格式化</button><button class=\"btn btn-secondary\" id=\"gql-copy-btn\">📋 复制</button><button class=\"btn btn-secondary\" id=\"gql-clear-btn\">🗑️ 清空</button></div><div style=\"display:flex;gap:12px;flex-wrap:wrap\"><div style=\"flex:1;min-width:300px\"><label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">GraphQL 输入</label><textarea id=\"gql-input\" style=\"width:100%;min-height:400px;font-family:Consolas,monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card);resize:vertical\" placeholder=\"粘贴 GraphQL 查询语句...&#10;例如: query { users { id name } }\"></textarea></div><div style=\"flex:1;min-width:300px\"><label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">格式化结果</label><textarea id=\"gql-output\" readonly style=\"width:100%;min-height:400px;font-family:Consolas,monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-subtle);resize:vertical\" placeholder=\"格式化结果将显示在这里...\"></textarea></div></div><div id=\"gql-stats\" style=\"margin-top:8px;font-size:13px;min-height:20px\"></div></div>",
+      "ui_en": "<div class=\"tool-controls\"><div style=\"margin-bottom:8px;display:flex;gap:8px;flex-wrap:wrap\"><button class=\"btn\" id=\"gql-format-btn\">⚡ Format</button><button class=\"btn btn-secondary\" id=\"gql-copy-btn\">📋 Copy</button><button class=\"btn btn-secondary\" id=\"gql-clear-btn\">🗑️ Clear</button></div><div style=\"display:flex;gap:12px;flex-wrap:wrap\"><div style=\"flex:1;min-width:300px\"><label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">GraphQL Input</label><textarea id=\"gql-input\" style=\"width:100%;min-height:400px;font-family:Consolas,monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card);resize:vertical\" placeholder=\"Paste GraphQL query...&#10;e.g. query { users { id name } }\"></textarea></div><div style=\"flex:1;min-width:300px\"><label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">Formatted Output</label><textarea id=\"gql-output\" readonly style=\"width:100%;min-height:400px;font-family:Consolas,monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-subtle);resize:vertical\" placeholder=\"Formatted output will appear here...\"></textarea></div></div><div id=\"gql-stats\" style=\"margin-top:8px;font-size:13px;min-height:20px\"></div></div>"
+    },
+    {
+      "slug": "css-to-js",
+      "category": "dev",
+      "icon": "🔄",
+      "name_zh": "CSS 转 JS 转换器",
+      "name_en": "CSS to JS Converter",
+      "short_zh": "将 CSS 样式转换为 React 内联样式对象、CSS-in-JS 对象或 styled-components 语法",
+      "short_en": "Convert CSS styles to React inline style objects, CSS-in-JS objects, or styled-components syntax",
+      "keywords_zh": "CSS转JS,CSS转React样式,CSS-in-JS转换器,CSS to JavaScript,camelCase转换,CSS属性转驼峰,React内联样式,styled-components转换,CSS转JS对象,Emotion样式,前端开发工具",
+      "keywords_en": "CSS to JS converter,CSS to React style,CSS-in-JS converter,CSS to JavaScript,camelCase converter,React inline style,styled-components converter,CSS to JS object,frontend tool",
+      "long_zh": "<p>免费的在线 <strong>CSS 转 JS 转换器</strong>，帮助前端开发者将标准 CSS 样式快速转换为 React/TypeScript 项目中使用的 CSS-in-JS 格式。支持三种输出模式。所有处理在浏览器本地完成。</p>",
+      "long_en": "<p>Free online <strong>CSS to JS converter</strong> to help frontend developers quickly convert standard CSS styles to CSS-in-JS format used in React/TypeScript projects. Supports three output modes. All processing is done locally in your browser.</p>",
+      "seo_title_zh": "CSS 转 JS 转换器 - 在线转换 CSS 为 React CSS-in-JS 格式",
+      "seo_title_en": "CSS to JS Converter - Online CSS to React Style Object Converter",
+      "features_zh": [
+        "三种输出模式：JS 对象 / 内联样式 / styled-components",
+        "自动将 CSS 属性名转换为驼峰命名 (camelCase)",
+        "智能值类型推断",
+        "支持 200+ CSS 属性的驼峰映射",
+        "支持多个 CSS 规则同时转换",
+        "一键复制转换结果",
+        "Ctrl+Enter 快捷键快速转换",
+        "浏览器本地处理，代码不上传"
+      ],
+      "features_en": [
+        "Three output modes: JS Object / Inline Style / styled-components",
+        "Auto-convert CSS property names to camelCase",
+        "Smart value type inference",
+        "200+ CSS property camelCase mappings",
+        "Convert multiple CSS rules at once",
+        "One-click copy results",
+        "Ctrl+Enter keyboard shortcut",
+        "Browser-local processing, no code upload"
+      ],
+      "faq_zh": [
+        [
+          "CSS 转 JS 转换器支持哪些输出格式？",
+          "支持三种格式：JS 对象、React 内联样式、styled-components 语法。"
+        ],
+        [
+          "数据会被上传到服务器吗？",
+          "不会。所有转换在浏览器本地完成。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "What output formats does the CSS to JS converter support?",
+          "Three formats: JS Object, React Inline Style, and styled-components syntax."
+        ],
+        [
+          "Is my data uploaded to a server?",
+          "No. All conversion is done locally in your browser."
+        ]
+      ],
+      "related": [
+        "css-minifier",
+        "css-validator",
+        "css-gradient-generator",
+        "css-flexbox-generator",
+        "code-formatter",
+        "js-minifier"
+      ],
+      "index": 120,
+      "ui_zh": "<div class=\"tool-controls\"><div style=\"margin-bottom:8px;display:flex;gap:8px;flex-wrap:wrap\"><button class=\"btn\" id=\"c2j-convert-btn\">🔄 转换</button><button class=\"btn btn-secondary\" id=\"c2j-copy-btn\">📋 复制</button><button class=\"btn btn-secondary\" id=\"c2j-clear-btn\">🗑️ 清空</button></div><div style=\"margin-bottom:12px;display:flex;gap:12px;flex-wrap:wrap\"><label style=\"font-size:13px;cursor:pointer\"><input type=\"radio\" name=\"c2j-mode\" value=\"object\" checked> JS 对象</label><label style=\"font-size:13px;cursor:pointer\"><input type=\"radio\" name=\"c2j-mode\" value=\"inline\"> 内联样式</label><label style=\"font-size:13px;cursor:pointer\"><input type=\"radio\" name=\"c2j-mode\" value=\"styled\"> styled-components</label></div><div style=\"display:flex;gap:12px;flex-wrap:wrap\"><div style=\"flex:1;min-width:300px\"><label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">CSS 输入</label><textarea id=\"c2j-input\" style=\"width:100%;min-height:400px;font-family:Consolas,monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card);resize:vertical\" placeholder=\"粘贴 CSS 代码...&#10;例如: .btn { background-color: #4CAF50; font-size: 16px; }\"></textarea></div><div style=\"flex:1;min-width:300px\"><label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">转换结果</label><textarea id=\"c2j-output\" readonly style=\"width:100%;min-height:400px;font-family:Consolas,monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-subtle);resize:vertical\" placeholder=\"转换结果将显示在这里...\"></textarea></div></div><div id=\"c2j-stats\" style=\"margin-top:8px;font-size:13px;min-height:20px\"></div></div>",
+      "ui_en": "<div class=\"tool-controls\"><div style=\"margin-bottom:8px;display:flex;gap:8px;flex-wrap:wrap\"><button class=\"btn\" id=\"c2j-convert-btn\">🔄 Convert</button><button class=\"btn btn-secondary\" id=\"c2j-copy-btn\">📋 Copy</button><button class=\"btn btn-secondary\" id=\"c2j-clear-btn\">🗑️ Clear</button></div><div style=\"margin-bottom:12px;display:flex;gap:12px;flex-wrap:wrap\"><label style=\"font-size:13px;cursor:pointer\"><input type=\"radio\" name=\"c2j-mode\" value=\"object\" checked> JS Object</label><label style=\"font-size:13px;cursor:pointer\"><input type=\"radio\" name=\"c2j-mode\" value=\"inline\"> Inline Style</label><label style=\"font-size:13px;cursor:pointer\"><input type=\"radio\" name=\"c2j-mode\" value=\"styled\"> styled-components</label></div><div style=\"display:flex;gap:12px;flex-wrap:wrap\"><div style=\"flex:1;min-width:300px\"><label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">CSS Input</label><textarea id=\"c2j-input\" style=\"width:100%;min-height:400px;font-family:Consolas,monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card);resize:vertical\" placeholder=\"Paste CSS code...&#10;e.g. .btn { background-color: #4CAF50; font-size: 16px; }\"></textarea></div><div style=\"flex:1;min-width:300px\"><label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">Converted Output</label><textarea id=\"c2j-output\" readonly style=\"width:100%;min-height:400px;font-family:Consolas,monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-subtle);resize:vertical\" placeholder=\"Converted output will appear here...\"></textarea></div></div><div id=\"c2j-stats\" style=\"margin-top:8px;font-size:13px;min-height:20px\"></div></div>"
     }
   ]
 }

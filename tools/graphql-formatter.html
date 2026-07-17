@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>GraphQL 格式化器 - GraphQL 格式化器 - 在线格式化 GraphQL 查询语句 | AI 工具盒子</title>
+<meta name="description" content="免费在线GraphQL 格式化器工具，格式化 GraphQL 查询/变更/订阅语句，基本语法验证，支持操作命名检查和选择集检测。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="GraphQL格式化器,GraphQL格式化,GraphQL美化,GraphQL语法检查,GraphQL验证,GraphQL查询格式化,GraphQL Schema格式化,GraphQL格式化在线,GraphQL Formatter,GraphQL工具,API工具,GraphQL查询美化,GraphQL缩进,GraphQL代码格式化">
+<link rel="canonical" href="https://tools.talang.fun/tools/graphql-formatter">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/graphql-formatter">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/graphql-formatter">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/graphql-formatter">
+<meta property="og:title" content="GraphQL 格式化器 - GraphQL 格式化器 - 在线格式化 GraphQL 查询语句 | AI 工具盒子">
+<meta property="og:description" content="免费在线GraphQL 格式化器工具，格式化 GraphQL 查询/变更/订阅语句，基本语法验证，支持操作命名检查和选择集检测。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/graphql-formatter">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "GraphQL 格式化器", "description": "免费在线GraphQL 格式化器工具，格式化 GraphQL 查询/变更/订阅语句，基本语法验证，支持操作命名检查和选择集检测。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/graphql-formatter", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "格式化 GraphQL 查询/变更/订阅语句，基本语法验证，支持操作命名检查和选择集检测", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/tools/graphql-formatter" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">⚡</div>
+  <h1>GraphQL 格式化器</h1>
+  <p>格式化 GraphQL 查询/变更/订阅语句，基本语法验证，支持操作命名检查和选择集检测</p>
+</div>
+<div class="tool-panel">
+<div class="tool-controls"><div style="margin-bottom:8px;display:flex;gap:8px;flex-wrap:wrap"><button class="btn" id="gql-format-btn">⚡ 格式化</button><button class="btn btn-secondary" id="gql-copy-btn">📋 复制</button><button class="btn btn-secondary" id="gql-clear-btn">🗑️ 清空</button></div><div style="display:flex;gap:12px;flex-wrap:wrap"><div style="flex:1;min-width:300px"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px">GraphQL 输入</label><textarea id="gql-input" style="width:100%;min-height:400px;font-family:Consolas,monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card);resize:vertical" placeholder="粘贴 GraphQL 查询语句...&#10;例如: query { users { id name } }"></textarea></div><div style="flex:1;min-width:300px"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px">格式化结果</label><textarea id="gql-output" readonly style="width:100%;min-height:400px;font-family:Consolas,monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-subtle);resize:vertical" placeholder="格式化结果将显示在这里..."></textarea></div></div><div id="gql-stats" style="margin-top:8px;font-size:13px;min-height:20px"></div></div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>免费的在线 <strong>GraphQL 格式化器</strong>，帮助开发者快速格式化 GraphQL 查询、变更、订阅语句，并附有基本语法验证功能。</p><p>支持 query/mutation/subscription 操作格式化，正确处理字符串、块字符串和注释，输出整洁的缩进格式。同时提供基本的语法检查。</p><p>所有处理在浏览器本地完成，代码不会上传到服务器。</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>格式化 query/mutation/subscription 操作</li><li>正确处理字符串和注释</li><li>整洁的缩进输出格式</li><li>基本语法验证 ( 括号匹配)</li><li>操作命名建议</li><li>空选择集 {} 检测</li><li>指令 @ 前缀检测</li><li>复制格式化结果</li><li>一键清空重新输入</li><li>浏览器本地处理，代码不上传</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">GraphQL 格式化器支持哪些操作类型？</h3><p>支持 query、mutation 和 subscription 三种操作类型的格式化。</p><h3 style="margin-top:20px;margin-bottom:8px">数据会被上传到服务器吗？</h3><p>不会。所有格式化在浏览器本地完成。</p><h3 style="margin-top:20px;margin-bottom:8px">支持快捷键操作吗？</h3><p>支持。在输入框中按 Ctrl+Enter 即可快速格式化。</p></section>
+<section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/json-formatter" class="tool-card"><div class="icon">{ }</div><h3>JSON 格式化</h3><p>JSON 美化、压缩、校验，错误位置精准定位</p></a><a href="/tools/yaml-formatter" class="tool-card"><div class="icon">🧾</div><h3>YAML 格式化/校验</h3><p>在线格式化 YAML 配置并检查缩进、冒号和常见语法问题</p></a><a href="/tools/xml-formatter" class="tool-card"><div class="icon">🧩</div><h3>XML 格式化/压缩</h3><p>在线格式化、校验和压缩 XML，支持本地解析错误提示</p></a><a href="/tools/sql-formatter" class="tool-card"><div class="icon">🔧</div><h3>SQL 格式化</h3><p>在线格式化 SQL 查询语句，美化 SQL 代码</p></a><a href="/tools/code-formatter" class="tool-card"><div class="icon">📝</div><h3>代码格式化</h3><p>格式化 HTML / CSS / JavaScript 代码</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/graphql-formatter.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>
