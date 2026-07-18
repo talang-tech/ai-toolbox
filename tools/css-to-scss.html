@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>CSS 转 SCSS/SASS - CSS 转 SCSS/SASS 转换器 | 在线 CSS 转 SCSS 嵌套语法 | AI 工具盒子</title>
+<meta name="description" content="免费在线CSS 转 SCSS/SASS工具，将 CSS 转换为嵌套 SCSS/SASS 语法，支持变量提取和自动嵌套。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="CSS转SCSS,CSS转SASS,SCSS转换器,CSS to SCSS,SCSS预处理,CSS嵌套,CSS变量提取,SCSS格式化,CSS到SCSS,前端样式工具,SCSS生成器">
+<link rel="canonical" href="https://tools.talang.fun/tools/css-to-scss">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/css-to-scss">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/css-to-scss">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/css-to-scss">
+<meta property="og:title" content="CSS 转 SCSS/SASS - CSS 转 SCSS/SASS 转换器 | 在线 CSS 转 SCSS 嵌套语法 | AI 工具盒子">
+<meta property="og:description" content="免费在线CSS 转 SCSS/SASS工具，将 CSS 转换为嵌套 SCSS/SASS 语法，支持变量提取和自动嵌套。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/css-to-scss">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "CSS 转 SCSS/SASS", "description": "免费在线CSS 转 SCSS/SASS工具，将 CSS 转换为嵌套 SCSS/SASS 语法，支持变量提取和自动嵌套。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/css-to-scss", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "将 CSS 转换为嵌套 SCSS/SASS 语法，支持变量提取和自动嵌套", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/tools/css-to-scss" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🔄</div>
+  <h1>CSS 转 SCSS/SASS</h1>
+  <p>将 CSS 转换为嵌套 SCSS/SASS 语法，支持变量提取和自动嵌套</p>
+</div>
+<div class="tool-panel">
+<div class="tool-controls"><div style="margin-bottom:8px;display:flex;gap:8px;flex-wrap:wrap"><button class="btn" id="c2s-convert-btn">🔄 转换</button><button class="btn btn-secondary" id="c2s-copy-btn">📋 复制</button><button class="btn btn-secondary" id="c2s-clear-btn">🗑️ 清空</button></div><div style="margin-bottom:12px;display:flex;gap:12px;flex-wrap:wrap"><label style="font-size:13px;cursor:pointer"><input type="radio" name="c2s-mode" value="scss" checked> SCSS（花括号）</label><label style="font-size:13px;cursor:pointer"><input type="radio" name="c2s-mode" value="sass"> SASS（缩进）</label></div><div style="display:flex;gap:12px;flex-wrap:wrap"><div style="flex:1;min-width:300px"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px">CSS 输入</label><textarea id="c2s-input" style="width:100%;min-height:400px;font-family:Consolas,monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card);resize:vertical" placeholder="粘贴 CSS 代码..."></textarea></div><div style="flex:1;min-width:300px"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px">SCSS/SASS 输出</label><textarea id="c2s-output" readonly style="width:100%;min-height:400px;font-family:Consolas,monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-subtle);resize:vertical" placeholder="转换结果将显示在这里..."></textarea></div></div><div id="c2s-stats" style="margin-top:8px;font-size:13px;min-height:20px"></div><div style="margin-top:12px;padding:8px 12px;background:var(--bg-warning-light);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-dim)"><strong>🔒 隐私提示</strong>：所有处理在浏览器本地完成，数据不会上传到服务器。</div></div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>免费的在线 <strong>CSS 转 SCSS/SASS 转换器</strong>，帮助前端开发者将标准 CSS 样式快速转换为 SCSS 或 SASS 语法。支持自动识别嵌套关系、提取 CSS 变量为 SCSS 变量、智能格式化。</p><p>适合：重构旧 CSS 项目为 SCSS 风格、学习 SCSS 语法、快速迁移 CSS 代码库。所有处理在浏览器本地完成，无需安装任何软件。</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>CSS 自动转换为 SCSS 嵌套语法</li><li>支持 SCSS 和 SASS 两种输出格式</li><li>自动提取 CSS 自定义属性为 SCSS 变量</li><li>智能识别父子选择器关系</li><li>支持 Ctrl+Enter 快捷键快速转换</li><li>一键复制转换结果</li><li>浏览器本地处理，代码不上传服务器</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">SCSS 和 SASS 有什么区别？</h3><p>SCSS 使用花括号和分号，与 CSS 语法更相似；SASS 使用缩进语法，更简洁。</p><h3 style="margin-top:20px;margin-bottom:8px">CSS 变量会被如何处理？</h3><p>工具会自动提取 CSS 自定义属性并转换为 SCSS 变量。</p><h3 style="margin-top:20px;margin-bottom:8px">数据会被上传到服务器吗？</h3><p>不会。所有转换在浏览器本地完成。</p><h3 style="margin-top:20px;margin-bottom:8px">支持复杂 CSS 选择器吗？</h3><p>支持常见的 CSS 选择器。</p></section>
+<section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/css-minifier" class="tool-card"><div class="icon">🎨</div><h3>CSS 美化/压缩</h3><p>CSS 代码一键美化格式化或压缩，支持属性排序、颜色简写优化</p></a><a href="/tools/css-validator" class="tool-card"><div class="icon">🎨</div><h3>CSS 验证器</h3><p>检查 CSS 语法错误、未闭合括号、未知属性、重复选择器、缺失单位等</p></a><a href="/tools/css-to-js" class="tool-card"><div class="icon">🔄</div><h3>CSS 转 JS 转换器</h3><p>将 CSS 样式转换为 React 内联样式对象、CSS-in-JS 对象或 styled-components 语法</p></a><a href="/tools/css-gradient-generator" class="tool-card"><div class="icon">🌈</div><h3>CSS 渐变生成器</h3><p>在线生成 CSS 线性与径向渐变，实时预览并复制代码</p></a><a href="/tools/css-flexbox-generator" class="tool-card"><div class="icon">📐</div><h3>CSS Flexbox 生成器</h3><p>可视化生成 CSS Flexbox 布局代码，支持全部常见属性</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/css-to-scss.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>
