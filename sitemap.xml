@@ -250,6 +250,13 @@
   <url><loc>https://tools.talang.fun/en/tools/graphql-formatter</loc><lastmod>2026-07-17</lastmod><priority>0.8</priority></url>
   <url><loc>https://tools.talang.fun/tools/css-to-js</loc><lastmod>2026-07-17</lastmod><priority>0.8</priority></url>
   <url><loc>https://tools.talang.fun/en/tools/css-to-js</loc><lastmod>2026-07-17</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/tools/css-to-scss</loc><lastmod>2026-07-18</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/en/tools/css-to-scss</loc><lastmod>2026-07-18</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/tools/html-to-pug</loc><lastmod>2026-07-18</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/en/tools/html-to-pug</loc><lastmod>2026-07-18</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/tools/js-obfuscator</loc><lastmod>2026-07-19</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/en/tools/js-obfuscator</loc><lastmod>2026-07-19</lastmod><priority>0.8</priority></url>
+  <url><loc>https://tools.talang.fun/blog/css-to-scss-html-to-pug-launch</loc><lastmod>2026-07-18</lastmod><priority>0.7</priority></url>
   <url><loc>https://tools.talang.fun/blog/css-html-validator-launch</loc><lastmod>2026-07-17</lastmod><priority>0.7</priority></url>
   <url><loc>https://tools.talang.fun/blog/graphql-css-to-js-launch</loc><lastmod>2026-07-17</lastmod><priority>0.7</priority></url>
   <url><loc>https://tools.talang.fun/blog/binary-hex-ascii-guide</loc><lastmod>2026-07-16</lastmod><priority>0.7</priority></url>
@@ -283,6 +290,7 @@
   <url><loc>https://tools.talang.fun/blog/base64-explained</loc><lastmod>2026-05-11</lastmod><priority>0.7</priority></url>
   <url><loc>https://tools.talang.fun/blog/uuid-v4-vs-v7</loc><lastmod>2026-05-10</lastmod><priority>0.7</priority></url>
   <url><loc>https://tools.talang.fun/blog/regex-cheatsheet</loc><lastmod>2026-05-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://tools.talang.fun/en/blog/css-to-scss-html-to-pug-launch</loc><lastmod>2026-07-18</lastmod><priority>0.7</priority></url>
   <url><loc>https://tools.talang.fun/en/blog/css-html-validator-launch</loc><lastmod>2026-07-17</lastmod><priority>0.7</priority></url>
   <url><loc>https://tools.talang.fun/en/blog/graphql-css-to-js-launch</loc><lastmod>2026-07-17</lastmod><priority>0.7</priority></url>
   <url><loc>https://tools.talang.fun/en/blog/binary-hex-ascii-guide</loc><lastmod>2026-07-16</lastmod><priority>0.7</priority></url>

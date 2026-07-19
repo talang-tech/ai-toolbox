@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>JavaScript 混淆器 - JavaScript 混淆器 | 在线 JS 代码混淆工具 - 免费保护前端代码 | AI 工具盒子</title>
+<meta name="description" content="免费在线JavaScript 混淆器工具，混淆 JavaScript 代码，支持变量重命名、字符串拆分、数字编码。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="JS混淆器,JavaScript混淆,代码混淆,JS加密,JS保护,JS反编译,JS压缩,JS美化,JS格式化,代码保护,前端安全,JS反逆向">
+<link rel="canonical" href="https://tools.talang.fun/tools/js-obfuscator">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/js-obfuscator">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/js-obfuscator">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/js-obfuscator">
+<meta property="og:title" content="JavaScript 混淆器 - JavaScript 混淆器 | 在线 JS 代码混淆工具 - 免费保护前端代码 | AI 工具盒子">
+<meta property="og:description" content="免费在线JavaScript 混淆器工具，混淆 JavaScript 代码，支持变量重命名、字符串拆分、数字编码。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/js-obfuscator">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "JavaScript 混淆器", "description": "免费在线JavaScript 混淆器工具，混淆 JavaScript 代码，支持变量重命名、字符串拆分、数字编码。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/js-obfuscator", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "混淆 JavaScript 代码，支持变量重命名、字符串拆分、数字编码", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/tools/js-obfuscator" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🔒</div>
+  <h1>JavaScript 混淆器</h1>
+  <p>混淆 JavaScript 代码，支持变量重命名、字符串拆分、数字编码</p>
+</div>
+<div class="tool-panel">
+<div class="tool-controls"><div style="margin-bottom:8px;display:flex;gap:8px;flex-wrap:wrap"><button class="btn" id="jso-obfuscate-btn">🔒 混淆</button><button class="btn btn-secondary" id="jso-beautify-btn">✨ 美化</button><button class="btn btn-secondary" id="jso-copy-btn">📋 复制</button><button class="btn btn-secondary" id="jso-clear-btn">🗑️ 清空</button></div><div style="margin-bottom:12px;display:flex;gap:12px;align-items:center;flex-wrap:wrap"><label style="font-size:13px;font-weight:600;margin-right:4px">混淆等级</label><select id="jso-preset" style="padding:4px 8px;border:1px solid var(--border);border-radius:4px;font-size:13px"><option value="light">轻度（变量重命名）</option><option value="medium" selected>中度（+字符串拆分）</option><option value="heavy">重度（+数字编码）</option></select></div><div style="display:flex;gap:12px;flex-wrap:wrap"><div style="flex:1;min-width:300px"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px">JavaScript 输入</label><textarea id="jso-input" style="width:100%;min-height:400px;font-family:Consolas,monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card);resize:vertical" placeholder="粘贴 JavaScript 代码...&#10;例如: function hello(name) { return 'Hello, ' + name; }"></textarea></div><div style="flex:1;min-width:300px"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px">混淆结果</label><textarea id="jso-output" readonly style="width:100%;min-height:400px;font-family:Consolas,monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-subtle);resize:vertical" placeholder="混淆结果将显示在这里..."></textarea></div></div><div id="jso-stats" style="margin-top:8px;font-size:13px;min-height:20px"></div><div style="margin-top:12px;padding:8px 12px;background:var(--bg-warning-light);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-dim)"><strong>🔒 隐私提示</strong>：所有处理在浏览器本地完成，代码不会上传到服务器。</div></div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>免费的在线 <strong>JavaScript 混淆器</strong>，帮助开发者保护前端 JS 代码。支持三种混淆等级：<strong>轻度</strong>（变量重命名+注释删除）、<strong>中度</strong>（追加字符串拆分）、<strong>重度</strong>（追加数字十六进制编码）。内置代码美化器，可一键还原格式。</p><p>适合：混淆前端业务逻辑、保护 API 密钥、代码安全审计、学习混淆原理。所有处理在浏览器本地完成，代码不上传服务器。</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>三种混淆等级：轻度/中度/重度</li><li>变量名自动重命名为短名称</li><li>字符串自动拆分拼接</li><li>数字转十六进制编码</li><li>注释和多余空白自动删除</li><li>内置代码美化器，一键还原格式</li><li>显示输入/输出大小和压缩比</li><li>Ctrl+Enter 快捷键快速混淆</li><li>浏览器本地处理，代码不上传</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">混淆后代码还能运行吗？</h3><p>可以。混淆只改变变量名和格式，不改变逻辑。但重度混淆可能影响调试。</p><h3 style="margin-top:20px;margin-bottom:8px">混淆能完全保护代码吗？</h3><p>不能。JS 代码始终可以在浏览器中被查看。混淆增加逆向难度，但并非绝对安全。</p><h3 style="margin-top:20px;margin-bottom:8px">三种等级有什么区别？</h3><p>轻度：变量重命名+去注释；中度：追加字符串拆分；重度：追加数字十六进制编码。</p><h3 style="margin-top:20px;margin-bottom:8px">数据会被上传到服务器吗？</h3><p>不会。所有处理在浏览器本地完成。</p><h3 style="margin-top:20px;margin-bottom:8px">能反向还原混淆的代码吗？</h3><p>内置美化器可恢复格式，但变量名无法还原。</p><h3 style="margin-top:20px;margin-bottom:8px">适合混淆什么类型的代码？</h3><p>前端业务逻辑、API 密钥、配置对象、工具函数等。</p></section>
+<section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/js-minifier" class="tool-card"><div class="icon">📦</div><h3>JS 压缩/美化</h3><p>JavaScript 代码一键压缩美化，去注释、去空白、格式化缩进</p></a><a href="/tools/code-formatter" class="tool-card"><div class="icon">📝</div><h3>代码格式化</h3><p>格式化 HTML / CSS / JavaScript 代码</p></a><a href="/tools/string-escape" class="tool-card"><div class="icon">\\</div><h3>字符串转义/反转义</h3><p>JSON、JavaScript、URL、HTML 字符串转义与反转义</p></a><a href="/tools/html-encoder" class="tool-card"><div class="icon">🔧</div><h3>HTML 转义编码</h3><p>HTML 特殊字符转义与反转义</p></a><a href="/tools/base64" class="tool-card"><div class="icon">🔣</div><h3>Base64 编解码</h3><p>Base64 字符串和文件互转，UTF-8 安全</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/js-obfuscator.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>

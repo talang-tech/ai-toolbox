@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>JS Obfuscator - JS Obfuscator - Online JavaScript Code Obfuscation Tool | AI Toolbox</title>
+<meta name="description" content="Free online js obfuscator. Obfuscate JavaScript code with variable renaming, string splitting, numeric encoding. Fast, secure, and works in your browser without downloading.">
+<meta name="keywords" content="JS obfuscator,JavaScript obfuscator,code obfuscation,JS protector,JS security,JS minifier,JS beautifier,JS formatter,frontend security,JS deobfuscation">
+<link rel="canonical" href="https://tools.talang.fun/en/tools/js-obfuscator">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/js-obfuscator">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/js-obfuscator">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/js-obfuscator">
+<meta property="og:title" content="JS Obfuscator - JS Obfuscator - Online JavaScript Code Obfuscation Tool | AI Toolbox">
+<meta property="og:description" content="Free online js obfuscator. Obfuscate JavaScript code with variable renaming, string splitting, numeric encoding. Fast, secure, and works in your browser without downloading.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/en/tools/js-obfuscator">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "JS Obfuscator", "description": "Free online js obfuscator. Obfuscate JavaScript code with variable renaming, string splitting, numeric encoding. Fast, secure, and works in your browser without downloading.", "url": "https://tools.talang.fun/en/tools/js-obfuscator", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "Obfuscate JavaScript code with variable renaming, string splitting, numeric encoding", "inLanguage": "en", "author": {"@type": "Organization", "name": "AI Toolbox"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/en/" class="logo"><span class="logo-icon">🛠️</span>AI Toolbox</a>
+    <nav class="nav">
+      <a href="/en/">Home</a>
+      <a href="/en/#tools">All Tools</a>
+      <a href="/en/blog/">Blog</a>
+      <a href="/en/about">About</a>
+      <a href="/en/sponsor">Sponsor</a>
+      <a href="https://tools.talang.fun/tools/js-obfuscator" class="lang-switch">中文</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🔒</div>
+  <h1>JS Obfuscator</h1>
+  <p>Obfuscate JavaScript code with variable renaming, string splitting, numeric encoding</p>
+</div>
+<div class="tool-panel">
+<div class="tool-controls"><div style="margin-bottom:8px;display:flex;gap:8px;flex-wrap:wrap"><button class="btn" id="jso-obfuscate-btn">🔒 Obfuscate</button><button class="btn btn-secondary" id="jso-beautify-btn">✨ Beautify</button><button class="btn btn-secondary" id="jso-copy-btn">📋 Copy</button><button class="btn btn-secondary" id="jso-clear-btn">🗑️ Clear</button></div><div style="margin-bottom:12px;display:flex;gap:12px;align-items:center;flex-wrap:wrap"><label style="font-size:13px;font-weight:600;margin-right:4px">Level</label><select id="jso-preset" style="padding:4px 8px;border:1px solid var(--border);border-radius:4px;font-size:13px"><option value="light">Light (rename)</option><option value="medium" selected>Medium (+string split)</option><option value="heavy">Heavy (+hex encoding)</option></select></div><div style="display:flex;gap:12px;flex-wrap:wrap"><div style="flex:1;min-width:300px"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px">JavaScript Input</label><textarea id="jso-input" style="width:100%;min-height:400px;font-family:Consolas,monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card);resize:vertical" placeholder="Paste JavaScript code...&#10;e.g. function hello(name) { return 'Hello, ' + name; }"></textarea></div><div style="flex:1;min-width:300px"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px">Obfuscated Output</label><textarea id="jso-output" readonly style="width:100%;min-height:400px;font-family:Consolas,monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-subtle);resize:vertical" placeholder="Obfuscated output will appear here..."></textarea></div></div><div id="jso-stats" style="margin-top:8px;font-size:13px;min-height:20px"></div><div style="margin-top:12px;padding:8px 12px;background:var(--bg-warning-light);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-dim)"><strong>🔒 Privacy</strong>: All processing is local. No code upload.</div></div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>About this tool</h2>
+  <p>Free online <strong>JavaScript obfuscator</strong> to help developers protect frontend JS code. Supports three obfuscation levels: <strong>Light</strong> (variable renaming + comment removal), <strong>Medium</strong> (adds string splitting), <strong>Heavy</strong> (adds hex numeric encoding). Built-in beautifier to restore formatting.</p><p>Perfect for: obfuscating frontend logic, protecting API keys, code security review, learning obfuscation techniques. All processing is local in your browser.</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>Key Features</h2><ul><li>Three obfuscation levels: Light/Medium/Heavy</li><li>Auto-rename variables to short names</li><li>String splitting & concatenation</li><li>Hex numeric encoding</li><li>Comment and whitespace removal</li><li>Built-in beautifier for format restoration</li><li>Input/output size and compression ratio display</li><li>Ctrl+Enter keyboard shortcut</li><li>100% browser-local processing</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>Frequently Asked Questions</h2><h3 style="margin-top:20px;margin-bottom:8px">Will obfuscated code still run?</h3><p>Yes. Obfuscation only changes variable names and formatting, not logic.</p><h3 style="margin-top:20px;margin-bottom:8px">Does obfuscation fully protect code?</h3><p>No. JS code is always viewable in browser. Obfuscation increases reverse-engineering difficulty.</p><h3 style="margin-top:20px;margin-bottom:8px">What are the three levels?</h3><p>Light: rename+comment removal; Medium: +string splitting; Heavy: +hex encoding.</p><h3 style="margin-top:20px;margin-bottom:8px">Is data uploaded?</h3><p>No. All processing is local.</p><h3 style="margin-top:20px;margin-bottom:8px">Can I reverse obfuscation?</h3><p>Beautifier restores formatting, but variable names cannot be recovered.</p><h3 style="margin-top:20px;margin-bottom:8px">What code is suitable?</h3><p>Frontend logic, API keys, config objects, utility functions.</p></section>
+<section class="related"><h3>Related Tools</h3><div class="tools-grid"><a href="/en/tools/js-minifier" class="tool-card"><div class="icon">📦</div><h3>JS Minifier/Beautifier</h3><p>JavaScript beautifier and minifier — compress or format JS with comment stripping and indentation</p></a><a href="/en/tools/code-formatter" class="tool-card"><div class="icon">📝</div><h3>Code Formatter</h3><p>Format HTML / CSS / JavaScript code</p></a><a href="/en/tools/string-escape" class="tool-card"><div class="icon">\\</div><h3>String Escape / Unescape</h3><p>Escape and unescape JSON, JavaScript, URL and HTML strings</p></a><a href="/en/tools/html-encoder" class="tool-card"><div class="icon">🔧</div><h3>HTML Encoder</h3><p>Encode and decode HTML special characters. Prevent XSS attacks, display code examples, and safely embed HTML in text content.</p></a><a href="/en/tools/base64" class="tool-card"><div class="icon">🔣</div><h3>Base64 Encoder/Decoder</h3><p>Encode/decode Base64 strings and files, UTF-8 safe</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>Need a private toolbox or custom browser tool?</h2>
+  <p>AI Toolbox can be adapted for internal workflows, private deployment, sponsored categories, or custom privacy-first utilities.</p>
+  <p><a href="/en/sponsor" data-event="conversion_cta_click" data-label="en_partner_custom_tool_cta">View partnership and custom tool options →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/js-obfuscator.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI Toolbox · Free online AI & developer tools · <a href='/en/about'>About</a> · <a href='/en/sponsor'>Sponsor</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('Copied!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>
