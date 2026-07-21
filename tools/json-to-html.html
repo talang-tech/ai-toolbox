@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>JSON 转 HTML 表格 - JSON 转 HTML 表格工具 - 在线 JSON 数据可视化表格生成器 | AI 工具盒子</title>
+<meta name="description" content="免费在线JSON 转 HTML 表格工具，将 JSON 数据转换为美观的 HTML 表格，支持嵌套对象展开和排序。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="JSON转HTML表格,JSON数据转表格,JSON表格生成器,JSON转HTML,JSON数据可视化,在线JSON表格工具,JSON数据展示,JSON渲染表格">
+<link rel="canonical" href="https://tools.talang.fun/tools/json-to-html">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/json-to-html">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/json-to-html">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/json-to-html">
+<meta property="og:title" content="JSON 转 HTML 表格 - JSON 转 HTML 表格工具 - 在线 JSON 数据可视化表格生成器 | AI 工具盒子">
+<meta property="og:description" content="免费在线JSON 转 HTML 表格工具，将 JSON 数据转换为美观的 HTML 表格，支持嵌套对象展开和排序。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/json-to-html">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "JSON 转 HTML 表格", "description": "免费在线JSON 转 HTML 表格工具，将 JSON 数据转换为美观的 HTML 表格，支持嵌套对象展开和排序。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/json-to-html", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "将 JSON 数据转换为美观的 HTML 表格，支持嵌套对象展开和排序", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/tools/json-to-html" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">📊</div>
+  <h1>JSON 转 HTML 表格</h1>
+  <p>将 JSON 数据转换为美观的 HTML 表格，支持嵌套对象展开和排序</p>
+</div>
+<div class="tool-panel">
+<div class="tool-controls" style="max-width:100%"><div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px"><textarea id="json-input" placeholder="粘贴 JSON 数组或对象..." style="width:100%;min-height:150px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical"></textarea></div><div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px"><button class="btn btn-primary" id="convert-btn">🔄 生成表格</button><button class="btn btn-secondary" id="copy-btn">📋 复制 Markdown</button><button class="btn btn-secondary" id="clear-btn">🗑️ 清空</button></div><div id="status" style="font-size:13px;margin-bottom:8px;color:var(--text-dim);min-height:20px"></div><div id="table-container" style="overflow-x:auto;min-height:100px"></div><div style="margin-top:16px;padding:8px 12px;background:var(--bg-warning-light);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-dim)"><strong>🔒 隐私提示</strong>：所有数据在浏览器本地处理，不会上传到服务器。</div></div>
+
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>免费的在线 <strong>JSON 转 HTML 表格工具</strong>，将 JSON 数据一键转换为美观、可排序的 HTML 表格。支持嵌套对象展开、数组渲染、多层级数据展示。适合 <strong>API 调试</strong>、<strong>数据可视化</strong>、<strong>报表生成</strong>等场景。</p><p>支持 JSON 数组和对象两种输入格式，自动识别字段结构，嵌套对象和数组可点击展开查看详情。生成的表格支持按列排序、全文搜索、一键复制为 Markdown 表格。所有处理在浏览器本地完成，数据不会上传。</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>粘贴 JSON 数组或对象，一键生成 HTML 表格</li><li>自动识别字段结构，嵌套对象/数组可点击展开</li><li>支持按列排序（升序/降序）</li><li>全文搜索过滤</li><li>一键复制为 Markdown 表格格式</li><li>显示行数统计和 JSON 数据概览</li><li>完全本地处理，数据不上传</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">支持哪些 JSON 格式？</h3><p>支持 JSON 数组（如 [{...}, {...}]）和单个 JSON 对象。数组中的每个元素作为一行，支持深层嵌套。</p><h3 style="margin-top:20px;margin-bottom:8px">嵌套对象能显示吗？</h3><p>可以。嵌套对象和数组会以可点击的方式显示，展开后可以看到完整结构。</p><h3 style="margin-top:20px;margin-bottom:8px">表格可以排序吗？</h3><p>可以。点击任意列标题即可按该列排序，再次点击切换升序/降序。</p><h3 style="margin-top:20px;margin-bottom:8px">数据量有限制吗？</h3><p>没有硬性限制，但建议处理不超过 10000 行或 10MB 的数据以确保浏览器性能。所有处理在本地完成。</p><h3 style="margin-top:20px;margin-bottom:8px">数据安全吗？</h3><p>完全安全。所有数据在浏览器本地处理，不会上传到任何服务器。</p></section>
+<section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/json-to-csv" class="tool-card"><div class="icon">📊</div><h3>JSON 转 CSV</h3><p>将 JSON 数组或对象一键转换为 CSV 表格格式</p></a><a href="/tools/json-to-yaml" class="tool-card"><div class="icon">📊</div><h3>JSON ↔ YAML 互转</h3><p>JSON 与 YAML 格式相互转换</p></a><a href="/tools/json-diff" class="tool-card"><div class="icon">↔</div><h3>JSON 对比</h3><p>深层比较两个 JSON 的差异，精准定位新增/删除/修改项</p></a><a href="/tools/json-validator" class="tool-card"><div class="icon">✅</div><h3>JSON 验证器</h3><p>验证 JSON 语法，高亮定位错误，格式化并显示行号</p></a><a href="/tools/csv-to-json" class="tool-card"><div class="icon">🔄</div><h3>CSV ↔ JSON 互转</h3><p>CSV 数据转 JSON 格式，支持分隔符选择、表头配置、嵌套对象生成</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/json-to-html.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>

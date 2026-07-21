@@ -99,7 +99,8 @@
           "html-to-pug",
           "js-obfuscator",
           "css-pseudo-selectors",
-          "html-tag-reference"
+          "html-tag-reference",
+          "yaml-to-xml"
         ]
       },
       "encode": {
@@ -149,7 +150,8 @@
           "json-flatten",
           "xml-to-json",
           "json-validator",
-          "json-escape"
+          "json-escape",
+          "json-to-html"
         ]
       },
       "image": {
@@ -9425,6 +9427,174 @@
       "index": 125,
       "ui_zh": "<div class=\"tool-controls\" style=\"max-width:100%\"><div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px\"><input type=\"text\" id=\"htr-search\" placeholder=\"搜索标签，如 div、input...\" style=\"flex:1;min-width:200px;padding:8px 12px;border:1px solid var(--border);border-radius:6px;font-size:14px;background:var(--bg-card);color:var(--text)\"><select id=\"htr-filter\" style=\"padding:8px 12px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\"></select></div><div id=\"htr-count\" style=\"font-size:13px;margin-bottom:10px;color:var(--text-dim)\"></div><div id=\"htr-results\" style=\"min-height:300px\"></div><div style=\"margin-top:16px;padding:8px 12px;background:var(--bg-warning-light);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-dim)\"><strong>🔒 隐私提示</strong>：所有数据在浏览器本地加载，无需网络请求。</div></div>",
       "ui_en": "<div class=\"tool-controls\" style=\"max-width:100%\"><div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px\"><input type=\"text\" id=\"htr-search\" placeholder=\"Search tags, e.g. div, input...\" style=\"flex:1;min-width:200px;padding:8px 12px;border:1px solid var(--border);border-radius:6px;font-size:14px;background:var(--bg-card);color:var(--text)\"><select id=\"htr-filter\" style=\"padding:8px 12px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\"></select></div><div id=\"htr-count\" style=\"font-size:13px;margin-bottom:10px;color:var(--text-dim)\"></div><div id=\"htr-results\" style=\"min-height:300px\"></div><div style=\"margin-top:16px;padding:8px 12px;background:var(--bg-warning-light);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-dim)\"><strong>🔒 Privacy</strong>: All data loads locally. No network requests.</div></div>"
+    },
+    {
+      "slug": "json-to-html",
+      "category": "json",
+      "icon": "📊",
+      "name_zh": "JSON 转 HTML 表格",
+      "name_en": "JSON to HTML Table",
+      "short_zh": "将 JSON 数据转换为美观的 HTML 表格，支持嵌套对象展开和排序",
+      "short_en": "Convert JSON data into beautiful HTML tables with nested object expansion and sorting",
+      "keywords_zh": "JSON转HTML表格,JSON数据转表格,JSON表格生成器,JSON转HTML,JSON数据可视化,在线JSON表格工具,JSON数据展示,JSON渲染表格",
+      "keywords_en": "json to html table, json data to table, json table generator, json to html, json data visualization, online json table tool, json render table, json display",
+      "long_zh": "<p>免费的在线 <strong>JSON 转 HTML 表格工具</strong>，将 JSON 数据一键转换为美观、可排序的 HTML 表格。支持嵌套对象展开、数组渲染、多层级数据展示。适合 <strong>API 调试</strong>、<strong>数据可视化</strong>、<strong>报表生成</strong>等场景。</p><p>支持 JSON 数组和对象两种输入格式，自动识别字段结构，嵌套对象和数组可点击展开查看详情。生成的表格支持按列排序、全文搜索、一键复制为 Markdown 表格。所有处理在浏览器本地完成，数据不会上传。</p>",
+      "long_en": "<p>Free online <strong>JSON to HTML Table converter</strong> — convert JSON data into sortable, beautiful HTML tables with one click. Supports nested object expansion, array rendering, and multi-level data display. Ideal for <strong>API debugging</strong>, <strong>data visualization</strong>, and <strong>report generation</strong>.</p><p>Accepts JSON arrays and objects, auto-detects field structure, nested objects and arrays are click-expandable for details. Generated tables support column sorting, full-text search, and one-click copy as Markdown table. 100% client-side — your data never leaves your browser.</p>",
+      "seo_title_zh": "JSON 转 HTML 表格工具 - 在线 JSON 数据可视化表格生成器",
+      "seo_title_en": "JSON to HTML Table Converter - Online JSON Data Visualization Tool",
+      "features_zh": [
+        "粘贴 JSON 数组或对象，一键生成 HTML 表格",
+        "自动识别字段结构，嵌套对象/数组可点击展开",
+        "支持按列排序（升序/降序）",
+        "全文搜索过滤",
+        "一键复制为 Markdown 表格格式",
+        "显示行数统计和 JSON 数据概览",
+        "完全本地处理，数据不上传"
+      ],
+      "features_en": [
+        "Paste JSON array/object, generate HTML table with one click",
+        "Auto-detect field structure, nested objects/arrays click-expandable",
+        "Column sorting (ascending/descending)",
+        "Full-text search filter",
+        "One-click copy as Markdown table",
+        "Row count and JSON data summary",
+        "100% client-side, no data upload"
+      ],
+      "faq_zh": [
+        [
+          "支持哪些 JSON 格式？",
+          "支持 JSON 数组（如 [{...}, {...}]）和单个 JSON 对象。数组中的每个元素作为一行，支持深层嵌套。"
+        ],
+        [
+          "嵌套对象能显示吗？",
+          "可以。嵌套对象和数组会以可点击的方式显示，展开后可以看到完整结构。"
+        ],
+        [
+          "表格可以排序吗？",
+          "可以。点击任意列标题即可按该列排序，再次点击切换升序/降序。"
+        ],
+        [
+          "数据量有限制吗？",
+          "没有硬性限制，但建议处理不超过 10000 行或 10MB 的数据以确保浏览器性能。所有处理在本地完成。"
+        ],
+        [
+          "数据安全吗？",
+          "完全安全。所有数据在浏览器本地处理，不会上传到任何服务器。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "What JSON formats are supported?",
+          "Both JSON arrays (e.g. [{...}, {...}]) and single objects. Each array element becomes a row. Deeply nested structures are supported."
+        ],
+        [
+          "Can nested objects be displayed?",
+          "Yes. Nested objects and arrays display as clickable elements — expand to see the full structure."
+        ],
+        [
+          "Can the table be sorted?",
+          "Yes. Click any column header to sort by that column. Click again to toggle ascending/descending."
+        ],
+        [
+          "Is there a data size limit?",
+          "No hard limit, but we recommend keeping under 10,000 rows or 10MB for best browser performance. All processing is local."
+        ],
+        [
+          "Is my data safe?",
+          "Absolutely. All data is processed locally in your browser. Nothing is uploaded to any server."
+        ]
+      ],
+      "related": [
+        "json-to-csv",
+        "json-to-yaml",
+        "json-diff",
+        "json-validator",
+        "csv-to-json"
+      ],
+      "index": 126,
+      "ui_zh": "<div class=\"tool-controls\" style=\"max-width:100%\"><div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px\"><textarea id=\"json-input\" placeholder=\"粘贴 JSON 数组或对象...\" style=\"width:100%;min-height:150px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical\"></textarea></div><div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px\"><button class=\"btn btn-primary\" id=\"convert-btn\">🔄 生成表格</button><button class=\"btn btn-secondary\" id=\"copy-btn\">📋 复制 Markdown</button><button class=\"btn btn-secondary\" id=\"clear-btn\">🗑️ 清空</button></div><div id=\"status\" style=\"font-size:13px;margin-bottom:8px;color:var(--text-dim);min-height:20px\"></div><div id=\"table-container\" style=\"overflow-x:auto;min-height:100px\"></div><div style=\"margin-top:16px;padding:8px 12px;background:var(--bg-warning-light);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-dim)\"><strong>🔒 隐私提示</strong>：所有数据在浏览器本地处理，不会上传到服务器。</div></div>\n",
+      "ui_en": "<div class=\"tool-controls\" style=\"max-width:100%\"><div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px\"><textarea id=\"json-input\" placeholder=\"Paste JSON array or object...\" style=\"width:100%;min-height:150px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical\"></textarea></div><div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px\"><button class=\"btn btn-primary\" id=\"convert-btn\">🔄 Generate Table</button><button class=\"btn btn-secondary\" id=\"copy-btn\">📋 Copy Markdown</button><button class=\"btn btn-secondary\" id=\"clear-btn\">🗑️ Clear</button></div><div id=\"status\" style=\"font-size:13px;margin-bottom:8px;color:var(--text-dim);min-height:20px\"></div><div id=\"table-container\" style=\"overflow-x:auto;min-height:100px\"></div><div style=\"margin-top:16px;padding:8px 12px;background:var(--bg-warning-light);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-dim)\"><strong>🔒 Privacy</strong>: All data is processed locally in your browser. No upload.</div></div>\n"
+    },
+    {
+      "slug": "yaml-to-xml",
+      "category": "dev",
+      "icon": "🔄",
+      "name_zh": "YAML 转 XML",
+      "name_en": "YAML to XML",
+      "short_zh": "将 YAML 数据转换为 XML 格式，支持嵌套结构、数组和属性配置",
+      "short_en": "Convert YAML data to XML format with nested structure, arrays, and attribute support",
+      "keywords_zh": "YAML转XML,YAML转换XML,格式转换器,YAML格式化,XML格式化,YAML解析,XML生成,在线格式转换,数据格式转换,开发者工具",
+      "keywords_en": "yaml to xml, yaml converter, yaml to xml converter, format converter, yaml parser, xml generator, online format converter, data format conversion, developer tool",
+      "long_zh": "<p>免费的在线 <strong>YAML 转 XML 工具</strong>，将 YAML 格式数据快速转换为标准 XML 格式。支持嵌套对象、数组、多层级结构、YAML 注释等。适合 <strong>配置文件转换</strong>、<strong>API 数据格式迁移</strong>、<strong>跨语言数据交换</strong>等场景。</p><p>支持自定义根元素名称、缩进大小、属性语法（x: { @attr: val } 形式）。所有处理在浏览器本地完成，数据不会上传到服务器。</p>",
+      "long_en": "<p>Free online <strong>YAML to XML converter</strong> — quickly convert YAML data to standard XML format. Supports nested objects, arrays, multi-level structures, YAML comments, and more. Ideal for <strong>config file conversion</strong>, <strong>API data format migration</strong>, and <strong>cross-language data exchange</strong>.</p><p>Supports custom root element names, indentation, and attribute syntax (x: { @attr: val } syntax). All processing happens locally in your browser — your data never leaves your machine.</p>",
+      "seo_title_zh": "YAML 转 XML 工具 - 在线 YAML 到 XML 格式转换器",
+      "seo_title_en": "YAML to XML Converter - Free Online YAML to XML Format Tool",
+      "features_zh": [
+        "YAML 一键转换为标准 XML 格式",
+        "支持嵌套对象和数组结构",
+        "支持 YAML 注释（转换时自动忽略）",
+        "自定义根元素名称",
+        "可配置缩进（2/4 空格）",
+        "支持 @attr 属性语法",
+        "错误提示精确定位",
+        "完全本地处理，数据不上传"
+      ],
+      "features_en": [
+        "One-click YAML to standard XML conversion",
+        "Supports nested objects and arrays",
+        "YAML comments are auto-ignored during conversion",
+        "Custom root element name",
+        "Configurable indentation (2/4 spaces)",
+        "@attr attribute syntax support",
+        "Precise error location",
+        "100% client-side processing"
+      ],
+      "faq_zh": [
+        [
+          "YAML 转 XML 支持哪些功能？",
+          "支持嵌套对象、数组、字符串、数字、布尔值、null 值的转换。YAML 注释在转换时自动忽略。"
+        ],
+        [
+          "如何将 YAML 键转换为 XML 属性？",
+          "使用 @ 前缀：{ @id: \"123\" } 会转换为 <item id=\"123\"> 中的属性。"
+        ],
+        [
+          "YAML 数组会怎么转换？",
+          "数组中的元素会使用相同的元素名重复出现。例如 YAML 中的 items: [a, b, c] 会转换为 XML 中的 <items>a</items><items>b</items><items>c</items>。"
+        ],
+        [
+          "数据安全吗？",
+          "完全安全。所有数据在浏览器本地处理，不会上传到任何服务器。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "What features does YAML to XML support?",
+          "Supports nested objects, arrays, strings, numbers, booleans, and null values. YAML comments are auto-ignored."
+        ],
+        [
+          "How to convert YAML keys to XML attributes?",
+          "Use @ prefix: { @id: \"123\" } will become an attribute on the XML element like <item id=\"123\">."
+        ],
+        [
+          "How are YAML arrays handled?",
+          "Array elements repeat the same element name. E.g. items: [a, b, c] becomes <items>a</items><items>b</items><items>c</items>."
+        ],
+        [
+          "Is my data safe?",
+          "Absolutely. All data is processed locally in your browser. Nothing is uploaded to any server."
+        ]
+      ],
+      "related": [
+        "yaml-to-json",
+        "yaml-formatter",
+        "yaml-validator",
+        "xml-formatter",
+        "json-to-yaml"
+      ],
+      "index": 127,
+      "ui_zh": "<div class=\"tool-controls\" style=\"max-width:100%\"><div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px\"><textarea id=\"yaml-input\" placeholder=\"粘贴 YAML 内容...\" style=\"width:100%;min-height:200px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical\"></textarea></div><div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px\"><input type=\"text\" id=\"root-name\" value=\"root\" placeholder=\"根元素名称\" style=\"width:120px;padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\"><select id=\"indent-select\" style=\"padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\"><option value=\"2\">2 空格</option><option value=\"4\" selected>4 空格</option></select></div><div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px\"><button class=\"btn btn-primary\" id=\"convert-btn\">🔄 转换</button><button class=\"btn btn-secondary\" id=\"copy-btn\">📋 复制 XML</button><button class=\"btn btn-secondary\" id=\"clear-btn\">🗑️ 清空</button></div><div id=\"status\" style=\"font-size:13px;margin-bottom:8px;color:var(--text-dim);min-height:20px\"></div><textarea id=\"xml-output\" placeholder=\"XML 输出...\" style=\"width:100%;min-height:200px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical\" readonly></textarea><div style=\"margin-top:16px;padding:8px 12px;background:var(--bg-warning-light);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-dim)\"><strong>🔒 隐私提示</strong>：所有数据在浏览器本地处理，不会上传到服务器。</div></div>\n",
+      "ui_en": "<div class=\"tool-controls\" style=\"max-width:100%\"><div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px\"><textarea id=\"yaml-input\" placeholder=\"Paste YAML content...\" style=\"width:100%;min-height:200px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical\"></textarea></div><div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px\"><input type=\"text\" id=\"root-name\" value=\"root\" placeholder=\"Root element name\" style=\"width:140px;padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\"><select id=\"indent-select\" style=\"padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\"><option value=\"2\">2 spaces</option><option value=\"4\" selected>4 spaces</option></select></div><div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px\"><button class=\"btn btn-primary\" id=\"convert-btn\">🔄 Convert</button><button class=\"btn btn-secondary\" id=\"copy-btn\">📋 Copy XML</button><button class=\"btn btn-secondary\" id=\"clear-btn\">🗑️ Clear</button></div><div id=\"status\" style=\"font-size:13px;margin-bottom:8px;color:var(--text-dim);min-height:20px\"></div><textarea id=\"xml-output\" placeholder=\"XML output...\" style=\"width:100%;min-height:200px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical\" readonly></textarea><div style=\"margin-top:16px;padding:8px 12px;background:var(--bg-warning-light);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-dim)\"><strong>🔒 Privacy</strong>: All data is processed locally in your browser. No upload.</div></div>\n"
     }
   ]
 }
