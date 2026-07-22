@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>CSV to SQL INSERT - CSV to SQL INSERT Converter - Free Online SQL Generator Tool | AI Toolbox</title>
+<meta name="description" content="Free online csv to sql insert. Convert CSV data to SQL INSERT statements with custom table name, column mapping, and batch inserts. Fast, secure, and works in your browser without downloading.">
+<meta name="keywords" content="csv to sql, csv to insert, csv database import, sql generator, csv to sql statements, online csv to sql, data migration tool, csv to mysql, csv to postgresql">
+<link rel="canonical" href="https://tools.talang.fun/en/tools/csv-to-sql">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/csv-to-sql">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/csv-to-sql">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/csv-to-sql">
+<meta property="og:title" content="CSV to SQL INSERT - CSV to SQL INSERT Converter - Free Online SQL Generator Tool | AI Toolbox">
+<meta property="og:description" content="Free online csv to sql insert. Convert CSV data to SQL INSERT statements with custom table name, column mapping, and batch inserts. Fast, secure, and works in your browser without downloading.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/en/tools/csv-to-sql">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "CSV to SQL INSERT", "description": "Free online csv to sql insert. Convert CSV data to SQL INSERT statements with custom table name, column mapping, and batch inserts. Fast, secure, and works in your browser without downloading.", "url": "https://tools.talang.fun/en/tools/csv-to-sql", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "Convert CSV data to SQL INSERT statements with custom table name, column mapping, and batch inserts", "inLanguage": "en", "author": {"@type": "Organization", "name": "AI Toolbox"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/en/" class="logo"><span class="logo-icon">🛠️</span>AI Toolbox</a>
+    <nav class="nav">
+      <a href="/en/">Home</a>
+      <a href="/en/#tools">All Tools</a>
+      <a href="/en/blog/">Blog</a>
+      <a href="/en/about">About</a>
+      <a href="/en/sponsor">Sponsor</a>
+      <a href="https://tools.talang.fun/tools/csv-to-sql" class="lang-switch">中文</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🗄️</div>
+  <h1>CSV to SQL INSERT</h1>
+  <p>Convert CSV data to SQL INSERT statements with custom table name, column mapping, and batch inserts</p>
+</div>
+<div class="tool-panel">
+<div class="tool-controls" style="max-width:100%"><div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px"><textarea id="csv-input" placeholder="Paste CSV data..." style="width:100%;min-height:180px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical"></textarea></div><div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;align-items:center"><input type="text" id="table-name" value="my_table" placeholder="Table name" style="width:140px;padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)"><select id="insert-mode" style="padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)"><option value="batch">Batch insert</option><option value="single">Single row</option></select><select id="delimiter" style="padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)"><option value=",">Comma (,)</option><option value="	">Tab</option><option value=";">Semicolon (;)</option></select><label style="display:flex;align-items:center;gap:4px;font-size:13px;color:var(--text)"><input type="checkbox" id="has-header" checked> First row is header</label><label style="display:flex;align-items:center;gap:4px;font-size:13px;color:var(--text)"><input type="checkbox" id="null-empty" checked> Empty as NULL</label></div><div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px"><button class="btn btn-primary" id="convert-btn">🔄 Generate SQL</button><button class="btn btn-secondary" id="copy-btn">📋 Copy SQL</button><button class="btn btn-secondary" id="clear-btn">🗑️ Clear</button><button class="btn btn-secondary" id="sample-btn">📄 Sample</button></div><div id="status" style="font-size:13px;margin-bottom:8px;color:var(--text-dim);min-height:20px"></div><textarea id="sql-output" placeholder="Generated SQL statements..." style="width:100%;min-height:200px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical" readonly></textarea><div style="margin-top:16px;padding:8px 12px;background:var(--bg-warning-light);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-dim)"><strong>🔒 Privacy</strong>: All data is processed locally in your browser. No upload.</div></div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>About this tool</h2>
+  <p>Free online <strong>CSV to SQL INSERT converter</strong> — convert CSV data to SQL INSERT statements with one click. Supports custom table names, column mapping, batch inserts, auto type detection, NULL handling, and string escaping. Ideal for <strong>database migration</strong>, <strong>data import</strong>, and <strong>test data generation</strong>.</p><p>Compatible with MySQL, PostgreSQL, SQLite, and other major databases. 100% client-side — your data never leaves your browser.</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>Key Features</h2><ul><li>One-click CSV to SQL INSERT conversion</li><li>Custom table name and column names</li><li>Batch insert mode (INSERT INTO ... VALUES (...))</li><li>Single-row mode (one INSERT per row)</li><li>Auto type detection (numbers, booleans, NULL, strings)</li><li>Automatic string escaping (single quotes, backslashes)</li><li>Supports CSV with or without headers</li><li>Configurable delimiter (comma, tab, semicolon)</li><li>Row count statistics</li><li>100% client-side processing</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>Frequently Asked Questions</h2><h3 style="margin-top:20px;margin-bottom:8px">Which databases are supported?</h3><p>Generated SQL works with MySQL, PostgreSQL, SQLite, MariaDB, and other major databases. Syntax differences are handled automatically.</p><h3 style="margin-top:20px;margin-bottom:8px">What's the difference between batch and single-row modes?</h3><p>Batch mode uses one INSERT statement with multiple value tuples for efficient bulk import. Single-row mode generates one INSERT per row.</p><h3 style="margin-top:20px;margin-bottom:8px">How are empty fields handled?</h3><p>Empty fields become SQL NULL. You can optionally keep them as empty strings by checking the option.</p><h3 style="margin-top:20px;margin-bottom:8px">Does it support CSV with and without headers?</h3><p>Yes. CSV with headers auto-detects column names. For CSV without headers, you can manually specify column names.</p><h3 style="margin-top:20px;margin-bottom:8px">Is my data safe?</h3><p>Absolutely. All data is processed locally in your browser. Nothing is uploaded to any server.</p></section>
+<section class="related"><h3>Related Tools</h3><div class="tools-grid"><a href="/en/tools/csv-to-json" class="tool-card"><div class="icon">🔄</div><h3>CSV to JSON Converter</h3><p>Convert CSV data to JSON with delimiter selection, header config, and nested object generation</p></a><a href="/en/tools/csv-to-markdown" class="tool-card"><div class="icon">📊</div><h3>CSV to Markdown Table</h3><p>Convert CSV data to Markdown table format with preview, copy, and download</p></a><a href="/en/tools/csv-cleaner" class="tool-card"><div class="icon">🧹</div><h3>CSV Cleaner</h3><p>Trim spaces, remove duplicates/empty rows, normalize CSV format</p></a><a href="/en/tools/csv-editor" class="tool-card"><div class="icon">📊</div><h3>CSV Editor</h3><p>Edit CSV data online — visual table editor, add/remove rows/columns, live preview</p></a><a href="/en/tools/json-to-csv" class="tool-card"><div class="icon">📊</div><h3>JSON to CSV Converter</h3><p>Convert JSON arrays or objects to CSV format in one click</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>Need a private toolbox or custom browser tool?</h2>
+  <p>AI Toolbox can be adapted for internal workflows, private deployment, sponsored categories, or custom privacy-first utilities.</p>
+  <p><a href="/en/sponsor" data-event="conversion_cta_click" data-label="en_partner_custom_tool_cta">View partnership and custom tool options →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/csv-to-sql.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI Toolbox · Free online AI & developer tools · <a href='/en/about'>About</a> · <a href='/en/sponsor'>Sponsor</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('Copied!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>

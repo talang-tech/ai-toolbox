@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>JSON 转 .env 环境变量 - JSON 转 .env 环境变量工具 - 在线 JSON 到 .env 格式转换器 | AI 工具盒子</title>
+<meta name="description" content="免费在线JSON 转 .env 环境变量工具，将 JSON 对象转换为 .env 格式的环境变量文件，支持扁平化与嵌套展开。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="JSON转env,JSON转环境变量,env生成器,JSON转.env文件,环境变量转换,配置文件转.env,Docker环境变量,CI/CD环境变量,环境变量生成器,在线env工具">
+<link rel="canonical" href="https://tools.talang.fun/tools/json-to-env">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/json-to-env">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/json-to-env">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/json-to-env">
+<meta property="og:title" content="JSON 转 .env 环境变量 - JSON 转 .env 环境变量工具 - 在线 JSON 到 .env 格式转换器 | AI 工具盒子">
+<meta property="og:description" content="免费在线JSON 转 .env 环境变量工具，将 JSON 对象转换为 .env 格式的环境变量文件，支持扁平化与嵌套展开。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/json-to-env">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "JSON 转 .env 环境变量", "description": "免费在线JSON 转 .env 环境变量工具，将 JSON 对象转换为 .env 格式的环境变量文件，支持扁平化与嵌套展开。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/json-to-env", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "将 JSON 对象转换为 .env 格式的环境变量文件，支持扁平化与嵌套展开", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/tools/json-to-env" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🔑</div>
+  <h1>JSON 转 .env 环境变量</h1>
+  <p>将 JSON 对象转换为 .env 格式的环境变量文件，支持扁平化与嵌套展开</p>
+</div>
+<div class="tool-panel">
+<div class="tool-controls" style="max-width:100%"><div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px"><textarea id="json-input" placeholder="粘贴 JSON 对象..." style="width:100%;min-height:180px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical"></textarea></div><div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;align-items:center"><select id="nest-mode" style="padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)"><option value="flat">扁平化模式（推荐）</option><option value="nested">嵌套模式</option></select><select id="case-mode" style="padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)"><option value="original">保留原样</option><option value="uppercase">全大写</option><option value="snake">驼峰转下划线大写</option></select><label style="display:flex;align-items:center;gap:4px;font-size:13px;color:var(--text)"><input type="checkbox" id="quote-strings" checked> 引号包裹字符串</label></div><div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px"><button class="btn btn-primary" id="convert-btn">🔄 转换</button><button class="btn btn-secondary" id="copy-btn">📋 复制 .env</button><button class="btn btn-secondary" id="clear-btn">🗑️ 清空</button><button class="btn btn-secondary" id="sample-btn">📄 示例数据</button></div><div id="status" style="font-size:13px;margin-bottom:8px;color:var(--text-dim);min-height:20px"></div><textarea id="env-output" placeholder="转换后的 .env 内容..." style="width:100%;min-height:200px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical" readonly></textarea><div style="margin-top:16px;padding:8px 12px;background:var(--bg-warning-light);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-dim)"><strong>🔒 隐私提示</strong>：所有数据在浏览器本地处理，不会上传到服务器。</div></div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>免费的在线 <strong>JSON 转 .env 环境变量工具</strong>，将 JSON 配置对象快速转换为标准 .env 格式文件。支持扁平化展开、嵌套对象自动连缀、数组序列化、值类型推断。适合 <strong>Docker 部署</strong>、<strong>CI/CD 流水线</strong>、<strong>Node.js/React 项目配置</strong>等场景。</p><p>支持大小写转换（保留原样/全大写/驼峰转下划线大写），可选择是否用引号包裹字符串值。所有处理在浏览器本地完成，数据不会上传到服务器。</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>JSON 对象一键转换为 .env 格式</li><li>扁平化模式：展开嵌套层级（如 app.port=3000）</li><li>嵌套对象连缀模式：保留路径结构为键名</li><li>大小写转换：保留原样 / 全大写 / 驼峰转下划线大写</li><li>数组自动序列化为 JSON 字符串</li><li>布尔值/数字/空值自动类型推断</li><li>可选引号包裹字符串值</li><li>一键复制 .env 内容</li><li>完全本地处理，数据不上传</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">JSON 转 .env 支持哪些格式？</h3><p>支持任何有效的 JSON 对象输入。嵌套对象可以扁平化展开，数组会序列化为 JSON 字符串。</p><h3 style="margin-top:20px;margin-bottom:8px">扁平化模式和嵌套模式有什么区别？</h3><p>扁平化模式将嵌套键用点号连接（如 app.port=3000），嵌套模式将整个 JSON 对象序列化为一行。推荐使用扁平化模式。</p><h3 style="margin-top:20px;margin-bottom:8px">环境变量名可以自动转大写吗？</h3><p>可以。选择"全大写"模式，所有键名会自动转为大写字母（如 appPort → APPPORT）。选择"驼峰转下划线"模式，会转为 APP_PORT 格式。</p><h3 style="margin-top:20px;margin-bottom:8px">生成的 .env 文件可以直接用于 Docker 吗？</h3><p>可以。生成的格式符合 .env 文件规范，可以直接用于 docker-compose 或 Node.js 的 dotenv 包。</p><h3 style="margin-top:20px;margin-bottom:8px">数据安全吗？</h3><p>完全安全。所有数据在浏览器本地处理，不会上传到任何服务器。</p></section>
+<section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/json-to-yaml" class="tool-card"><div class="icon">📊</div><h3>JSON ↔ YAML 互转</h3><p>JSON 与 YAML 格式相互转换</p></a><a href="/tools/json-formatter" class="tool-card"><div class="icon">{ }</div><h3>JSON 格式化</h3><p>JSON 美化、压缩、校验，错误位置精准定位</p></a><a href="/tools/json-to-ts" class="tool-card"><div class="icon">📊</div><h3>JSON 转 TypeScript</h3><p>一键将 JSON 转换为 TypeScript 接口定义</p></a><a href="/tools/json-escape" class="tool-card"><div class="icon">🔤</div><h3>JSON 转义/反转义</h3><p>JSON 字符串转义与反转义，方便嵌入代码字符串</p></a><a href="/tools/json-validator" class="tool-card"><div class="icon">✅</div><h3>JSON 验证器</h3><p>验证 JSON 语法，高亮定位错误，格式化并显示行号</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/json-to-env.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>

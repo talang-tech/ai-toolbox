@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>CSV 转 SQL INSERT - CSV 转 SQL INSERT 语句工具 - 在线 CSV 转 SQL 数据库导入生成器 | AI 工具盒子</title>
+<meta name="description" content="免费在线CSV 转 SQL INSERT工具，将 CSV 数据转换为 SQL INSERT 语句，支持自定义表名、列映射和批量插入。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="CSV转SQL,CSV转INSERT,CSV数据库导入,SQL生成器,CSV导入数据库,CSV转SQL语句,在线CSV转SQL,数据迁移工具,CSV导入MySQL,CSV转PostgreSQL">
+<link rel="canonical" href="https://tools.talang.fun/tools/csv-to-sql">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/csv-to-sql">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/csv-to-sql">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/csv-to-sql">
+<meta property="og:title" content="CSV 转 SQL INSERT - CSV 转 SQL INSERT 语句工具 - 在线 CSV 转 SQL 数据库导入生成器 | AI 工具盒子">
+<meta property="og:description" content="免费在线CSV 转 SQL INSERT工具，将 CSV 数据转换为 SQL INSERT 语句，支持自定义表名、列映射和批量插入。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/csv-to-sql">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "CSV 转 SQL INSERT", "description": "免费在线CSV 转 SQL INSERT工具，将 CSV 数据转换为 SQL INSERT 语句，支持自定义表名、列映射和批量插入。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/csv-to-sql", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "将 CSV 数据转换为 SQL INSERT 语句，支持自定义表名、列映射和批量插入", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/tools/csv-to-sql" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🗄️</div>
+  <h1>CSV 转 SQL INSERT</h1>
+  <p>将 CSV 数据转换为 SQL INSERT 语句，支持自定义表名、列映射和批量插入</p>
+</div>
+<div class="tool-panel">
+<div class="tool-controls" style="max-width:100%"><div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px"><textarea id="csv-input" placeholder="粘贴 CSV 数据..." style="width:100%;min-height:180px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical"></textarea></div><div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;align-items:center"><input type="text" id="table-name" value="my_table" placeholder="表名" style="width:120px;padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)"><select id="insert-mode" style="padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)"><option value="batch">批量插入</option><option value="single">单行插入</option></select><select id="delimiter" style="padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)"><option value=",">逗号 (,)</option><option value="	">制表符</option><option value=";">分号 (;)</option></select><label style="display:flex;align-items:center;gap:4px;font-size:13px;color:var(--text)"><input type="checkbox" id="has-header" checked> 首行为表头</label><label style="display:flex;align-items:center;gap:4px;font-size:13px;color:var(--text)"><input type="checkbox" id="null-empty" checked> 空字段为 NULL</label></div><div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px"><button class="btn btn-primary" id="convert-btn">🔄 生成 SQL</button><button class="btn btn-secondary" id="copy-btn">📋 复制 SQL</button><button class="btn btn-secondary" id="clear-btn">🗑️ 清空</button><button class="btn btn-secondary" id="sample-btn">📄 示例数据</button></div><div id="status" style="font-size:13px;margin-bottom:8px;color:var(--text-dim);min-height:20px"></div><textarea id="sql-output" placeholder="生成的 SQL 语句..." style="width:100%;min-height:200px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical" readonly></textarea><div style="margin-top:16px;padding:8px 12px;background:var(--bg-warning-light);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-dim)"><strong>🔒 隐私提示</strong>：所有数据在浏览器本地处理，不会上传到服务器。</div></div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>免费的在线 <strong>CSV 转 SQL INSERT 语句工具</strong>，将 CSV 数据快速转换为 SQL INSERT 语句。支持自定义表名、列映射、批量插入、自动类型推断、NULL 值处理、字符串转义。适合 <strong>数据库迁移</strong>、<strong>数据导入</strong>、<strong>测试数据生成</strong>等场景。</p><p>支持 MySQL、PostgreSQL、SQLite 等主流数据库语法。所有处理在浏览器本地完成，数据不会上传到服务器。</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>CSV 数据一键转换为 SQL INSERT 语句</li><li>自定义表名和列名</li><li>支持批量插入（INSERT INTO ... VALUES (...)）格式</li><li>单行插入格式（每行一个 INSERT）</li><li>自动类型推断（数字、布尔值、NULL、字符串）</li><li>字符串自动转义（单引号、反斜杠）</li><li>支持带表头和不带表头的 CSV</li><li>可配置分隔符（逗号、制表符、分号）</li><li>输出行数统计</li><li>完全本地处理，数据不上传</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">CSV 转 SQL 支持哪些数据库？</h3><p>生成的 SQL 语句兼容 MySQL、PostgreSQL、SQLite、MariaDB 等主流数据库。不同数据库的语法差异会自动适配。</p><h3 style="margin-top:20px;margin-bottom:8px">批量插入和单行插入有什么区别？</h3><p>批量插入使用一条 INSERT 语句插入多行数据（如 INSERT INTO t VALUES (...), (...), (...)），适合大量数据导入。单行插入每行生成一条 INSERT 语句。</p><h3 style="margin-top:20px;margin-bottom:8px">CSV 文件中的空值怎么处理？</h3><p>空字段会被转换为 SQL 的 NULL。如果希望保留空字符串，可以勾选对应的选项。</p><h3 style="margin-top:20px;margin-bottom:8px">支持带表头和不带表头的 CSV 吗？</h3><p>都支持。带表头的 CSV 会自动读取列名，不带表头的需要手动指定列名。</p><h3 style="margin-top:20px;margin-bottom:8px">数据安全吗？</h3><p>完全安全。所有数据在浏览器本地处理，不会上传到任何服务器。</p></section>
+<section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/csv-to-json" class="tool-card"><div class="icon">🔄</div><h3>CSV ↔ JSON 互转</h3><p>CSV 数据转 JSON 格式，支持分隔符选择、表头配置、嵌套对象生成</p></a><a href="/tools/csv-to-markdown" class="tool-card"><div class="icon">📊</div><h3>CSV 转 Markdown 表格</h3><p>将 CSV 数据快速转换为 Markdown 表格格式，支持预览、复制和下载</p></a><a href="/tools/csv-cleaner" class="tool-card"><div class="icon">🧹</div><h3>CSV 清洗</h3><p>修剪空格、去重、移除空行、规范化 CSV 格式</p></a><a href="/tools/csv-editor" class="tool-card"><div class="icon">📊</div><h3>CSV 在线编辑器</h3><p>在线编辑 CSV 数据——可视化表格编辑、增删行列、实时预览</p></a><a href="/tools/json-to-csv" class="tool-card"><div class="icon">📊</div><h3>JSON 转 CSV</h3><p>将 JSON 数组或对象一键转换为 CSV 表格格式</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/csv-to-sql.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>

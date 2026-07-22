@@ -100,7 +100,8 @@
           "js-obfuscator",
           "css-pseudo-selectors",
           "html-tag-reference",
-          "yaml-to-xml"
+          "yaml-to-xml",
+          "csv-to-sql"
         ]
       },
       "encode": {
@@ -151,7 +152,8 @@
           "xml-to-json",
           "json-validator",
           "json-escape",
-          "json-to-html"
+          "json-to-html",
+          "json-to-env"
         ]
       },
       "image": {
@@ -9595,6 +9597,190 @@
       "index": 127,
       "ui_zh": "<div class=\"tool-controls\" style=\"max-width:100%\"><div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px\"><textarea id=\"yaml-input\" placeholder=\"粘贴 YAML 内容...\" style=\"width:100%;min-height:200px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical\"></textarea></div><div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px\"><input type=\"text\" id=\"root-name\" value=\"root\" placeholder=\"根元素名称\" style=\"width:120px;padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\"><select id=\"indent-select\" style=\"padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\"><option value=\"2\">2 空格</option><option value=\"4\" selected>4 空格</option></select></div><div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px\"><button class=\"btn btn-primary\" id=\"convert-btn\">🔄 转换</button><button class=\"btn btn-secondary\" id=\"copy-btn\">📋 复制 XML</button><button class=\"btn btn-secondary\" id=\"clear-btn\">🗑️ 清空</button></div><div id=\"status\" style=\"font-size:13px;margin-bottom:8px;color:var(--text-dim);min-height:20px\"></div><textarea id=\"xml-output\" placeholder=\"XML 输出...\" style=\"width:100%;min-height:200px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical\" readonly></textarea><div style=\"margin-top:16px;padding:8px 12px;background:var(--bg-warning-light);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-dim)\"><strong>🔒 隐私提示</strong>：所有数据在浏览器本地处理，不会上传到服务器。</div></div>\n",
       "ui_en": "<div class=\"tool-controls\" style=\"max-width:100%\"><div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px\"><textarea id=\"yaml-input\" placeholder=\"Paste YAML content...\" style=\"width:100%;min-height:200px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical\"></textarea></div><div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px\"><input type=\"text\" id=\"root-name\" value=\"root\" placeholder=\"Root element name\" style=\"width:140px;padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\"><select id=\"indent-select\" style=\"padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\"><option value=\"2\">2 spaces</option><option value=\"4\" selected>4 spaces</option></select></div><div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px\"><button class=\"btn btn-primary\" id=\"convert-btn\">🔄 Convert</button><button class=\"btn btn-secondary\" id=\"copy-btn\">📋 Copy XML</button><button class=\"btn btn-secondary\" id=\"clear-btn\">🗑️ Clear</button></div><div id=\"status\" style=\"font-size:13px;margin-bottom:8px;color:var(--text-dim);min-height:20px\"></div><textarea id=\"xml-output\" placeholder=\"XML output...\" style=\"width:100%;min-height:200px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical\" readonly></textarea><div style=\"margin-top:16px;padding:8px 12px;background:var(--bg-warning-light);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-dim)\"><strong>🔒 Privacy</strong>: All data is processed locally in your browser. No upload.</div></div>\n"
+    },
+    {
+      "slug": "json-to-env",
+      "category": "json",
+      "icon": "🔑",
+      "name_zh": "JSON 转 .env 环境变量",
+      "name_en": "JSON to .env Variables",
+      "short_zh": "将 JSON 对象转换为 .env 格式的环境变量文件，支持扁平化与嵌套展开",
+      "short_en": "Convert JSON object to .env format environment variables with flat or nested modes",
+      "keywords_zh": "JSON转env,JSON转环境变量,env生成器,JSON转.env文件,环境变量转换,配置文件转.env,Docker环境变量,CI/CD环境变量,环境变量生成器,在线env工具",
+      "keywords_en": "json to env, json to environment variables, env generator, json to .env, environment variables converter, docker env file, dotenv converter, online env tool, env file generator",
+      "long_zh": "<p>免费的在线 <strong>JSON 转 .env 环境变量工具</strong>，将 JSON 配置对象快速转换为标准 .env 格式文件。支持扁平化展开、嵌套对象自动连缀、数组序列化、值类型推断。适合 <strong>Docker 部署</strong>、<strong>CI/CD 流水线</strong>、<strong>Node.js/React 项目配置</strong>等场景。</p><p>支持大小写转换（保留原样/全大写/驼峰转下划线大写），可选择是否用引号包裹字符串值。所有处理在浏览器本地完成，数据不会上传到服务器。</p>",
+      "long_en": "<p>Free online <strong>JSON to .env converter</strong> — quickly convert JSON config objects to standard .env format. Supports flat mode, nested object concatenation, array serialization, and value type detection. Ideal for <strong>Docker deployments</strong>, <strong>CI/CD pipelines</strong>, <strong>Node.js/React project configs</strong>, and more.</p><p>Supports case conversion (keep original, UPPERCASE, or camelCase to SCREAMING_SNAKE_CASE), and optional value quoting. 100% client-side — your data never leaves your browser.</p>",
+      "seo_title_zh": "JSON 转 .env 环境变量工具 - 在线 JSON 到 .env 格式转换器",
+      "seo_title_en": "JSON to .env Converter - Free Online Environment Variables Tool",
+      "features_zh": [
+        "JSON 对象一键转换为 .env 格式",
+        "扁平化模式：展开嵌套层级（如 app.port=3000）",
+        "嵌套对象连缀模式：保留路径结构为键名",
+        "大小写转换：保留原样 / 全大写 / 驼峰转下划线大写",
+        "数组自动序列化为 JSON 字符串",
+        "布尔值/数字/空值自动类型推断",
+        "可选引号包裹字符串值",
+        "一键复制 .env 内容",
+        "完全本地处理，数据不上传"
+      ],
+      "features_en": [
+        "One-click JSON to .env conversion",
+        "Flat mode: expand nested keys (e.g. app.port=3000)",
+        "Nested mode: preserve path structure in key names",
+        "Case conversion: keep original / UPPERCASE / camelCase to SCREAMING_SNAKE_CASE",
+        "Arrays auto-serialized to JSON strings",
+        "Auto type detection for booleans, numbers, nulls",
+        "Optional quoting for string values",
+        "One-click copy .env content",
+        "100% client-side processing"
+      ],
+      "faq_zh": [
+        [
+          "JSON 转 .env 支持哪些格式？",
+          "支持任何有效的 JSON 对象输入。嵌套对象可以扁平化展开，数组会序列化为 JSON 字符串。"
+        ],
+        [
+          "扁平化模式和嵌套模式有什么区别？",
+          "扁平化模式将嵌套键用点号连接（如 app.port=3000），嵌套模式将整个 JSON 对象序列化为一行。推荐使用扁平化模式。"
+        ],
+        [
+          "环境变量名可以自动转大写吗？",
+          "可以。选择\"全大写\"模式，所有键名会自动转为大写字母（如 appPort → APPPORT）。选择\"驼峰转下划线\"模式，会转为 APP_PORT 格式。"
+        ],
+        [
+          "生成的 .env 文件可以直接用于 Docker 吗？",
+          "可以。生成的格式符合 .env 文件规范，可以直接用于 docker-compose 或 Node.js 的 dotenv 包。"
+        ],
+        [
+          "数据安全吗？",
+          "完全安全。所有数据在浏览器本地处理，不会上传到任何服务器。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "What JSON formats are supported?",
+          "Any valid JSON object. Nested objects are flattened into dot-notation keys. Arrays are serialized as JSON strings."
+        ],
+        [
+          "What's the difference between flat and nested modes?",
+          "Flat mode merges nested keys with dot notation (e.g. app.port=3000). Nested mode serializes the whole object per key. Flat mode is recommended."
+        ],
+        [
+          "Can env var names be converted to uppercase?",
+          "Yes. Select 'UPPERCASE' to convert all keys to uppercase. Select 'camelCase to SCREAMING_SNAKE_CASE' for NODE_ENV style."
+        ],
+        [
+          "Is the output compatible with Docker?",
+          "Yes. The output follows standard .env file format, compatible with docker-compose, dotenv, and similar tools."
+        ],
+        [
+          "Is my data safe?",
+          "Absolutely. All data is processed locally in your browser. Nothing is uploaded to any server."
+        ]
+      ],
+      "related": [
+        "json-to-yaml",
+        "json-formatter",
+        "json-to-ts",
+        "json-escape",
+        "json-validator"
+      ],
+      "index": 128,
+      "ui_zh": "<div class=\"tool-controls\" style=\"max-width:100%\"><div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px\"><textarea id=\"json-input\" placeholder=\"粘贴 JSON 对象...\" style=\"width:100%;min-height:180px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical\"></textarea></div><div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;align-items:center\"><select id=\"nest-mode\" style=\"padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\"><option value=\"flat\">扁平化模式（推荐）</option><option value=\"nested\">嵌套模式</option></select><select id=\"case-mode\" style=\"padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\"><option value=\"original\">保留原样</option><option value=\"uppercase\">全大写</option><option value=\"snake\">驼峰转下划线大写</option></select><label style=\"display:flex;align-items:center;gap:4px;font-size:13px;color:var(--text)\"><input type=\"checkbox\" id=\"quote-strings\" checked> 引号包裹字符串</label></div><div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px\"><button class=\"btn btn-primary\" id=\"convert-btn\">🔄 转换</button><button class=\"btn btn-secondary\" id=\"copy-btn\">📋 复制 .env</button><button class=\"btn btn-secondary\" id=\"clear-btn\">🗑️ 清空</button><button class=\"btn btn-secondary\" id=\"sample-btn\">📄 示例数据</button></div><div id=\"status\" style=\"font-size:13px;margin-bottom:8px;color:var(--text-dim);min-height:20px\"></div><textarea id=\"env-output\" placeholder=\"转换后的 .env 内容...\" style=\"width:100%;min-height:200px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical\" readonly></textarea><div style=\"margin-top:16px;padding:8px 12px;background:var(--bg-warning-light);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-dim)\"><strong>🔒 隐私提示</strong>：所有数据在浏览器本地处理，不会上传到服务器。</div></div>",
+      "ui_en": "<div class=\"tool-controls\" style=\"max-width:100%\"><div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px\"><textarea id=\"json-input\" placeholder=\"Paste JSON object...\" style=\"width:100%;min-height:180px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical\"></textarea></div><div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;align-items:center\"><select id=\"nest-mode\" style=\"padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\"><option value=\"flat\">Flat mode (recommended)</option><option value=\"nested\">Nested mode</option></select><select id=\"case-mode\" style=\"padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\"><option value=\"original\">Keep original</option><option value=\"uppercase\">UPPERCASE</option><option value=\"snake\">SCREAMING_SNAKE_CASE</option></select><label style=\"display:flex;align-items:center;gap:4px;font-size:13px;color:var(--text)\"><input type=\"checkbox\" id=\"quote-strings\" checked> Quote strings</label></div><div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px\"><button class=\"btn btn-primary\" id=\"convert-btn\">🔄 Convert</button><button class=\"btn btn-secondary\" id=\"copy-btn\">📋 Copy .env</button><button class=\"btn btn-secondary\" id=\"clear-btn\">🗑️ Clear</button><button class=\"btn btn-secondary\" id=\"sample-btn\">📄 Sample</button></div><div id=\"status\" style=\"font-size:13px;margin-bottom:8px;color:var(--text-dim);min-height:20px\"></div><textarea id=\"env-output\" placeholder=\"Converted .env output...\" style=\"width:100%;min-height:200px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical\" readonly></textarea><div style=\"margin-top:16px;padding:8px 12px;background:var(--bg-warning-light);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-dim)\"><strong>🔒 Privacy</strong>: All data is processed locally in your browser. No upload.</div></div>"
+    },
+    {
+      "slug": "csv-to-sql",
+      "category": "dev",
+      "icon": "🗄️",
+      "name_zh": "CSV 转 SQL INSERT",
+      "name_en": "CSV to SQL INSERT",
+      "short_zh": "将 CSV 数据转换为 SQL INSERT 语句，支持自定义表名、列映射和批量插入",
+      "short_en": "Convert CSV data to SQL INSERT statements with custom table name, column mapping, and batch inserts",
+      "keywords_zh": "CSV转SQL,CSV转INSERT,CSV数据库导入,SQL生成器,CSV导入数据库,CSV转SQL语句,在线CSV转SQL,数据迁移工具,CSV导入MySQL,CSV转PostgreSQL",
+      "keywords_en": "csv to sql, csv to insert, csv database import, sql generator, csv to sql statements, online csv to sql, data migration tool, csv to mysql, csv to postgresql",
+      "long_zh": "<p>免费的在线 <strong>CSV 转 SQL INSERT 语句工具</strong>，将 CSV 数据快速转换为 SQL INSERT 语句。支持自定义表名、列映射、批量插入、自动类型推断、NULL 值处理、字符串转义。适合 <strong>数据库迁移</strong>、<strong>数据导入</strong>、<strong>测试数据生成</strong>等场景。</p><p>支持 MySQL、PostgreSQL、SQLite 等主流数据库语法。所有处理在浏览器本地完成，数据不会上传到服务器。</p>",
+      "long_en": "<p>Free online <strong>CSV to SQL INSERT converter</strong> — convert CSV data to SQL INSERT statements with one click. Supports custom table names, column mapping, batch inserts, auto type detection, NULL handling, and string escaping. Ideal for <strong>database migration</strong>, <strong>data import</strong>, and <strong>test data generation</strong>.</p><p>Compatible with MySQL, PostgreSQL, SQLite, and other major databases. 100% client-side — your data never leaves your browser.</p>",
+      "seo_title_zh": "CSV 转 SQL INSERT 语句工具 - 在线 CSV 转 SQL 数据库导入生成器",
+      "seo_title_en": "CSV to SQL INSERT Converter - Free Online SQL Generator Tool",
+      "features_zh": [
+        "CSV 数据一键转换为 SQL INSERT 语句",
+        "自定义表名和列名",
+        "支持批量插入（INSERT INTO ... VALUES (...)）格式",
+        "单行插入格式（每行一个 INSERT）",
+        "自动类型推断（数字、布尔值、NULL、字符串）",
+        "字符串自动转义（单引号、反斜杠）",
+        "支持带表头和不带表头的 CSV",
+        "可配置分隔符（逗号、制表符、分号）",
+        "输出行数统计",
+        "完全本地处理，数据不上传"
+      ],
+      "features_en": [
+        "One-click CSV to SQL INSERT conversion",
+        "Custom table name and column names",
+        "Batch insert mode (INSERT INTO ... VALUES (...))",
+        "Single-row mode (one INSERT per row)",
+        "Auto type detection (numbers, booleans, NULL, strings)",
+        "Automatic string escaping (single quotes, backslashes)",
+        "Supports CSV with or without headers",
+        "Configurable delimiter (comma, tab, semicolon)",
+        "Row count statistics",
+        "100% client-side processing"
+      ],
+      "faq_zh": [
+        [
+          "CSV 转 SQL 支持哪些数据库？",
+          "生成的 SQL 语句兼容 MySQL、PostgreSQL、SQLite、MariaDB 等主流数据库。不同数据库的语法差异会自动适配。"
+        ],
+        [
+          "批量插入和单行插入有什么区别？",
+          "批量插入使用一条 INSERT 语句插入多行数据（如 INSERT INTO t VALUES (...), (...), (...)），适合大量数据导入。单行插入每行生成一条 INSERT 语句。"
+        ],
+        [
+          "CSV 文件中的空值怎么处理？",
+          "空字段会被转换为 SQL 的 NULL。如果希望保留空字符串，可以勾选对应的选项。"
+        ],
+        [
+          "支持带表头和不带表头的 CSV 吗？",
+          "都支持。带表头的 CSV 会自动读取列名，不带表头的需要手动指定列名。"
+        ],
+        [
+          "数据安全吗？",
+          "完全安全。所有数据在浏览器本地处理，不会上传到任何服务器。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "Which databases are supported?",
+          "Generated SQL works with MySQL, PostgreSQL, SQLite, MariaDB, and other major databases. Syntax differences are handled automatically."
+        ],
+        [
+          "What's the difference between batch and single-row modes?",
+          "Batch mode uses one INSERT statement with multiple value tuples for efficient bulk import. Single-row mode generates one INSERT per row."
+        ],
+        [
+          "How are empty fields handled?",
+          "Empty fields become SQL NULL. You can optionally keep them as empty strings by checking the option."
+        ],
+        [
+          "Does it support CSV with and without headers?",
+          "Yes. CSV with headers auto-detects column names. For CSV without headers, you can manually specify column names."
+        ],
+        [
+          "Is my data safe?",
+          "Absolutely. All data is processed locally in your browser. Nothing is uploaded to any server."
+        ]
+      ],
+      "related": [
+        "csv-to-json",
+        "csv-to-markdown",
+        "csv-cleaner",
+        "csv-editor",
+        "json-to-csv"
+      ],
+      "index": 129,
+      "ui_zh": "<div class=\"tool-controls\" style=\"max-width:100%\"><div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px\"><textarea id=\"csv-input\" placeholder=\"粘贴 CSV 数据...\" style=\"width:100%;min-height:180px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical\"></textarea></div><div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;align-items:center\"><input type=\"text\" id=\"table-name\" value=\"my_table\" placeholder=\"表名\" style=\"width:120px;padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\"><select id=\"insert-mode\" style=\"padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\"><option value=\"batch\">批量插入</option><option value=\"single\">单行插入</option></select><select id=\"delimiter\" style=\"padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\"><option value=\",\">逗号 (,)</option><option value=\"\t\">制表符</option><option value=\";\">分号 (;)</option></select><label style=\"display:flex;align-items:center;gap:4px;font-size:13px;color:var(--text)\"><input type=\"checkbox\" id=\"has-header\" checked> 首行为表头</label><label style=\"display:flex;align-items:center;gap:4px;font-size:13px;color:var(--text)\"><input type=\"checkbox\" id=\"null-empty\" checked> 空字段为 NULL</label></div><div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px\"><button class=\"btn btn-primary\" id=\"convert-btn\">🔄 生成 SQL</button><button class=\"btn btn-secondary\" id=\"copy-btn\">📋 复制 SQL</button><button class=\"btn btn-secondary\" id=\"clear-btn\">🗑️ 清空</button><button class=\"btn btn-secondary\" id=\"sample-btn\">📄 示例数据</button></div><div id=\"status\" style=\"font-size:13px;margin-bottom:8px;color:var(--text-dim);min-height:20px\"></div><textarea id=\"sql-output\" placeholder=\"生成的 SQL 语句...\" style=\"width:100%;min-height:200px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical\" readonly></textarea><div style=\"margin-top:16px;padding:8px 12px;background:var(--bg-warning-light);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-dim)\"><strong>🔒 隐私提示</strong>：所有数据在浏览器本地处理，不会上传到服务器。</div></div>",
+      "ui_en": "<div class=\"tool-controls\" style=\"max-width:100%\"><div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px\"><textarea id=\"csv-input\" placeholder=\"Paste CSV data...\" style=\"width:100%;min-height:180px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical\"></textarea></div><div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;align-items:center\"><input type=\"text\" id=\"table-name\" value=\"my_table\" placeholder=\"Table name\" style=\"width:140px;padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\"><select id=\"insert-mode\" style=\"padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\"><option value=\"batch\">Batch insert</option><option value=\"single\">Single row</option></select><select id=\"delimiter\" style=\"padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\"><option value=\",\">Comma (,)</option><option value=\"\t\">Tab</option><option value=\";\">Semicolon (;)</option></select><label style=\"display:flex;align-items:center;gap:4px;font-size:13px;color:var(--text)\"><input type=\"checkbox\" id=\"has-header\" checked> First row is header</label><label style=\"display:flex;align-items:center;gap:4px;font-size:13px;color:var(--text)\"><input type=\"checkbox\" id=\"null-empty\" checked> Empty as NULL</label></div><div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px\"><button class=\"btn btn-primary\" id=\"convert-btn\">🔄 Generate SQL</button><button class=\"btn btn-secondary\" id=\"copy-btn\">📋 Copy SQL</button><button class=\"btn btn-secondary\" id=\"clear-btn\">🗑️ Clear</button><button class=\"btn btn-secondary\" id=\"sample-btn\">📄 Sample</button></div><div id=\"status\" style=\"font-size:13px;margin-bottom:8px;color:var(--text-dim);min-height:20px\"></div><textarea id=\"sql-output\" placeholder=\"Generated SQL statements...\" style=\"width:100%;min-height:200px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical\" readonly></textarea><div style=\"margin-top:16px;padding:8px 12px;background:var(--bg-warning-light);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-dim)\"><strong>🔒 Privacy</strong>: All data is processed locally in your browser. No upload.</div></div>"
     }
   ]
 }
