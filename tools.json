@@ -9781,6 +9781,180 @@
       "index": 129,
       "ui_zh": "<div class=\"tool-controls\" style=\"max-width:100%\"><div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px\"><textarea id=\"csv-input\" placeholder=\"粘贴 CSV 数据...\" style=\"width:100%;min-height:180px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical\"></textarea></div><div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;align-items:center\"><input type=\"text\" id=\"table-name\" value=\"my_table\" placeholder=\"表名\" style=\"width:120px;padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\"><select id=\"insert-mode\" style=\"padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\"><option value=\"batch\">批量插入</option><option value=\"single\">单行插入</option></select><select id=\"delimiter\" style=\"padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\"><option value=\",\">逗号 (,)</option><option value=\"\t\">制表符</option><option value=\";\">分号 (;)</option></select><label style=\"display:flex;align-items:center;gap:4px;font-size:13px;color:var(--text)\"><input type=\"checkbox\" id=\"has-header\" checked> 首行为表头</label><label style=\"display:flex;align-items:center;gap:4px;font-size:13px;color:var(--text)\"><input type=\"checkbox\" id=\"null-empty\" checked> 空字段为 NULL</label></div><div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px\"><button class=\"btn btn-primary\" id=\"convert-btn\">🔄 生成 SQL</button><button class=\"btn btn-secondary\" id=\"copy-btn\">📋 复制 SQL</button><button class=\"btn btn-secondary\" id=\"clear-btn\">🗑️ 清空</button><button class=\"btn btn-secondary\" id=\"sample-btn\">📄 示例数据</button></div><div id=\"status\" style=\"font-size:13px;margin-bottom:8px;color:var(--text-dim);min-height:20px\"></div><textarea id=\"sql-output\" placeholder=\"生成的 SQL 语句...\" style=\"width:100%;min-height:200px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical\" readonly></textarea><div style=\"margin-top:16px;padding:8px 12px;background:var(--bg-warning-light);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-dim)\"><strong>🔒 隐私提示</strong>：所有数据在浏览器本地处理，不会上传到服务器。</div></div>",
       "ui_en": "<div class=\"tool-controls\" style=\"max-width:100%\"><div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px\"><textarea id=\"csv-input\" placeholder=\"Paste CSV data...\" style=\"width:100%;min-height:180px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical\"></textarea></div><div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;align-items:center\"><input type=\"text\" id=\"table-name\" value=\"my_table\" placeholder=\"Table name\" style=\"width:140px;padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\"><select id=\"insert-mode\" style=\"padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\"><option value=\"batch\">Batch insert</option><option value=\"single\">Single row</option></select><select id=\"delimiter\" style=\"padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\"><option value=\",\">Comma (,)</option><option value=\"\t\">Tab</option><option value=\";\">Semicolon (;)</option></select><label style=\"display:flex;align-items:center;gap:4px;font-size:13px;color:var(--text)\"><input type=\"checkbox\" id=\"has-header\" checked> First row is header</label><label style=\"display:flex;align-items:center;gap:4px;font-size:13px;color:var(--text)\"><input type=\"checkbox\" id=\"null-empty\" checked> Empty as NULL</label></div><div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px\"><button class=\"btn btn-primary\" id=\"convert-btn\">🔄 Generate SQL</button><button class=\"btn btn-secondary\" id=\"copy-btn\">📋 Copy SQL</button><button class=\"btn btn-secondary\" id=\"clear-btn\">🗑️ Clear</button><button class=\"btn btn-secondary\" id=\"sample-btn\">📄 Sample</button></div><div id=\"status\" style=\"font-size:13px;margin-bottom:8px;color:var(--text-dim);min-height:20px\"></div><textarea id=\"sql-output\" placeholder=\"Generated SQL statements...\" style=\"width:100%;min-height:200px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical\" readonly></textarea><div style=\"margin-top:16px;padding:8px 12px;background:var(--bg-warning-light);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-dim)\"><strong>🔒 Privacy</strong>: All data is processed locally in your browser. No upload.</div></div>"
+    },
+    {
+      "slug": "json-to-markdown",
+      "category": "json",
+      "icon": "📋",
+      "name_zh": "JSON 转 Markdown 表格",
+      "name_en": "JSON to Markdown Table",
+      "short_zh": "将 JSON 数组/对象转换为 Markdown 格式表格，支持嵌套对象展开",
+      "short_en": "Convert JSON arrays/objects into Markdown table format with nested object expansion",
+      "keywords_zh": "JSON转Markdown表格,JSON转MD表格,JSON数据转Markdown,Markdown表格生成,JSON转表格,JSON数据可视化,在线Markdown表格工具,JSON转MD,JSON表格生成器",
+      "keywords_en": "json to markdown table, json to md table, json data to markdown, markdown table generator from json, json to table, json table to markdown, online json markdown tool, json to md converter",
+      "long_zh": "<p>免费的在线 <strong>JSON 转 Markdown 表格工具</strong>，将 JSON 数组或对象快速转换为整洁的 Markdown 格式表格。支持嵌套对象自动展开、深层路径展平。适合 <strong>API 文档</strong>、<strong>README 编写</strong>、<strong>数据展示</strong>、<strong>代码注释</strong> 等场景。</p><p>支持 JSON 对象数组和单个对象两种输入格式，自动识别嵌套字段结构，深层嵌套对象以点号路径展平。生成的 Markdown 表格可直接用于 GitHub README、Git Issues、博客文章、文档系统。所有处理在浏览器本地完成，数据不会上传。</p>",
+      "long_en": "<p>Free online <strong>JSON to Markdown Table converter</strong> — quickly convert JSON arrays or objects into clean Markdown tables. Supports automatic nested object expansion with dot-path flattening. Ideal for <strong>API documentation</strong>, <strong>README files</strong>, <strong>data visualization</strong>, and <strong>code comments</strong>.</p><p>Accepts JSON arrays of objects and single objects. Auto-detects nested field structures and flattens deep paths. The generated Markdown table works in GitHub README, Git Issues, blog posts, and any Markdown-supported platform. 100% client-side — your data never leaves your browser.</p>",
+      "seo_title_zh": "JSON 转 Markdown 表格工具 - 在线 JSON 数据转 MD 表格生成器",
+      "seo_title_en": "JSON to Markdown Table Converter - Free Online JSON to MD Tool",
+      "features_zh": [
+        "粘贴 JSON 数组或对象，自动生成 Markdown 表格",
+        "嵌套对象自动展开，深层路径点号展平",
+        "支持所有 JSON 值类型",
+        "自动检测列结构，多行数据统一展示",
+        "一键复制生成结果",
+        "输入即自动转换（支持 Ctrl+Enter 快捷键）",
+        "完全本地处理，数据不上传"
+      ],
+      "features_en": [
+        "Paste JSON array/object, auto-generate Markdown table",
+        "Nested objects auto-expanded with dot-path flattening",
+        "Supports all JSON value types",
+        "Auto-detects column structure, uniform display across rows",
+        "One-click copy generated result",
+        "Auto-convert on input (Ctrl+Enter shortcut supported)",
+        "100% client-side, no data upload"
+      ],
+      "faq_zh": [
+        [
+          "支持哪些 JSON 格式？",
+          "支持 JSON 对象数组和单个 JSON 对象。数组中的每个对象作为 Markdown 表格的一行。"
+        ],
+        [
+          "嵌套对象怎么处理？",
+          "嵌套对象自动展开为扁平路径，如 address.city 变为 address.city 列。"
+        ],
+        [
+          "数组字段怎么显示？",
+          "数组字段会以 JSON 字符串形式显示在单元格中，保持数据完整性。"
+        ],
+        [
+          "数据量限制？",
+          "没有硬性限制，但建议不超过 5000 行以确保浏览器性能。"
+        ],
+        [
+          "数据安全吗？",
+          "完全安全。所有数据在浏览器本地处理，不会上传到任何服务器。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "What JSON formats are supported?",
+          "JSON arrays of objects and single objects. Each object becomes a Markdown table row."
+        ],
+        [
+          "How are nested objects handled?",
+          "Nested objects are flattened with dot notation, e.g. address.city becomes the address.city column header."
+        ],
+        [
+          "How are arrays displayed?",
+          "Array fields are displayed as JSON strings in the cell, preserving data integrity."
+        ],
+        [
+          "Is there a data size limit?",
+          "No hard limit, but recommend under 5,000 rows for best browser performance."
+        ],
+        [
+          "Is my data safe?",
+          "Absolutely. All data is processed locally in your browser. Nothing is uploaded to any server."
+        ]
+      ],
+      "related": [
+        "json-to-csv",
+        "json-to-html",
+        "csv-to-markdown",
+        "markdown-table",
+        "json-formatter"
+      ],
+      "index": 130,
+      "ui_zh": "<div class=\"tool-controls\" style=\"max-width:100%\"><div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px\"><textarea id=\"jtm-input\" placeholder=\"粘贴 JSON 数组或对象...\" style=\"width:100%;min-height:180px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical\"></textarea></div><div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px\"><button class=\"btn btn-primary\" id=\"jtm-convert\">🔄 转换</button><button class=\"btn btn-secondary\" id=\"jtm-copy\">📋 复制</button><button class=\"btn btn-secondary\" id=\"jtm-clear\">🗑️ 清空</button></div><div id=\"jtm-status\" style=\"font-size:13px;margin-bottom:8px;color:var(--text-dim);min-height:20px\"></div><div style=\"margin-bottom:8px\"><label style=\"font-size:13px;font-weight:600\">Markdown 输出</label></div><textarea id=\"jtm-output\" readonly style=\"width:100%;min-height:200px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:Consolas,monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical\" placeholder=\"生成的 Markdown 表格...\"></textarea></div>",
+      "ui_en": "<div class=\"tool-controls\" style=\"max-width:100%\"><div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px\"><textarea id=\"jtm-input\" placeholder=\"Paste JSON array or object...\" style=\"width:100%;min-height:180px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical\"></textarea></div><div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px\"><button class=\"btn btn-primary\" id=\"jtm-convert\">🔄 Convert</button><button class=\"btn btn-secondary\" id=\"jtm-copy\">📋 Copy</button><button class=\"btn btn-secondary\" id=\"jtm-clear\">🗑️ Clear</button></div><div id=\"jtm-status\" style=\"font-size:13px;margin-bottom:8px;color:var(--text-dim);min-height:20px\"></div><div style=\"margin-bottom:8px\"><label style=\"font-size:13px;font-weight:600\">Markdown Output</label></div><textarea id=\"jtm-output\" readonly style=\"width:100%;min-height:200px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:Consolas,monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical\" placeholder=\"Generated Markdown table...\"></textarea></div>"
+    },
+    {
+      "slug": "markdown-to-csv",
+      "category": "text",
+      "icon": "📋",
+      "name_zh": "Markdown 表格转 CSV",
+      "name_en": "Markdown Table to CSV",
+      "short_zh": "将 Markdown 格式表格转换为 CSV 文件，支持导出表头",
+      "short_en": "Convert Markdown tables to CSV format, with optional header export",
+      "keywords_zh": "Markdown表格转CSV,MD表格转CSV,Markdown转CSV,表格提取,MD转CSV,在线Markdown转CSV,Markdown表格导出,GitHub表格转CSV,README表格导出",
+      "keywords_en": "markdown table to csv, md table to csv, markdown to csv, table extractor, md to csv, online markdown csv converter, github table to csv, readme table export",
+      "long_zh": "<p>免费的在线 <strong>Markdown 表格转 CSV 工具</strong>，将 Markdown 格式表格快速转换为 CSV 文件。支持自动解析分隔行、保留或移除表头。适合 <strong>数据提取</strong>、<strong>表格迁移</strong>、<strong>文档数据导出</strong>、<strong>GitHub README 表格转 Excel</strong> 等场景。</p><p>支持标准 GFM 表格格式，自动对齐列数，处理管道符转义。转换后的 CSV 可直接在 Excel、Google Sheets 或数据库中使用。所有处理在浏览器本地完成，数据不会上传。</p>",
+      "long_en": "<p>Free online <strong>Markdown Table to CSV converter</strong> — quickly convert Markdown tables to CSV format. Supports automatic separator row parsing, optional header retention. Ideal for <strong>data extraction</strong>, <strong>table migration</strong>, <strong>document data export</strong>, and <strong>GitHub README table to Excel</strong>.</p><p>Supports standard GFM table format, auto-aligns columns, handles pipe escaping. Generated CSV works directly in Excel, Google Sheets, or any database. 100% client-side — your data never leaves your browser.</p>",
+      "seo_title_zh": "Markdown 表格转 CSV 工具 - 在线 Markdown 转 CSV 转换器",
+      "seo_title_en": "Markdown Table to CSV Converter - Free Online MD to CSV Tool",
+      "features_zh": [
+        "粘贴 Markdown 表格，一键转换为 CSV 格式",
+        "支持是否包含表头输出",
+        "自动解析分隔行和列对齐",
+        "自动处理管道符转义和列填充",
+        "一键复制转换结果",
+        "输入即自动转换（支持 Ctrl+Enter 快捷键）",
+        "完全本地处理，数据不上传"
+      ],
+      "features_en": [
+        "Paste Markdown table, one-click convert to CSV",
+        "Toggle header row inclusion",
+        "Auto-parses separator rows and column alignment",
+        "Handles pipe escaping and column padding automatically",
+        "One-click copy result",
+        "Auto-convert on input (Ctrl+Enter shortcut supported)",
+        "100% client-side, no data upload"
+      ],
+      "faq_zh": [
+        [
+          "支持哪些 Markdown 表格格式？",
+          "支持标准 GFM 表格格式，需要有分隔行（|---|）。"
+        ],
+        [
+          "表头会保留吗？",
+          "默认保留表头作为 CSV 的首行。也可以取消勾选包含表头选项来移除表头。"
+        ],
+        [
+          "单元格中的逗号怎么处理？",
+          "自动用双引号包裹包含逗号的字段，符合标准 CSV 规范。"
+        ],
+        [
+          "列数不一致怎么办？",
+          "自动用空值填充列数不足的行，确保 CSV 每行列数一致。"
+        ],
+        [
+          "数据安全吗？",
+          "完全安全。所有数据在浏览器本地处理，不会上传到任何服务器。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "What Markdown table formats are supported?",
+          "Standard GFM table format with separator rows (|---|)."
+        ],
+        [
+          "Are headers preserved?",
+          "Yes, headers are preserved as the first CSV row by default."
+        ],
+        [
+          "How are commas in cells handled?",
+          "Fields containing commas are automatically wrapped in double quotes per CSV standards."
+        ],
+        [
+          "What if columns are misaligned?",
+          "Rows with fewer columns are auto-padded with empty values."
+        ],
+        [
+          "Is my data safe?",
+          "Absolutely. All data is processed locally in your browser. Nothing is uploaded to any server."
+        ]
+      ],
+      "related": [
+        "csv-to-markdown",
+        "markdown-table",
+        "md-table-formatter",
+        "csv-cleaner",
+        "csv-viewer"
+      ],
+      "index": 131,
+      "ui_zh": "<div class=\"tool-controls\" style=\"max-width:100%\"><div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px\"><textarea id=\"mtc-input\" placeholder=\"粘贴 Markdown 表格...\" style=\"width:100%;min-height:180px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:Consolas,monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical\"></textarea></div><div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;align-items:center\"><label style=\"font-size:13px\"><input type=\"checkbox\" id=\"mtc-header\" checked> 包含表头</label><button class=\"btn btn-primary\" id=\"mtc-convert\">🔄 转换</button><button class=\"btn btn-secondary\" id=\"mtc-copy\">📋 复制</button><button class=\"btn btn-secondary\" id=\"mtc-clear\">🗑️ 清空</button></div><div id=\"mtc-status\" style=\"font-size:13px;margin-bottom:8px;color:var(--text-dim);min-height:20px\"></div><div style=\"margin-bottom:8px\"><label style=\"font-size:13px;font-weight:600\">CSV 输出</label></div><textarea id=\"mtc-output\" readonly style=\"width:100%;min-height:200px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:Consolas,monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical\" placeholder=\"转换后的 CSV 数据...\"></textarea></div>",
+      "ui_en": "<div class=\"tool-controls\" style=\"max-width:100%\"><div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px\"><textarea id=\"mtc-input\" placeholder=\"Paste Markdown table...\" style=\"width:100%;min-height:180px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:Consolas,monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical\"></textarea></div><div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;align-items:center\"><label style=\"font-size:13px\"><input type=\"checkbox\" id=\"mtc-header\" checked> Include header</label><button class=\"btn btn-primary\" id=\"mtc-convert\">🔄 Convert</button><button class=\"btn btn-secondary\" id=\"mtc-copy\">📋 Copy</button><button class=\"btn btn-secondary\" id=\"mtc-clear\">🗑️ Clear</button></div><div id=\"mtc-status\" style=\"font-size:13px;margin-bottom:8px;color:var(--text-dim);min-height:20px\"></div><div style=\"margin-bottom:8px\"><label style=\"font-size:13px;font-weight:600\">CSV Output</label></div><textarea id=\"mtc-output\" readonly style=\"width:100%;min-height:200px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:Consolas,monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical\" placeholder=\"Converted CSV data...\"></textarea></div>"
     }
   ]
 }
