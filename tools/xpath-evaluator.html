@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>XPath 表达式测试器 - XPath 表达式测试器 - 在线 XPath 测试与调试工具 | AI 工具盒子</title>
+<meta name="description" content="免费在线XPath 表达式测试器工具，在线测试和调试 XPath 表达式，支持 XML/HTML 文档，实时高亮匹配节点。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="XPath测试,XPath表达式,XPath调试,XPath在线测试,XML XPath,HTML XPath,节点选择,XPath路径,XPath查询,XPath验证,XPath语法,XPath在线工具,XPath高亮">
+<link rel="canonical" href="https://tools.talang.fun/tools/xpath-evaluator">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/xpath-evaluator">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/xpath-evaluator">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/xpath-evaluator">
+<meta property="og:title" content="XPath 表达式测试器 - XPath 表达式测试器 - 在线 XPath 测试与调试工具 | AI 工具盒子">
+<meta property="og:description" content="免费在线XPath 表达式测试器工具，在线测试和调试 XPath 表达式，支持 XML/HTML 文档，实时高亮匹配节点。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/xpath-evaluator">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "XPath 表达式测试器", "description": "免费在线XPath 表达式测试器工具，在线测试和调试 XPath 表达式，支持 XML/HTML 文档，实时高亮匹配节点。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/xpath-evaluator", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "在线测试和调试 XPath 表达式，支持 XML/HTML 文档，实时高亮匹配节点", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/tools/xpath-evaluator" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🔍</div>
+  <h1>XPath 表达式测试器</h1>
+  <p>在线测试和调试 XPath 表达式，支持 XML/HTML 文档，实时高亮匹配节点</p>
+</div>
+<div class="tool-panel">
+<div class="tool-controls" style="max-width:100%">
+  <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px">
+    <textarea id="xe-input" placeholder="粘贴 XML 或 HTML 文档内容..." style="width:100%;min-height:180px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:Consolas,monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical"></textarea>
+  </div>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;align-items:center">
+    <input type="text" id="xe-xpath" placeholder="输入 XPath 表达式，如 //book[@category='fiction']" style="flex:1;min-width:200px;padding:8px 10px;border:1px solid var(--border);border-radius:6px;font-family:Consolas,monospace;font-size:13px;background:var(--bg-card);color:var(--text)">
+    <button class="btn btn-primary" id="xe-eval">▶ 求值</button>
+    <button class="btn btn-secondary" id="xe-copy">📋 复制</button>
+    <button class="btn btn-secondary" id="xe-clear">🗑️ 清空</button>
+  </div>
+  <div id="xe-status" style="font-size:13px;margin-bottom:8px;color:var(--text-dim);min-height:20px"></div>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+    <label style="font-size:13px;font-weight:600">匹配结果 (<span id="xe-count">0</span> 个节点)</label>
+  </div>
+  <textarea id="xe-result" readonly style="width:100%;min-height:200px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:Consolas,monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical" placeholder="匹配结果..."></textarea>
+</div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>免费的在线 <strong>XPath 表达式测试器</strong>，让您快速测试、调试和验证 XPath 表达式。输入 XML/HTML 文档和 XPath 表达式，实时高亮显示匹配的节点及其文本内容。支持所有 XPath 1.0 核心语法，包括路径表达式、谓语、轴、通配符、运算符和内置函数。</p><p>本工具适合 <strong>前端开发者</strong>、<strong>数据处理工程师</strong>、<strong>测试工程师</strong>、<strong>爬虫开发者</strong> 等需要频繁处理 XML/HTML 文档的人群。所有处理在浏览器本地完成，文档内容不会上传到服务器，隐私安全有保障。</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>支持所有 XPath 1.0 核心语法：路径、谓语、轴、函数</li><li>实时高亮匹配节点，显示节点文本和属性</li><li>支持 XML 和 HTML 文档输入</li><li>错误提示与语法高亮</li><li>显示匹配数量、节点路径、文本内容</li><li>一键复制匹配结果</li><li>完全本地处理，数据不上传</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">XPath 和 CSS 选择器有什么区别？</h3><p>XPath 可以沿 DOM 树向上/向下/横向遍历，功能更强大；CSS 选择器只能向下选择子元素。XPath 支持文本匹配、位置计算等高级功能。</p><h3 style="margin-top:20px;margin-bottom:8px">支持 XPath 2.0 或 3.0 吗？</h3><p>本工具使用浏览器内置的 document.evaluate()，支持 XPath 1.0 完整语法。XPath 2.0/3.0 需要外部库支持，暂未包含。</p><h3 style="margin-top:20px;margin-bottom:8px">支持 HTML 命名空间吗？</h3><p>支持。输入 HTML 文档时，工具会自动处理 HTML 命名空间。您也可以使用 local-name() 函数忽略命名空间匹配。</p><h3 style="margin-top:20px;margin-bottom:8px">数据安全吗？</h3><p>完全安全。所有 XPath 求值在浏览器本地完成，文档内容不会上传到任何服务器。</p><h3 style="margin-top:20px;margin-bottom:8px">支持哪些 XPath 轴？</h3><p>支持所有 XPath 1.0 轴：child, parent, ancestor, descendant, following, preceding, following-sibling, preceding-sibling, attribute, self, descendant-or-self, ancestor-or-self 等。</p><h3 style="margin-top:20px;margin-bottom:8px">最大支持多大的文档？</h3><p>建议 XML/HTML 文档不超过 500KB，以免影响浏览器性能。超出时会截断提示。</p><h3 style="margin-top:20px;margin-bottom:8px">可以调试 XPath 函数吗？</h3><p>支持所有 XPath 1.0 内置函数：string(), count(), concat(), substring(), contains(), starts-with(), normalize-space(), translate(), not(), boolean(), number(), sum(), floor(), ceiling(), round() 等。</p><h3 style="margin-top:20px;margin-bottom:8px">匹配结果可以导出吗？</h3><p>匹配结果以文本形式展示，支持一键复制到剪贴板，方便后续使用。</p></section>
+<section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/xml-formatter" class="tool-card"><div class="icon">🧩</div><h3>XML 格式化/压缩</h3><p>在线格式化、校验和压缩 XML，支持本地解析错误提示</p></a><a href="/tools/html-stripper" class="tool-card"><div class="icon">🧹</div><h3>HTML 标签去除</h3><p>从 HTML 中提取纯文本，去除 HTML 标签和样式</p></a><a href="/tools/html-table-extractor" class="tool-card"><div class="icon">📋</div><h3>HTML 表格提取器</h3><p>从 HTML 页面提取表格数据，导出为 CSV/JSON/Markdown</p></a><a href="/tools/jsonpath" class="tool-card"><div class="icon">🔍</div><h3>JSONPath 提取</h3><p>用 $.path 语法快速从 JSON 中提取需要的数据</p></a><a href="/tools/regex-tester" class="tool-card"><div class="icon">/.*/</div><h3>正则表达式测试</h3><p>实时测试正则表达式，高亮匹配结果</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/xpath-evaluator.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>

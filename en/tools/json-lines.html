@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>JSON Lines (NDJSON) Tools - JSON Lines (NDJSON) Tools - Online JSONL Validator, Formatter & Converter | AI Toolbox</title>
+<meta name="description" content="Free online json lines (ndjson) tools. Validate, format, convert, and analyze JSON Lines (NDJSON) data with per-line processing. Fast, secure, and works in your browser without downloading.">
+<meta name="keywords" content="json lines, ndjson, jsonl, json lines validator, json lines formatter, ndjson tool, jsonl converter, json lines to json array, json lines analyzer, ndjson validator, json streaming, log processing, online jsonl tool">
+<link rel="canonical" href="https://tools.talang.fun/en/tools/json-lines">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/json-lines">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/json-lines">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/json-lines">
+<meta property="og:title" content="JSON Lines (NDJSON) Tools - JSON Lines (NDJSON) Tools - Online JSONL Validator, Formatter & Converter | AI Toolbox">
+<meta property="og:description" content="Free online json lines (ndjson) tools. Validate, format, convert, and analyze JSON Lines (NDJSON) data with per-line processing. Fast, secure, and works in your browser without downloading.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/en/tools/json-lines">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "JSON Lines (NDJSON) Tools", "description": "Free online json lines (ndjson) tools. Validate, format, convert, and analyze JSON Lines (NDJSON) data with per-line processing. Fast, secure, and works in your browser without downloading.", "url": "https://tools.talang.fun/en/tools/json-lines", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "Validate, format, convert, and analyze JSON Lines (NDJSON) data with per-line processing", "inLanguage": "en", "author": {"@type": "Organization", "name": "AI Toolbox"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/en/" class="logo"><span class="logo-icon">🛠️</span>AI Toolbox</a>
+    <nav class="nav">
+      <a href="/en/">Home</a>
+      <a href="/en/#tools">All Tools</a>
+      <a href="/en/blog/">Blog</a>
+      <a href="/en/about">About</a>
+      <a href="/en/sponsor">Sponsor</a>
+      <a href="https://tools.talang.fun/tools/json-lines" class="lang-switch">中文</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">📄</div>
+  <h1>JSON Lines (NDJSON) Tools</h1>
+  <p>Validate, format, convert, and analyze JSON Lines (NDJSON) data with per-line processing</p>
+</div>
+<div class="tool-panel">
+<div class="tool-controls" style="max-width:100%">
+<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px">
+<select id="jl-mode" style="padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)">
+<option value="validate">Validate</option>
+<option value="format">Format</option>
+<option value="to-array">To JSON Array</option>
+<option value="from-array">Array to Lines</option>
+<option value="stats">Stats</option>
+<option value="filter">Filter</option>
+<option value="extract">Extract Fields</option>
+</select>
+<select id="jl-indent" style="padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)">
+<option value="2">2 spaces</option>
+<option value="4" selected>4 spaces</option>
+</select>
+</div>
+<textarea id="jl-input" placeholder="Paste JSON Lines data (one JSON object per line)..." style="width:100%;min-height:180px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical"></textarea>
+<div id="jl-filter-section" style="display:none;flex-wrap:wrap;gap:8px;margin:8px 0">
+<input type="text" id="jl-filter-field" placeholder="Field name" style="width:140px;padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)">
+<input type="text" id="jl-filter-value" placeholder="Value (optional)" style="width:140px;padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)">
+</div>
+<div id="jl-extract-section" style="display:none;flex-wrap:wrap;gap:8px;margin:8px 0">
+<input type="text" id="jl-extract-fields" placeholder="Field names, comma-separated (e.g. name, age, address.city)" style="flex:1;min-width:200px;padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)">
+</div>
+<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px">
+<button class="btn btn-primary" id="jl-convert">🔄 Process</button>
+<button class="btn btn-secondary" id="jl-copy">📋 Copy</button>
+<button class="btn btn-secondary" id="jl-clear">🗑️ Clear</button>
+</div>
+<div id="jl-status" style="font-size:13px;margin-bottom:4px;color:var(--text-dim);min-height:20px"></div>
+<div id="jl-stats" style="font-size:12px;margin-bottom:8px;color:var(--text-dim);min-height:18px;font-family:monospace"></div>
+<textarea id="jl-output" placeholder="Output..." style="width:100%;min-height:200px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical" readonly></textarea>
+<div style="margin-top:16px;padding:8px 12px;background:var(--bg-warning-light);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-dim)"><strong>🔒 Privacy</strong>: All data is processed locally. No upload.</div>
+</div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>About this tool</h2>
+  <p>Free online <strong>JSON Lines (NDJSON) tools</strong> — process JSON Lines / NDJSON / JSONL format where each line is a standalone JSON object. Supports validation, formatting, statistics, conversion to JSON array, filtering, and field extraction. Ideal for <strong>log analysis</strong>, <strong>data pipelines</strong>, <strong>ML datasets</strong>, and <strong>streaming data</strong>.</p><p>JSON Lines format has one JSON object per line. Lines are independent records, not an array. This tool converts between JSON Lines and JSON arrays, validates each line, analyzes field distribution, filters rows by conditions, and extracts specific columns. 100% client-side — your data never leaves your browser.</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>Key Features</h2><ul><li>Validate JSON Lines format: check each line for valid JSON</li><li>Convert between JSON Lines ↔ JSON Array</li><li>Statistics: line count, field distribution, data types</li><li>Filter rows by condition (field exists / value matches)</li><li>Extract specific fields (SQL SELECT-like)</li><li>Formatted output: indentation, key sorting, line numbers</li><li>Error localization: pinpoint exact line number and error</li><li>100% client-side processing</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>Frequently Asked Questions</h2><h3 style="margin-top:20px;margin-bottom:8px">What is JSON Lines format?</h3><p>JSON Lines (NDJSON/JSONL) is a format where each line contains one independent JSON object. Lines are separated by newline. Common in log files, streaming data, and big data processing.</p><h3 style="margin-top:20px;margin-bottom:8px">What's the difference between JSON Lines and JSON Array?</h3><p>JSON Lines has one JSON object per line as a newline-delimited text. JSON Array wraps all data in [...]. This tool converts between both formats.</p><h3 style="margin-top:20px;margin-bottom:8px">Is there a file size limit?</h3><p>No hard limit, but recommend under 10MB or 50,000 lines for best browser performance. All processing is local.</p><h3 style="margin-top:20px;margin-bottom:8px">Is my data safe?</h3><p>Absolutely. All data is processed locally in your browser. Nothing is uploaded to any server.</p><h3 style="margin-top:20px;margin-bottom:8px">How does filtering work?</h3><p>Supports field existence (field:exists) and value matching (field==value). Multiple conditions can be combined.</p></section>
+<section class="related"><h3>Related Tools</h3><div class="tools-grid"><a href="/en/tools/json-formatter" class="tool-card"><div class="icon">{ }</div><h3>JSON Formatter</h3><p>Beautify, minify, and validate JSON with precise error location</p></a><a href="/en/tools/json-validator" class="tool-card"><div class="icon">✅</div><h3>JSON Validator</h3><p>Validate JSON syntax, highlight and locate errors, format with line numbers</p></a><a href="/en/tools/json-to-html" class="tool-card"><div class="icon">📊</div><h3>JSON to HTML Table</h3><p>Convert JSON data into beautiful HTML tables with nested object expansion and sorting</p></a><a href="/en/tools/json-to-csv" class="tool-card"><div class="icon">📊</div><h3>JSON to CSV Converter</h3><p>Convert JSON arrays or objects to CSV format in one click</p></a><a href="/en/tools/json-flatten" class="tool-card"><div class="icon">🔀</div><h3>JSON Flatten/Unflatten</h3><p>Flatten nested JSON into dot-notation keys, with one-click unflatten back</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>Need a private toolbox or custom browser tool?</h2>
+  <p>AI Toolbox can be adapted for internal workflows, private deployment, sponsored categories, or custom privacy-first utilities.</p>
+  <p><a href="/en/sponsor" data-event="conversion_cta_click" data-label="en_partner_custom_tool_cta">View partnership and custom tool options →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/json-lines.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI Toolbox · Free online AI & developer tools · <a href='/en/about'>About</a> · <a href='/en/sponsor'>Sponsor</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('Copied!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>

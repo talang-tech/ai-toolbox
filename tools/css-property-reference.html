@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>CSS 属性参考 - CSS 属性参考 - 在线 CSS 属性查询手册 | AI 工具盒子 | AI 工具盒子</title>
+<meta name="description" content="免费在线CSS 属性参考工具，可搜索的 CSS 属性参考手册，涵盖常用 CSS 属性、值类型、浏览器兼容性。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="CSS属性参考,CSS属性查询,CSS参考手册,CSS属性大全,CSS属性值,CSS教程,CSS开发工具,CSS属性速查,CSS属性浏览器兼容性,CSS属性值类型,CSS属性语法,CSS属性示例">
+<link rel="canonical" href="https://tools.talang.fun/tools/css-property-reference">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/css-property-reference">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/css-property-reference">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/css-property-reference">
+<meta property="og:title" content="CSS 属性参考 - CSS 属性参考 - 在线 CSS 属性查询手册 | AI 工具盒子 | AI 工具盒子">
+<meta property="og:description" content="免费在线CSS 属性参考工具，可搜索的 CSS 属性参考手册，涵盖常用 CSS 属性、值类型、浏览器兼容性。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/css-property-reference">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "CSS 属性参考", "description": "免费在线CSS 属性参考工具，可搜索的 CSS 属性参考手册，涵盖常用 CSS 属性、值类型、浏览器兼容性。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/css-property-reference", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "可搜索的 CSS 属性参考手册，涵盖常用 CSS 属性、值类型、浏览器兼容性", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/tools/css-property-reference" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🎨</div>
+  <h1>CSS 属性参考</h1>
+  <p>可搜索的 CSS 属性参考手册，涵盖常用 CSS 属性、值类型、浏览器兼容性</p>
+</div>
+<div class="tool-panel">
+<div class="tool-controls" style="max-width:100%">
+<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px">
+<input type="text" id="cpr-search" placeholder="搜索 CSS 属性..." style="flex:1;min-width:150px;padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)">
+<select id="cpr-filter" style="padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)">
+<option value="all">所有分类</option>
+<option value="layout">布局</option>
+<option value="box-model">盒模型</option>
+<option value="typography">文字排版</option>
+<option value="color-bg">颜色与背景</option>
+<option value="flexbox">弹性盒 (Flexbox)</option>
+<option value="grid">网格 (Grid)</option>
+<option value="animation">动画与过渡</option>
+<option value="other">其他属性</option>
+</select>
+</div>
+<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px">
+<button class="btn btn-secondary" id="cpr-copy-btn">📋 复制当前结果</button>
+</div>
+<div id="cpr-count" style="font-size:12px;margin-bottom:8px;color:var(--text-dim);min-height:18px"></div>
+<div id="cpr-results" style="width:100%"></div>
+<div style="margin-top:16px;padding:8px 12px;background:var(--bg-warning-light);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-dim)"><strong>💡 提示</strong>：所有数据内置在页面中，断网也可使用。兼容性：<strong>all</strong>=完全支持，<strong>modern</strong>=现代浏览器。</div>
+</div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>免费的在线 <strong>CSS 属性参考手册</strong>，快速查询常用 CSS 属性、值类型、语法和浏览器兼容性。涵盖布局、盒模型、文字、颜色、动画、变换、网格、弹性盒等模块。适合 <strong>前端开发</strong>、<strong>UI 设计</strong>、<strong>CSS 调试</strong>、<strong>学习 CSS</strong> 等场景。</p><p>支持按属性名称搜索、按 CSS 分类过滤（布局、排版、动画等）。每个属性包含语法说明、可选值、初始值、浏览器兼容性标识和代码示例。所有数据内置在页面中，断网也可使用。完全本地处理。</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>搜索 CSS 属性：按名称实时过滤</li><li>按 CSS 分类过滤：布局、排版、动画、颜色、盒模型、弹性盒、网格等</li><li>每个属性包含：语法、可选值、初始值、浏览器兼容性</li><li>兼容性标注：完全支持 / 现代浏览器 / 有限支持 / 实验性</li><li>代码示例：每个属性附带 CSS 代码示例</li><li>离线可用：所有数据内置在页面中</li><li>完全免费，无需注册</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">包含哪些 CSS 属性？</h3><p>涵盖所有常用 CSS 属性，包括 CSS2.1 和 CSS3+ 属性。布局、盒模型、文字排版、颜色、背景、动画、变换、过渡、Flexbox、Grid、多列、列表、表格等。</p><h3 style="margin-top:20px;margin-bottom:8px">如何查看属性详情？</h3><p>在搜索框输入属性名，或点击分类标签过滤。结果列表会显示每个属性的语法、可选值、初始值、兼容性和示例代码。</p><h3 style="margin-top:20px;margin-bottom:8px">支持浏览器兼容性查询吗？</h3><p>支持。每个属性标注了兼容性级别：完全支持（all）、现代浏览器（modern）、有限支持（limited）、实验性（experimental）。</p><h3 style="margin-top:20px;margin-bottom:8px">可以离线使用吗？</h3><p>可以。所有数据直接嵌入在页面中，首次加载后即可离线使用。</p></section>
+<section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/css-pseudo-selectors" class="tool-card"><div class="icon">🎯</div><h3>CSS 伪类选择器参考</h3><p>CSS 伪类与伪元素速查手册，支持搜索、过滤和即时预览示例</p></a><a href="/tools/css-gradient-generator" class="tool-card"><div class="icon">🌈</div><h3>CSS 渐变生成器</h3><p>在线生成 CSS 线性与径向渐变，实时预览并复制代码</p></a><a href="/tools/css-flexbox-generator" class="tool-card"><div class="icon">📐</div><h3>CSS Flexbox 生成器</h3><p>可视化生成 CSS Flexbox 布局代码，支持全部常见属性</p></a><a href="/tools/css-grid-generator" class="tool-card"><div class="icon">🔲</div><h3>CSS Grid 生成器</h3><p>可视化生成 CSS Grid 布局代码，支持行列数量、间距、对齐方式</p></a><a href="/tools/css-animation" class="tool-card"><div class="icon">🎬</div><h3>CSS 动画生成器</h3><p>在线生成 CSS @keyframes 动画，支持淡入淡出、滑动、弹跳等效果</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/css-property-reference.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>

@@ -38,45 +38,45 @@
         "name_zh": "开发者工具",
         "name_en": "Developer Tools",
         "tools": [
-          "base-converter",
-          "base64-image",
-          "code-formatter",
-          "color-converter",
-          "color-name-finder",
-          "cron-generator",
-          "cron-parser",
-          "css-gradient-generator",
-          "css-minifier",
-          "csv-viewer",
-          "html-encoder",
-          "html-entity",
-          "html-minifier",
-          "html-table-extractor",
-          "html-to-jsx",
-          "html-to-markdown",
-          "ip-subnet",
-          "js-minifier",
-          "json-csv",
           "json-formatter",
-          "jsonpath",
-          "jwt-decoder",
-          "jwt-generator",
-          "markdown-preview",
-          "markdown-to-html",
-          "qr-decode",
-          "regex-pattern-library",
           "regex-tester",
-          "sql-formatter",
-          "string-escape",
           "timestamp",
-          "timestamp-converter",
-          "toml-formatter",
+          "base-converter",
+          "jwt-decoder",
+          "json-csv",
+          "color-converter",
+          "html-entity",
+          "string-escape",
+          "jsonpath",
           "url-parser",
           "url-query-builder",
           "xml-formatter",
+          "markdown-preview",
+          "markdown-to-html",
+          "html-to-markdown",
+          "csv-viewer",
+          "qr-decode",
+          "cron-parser",
+          "ip-subnet",
+          "sql-formatter",
+          "toml-formatter",
           "yaml-formatter",
-          "yaml-to-json",
+          "base64-image",
+          "timestamp-converter",
+          "html-encoder",
+          "code-formatter",
+          "color-name-finder",
+          "cron-generator",
+          "regex-pattern-library",
+          "jwt-generator",
+          "js-minifier",
           "data-size-converter",
+          "css-minifier",
+          "html-table-extractor",
+          "html-minifier",
+          "yaml-to-json",
+          "css-gradient-generator",
+          "html-to-jsx",
           "html-diff",
           "ini-converter",
           "css-filter-generator",
@@ -84,6 +84,8 @@
           "http-status",
           "html-table-generator",
           "color-palette",
+          "color-picker",
+          "html-preview",
           "css-flexbox-generator",
           "svg-optimizer",
           "css-grid-generator",
@@ -91,6 +93,7 @@
           "html-to-svg",
           "css-inliner",
           "yaml-validator",
+          "mime-type",
           "css-validator",
           "html-validator",
           "graphql-formatter",
@@ -101,7 +104,11 @@
           "css-pseudo-selectors",
           "html-tag-reference",
           "yaml-to-xml",
-          "csv-to-sql"
+          "csv-to-sql",
+          "css-property-reference",
+          "ip-lookup",
+          "xpath-evaluator",
+          "css-to-tailwind"
         ]
       },
       "encode": {
@@ -153,7 +160,8 @@
           "json-validator",
           "json-escape",
           "json-to-html",
-          "json-to-env"
+          "json-to-env",
+          "json-lines"
         ]
       },
       "image": {
@@ -9955,6 +9963,466 @@
       "index": 131,
       "ui_zh": "<div class=\"tool-controls\" style=\"max-width:100%\"><div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px\"><textarea id=\"mtc-input\" placeholder=\"粘贴 Markdown 表格...\" style=\"width:100%;min-height:180px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:Consolas,monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical\"></textarea></div><div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;align-items:center\"><label style=\"font-size:13px\"><input type=\"checkbox\" id=\"mtc-header\" checked> 包含表头</label><button class=\"btn btn-primary\" id=\"mtc-convert\">🔄 转换</button><button class=\"btn btn-secondary\" id=\"mtc-copy\">📋 复制</button><button class=\"btn btn-secondary\" id=\"mtc-clear\">🗑️ 清空</button></div><div id=\"mtc-status\" style=\"font-size:13px;margin-bottom:8px;color:var(--text-dim);min-height:20px\"></div><div style=\"margin-bottom:8px\"><label style=\"font-size:13px;font-weight:600\">CSV 输出</label></div><textarea id=\"mtc-output\" readonly style=\"width:100%;min-height:200px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:Consolas,monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical\" placeholder=\"转换后的 CSV 数据...\"></textarea></div>",
       "ui_en": "<div class=\"tool-controls\" style=\"max-width:100%\"><div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px\"><textarea id=\"mtc-input\" placeholder=\"Paste Markdown table...\" style=\"width:100%;min-height:180px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:Consolas,monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical\"></textarea></div><div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;align-items:center\"><label style=\"font-size:13px\"><input type=\"checkbox\" id=\"mtc-header\" checked> Include header</label><button class=\"btn btn-primary\" id=\"mtc-convert\">🔄 Convert</button><button class=\"btn btn-secondary\" id=\"mtc-copy\">📋 Copy</button><button class=\"btn btn-secondary\" id=\"mtc-clear\">🗑️ Clear</button></div><div id=\"mtc-status\" style=\"font-size:13px;margin-bottom:8px;color:var(--text-dim);min-height:20px\"></div><div style=\"margin-bottom:8px\"><label style=\"font-size:13px;font-weight:600\">CSV Output</label></div><textarea id=\"mtc-output\" readonly style=\"width:100%;min-height:200px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:Consolas,monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical\" placeholder=\"Converted CSV data...\"></textarea></div>"
+    },
+    {
+      "slug": "json-lines",
+      "category": "json",
+      "icon": "📄",
+      "name_zh": "JSON Lines (NDJSON) 工具",
+      "name_en": "JSON Lines (NDJSON) Tools",
+      "short_zh": "验证、格式化、转换和统计 JSON Lines (NDJSON) 格式数据，支持行级处理",
+      "short_en": "Validate, format, convert, and analyze JSON Lines (NDJSON) data with per-line processing",
+      "keywords_zh": "JSON Lines,NDJSON,JSONL,JSON行格式,JSON Lines验证器,JSON Lines格式化,JSON Lines转换,JSONL工具,NDJSON验证,NDJSON格式化,JSON流处理,日志处理,在线JSONL工具,JSON Lines分析",
+      "keywords_en": "json lines, ndjson, jsonl, json lines validator, json lines formatter, ndjson tool, jsonl converter, json lines to json array, json lines analyzer, ndjson validator, json streaming, log processing, online jsonl tool",
+      "long_zh": "<p>免费的在线 <strong>JSON Lines (NDJSON) 工具</strong>，处理每行一个独立 JSON 对象的格式（JSON Lines / NDJSON / JSONL）。支持验证、格式化、统计、转换为 JSON 数组、过滤、提取字段等操作。适合 <strong>日志分析</strong>、<strong>数据处理管道</strong>、<strong>机器学习数据集</strong>、<strong>流式数据</strong> 等场景。</p><p>JSON Lines 格式的每行是一个独立的 JSON 对象，行与行之间不是数组关系，而是独立的记录。本工具支持将 JSON Lines 与 JSON 数组互相转换、验证每行 JSON 合法性、统计字段分布、按条件过滤行、提取指定字段列。所有处理在浏览器本地完成，数据不会上传到服务器。</p>",
+      "long_en": "<p>Free online <strong>JSON Lines (NDJSON) tools</strong> — process JSON Lines / NDJSON / JSONL format where each line is a standalone JSON object. Supports validation, formatting, statistics, conversion to JSON array, filtering, and field extraction. Ideal for <strong>log analysis</strong>, <strong>data pipelines</strong>, <strong>ML datasets</strong>, and <strong>streaming data</strong>.</p><p>JSON Lines format has one JSON object per line. Lines are independent records, not an array. This tool converts between JSON Lines and JSON arrays, validates each line, analyzes field distribution, filters rows by conditions, and extracts specific columns. 100% client-side — your data never leaves your browser.</p>",
+      "seo_title_zh": "JSON Lines (NDJSON) 工具 - 在线 JSONL 验证、格式化、转换器",
+      "seo_title_en": "JSON Lines (NDJSON) Tools - Online JSONL Validator, Formatter & Converter",
+      "features_zh": [
+        "验证 JSON Lines 格式：检查每行 JSON 合法性",
+        "JSON Lines ↔ JSON 数组互相转换",
+        "统计行数、字段分布、数据类型分布",
+        "按条件过滤行（字段存在 / 值匹配）",
+        "提取指定字段列（类似 SQL SELECT）",
+        "格式化输出：缩进、排序键、行号",
+        "错误定位：精确定位到问题行号和错误信息",
+        "完全本地处理，数据不上传"
+      ],
+      "features_en": [
+        "Validate JSON Lines format: check each line for valid JSON",
+        "Convert between JSON Lines ↔ JSON Array",
+        "Statistics: line count, field distribution, data types",
+        "Filter rows by condition (field exists / value matches)",
+        "Extract specific fields (SQL SELECT-like)",
+        "Formatted output: indentation, key sorting, line numbers",
+        "Error localization: pinpoint exact line number and error",
+        "100% client-side processing"
+      ],
+      "faq_zh": [
+        [
+          "什么是 JSON Lines 格式？",
+          "JSON Lines (NDJSON/JSONL) 是一种每行包含一个独立 JSON 对象的格式，行与行之间用换行符分隔。常用于日志文件、流式数据、大数据处理等场景。"
+        ],
+        [
+          "JSON Lines 和 JSON 数组有什么区别？",
+          "JSON Lines 是每行一个独立 JSON 对象，整体是一个\n 分隔的文本文件。JSON 数组是将所有数据包裹在 [...] 中。本工具可以在这两种格式之间互相转换。"
+        ],
+        [
+          "支持多大的文件？",
+          "没有硬性限制，但建议处理不超过 10MB 或 50000 行，以确保浏览器性能。所有处理在本地完成。"
+        ],
+        [
+          "数据安全吗？",
+          "完全安全。所有数据在浏览器本地处理，不会上传到任何服务器。"
+        ],
+        [
+          "过滤功能怎么用？",
+          "支持按字段存在性过滤（如 field:exists）和按值匹配过滤（如 field==value）。支持多条件组合。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "What is JSON Lines format?",
+          "JSON Lines (NDJSON/JSONL) is a format where each line contains one independent JSON object. Lines are separated by newline. Common in log files, streaming data, and big data processing."
+        ],
+        [
+          "What's the difference between JSON Lines and JSON Array?",
+          "JSON Lines has one JSON object per line as a newline-delimited text. JSON Array wraps all data in [...]. This tool converts between both formats."
+        ],
+        [
+          "Is there a file size limit?",
+          "No hard limit, but recommend under 10MB or 50,000 lines for best browser performance. All processing is local."
+        ],
+        [
+          "Is my data safe?",
+          "Absolutely. All data is processed locally in your browser. Nothing is uploaded to any server."
+        ],
+        [
+          "How does filtering work?",
+          "Supports field existence (field:exists) and value matching (field==value). Multiple conditions can be combined."
+        ]
+      ],
+      "related": [
+        "json-formatter",
+        "json-validator",
+        "json-to-html",
+        "json-to-csv",
+        "json-flatten"
+      ],
+      "index": 132,
+      "ui_zh": "<div class=\"tool-controls\" style=\"max-width:100%\">\n<div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px\">\n<select id=\"jl-mode\" style=\"padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\">\n<option value=\"validate\">验证 (Validate)</option>\n<option value=\"format\">格式化 (Format)</option>\n<option value=\"to-array\">转 JSON 数组</option>\n<option value=\"from-array\">JSON 数组转 Lines</option>\n<option value=\"stats\">统计 (Stats)</option>\n<option value=\"filter\">过滤 (Filter)</option>\n<option value=\"extract\">提取字段</option>\n</select>\n<select id=\"jl-indent\" style=\"padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\">\n<option value=\"2\">2 空格缩进</option>\n<option value=\"4\" selected>4 空格缩进</option>\n</select>\n</div>\n<div id=\"jl-indent-section\" style=\"display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px\">\n<label style=\"font-size:12px;color:var(--text-dim);align-self:center\">缩进:</label>\n</div>\n<textarea id=\"jl-input\" placeholder=\"粘贴 JSON Lines 数据（每行一个 JSON 对象）...\" style=\"width:100%;min-height:180px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical\"></textarea>\n<div id=\"jl-filter-section\" style=\"display:none;flex-wrap:wrap;gap:8px;margin:8px 0\">\n<input type=\"text\" id=\"jl-filter-field\" placeholder=\"字段名\" style=\"width:140px;padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\">\n<input type=\"text\" id=\"jl-filter-value\" placeholder=\"值（可选）\" style=\"width:140px;padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\">\n</div>\n<div id=\"jl-extract-section\" style=\"display:none;flex-wrap:wrap;gap:8px;margin:8px 0\">\n<input type=\"text\" id=\"jl-extract-fields\" placeholder=\"字段名，逗号分隔（如 name, age, address.city）\" style=\"flex:1;min-width:200px;padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\">\n</div>\n<div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px\">\n<button class=\"btn btn-primary\" id=\"jl-convert\">🔄 处理</button>\n<button class=\"btn btn-secondary\" id=\"jl-copy\">📋 复制</button>\n<button class=\"btn btn-secondary\" id=\"jl-clear\">🗑️ 清空</button>\n</div>\n<div id=\"jl-status\" style=\"font-size:13px;margin-bottom:4px;color:var(--text-dim);min-height:20px\"></div>\n<div id=\"jl-stats\" style=\"font-size:12px;margin-bottom:8px;color:var(--text-dim);min-height:18px;font-family:monospace\"></div>\n<textarea id=\"jl-output\" placeholder=\"输出...\" style=\"width:100%;min-height:200px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical\" readonly></textarea>\n<div style=\"margin-top:16px;padding:8px 12px;background:var(--bg-warning-light);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-dim)\"><strong>🔒 隐私提示</strong>：所有数据在浏览器本地处理，不会上传到服务器。</div>\n</div>",
+      "ui_en": "<div class=\"tool-controls\" style=\"max-width:100%\">\n<div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px\">\n<select id=\"jl-mode\" style=\"padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\">\n<option value=\"validate\">Validate</option>\n<option value=\"format\">Format</option>\n<option value=\"to-array\">To JSON Array</option>\n<option value=\"from-array\">Array to Lines</option>\n<option value=\"stats\">Stats</option>\n<option value=\"filter\">Filter</option>\n<option value=\"extract\">Extract Fields</option>\n</select>\n<select id=\"jl-indent\" style=\"padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\">\n<option value=\"2\">2 spaces</option>\n<option value=\"4\" selected>4 spaces</option>\n</select>\n</div>\n<textarea id=\"jl-input\" placeholder=\"Paste JSON Lines data (one JSON object per line)...\" style=\"width:100%;min-height:180px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical\"></textarea>\n<div id=\"jl-filter-section\" style=\"display:none;flex-wrap:wrap;gap:8px;margin:8px 0\">\n<input type=\"text\" id=\"jl-filter-field\" placeholder=\"Field name\" style=\"width:140px;padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\">\n<input type=\"text\" id=\"jl-filter-value\" placeholder=\"Value (optional)\" style=\"width:140px;padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\">\n</div>\n<div id=\"jl-extract-section\" style=\"display:none;flex-wrap:wrap;gap:8px;margin:8px 0\">\n<input type=\"text\" id=\"jl-extract-fields\" placeholder=\"Field names, comma-separated (e.g. name, age, address.city)\" style=\"flex:1;min-width:200px;padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\">\n</div>\n<div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px\">\n<button class=\"btn btn-primary\" id=\"jl-convert\">🔄 Process</button>\n<button class=\"btn btn-secondary\" id=\"jl-copy\">📋 Copy</button>\n<button class=\"btn btn-secondary\" id=\"jl-clear\">🗑️ Clear</button>\n</div>\n<div id=\"jl-status\" style=\"font-size:13px;margin-bottom:4px;color:var(--text-dim);min-height:20px\"></div>\n<div id=\"jl-stats\" style=\"font-size:12px;margin-bottom:8px;color:var(--text-dim);min-height:18px;font-family:monospace\"></div>\n<textarea id=\"jl-output\" placeholder=\"Output...\" style=\"width:100%;min-height:200px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical\" readonly></textarea>\n<div style=\"margin-top:16px;padding:8px 12px;background:var(--bg-warning-light);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-dim)\"><strong>🔒 Privacy</strong>: All data is processed locally. No upload.</div>\n</div>"
+    },
+    {
+      "slug": "css-property-reference",
+      "category": "dev",
+      "icon": "🎨",
+      "name_zh": "CSS 属性参考",
+      "name_en": "CSS Property Reference",
+      "short_zh": "可搜索的 CSS 属性参考手册，涵盖常用 CSS 属性、值类型、浏览器兼容性",
+      "short_en": "Searchable CSS property reference covering common CSS properties, values, and browser support",
+      "keywords_zh": "CSS属性参考,CSS属性查询,CSS参考手册,CSS属性大全,CSS属性值,CSS教程,CSS开发工具,CSS属性速查,CSS属性浏览器兼容性,CSS属性值类型,CSS属性语法,CSS属性示例",
+      "keywords_en": "css property reference, css properties list, css reference, css property lookup, css cheat sheet, css property values, css browser support, css developer tool, css property syntax, css property examples, online css reference",
+      "long_zh": "<p>免费的在线 <strong>CSS 属性参考手册</strong>，快速查询常用 CSS 属性、值类型、语法和浏览器兼容性。涵盖布局、盒模型、文字、颜色、动画、变换、网格、弹性盒等模块。适合 <strong>前端开发</strong>、<strong>UI 设计</strong>、<strong>CSS 调试</strong>、<strong>学习 CSS</strong> 等场景。</p><p>支持按属性名称搜索、按 CSS 分类过滤（布局、排版、动画等）。每个属性包含语法说明、可选值、初始值、浏览器兼容性标识和代码示例。所有数据内置在页面中，断网也可使用。完全本地处理。</p>",
+      "long_en": "<p>Free online <strong>CSS Property Reference</strong> — quickly look up CSS properties, values, syntax, and browser support. Covers layout, box model, typography, colors, animation, transforms, Grid, Flexbox, and more. Ideal for <strong>front-end development</strong>, <strong>UI design</strong>, <strong>CSS debugging</strong>, and <strong>learning CSS</strong>.</p><p>Supports search by property name and filtering by CSS category (layout, typography, animation, etc.). Each property includes syntax, allowed values, initial value, browser support flags, and code examples. All data is embedded in the page works offline. 100% client-side.</p>",
+      "seo_title_zh": "CSS 属性参考 - 在线 CSS 属性查询手册 | AI 工具盒子",
+      "seo_title_en": "CSS Property Reference - Online CSS Properties Lookup | AI Toolbox",
+      "features_zh": [
+        "搜索 CSS 属性：按名称实时过滤",
+        "按 CSS 分类过滤：布局、排版、动画、颜色、盒模型、弹性盒、网格等",
+        "每个属性包含：语法、可选值、初始值、浏览器兼容性",
+        "兼容性标注：完全支持 / 现代浏览器 / 有限支持 / 实验性",
+        "代码示例：每个属性附带 CSS 代码示例",
+        "离线可用：所有数据内置在页面中",
+        "完全免费，无需注册"
+      ],
+      "features_en": [
+        "Search CSS properties: real-time filter by name",
+        "Filter by category: layout, typography, animation, colors, box model, flexbox, grid, etc.",
+        "Each property includes: syntax, values, initial value, browser support",
+        "Browser support flags: full support / modern / limited / experimental",
+        "Code examples: every property comes with a CSS example",
+        "Works offline: all data embedded in the page",
+        "Completely free, no registration required"
+      ],
+      "faq_zh": [
+        [
+          "包含哪些 CSS 属性？",
+          "涵盖所有常用 CSS 属性，包括 CSS2.1 和 CSS3+ 属性。布局、盒模型、文字排版、颜色、背景、动画、变换、过渡、Flexbox、Grid、多列、列表、表格等。"
+        ],
+        [
+          "如何查看属性详情？",
+          "在搜索框输入属性名，或点击分类标签过滤。结果列表会显示每个属性的语法、可选值、初始值、兼容性和示例代码。"
+        ],
+        [
+          "支持浏览器兼容性查询吗？",
+          "支持。每个属性标注了兼容性级别：完全支持（all）、现代浏览器（modern）、有限支持（limited）、实验性（experimental）。"
+        ],
+        [
+          "可以离线使用吗？",
+          "可以。所有数据直接嵌入在页面中，首次加载后即可离线使用。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "What CSS properties are included?",
+          "All commonly used CSS properties including CSS2.1 and CSS3+. Layout, box model, typography, colors, backgrounds, animation, transforms, transitions, Flexbox, Grid, multi-column, lists, tables, and more."
+        ],
+        [
+          "How to view property details?",
+          "Type in the search box or click category filters. Results show syntax, values, initial value, compatibility, and code examples."
+        ],
+        [
+          "Does it support browser compatibility?",
+          "Yes. Each property has a compatibility level: all (full support), modern (modern browsers), limited, or experimental."
+        ],
+        [
+          "Can I use it offline?",
+          "Yes. All data is embedded in the page. Once loaded, it works offline."
+        ]
+      ],
+      "related": [
+        "css-pseudo-selectors",
+        "css-gradient-generator",
+        "css-flexbox-generator",
+        "css-grid-generator",
+        "css-animation"
+      ],
+      "index": 133,
+      "ui_zh": "<div class=\"tool-controls\" style=\"max-width:100%\">\n<div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px\">\n<input type=\"text\" id=\"cpr-search\" placeholder=\"搜索 CSS 属性...\" style=\"flex:1;min-width:150px;padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\">\n<select id=\"cpr-filter\" style=\"padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\">\n<option value=\"all\">所有分类</option>\n<option value=\"layout\">布局</option>\n<option value=\"box-model\">盒模型</option>\n<option value=\"typography\">文字排版</option>\n<option value=\"color-bg\">颜色与背景</option>\n<option value=\"flexbox\">弹性盒 (Flexbox)</option>\n<option value=\"grid\">网格 (Grid)</option>\n<option value=\"animation\">动画与过渡</option>\n<option value=\"other\">其他属性</option>\n</select>\n</div>\n<div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px\">\n<button class=\"btn btn-secondary\" id=\"cpr-copy-btn\">📋 复制当前结果</button>\n</div>\n<div id=\"cpr-count\" style=\"font-size:12px;margin-bottom:8px;color:var(--text-dim);min-height:18px\"></div>\n<div id=\"cpr-results\" style=\"width:100%\"></div>\n<div style=\"margin-top:16px;padding:8px 12px;background:var(--bg-warning-light);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-dim)\"><strong>💡 提示</strong>：所有数据内置在页面中，断网也可使用。兼容性：<strong>all</strong>=完全支持，<strong>modern</strong>=现代浏览器。</div>\n</div>",
+      "ui_en": "<div class=\"tool-controls\" style=\"max-width:100%\">\n<div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px\">\n<input type=\"text\" id=\"cpr-search\" placeholder=\"Search CSS properties...\" style=\"flex:1;min-width:150px;padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\">\n<select id=\"cpr-filter\" style=\"padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\">\n<option value=\"all\">All Categories</option>\n<option value=\"layout\">Layout</option>\n<option value=\"box-model\">Box Model</option>\n<option value=\"typography\">Typography</option>\n<option value=\"color-bg\">Colors & Background</option>\n<option value=\"flexbox\">Flexbox</option>\n<option value=\"grid\">Grid</option>\n<option value=\"animation\">Animation & Transition</option>\n<option value=\"other\">Other Properties</option>\n</select>\n</div>\n<div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px\">\n<button class=\"btn btn-secondary\" id=\"cpr-copy-btn\">📋 Copy Results</button>\n</div>\n<div id=\"cpr-count\" style=\"font-size:12px;margin-bottom:8px;color:var(--text-dim);min-height:18px\"></div>\n<div id=\"cpr-results\" style=\"width:100%\"></div>\n<div style=\"margin-top:16px;padding:8px 12px;background:var(--bg-warning-light);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-dim)\"><strong>💡 Tip</strong>: All data embedded. Works offline. Compat: <strong>all</strong>=full support, <strong>modern</strong>=modern.</div>\n</div>"
+    },
+    {
+      "slug": "ip-lookup",
+      "category": "dev",
+      "icon": "🌐",
+      "name_zh": "IP 地址查询",
+      "name_en": "IP Address Lookup",
+      "short_zh": "查询当前 IP 地址、地理位置、ISP 信息，快速了解网络连接详情",
+      "short_en": "Look up your IP address, geolocation, ISP details, and network information",
+      "keywords_zh": "ip查询,ip地址查询,我的ip,查ip,ip定位,ip归属地,geoip,ip地理位置,查询本机ip,公网ip查询,ISP查询,运营商查询,ASN查询,ip查询工具,ip查询在线,ipv4查询,ip信息查询",
+      "keywords_en": "ip lookup,ip address lookup,what is my ip,my ip,ip geolocation,geoip,ip location,ip locator,find my ip,public ip,isp lookup,asn lookup,ip info,ip checker,ipv4 lookup,ip address checker,ip whois",
+      "long_zh": "<p>IP 地址查询工具可以即时显示你当前的公网 IP 地址，以及基于该 IP 的地理位置信息，包括国家、省/州、城市、邮政编码、经纬度和时区。同时展示网络运营商（ISP）、所属组织和自治系统编号（ASN），帮助你快速了解自己的网络连接来源，或排查网络、代理、VPN 相关问题。</p><p>你也可以在输入框中填入任意 IP 地址进行查询，工具会调用免费的公开接口 ip-api.com 返回结果。所有请求都在你的浏览器中直接发起，我们不会存储你的 IP 地址或查询记录。查询结果支持一键复制，并可在地图上查看大致地理位置，方便调试、分析日志或了解服务器归属地。</p>",
+      "long_en": "<p>The IP Address Lookup tool instantly shows your current public IP address along with geolocation data derived from that IP, including country, region/state, city, ZIP code, latitude, longitude, and timezone. It also displays the network operator (ISP), organization, and Autonomous System Number (ASN), helping you understand where your connection originates or troubleshoot network, proxy, and VPN issues.</p><p>You can also enter any IP address in the input box to look it up. The tool queries the free public ip-api.com endpoint, and all requests are made directly from your browser — we never store your IP address or lookup history. Results can be copied with one click and the approximate location can be opened on a map, which is handy for debugging, log analysis, or checking where a server is hosted.</p>",
+      "seo_title_zh": "IP 地址查询 | 查我的 IP、地理位置、ISP 运营商与 ASN",
+      "seo_title_en": "IP Address Lookup | What Is My IP, Geolocation, ISP & ASN",
+      "features_zh": [
+        "一键查询当前公网 IP 地址",
+        "支持查询任意指定 IP 地址",
+        "显示国家、省/州、城市、邮编",
+        "显示经纬度与时区信息",
+        "显示 ISP 运营商、组织与 ASN",
+        "可在地图上查看大致位置",
+        "查询结果一键复制",
+        "浏览器直连，不存储你的 IP"
+      ],
+      "features_en": [
+        "One-click lookup of your current public IP",
+        "Look up any specified IP address",
+        "Shows country, region, city, and ZIP code",
+        "Shows latitude, longitude, and timezone",
+        "Shows ISP, organization, and ASN",
+        "View approximate location on a map",
+        "Copy all results with one click",
+        "Runs in-browser, your IP is not stored"
+      ],
+      "faq_zh": [
+        [
+          "这个工具会存储我的 IP 地址吗？",
+          "不会。查询在你的浏览器中直接请求公开的 ip-api.com 接口，我们不记录或存储你的 IP 地址和任何查询记录。"
+        ],
+        [
+          "为什么显示的城市或位置不准确？",
+          "IP 地理定位是基于运营商分配的数据库估算的，通常能精确到城市级别，但可能存在偏差，尤其在使用移动网络、VPN 或代理时。它不代表你的精确物理地址。"
+        ],
+        [
+          "可以查询别人的 IP 地址吗？",
+          "可以在输入框中填入任意公网 IP 地址（如 8.8.8.8）查询其归属地和运营商信息，但无法查询内网 IP（如 192.168.x.x）。"
+        ],
+        [
+          "查询失败或没有结果怎么办？",
+          "免费接口对 HTTPS 页面可能存在请求频率限制，稍等片刻再试即可。也可能是网络问题或浏览器插件拦截了请求。"
+        ],
+        [
+          "什么是 ASN 和 ISP？",
+          "ISP 是为你提供网络接入的运营商，ASN（自治系统编号）是互联网上标识一个独立网络的编号，常用于网络路由和溯源分析。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "Does this tool store my IP address?",
+          "No. The lookup is made directly from your browser to the public ip-api.com endpoint. We do not log or store your IP address or any lookup history."
+        ],
+        [
+          "Why is the city or location inaccurate?",
+          "IP geolocation is estimated from provider-assigned databases. It is usually accurate to the city level but can be off, especially on mobile networks, VPNs, or proxies. It is not your exact physical address."
+        ],
+        [
+          "Can I look up someone else's IP address?",
+          "Yes, enter any public IP address (e.g. 8.8.8.8) to see its location and network operator. Private IPs (e.g. 192.168.x.x) cannot be resolved."
+        ],
+        [
+          "What if the lookup fails or returns nothing?",
+          "The free API may rate-limit HTTPS requests, so wait a moment and try again. It could also be a network issue or a browser extension blocking the request."
+        ],
+        [
+          "What are ASN and ISP?",
+          "The ISP is the operator that provides your internet access. The ASN (Autonomous System Number) uniquely identifies an independent network on the internet and is often used for routing and origin analysis."
+        ]
+      ],
+      "related": [
+        "url-parser",
+        "url-query-builder",
+        "base64",
+        "hash-generator"
+      ],
+      "index": 134,
+      "ui_zh": "<div><label for=\"ipl-query\">IP 地址（留空则查询本机）:</label><div style=\"display:flex;gap:12px;align-items:center;margin-top:8px;flex-wrap:wrap\"><input type=\"text\" id=\"ipl-query\" placeholder=\"例如 8.8.8.8，留空查询当前 IP\" style=\"flex:1;min-width:220px\"><button class=\"btn\" id=\"ipl-lookup\">查询</button></div></div><div id=\"ipl-status\" style=\"margin-top:12px;font-size:13px;color:var(--text-light,#888)\"></div><div id=\"ipl-results\" style=\"margin-top:12px\"></div><div style=\"margin-top:12px\"><button class=\"btn btn-secondary\" id=\"ipl-copy\" style=\"display:none\">复制结果</button></div><p style=\"margin-top:16px;font-size:12px;color:var(--text-light,#888)\">🔒 隐私说明：查询在你的浏览器中直接请求公开的 ip-api.com 接口，我们不会存储你的 IP 地址或查询记录。</p>",
+      "ui_en": "<div><label for=\"ipl-query\">IP address (leave blank for your own):</label><div style=\"display:flex;gap:12px;align-items:center;margin-top:8px;flex-wrap:wrap\"><input type=\"text\" id=\"ipl-query\" placeholder=\"e.g. 8.8.8.8, or leave blank for your current IP\" style=\"flex:1;min-width:220px\"><button class=\"btn\" id=\"ipl-lookup\">Lookup</button></div></div><div id=\"ipl-status\" style=\"margin-top:12px;font-size:13px;color:var(--text-light,#888)\"></div><div id=\"ipl-results\" style=\"margin-top:12px\"></div><div style=\"margin-top:12px\"><button class=\"btn btn-secondary\" id=\"ipl-copy\" style=\"display:none\">Copy Result</button></div><p style=\"margin-top:16px;font-size:12px;color:var(--text-light,#888)\">🔒 Privacy: the lookup runs in your browser against the public ip-api.com endpoint. We do not store your IP address or any lookup history.</p>"
+    },
+    {
+      "slug": "xpath-evaluator",
+      "category": "dev",
+      "icon": "🔍",
+      "name_zh": "XPath 表达式测试器",
+      "name_en": "XPath Evaluator",
+      "short_zh": "在线测试和调试 XPath 表达式，支持 XML/HTML 文档，实时高亮匹配节点",
+      "short_en": "Test and debug XPath expressions online, supports XML/HTML documents, live node highlighting",
+      "keywords_zh": "XPath测试,XPath表达式,XPath调试,XPath在线测试,XML XPath,HTML XPath,节点选择,XPath路径,XPath查询,XPath验证,XPath语法,XPath在线工具,XPath高亮",
+      "keywords_en": "xpath tester, xpath evaluator, xpath expression test, xpath debug, xml xpath, html xpath, xpath online, xpath query, xpath validator, xpath syntax, xpath highlight, xpath tool, xml query",
+      "long_zh": "<p>免费的在线 <strong>XPath 表达式测试器</strong>，让您快速测试、调试和验证 XPath 表达式。输入 XML/HTML 文档和 XPath 表达式，实时高亮显示匹配的节点及其文本内容。支持所有 XPath 1.0 核心语法，包括路径表达式、谓语、轴、通配符、运算符和内置函数。</p><p>本工具适合 <strong>前端开发者</strong>、<strong>数据处理工程师</strong>、<strong>测试工程师</strong>、<strong>爬虫开发者</strong> 等需要频繁处理 XML/HTML 文档的人群。所有处理在浏览器本地完成，文档内容不会上传到服务器，隐私安全有保障。</p>",
+      "long_en": "<p>Free online <strong>XPath Evaluator</strong> — quickly test, debug, and validate XPath expressions. Paste your XML/HTML document and XPath expression, see matched nodes highlighted in real-time with their text content. Supports all XPath 1.0 core syntax: path expressions, predicates, axes, wildcards, operators, and built-in functions.</p><p>Ideal for <strong>frontend developers</strong>, <strong>data engineers</strong>, <strong>QA testers</strong>, and <strong>web scrapers</strong> who work with XML/HTML documents. All processing happens in your browser — your data never leaves your device.</p>",
+      "seo_title_zh": "XPath 表达式测试器 - 在线 XPath 测试与调试工具",
+      "seo_title_en": "XPath Evaluator - Online XPath Tester & Debug Tool",
+      "features_zh": [
+        "支持所有 XPath 1.0 核心语法：路径、谓语、轴、函数",
+        "实时高亮匹配节点，显示节点文本和属性",
+        "支持 XML 和 HTML 文档输入",
+        "错误提示与语法高亮",
+        "显示匹配数量、节点路径、文本内容",
+        "一键复制匹配结果",
+        "完全本地处理，数据不上传"
+      ],
+      "features_en": [
+        "Supports all XPath 1.0 syntax: paths, predicates, axes, functions",
+        "Real-time node highlighting with text and attribute display",
+        "Supports both XML and HTML document input",
+        "Error messaging and syntax highlighting",
+        "Shows match count, node paths, and text content",
+        "One-click copy results",
+        "100% client-side processing"
+      ],
+      "faq_zh": [
+        [
+          "XPath 和 CSS 选择器有什么区别？",
+          "XPath 可以沿 DOM 树向上/向下/横向遍历，功能更强大；CSS 选择器只能向下选择子元素。XPath 支持文本匹配、位置计算等高级功能。"
+        ],
+        [
+          "支持 XPath 2.0 或 3.0 吗？",
+          "本工具使用浏览器内置的 document.evaluate()，支持 XPath 1.0 完整语法。XPath 2.0/3.0 需要外部库支持，暂未包含。"
+        ],
+        [
+          "支持 HTML 命名空间吗？",
+          "支持。输入 HTML 文档时，工具会自动处理 HTML 命名空间。您也可以使用 local-name() 函数忽略命名空间匹配。"
+        ],
+        [
+          "数据安全吗？",
+          "完全安全。所有 XPath 求值在浏览器本地完成，文档内容不会上传到任何服务器。"
+        ],
+        [
+          "支持哪些 XPath 轴？",
+          "支持所有 XPath 1.0 轴：child, parent, ancestor, descendant, following, preceding, following-sibling, preceding-sibling, attribute, self, descendant-or-self, ancestor-or-self 等。"
+        ],
+        [
+          "最大支持多大的文档？",
+          "建议 XML/HTML 文档不超过 500KB，以免影响浏览器性能。超出时会截断提示。"
+        ],
+        [
+          "可以调试 XPath 函数吗？",
+          "支持所有 XPath 1.0 内置函数：string(), count(), concat(), substring(), contains(), starts-with(), normalize-space(), translate(), not(), boolean(), number(), sum(), floor(), ceiling(), round() 等。"
+        ],
+        [
+          "匹配结果可以导出吗？",
+          "匹配结果以文本形式展示，支持一键复制到剪贴板，方便后续使用。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "What's the difference between XPath and CSS selectors?",
+          "XPath traverses the DOM tree in any direction (up, down, sideways), making it much more powerful. CSS selectors only select descendant elements. XPath supports text matching, position calculation, and more."
+        ],
+        [
+          "Does it support XPath 2.0 or 3.0?",
+          "This tool uses the browser's built-in document.evaluate() which supports full XPath 1.0. XPath 2.0/3.0 requires external libraries and is not included yet."
+        ],
+        [
+          "Is my data safe?",
+          "Completely safe. All XPath evaluation happens locally in your browser. Your document never leaves your device."
+        ],
+        [
+          "How large can the document be?",
+          "We recommend keeping XML/HTML documents under 500KB for optimal browser performance. Larger documents will be truncated."
+        ],
+        [
+          "Can I export match results?",
+          "Match results are displayed as text. You can copy them to clipboard with one click for further use."
+        ]
+      ],
+      "related": [
+        "xml-formatter",
+        "html-stripper",
+        "html-table-extractor",
+        "jsonpath",
+        "regex-tester"
+      ],
+      "index": 135,
+      "ui_zh": "<div class=\"tool-controls\" style=\"max-width:100%\">\n  <div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px\">\n    <textarea id=\"xe-input\" placeholder=\"粘贴 XML 或 HTML 文档内容...\" style=\"width:100%;min-height:180px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:Consolas,monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical\"></textarea>\n  </div>\n  <div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;align-items:center\">\n    <input type=\"text\" id=\"xe-xpath\" placeholder=\"输入 XPath 表达式，如 //book[@category='fiction']\" style=\"flex:1;min-width:200px;padding:8px 10px;border:1px solid var(--border);border-radius:6px;font-family:Consolas,monospace;font-size:13px;background:var(--bg-card);color:var(--text)\">\n    <button class=\"btn btn-primary\" id=\"xe-eval\">▶ 求值</button>\n    <button class=\"btn btn-secondary\" id=\"xe-copy\">📋 复制</button>\n    <button class=\"btn btn-secondary\" id=\"xe-clear\">🗑️ 清空</button>\n  </div>\n  <div id=\"xe-status\" style=\"font-size:13px;margin-bottom:8px;color:var(--text-dim);min-height:20px\"></div>\n  <div style=\"display:flex;justify-content:space-between;align-items:center;margin-bottom:8px\">\n    <label style=\"font-size:13px;font-weight:600\">匹配结果 (<span id=\"xe-count\">0</span> 个节点)</label>\n  </div>\n  <textarea id=\"xe-result\" readonly style=\"width:100%;min-height:200px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:Consolas,monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical\" placeholder=\"匹配结果...\"></textarea>\n</div>",
+      "ui_en": "<div class=\"tool-controls\" style=\"max-width:100%\">\n  <div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px\">\n    <textarea id=\"xe-input\" placeholder=\"Paste XML or HTML document content...\" style=\"width:100%;min-height:180px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:Consolas,monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical\"></textarea>\n  </div>\n  <div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;align-items:center\">\n    <input type=\"text\" id=\"xe-xpath\" placeholder=\"Enter XPath expression, e.g. //book[@category='fiction']\" style=\"flex:1;min-width:200px;padding:8px 10px;border:1px solid var(--border);border-radius:6px;font-family:Consolas,monospace;font-size:13px;background:var(--bg-card);color:var(--text)\">\n    <button class=\"btn btn-primary\" id=\"xe-eval\">▶ Evaluate</button>\n    <button class=\"btn btn-secondary\" id=\"xe-copy\">📋 Copy</button>\n    <button class=\"btn btn-secondary\" id=\"xe-clear\">🗑️ Clear</button>\n  </div>\n  <div id=\"xe-status\" style=\"font-size:13px;margin-bottom:8px;color:var(--text-dim);min-height:20px\"></div>\n  <div style=\"display:flex;justify-content:space-between;align-items:center;margin-bottom:8px\">\n    <label style=\"font-size:13px;font-weight:600\">Match Results (<span id=\"xe-count\">0</span> nodes)</label>\n  </div>\n  <textarea id=\"xe-result\" readonly style=\"width:100%;min-height:200px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:Consolas,monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical\" placeholder=\"Match results...\"></textarea>\n</div>"
+    },
+    {
+      "slug": "css-to-tailwind",
+      "category": "dev",
+      "icon": "🎨",
+      "name_zh": "CSS 转 Tailwind CSS",
+      "name_en": "CSS to Tailwind CSS",
+      "short_zh": "将传统 CSS 属性转换为 Tailwind CSS 等效类名，加速 Tailwind 迁移",
+      "short_en": "Convert traditional CSS properties to equivalent Tailwind CSS classes, speed up Tailwind migration",
+      "keywords_zh": "CSS转Tailwind,Tailwind CSS转换,CSS到Tailwind,Tailwind类名,Tailwind迁移,CSS转换器,Tailwind CSS转换器,Tailwind表格,Tailwind配色,Tailwind间距,Tailwind flex,前端开发,UI框架",
+      "keywords_en": "css to tailwind, tailwind css converter, css to tailwind class, tailwind migration, css converter, tailwind class generator, tailwind css, tailwind utility, frontend tool, tailwind transform",
+      "long_zh": "<p>免费的在线 <strong>CSS 转 Tailwind CSS 工具</strong>，帮助您快速将传统 CSS 属性转换为 Tailwind CSS 等效类名。支持颜色、间距、尺寸、Flexbox、Grid、Typography、Border、Shadow、Transition 等常用 CSS 属性到 Tailwind 类名的映射。</p><p>适合 <strong>从传统 CSS 迁移到 Tailwind 的前端开发者</strong>、<strong>Tailwind 初学者</strong>、<strong>代码重构场景</strong>。所有转换在浏览器本地完成，CSS 代码不会上传到服务器。</p>",
+      "long_en": "<p>Free online <strong>CSS to Tailwind CSS converter</strong> — quickly convert traditional CSS properties to equivalent Tailwind CSS utility classes. Supports color, spacing, sizing, Flexbox, Grid, Typography, Border, Shadow, Transition, and more common CSS-to-Tailwind mappings.</p><p>Perfect for <strong>frontend developers migrating from CSS to Tailwind</strong>, <strong>Tailwind beginners</strong>, and <strong>code refactoring</strong>. All conversion happens locally in your browser — your CSS never leaves your device.</p>",
+      "seo_title_zh": "CSS 转 Tailwind CSS - 在线 CSS 到 Tailwind 类名转换工具",
+      "seo_title_en": "CSS to Tailwind CSS - Online CSS to Tailwind Class Converter",
+      "features_zh": [
+        "支持颜色、背景、文字颜色映射到 Tailwind 色值类",
+        "间距（margin/padding/gap）映射到 Tailwind 间距类",
+        "尺寸（width/height）映射到 Tailwind 尺寸类",
+        "Flexbox 布局属性映射到 Tailwind Flex 类",
+        "Grid 布局属性映射到 Tailwind Grid 类",
+        "Typography 属性映射到 Tailwind 文字类",
+        "Border、Shadow、Opacity、Transition 等属性映射",
+        "一次输入多条 CSS 规则，批量转换",
+        "一键复制转换结果",
+        "完全本地处理，数据不上传"
+      ],
+      "features_en": [
+        "Map colors, backgrounds, text colors to Tailwind color classes",
+        "Map spacing (margin/padding/gap) to Tailwind spacing classes",
+        "Map sizing (width/height) to Tailwind sizing classes",
+        "Map Flexbox layout to Tailwind Flex classes",
+        "Map Grid layout to Tailwind Grid classes",
+        "Map Typography properties to Tailwind text classes",
+        "Border, Shadow, Opacity, Transition and more",
+        "Batch convert multiple CSS rules at once",
+        "One-click copy conversion results",
+        "100% client-side processing"
+      ],
+      "faq_zh": [
+        [
+          "哪些 CSS 属性可以转换？",
+          "支持颜色（color/background-color/border-color）、间距（margin/padding/gap）、尺寸（width/height）、Flexbox、Grid、Typography、Border、Shadow、Opacity、Transition、Display、Position 等常见属性。"
+        ],
+        [
+          "转换准确吗？",
+          "颜色值会映射到最接近的 Tailwind 色值（如 #3b82f6 → blue-500）。间距值精确映射到 Tailwind 的 4px 基准（如 margin: 16px → m-4）。部分复杂的 CSS 组合可能需要手动调整。"
+        ],
+        [
+          "支持自定义颜色吗？",
+          "会尝试映射到最近的 Tailwind 预设色值。如果颜色值与 Tailwind 色板不匹配，会输出生成的 Tailwind 任意值（如 text-[#ff5500]）。"
+        ],
+        [
+          "数据安全吗？",
+          "完全安全。所有转换在浏览器本地完成，CSS 代码不会上传到任何服务器。"
+        ],
+        [
+          "一次可以转换多少条规则？",
+          "没有限制。您可以输入多条 CSS 规则，工具会逐条转换并显示结果列表。"
+        ],
+        [
+          "生成的类名可以直接使用吗？",
+          "生成的类名是标准的 Tailwind CSS 类名，可以直接在 HTML 中使用。但建议根据实际项目中的 Tailwind 配置进行验证。"
+        ],
+        [
+          "支持 Tailwind 的变体前缀吗？",
+          "基础版本输出标准类名。您可以根据需要自行添加 hover:、md:、dark: 等变体前缀。"
+        ],
+        [
+          "可以转换 CSS 文件吗？",
+          "可以复制 CSS 文件内容粘贴到输入框进行批量转换。支持常用 CSS 规则的解析。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "Which CSS properties can be converted?",
+          "Color (color/background-color/border-color), spacing (margin/padding/gap), sizing (width/height), Flexbox, Grid, Typography, Border, Shadow, Opacity, Transition, Display, Position, and more."
+        ],
+        [
+          "How accurate is the conversion?",
+          "Colors map to the closest Tailwind palette (e.g., #3b82f6 → blue-500). Spacing values map precisely to Tailwind's 4px base (e.g., margin: 16px → m-4). Complex CSS combinations may need manual adjustment."
+        ],
+        [
+          "Is my data safe?",
+          "Completely safe. All conversion happens client-side in your browser. Your CSS never leaves your device."
+        ],
+        [
+          "Can I use the generated classes directly?",
+          "Generated classes follow standard Tailwind CSS naming and can be used directly in HTML. We recommend verifying against your project's Tailwind configuration."
+        ],
+        [
+          "Does it support Tailwind variant prefixes?",
+          "The base version outputs standard class names. You can add variant prefixes like hover:, md:, dark: as needed."
+        ]
+      ],
+      "related": [
+        "css-to-js",
+        "css-to-scss",
+        "css-minifier",
+        "css-validator",
+        "css-gradient-generator"
+      ],
+      "index": 136,
+      "ui_zh": "<div class=\"tool-controls\" style=\"max-width:100%\">\n  <div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px\">\n    <textarea id=\"ct-input\" placeholder=\"粘贴 CSS 代码，如：&#10;.card {&#10;  display: flex;&#10;  justify-content: center;&#10;  padding: 16px;&#10;  background-color: #3b82f6;&#10;}\" style=\"width:100%;min-height:200px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:Consolas,monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical\"></textarea>\n  </div>\n  <div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;align-items:center\">\n    <button class=\"btn btn-primary\" id=\"ct-convert\">🔄 转换</button>\n    <button class=\"btn btn-secondary\" id=\"ct-copy\">📋 复制</button>\n    <button class=\"btn btn-secondary\" id=\"ct-clear\">🗑️ 清空</button>\n    <span style=\"font-size:13px;color:var(--text-dim)\">已转换 <span id=\"ct-count\">0</span> 条属性</span>\n  </div>\n  <div id=\"ct-status\" style=\"font-size:13px;margin-bottom:8px;color:var(--text-dim);min-height:20px\"></div>\n  <div style=\"margin-bottom:8px\"><label style=\"font-size:13px;font-weight:600\">Tailwind CSS 类名</label></div>\n  <textarea id=\"ct-output\" readonly style=\"width:100%;min-height:200px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:Consolas,monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical\" placeholder=\"转换后的 Tailwind CSS 类名...\"></textarea>\n</div>",
+      "ui_en": "<div class=\"tool-controls\" style=\"max-width:100%\">\n  <div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px\">\n    <textarea id=\"ct-input\" placeholder=\"Paste CSS code, e.g.:&#10;.card {&#10;  display: flex;&#10;  justify-content: center;&#10;  padding: 16px;&#10;  background-color: #3b82f6;&#10;}\" style=\"width:100%;min-height:200px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:Consolas,monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical\"></textarea>\n  </div>\n  <div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;align-items:center\">\n    <button class=\"btn btn-primary\" id=\"ct-convert\">🔄 Convert</button>\n    <button class=\"btn btn-secondary\" id=\"ct-copy\">📋 Copy</button>\n    <button class=\"btn btn-secondary\" id=\"ct-clear\">🗑️ Clear</button>\n    <span style=\"font-size:13px;color:var(--text-dim)\"><span id=\"ct-count\">0</span> properties converted</span>\n  </div>\n  <div id=\"ct-status\" style=\"font-size:13px;margin-bottom:8px;color:var(--text-dim);min-height:20px\"></div>\n  <div style=\"margin-bottom:8px\"><label style=\"font-size:13px;font-weight:600\">Tailwind CSS Classes</label></div>\n  <textarea id=\"ct-output\" readonly style=\"width:100%;min-height:200px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:Consolas,monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical\" placeholder=\"Converted Tailwind CSS classes...\"></textarea>\n</div>"
     }
   ]
 }

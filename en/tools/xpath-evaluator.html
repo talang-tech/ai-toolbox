@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>XPath Evaluator - XPath Evaluator - Online XPath Tester & Debug Tool | AI Toolbox</title>
+<meta name="description" content="Free online xpath evaluator. Test and debug XPath expressions online, supports XML/HTML documents, live node highlighting. Fast, secure, and works in your browser without downloading.">
+<meta name="keywords" content="xpath tester, xpath evaluator, xpath expression test, xpath debug, xml xpath, html xpath, xpath online, xpath query, xpath validator, xpath syntax, xpath highlight, xpath tool, xml query">
+<link rel="canonical" href="https://tools.talang.fun/en/tools/xpath-evaluator">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/xpath-evaluator">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/xpath-evaluator">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/xpath-evaluator">
+<meta property="og:title" content="XPath Evaluator - XPath Evaluator - Online XPath Tester & Debug Tool | AI Toolbox">
+<meta property="og:description" content="Free online xpath evaluator. Test and debug XPath expressions online, supports XML/HTML documents, live node highlighting. Fast, secure, and works in your browser without downloading.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/en/tools/xpath-evaluator">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "XPath Evaluator", "description": "Free online xpath evaluator. Test and debug XPath expressions online, supports XML/HTML documents, live node highlighting. Fast, secure, and works in your browser without downloading.", "url": "https://tools.talang.fun/en/tools/xpath-evaluator", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "Test and debug XPath expressions online, supports XML/HTML documents, live node highlighting", "inLanguage": "en", "author": {"@type": "Organization", "name": "AI Toolbox"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/en/" class="logo"><span class="logo-icon">🛠️</span>AI Toolbox</a>
+    <nav class="nav">
+      <a href="/en/">Home</a>
+      <a href="/en/#tools">All Tools</a>
+      <a href="/en/blog/">Blog</a>
+      <a href="/en/about">About</a>
+      <a href="/en/sponsor">Sponsor</a>
+      <a href="https://tools.talang.fun/tools/xpath-evaluator" class="lang-switch">中文</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🔍</div>
+  <h1>XPath Evaluator</h1>
+  <p>Test and debug XPath expressions online, supports XML/HTML documents, live node highlighting</p>
+</div>
+<div class="tool-panel">
+<div class="tool-controls" style="max-width:100%">
+  <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px">
+    <textarea id="xe-input" placeholder="Paste XML or HTML document content..." style="width:100%;min-height:180px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:Consolas,monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical"></textarea>
+  </div>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;align-items:center">
+    <input type="text" id="xe-xpath" placeholder="Enter XPath expression, e.g. //book[@category='fiction']" style="flex:1;min-width:200px;padding:8px 10px;border:1px solid var(--border);border-radius:6px;font-family:Consolas,monospace;font-size:13px;background:var(--bg-card);color:var(--text)">
+    <button class="btn btn-primary" id="xe-eval">▶ Evaluate</button>
+    <button class="btn btn-secondary" id="xe-copy">📋 Copy</button>
+    <button class="btn btn-secondary" id="xe-clear">🗑️ Clear</button>
+  </div>
+  <div id="xe-status" style="font-size:13px;margin-bottom:8px;color:var(--text-dim);min-height:20px"></div>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+    <label style="font-size:13px;font-weight:600">Match Results (<span id="xe-count">0</span> nodes)</label>
+  </div>
+  <textarea id="xe-result" readonly style="width:100%;min-height:200px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:Consolas,monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical" placeholder="Match results..."></textarea>
+</div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>About this tool</h2>
+  <p>Free online <strong>XPath Evaluator</strong> — quickly test, debug, and validate XPath expressions. Paste your XML/HTML document and XPath expression, see matched nodes highlighted in real-time with their text content. Supports all XPath 1.0 core syntax: path expressions, predicates, axes, wildcards, operators, and built-in functions.</p><p>Ideal for <strong>frontend developers</strong>, <strong>data engineers</strong>, <strong>QA testers</strong>, and <strong>web scrapers</strong> who work with XML/HTML documents. All processing happens in your browser — your data never leaves your device.</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>Key Features</h2><ul><li>Supports all XPath 1.0 syntax: paths, predicates, axes, functions</li><li>Real-time node highlighting with text and attribute display</li><li>Supports both XML and HTML document input</li><li>Error messaging and syntax highlighting</li><li>Shows match count, node paths, and text content</li><li>One-click copy results</li><li>100% client-side processing</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>Frequently Asked Questions</h2><h3 style="margin-top:20px;margin-bottom:8px">What's the difference between XPath and CSS selectors?</h3><p>XPath traverses the DOM tree in any direction (up, down, sideways), making it much more powerful. CSS selectors only select descendant elements. XPath supports text matching, position calculation, and more.</p><h3 style="margin-top:20px;margin-bottom:8px">Does it support XPath 2.0 or 3.0?</h3><p>This tool uses the browser's built-in document.evaluate() which supports full XPath 1.0. XPath 2.0/3.0 requires external libraries and is not included yet.</p><h3 style="margin-top:20px;margin-bottom:8px">Is my data safe?</h3><p>Completely safe. All XPath evaluation happens locally in your browser. Your document never leaves your device.</p><h3 style="margin-top:20px;margin-bottom:8px">How large can the document be?</h3><p>We recommend keeping XML/HTML documents under 500KB for optimal browser performance. Larger documents will be truncated.</p><h3 style="margin-top:20px;margin-bottom:8px">Can I export match results?</h3><p>Match results are displayed as text. You can copy them to clipboard with one click for further use.</p></section>
+<section class="related"><h3>Related Tools</h3><div class="tools-grid"><a href="/en/tools/xml-formatter" class="tool-card"><div class="icon">🧩</div><h3>XML Formatter & Minifier</h3><p>Format, validate, and minify XML locally with parser error messages</p></a><a href="/en/tools/html-stripper" class="tool-card"><div class="icon">🧹</div><h3>HTML Tag Stripper</h3><p>Extract clean text from HTML - strip tags, decode entities</p></a><a href="/en/tools/html-table-extractor" class="tool-card"><div class="icon">📋</div><h3>HTML Table Extractor</h3><p>Extract table data from HTML pages, export as CSV/JSON/Markdown</p></a><a href="/en/tools/jsonpath" class="tool-card"><div class="icon">🔍</div><h3>JSONPath Extractor</h3><p>Extract data from JSON using $.path syntax</p></a><a href="/en/tools/regex-tester" class="tool-card"><div class="icon">/.*/</div><h3>Regex Tester</h3><p>Test regex patterns in real-time with highlighted matches</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>Need a private toolbox or custom browser tool?</h2>
+  <p>AI Toolbox can be adapted for internal workflows, private deployment, sponsored categories, or custom privacy-first utilities.</p>
+  <p><a href="/en/sponsor" data-event="conversion_cta_click" data-label="en_partner_custom_tool_cta">View partnership and custom tool options →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/xpath-evaluator.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI Toolbox · Free online AI & developer tools · <a href='/en/about'>About</a> · <a href='/en/sponsor'>Sponsor</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('Copied!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>

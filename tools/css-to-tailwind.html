@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>CSS 转 Tailwind CSS - CSS 转 Tailwind CSS - 在线 CSS 到 Tailwind 类名转换工具 | AI 工具盒子</title>
+<meta name="description" content="免费在线CSS 转 Tailwind CSS工具，将传统 CSS 属性转换为 Tailwind CSS 等效类名，加速 Tailwind 迁移。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="CSS转Tailwind,Tailwind CSS转换,CSS到Tailwind,Tailwind类名,Tailwind迁移,CSS转换器,Tailwind CSS转换器,Tailwind表格,Tailwind配色,Tailwind间距,Tailwind flex,前端开发,UI框架">
+<link rel="canonical" href="https://tools.talang.fun/tools/css-to-tailwind">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/css-to-tailwind">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/css-to-tailwind">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/css-to-tailwind">
+<meta property="og:title" content="CSS 转 Tailwind CSS - CSS 转 Tailwind CSS - 在线 CSS 到 Tailwind 类名转换工具 | AI 工具盒子">
+<meta property="og:description" content="免费在线CSS 转 Tailwind CSS工具，将传统 CSS 属性转换为 Tailwind CSS 等效类名，加速 Tailwind 迁移。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/css-to-tailwind">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "CSS 转 Tailwind CSS", "description": "免费在线CSS 转 Tailwind CSS工具，将传统 CSS 属性转换为 Tailwind CSS 等效类名，加速 Tailwind 迁移。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/css-to-tailwind", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "将传统 CSS 属性转换为 Tailwind CSS 等效类名，加速 Tailwind 迁移", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/tools/css-to-tailwind" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🎨</div>
+  <h1>CSS 转 Tailwind CSS</h1>
+  <p>将传统 CSS 属性转换为 Tailwind CSS 等效类名，加速 Tailwind 迁移</p>
+</div>
+<div class="tool-panel">
+<div class="tool-controls" style="max-width:100%">
+  <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px">
+    <textarea id="ct-input" placeholder="粘贴 CSS 代码，如：&#10;.card {&#10;  display: flex;&#10;  justify-content: center;&#10;  padding: 16px;&#10;  background-color: #3b82f6;&#10;}" style="width:100%;min-height:200px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:Consolas,monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical"></textarea>
+  </div>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;align-items:center">
+    <button class="btn btn-primary" id="ct-convert">🔄 转换</button>
+    <button class="btn btn-secondary" id="ct-copy">📋 复制</button>
+    <button class="btn btn-secondary" id="ct-clear">🗑️ 清空</button>
+    <span style="font-size:13px;color:var(--text-dim)">已转换 <span id="ct-count">0</span> 条属性</span>
+  </div>
+  <div id="ct-status" style="font-size:13px;margin-bottom:8px;color:var(--text-dim);min-height:20px"></div>
+  <div style="margin-bottom:8px"><label style="font-size:13px;font-weight:600">Tailwind CSS 类名</label></div>
+  <textarea id="ct-output" readonly style="width:100%;min-height:200px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:Consolas,monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical" placeholder="转换后的 Tailwind CSS 类名..."></textarea>
+</div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>免费的在线 <strong>CSS 转 Tailwind CSS 工具</strong>，帮助您快速将传统 CSS 属性转换为 Tailwind CSS 等效类名。支持颜色、间距、尺寸、Flexbox、Grid、Typography、Border、Shadow、Transition 等常用 CSS 属性到 Tailwind 类名的映射。</p><p>适合 <strong>从传统 CSS 迁移到 Tailwind 的前端开发者</strong>、<strong>Tailwind 初学者</strong>、<strong>代码重构场景</strong>。所有转换在浏览器本地完成，CSS 代码不会上传到服务器。</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>支持颜色、背景、文字颜色映射到 Tailwind 色值类</li><li>间距（margin/padding/gap）映射到 Tailwind 间距类</li><li>尺寸（width/height）映射到 Tailwind 尺寸类</li><li>Flexbox 布局属性映射到 Tailwind Flex 类</li><li>Grid 布局属性映射到 Tailwind Grid 类</li><li>Typography 属性映射到 Tailwind 文字类</li><li>Border、Shadow、Opacity、Transition 等属性映射</li><li>一次输入多条 CSS 规则，批量转换</li><li>一键复制转换结果</li><li>完全本地处理，数据不上传</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">哪些 CSS 属性可以转换？</h3><p>支持颜色（color/background-color/border-color）、间距（margin/padding/gap）、尺寸（width/height）、Flexbox、Grid、Typography、Border、Shadow、Opacity、Transition、Display、Position 等常见属性。</p><h3 style="margin-top:20px;margin-bottom:8px">转换准确吗？</h3><p>颜色值会映射到最接近的 Tailwind 色值（如 #3b82f6 → blue-500）。间距值精确映射到 Tailwind 的 4px 基准（如 margin: 16px → m-4）。部分复杂的 CSS 组合可能需要手动调整。</p><h3 style="margin-top:20px;margin-bottom:8px">支持自定义颜色吗？</h3><p>会尝试映射到最近的 Tailwind 预设色值。如果颜色值与 Tailwind 色板不匹配，会输出生成的 Tailwind 任意值（如 text-[#ff5500]）。</p><h3 style="margin-top:20px;margin-bottom:8px">数据安全吗？</h3><p>完全安全。所有转换在浏览器本地完成，CSS 代码不会上传到任何服务器。</p><h3 style="margin-top:20px;margin-bottom:8px">一次可以转换多少条规则？</h3><p>没有限制。您可以输入多条 CSS 规则，工具会逐条转换并显示结果列表。</p><h3 style="margin-top:20px;margin-bottom:8px">生成的类名可以直接使用吗？</h3><p>生成的类名是标准的 Tailwind CSS 类名，可以直接在 HTML 中使用。但建议根据实际项目中的 Tailwind 配置进行验证。</p><h3 style="margin-top:20px;margin-bottom:8px">支持 Tailwind 的变体前缀吗？</h3><p>基础版本输出标准类名。您可以根据需要自行添加 hover:、md:、dark: 等变体前缀。</p><h3 style="margin-top:20px;margin-bottom:8px">可以转换 CSS 文件吗？</h3><p>可以复制 CSS 文件内容粘贴到输入框进行批量转换。支持常用 CSS 规则的解析。</p></section>
+<section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/css-to-js" class="tool-card"><div class="icon">🔄</div><h3>CSS 转 JS 转换器</h3><p>将 CSS 样式转换为 React 内联样式对象、CSS-in-JS 对象或 styled-components 语法</p></a><a href="/tools/css-to-scss" class="tool-card"><div class="icon">🔄</div><h3>CSS 转 SCSS/SASS</h3><p>将 CSS 转换为嵌套 SCSS/SASS 语法，支持变量提取和自动嵌套</p></a><a href="/tools/css-minifier" class="tool-card"><div class="icon">🎨</div><h3>CSS 美化/压缩</h3><p>CSS 代码一键美化格式化或压缩，支持属性排序、颜色简写优化</p></a><a href="/tools/css-validator" class="tool-card"><div class="icon">🎨</div><h3>CSS 验证器</h3><p>检查 CSS 语法错误、未闭合括号、未知属性、重复选择器、缺失单位等</p></a><a href="/tools/css-gradient-generator" class="tool-card"><div class="icon">🌈</div><h3>CSS 渐变生成器</h3><p>在线生成 CSS 线性与径向渐变，实时预览并复制代码</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/css-to-tailwind.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>

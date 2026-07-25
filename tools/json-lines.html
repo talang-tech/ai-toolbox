@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>JSON Lines (NDJSON) 工具 - JSON Lines (NDJSON) 工具 - 在线 JSONL 验证、格式化、转换器 | AI 工具盒子</title>
+<meta name="description" content="免费在线JSON Lines (NDJSON) 工具工具，验证、格式化、转换和统计 JSON Lines (NDJSON) 格式数据，支持行级处理。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="JSON Lines,NDJSON,JSONL,JSON行格式,JSON Lines验证器,JSON Lines格式化,JSON Lines转换,JSONL工具,NDJSON验证,NDJSON格式化,JSON流处理,日志处理,在线JSONL工具,JSON Lines分析">
+<link rel="canonical" href="https://tools.talang.fun/tools/json-lines">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/json-lines">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/json-lines">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/json-lines">
+<meta property="og:title" content="JSON Lines (NDJSON) 工具 - JSON Lines (NDJSON) 工具 - 在线 JSONL 验证、格式化、转换器 | AI 工具盒子">
+<meta property="og:description" content="免费在线JSON Lines (NDJSON) 工具工具，验证、格式化、转换和统计 JSON Lines (NDJSON) 格式数据，支持行级处理。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/json-lines">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "JSON Lines (NDJSON) 工具", "description": "免费在线JSON Lines (NDJSON) 工具工具，验证、格式化、转换和统计 JSON Lines (NDJSON) 格式数据，支持行级处理。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/json-lines", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "验证、格式化、转换和统计 JSON Lines (NDJSON) 格式数据，支持行级处理", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/tools/json-lines" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">📄</div>
+  <h1>JSON Lines (NDJSON) 工具</h1>
+  <p>验证、格式化、转换和统计 JSON Lines (NDJSON) 格式数据，支持行级处理</p>
+</div>
+<div class="tool-panel">
+<div class="tool-controls" style="max-width:100%">
+<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px">
+<select id="jl-mode" style="padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)">
+<option value="validate">验证 (Validate)</option>
+<option value="format">格式化 (Format)</option>
+<option value="to-array">转 JSON 数组</option>
+<option value="from-array">JSON 数组转 Lines</option>
+<option value="stats">统计 (Stats)</option>
+<option value="filter">过滤 (Filter)</option>
+<option value="extract">提取字段</option>
+</select>
+<select id="jl-indent" style="padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)">
+<option value="2">2 空格缩进</option>
+<option value="4" selected>4 空格缩进</option>
+</select>
+</div>
+<div id="jl-indent-section" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px">
+<label style="font-size:12px;color:var(--text-dim);align-self:center">缩进:</label>
+</div>
+<textarea id="jl-input" placeholder="粘贴 JSON Lines 数据（每行一个 JSON 对象）..." style="width:100%;min-height:180px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical"></textarea>
+<div id="jl-filter-section" style="display:none;flex-wrap:wrap;gap:8px;margin:8px 0">
+<input type="text" id="jl-filter-field" placeholder="字段名" style="width:140px;padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)">
+<input type="text" id="jl-filter-value" placeholder="值（可选）" style="width:140px;padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)">
+</div>
+<div id="jl-extract-section" style="display:none;flex-wrap:wrap;gap:8px;margin:8px 0">
+<input type="text" id="jl-extract-fields" placeholder="字段名，逗号分隔（如 name, age, address.city）" style="flex:1;min-width:200px;padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)">
+</div>
+<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px">
+<button class="btn btn-primary" id="jl-convert">🔄 处理</button>
+<button class="btn btn-secondary" id="jl-copy">📋 复制</button>
+<button class="btn btn-secondary" id="jl-clear">🗑️ 清空</button>
+</div>
+<div id="jl-status" style="font-size:13px;margin-bottom:4px;color:var(--text-dim);min-height:20px"></div>
+<div id="jl-stats" style="font-size:12px;margin-bottom:8px;color:var(--text-dim);min-height:18px;font-family:monospace"></div>
+<textarea id="jl-output" placeholder="输出..." style="width:100%;min-height:200px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical" readonly></textarea>
+<div style="margin-top:16px;padding:8px 12px;background:var(--bg-warning-light);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-dim)"><strong>🔒 隐私提示</strong>：所有数据在浏览器本地处理，不会上传到服务器。</div>
+</div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>免费的在线 <strong>JSON Lines (NDJSON) 工具</strong>，处理每行一个独立 JSON 对象的格式（JSON Lines / NDJSON / JSONL）。支持验证、格式化、统计、转换为 JSON 数组、过滤、提取字段等操作。适合 <strong>日志分析</strong>、<strong>数据处理管道</strong>、<strong>机器学习数据集</strong>、<strong>流式数据</strong> 等场景。</p><p>JSON Lines 格式的每行是一个独立的 JSON 对象，行与行之间不是数组关系，而是独立的记录。本工具支持将 JSON Lines 与 JSON 数组互相转换、验证每行 JSON 合法性、统计字段分布、按条件过滤行、提取指定字段列。所有处理在浏览器本地完成，数据不会上传到服务器。</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>验证 JSON Lines 格式：检查每行 JSON 合法性</li><li>JSON Lines ↔ JSON 数组互相转换</li><li>统计行数、字段分布、数据类型分布</li><li>按条件过滤行（字段存在 / 值匹配）</li><li>提取指定字段列（类似 SQL SELECT）</li><li>格式化输出：缩进、排序键、行号</li><li>错误定位：精确定位到问题行号和错误信息</li><li>完全本地处理，数据不上传</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">什么是 JSON Lines 格式？</h3><p>JSON Lines (NDJSON/JSONL) 是一种每行包含一个独立 JSON 对象的格式，行与行之间用换行符分隔。常用于日志文件、流式数据、大数据处理等场景。</p><h3 style="margin-top:20px;margin-bottom:8px">JSON Lines 和 JSON 数组有什么区别？</h3><p>JSON Lines 是每行一个独立 JSON 对象，整体是一个
+ 分隔的文本文件。JSON 数组是将所有数据包裹在 [...] 中。本工具可以在这两种格式之间互相转换。</p><h3 style="margin-top:20px;margin-bottom:8px">支持多大的文件？</h3><p>没有硬性限制，但建议处理不超过 10MB 或 50000 行，以确保浏览器性能。所有处理在本地完成。</p><h3 style="margin-top:20px;margin-bottom:8px">数据安全吗？</h3><p>完全安全。所有数据在浏览器本地处理，不会上传到任何服务器。</p><h3 style="margin-top:20px;margin-bottom:8px">过滤功能怎么用？</h3><p>支持按字段存在性过滤（如 field:exists）和按值匹配过滤（如 field==value）。支持多条件组合。</p></section>
+<section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/json-formatter" class="tool-card"><div class="icon">{ }</div><h3>JSON 格式化</h3><p>JSON 美化、压缩、校验，错误位置精准定位</p></a><a href="/tools/json-validator" class="tool-card"><div class="icon">✅</div><h3>JSON 验证器</h3><p>验证 JSON 语法，高亮定位错误，格式化并显示行号</p></a><a href="/tools/json-to-html" class="tool-card"><div class="icon">📊</div><h3>JSON 转 HTML 表格</h3><p>将 JSON 数据转换为美观的 HTML 表格，支持嵌套对象展开和排序</p></a><a href="/tools/json-to-csv" class="tool-card"><div class="icon">📊</div><h3>JSON 转 CSV</h3><p>将 JSON 数组或对象一键转换为 CSV 表格格式</p></a><a href="/tools/json-flatten" class="tool-card"><div class="icon">🔀</div><h3>JSON 展平/还原</h3><p>嵌套 JSON 一键展平为点号键名，支持反向还原</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/json-lines.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>
