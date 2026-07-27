@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>JSON 转 Excel - JSON 转 Excel 在线工具 - 免费转换 JSON 为表格格式 | AI 工具盒子</title>
+<meta name="description" content="免费在线JSON 转 Excel工具，将 JSON 数组/对象转换为 Excel (.xlsx) 或 CSV 格式并下载。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="JSON转Excel,JSON转CSV,JSON转表格,JSON导出Excel,JSON数据导出,JSON结构化,JSON表格,在线JSON转Excel,JSON to Excel,JSON to CSV,JSON数据可视化,JSON导出工具,JSON转换工具">
+<link rel="canonical" href="https://tools.talang.fun/tools/json-to-excel">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/json-to-excel">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/json-to-excel">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/json-to-excel">
+<meta property="og:title" content="JSON 转 Excel - JSON 转 Excel 在线工具 - 免费转换 JSON 为表格格式 | AI 工具盒子">
+<meta property="og:description" content="免费在线JSON 转 Excel工具，将 JSON 数组/对象转换为 Excel (.xlsx) 或 CSV 格式并下载。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/json-to-excel">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "JSON 转 Excel", "description": "免费在线JSON 转 Excel工具，将 JSON 数组/对象转换为 Excel (.xlsx) 或 CSV 格式并下载。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/json-to-excel", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "将 JSON 数组/对象转换为 Excel (.xlsx) 或 CSV 格式并下载", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/tools/json-to-excel" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">📊</div>
+  <h1>JSON 转 Excel</h1>
+  <p>将 JSON 数组/对象转换为 Excel (.xlsx) 或 CSV 格式并下载</p>
+</div>
+<div class="tool-panel">
+<div class="tool-controls" style="max-width:100%">
+  <div style="display:flex;flex-direction:column;gap:10px">
+    <textarea id="j2e-input" placeholder='粘贴 JSON 数据，如 [{ "name": "张三", "age": 30 }, ...]' style="width:100%;min-height:200px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:Consolas,monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical"></textarea>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+      <button class="btn btn-primary" id="j2e-convert">🔄 转换</button>
+      <button class="btn btn-secondary" id="j2e-copy">📋 复制</button>
+      <button class="btn btn-secondary" id="j2e-clear">🗑️ 清空</button>
+      <label style="margin-left:auto;font-size:13px;display:flex;align-items:center;gap:6px">
+        <span>导出格式:</span>
+        <select id="j2e-format" style="padding:4px 8px;border:1px solid var(--border);border-radius:4px;background:var(--bg-card);color:var(--text)">
+          <option value="csv">CSV</option>
+          <option value="xlsx">XLSX (Excel)</option>
+        </select>
+      </label>
+      <button class="btn btn-primary" id="j2e-download">⬇️ 下载</button>
+    </div>
+    <div id="j2e-status" style="font-size:13px;color:var(--text-dim);min-height:20px"></div>
+    <div style="margin-bottom:4px"><label style="font-size:13px;font-weight:600">预览 (<span id="j2e-rows">0</span> 行 x <span id="j2e-cols">0</span> 列)</label></div>
+    <div style="overflow-x:auto;border:1px solid var(--border);border-radius:6px;max-height:400px;overflow-y:auto">
+      <table id="j2e-table" style="width:100%;border-collapse:collapse;font-size:13px">
+        <thead id="j2e-thead"></thead>
+        <tbody id="j2e-tbody"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>免费的在线 <strong>JSON 转 Excel 工具</strong>，将 JSON 数组或对象快速转换为 Excel (.xlsx) 格式，支持一键下载。完美处理嵌套 JSON 对象和数组，自动展平为表格列。同时支持导出为 CSV 格式，满足不同场景需求。</p><p>本工具适合 <strong>数据分析师</strong>、<strong>后端开发者</strong>、<strong>API 测试人员</strong>、<strong>产品经理</strong> 等需要将 JSON 数据转换为表格格式的人群。所有处理在浏览器本地完成，数据不会上传到任何服务器，隐私安全有保障。</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>支持 JSON 数组和对象输入，自动检测格式</li><li>自动展平嵌套 JSON 对象（如 user.name -> user_name）</li><li>支持数组嵌套展开为多行</li><li>导出为 Excel (.xlsx) 或 CSV 格式</li><li>智能列排序和数据类型推断</li><li>一键复制到剪贴板</li><li>完全本地处理，数据不上传</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">支持多大的 JSON 文件？</h3><p>建议 JSON 数据不超过 10MB，行列数不超过 10,000 行以保证浏览器性能。超出时工具会提示。</p><h3 style="margin-top:20px;margin-bottom:8px">嵌套 JSON 对象怎么处理？</h3><p>嵌套对象自动展平，如 {user: {name: '张三'}} 会变成 user_name 列。数组嵌套会展开为多行，同一父级数据会自动复制。</p><h3 style="margin-top:20px;margin-bottom:8px">支持导出为 XLSX 还是 CSV？</h3><p>两种格式都支持。XLSX 保留更多格式信息，CSV 兼容性更广，通用性更强。</p><h3 style="margin-top:20px;margin-bottom:8px">数据安全吗？</h3><p>完全安全。所有 JSON 解析和转换在浏览器本地完成，数据不会上传到任何服务器。</p><h3 style="margin-top:20px;margin-bottom:8px">支持哪些 JSON 输入格式？</h3><p>支持 JSON 数组（推荐的输入格式）和 JSON 对象。工具会自动检测输入格式并相应处理。</p><h3 style="margin-top:20px;margin-bottom:8px">能处理中文列名吗？</h3><p>完全支持中文列名，无需额外配置。中文列名在 Excel 和 CSV 中均可正常显示。</p><h3 style="margin-top:20px;margin-bottom:8px">空值怎么处理？</h3><p>JSON 中缺失的字段在导出表格中显示为空单元格。null 值也会显示为空。</p><h3 style="margin-top:20px;margin-bottom:8px">可以在手机上使用吗？</h3><p>可以。工具响应式设计，在手机浏览器上也能正常使用。</p><h3 style="margin-top:20px;margin-bottom:8px">JSON 格式错误怎么办？</h3><p>工具会检测 JSON 格式错误并给出明确的错误提示，帮助您快速定位问题。</p><h3 style="margin-top:20px;margin-bottom:8px">最大行列数有限制吗？</h3><p>推荐不超过 10,000 行 x 100 列。超过建议范围时工具会给出性能警告。</p></section>
+<section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/json-to-csv" class="tool-card"><div class="icon">📊</div><h3>JSON 转 CSV</h3><p>将 JSON 数组或对象一键转换为 CSV 表格格式</p></a><a href="/tools/json-formatter" class="tool-card"><div class="icon">{ }</div><h3>JSON 格式化</h3><p>JSON 美化、压缩、校验，错误位置精准定位</p></a><a href="/tools/json-to-markdown" class="tool-card"><div class="icon">📋</div><h3>JSON 转 Markdown 表格</h3><p>将 JSON 数组/对象转换为 Markdown 格式表格，支持嵌套对象展开</p></a><a href="/tools/json-to-html" class="tool-card"><div class="icon">📊</div><h3>JSON 转 HTML 表格</h3><p>将 JSON 数据转换为美观的 HTML 表格，支持嵌套对象展开和排序</p></a><a href="/tools/csv-editor" class="tool-card"><div class="icon">📊</div><h3>CSV 在线编辑器</h3><p>在线编辑 CSV 数据——可视化表格编辑、增删行列、实时预览</p></a><a href="/tools/csv-to-json" class="tool-card"><div class="icon">🔄</div><h3>CSV ↔ JSON 互转</h3><p>CSV 数据转 JSON 格式，支持分隔符选择、表头配置、嵌套对象生成</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/json-to-excel.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>

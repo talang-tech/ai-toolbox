@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>JSON to Excel - JSON to Excel Converter - Free Online JSON to Spreadsheet Tool | AI Toolbox</title>
+<meta name="description" content="Free online json to excel. Convert JSON arrays/objects to Excel (.xlsx) or CSV format and download. Fast, secure, and works in your browser without downloading.">
+<meta name="keywords" content="json to excel, json to csv, json to spreadsheet, json export, json table, json converter, json to xlsx, online json to excel, json data export, json to csv converter, json to table, json to worksheet">
+<link rel="canonical" href="https://tools.talang.fun/en/tools/json-to-excel">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/json-to-excel">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/json-to-excel">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/json-to-excel">
+<meta property="og:title" content="JSON to Excel - JSON to Excel Converter - Free Online JSON to Spreadsheet Tool | AI Toolbox">
+<meta property="og:description" content="Free online json to excel. Convert JSON arrays/objects to Excel (.xlsx) or CSV format and download. Fast, secure, and works in your browser without downloading.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/en/tools/json-to-excel">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "JSON to Excel", "description": "Free online json to excel. Convert JSON arrays/objects to Excel (.xlsx) or CSV format and download. Fast, secure, and works in your browser without downloading.", "url": "https://tools.talang.fun/en/tools/json-to-excel", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "Convert JSON arrays/objects to Excel (.xlsx) or CSV format and download", "inLanguage": "en", "author": {"@type": "Organization", "name": "AI Toolbox"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/en/" class="logo"><span class="logo-icon">🛠️</span>AI Toolbox</a>
+    <nav class="nav">
+      <a href="/en/">Home</a>
+      <a href="/en/#tools">All Tools</a>
+      <a href="/en/blog/">Blog</a>
+      <a href="/en/about">About</a>
+      <a href="/en/sponsor">Sponsor</a>
+      <a href="https://tools.talang.fun/tools/json-to-excel" class="lang-switch">中文</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">📊</div>
+  <h1>JSON to Excel</h1>
+  <p>Convert JSON arrays/objects to Excel (.xlsx) or CSV format and download</p>
+</div>
+<div class="tool-panel">
+<div class="tool-controls" style="max-width:100%">
+  <div style="display:flex;flex-direction:column;gap:10px">
+    <textarea id="j2e-input" placeholder='Paste JSON data, e.g. [{ "name": "John", "age": 30 }, ...]' style="width:100%;min-height:200px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:Consolas,monospace;font-size:13px;background:var(--bg-card);color:var(--text);resize:vertical"></textarea>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+      <button class="btn btn-primary" id="j2e-convert">🔄 Convert</button>
+      <button class="btn btn-secondary" id="j2e-copy">📋 Copy</button>
+      <button class="btn btn-secondary" id="j2e-clear">🗑️ Clear</button>
+      <label style="margin-left:auto;font-size:13px;display:flex;align-items:center;gap:6px">
+        <span>Export:</span>
+        <select id="j2e-format" style="padding:4px 8px;border:1px solid var(--border);border-radius:4px;background:var(--bg-card);color:var(--text)">
+          <option value="csv">CSV</option>
+          <option value="xlsx">XLSX (Excel)</option>
+        </select>
+      </label>
+      <button class="btn btn-primary" id="j2e-download">⬇️ Download</button>
+    </div>
+    <div id="j2e-status" style="font-size:13px;color:var(--text-dim);min-height:20px"></div>
+    <div style="margin-bottom:4px"><label style="font-size:13px;font-weight:600">Preview (<span id="j2e-rows">0</span> rows x <span id="j2e-cols">0</span> cols)</label></div>
+    <div style="overflow-x:auto;border:1px solid var(--border);border-radius:6px;max-height:400px;overflow-y:auto">
+      <table id="j2e-table" style="width:100%;border-collapse:collapse;font-size:13px">
+        <thead id="j2e-thead"></thead>
+        <tbody id="j2e-tbody"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>About this tool</h2>
+  <p>Free online <strong>JSON to Excel converter</strong> — quickly convert JSON arrays/objects to Excel (.xlsx) format with one-click download. Handles nested JSON objects and arrays, automatically flattening them into table columns. Also supports CSV export for different workflow needs.</p><p>Perfect for <strong>data analysts</strong>, <strong>backend developers</strong>, <strong>API testers</strong>, and <strong>product managers</strong> who need to transform JSON data into spreadsheet format. All processing happens in your browser — your data never leaves your device.</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>Key Features</h2><ul><li>Supports JSON arrays and objects, auto-detects format</li><li>Auto-flattens nested JSON objects (e.g. user.name -> user_name)</li><li>Expands nested arrays into multiple rows</li><li>Export as Excel (.xlsx) or CSV format</li><li>Smart column ordering and data type inference</li><li>One-click copy to clipboard</li><li>100% client-side processing</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>Frequently Asked Questions</h2><h3 style="margin-top:20px;margin-bottom:8px">How large can the JSON file be?</h3><p>We recommend keeping JSON data under 10MB and under 10,000 rows for optimal browser performance. The tool will warn you if data exceeds these limits.</p><h3 style="margin-top:20px;margin-bottom:8px">How are nested JSON objects handled?</h3><p>Nested objects are automatically flattened. For example, {user: {name: 'John'}} becomes a user_name column. Nested arrays are expanded into multiple rows.</p><h3 style="margin-top:20px;margin-bottom:8px">Does it support XLSX or CSV export?</h3><p>Both formats are supported. XLSX preserves more formatting, while CSV offers broader compatibility.</p><h3 style="margin-top:20px;margin-bottom:8px">Is my data safe?</h3><p>Completely safe. All JSON parsing and conversion happens locally in your browser. Your data never leaves your device.</p><h3 style="margin-top:20px;margin-bottom:8px">What JSON formats are supported?</h3><p>Both JSON arrays (recommended) and JSON objects are supported. The tool auto-detects the input format.</p><h3 style="margin-top:20px;margin-bottom:8px">Can I use it on mobile?</h3><p>Yes. The tool is fully responsive and works on mobile browsers.</p><h3 style="margin-top:20px;margin-bottom:8px">What happens if the JSON is malformed?</h3><p>The tool detects JSON format errors and provides clear error messages to help you quickly identify the issue.</p><h3 style="margin-top:20px;margin-bottom:8px">Is there a row/column limit?</h3><p>We recommend staying under 10,000 rows x 100 columns. The tool will warn you if you exceed these limits.</p></section>
+<section class="related"><h3>Related Tools</h3><div class="tools-grid"><a href="/en/tools/json-to-csv" class="tool-card"><div class="icon">📊</div><h3>JSON to CSV Converter</h3><p>Convert JSON arrays or objects to CSV format in one click</p></a><a href="/en/tools/json-formatter" class="tool-card"><div class="icon">{ }</div><h3>JSON Formatter</h3><p>Beautify, minify, and validate JSON with precise error location</p></a><a href="/en/tools/json-to-markdown" class="tool-card"><div class="icon">📋</div><h3>JSON to Markdown Table</h3><p>Convert JSON arrays/objects into Markdown table format with nested object expansion</p></a><a href="/en/tools/json-to-html" class="tool-card"><div class="icon">📊</div><h3>JSON to HTML Table</h3><p>Convert JSON data into beautiful HTML tables with nested object expansion and sorting</p></a><a href="/en/tools/csv-editor" class="tool-card"><div class="icon">📊</div><h3>CSV Editor</h3><p>Edit CSV data online — visual table editor, add/remove rows/columns, live preview</p></a><a href="/en/tools/csv-to-json" class="tool-card"><div class="icon">🔄</div><h3>CSV to JSON Converter</h3><p>Convert CSV data to JSON with delimiter selection, header config, and nested object generation</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>Need a private toolbox or custom browser tool?</h2>
+  <p>AI Toolbox can be adapted for internal workflows, private deployment, sponsored categories, or custom privacy-first utilities.</p>
+  <p><a href="/en/sponsor" data-event="conversion_cta_click" data-label="en_partner_custom_tool_cta">View partnership and custom tool options →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/json-to-excel.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI Toolbox · Free online AI & developer tools · <a href='/en/about'>About</a> · <a href='/en/sponsor'>Sponsor</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('Copied!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>

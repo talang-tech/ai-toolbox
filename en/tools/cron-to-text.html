@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>Cron to Text - Cron to Text - Online Cron Expression to Human Readable Tool | AI Toolbox</title>
+<meta name="description" content="Free online cron to text. Translate Cron schedule expressions into human-readable natural language descriptions. Fast, secure, and works in your browser without downloading.">
+<meta name="keywords" content="cron to text, cron translator, cron expression explained, cron schedule description, cron to human, cron expression to english, cron meaning, cron description, cron explainer, cron schedule translator, cron expression converter, cron to readable, cron to natural language">
+<link rel="canonical" href="https://tools.talang.fun/en/tools/cron-to-text">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/cron-to-text">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/cron-to-text">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/cron-to-text">
+<meta property="og:title" content="Cron to Text - Cron to Text - Online Cron Expression to Human Readable Tool | AI Toolbox">
+<meta property="og:description" content="Free online cron to text. Translate Cron schedule expressions into human-readable natural language descriptions. Fast, secure, and works in your browser without downloading.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/en/tools/cron-to-text">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Cron to Text", "description": "Free online cron to text. Translate Cron schedule expressions into human-readable natural language descriptions. Fast, secure, and works in your browser without downloading.", "url": "https://tools.talang.fun/en/tools/cron-to-text", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "Translate Cron schedule expressions into human-readable natural language descriptions", "inLanguage": "en", "author": {"@type": "Organization", "name": "AI Toolbox"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/en/" class="logo"><span class="logo-icon">🛠️</span>AI Toolbox</a>
+    <nav class="nav">
+      <a href="/en/">Home</a>
+      <a href="/en/#tools">All Tools</a>
+      <a href="/en/blog/">Blog</a>
+      <a href="/en/about">About</a>
+      <a href="/en/sponsor">Sponsor</a>
+      <a href="https://tools.talang.fun/tools/cron-to-text" class="lang-switch">中文</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">📅</div>
+  <h1>Cron to Text</h1>
+  <p>Translate Cron schedule expressions into human-readable natural language descriptions</p>
+</div>
+<div class="tool-panel">
+<div class="tool-controls" style="max-width:100%">
+  <div style="display:flex;flex-direction:column;gap:12px">
+    <div>
+      <label style="font-size:13px;font-weight:600;display:block;margin-bottom:6px">Cron Expression</label>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+        <input type="text" id="ct-input" value="*/5 * * * *" placeholder="Enter Cron expression, e.g. */5 * * * *" style="flex:1;min-width:200px;padding:8px 10px;border:1px solid var(--border);border-radius:6px;font-family:Consolas,monospace;font-size:14px;background:var(--bg-card);color:var(--text)">
+        <button class="btn btn-primary" id="ct-translate">🔄 Translate</button>
+        <button class="btn btn-secondary" id="ct-copy">📋 Copy</button>
+        <button class="btn btn-secondary" id="ct-clear">🗑️ Clear</button>
+      </div>
+    </div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap">
+      <span class="btn btn-sm" style="font-size:12px;padding:4px 8px;cursor:pointer" data-example="*/5 * * * *">*/5 * * * *</span>
+      <span class="btn btn-sm" style="font-size:12px;padding:4px 8px;cursor:pointer" data-example="0 9 * * 1-5">0 9 * * 1-5</span>
+      <span class="btn btn-sm" style="font-size:12px;padding:4px 8px;cursor:pointer" data-example="0 0 1 * *">0 0 1 * *</span>
+      <span class="btn btn-sm" style="font-size:12px;padding:4px 8px;cursor:pointer" data-example="@daily">@daily</span>
+      <span class="btn btn-sm" style="font-size:12px;padding:4px 8px;cursor:pointer" data-example="0 0 * * 0">0 0 * * 0</span>
+    </div>
+    <div id="ct-status" style="font-size:13px;color:var(--text-dim);min-height:20px"></div>
+    <div>
+      <label style="font-size:13px;font-weight:600;display:block;margin-bottom:6px">Translation</label>
+      <div id="ct-result" style="padding:12px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card);color:var(--text);min-height:60px;font-size:14px;line-height:1.6"></div>
+    </div>
+    <div style="display:none" id="ct-detail">
+      <label style="font-size:13px;font-weight:600;display:block;margin-bottom:6px">Field Breakdown</label>
+      <div id="ct-fields" style="padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card);font-size:13px;font-family:Consolas,monospace;white-space:pre-wrap"></div>
+    </div>
+  </div>
+</div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>About this tool</h2>
+  <p>Free online <strong>Cron to Text translator</strong> — turn complex Cron schedule expressions into clear, human-readable natural language descriptions. Supports standard 5-field format and Linux special strings like @daily, @hourly, @reboot, plus 6-field (with seconds) and 7-field (with seconds and year) extended formats. Enter a Cron expression and get an instant plain-English description.</p><p>Perfect for <strong>backend developers</strong>, <strong>DevOps engineers</strong>, <strong>system administrators</strong>, and <strong>SREs</strong> who need to quickly understand or verify Cron expressions. All processing happens in your browser — no data leaves your device.</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>Key Features</h2><ul><li>Supports standard 5-field Cron format</li><li>Supports 6-field (with seconds) and 7-field (with seconds and year) extended formats</li><li>Supports Linux special strings: @yearly, @monthly, @weekly, @daily, @hourly, @reboot</li><li>Supports all Cron operators: *, /, -, ,, L, W, #, ?</li><li>Real-time translation as you type</li><li>One-click copy results</li><li>Quick-fill example expressions</li><li>100% client-side processing</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>Frequently Asked Questions</h2><h3 style="margin-top:20px;margin-bottom:8px">What are the 5 Cron fields?</h3><p>Minute(0-59), Hour(0-23), Day(1-31), Month(1-12), Weekday(0-7, both 0 and 7 represent Sunday).</p><h3 style="margin-top:20px;margin-bottom:8px">Does it support @reboot?</h3><p>Yes. @reboot means the task runs once at system startup.</p><h3 style="margin-top:20px;margin-bottom:8px">What is the difference between 6-field and 7-field formats?</h3><p>5 fields: Minute Hour Day Month Weekday; 6 fields: Second Minute Hour Day Month Weekday; 7 fields: Second Minute Hour Day Month Weekday Year.</p><h3 style="margin-top:20px;margin-bottom:8px">What do L and W mean?</h3><p>L means Last. L in day field = last day of month, L in weekday field = Saturday. W means nearest weekday, e.g. 15W = nearest weekday to the 15th.</p><h3 style="margin-top:20px;margin-bottom:8px">How does the # operator work?</h3><p># is used in the weekday field. For example, 3#2 means the second Wednesday of the month.</p><h3 style="margin-top:20px;margin-bottom:8px">Is my data safe?</h3><p>Completely safe. All Cron parsing and translation happens locally in your browser. No data leaves your device.</p><h3 style="margin-top:20px;margin-bottom:8px">Does it support Chinese output?</h3><p>Yes. The tool outputs descriptions in Chinese when the Chinese interface is selected, and English when the English interface is selected.</p><h3 style="margin-top:20px;margin-bottom:8px">What is the difference from Cron Parser?</h3><p>Cron Parser shows specific next execution times; Cron to Text translates the meaning of the expression into natural language. They complement each other.</p></section>
+<section class="related"><h3>Related Tools</h3><div class="tools-grid"><a href="/en/tools/cron-parser" class="tool-card"><div class="icon">⏰</div><h3>Cron Parser</h3><p>*/5 * * * * → show next 5 run times</p></a><a href="/en/tools/cron-generator" class="tool-card"><div class="icon">⏰</div><h3>Cron Expression Generator</h3><p>Generate cron expressions from common presets or friendly descriptions</p></a><a href="/en/tools/timestamp" class="tool-card"><div class="icon">⏱️</div><h3>Unix Timestamp Converter</h3><p>Convert between Unix timestamps (seconds/ms) and human-readable dates</p></a><a href="/en/tools/timestamp-converter" class="tool-card"><div class="icon">🔧</div><h3>Timestamp Converter</h3><p>Convert Unix timestamps to human-readable dates and vice versa. Support seconds, milliseconds, and microseconds. Multiple timezones support.</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>Need a private toolbox or custom browser tool?</h2>
+  <p>AI Toolbox can be adapted for internal workflows, private deployment, sponsored categories, or custom privacy-first utilities.</p>
+  <p><a href="/en/sponsor" data-event="conversion_cta_click" data-label="en_partner_custom_tool_cta">View partnership and custom tool options →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/cron-to-text.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI Toolbox · Free online AI & developer tools · <a href='/en/about'>About</a> · <a href='/en/sponsor'>Sponsor</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('Copied!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>

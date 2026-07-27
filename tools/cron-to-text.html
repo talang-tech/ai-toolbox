@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>Cron 表达式翻译 - Cron 表达式翻译 - 在线 Cron 转中文自然语言工具 | AI 工具盒子</title>
+<meta name="description" content="免费在线Cron 表达式翻译工具，将 Cron 定时表达式翻译为人类可读的自然语言描述。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="Cron翻译,Cron转文字,Cron表达式解释,Cron定时任务说明,Cron转中文,Cron表达式中文翻译,Cron五字段解析,Cron七字段解析,Cron描述,Cron说明,Cron在线翻译,Cron可视化,Cron表达式解读">
+<link rel="canonical" href="https://tools.talang.fun/tools/cron-to-text">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/cron-to-text">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/cron-to-text">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/cron-to-text">
+<meta property="og:title" content="Cron 表达式翻译 - Cron 表达式翻译 - 在线 Cron 转中文自然语言工具 | AI 工具盒子">
+<meta property="og:description" content="免费在线Cron 表达式翻译工具，将 Cron 定时表达式翻译为人类可读的自然语言描述。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/cron-to-text">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Cron 表达式翻译", "description": "免费在线Cron 表达式翻译工具，将 Cron 定时表达式翻译为人类可读的自然语言描述。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/cron-to-text", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "将 Cron 定时表达式翻译为人类可读的自然语言描述", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/tools/cron-to-text" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">📅</div>
+  <h1>Cron 表达式翻译</h1>
+  <p>将 Cron 定时表达式翻译为人类可读的自然语言描述</p>
+</div>
+<div class="tool-panel">
+<div class="tool-controls" style="max-width:100%">
+  <div style="display:flex;flex-direction:column;gap:12px">
+    <div>
+      <label style="font-size:13px;font-weight:600;display:block;margin-bottom:6px">Cron 表达式</label>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+        <input type="text" id="ct-input" value="*/5 * * * *" placeholder="输入 Cron 表达式，如 */5 * * * *" style="flex:1;min-width:200px;padding:8px 10px;border:1px solid var(--border);border-radius:6px;font-family:Consolas,monospace;font-size:14px;background:var(--bg-card);color:var(--text)">
+        <button class="btn btn-primary" id="ct-translate">🔄 翻译</button>
+        <button class="btn btn-secondary" id="ct-copy">📋 复制</button>
+        <button class="btn btn-secondary" id="ct-clear">🗑️ 清空</button>
+      </div>
+    </div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap">
+      <span class="btn btn-sm" style="font-size:12px;padding:4px 8px;cursor:pointer" data-example="*/5 * * * *">*/5 * * * *</span>
+      <span class="btn btn-sm" style="font-size:12px;padding:4px 8px;cursor:pointer" data-example="0 9 * * 1-5">0 9 * * 1-5</span>
+      <span class="btn btn-sm" style="font-size:12px;padding:4px 8px;cursor:pointer" data-example="0 0 1 * *">0 0 1 * *</span>
+      <span class="btn btn-sm" style="font-size:12px;padding:4px 8px;cursor:pointer" data-example="@daily">@daily</span>
+      <span class="btn btn-sm" style="font-size:12px;padding:4px 8px;cursor:pointer" data-example="0 0 * * 0">0 0 * * 0</span>
+    </div>
+    <div id="ct-status" style="font-size:13px;color:var(--text-dim);min-height:20px"></div>
+    <div>
+      <label style="font-size:13px;font-weight:600;display:block;margin-bottom:6px">翻译结果</label>
+      <div id="ct-result" style="padding:12px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card);color:var(--text);min-height:60px;font-size:14px;line-height:1.6"></div>
+    </div>
+    <div style="display:none" id="ct-detail">
+      <label style="font-size:13px;font-weight:600;display:block;margin-bottom:6px">字段解析</label>
+      <div id="ct-fields" style="padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card);font-size:13px;font-family:Consolas,monospace;white-space:pre-wrap"></div>
+    </div>
+  </div>
+</div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>免费的在线 <strong>Cron 表达式翻译工具</strong>，将复杂的 Cron 定时表达式转换为人类可读的自然语言描述。支持标准 5 字段格式和 Linux 特殊字符串（如 @daily、@hourly、@reboot），同时支持 6 字段（带秒）和 7 字段（带秒和年）扩展格式。输入 Cron 表达式，立即获得清晰的中文描述。</p><p>本工具适合 <strong>后端开发者</strong>、<strong>运维工程师</strong>、<strong>DevOps 工程师</strong>、<strong>系统管理员</strong> 等需要快速理解或验证 Cron 表达式的场景。所有处理在浏览器本地完成，无需网络请求，隐私安全有保障。</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>支持标准 5 字段 Cron 格式</li><li>支持 6 字段（含秒）和 7 字段（含秒和年）扩展格式</li><li>支持 Linux 特殊字符串：@yearly, @monthly, @weekly, @daily, @hourly, @reboot</li><li>支持所有 Cron 运算符：*, /, -, ,, L, W, #, ?</li><li>实时翻译，输入即出结果</li><li>一键复制翻译结果</li><li>示例表达式快速填充</li><li>完全本地处理，数据不上传</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">Cron 5 个字段分别代表什么？</h3><p>分钟(0-59)、小时(0-23)、日期(1-31)、月份(1-12)、星期(0-7，0和7都代表周日)。</p><h3 style="margin-top:20px;margin-bottom:8px">支持 @reboot 吗？</h3><p>支持。@reboot 表示系统启动时执行一次，翻译结果为'系统启动时运行'。</p><h3 style="margin-top:20px;margin-bottom:8px">6 字段和 7 字段格式的区别？</h3><p>5 字段：分 时 日 月 周；6 字段：秒 分 时 日 月 周；7 字段：秒 分 时 日 月 周 年。</p><h3 style="margin-top:20px;margin-bottom:8px">L 和 W 是什么意思？</h3><p>L 表示最后（Last），如 L 在日期字段表示当月最后一天，L 在星期字段表示周六。W 表示最近的工作日（Weekday），如 15W 表示 15 日最近的工作日。</p><h3 style="margin-top:20px;margin-bottom:8px"># 运算符怎么用？</h3><p># 用于星期字段，如 3#2 表示每月的第二个星期三。</p><h3 style="margin-top:20px;margin-bottom:8px">数据安全吗？</h3><p>完全安全。所有 Cron 解析和翻译在浏览器本地完成，无需网络请求，数据不会上传到任何服务器。</p><h3 style="margin-top:20px;margin-bottom:8px">支持中文输出吗？</h3><p>支持。中文界面下输出中文翻译，英文界面下输出英文翻译。</p><h3 style="margin-top:20px;margin-bottom:8px">和 Cron 解析器有什么区别？</h3><p>Cron 解析器显示具体的下次执行时间点；Cron 翻译器将表达式含义翻译成自然语言描述，两者互补使用。</p></section>
+<section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/cron-parser" class="tool-card"><div class="icon">⏰</div><h3>Cron 表达式解析</h3><p>*/5 * * * * → 显示接下来 5 次执行时间</p></a><a href="/tools/cron-generator" class="tool-card"><div class="icon">⏰</div><h3>Cron 表达式生成器</h3><p>通过常用预设或自然语言描述生成 Cron 表达式</p></a><a href="/tools/timestamp" class="tool-card"><div class="icon">⏱️</div><h3>Unix 时间戳转换</h3><p>秒级/毫秒级 Unix 时间戳与北京时间互转</p></a><a href="/tools/timestamp-converter" class="tool-card"><div class="icon">🔧</div><h3>时间戳转换</h3><p>Unix 时间戳与日期时间相互转换</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/cron-to-text.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>
