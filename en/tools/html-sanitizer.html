@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>HTML Sanitizer - HTML Sanitizer - Free Online XSS Protection & HTML Cleaner | AI Toolbox | AI Toolbox</title>
+<meta name="description" content="Free online html sanitizer. Safely sanitize HTML, remove XSS vectors and malicious scripts. Fast, secure, and works in your browser without downloading.">
+<meta name="keywords" content="HTML sanitizer, XSS protection, HTML cleaner, HTML filter, remove scripts, safe HTML, HTML security, cross-site scripting prevention">
+<link rel="canonical" href="https://tools.talang.fun/en/tools/html-sanitizer">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/html-sanitizer">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/html-sanitizer">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/html-sanitizer">
+<meta property="og:title" content="HTML Sanitizer - HTML Sanitizer - Free Online XSS Protection & HTML Cleaner | AI Toolbox | AI Toolbox">
+<meta property="og:description" content="Free online html sanitizer. Safely sanitize HTML, remove XSS vectors and malicious scripts. Fast, secure, and works in your browser without downloading.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/en/tools/html-sanitizer">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "HTML Sanitizer", "description": "Free online html sanitizer. Safely sanitize HTML, remove XSS vectors and malicious scripts. Fast, secure, and works in your browser without downloading.", "url": "https://tools.talang.fun/en/tools/html-sanitizer", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "Safely sanitize HTML, remove XSS vectors and malicious scripts", "inLanguage": "en", "author": {"@type": "Organization", "name": "AI Toolbox"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/en/" class="logo"><span class="logo-icon">🛠️</span>AI Toolbox</a>
+    <nav class="nav">
+      <a href="/en/">Home</a>
+      <a href="/en/#tools">All Tools</a>
+      <a href="/en/blog/">Blog</a>
+      <a href="/en/about">About</a>
+      <a href="/en/sponsor">Sponsor</a>
+      <a href="https://tools.talang.fun/tools/html-sanitizer" class="lang-switch">中文</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🛡️</div>
+  <h1>HTML Sanitizer</h1>
+  <p>Safely sanitize HTML, remove XSS vectors and malicious scripts</p>
+</div>
+<div class="tool-panel">
+<div class="tool-controls">
+<div style="margin-bottom:8px;display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+<button class="btn" id="hs-sanitize">🛡️ Sanitize HTML</button>
+<button class="btn btn-secondary" id="hs-copy">📋 Copy Result</button>
+<button class="btn btn-secondary" id="hs-clear">🗑️ Clear</button>
+<label style="display:flex;align-items:center;gap:4px;font-size:13px;margin-left:8px"><input type="radio" name="hs-mode" value="safe" checked> Safe</label>
+<label style="display:flex;align-items:center;gap:4px;font-size:13px"><input type="radio" name="hs-mode" value="strict"> Strict</label>
+</div>
+<div style="display:flex;gap:12px;flex-wrap:wrap">
+<div style="flex:1;min-width:300px">
+<label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px">HTML Input</label>
+<textarea id="hs-input" style="width:100%;min-height:350px;font-family:Consolas,monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card);resize:vertical" placeholder="Paste HTML code..."></textarea>
+</div>
+<div style="flex:1;min-width:300px">
+<label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px">Sanitized HTML</label>
+<textarea id="hs-output" readonly style="width:100%;min-height:350px;font-family:Consolas,monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-subtle);resize:vertical" placeholder="Sanitized HTML will appear here..."></textarea>
+</div>
+</div>
+<div id="hs-msg" style="margin-top:8px;font-size:13px"></div>
+<div style="margin-top:12px;padding:8px 12px;background:var(--bg-warning-light);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-dim)"><strong>🔒 Privacy</strong>: All processing is local. No HTML upload.</div>
+</div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>About this tool</h2>
+  <p>Free online HTML sanitizer tool. <strong>Safely clean HTML code by removing XSS vectors, malicious scripts, dangerous tags, and event handlers</strong>. Supports Safe mode (empties script content) and Strict mode (removes all unknown and script tags).</p><p>Whitelist-based approach ensures only safe HTML tags and attributes are allowed. All event handlers and javascript: protocol links are automatically removed.</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>Key Features</h2><ul><li>Remove XSS vectors (javascript:, data: and other dangerous protocols)</li><li>Remove all on* event handlers</li><li>Safe mode: preserve tag structure, empty script content</li><li>Strict mode: remove all unknown tags and script tags</li><li>Whitelist-based tag and attribute filtering</li><li>100% local processing, no HTML upload</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>Frequently Asked Questions</h2><h3 style="margin-top:20px;margin-bottom:8px">What is XSS?</h3><p>XSS (Cross-Site Scripting) is a security vulnerability where attackers inject malicious scripts into web pages. HTML sanitizer removes these.</p><h3 style="margin-top:20px;margin-bottom:8px">What is the difference between Safe and Strict mode?</h3><p>Safe mode empties script/style content but preserves tag structure. Strict mode completely removes unknown tags.</p><h3 style="margin-top:20px;margin-bottom:8px">Which HTML tags are supported?</h3><p>All standard safe HTML tags including headings, paragraphs, lists, tables, forms, media elements.</p><h3 style="margin-top:20px;margin-bottom:8px">Are style attributes removed?</h3><p>No. Legitimate style attributes are preserved, but all event handlers are removed.</p><h3 style="margin-top:20px;margin-bottom:8px">Is my data safe?</h3><p>Completely safe. All processing is done locally in your browser.</p><h3 style="margin-top:20px;margin-bottom:8px">What are common use cases?</h3><p>User input sanitization, rich text editor output filtering, HTML email security.</p></section>
+<section class="related"><h3>Related Tools</h3><div class="tools-grid"><a href="/en/tools/html-validator" class="tool-card"><div class="icon">🔍</div><h3>HTML Validator</h3><p>Check HTML tag nesting, duplicate IDs, deprecated tags, accessibility issues, and best practices</p></a><a href="/en/tools/html-minifier" class="tool-card"><div class="icon">🔧</div><h3>HTML Minifier/Beautifier</h3><p>HTML beautifier and minifier — format or compress markup with indentation control</p></a><a href="/en/tools/html-stripper" class="tool-card"><div class="icon">🧹</div><h3>HTML Tag Stripper</h3><p>Extract clean text from HTML - strip tags, decode entities</p></a><a href="/en/tools/html-encoder" class="tool-card"><div class="icon">🔧</div><h3>HTML Encoder</h3><p>Encode and decode HTML special characters. Prevent XSS attacks, display code examples, and safely embed HTML in text content.</p></a><a href="/en/tools/html-to-text" class="tool-card"><div class="icon">📄</div><h3>HTML to Text</h3><p>Extract clean plain text from HTML by removing tags and styles</p></a><a href="/en/tools/html-entity" class="tool-card"><div class="icon">🏷️</div><h3>HTML Entity Encoder/Decoder</h3><p>Encode/decode HTML entities: &lt; ↔ <, &copy; ↔ ©</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>Need a private toolbox or custom browser tool?</h2>
+  <p>AI Toolbox can be adapted for internal workflows, private deployment, sponsored categories, or custom privacy-first utilities.</p>
+  <p><a href="/en/sponsor" data-event="conversion_cta_click" data-label="en_partner_custom_tool_cta">View partnership and custom tool options →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/html-sanitizer.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI Toolbox · Free online AI & developer tools · <a href='/en/about'>About</a> · <a href='/en/sponsor'>Sponsor</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('Copied!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>

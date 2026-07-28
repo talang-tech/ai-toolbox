@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>ASCII Converter - ASCII Converter - Free Online Character Encoding Converter | AI Toolbox | AI Toolbox</title>
+<meta name="description" content="Free online ascii converter. Convert between ASCII characters, decimal, hex, binary, and HTML entities. Fast, secure, and works in your browser without downloading.">
+<meta name="keywords" content="ASCII converter, ASCII to decimal, ASCII to hex, ASCII to binary, character code, HTML entity, Unicode converter, char code, text encoding, online ASCII tool">
+<link rel="canonical" href="https://tools.talang.fun/en/tools/ascii-converter">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/ascii-converter">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/ascii-converter">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/ascii-converter">
+<meta property="og:title" content="ASCII Converter - ASCII Converter - Free Online Character Encoding Converter | AI Toolbox | AI Toolbox">
+<meta property="og:description" content="Free online ascii converter. Convert between ASCII characters, decimal, hex, binary, and HTML entities. Fast, secure, and works in your browser without downloading.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/en/tools/ascii-converter">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "ASCII Converter", "description": "Free online ascii converter. Convert between ASCII characters, decimal, hex, binary, and HTML entities. Fast, secure, and works in your browser without downloading.", "url": "https://tools.talang.fun/en/tools/ascii-converter", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "Convert between ASCII characters, decimal, hex, binary, and HTML entities", "inLanguage": "en", "author": {"@type": "Organization", "name": "AI Toolbox"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/en/" class="logo"><span class="logo-icon">🛠️</span>AI Toolbox</a>
+    <nav class="nav">
+      <a href="/en/">Home</a>
+      <a href="/en/#tools">All Tools</a>
+      <a href="/en/blog/">Blog</a>
+      <a href="/en/about">About</a>
+      <a href="/en/sponsor">Sponsor</a>
+      <a href="https://tools.talang.fun/tools/ascii-converter" class="lang-switch">中文</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🔤</div>
+  <h1>ASCII Converter</h1>
+  <p>Convert between ASCII characters, decimal, hex, binary, and HTML entities</p>
+</div>
+<div class="tool-panel">
+<div class="tool-controls" style="max-width:100%">
+  <div style="display:flex;flex-direction:column;gap:10px">
+    <div>
+      <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px">Input Text</label>
+      <textarea id="ac-input" placeholder="Enter text, ASCII codes, or escape sequences..." style="width:100%;min-height:80px;padding:8px 10px;border:1px solid var(--border);border-radius:6px;font-family:Consolas,monospace;font-size:14px;background:var(--bg-card);color:var(--text);resize:vertical"></textarea>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <button class="btn btn-secondary" id="ac-copy-dec">📋 Copy Decimal</button>
+      <button class="btn btn-secondary" id="ac-copy-hex">📋 Copy Hex</button>
+      <button class="btn btn-secondary" id="ac-copy-bin">📋 Copy Binary</button>
+      <button class="btn btn-secondary" id="ac-clear">🗑️ Clear</button>
+    </div>
+    <div id="ac-msg" style="font-size:13px;color:var(--text-dim);min-height:20px"></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+      <div>
+        <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px">Decimal</label>
+        <textarea id="ac-dec" readonly style="width:100%;min-height:60px;padding:8px 10px;border:1px solid var(--border);border-radius:6px;font-family:Consolas,monospace;font-size:13px;background:var(--bg-subtle);color:var(--text);resize:vertical"></textarea>
+      </div>
+      <div>
+        <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px">Hexadecimal</label>
+        <textarea id="ac-hex" readonly style="width:100%;min-height:60px;padding:8px 10px;border:1px solid var(--border);border-radius:6px;font-family:Consolas,monospace;font-size:13px;background:var(--bg-subtle);color:var(--text);resize:vertical"></textarea>
+      </div>
+      <div>
+        <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px">Binary</label>
+        <textarea id="ac-bin" readonly style="width:100%;min-height:60px;padding:8px 10px;border:1px solid var(--border);border-radius:6px;font-family:Consolas,monospace;font-size:13px;background:var(--bg-subtle);color:var(--text);resize:vertical"></textarea>
+      </div>
+      <div>
+        <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px">HTML Entity</label>
+        <textarea id="ac-html" readonly style="width:100%;min-height:60px;padding:8px 10px;border:1px solid var(--border);border-radius:6px;font-family:Consolas,monospace;font-size:13px;background:var(--bg-subtle);color:var(--text);resize:vertical"></textarea>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top:12px;padding:8px 12px;background:var(--bg-warning-light);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-dim)"><strong>🔒 Privacy</strong>: All processing is local. No data upload.</div>
+</div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>About this tool</h2>
+  <p>Free online ASCII converter tool. <strong>Bidirectionally convert between ASCII characters, decimal, hex, binary, and HTML entity encoding</strong>. Supports single characters and full text strings with real-time conversion.</p><p>Perfect for developers, designers, and network engineers who need to work with character codes. Supports the full ASCII 0-255 range (including extended ASCII) and \\uXXXX escape sequences. All processing is done locally in your browser.</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>Key Features</h2><ul><li>Convert between ASCII characters, decimal, hex, and binary</li><li>Batch conversion for full text strings</li><li>HTML entity encoding support (e.g. &lt; &gt; &amp;)</li><li>\\uXXXX escape sequence parsing</li><li>Real-time conversion as you type</li><li>Full ASCII 0-255 range (including extended ASCII)</li><li>100% local processing, no data upload</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>Frequently Asked Questions</h2><h3 style="margin-top:20px;margin-bottom:8px">What is ASCII?</h3><p>ASCII (American Standard Code for Information Interchange) is a character encoding standard that uses 7 or 8 bits to represent 128 or 256 characters including letters, digits, punctuation, and control characters.</p><h3 style="margin-top:20px;margin-bottom:8px">What's the difference between ASCII and Unicode?</h3><p>ASCII defines only 128 (or 256) characters for English. Unicode supports over 140,000 characters from virtually all languages. ASCII is a subset of Unicode.</p><h3 style="margin-top:20px;margin-bottom:8px">What is extended ASCII?</h3><p>Extended ASCII uses 8-bit encoding (0-255), adding 128 extra characters beyond standard ASCII (0-127), including special symbols, box-drawing characters, and accented letters.</p><h3 style="margin-top:20px;margin-bottom:8px">Does it support Chinese?</h3><p>This tool focuses on ASCII. For Chinese and other Unicode characters, please use the Unicode Converter tool.</p><h3 style="margin-top:20px;margin-bottom:8px">What are HTML entities?</h3><p>HTML entities use &amp;-prefixed sequences to represent special characters in HTML, like &lt; for < and &amp; for &.</p><h3 style="margin-top:20px;margin-bottom:8px">Is my data safe?</h3><p>Completely safe. All character encoding conversion is done locally in your browser.</p><h3 style="margin-top:20px;margin-bottom:8px">What is \\uXXXX escaping?</h3><p>\\uXXXX is a Unicode escape sequence used in JavaScript and JSON. \\u0041 represents 'A', \\u00A9 represents the copyright symbol ©, etc.</p></section>
+<section class="related"><h3>Related Tools</h3><div class="tools-grid"><a href="/en/tools/base64" class="tool-card"><div class="icon">🔣</div><h3>Base64 Encoder/Decoder</h3><p>Encode/decode Base64 strings and files, UTF-8 safe</p></a><a href="/en/tools/unicode-converter" class="tool-card"><div class="icon">🔤</div><h3>Unicode Converter</h3><p>Convert between Unicode encodings: \uXXXX, hex, decimal, HTML entities</p></a><a href="/en/tools/punycode-converter" class="tool-card"><div class="icon">🌐</div><h3>Punycode / IDN Converter</h3><p>Convert between Punycode and Unicode for internationalized domain names</p></a><a href="/en/tools/url-encoder" class="tool-card"><div class="icon">🔗</div><h3>URL Encoder/Decoder</h3><p>Encode/decode URLs, handle special characters and Unicode</p></a><a href="/en/tools/hash-generator" class="tool-card"><div class="icon">🔐</div><h3>Hash Generator</h3><p>Generate MD5, SHA-1, SHA-256, SHA-512 hash values</p></a><a href="/en/tools/rot13-cipher" class="tool-card"><div class="icon">🔄</div><h3>ROT13 / Caesar Cipher</h3><p>ROT13, ROT47, ROT5 text transformation, Caesar shift cipher</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>Need a private toolbox or custom browser tool?</h2>
+  <p>AI Toolbox can be adapted for internal workflows, private deployment, sponsored categories, or custom privacy-first utilities.</p>
+  <p><a href="/en/sponsor" data-event="conversion_cta_click" data-label="en_partner_custom_tool_cta">View partnership and custom tool options →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/ascii-converter.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI Toolbox · Free online AI & developer tools · <a href='/en/about'>About</a> · <a href='/en/sponsor'>Sponsor</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('Copied!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>

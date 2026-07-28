@@ -108,7 +108,8 @@
           "css-property-reference",
           "ip-lookup",
           "xpath-evaluator",
-          "css-to-tailwind"
+          "css-to-tailwind",
+          "css-media-query-generator"
         ]
       },
       "encode": {
@@ -121,7 +122,8 @@
           "punycode-converter",
           "rot13-cipher",
           "url-encoder",
-          "unicode-converter"
+          "unicode-converter",
+          "ascii-converter"
         ]
       },
       "generate": {
@@ -10655,6 +10657,410 @@
       ],
       "ui_zh": "<div class=\"tool-controls\" style=\"max-width:100%\">\n  <div style=\"display:flex;flex-direction:column;gap:12px\">\n    <div>\n      <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:6px\">Cron 表达式</label>\n      <div style=\"display:flex;gap:8px;flex-wrap:wrap;align-items:center\">\n        <input type=\"text\" id=\"ct-input\" value=\"*/5 * * * *\" placeholder=\"输入 Cron 表达式，如 */5 * * * *\" style=\"flex:1;min-width:200px;padding:8px 10px;border:1px solid var(--border);border-radius:6px;font-family:Consolas,monospace;font-size:14px;background:var(--bg-card);color:var(--text)\">\n        <button class=\"btn btn-primary\" id=\"ct-translate\">🔄 翻译</button>\n        <button class=\"btn btn-secondary\" id=\"ct-copy\">📋 复制</button>\n        <button class=\"btn btn-secondary\" id=\"ct-clear\">🗑️ 清空</button>\n      </div>\n    </div>\n    <div style=\"display:flex;gap:6px;flex-wrap:wrap\">\n      <span class=\"btn btn-sm\" style=\"font-size:12px;padding:4px 8px;cursor:pointer\" data-example=\"*/5 * * * *\">*/5 * * * *</span>\n      <span class=\"btn btn-sm\" style=\"font-size:12px;padding:4px 8px;cursor:pointer\" data-example=\"0 9 * * 1-5\">0 9 * * 1-5</span>\n      <span class=\"btn btn-sm\" style=\"font-size:12px;padding:4px 8px;cursor:pointer\" data-example=\"0 0 1 * *\">0 0 1 * *</span>\n      <span class=\"btn btn-sm\" style=\"font-size:12px;padding:4px 8px;cursor:pointer\" data-example=\"@daily\">@daily</span>\n      <span class=\"btn btn-sm\" style=\"font-size:12px;padding:4px 8px;cursor:pointer\" data-example=\"0 0 * * 0\">0 0 * * 0</span>\n    </div>\n    <div id=\"ct-status\" style=\"font-size:13px;color:var(--text-dim);min-height:20px\"></div>\n    <div>\n      <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:6px\">翻译结果</label>\n      <div id=\"ct-result\" style=\"padding:12px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card);color:var(--text);min-height:60px;font-size:14px;line-height:1.6\"></div>\n    </div>\n    <div style=\"display:none\" id=\"ct-detail\">\n      <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:6px\">字段解析</label>\n      <div id=\"ct-fields\" style=\"padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card);font-size:13px;font-family:Consolas,monospace;white-space:pre-wrap\"></div>\n    </div>\n  </div>\n</div>",
       "ui_en": "<div class=\"tool-controls\" style=\"max-width:100%\">\n  <div style=\"display:flex;flex-direction:column;gap:12px\">\n    <div>\n      <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:6px\">Cron Expression</label>\n      <div style=\"display:flex;gap:8px;flex-wrap:wrap;align-items:center\">\n        <input type=\"text\" id=\"ct-input\" value=\"*/5 * * * *\" placeholder=\"Enter Cron expression, e.g. */5 * * * *\" style=\"flex:1;min-width:200px;padding:8px 10px;border:1px solid var(--border);border-radius:6px;font-family:Consolas,monospace;font-size:14px;background:var(--bg-card);color:var(--text)\">\n        <button class=\"btn btn-primary\" id=\"ct-translate\">🔄 Translate</button>\n        <button class=\"btn btn-secondary\" id=\"ct-copy\">📋 Copy</button>\n        <button class=\"btn btn-secondary\" id=\"ct-clear\">🗑️ Clear</button>\n      </div>\n    </div>\n    <div style=\"display:flex;gap:6px;flex-wrap:wrap\">\n      <span class=\"btn btn-sm\" style=\"font-size:12px;padding:4px 8px;cursor:pointer\" data-example=\"*/5 * * * *\">*/5 * * * *</span>\n      <span class=\"btn btn-sm\" style=\"font-size:12px;padding:4px 8px;cursor:pointer\" data-example=\"0 9 * * 1-5\">0 9 * * 1-5</span>\n      <span class=\"btn btn-sm\" style=\"font-size:12px;padding:4px 8px;cursor:pointer\" data-example=\"0 0 1 * *\">0 0 1 * *</span>\n      <span class=\"btn btn-sm\" style=\"font-size:12px;padding:4px 8px;cursor:pointer\" data-example=\"@daily\">@daily</span>\n      <span class=\"btn btn-sm\" style=\"font-size:12px;padding:4px 8px;cursor:pointer\" data-example=\"0 0 * * 0\">0 0 * * 0</span>\n    </div>\n    <div id=\"ct-status\" style=\"font-size:13px;color:var(--text-dim);min-height:20px\"></div>\n    <div>\n      <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:6px\">Translation</label>\n      <div id=\"ct-result\" style=\"padding:12px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card);color:var(--text);min-height:60px;font-size:14px;line-height:1.6\"></div>\n    </div>\n    <div style=\"display:none\" id=\"ct-detail\">\n      <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:6px\">Field Breakdown</label>\n      <div id=\"ct-fields\" style=\"padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card);font-size:13px;font-family:Consolas,monospace;white-space:pre-wrap\"></div>\n    </div>\n  </div>\n</div>"
+    },
+    {
+      "slug": "css-prefixer",
+      "category": "dev",
+      "icon": "🎨",
+      "name_zh": "CSS 前缀添加器",
+      "name_en": "CSS Prefixer",
+      "short_zh": "为 CSS 属性自动添加 -webkit-、-moz-、-ms-、-o- 浏览器前缀",
+      "short_en": "Auto-add vendor prefixes to CSS properties",
+      "keywords_zh": "CSS前缀,浏览器前缀,webkit,moz,ms,o,CSS兼容,浏览器兼容,css3前缀,自动添加前缀,autoprefixer,前端兼容,跨浏览器css",
+      "keywords_en": "CSS prefix, vendor prefix, autoprefixer, webkit prefix, moz prefix, ms prefix, o prefix, CSS compatibility, cross-browser CSS, CSS3 prefix",
+      "index": 139,
+      "related": [
+        "css-minifier",
+        "css-validator",
+        "css-inliner",
+        "css-filter-generator",
+        "css-gradient-generator",
+        "css-animation"
+      ],
+      "long_zh": "<p>免费的在线 CSS 浏览器前缀添加器。<strong>自动为 CSS 属性添加 -webkit-、-moz-、-ms-、-o- 浏览器供应商前缀</strong>，确保 CSS3 新特性（如 transform、animation、transition、flexbox、grid、mask、filter 等）在旧版浏览器中正常工作。</p><p>支持 60+ 常见需要前缀的 CSS 属性，支持 @keyframes 规则前缀化，支持 gradient 等函数值前缀化。所有处理在浏览器本地完成，CSS 代码不会上传到服务器。</p>",
+      "long_en": "<p>Free online CSS vendor prefixer tool. <strong>Automatically add -webkit-, -moz-, -ms-, -o- vendor prefixes</strong> to CSS properties, ensuring CSS3 features work in older browsers.</p><p>Supports 60+ commonly prefixed CSS properties, @keyframes rule prefixing, and gradient function value prefixing. All processing is done locally in your browser.</p>",
+      "seo_title_zh": "CSS 前缀添加器 | 在线 CSS 浏览器前缀自动生成工具",
+      "seo_title_en": "CSS Prefixer - Free Online Vendor Prefix Generator | AI Toolbox",
+      "features_zh": [
+        "自动添加 -webkit-、-moz-、-ms-、-o- 浏览器前缀",
+        "支持 transform、animation、transition 等 60+ CSS 属性",
+        "支持 @keyframes 规则前缀化",
+        "支持 gradient 函数值前缀处理",
+        "支持 flexbox、grid 等布局属性前缀",
+        "完全本地处理，CSS 代码不上传服务器"
+      ],
+      "features_en": [
+        "Auto-add -webkit-, -moz-, -ms-, -o- vendor prefixes",
+        "Supports 60+ CSS properties including transform, animation, transition",
+        "Supports @keyframes rule prefixing",
+        "Supports gradient function value prefixing",
+        "Supports flexbox, grid layout property prefixes",
+        "100% local processing, no CSS upload"
+      ],
+      "faq_zh": [
+        [
+          "为什么要添加 CSS 浏览器前缀？",
+          "不同浏览器引擎对 CSS3 新特性的实现阶段不同，需要添加供应商前缀来确保兼容性。"
+        ],
+        [
+          "支持哪些 CSS 属性？",
+          "支持 transform、animation、transition、flexbox、grid、mask、filter 等 60+ 属性。"
+        ],
+        [
+          "支持 @keyframes 吗？",
+          "支持。@keyframes 规则会自动生成 -webkit-、-moz-、-o- 前缀版本。"
+        ],
+        [
+          "支持 gradient 值前缀吗？",
+          "支持。linear-gradient、radial-gradient、conic-gradient 等函数值会自动添加 -webkit- 前缀。"
+        ],
+        [
+          "数据安全吗？",
+          "完全安全。所有 CSS 处理在浏览器本地完成，代码不会上传到服务器。"
+        ],
+        [
+          "和 Autoprefixer 有什么区别？",
+          "功能类似，但本工具完全在浏览器本地运行，无需安装任何软件或依赖。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "Why add vendor prefixes?",
+          "Different browser engines implement CSS3 features at different stages. Vendor prefixes ensure compatibility across older browsers."
+        ],
+        [
+          "Which CSS properties are supported?",
+          "60+ properties including transform, animation, transition, flexbox, grid, mask, filter."
+        ],
+        [
+          "Does it support @keyframes?",
+          "Yes. @keyframes rules are automatically prefixed with vendor prefixes."
+        ],
+        [
+          "Does it support gradient values?",
+          "Yes. Functions like linear-gradient, radial-gradient get -webkit- prefix."
+        ],
+        [
+          "Is my data safe?",
+          "Completely safe. All CSS processing is done locally in your browser."
+        ],
+        [
+          "How is this different from Autoprefixer?",
+          "Similar functionality but runs entirely in the browser - no installation needed."
+        ]
+      ],
+      "ui_zh": "<div class=\"tool-controls\">\n<div style=\"margin-bottom:8px;display:flex;gap:8px;flex-wrap:wrap\">\n<button class=\"btn\" id=\"cp-prefix\">🔧 添加前缀</button>\n<button class=\"btn btn-secondary\" id=\"cp-copy\">📋 复制结果</button>\n<button class=\"btn btn-secondary\" id=\"cp-clear\">🗑️ 清空</button>\n</div>\n<div style=\"display:flex;gap:12px;flex-wrap:wrap\">\n<div style=\"flex:1;min-width:300px\">\n<label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">CSS 输入</label>\n<textarea id=\"cp-input\" style=\"width:100%;min-height:350px;font-family:Consolas,monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card);resize:vertical\" placeholder=\"粘贴 CSS 代码...\"></textarea>\n</div>\n<div style=\"flex:1;min-width:300px\">\n<label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">添加前缀后的 CSS</label>\n<textarea id=\"cp-output\" readonly style=\"width:100%;min-height:350px;font-family:Consolas,monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-subtle);resize:vertical\" placeholder=\"前缀添加后的 CSS 将显示在这里...\"></textarea>\n</div>\n</div>\n<div id=\"cp-msg\" style=\"margin-top:8px;font-size:13px\"></div>\n<div style=\"margin-top:12px;padding:8px 12px;background:var(--bg-warning-light);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-dim)\"><strong>🔒 隐私提示</strong>：所有处理在浏览器本地完成，CSS 代码不会上传到服务器。</div>\n</div>",
+      "ui_en": "<div class=\"tool-controls\">\n<div style=\"margin-bottom:8px;display:flex;gap:8px;flex-wrap:wrap\">\n<button class=\"btn\" id=\"cp-prefix\">🔧 Add Prefixes</button>\n<button class=\"btn btn-secondary\" id=\"cp-copy\">📋 Copy Result</button>\n<button class=\"btn btn-secondary\" id=\"cp-clear\">🗑️ Clear</button>\n</div>\n<div style=\"display:flex;gap:12px;flex-wrap:wrap\">\n<div style=\"flex:1;min-width:300px\">\n<label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">CSS Input</label>\n<textarea id=\"cp-input\" style=\"width:100%;min-height:350px;font-family:Consolas,monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card);resize:vertical\" placeholder=\"Paste CSS code...\"></textarea>\n</div>\n<div style=\"flex:1;min-width:300px\">\n<label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">Prefixed CSS</label>\n<textarea id=\"cp-output\" readonly style=\"width:100%;min-height:350px;font-family:Consolas,monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-subtle);resize:vertical\" placeholder=\"Prefixed CSS will appear here...\"></textarea>\n</div>\n</div>\n<div id=\"cp-msg\" style=\"margin-top:8px;font-size:13px\"></div>\n<div style=\"margin-top:12px;padding:8px 12px;background:var(--bg-warning-light);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-dim)\"><strong>🔒 Privacy</strong>: All processing is local. No CSS upload.</div>\n</div>"
+    },
+    {
+      "slug": "html-sanitizer",
+      "category": "dev",
+      "icon": "🛡️",
+      "name_zh": "HTML 净化器",
+      "name_en": "HTML Sanitizer",
+      "short_zh": "安全地清洗 HTML 代码，移除 XSS 攻击向量、恶意脚本和危险标签",
+      "short_en": "Safely sanitize HTML, remove XSS vectors and malicious scripts",
+      "keywords_zh": "HTML净化,XSS防护,跨站脚本防护,HTML清洗,HTML安全,过滤HTML,移除脚本,安全HTML,输入净化,前端安全,web安全",
+      "keywords_en": "HTML sanitizer, XSS protection, HTML cleaner, HTML filter, remove scripts, safe HTML, HTML security, cross-site scripting prevention",
+      "index": 140,
+      "related": [
+        "html-validator",
+        "html-minifier",
+        "html-stripper",
+        "html-encoder",
+        "html-to-text",
+        "html-entity"
+      ],
+      "long_zh": "<p>免费的在线 HTML 净化器。<strong>安全地清洗 HTML 代码，移除 XSS（跨站脚本）攻击向量、恶意脚本、危险标签和事件处理器</strong>。支持两种模式：安全模式（清空脚本内容但保留标签结构）和严格模式（移除所有未知标签和脚本标签）。</p><p>基于白名单机制，只允许安全的 HTML 标签和属性，自动移除所有 on* 事件处理器、javascript: 协议链接等 XSS 向量。所有处理在浏览器本地完成，HTML 代码不会上传到服务器。</p>",
+      "long_en": "<p>Free online HTML sanitizer tool. <strong>Safely clean HTML code by removing XSS vectors, malicious scripts, dangerous tags, and event handlers</strong>. Supports Safe mode (empties script content) and Strict mode (removes all unknown and script tags).</p><p>Whitelist-based approach ensures only safe HTML tags and attributes are allowed. All event handlers and javascript: protocol links are automatically removed.</p>",
+      "seo_title_zh": "HTML 净化器 | 在线 XSS 防护 HTML 安全清洗工具",
+      "seo_title_en": "HTML Sanitizer - Free Online XSS Protection & HTML Cleaner | AI Toolbox",
+      "features_zh": [
+        "移除 XSS 攻击向量（javascript:、data: 等危险协议）",
+        "移除所有 on* 事件处理器（onclick、onload、onsubmit 等）",
+        "安全模式：保留标签结构，清空脚本内容",
+        "严格模式：移除所有未知标签和脚本标签",
+        "基于白名单的标签和属性过滤",
+        "完全本地处理，HTML 代码不上传服务器"
+      ],
+      "features_en": [
+        "Remove XSS vectors (javascript:, data: and other dangerous protocols)",
+        "Remove all on* event handlers",
+        "Safe mode: preserve tag structure, empty script content",
+        "Strict mode: remove all unknown tags and script tags",
+        "Whitelist-based tag and attribute filtering",
+        "100% local processing, no HTML upload"
+      ],
+      "faq_zh": [
+        [
+          "什么是 XSS 攻击？",
+          "XSS（跨站脚本攻击）是攻击者通过注入恶意脚本到网页中来窃取用户数据或劫持会话的攻击方式。HTML 净化器可以移除这些恶意代码。"
+        ],
+        [
+          "安全模式和严格模式有什么区别？",
+          "安全模式会清空脚本和样式的内容但保留标签本身。严格模式会完全移除所有未知和危险的标签。"
+        ],
+        [
+          "支持哪些 HTML 标签？",
+          "支持所有标准的安全 HTML 标签，包括标题、段落、列表、表格、表单、媒体元素等。"
+        ],
+        [
+          "会移除 style 属性吗？",
+          "不会。合法的 style 属性会被保留，但所有 on* 事件处理器都会被移除。"
+        ],
+        [
+          "数据安全吗？",
+          "完全安全。所有处理在浏览器本地完成，HTML 代码不会上传到服务器。"
+        ],
+        [
+          "适合什么场景使用？",
+          "适合用户输入内容展示前的安全清洗、富文本编辑器输出过滤、HTML 邮件内容安全处理等场景。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "What is XSS?",
+          "XSS (Cross-Site Scripting) is a security vulnerability where attackers inject malicious scripts into web pages. HTML sanitizer removes these."
+        ],
+        [
+          "What is the difference between Safe and Strict mode?",
+          "Safe mode empties script/style content but preserves tag structure. Strict mode completely removes unknown tags."
+        ],
+        [
+          "Which HTML tags are supported?",
+          "All standard safe HTML tags including headings, paragraphs, lists, tables, forms, media elements."
+        ],
+        [
+          "Are style attributes removed?",
+          "No. Legitimate style attributes are preserved, but all event handlers are removed."
+        ],
+        [
+          "Is my data safe?",
+          "Completely safe. All processing is done locally in your browser."
+        ],
+        [
+          "What are common use cases?",
+          "User input sanitization, rich text editor output filtering, HTML email security."
+        ]
+      ],
+      "ui_zh": "<div class=\"tool-controls\">\n<div style=\"margin-bottom:8px;display:flex;gap:8px;flex-wrap:wrap;align-items:center\">\n<button class=\"btn\" id=\"hs-sanitize\">🛡️ 净化 HTML</button>\n<button class=\"btn btn-secondary\" id=\"hs-copy\">📋 复制结果</button>\n<button class=\"btn btn-secondary\" id=\"hs-clear\">🗑️ 清空</button>\n<label style=\"display:flex;align-items:center;gap:4px;font-size:13px;margin-left:8px\"><input type=\"radio\" name=\"hs-mode\" value=\"safe\" checked> 安全模式</label>\n<label style=\"display:flex;align-items:center;gap:4px;font-size:13px\"><input type=\"radio\" name=\"hs-mode\" value=\"strict\"> 严格模式</label>\n</div>\n<div style=\"display:flex;gap:12px;flex-wrap:wrap\">\n<div style=\"flex:1;min-width:300px\">\n<label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">HTML 输入</label>\n<textarea id=\"hs-input\" style=\"width:100%;min-height:350px;font-family:Consolas,monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card);resize:vertical\" placeholder=\"粘贴 HTML 代码...\"></textarea>\n</div>\n<div style=\"flex:1;min-width:300px\">\n<label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">净化后的 HTML</label>\n<textarea id=\"hs-output\" readonly style=\"width:100%;min-height:350px;font-family:Consolas,monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-subtle);resize:vertical\" placeholder=\"净化后的 HTML 将显示在这里...\"></textarea>\n</div>\n</div>\n<div id=\"hs-msg\" style=\"margin-top:8px;font-size:13px\"></div>\n<div style=\"margin-top:12px;padding:8px 12px;background:var(--bg-warning-light);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-dim)\"><strong>🔒 隐私提示</strong>：所有处理在浏览器本地完成，HTML 代码不会上传到服务器。</div>\n</div>",
+      "ui_en": "<div class=\"tool-controls\">\n<div style=\"margin-bottom:8px;display:flex;gap:8px;flex-wrap:wrap;align-items:center\">\n<button class=\"btn\" id=\"hs-sanitize\">🛡️ Sanitize HTML</button>\n<button class=\"btn btn-secondary\" id=\"hs-copy\">📋 Copy Result</button>\n<button class=\"btn btn-secondary\" id=\"hs-clear\">🗑️ Clear</button>\n<label style=\"display:flex;align-items:center;gap:4px;font-size:13px;margin-left:8px\"><input type=\"radio\" name=\"hs-mode\" value=\"safe\" checked> Safe</label>\n<label style=\"display:flex;align-items:center;gap:4px;font-size:13px\"><input type=\"radio\" name=\"hs-mode\" value=\"strict\"> Strict</label>\n</div>\n<div style=\"display:flex;gap:12px;flex-wrap:wrap\">\n<div style=\"flex:1;min-width:300px\">\n<label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">HTML Input</label>\n<textarea id=\"hs-input\" style=\"width:100%;min-height:350px;font-family:Consolas,monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card);resize:vertical\" placeholder=\"Paste HTML code...\"></textarea>\n</div>\n<div style=\"flex:1;min-width:300px\">\n<label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">Sanitized HTML</label>\n<textarea id=\"hs-output\" readonly style=\"width:100%;min-height:350px;font-family:Consolas,monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-subtle);resize:vertical\" placeholder=\"Sanitized HTML will appear here...\"></textarea>\n</div>\n</div>\n<div id=\"hs-msg\" style=\"margin-top:8px;font-size:13px\"></div>\n<div style=\"margin-top:12px;padding:8px 12px;background:var(--bg-warning-light);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-dim)\"><strong>🔒 Privacy</strong>: All processing is local. No HTML upload.</div>\n</div>"
+    },
+    {
+      "slug": "ascii-converter",
+      "category": "encode",
+      "icon": "🔤",
+      "name_zh": "ASCII 转换器",
+      "name_en": "ASCII Converter",
+      "short_zh": "在 ASCII 字符、十进制、十六进制、二进制之间自由转换，支持 HTML 实体编码",
+      "short_en": "Convert between ASCII characters, decimal, hex, binary, and HTML entities",
+      "keywords_zh": "ASCII,ASCII转换,字符编码,十进制转ASCII,十六进制转ASCII,二进制转ASCII,ASCII码表,字符转换,Unicode,字符代码,在线ASCII工具,HTML实体编码,字符转义",
+      "keywords_en": "ASCII converter, ASCII to decimal, ASCII to hex, ASCII to binary, character code, HTML entity, Unicode converter, char code, text encoding, online ASCII tool",
+      "index": 141,
+      "related": [
+        "base64",
+        "unicode-converter",
+        "punycode-converter",
+        "url-encoder",
+        "hash-generator",
+        "rot13-cipher"
+      ],
+      "long_zh": "<p>免费的在线 ASCII 转换工具。<strong>在 ASCII 字符、十进制、十六进制、二进制和 HTML 实体编码之间进行双向转换</strong>。支持单个字符和完整文本字符串，实时转换，无需点击按钮。</p><p>适用于需要处理字符编码的开发者、设计师和网络工程师。支持 ASCII 0-255 的完整范围（包括扩展 ASCII），支持 \\\\uXXXX 转义序列。所有处理在浏览器本地完成，数据不会上传到服务器。</p>",
+      "long_en": "<p>Free online ASCII converter tool. <strong>Bidirectionally convert between ASCII characters, decimal, hex, binary, and HTML entity encoding</strong>. Supports single characters and full text strings with real-time conversion.</p><p>Perfect for developers, designers, and network engineers who need to work with character codes. Supports the full ASCII 0-255 range (including extended ASCII) and \\\\uXXXX escape sequences. All processing is done locally in your browser.</p>",
+      "seo_title_zh": "ASCII 转换器 | 在线字符编码转换工具 - ASCII/十进制/十六进制/二进制互转",
+      "seo_title_en": "ASCII Converter - Free Online Character Encoding Converter | AI Toolbox",
+      "features_zh": [
+        "ASCII 字符与十进制、十六进制、二进制互转",
+        "支持完整文本字符串的批量转换",
+        "支持 HTML 实体编码（如 &lt; &gt; &amp;）",
+        "支持 \\\\uXXXX 转义序列解析",
+        "输入即转换，实时显示结果",
+        "支持 ASCII 0-255 完整范围（含扩展 ASCII）",
+        "完全本地处理，数据不上传服务器"
+      ],
+      "features_en": [
+        "Convert between ASCII characters, decimal, hex, and binary",
+        "Batch conversion for full text strings",
+        "HTML entity encoding support (e.g. &lt; &gt; &amp;)",
+        "\\\\uXXXX escape sequence parsing",
+        "Real-time conversion as you type",
+        "Full ASCII 0-255 range (including extended ASCII)",
+        "100% local processing, no data upload"
+      ],
+      "faq_zh": [
+        [
+          "什么是 ASCII？",
+          "ASCII（American Standard Code for Information Interchange）是美国信息交换标准代码，用 7 位或 8 位二进制数字表示 128 或 256 个字符，包括英文字母、数字、标点符号和控制字符。"
+        ],
+        [
+          "ASCII 和 Unicode 有什么区别？",
+          "ASCII 只定义了 128 或 256 个字符，主要用于英文。Unicode 支持全球几乎所有语言的字符，包含超过 14 万个字符。ASCII 是 Unicode 的一个子集。"
+        ],
+        [
+          "什么是扩展 ASCII？",
+          "扩展 ASCII 使用 8 位编码（0-255），在标准 ASCII（0-127）基础上增加了 128 个额外字符，包括特殊符号、制表符和外来字母。"
+        ],
+        [
+          "支持中文吗？",
+          "本工具专注于 ASCII 字符集。中文等 Unicode 字符请使用 Unicode 转换器工具。"
+        ],
+        [
+          "HTML 实体编码是什么？",
+          "HTML 实体编码用 &amp; 开头的特殊序列表示 HTML 中的特殊字符，如 &lt; 表示小于号 <，&amp; 表示 & 符号。"
+        ],
+        [
+          "数据安全吗？",
+          "完全安全。所有字符编码转换在浏览器本地完成，数据不会上传到服务器。"
+        ],
+        [
+          "\\\\uXXXX 转义是什么？",
+          "\\\\uXXXX 是 JavaScript 和 JSON 中使用的 Unicode 转义序列，\\\\u0041 表示 'A'，\\\\u00A9 表示版权符号 ©，等等。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "What is ASCII?",
+          "ASCII (American Standard Code for Information Interchange) is a character encoding standard that uses 7 or 8 bits to represent 128 or 256 characters including letters, digits, punctuation, and control characters."
+        ],
+        [
+          "What's the difference between ASCII and Unicode?",
+          "ASCII defines only 128 (or 256) characters for English. Unicode supports over 140,000 characters from virtually all languages. ASCII is a subset of Unicode."
+        ],
+        [
+          "What is extended ASCII?",
+          "Extended ASCII uses 8-bit encoding (0-255), adding 128 extra characters beyond standard ASCII (0-127), including special symbols, box-drawing characters, and accented letters."
+        ],
+        [
+          "Does it support Chinese?",
+          "This tool focuses on ASCII. For Chinese and other Unicode characters, please use the Unicode Converter tool."
+        ],
+        [
+          "What are HTML entities?",
+          "HTML entities use &amp;-prefixed sequences to represent special characters in HTML, like &lt; for < and &amp; for &."
+        ],
+        [
+          "Is my data safe?",
+          "Completely safe. All character encoding conversion is done locally in your browser."
+        ],
+        [
+          "What is \\\\uXXXX escaping?",
+          "\\\\uXXXX is a Unicode escape sequence used in JavaScript and JSON. \\\\u0041 represents 'A', \\\\u00A9 represents the copyright symbol ©, etc."
+        ]
+      ],
+      "ui_zh": "<div class=\"tool-controls\" style=\"max-width:100%\">\n  <div style=\"display:flex;flex-direction:column;gap:10px\">\n    <div>\n      <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">输入文本</label>\n      <textarea id=\"ac-input\" placeholder=\"输入文本、ASCII 码或转义序列...\" style=\"width:100%;min-height:80px;padding:8px 10px;border:1px solid var(--border);border-radius:6px;font-family:Consolas,monospace;font-size:14px;background:var(--bg-card);color:var(--text);resize:vertical\"></textarea>\n    </div>\n    <div style=\"display:flex;gap:8px;flex-wrap:wrap\">\n      <button class=\"btn btn-secondary\" id=\"ac-copy-dec\">📋 复制十进制</button>\n      <button class=\"btn btn-secondary\" id=\"ac-copy-hex\">📋 复制十六进制</button>\n      <button class=\"btn btn-secondary\" id=\"ac-copy-bin\">📋 复制二进制</button>\n      <button class=\"btn btn-secondary\" id=\"ac-clear\">🗑️ 清空</button>\n    </div>\n    <div id=\"ac-msg\" style=\"font-size:13px;color:var(--text-dim);min-height:20px\"></div>\n    <div style=\"display:grid;grid-template-columns:1fr 1fr;gap:10px\">\n      <div>\n        <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">十进制 (Decimal)</label>\n        <textarea id=\"ac-dec\" readonly style=\"width:100%;min-height:60px;padding:8px 10px;border:1px solid var(--border);border-radius:6px;font-family:Consolas,monospace;font-size:13px;background:var(--bg-subtle);color:var(--text);resize:vertical\"></textarea>\n      </div>\n      <div>\n        <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">十六进制 (Hex)</label>\n        <textarea id=\"ac-hex\" readonly style=\"width:100%;min-height:60px;padding:8px 10px;border:1px solid var(--border);border-radius:6px;font-family:Consolas,monospace;font-size:13px;background:var(--bg-subtle);color:var(--text);resize:vertical\"></textarea>\n      </div>\n      <div>\n        <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">二进制 (Binary)</label>\n        <textarea id=\"ac-bin\" readonly style=\"width:100%;min-height:60px;padding:8px 10px;border:1px solid var(--border);border-radius:6px;font-family:Consolas,monospace;font-size:13px;background:var(--bg-subtle);color:var(--text);resize:vertical\"></textarea>\n      </div>\n      <div>\n        <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">HTML 实体</label>\n        <textarea id=\"ac-html\" readonly style=\"width:100%;min-height:60px;padding:8px 10px;border:1px solid var(--border);border-radius:6px;font-family:Consolas,monospace;font-size:13px;background:var(--bg-subtle);color:var(--text);resize:vertical\"></textarea>\n      </div>\n    </div>\n  </div>\n  <div style=\"margin-top:12px;padding:8px 12px;background:var(--bg-warning-light);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-dim)\"><strong>🔒 隐私提示</strong>：所有处理在浏览器本地完成，数据不会上传到服务器。</div>\n</div>",
+      "ui_en": "<div class=\"tool-controls\" style=\"max-width:100%\">\n  <div style=\"display:flex;flex-direction:column;gap:10px\">\n    <div>\n      <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">Input Text</label>\n      <textarea id=\"ac-input\" placeholder=\"Enter text, ASCII codes, or escape sequences...\" style=\"width:100%;min-height:80px;padding:8px 10px;border:1px solid var(--border);border-radius:6px;font-family:Consolas,monospace;font-size:14px;background:var(--bg-card);color:var(--text);resize:vertical\"></textarea>\n    </div>\n    <div style=\"display:flex;gap:8px;flex-wrap:wrap\">\n      <button class=\"btn btn-secondary\" id=\"ac-copy-dec\">📋 Copy Decimal</button>\n      <button class=\"btn btn-secondary\" id=\"ac-copy-hex\">📋 Copy Hex</button>\n      <button class=\"btn btn-secondary\" id=\"ac-copy-bin\">📋 Copy Binary</button>\n      <button class=\"btn btn-secondary\" id=\"ac-clear\">🗑️ Clear</button>\n    </div>\n    <div id=\"ac-msg\" style=\"font-size:13px;color:var(--text-dim);min-height:20px\"></div>\n    <div style=\"display:grid;grid-template-columns:1fr 1fr;gap:10px\">\n      <div>\n        <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">Decimal</label>\n        <textarea id=\"ac-dec\" readonly style=\"width:100%;min-height:60px;padding:8px 10px;border:1px solid var(--border);border-radius:6px;font-family:Consolas,monospace;font-size:13px;background:var(--bg-subtle);color:var(--text);resize:vertical\"></textarea>\n      </div>\n      <div>\n        <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">Hexadecimal</label>\n        <textarea id=\"ac-hex\" readonly style=\"width:100%;min-height:60px;padding:8px 10px;border:1px solid var(--border);border-radius:6px;font-family:Consolas,monospace;font-size:13px;background:var(--bg-subtle);color:var(--text);resize:vertical\"></textarea>\n      </div>\n      <div>\n        <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">Binary</label>\n        <textarea id=\"ac-bin\" readonly style=\"width:100%;min-height:60px;padding:8px 10px;border:1px solid var(--border);border-radius:6px;font-family:Consolas,monospace;font-size:13px;background:var(--bg-subtle);color:var(--text);resize:vertical\"></textarea>\n      </div>\n      <div>\n        <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">HTML Entity</label>\n        <textarea id=\"ac-html\" readonly style=\"width:100%;min-height:60px;padding:8px 10px;border:1px solid var(--border);border-radius:6px;font-family:Consolas,monospace;font-size:13px;background:var(--bg-subtle);color:var(--text);resize:vertical\"></textarea>\n      </div>\n    </div>\n  </div>\n  <div style=\"margin-top:12px;padding:8px 12px;background:var(--bg-warning-light);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-dim)\"><strong>🔒 Privacy</strong>: All processing is local. No data upload.</div>\n</div>"
+    },
+    {
+      "slug": "css-media-query-generator",
+      "category": "dev",
+      "icon": "📱",
+      "name_zh": "CSS 媒体查询生成器",
+      "name_en": "CSS Media Query Generator",
+      "short_zh": "可视化生成响应式 CSS 媒体查询代码，支持常见设备断点和自定义断点",
+      "short_en": "Visually generate responsive CSS media queries with common device breakpoints and custom breakpoints",
+      "keywords_zh": "CSS媒体查询,媒体查询生成器,响应式设计,breakpoints,断点,移动端适配,响应式CSS,手机适配,平板适配,桌面端,视口,min-width,max-width,在线CSS工具,前端开发,响应式布局",
+      "keywords_en": "CSS media query, media query generator, responsive design, breakpoints, mobile responsive, CSS breakpoints, mobile first, desktop first, viewport, responsive CSS, online CSS tool, frontend development",
+      "index": 142,
+      "related": [
+        "css-flexbox-generator",
+        "css-grid-generator",
+        "css-animation",
+        "css-gradient-generator",
+        "css-filter-generator",
+        "css-prefixer"
+      ],
+      "long_zh": "<p>免费的在线 CSS 媒体查询生成器。<strong>可视化配置响应式 CSS 媒体查询代码</strong>，支持常见设备断点预设（手机、平板、笔记本、桌面、大屏）和完全自定义断点。</p><p>支持 min-width（移动优先）和 max-width（桌面优先）两种模式，自动生成完整的 @media 规则。提供预设的常见设备断点值，也可以自由输入像素值。所有处理在浏览器本地完成，代码不会上传到服务器。</p>",
+      "long_en": "<p>Free online CSS media query generator. <strong>Visually configure responsive CSS media query code</strong> with common device breakpoint presets (phone, tablet, laptop, desktop, large screen) and fully custom breakpoints.</p><p>Supports min-width (mobile-first) and max-width (desktop-first) approaches. Auto-generates complete @media rules. Includes preset device breakpoint values and custom pixel input. All processing is done locally in your browser.</p>",
+      "seo_title_zh": "CSS 媒体查询生成器 | 在线响应式 CSS 断点生成工具",
+      "seo_title_en": "CSS Media Query Generator - Free Online Responsive Breakpoint Tool | AI Toolbox",
+      "features_zh": [
+        "可视化配置 CSS 媒体查询，实时预览结果",
+        "支持 6 种常见设备断点预设（手机到大屏）",
+        "支持 min-width（移动优先）和 max-width（桌面优先）",
+        "完全自定义断点像素值",
+        "支持组合多个条件（and/or/not）",
+        "支持 orientation（横屏/竖屏）检测",
+        "一键复制生成的 @media 规则代码"
+      ],
+      "features_en": [
+        "Visual CSS media query configuration with live preview",
+        "6 preset device breakpoints (phone to large screen)",
+        "Custom breakpoint pixel values",
+        "Min-width (mobile-first) and max-width (desktop-first) modes",
+        "Combine multiple conditions with and/or/not",
+        "Orientation detection (portrait/landscape)",
+        "One-click copy of generated @media rule"
+      ],
+      "faq_zh": [
+        [
+          "什么是 CSS 媒体查询？",
+          "CSS 媒体查询 (@media) 是 CSS3 引入的强大功能，允许根据设备特性（如视口宽度、屏幕方向、分辨率等）应用不同的样式，是实现响应式设计的核心技术。"
+        ],
+        [
+          "移动优先和桌面优先有什么区别？",
+          "移动优先（Mobile First）使用 min-width 查询，先写小屏样式，再逐步为大屏增强。桌面优先使用 max-width 查询，先写大屏样式，再为小屏适配。推荐使用移动优先策略。"
+        ],
+        [
+          "什么是断点（Breakpoint）？",
+          "断点是响应式设计中样式发生变化的临界宽度值。常见的断点有：手机 480px、平板 768px、笔记本 1024px、桌面 1280px、大屏 1440px 等。"
+        ],
+        [
+          "支持哪些设备预设？",
+          "支持 6 种预设：手机 (480px)、小平板 (640px)、平板 (768px)、笔记本 (1024px)、桌面 (1280px)、大屏 (1440px)。"
+        ],
+        [
+          "生成的代码可以直接使用吗？",
+          "可以。生成的是标准的 CSS @media 规则，可以直接复制到你的样式文件中使用。"
+        ],
+        [
+          "数据安全吗？",
+          "完全安全。所有媒体查询生成在浏览器本地完成，代码不会上传到服务器。"
+        ],
+        [
+          "什么是 orientation 查询？",
+          "orientation 媒体特性用于检测设备的屏幕方向：portrait（竖屏，宽度小于高度）和 landscape（横屏，宽度大于高度）。"
+        ],
+        [
+          "可以组合多个条件吗？",
+          "可以。支持使用 and、or 和 not 逻辑操作符组合多个媒体特性，如宽度和方向同时满足条件。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "What is a CSS media query?",
+          "A CSS media query (@media) is a CSS3 feature that applies styles based on device characteristics like viewport width, orientation, and resolution. It's the core technology for responsive web design."
+        ],
+        [
+          "What's the difference between mobile-first and desktop-first?",
+          "Mobile-first uses min-width queries, starting with small-screen styles and enhancing for larger screens. Desktop-first uses max-width, starting with large-screen styles and adapting for smaller screens. Mobile-first is recommended."
+        ],
+        [
+          "What is a breakpoint?",
+          "A breakpoint is the width threshold where your design changes. Common breakpoints: phone 480px, tablet 768px, laptop 1024px, desktop 1280px, large screen 1440px."
+        ],
+        [
+          "What device presets are available?",
+          "6 presets: Phone (480px), Small Tablet (640px), Tablet (768px), Laptop (1024px), Desktop (1280px), Large Screen (1440px)."
+        ],
+        [
+          "Can I use the generated code directly?",
+          "Yes. The generated code is standard CSS @media rules that can be copied directly into your stylesheets."
+        ],
+        [
+          "Is my data safe?",
+          "Completely safe. All media query generation is done locally in your browser."
+        ],
+        [
+          "What is orientation?",
+          "Orientation detects screen direction: portrait (height > width) and landscape (width > height)."
+        ],
+        [
+          "Can I combine multiple conditions?",
+          "Yes. Use and, or, and not operators to combine multiple media features like width and orientation."
+        ]
+      ],
+      "ui_zh": "<div class=\"tool-controls\" style=\"max-width:100%\">\n  <div style=\"display:flex;flex-direction:column;gap:10px\">\n    <div style=\"display:flex;gap:12px;flex-wrap:wrap\">\n      <div>\n        <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">断点预设</label>\n        <select id=\"mq-preset\" style=\"padding:6px 10px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\">\n          <option value=\"\">自定义</option>\n          <option value=\"480\">📱 手机 (480px)</option>\n          <option value=\"640\">📱 小平板 (640px)</option>\n          <option value=\"768\">📱 平板 (768px)</option>\n          <option value=\"1024\">💻 笔记本 (1024px)</option>\n          <option value=\"1280\">🖥️ 桌面 (1280px)</option>\n          <option value=\"1440\">🖥️ 大屏 (1440px)</option>\n        </select>\n      </div>\n      <div>\n        <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">宽度 (px)</label>\n        <input type=\"number\" id=\"mq-width\" value=\"768\" min=\"0\" max=\"9999\" style=\"width:110px;padding:6px 10px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\">\n      </div>\n      <div>\n        <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">模式</label>\n        <select id=\"mq-mode\" style=\"padding:6px 10px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\">\n          <option value=\"min-width\">📈 min-width (移动优先)</option>\n          <option value=\"max-width\">📉 max-width (桌面优先)</option>\n        </select>\n      </div>\n      <div>\n        <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">方向</label>\n        <select id=\"mq-orientation\" style=\"padding:6px 10px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\">\n          <option value=\"\">不限</option>\n          <option value=\"portrait\">📱 竖屏</option>\n          <option value=\"landscape\">🖥️ 横屏</option>\n        </select>\n      </div>\n    </div>\n    <div style=\"display:flex;gap:8px;flex-wrap:wrap\">\n      <button class=\"btn btn-primary\" id=\"mq-generate\">🔄 生成代码</button>\n      <button class=\"btn btn-secondary\" id=\"mq-copy\">📋 复制代码</button>\n      <button class=\"btn btn-secondary\" id=\"mq-clear\">🗑️ 清空</button>\n    </div>\n    <div id=\"mq-msg\" style=\"font-size:13px;color:var(--text-dim);min-height:20px\"></div>\n    <div>\n      <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">生成的 @media 规则</label>\n      <textarea id=\"mq-output\" readonly style=\"width:100%;min-height:200px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:Consolas,monospace;font-size:13px;background:var(--bg-subtle);color:var(--text);resize:vertical\" placeholder=\"生成的 CSS @media 规则将显示在这里...\"></textarea>\n    </div>\n  </div>\n  <div style=\"margin-top:12px;padding:8px 12px;background:var(--bg-warning-light);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-dim)\"><strong>🔒 隐私提示</strong>：所有处理在浏览器本地完成，代码不会上传到服务器。</div>\n</div>",
+      "ui_en": "<div class=\"tool-controls\" style=\"max-width:100%\">\n  <div style=\"display:flex;flex-direction:column;gap:10px\">\n    <div style=\"display:flex;gap:12px;flex-wrap:wrap\">\n      <div>\n        <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">Breakpoint Preset</label>\n        <select id=\"mq-preset\" style=\"padding:6px 10px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\">\n          <option value=\"\">Custom</option>\n          <option value=\"480\">📱 Phone (480px)</option>\n          <option value=\"640\">📱 Small Tablet (640px)</option>\n          <option value=\"768\">📱 Tablet (768px)</option>\n          <option value=\"1024\">💻 Laptop (1024px)</option>\n          <option value=\"1280\">🖥️ Desktop (1280px)</option>\n          <option value=\"1440\">🖥️ Large Screen (1440px)</option>\n        </select>\n      </div>\n      <div>\n        <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">Width (px)</label>\n        <input type=\"number\" id=\"mq-width\" value=\"768\" min=\"0\" max=\"9999\" style=\"width:110px;padding:6px 10px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\">\n      </div>\n      <div>\n        <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">Mode</label>\n        <select id=\"mq-mode\" style=\"padding:6px 10px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\">\n          <option value=\"min-width\">📈 min-width (mobile-first)</option>\n          <option value=\"max-width\">📉 max-width (desktop-first)</option>\n        </select>\n      </div>\n      <div>\n        <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">Orientation</label>\n        <select id=\"mq-orientation\" style=\"padding:6px 10px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\">\n          <option value=\"\">Any</option>\n          <option value=\"portrait\">📱 Portrait</option>\n          <option value=\"landscape\">🖥️ Landscape</option>\n        </select>\n      </div>\n    </div>\n    <div style=\"display:flex;gap:8px;flex-wrap:wrap\">\n      <button class=\"btn btn-primary\" id=\"mq-generate\">🔄 Generate</button>\n      <button class=\"btn btn-secondary\" id=\"mq-copy\">📋 Copy Code</button>\n      <button class=\"btn btn-secondary\" id=\"mq-clear\">🗑️ Clear</button>\n    </div>\n    <div id=\"mq-msg\" style=\"font-size:13px;color:var(--text-dim);min-height:20px\"></div>\n    <div>\n      <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">Generated @media Rule</label>\n      <textarea id=\"mq-output\" readonly style=\"width:100%;min-height:200px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:Consolas,monospace;font-size:13px;background:var(--bg-subtle);color:var(--text);resize:vertical\" placeholder=\"Generated CSS @media rule will appear here...\"></textarea>\n    </div>\n  </div>\n  <div style=\"margin-top:12px;padding:8px 12px;background:var(--bg-warning-light);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-dim)\"><strong>🔒 Privacy</strong>: All processing is local. No code upload.</div>\n</div>"
     }
   ]
 }

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>CSS 媒体查询生成器 - CSS 媒体查询生成器 | 在线响应式 CSS 断点生成工具 | AI 工具盒子</title>
+<meta name="description" content="免费在线CSS 媒体查询生成器工具，可视化生成响应式 CSS 媒体查询代码，支持常见设备断点和自定义断点。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="CSS媒体查询,媒体查询生成器,响应式设计,breakpoints,断点,移动端适配,响应式CSS,手机适配,平板适配,桌面端,视口,min-width,max-width,在线CSS工具,前端开发,响应式布局">
+<link rel="canonical" href="https://tools.talang.fun/tools/css-media-query-generator">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/css-media-query-generator">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/css-media-query-generator">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/css-media-query-generator">
+<meta property="og:title" content="CSS 媒体查询生成器 - CSS 媒体查询生成器 | 在线响应式 CSS 断点生成工具 | AI 工具盒子">
+<meta property="og:description" content="免费在线CSS 媒体查询生成器工具，可视化生成响应式 CSS 媒体查询代码，支持常见设备断点和自定义断点。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/css-media-query-generator">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "CSS 媒体查询生成器", "description": "免费在线CSS 媒体查询生成器工具，可视化生成响应式 CSS 媒体查询代码，支持常见设备断点和自定义断点。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/css-media-query-generator", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "可视化生成响应式 CSS 媒体查询代码，支持常见设备断点和自定义断点", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/tools/css-media-query-generator" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">📱</div>
+  <h1>CSS 媒体查询生成器</h1>
+  <p>可视化生成响应式 CSS 媒体查询代码，支持常见设备断点和自定义断点</p>
+</div>
+<div class="tool-panel">
+<div class="tool-controls" style="max-width:100%">
+  <div style="display:flex;flex-direction:column;gap:10px">
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <div>
+        <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px">断点预设</label>
+        <select id="mq-preset" style="padding:6px 10px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)">
+          <option value="">自定义</option>
+          <option value="480">📱 手机 (480px)</option>
+          <option value="640">📱 小平板 (640px)</option>
+          <option value="768">📱 平板 (768px)</option>
+          <option value="1024">💻 笔记本 (1024px)</option>
+          <option value="1280">🖥️ 桌面 (1280px)</option>
+          <option value="1440">🖥️ 大屏 (1440px)</option>
+        </select>
+      </div>
+      <div>
+        <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px">宽度 (px)</label>
+        <input type="number" id="mq-width" value="768" min="0" max="9999" style="width:110px;padding:6px 10px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)">
+      </div>
+      <div>
+        <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px">模式</label>
+        <select id="mq-mode" style="padding:6px 10px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)">
+          <option value="min-width">📈 min-width (移动优先)</option>
+          <option value="max-width">📉 max-width (桌面优先)</option>
+        </select>
+      </div>
+      <div>
+        <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px">方向</label>
+        <select id="mq-orientation" style="padding:6px 10px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)">
+          <option value="">不限</option>
+          <option value="portrait">📱 竖屏</option>
+          <option value="landscape">🖥️ 横屏</option>
+        </select>
+      </div>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <button class="btn btn-primary" id="mq-generate">🔄 生成代码</button>
+      <button class="btn btn-secondary" id="mq-copy">📋 复制代码</button>
+      <button class="btn btn-secondary" id="mq-clear">🗑️ 清空</button>
+    </div>
+    <div id="mq-msg" style="font-size:13px;color:var(--text-dim);min-height:20px"></div>
+    <div>
+      <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px">生成的 @media 规则</label>
+      <textarea id="mq-output" readonly style="width:100%;min-height:200px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:Consolas,monospace;font-size:13px;background:var(--bg-subtle);color:var(--text);resize:vertical" placeholder="生成的 CSS @media 规则将显示在这里..."></textarea>
+    </div>
+  </div>
+  <div style="margin-top:12px;padding:8px 12px;background:var(--bg-warning-light);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-dim)"><strong>🔒 隐私提示</strong>：所有处理在浏览器本地完成，代码不会上传到服务器。</div>
+</div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>免费的在线 CSS 媒体查询生成器。<strong>可视化配置响应式 CSS 媒体查询代码</strong>，支持常见设备断点预设（手机、平板、笔记本、桌面、大屏）和完全自定义断点。</p><p>支持 min-width（移动优先）和 max-width（桌面优先）两种模式，自动生成完整的 @media 规则。提供预设的常见设备断点值，也可以自由输入像素值。所有处理在浏览器本地完成，代码不会上传到服务器。</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>可视化配置 CSS 媒体查询，实时预览结果</li><li>支持 6 种常见设备断点预设（手机到大屏）</li><li>支持 min-width（移动优先）和 max-width（桌面优先）</li><li>完全自定义断点像素值</li><li>支持组合多个条件（and/or/not）</li><li>支持 orientation（横屏/竖屏）检测</li><li>一键复制生成的 @media 规则代码</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">什么是 CSS 媒体查询？</h3><p>CSS 媒体查询 (@media) 是 CSS3 引入的强大功能，允许根据设备特性（如视口宽度、屏幕方向、分辨率等）应用不同的样式，是实现响应式设计的核心技术。</p><h3 style="margin-top:20px;margin-bottom:8px">移动优先和桌面优先有什么区别？</h3><p>移动优先（Mobile First）使用 min-width 查询，先写小屏样式，再逐步为大屏增强。桌面优先使用 max-width 查询，先写大屏样式，再为小屏适配。推荐使用移动优先策略。</p><h3 style="margin-top:20px;margin-bottom:8px">什么是断点（Breakpoint）？</h3><p>断点是响应式设计中样式发生变化的临界宽度值。常见的断点有：手机 480px、平板 768px、笔记本 1024px、桌面 1280px、大屏 1440px 等。</p><h3 style="margin-top:20px;margin-bottom:8px">支持哪些设备预设？</h3><p>支持 6 种预设：手机 (480px)、小平板 (640px)、平板 (768px)、笔记本 (1024px)、桌面 (1280px)、大屏 (1440px)。</p><h3 style="margin-top:20px;margin-bottom:8px">生成的代码可以直接使用吗？</h3><p>可以。生成的是标准的 CSS @media 规则，可以直接复制到你的样式文件中使用。</p><h3 style="margin-top:20px;margin-bottom:8px">数据安全吗？</h3><p>完全安全。所有媒体查询生成在浏览器本地完成，代码不会上传到服务器。</p><h3 style="margin-top:20px;margin-bottom:8px">什么是 orientation 查询？</h3><p>orientation 媒体特性用于检测设备的屏幕方向：portrait（竖屏，宽度小于高度）和 landscape（横屏，宽度大于高度）。</p><h3 style="margin-top:20px;margin-bottom:8px">可以组合多个条件吗？</h3><p>可以。支持使用 and、or 和 not 逻辑操作符组合多个媒体特性，如宽度和方向同时满足条件。</p></section>
+<section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/css-flexbox-generator" class="tool-card"><div class="icon">📐</div><h3>CSS Flexbox 生成器</h3><p>可视化生成 CSS Flexbox 布局代码，支持全部常见属性</p></a><a href="/tools/css-grid-generator" class="tool-card"><div class="icon">🔲</div><h3>CSS Grid 生成器</h3><p>可视化生成 CSS Grid 布局代码，支持行列数量、间距、对齐方式</p></a><a href="/tools/css-animation" class="tool-card"><div class="icon">🎬</div><h3>CSS 动画生成器</h3><p>在线生成 CSS @keyframes 动画，支持淡入淡出、滑动、弹跳等效果</p></a><a href="/tools/css-gradient-generator" class="tool-card"><div class="icon">🌈</div><h3>CSS 渐变生成器</h3><p>在线生成 CSS 线性与径向渐变，实时预览并复制代码</p></a><a href="/tools/css-filter-generator" class="tool-card"><div class="icon">🎨</div><h3>CSS 滤镜生成器</h3><p>可视化 CSS filter 生成器，实时预览模糊、亮度、对比度等滤镜效果</p></a><a href="/tools/css-prefixer" class="tool-card"><div class="icon">🎨</div><h3>CSS 前缀添加器</h3><p>为 CSS 属性自动添加 -webkit-、-moz-、-ms-、-o- 浏览器前缀</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/css-media-query-generator.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>

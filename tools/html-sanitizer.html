@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>HTML 净化器 - HTML 净化器 | 在线 XSS 防护 HTML 安全清洗工具 | AI 工具盒子</title>
+<meta name="description" content="免费在线HTML 净化器工具，安全地清洗 HTML 代码，移除 XSS 攻击向量、恶意脚本和危险标签。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="HTML净化,XSS防护,跨站脚本防护,HTML清洗,HTML安全,过滤HTML,移除脚本,安全HTML,输入净化,前端安全,web安全">
+<link rel="canonical" href="https://tools.talang.fun/tools/html-sanitizer">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/html-sanitizer">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/html-sanitizer">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/html-sanitizer">
+<meta property="og:title" content="HTML 净化器 - HTML 净化器 | 在线 XSS 防护 HTML 安全清洗工具 | AI 工具盒子">
+<meta property="og:description" content="免费在线HTML 净化器工具，安全地清洗 HTML 代码，移除 XSS 攻击向量、恶意脚本和危险标签。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/html-sanitizer">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "HTML 净化器", "description": "免费在线HTML 净化器工具，安全地清洗 HTML 代码，移除 XSS 攻击向量、恶意脚本和危险标签。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/html-sanitizer", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "安全地清洗 HTML 代码，移除 XSS 攻击向量、恶意脚本和危险标签", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/tools/html-sanitizer" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🛡️</div>
+  <h1>HTML 净化器</h1>
+  <p>安全地清洗 HTML 代码，移除 XSS 攻击向量、恶意脚本和危险标签</p>
+</div>
+<div class="tool-panel">
+<div class="tool-controls">
+<div style="margin-bottom:8px;display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+<button class="btn" id="hs-sanitize">🛡️ 净化 HTML</button>
+<button class="btn btn-secondary" id="hs-copy">📋 复制结果</button>
+<button class="btn btn-secondary" id="hs-clear">🗑️ 清空</button>
+<label style="display:flex;align-items:center;gap:4px;font-size:13px;margin-left:8px"><input type="radio" name="hs-mode" value="safe" checked> 安全模式</label>
+<label style="display:flex;align-items:center;gap:4px;font-size:13px"><input type="radio" name="hs-mode" value="strict"> 严格模式</label>
+</div>
+<div style="display:flex;gap:12px;flex-wrap:wrap">
+<div style="flex:1;min-width:300px">
+<label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px">HTML 输入</label>
+<textarea id="hs-input" style="width:100%;min-height:350px;font-family:Consolas,monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card);resize:vertical" placeholder="粘贴 HTML 代码..."></textarea>
+</div>
+<div style="flex:1;min-width:300px">
+<label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px">净化后的 HTML</label>
+<textarea id="hs-output" readonly style="width:100%;min-height:350px;font-family:Consolas,monospace;font-size:13px;padding:10px;border:1px solid var(--border);border-radius:6px;background:var(--bg-subtle);resize:vertical" placeholder="净化后的 HTML 将显示在这里..."></textarea>
+</div>
+</div>
+<div id="hs-msg" style="margin-top:8px;font-size:13px"></div>
+<div style="margin-top:12px;padding:8px 12px;background:var(--bg-warning-light);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-dim)"><strong>🔒 隐私提示</strong>：所有处理在浏览器本地完成，HTML 代码不会上传到服务器。</div>
+</div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>免费的在线 HTML 净化器。<strong>安全地清洗 HTML 代码，移除 XSS（跨站脚本）攻击向量、恶意脚本、危险标签和事件处理器</strong>。支持两种模式：安全模式（清空脚本内容但保留标签结构）和严格模式（移除所有未知标签和脚本标签）。</p><p>基于白名单机制，只允许安全的 HTML 标签和属性，自动移除所有 on* 事件处理器、javascript: 协议链接等 XSS 向量。所有处理在浏览器本地完成，HTML 代码不会上传到服务器。</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>移除 XSS 攻击向量（javascript:、data: 等危险协议）</li><li>移除所有 on* 事件处理器（onclick、onload、onsubmit 等）</li><li>安全模式：保留标签结构，清空脚本内容</li><li>严格模式：移除所有未知标签和脚本标签</li><li>基于白名单的标签和属性过滤</li><li>完全本地处理，HTML 代码不上传服务器</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">什么是 XSS 攻击？</h3><p>XSS（跨站脚本攻击）是攻击者通过注入恶意脚本到网页中来窃取用户数据或劫持会话的攻击方式。HTML 净化器可以移除这些恶意代码。</p><h3 style="margin-top:20px;margin-bottom:8px">安全模式和严格模式有什么区别？</h3><p>安全模式会清空脚本和样式的内容但保留标签本身。严格模式会完全移除所有未知和危险的标签。</p><h3 style="margin-top:20px;margin-bottom:8px">支持哪些 HTML 标签？</h3><p>支持所有标准的安全 HTML 标签，包括标题、段落、列表、表格、表单、媒体元素等。</p><h3 style="margin-top:20px;margin-bottom:8px">会移除 style 属性吗？</h3><p>不会。合法的 style 属性会被保留，但所有 on* 事件处理器都会被移除。</p><h3 style="margin-top:20px;margin-bottom:8px">数据安全吗？</h3><p>完全安全。所有处理在浏览器本地完成，HTML 代码不会上传到服务器。</p><h3 style="margin-top:20px;margin-bottom:8px">适合什么场景使用？</h3><p>适合用户输入内容展示前的安全清洗、富文本编辑器输出过滤、HTML 邮件内容安全处理等场景。</p></section>
+<section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/html-validator" class="tool-card"><div class="icon">🔍</div><h3>HTML 验证器</h3><p>检查 HTML 标签嵌套、重复 ID、弃用标签、可访问性问题和最佳实践</p></a><a href="/tools/html-minifier" class="tool-card"><div class="icon">🔧</div><h3>HTML 压缩/美化</h3><p>HTML 代码格式化或压缩，去注释、去空白，支持缩进控制</p></a><a href="/tools/html-stripper" class="tool-card"><div class="icon">🧹</div><h3>HTML 标签去除</h3><p>从 HTML 中提取纯文本，去除 HTML 标签和样式</p></a><a href="/tools/html-encoder" class="tool-card"><div class="icon">🔧</div><h3>HTML 转义编码</h3><p>HTML 特殊字符转义与反转义</p></a><a href="/tools/html-to-text" class="tool-card"><div class="icon">📄</div><h3>HTML 转纯文本</h3><p>从 HTML 中提取纯文本，去除标签和样式</p></a><a href="/tools/html-entity" class="tool-card"><div class="icon">🏷️</div><h3>HTML 实体编解码</h3><p>&lt; 与 < 互转，支持常用命名实体和数字实体</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/html-sanitizer.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>

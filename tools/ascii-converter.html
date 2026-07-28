@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>ASCII 转换器 - ASCII 转换器 | 在线字符编码转换工具 - ASCII/十进制/十六进制/二进制互转 | AI 工具盒子</title>
+<meta name="description" content="免费在线ASCII 转换器工具，在 ASCII 字符、十进制、十六进制、二进制之间自由转换，支持 HTML 实体编码。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="ASCII,ASCII转换,字符编码,十进制转ASCII,十六进制转ASCII,二进制转ASCII,ASCII码表,字符转换,Unicode,字符代码,在线ASCII工具,HTML实体编码,字符转义">
+<link rel="canonical" href="https://tools.talang.fun/tools/ascii-converter">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/ascii-converter">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/ascii-converter">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/ascii-converter">
+<meta property="og:title" content="ASCII 转换器 - ASCII 转换器 | 在线字符编码转换工具 - ASCII/十进制/十六进制/二进制互转 | AI 工具盒子">
+<meta property="og:description" content="免费在线ASCII 转换器工具，在 ASCII 字符、十进制、十六进制、二进制之间自由转换，支持 HTML 实体编码。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/ascii-converter">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "ASCII 转换器", "description": "免费在线ASCII 转换器工具，在 ASCII 字符、十进制、十六进制、二进制之间自由转换，支持 HTML 实体编码。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/ascii-converter", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "在 ASCII 字符、十进制、十六进制、二进制之间自由转换，支持 HTML 实体编码", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/tools/ascii-converter" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🔤</div>
+  <h1>ASCII 转换器</h1>
+  <p>在 ASCII 字符、十进制、十六进制、二进制之间自由转换，支持 HTML 实体编码</p>
+</div>
+<div class="tool-panel">
+<div class="tool-controls" style="max-width:100%">
+  <div style="display:flex;flex-direction:column;gap:10px">
+    <div>
+      <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px">输入文本</label>
+      <textarea id="ac-input" placeholder="输入文本、ASCII 码或转义序列..." style="width:100%;min-height:80px;padding:8px 10px;border:1px solid var(--border);border-radius:6px;font-family:Consolas,monospace;font-size:14px;background:var(--bg-card);color:var(--text);resize:vertical"></textarea>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <button class="btn btn-secondary" id="ac-copy-dec">📋 复制十进制</button>
+      <button class="btn btn-secondary" id="ac-copy-hex">📋 复制十六进制</button>
+      <button class="btn btn-secondary" id="ac-copy-bin">📋 复制二进制</button>
+      <button class="btn btn-secondary" id="ac-clear">🗑️ 清空</button>
+    </div>
+    <div id="ac-msg" style="font-size:13px;color:var(--text-dim);min-height:20px"></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+      <div>
+        <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px">十进制 (Decimal)</label>
+        <textarea id="ac-dec" readonly style="width:100%;min-height:60px;padding:8px 10px;border:1px solid var(--border);border-radius:6px;font-family:Consolas,monospace;font-size:13px;background:var(--bg-subtle);color:var(--text);resize:vertical"></textarea>
+      </div>
+      <div>
+        <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px">十六进制 (Hex)</label>
+        <textarea id="ac-hex" readonly style="width:100%;min-height:60px;padding:8px 10px;border:1px solid var(--border);border-radius:6px;font-family:Consolas,monospace;font-size:13px;background:var(--bg-subtle);color:var(--text);resize:vertical"></textarea>
+      </div>
+      <div>
+        <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px">二进制 (Binary)</label>
+        <textarea id="ac-bin" readonly style="width:100%;min-height:60px;padding:8px 10px;border:1px solid var(--border);border-radius:6px;font-family:Consolas,monospace;font-size:13px;background:var(--bg-subtle);color:var(--text);resize:vertical"></textarea>
+      </div>
+      <div>
+        <label style="font-size:13px;font-weight:600;display:block;margin-bottom:4px">HTML 实体</label>
+        <textarea id="ac-html" readonly style="width:100%;min-height:60px;padding:8px 10px;border:1px solid var(--border);border-radius:6px;font-family:Consolas,monospace;font-size:13px;background:var(--bg-subtle);color:var(--text);resize:vertical"></textarea>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top:12px;padding:8px 12px;background:var(--bg-warning-light);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-dim)"><strong>🔒 隐私提示</strong>：所有处理在浏览器本地完成，数据不会上传到服务器。</div>
+</div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>免费的在线 ASCII 转换工具。<strong>在 ASCII 字符、十进制、十六进制、二进制和 HTML 实体编码之间进行双向转换</strong>。支持单个字符和完整文本字符串，实时转换，无需点击按钮。</p><p>适用于需要处理字符编码的开发者、设计师和网络工程师。支持 ASCII 0-255 的完整范围（包括扩展 ASCII），支持 \\uXXXX 转义序列。所有处理在浏览器本地完成，数据不会上传到服务器。</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>ASCII 字符与十进制、十六进制、二进制互转</li><li>支持完整文本字符串的批量转换</li><li>支持 HTML 实体编码（如 &lt; &gt; &amp;）</li><li>支持 \\uXXXX 转义序列解析</li><li>输入即转换，实时显示结果</li><li>支持 ASCII 0-255 完整范围（含扩展 ASCII）</li><li>完全本地处理，数据不上传服务器</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">什么是 ASCII？</h3><p>ASCII（American Standard Code for Information Interchange）是美国信息交换标准代码，用 7 位或 8 位二进制数字表示 128 或 256 个字符，包括英文字母、数字、标点符号和控制字符。</p><h3 style="margin-top:20px;margin-bottom:8px">ASCII 和 Unicode 有什么区别？</h3><p>ASCII 只定义了 128 或 256 个字符，主要用于英文。Unicode 支持全球几乎所有语言的字符，包含超过 14 万个字符。ASCII 是 Unicode 的一个子集。</p><h3 style="margin-top:20px;margin-bottom:8px">什么是扩展 ASCII？</h3><p>扩展 ASCII 使用 8 位编码（0-255），在标准 ASCII（0-127）基础上增加了 128 个额外字符，包括特殊符号、制表符和外来字母。</p><h3 style="margin-top:20px;margin-bottom:8px">支持中文吗？</h3><p>本工具专注于 ASCII 字符集。中文等 Unicode 字符请使用 Unicode 转换器工具。</p><h3 style="margin-top:20px;margin-bottom:8px">HTML 实体编码是什么？</h3><p>HTML 实体编码用 &amp; 开头的特殊序列表示 HTML 中的特殊字符，如 &lt; 表示小于号 <，&amp; 表示 & 符号。</p><h3 style="margin-top:20px;margin-bottom:8px">数据安全吗？</h3><p>完全安全。所有字符编码转换在浏览器本地完成，数据不会上传到服务器。</p><h3 style="margin-top:20px;margin-bottom:8px">\\uXXXX 转义是什么？</h3><p>\\uXXXX 是 JavaScript 和 JSON 中使用的 Unicode 转义序列，\\u0041 表示 'A'，\\u00A9 表示版权符号 ©，等等。</p></section>
+<section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/base64" class="tool-card"><div class="icon">🔣</div><h3>Base64 编解码</h3><p>Base64 字符串和文件互转，UTF-8 安全</p></a><a href="/tools/unicode-converter" class="tool-card"><div class="icon">🔤</div><h3>Unicode 转换器</h3><p>Unicode 编码互转：\uXXXX、十六进制、十进制、HTML 实体</p></a><a href="/tools/punycode-converter" class="tool-card"><div class="icon">🌐</div><h3>Punycode / 中文域名转换</h3><p>国际化域名 Punycode 与 Unicode 互转，支持中文字符</p></a><a href="/tools/url-encoder" class="tool-card"><div class="icon">🔗</div><h3>URL 编解码</h3><p>URL 编码与解码，处理特殊字符和中文</p></a><a href="/tools/hash-generator" class="tool-card"><div class="icon">🔐</div><h3>哈希生成器</h3><p>生成 MD5、SHA-1、SHA-256、SHA-512 哈希值</p></a><a href="/tools/rot13-cipher" class="tool-card"><div class="icon">🔄</div><h3>ROT13 / 凯撒密码</h3><p>ROT13、ROT47、ROT5 文本转换，凯撒移位密码</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/ascii-converter.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>
