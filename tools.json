@@ -11061,6 +11061,160 @@
       ],
       "ui_zh": "<div class=\"tool-controls\" style=\"max-width:100%\">\n  <div style=\"display:flex;flex-direction:column;gap:10px\">\n    <div style=\"display:flex;gap:12px;flex-wrap:wrap\">\n      <div>\n        <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">断点预设</label>\n        <select id=\"mq-preset\" style=\"padding:6px 10px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\">\n          <option value=\"\">自定义</option>\n          <option value=\"480\">📱 手机 (480px)</option>\n          <option value=\"640\">📱 小平板 (640px)</option>\n          <option value=\"768\">📱 平板 (768px)</option>\n          <option value=\"1024\">💻 笔记本 (1024px)</option>\n          <option value=\"1280\">🖥️ 桌面 (1280px)</option>\n          <option value=\"1440\">🖥️ 大屏 (1440px)</option>\n        </select>\n      </div>\n      <div>\n        <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">宽度 (px)</label>\n        <input type=\"number\" id=\"mq-width\" value=\"768\" min=\"0\" max=\"9999\" style=\"width:110px;padding:6px 10px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\">\n      </div>\n      <div>\n        <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">模式</label>\n        <select id=\"mq-mode\" style=\"padding:6px 10px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\">\n          <option value=\"min-width\">📈 min-width (移动优先)</option>\n          <option value=\"max-width\">📉 max-width (桌面优先)</option>\n        </select>\n      </div>\n      <div>\n        <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">方向</label>\n        <select id=\"mq-orientation\" style=\"padding:6px 10px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\">\n          <option value=\"\">不限</option>\n          <option value=\"portrait\">📱 竖屏</option>\n          <option value=\"landscape\">🖥️ 横屏</option>\n        </select>\n      </div>\n    </div>\n    <div style=\"display:flex;gap:8px;flex-wrap:wrap\">\n      <button class=\"btn btn-primary\" id=\"mq-generate\">🔄 生成代码</button>\n      <button class=\"btn btn-secondary\" id=\"mq-copy\">📋 复制代码</button>\n      <button class=\"btn btn-secondary\" id=\"mq-clear\">🗑️ 清空</button>\n    </div>\n    <div id=\"mq-msg\" style=\"font-size:13px;color:var(--text-dim);min-height:20px\"></div>\n    <div>\n      <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">生成的 @media 规则</label>\n      <textarea id=\"mq-output\" readonly style=\"width:100%;min-height:200px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:Consolas,monospace;font-size:13px;background:var(--bg-subtle);color:var(--text);resize:vertical\" placeholder=\"生成的 CSS @media 规则将显示在这里...\"></textarea>\n    </div>\n  </div>\n  <div style=\"margin-top:12px;padding:8px 12px;background:var(--bg-warning-light);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-dim)\"><strong>🔒 隐私提示</strong>：所有处理在浏览器本地完成，代码不会上传到服务器。</div>\n</div>",
       "ui_en": "<div class=\"tool-controls\" style=\"max-width:100%\">\n  <div style=\"display:flex;flex-direction:column;gap:10px\">\n    <div style=\"display:flex;gap:12px;flex-wrap:wrap\">\n      <div>\n        <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">Breakpoint Preset</label>\n        <select id=\"mq-preset\" style=\"padding:6px 10px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\">\n          <option value=\"\">Custom</option>\n          <option value=\"480\">📱 Phone (480px)</option>\n          <option value=\"640\">📱 Small Tablet (640px)</option>\n          <option value=\"768\">📱 Tablet (768px)</option>\n          <option value=\"1024\">💻 Laptop (1024px)</option>\n          <option value=\"1280\">🖥️ Desktop (1280px)</option>\n          <option value=\"1440\">🖥️ Large Screen (1440px)</option>\n        </select>\n      </div>\n      <div>\n        <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">Width (px)</label>\n        <input type=\"number\" id=\"mq-width\" value=\"768\" min=\"0\" max=\"9999\" style=\"width:110px;padding:6px 10px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\">\n      </div>\n      <div>\n        <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">Mode</label>\n        <select id=\"mq-mode\" style=\"padding:6px 10px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\">\n          <option value=\"min-width\">📈 min-width (mobile-first)</option>\n          <option value=\"max-width\">📉 max-width (desktop-first)</option>\n        </select>\n      </div>\n      <div>\n        <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">Orientation</label>\n        <select id=\"mq-orientation\" style=\"padding:6px 10px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\">\n          <option value=\"\">Any</option>\n          <option value=\"portrait\">📱 Portrait</option>\n          <option value=\"landscape\">🖥️ Landscape</option>\n        </select>\n      </div>\n    </div>\n    <div style=\"display:flex;gap:8px;flex-wrap:wrap\">\n      <button class=\"btn btn-primary\" id=\"mq-generate\">🔄 Generate</button>\n      <button class=\"btn btn-secondary\" id=\"mq-copy\">📋 Copy Code</button>\n      <button class=\"btn btn-secondary\" id=\"mq-clear\">🗑️ Clear</button>\n    </div>\n    <div id=\"mq-msg\" style=\"font-size:13px;color:var(--text-dim);min-height:20px\"></div>\n    <div>\n      <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">Generated @media Rule</label>\n      <textarea id=\"mq-output\" readonly style=\"width:100%;min-height:200px;padding:10px;border:1px solid var(--border);border-radius:6px;font-family:Consolas,monospace;font-size:13px;background:var(--bg-subtle);color:var(--text);resize:vertical\" placeholder=\"Generated CSS @media rule will appear here...\"></textarea>\n    </div>\n  </div>\n  <div style=\"margin-top:12px;padding:8px 12px;background:var(--bg-warning-light);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-dim)\"><strong>🔒 Privacy</strong>: All processing is local. No code upload.</div>\n</div>"
+    },
+    {
+      "slug": "css-unit-converter",
+      "category": "dev",
+      "icon": "📐",
+      "name_zh": "CSS 单位转换器",
+      "name_en": "CSS Unit Converter",
+      "short_zh": "在 px、em、rem、%、vw、vh、vmin、vmax、pt、ch、ex 之间自由转换",
+      "short_en": "Convert between px, em, rem, %, vw, vh, vmin, vmax, pt, ch, ex CSS units",
+      "keywords_zh": "CSS单位,单位转换,px转em,px转rem,px转vw,px转vh,em转px,rem转px,px转百分比,视口单位,viewport单位,响应式单位,字体单位,ch单位,ex单位,pt单位,前端开发,在线CSS工具,单位换算",
+      "keywords_en": "CSS unit converter, px to em, px to rem, px to vw, px to vh, em to px, rem to px, CSS unit conversion, viewport units, responsive units, font units, ch unit, ex unit, pt to px, online CSS tool, frontend tool",
+      "index": 143,
+      "related": [
+        "css-minifier",
+        "css-validator",
+        "css-gradient-generator",
+        "css-flexbox-generator"
+      ],
+      "long_zh": "CSS 单位转换器是一款免费在线工具，帮助前端开发者在不同 CSS 单位之间快速转换。支持 px、em、rem、百分比(％)、vw、vh、vmin、vmax、pt、ch、ex 等常用 CSS 单位。所有转换均在浏览器本地完成，无需上传数据，保护您的隐私。",
+      "long_en": "CSS Unit Converter is a free online tool that helps frontend developers quickly convert between different CSS units. Supports px, em, rem, percentage(%), vw, vh, vmin, vmax, pt, ch, ex and other common CSS units. All conversions are done locally in your browser — no data uploaded, your privacy is protected.",
+      "seo_title_zh": "CSS 单位转换器 - px/em/rem/vw/vh 在线换算 | AI 工具盒子",
+      "seo_title_en": "CSS Unit Converter - px/em/rem/vw/vh Online Conversion | AI Toolbox",
+      "features_zh": [
+        "支持 px、em、rem、%、vw、vh、vmin、vmax、pt、ch、ex 单位互转",
+        "可自定义基础字体大小（默认 16px）",
+        "可自定义视口宽度和高度",
+        "显示完整的转换链路（源单位 → px → 目标单位）",
+        "一键复制结果",
+        "纯浏览器本地处理，零数据上传"
+      ],
+      "features_en": [
+        "Convert between px, em, rem, %, vw, vh, vmin, vmax, pt, ch, ex units",
+        "Customizable base font size (default 16px)",
+        "Customizable viewport width and height",
+        "Shows full conversion chain (source → px → target)",
+        "One-click copy results",
+        "100% browser-local, zero data upload"
+      ],
+      "faq_zh": [
+        [
+          "为什么需要设置基础字体大小？",
+          "em 和 rem 单位是相对于基础字体大小计算的。通常浏览器默认是 16px，但您可以根据实际设计需求调整。"
+        ],
+        [
+          "视口宽度和高度有什么作用？",
+          "vw、vh、vmin、vmax 和百分比单位依赖于视口尺寸。您可以根据您的设计稿设置视口宽度和高度，以获得准确的转换结果。"
+        ],
+        [
+          "ch 和 ex 单位是什么？",
+          "ch（字符宽度）和 ex（字符高度）是相对于字体度量单位的。ch 约等于字符 0 的宽度，ex 约等于小写字母 x 的高度。这里我们使用基础字体大小的一半作为近似值。"
+        ],
+        [
+          "数据会上传到服务器吗？",
+          "不会。所有转换完全在浏览器本地完成，您的数据不会离开您的设备。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "Why do I need to set the base font size?",
+          "em and rem units are relative to the base font size. Browsers default to 16px, but you can adjust it based on your design requirements."
+        ],
+        [
+          "What are viewport dimensions for?",
+          "vw, vh, vmin, vmax and percentage units depend on viewport size. Set your viewport width and height based on your design mockup for accurate conversions."
+        ],
+        [
+          "What are ch and ex units?",
+          "ch (character width) and ex (character height) are font-relative units. ch is approximately the width of character 0, ex is approximately the height of lowercase x. We use half the base font size as an approximation."
+        ],
+        [
+          "Is my data uploaded to a server?",
+          "No. All conversions happen entirely in your browser. Your data never leaves your device."
+        ]
+      ],
+      "ui_zh": "<div class=\"tool-controls\" style=\"max-width:100%\">\n  <div style=\"display:flex;flex-direction:column;gap:10px\">\n    <div style=\"display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end\">\n      <div>\n        <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">数值</label>\n        <input type=\"number\" id=\"cuc-input\" value=\"16\" min=\"0\" step=\"0.01\" style=\"width:110px;padding:6px 10px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\">\n      </div>\n      <div>\n        <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">从</label>\n        <select id=\"cuc-from\" style=\"padding:6px 10px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\">\n          <option value=\"px\">px</option>\n          <option value=\"em\">em</option>\n          <option value=\"rem\">rem</option>\n          <option value=\"%\">%</option>\n          <option value=\"vw\">vw</option>\n          <option value=\"vh\">vh</option>\n          <option value=\"vmin\">vmin</option>\n          <option value=\"vmax\">vmax</option>\n          <option value=\"pt\">pt</option>\n          <option value=\"ch\">ch</option>\n          <option value=\"ex\">ex</option>\n        </select>\n      </div>\n      <div>\n        <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">到</label>\n        <select id=\"cuc-to\" style=\"padding:6px 10px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\">\n          <option value=\"px\">px</option>\n          <option value=\"em\" selected>em</option>\n          <option value=\"rem\">rem</option>\n          <option value=\"%\">%</option>\n          <option value=\"vw\">vw</option>\n          <option value=\"vh\">vh</option>\n          <option value=\"vmin\">vmin</option>\n          <option value=\"vmax\">vmax</option>\n          <option value=\"pt\">pt</option>\n          <option value=\"ch\">ch</option>\n          <option value=\"ex\">ex</option>\n        </select>\n      </div>\n    </div>\n    <div style=\"display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end\">\n      <div>\n        <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">基础字体 (px)</label>\n        <input type=\"number\" id=\"cuc-base\" value=\"16\" min=\"1\" step=\"0.1\" style=\"width:100px;padding:6px 10px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\">\n      </div>\n      <div>\n        <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">视口宽度 (px)</label>\n        <input type=\"number\" id=\"cuc-vw\" value=\"1920\" min=\"1\" step=\"1\" style=\"width:100px;padding:6px 10px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\">\n      </div>\n      <div>\n        <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">视口高度 (px)</label>\n        <input type=\"number\" id=\"cuc-vh\" value=\"1080\" min=\"1\" step=\"1\" style=\"width:100px;padding:6px 10px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\">\n      </div>\n    </div>\n    <div style=\"display:flex;gap:8px;flex-wrap:wrap\">\n      <button id=\"cuc-convert\" class=\"btn btn-primary\">转换</button>\n      <button id=\"cuc-copy\" class=\"btn btn-secondary\">复制结果</button>\n      <button id=\"cuc-clear\" class=\"btn btn-secondary\">清空</button>\n    </div>\n    <div id=\"cuc-msg\" style=\"font-size:13px;min-height:18px;transition:opacity 0.2s\"></div>\n    <div>\n      <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">结果</label>\n      <textarea id=\"cuc-output\" readonly style=\"width:100%;min-height:50px;padding:8px 10px;border:1px solid var(--border);border-radius:6px;font-size:14px;font-family:monospace;background:var(--bg-card);color:var(--text);resize:vertical;box-sizing:border-box\"></textarea>\n    </div>\n  </div>\n</div>\n<script src=\"/assets/tools/css-unit-converter.js\"></script>",
+      "ui_en": "<div class=\"tool-controls\" style=\"max-width:100%\">\n  <div style=\"display:flex;flex-direction:column;gap:10px\">\n    <div style=\"display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end\">\n      <div>\n        <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">Value</label>\n        <input type=\"number\" id=\"cuc-input\" value=\"16\" min=\"0\" step=\"0.01\" style=\"width:110px;padding:6px 10px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\">\n      </div>\n      <div>\n        <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">From</label>\n        <select id=\"cuc-from\" style=\"padding:6px 10px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\">\n          <option value=\"px\">px</option>\n          <option value=\"em\">em</option>\n          <option value=\"rem\">rem</option>\n          <option value=\"%\">%</option>\n          <option value=\"vw\">vw</option>\n          <option value=\"vh\">vh</option>\n          <option value=\"vmin\">vmin</option>\n          <option value=\"vmax\">vmax</option>\n          <option value=\"pt\">pt</option>\n          <option value=\"ch\">ch</option>\n          <option value=\"ex\">ex</option>\n        </select>\n      </div>\n      <div>\n        <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">To</label>\n        <select id=\"cuc-to\" style=\"padding:6px 10px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\">\n          <option value=\"px\">px</option>\n          <option value=\"em\" selected>em</option>\n          <option value=\"rem\">rem</option>\n          <option value=\"%\">%</option>\n          <option value=\"vw\">vw</option>\n          <option value=\"vh\">vh</option>\n          <option value=\"vmin\">vmin</option>\n          <option value=\"vmax\">vmax</option>\n          <option value=\"pt\">pt</option>\n          <option value=\"ch\">ch</option>\n          <option value=\"ex\">ex</option>\n        </select>\n      </div>\n    </div>\n    <div style=\"display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end\">\n      <div>\n        <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">Base font (px)</label>\n        <input type=\"number\" id=\"cuc-base\" value=\"16\" min=\"1\" step=\"0.1\" style=\"width:100px;padding:6px 10px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\">\n      </div>\n      <div>\n        <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">Viewport width (px)</label>\n        <input type=\"number\" id=\"cuc-vw\" value=\"1920\" min=\"1\" step=\"1\" style=\"width:100px;padding:6px 10px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\">\n      </div>\n      <div>\n        <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">Viewport height (px)</label>\n        <input type=\"number\" id=\"cuc-vh\" value=\"1080\" min=\"1\" step=\"1\" style=\"width:100px;padding:6px 10px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--bg-card);color:var(--text)\">\n      </div>\n    </div>\n    <div style=\"display:flex;gap:8px;flex-wrap:wrap\">\n      <button id=\"cuc-convert\" class=\"btn btn-primary\">Convert</button>\n      <button id=\"cuc-copy\" class=\"btn btn-secondary\">Copy</button>\n      <button id=\"cuc-clear\" class=\"btn btn-secondary\">Clear</button>\n    </div>\n    <div id=\"cuc-msg\" style=\"font-size:13px;min-height:18px;transition:opacity 0.2s\"></div>\n    <div>\n      <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">Result</label>\n      <textarea id=\"cuc-output\" readonly style=\"width:100%;min-height:50px;padding:8px 10px;border:1px solid var(--border);border-radius:6px;font-size:14px;font-family:monospace;background:var(--bg-card);color:var(--text);resize:vertical;box-sizing:border-box\"></textarea>\n    </div>\n  </div>\n</div>\n<script src=\"/assets/tools/css-unit-converter.js\"></script>"
+    },
+    {
+      "slug": "css-box-shadow-generator",
+      "category": "dev",
+      "icon": "🎨",
+      "name_zh": "CSS Box Shadow 生成器",
+      "name_en": "CSS Box Shadow Generator",
+      "short_zh": "可视化生成 CSS box-shadow 效果，支持多层阴影叠加和实时预览",
+      "short_en": "Visually generate CSS box-shadow effects with multi-layer shadows and live preview",
+      "keywords_zh": "CSS box-shadow,阴影生成器,box-shadow生成器,CSS阴影,盒子阴影,阴影效果,inset阴影,内阴影,外阴影,多层阴影,阴影图层,在线CSS工具,前端开发,可视化阴影,阴影在线生成",
+      "keywords_en": "CSS box-shadow, box shadow generator, CSS shadow, drop shadow, box-shadow effect, inset shadow, multi-layer shadow, CSS design tool, online CSS generator, frontend tool, visual shadow builder",
+      "index": 144,
+      "related": [
+        "css-gradient-generator",
+        "css-flexbox-generator",
+        "css-media-query-generator",
+        "color-converter"
+      ],
+      "long_zh": "CSS Box Shadow 生成器是一款免费在线工具，帮助您可视化创建 CSS box-shadow 效果。支持水平偏移、垂直偏移、模糊半径、扩散半径、颜色和透明度调节，以及 inset 内阴影。您还可以叠加多个阴影图层，创建丰富的视觉效果。所有操作在浏览器本地完成，无需上传数据。",
+      "long_en": "CSS Box Shadow Generator is a free online tool that helps you visually create CSS box-shadow effects. Supports horizontal offset, vertical offset, blur radius, spread radius, color, opacity, and inset shadows. You can also stack multiple shadow layers to create rich visual effects. All processing is done locally in your browser with zero data upload.",
+      "seo_title_zh": "CSS Box Shadow 生成器 - 在线可视化阴影生成工具 | AI 工具盒子",
+      "seo_title_en": "CSS Box Shadow Generator - Online Visual Shadow Builder | AI Toolbox",
+      "features_zh": [
+        "可视化调节水平/垂直偏移、模糊、扩散半径",
+        "支持颜色选择器和透明度调节",
+        "支持 inset 内阴影",
+        "多层阴影叠加，丰富的视觉效果",
+        "预设常用阴影效果一键切换",
+        "实时预览 + 一键复制 CSS 代码",
+        "纯浏览器本地处理，零数据上传"
+      ],
+      "features_en": [
+        "Visual sliders for horizontal/vertical offset, blur, spread radius",
+        "Color picker with opacity control",
+        "Inset shadow support",
+        "Multi-layer shadow stacking for rich effects",
+        "One-click preset shadow effects",
+        "Live preview + one-click CSS copy",
+        "100% browser-local, zero data upload"
+      ],
+      "faq_zh": [
+        [
+          "box-shadow 的语法是什么？",
+          "box-shadow: [inset] offset-x offset-y blur-radius spread-radius color; 多个阴影用逗号分隔。"
+        ],
+        [
+          "什么是 inset 阴影？",
+          "inset 关键字使阴影在元素内部渲染，而不是外部。常用于创建内凹效果或卡片内阴影。"
+        ],
+        [
+          "多层阴影如何工作？",
+          "按添加图层的顺序叠加，先添加的图层在上层。您可以通过添加和删除图层来控制阴影的叠加效果。"
+        ],
+        [
+          "数据会上传到服务器吗？",
+          "不会。所有操作完全在浏览器本地完成，您的数据不会离开您的设备。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "What is the box-shadow syntax?",
+          "box-shadow: [inset] offset-x offset-y blur-radius spread-radius color; Multiple shadows are separated by commas."
+        ],
+        [
+          "What is an inset shadow?",
+          "The inset keyword makes the shadow render inside the element instead of outside. It's commonly used for inset effects or inner card shadows."
+        ],
+        [
+          "How do multi-layer shadows work?",
+          "Shadows are stacked in the order you add them — first added is on top. You can control the layering by adding and removing shadow layers."
+        ],
+        [
+          "Is my data uploaded to a server?",
+          "No. All operations happen entirely in your browser. Your data never leaves your device."
+        ]
+      ],
+      "ui_zh": "<div class=\"tool-controls\" style=\"max-width:100%\">\n  <div style=\"display:flex;flex-direction:column;gap:10px\">\n    <div style=\"display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end\">\n      <div>\n        <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">水平偏移 (X)</label>\n        <input type=\"range\" id=\"bs-h\" min=\"-50\" max=\"50\" value=\"2\" step=\"1\" style=\"width:120px\">\n        <span id=\"bs-h-val\" style=\"font-size:12px;margin-left:4px\">2px</span>\n      </div>\n      <div>\n        <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">垂直偏移 (Y)</label>\n        <input type=\"range\" id=\"bs-v\" min=\"-50\" max=\"50\" value=\"2\" step=\"1\" style=\"width:120px\">\n        <span id=\"bs-v-val\" style=\"font-size:12px;margin-left:4px\">2px</span>\n      </div>\n      <div>\n        <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">模糊</label>\n        <input type=\"range\" id=\"bs-blur\" min=\"0\" max=\"100\" value=\"5\" step=\"1\" style=\"width:120px\">\n        <span id=\"bs-blur-val\" style=\"font-size:12px;margin-left:4px\">5px</span>\n      </div>\n      <div>\n        <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">扩散</label>\n        <input type=\"range\" id=\"bs-spread\" min=\"-50\" max=\"50\" value=\"0\" step=\"1\" style=\"width:120px\">\n        <span id=\"bs-spread-val\" style=\"font-size:12px;margin-left:4px\">0px</span>\n      </div>\n    </div>\n    <div style=\"display:flex;gap:12px;flex-wrap:wrap;align-items:center\">\n      <div>\n        <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">颜色</label>\n        <input type=\"color\" id=\"bs-color\" value=\"#000000\" style=\"width:48px;height:36px;padding:2px;border:1px solid var(--border);border-radius:4px;background:var(--bg-card);cursor:pointer\">\n      </div>\n      <div>\n        <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">透明度</label>\n        <input type=\"range\" id=\"bs-opacity\" min=\"0\" max=\"1\" value=\"0.3\" step=\"0.01\" style=\"width:120px\">\n        <span id=\"bs-opacity-val\" style=\"font-size:12px;margin-left:4px\">0.30</span>\n      </div>\n      <div style=\"display:flex;align-items:center;gap:4px;margin-top:18px\">\n        <input type=\"checkbox\" id=\"bs-inset\">\n        <label for=\"bs-inset\" style=\"font-size:13px;cursor:pointer\">内阴影</label>\n      </div>\n    </div>\n    <div style=\"display:flex;gap:8px;flex-wrap:wrap\">\n      <button id=\"bs-add\" class=\"btn btn-primary\">添加图层</button>\n      <button id=\"bs-copy\" class=\"btn btn-secondary\">复制 CSS</button>\n      <button id=\"bs-clear\" class=\"btn btn-secondary\">重置</button>\n    </div>\n    <div id=\"bs-msg\" style=\"font-size:13px;min-height:18px;transition:opacity 0.2s\"></div>\n    <div id=\"bs-layers\" style=\"margin-top:4px\"></div>\n    <div style=\"display:flex;flex-wrap:wrap;gap:8px;margin-top:4px\">\n      <button data-bs-preset='{\"h\":2,\"v\":2,\"blur\":5,\"spread\":0,\"color\":\"#000000\",\"opacity\":0.3}' class=\"btn btn-secondary\" style=\"font-size:12px\">小阴影</button>\n      <button data-bs-preset='{\"h\":0,\"v\":4,\"blur\":12,\"spread\":0,\"color\":\"#000000\",\"opacity\":0.15}' class=\"btn btn-secondary\" style=\"font-size:12px\">卡片阴影</button>\n      <button data-bs-preset='{\"h\":0,\"v\":8,\"blur\":24,\"spread\":0,\"color\":\"#000000\",\"opacity\":0.12}' class=\"btn btn-secondary\" style=\"font-size:12px\">大阴影</button>\n      <button data-bs-preset='{\"h\":0,\"v\":0,\"blur\":10,\"spread\":0,\"color\":\"#e74c3c\",\"opacity\":0.4}' class=\"btn btn-secondary\" style=\"font-size:12px\">彩色发光</button>\n      <button data-bs-preset='{\"h\":0,\"v\":2,\"blur\":4,\"spread\":0,\"color\":\"#000000\",\"opacity\":0.15,\"inset\":true}' class=\"btn btn-secondary\" style=\"font-size:12px\">内阴影</button>\n    </div>\n    <div>\n      <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">预览</label>\n      <div id=\"bs-preview\" style=\"width:100%;height:120px;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--text-muted);transition:box-shadow 0.15s\">&#x1f3a8;</div>\n    </div>\n    <div>\n      <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">CSS 代码</label>\n      <textarea id=\"bs-output\" readonly style=\"width:100%;min-height:60px;padding:8px 10px;border:1px solid var(--border);border-radius:6px;font-size:13px;font-family:monospace;background:var(--bg-card);color:var(--text);resize:vertical;box-sizing:border-box\"></textarea>\n    </div>\n  </div>\n</div>\n<script src=\"/assets/tools/css-box-shadow-generator.js\"></script>",
+      "ui_en": "<div class=\"tool-controls\" style=\"max-width:100%\">\n  <div style=\"display:flex;flex-direction:column;gap:10px\">\n    <div style=\"display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end\">\n      <div>\n        <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">H-Offset (X)</label>\n        <input type=\"range\" id=\"bs-h\" min=\"-50\" max=\"50\" value=\"2\" step=\"1\" style=\"width:120px\">\n        <span id=\"bs-h-val\" style=\"font-size:12px;margin-left:4px\">2px</span>\n      </div>\n      <div>\n        <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">V-Offset (Y)</label>\n        <input type=\"range\" id=\"bs-v\" min=\"-50\" max=\"50\" value=\"2\" step=\"1\" style=\"width:120px\">\n        <span id=\"bs-v-val\" style=\"font-size:12px;margin-left:4px\">2px</span>\n      </div>\n      <div>\n        <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">Blur</label>\n        <input type=\"range\" id=\"bs-blur\" min=\"0\" max=\"100\" value=\"5\" step=\"1\" style=\"width:120px\">\n        <span id=\"bs-blur-val\" style=\"font-size:12px;margin-left:4px\">5px</span>\n      </div>\n      <div>\n        <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">Spread</label>\n        <input type=\"range\" id=\"bs-spread\" min=\"-50\" max=\"50\" value=\"0\" step=\"1\" style=\"width:120px\">\n        <span id=\"bs-spread-val\" style=\"font-size:12px;margin-left:4px\">0px</span>\n      </div>\n    </div>\n    <div style=\"display:flex;gap:12px;flex-wrap:wrap;align-items:center\">\n      <div>\n        <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">Color</label>\n        <input type=\"color\" id=\"bs-color\" value=\"#000000\" style=\"width:48px;height:36px;padding:2px;border:1px solid var(--border);border-radius:4px;background:var(--bg-card);cursor:pointer\">\n      </div>\n      <div>\n        <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">Opacity</label>\n        <input type=\"range\" id=\"bs-opacity\" min=\"0\" max=\"1\" value=\"0.3\" step=\"0.01\" style=\"width:120px\">\n        <span id=\"bs-opacity-val\" style=\"font-size:12px;margin-left:4px\">0.30</span>\n      </div>\n      <div style=\"display:flex;align-items:center;gap:4px;margin-top:18px\">\n        <input type=\"checkbox\" id=\"bs-inset\">\n        <label for=\"bs-inset\" style=\"font-size:13px;cursor:pointer\">Inset</label>\n      </div>\n    </div>\n    <div style=\"display:flex;gap:8px;flex-wrap:wrap\">\n      <button id=\"bs-add\" class=\"btn btn-primary\">Add Layer</button>\n      <button id=\"bs-copy\" class=\"btn btn-secondary\">Copy CSS</button>\n      <button id=\"bs-clear\" class=\"btn btn-secondary\">Reset</button>\n    </div>\n    <div id=\"bs-msg\" style=\"font-size:13px;min-height:18px;transition:opacity 0.2s\"></div>\n    <div id=\"bs-layers\" style=\"margin-top:4px\"></div>\n    <div style=\"display:flex;flex-wrap:wrap;gap:8px;margin-top:4px\">\n      <button data-bs-preset='{\"h\":2,\"v\":2,\"blur\":5,\"spread\":0,\"color\":\"#000000\",\"opacity\":0.3}' class=\"btn btn-secondary\" style=\"font-size:12px\">Small shadow</button>\n      <button data-bs-preset='{\"h\":0,\"v\":4,\"blur\":12,\"spread\":0,\"color\":\"#000000\",\"opacity\":0.15}' class=\"btn btn-secondary\" style=\"font-size:12px\">Card shadow</button>\n      <button data-bs-preset='{\"h\":0,\"v\":8,\"blur\":24,\"spread\":0,\"color\":\"#000000\",\"opacity\":0.12}' class=\"btn btn-secondary\" style=\"font-size:12px\">Large shadow</button>\n      <button data-bs-preset='{\"h\":0,\"v\":0,\"blur\":10,\"spread\":0,\"color\":\"#e74c3c\",\"opacity\":0.4}' class=\"btn btn-secondary\" style=\"font-size:12px\">Color glow</button>\n      <button data-bs-preset='{\"h\":0,\"v\":2,\"blur\":4,\"spread\":0,\"color\":\"#000000\",\"opacity\":0.15,\"inset\":true}' class=\"btn btn-secondary\" style=\"font-size:12px\">Inset</button>\n    </div>\n    <div>\n      <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">Preview</label>\n      <div id=\"bs-preview\" style=\"width:100%;height:120px;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--text-muted);transition:box-shadow 0.15s\">&#x1f3a8;</div>\n    </div>\n    <div>\n      <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">CSS Code</label>\n      <textarea id=\"bs-output\" readonly style=\"width:100%;min-height:60px;padding:8px 10px;border:1px solid var(--border);border-radius:6px;font-size:13px;font-family:monospace;background:var(--bg-card);color:var(--text);resize:vertical;box-sizing:border-box\"></textarea>\n    </div>\n  </div>\n</div>\n<script src=\"/assets/tools/css-box-shadow-generator.js\"></script>"
     }
   ]
 }
