@@ -11215,6 +11215,160 @@
       ],
       "ui_zh": "<div class=\"tool-controls\" style=\"max-width:100%\">\n  <div style=\"display:flex;flex-direction:column;gap:10px\">\n    <div style=\"display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end\">\n      <div>\n        <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">水平偏移 (X)</label>\n        <input type=\"range\" id=\"bs-h\" min=\"-50\" max=\"50\" value=\"2\" step=\"1\" style=\"width:120px\">\n        <span id=\"bs-h-val\" style=\"font-size:12px;margin-left:4px\">2px</span>\n      </div>\n      <div>\n        <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">垂直偏移 (Y)</label>\n        <input type=\"range\" id=\"bs-v\" min=\"-50\" max=\"50\" value=\"2\" step=\"1\" style=\"width:120px\">\n        <span id=\"bs-v-val\" style=\"font-size:12px;margin-left:4px\">2px</span>\n      </div>\n      <div>\n        <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">模糊</label>\n        <input type=\"range\" id=\"bs-blur\" min=\"0\" max=\"100\" value=\"5\" step=\"1\" style=\"width:120px\">\n        <span id=\"bs-blur-val\" style=\"font-size:12px;margin-left:4px\">5px</span>\n      </div>\n      <div>\n        <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">扩散</label>\n        <input type=\"range\" id=\"bs-spread\" min=\"-50\" max=\"50\" value=\"0\" step=\"1\" style=\"width:120px\">\n        <span id=\"bs-spread-val\" style=\"font-size:12px;margin-left:4px\">0px</span>\n      </div>\n    </div>\n    <div style=\"display:flex;gap:12px;flex-wrap:wrap;align-items:center\">\n      <div>\n        <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">颜色</label>\n        <input type=\"color\" id=\"bs-color\" value=\"#000000\" style=\"width:48px;height:36px;padding:2px;border:1px solid var(--border);border-radius:4px;background:var(--bg-card);cursor:pointer\">\n      </div>\n      <div>\n        <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">透明度</label>\n        <input type=\"range\" id=\"bs-opacity\" min=\"0\" max=\"1\" value=\"0.3\" step=\"0.01\" style=\"width:120px\">\n        <span id=\"bs-opacity-val\" style=\"font-size:12px;margin-left:4px\">0.30</span>\n      </div>\n      <div style=\"display:flex;align-items:center;gap:4px;margin-top:18px\">\n        <input type=\"checkbox\" id=\"bs-inset\">\n        <label for=\"bs-inset\" style=\"font-size:13px;cursor:pointer\">内阴影</label>\n      </div>\n    </div>\n    <div style=\"display:flex;gap:8px;flex-wrap:wrap\">\n      <button id=\"bs-add\" class=\"btn btn-primary\">添加图层</button>\n      <button id=\"bs-copy\" class=\"btn btn-secondary\">复制 CSS</button>\n      <button id=\"bs-clear\" class=\"btn btn-secondary\">重置</button>\n    </div>\n    <div id=\"bs-msg\" style=\"font-size:13px;min-height:18px;transition:opacity 0.2s\"></div>\n    <div id=\"bs-layers\" style=\"margin-top:4px\"></div>\n    <div style=\"display:flex;flex-wrap:wrap;gap:8px;margin-top:4px\">\n      <button data-bs-preset='{\"h\":2,\"v\":2,\"blur\":5,\"spread\":0,\"color\":\"#000000\",\"opacity\":0.3}' class=\"btn btn-secondary\" style=\"font-size:12px\">小阴影</button>\n      <button data-bs-preset='{\"h\":0,\"v\":4,\"blur\":12,\"spread\":0,\"color\":\"#000000\",\"opacity\":0.15}' class=\"btn btn-secondary\" style=\"font-size:12px\">卡片阴影</button>\n      <button data-bs-preset='{\"h\":0,\"v\":8,\"blur\":24,\"spread\":0,\"color\":\"#000000\",\"opacity\":0.12}' class=\"btn btn-secondary\" style=\"font-size:12px\">大阴影</button>\n      <button data-bs-preset='{\"h\":0,\"v\":0,\"blur\":10,\"spread\":0,\"color\":\"#e74c3c\",\"opacity\":0.4}' class=\"btn btn-secondary\" style=\"font-size:12px\">彩色发光</button>\n      <button data-bs-preset='{\"h\":0,\"v\":2,\"blur\":4,\"spread\":0,\"color\":\"#000000\",\"opacity\":0.15,\"inset\":true}' class=\"btn btn-secondary\" style=\"font-size:12px\">内阴影</button>\n    </div>\n    <div>\n      <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">预览</label>\n      <div id=\"bs-preview\" style=\"width:100%;height:120px;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--text-muted);transition:box-shadow 0.15s\">&#x1f3a8;</div>\n    </div>\n    <div>\n      <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">CSS 代码</label>\n      <textarea id=\"bs-output\" readonly style=\"width:100%;min-height:60px;padding:8px 10px;border:1px solid var(--border);border-radius:6px;font-size:13px;font-family:monospace;background:var(--bg-card);color:var(--text);resize:vertical;box-sizing:border-box\"></textarea>\n    </div>\n  </div>\n</div>\n<script src=\"/assets/tools/css-box-shadow-generator.js\"></script>",
       "ui_en": "<div class=\"tool-controls\" style=\"max-width:100%\">\n  <div style=\"display:flex;flex-direction:column;gap:10px\">\n    <div style=\"display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end\">\n      <div>\n        <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">H-Offset (X)</label>\n        <input type=\"range\" id=\"bs-h\" min=\"-50\" max=\"50\" value=\"2\" step=\"1\" style=\"width:120px\">\n        <span id=\"bs-h-val\" style=\"font-size:12px;margin-left:4px\">2px</span>\n      </div>\n      <div>\n        <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">V-Offset (Y)</label>\n        <input type=\"range\" id=\"bs-v\" min=\"-50\" max=\"50\" value=\"2\" step=\"1\" style=\"width:120px\">\n        <span id=\"bs-v-val\" style=\"font-size:12px;margin-left:4px\">2px</span>\n      </div>\n      <div>\n        <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">Blur</label>\n        <input type=\"range\" id=\"bs-blur\" min=\"0\" max=\"100\" value=\"5\" step=\"1\" style=\"width:120px\">\n        <span id=\"bs-blur-val\" style=\"font-size:12px;margin-left:4px\">5px</span>\n      </div>\n      <div>\n        <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">Spread</label>\n        <input type=\"range\" id=\"bs-spread\" min=\"-50\" max=\"50\" value=\"0\" step=\"1\" style=\"width:120px\">\n        <span id=\"bs-spread-val\" style=\"font-size:12px;margin-left:4px\">0px</span>\n      </div>\n    </div>\n    <div style=\"display:flex;gap:12px;flex-wrap:wrap;align-items:center\">\n      <div>\n        <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">Color</label>\n        <input type=\"color\" id=\"bs-color\" value=\"#000000\" style=\"width:48px;height:36px;padding:2px;border:1px solid var(--border);border-radius:4px;background:var(--bg-card);cursor:pointer\">\n      </div>\n      <div>\n        <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">Opacity</label>\n        <input type=\"range\" id=\"bs-opacity\" min=\"0\" max=\"1\" value=\"0.3\" step=\"0.01\" style=\"width:120px\">\n        <span id=\"bs-opacity-val\" style=\"font-size:12px;margin-left:4px\">0.30</span>\n      </div>\n      <div style=\"display:flex;align-items:center;gap:4px;margin-top:18px\">\n        <input type=\"checkbox\" id=\"bs-inset\">\n        <label for=\"bs-inset\" style=\"font-size:13px;cursor:pointer\">Inset</label>\n      </div>\n    </div>\n    <div style=\"display:flex;gap:8px;flex-wrap:wrap\">\n      <button id=\"bs-add\" class=\"btn btn-primary\">Add Layer</button>\n      <button id=\"bs-copy\" class=\"btn btn-secondary\">Copy CSS</button>\n      <button id=\"bs-clear\" class=\"btn btn-secondary\">Reset</button>\n    </div>\n    <div id=\"bs-msg\" style=\"font-size:13px;min-height:18px;transition:opacity 0.2s\"></div>\n    <div id=\"bs-layers\" style=\"margin-top:4px\"></div>\n    <div style=\"display:flex;flex-wrap:wrap;gap:8px;margin-top:4px\">\n      <button data-bs-preset='{\"h\":2,\"v\":2,\"blur\":5,\"spread\":0,\"color\":\"#000000\",\"opacity\":0.3}' class=\"btn btn-secondary\" style=\"font-size:12px\">Small shadow</button>\n      <button data-bs-preset='{\"h\":0,\"v\":4,\"blur\":12,\"spread\":0,\"color\":\"#000000\",\"opacity\":0.15}' class=\"btn btn-secondary\" style=\"font-size:12px\">Card shadow</button>\n      <button data-bs-preset='{\"h\":0,\"v\":8,\"blur\":24,\"spread\":0,\"color\":\"#000000\",\"opacity\":0.12}' class=\"btn btn-secondary\" style=\"font-size:12px\">Large shadow</button>\n      <button data-bs-preset='{\"h\":0,\"v\":0,\"blur\":10,\"spread\":0,\"color\":\"#e74c3c\",\"opacity\":0.4}' class=\"btn btn-secondary\" style=\"font-size:12px\">Color glow</button>\n      <button data-bs-preset='{\"h\":0,\"v\":2,\"blur\":4,\"spread\":0,\"color\":\"#000000\",\"opacity\":0.15,\"inset\":true}' class=\"btn btn-secondary\" style=\"font-size:12px\">Inset</button>\n    </div>\n    <div>\n      <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">Preview</label>\n      <div id=\"bs-preview\" style=\"width:100%;height:120px;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--text-muted);transition:box-shadow 0.15s\">&#x1f3a8;</div>\n    </div>\n    <div>\n      <label style=\"font-size:13px;font-weight:600;display:block;margin-bottom:4px\">CSS Code</label>\n      <textarea id=\"bs-output\" readonly style=\"width:100%;min-height:60px;padding:8px 10px;border:1px solid var(--border);border-radius:6px;font-size:13px;font-family:monospace;background:var(--bg-card);color:var(--text);resize:vertical;box-sizing:border-box\"></textarea>\n    </div>\n  </div>\n</div>\n<script src=\"/assets/tools/css-box-shadow-generator.js\"></script>"
+    },
+    {
+      "slug": "markdown-table-to-json",
+      "category": "text",
+      "icon": "🔄",
+      "name_zh": "Markdown 表格转 JSON",
+      "name_en": "Markdown Table to JSON",
+      "short_zh": "将 Markdown 表格解析为 JSON 数组或对象",
+      "short_en": "Parse Markdown tables into JSON arrays or objects",
+      "keywords_zh": "Markdown表格转JSON,MD表格解析,表格转JSON,Markdown to JSON,Markdown转JSON,表格数据提取",
+      "keywords_en": "Markdown table to JSON, MD table parser, table to JSON, Markdown to JSON converter, table data extraction",
+      "long_zh": "<p>免费的 Markdown 表格转 JSON 工具，快速将 Markdown 格式的表格数据解析为 JSON 数组或对象。支持自动识别表头（第一行作为键名），适合数据迁移、API 构建、数据分析和自动化脚本编写场景。</p><p>支持任意数量的行和列，列名自动转换为合法的 JSON 键名。所有处理在浏览器本地完成，数据不会上传到任何服务器。</p>",
+      "long_en": "<p>Free Markdown Table to JSON converter. Parse Markdown table data into JSON arrays or objects quickly. Automatically uses the first row as keys, making it perfect for data migration, API construction, data analysis, and automation scripts.</p><p>Supports any number of rows and columns. Column names are automatically converted to valid JSON keys. All processing happens locally in your browser — no data uploaded.</p>",
+      "ui_zh": "<div style=\"margin-bottom:12px\"><label style=\"font-size:13px;font-weight:600\">Markdown 表格</label><textarea id=\"mtj-input\" style=\"width:100%;min-height:160px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"| Name | Age | City |&#10;| --- | --- | --- |&#10;| Alice | 28 | Beijing |&#10;| Bob | 35 | Shanghai |&#10;| Charlie | 22 | Shenzhen |\"></textarea></div><div style=\"display:flex;flex-wrap:wrap;gap:12px;margin-bottom:12px;align-items:center\"><label>输出格式: <select id=\"mtj-format\"><option value=\"objects\">对象数组（首行作为键名）</option><option value=\"arrays\">数组数组（所有行作为数据）</option></select></label><button class=\"btn\" id=\"mtj-convert-btn\">转换</button><button class=\"btn btn-secondary\" id=\"mtj-clear-btn\">清空</button></div><div style=\"margin-top:8px\"><label style=\"font-size:13px;font-weight:600\">JSON 输出</label><div id=\"mtj-stats\" style=\"font-size:12px;margin-bottom:4px\"></div><textarea id=\"mtj-output\" readonly style=\"width:100%;min-height:200px;font-family:Consolas,monospace;font-size:13px;background:var(--bg)\" placeholder=\"生成的 JSON...\"></textarea></div><div style=\"margin-top:8px\"><button class=\"btn btn-secondary\" id=\"mtj-copy-btn\">复制结果</button></div>",
+      "ui_en": "<div style=\"margin-bottom:12px\"><label style=\"font-size:13px;font-weight:600\">Markdown Table</label><textarea id=\"mtj-input\" style=\"width:100%;min-height:160px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"| Name | Age | City |&#10;| --- | --- | --- |&#10;| Alice | 28 | Beijing |&#10;| Bob | 35 | Shanghai |&#10;| Charlie | 22 | Shenzhen |\"></textarea></div><div style=\"display:flex;flex-wrap:wrap;gap:12px;margin-bottom:12px;align-items:center\"><label>Output Format: <select id=\"mtj-format\"><option value=\"objects\">Objects (first row as keys)</option><option value=\"arrays\">Arrays (all rows as data)</option></select></label><button class=\"btn\" id=\"mtj-convert-btn\">Convert</button><button class=\"btn btn-secondary\" id=\"mtj-clear-btn\">Clear</button></div><div style=\"margin-top:8px\"><label style=\"font-size:13px;font-weight:600\">JSON Output</label><div id=\"mtj-stats\" style=\"font-size:12px;margin-bottom:4px\"></div><textarea id=\"mtj-output\" readonly style=\"width:100%;min-height:200px;font-family:Consolas,monospace;font-size:13px;background:var(--bg)\" placeholder=\"Generated JSON...\"></textarea></div><div style=\"margin-top:8px\"><button class=\"btn btn-secondary\" id=\"mtj-copy-btn\">Copy Result</button></div>",
+      "seo_title_zh": "Markdown 表格转 JSON | 在线表格转换工具 | AI 工具盒子",
+      "seo_title_en": "Markdown Table to JSON | Online Table Converter | AI Toolbox",
+      "features_zh": [
+        "自动识别 Markdown 表格格式",
+        "支持对象数组（首行作为键名）和数组数组两种输出格式",
+        "列名自动转换为合法 JSON 键名",
+        "实时转换，粘贴即出结果",
+        "一键复制 JSON 输出",
+        "所有处理在浏览器本地完成，零数据上传"
+      ],
+      "features_en": [
+        "Auto-detects Markdown table format",
+        "Supports object array (first row as keys) and array array output",
+        "Column names auto-converted to valid JSON keys",
+        "Real-time conversion, paste and get results",
+        "One-click copy JSON output",
+        "All processing runs locally, zero data upload"
+      ],
+      "faq_zh": [
+        [
+          "Markdown 表格格式有要求吗？",
+          "标准 Markdown 表格即可：第一行表头，第二行分隔线（|---|），后续数据行。支持任意数量的列和行。"
+        ],
+        [
+          "表头包含特殊字符怎么办？",
+          "工具会自动将表头中的特殊字符替换为下划线，确保生成合法的 JSON 键名。中文表头会被保留。"
+        ],
+        [
+          "生成的 JSON 能用在什么地方？",
+          "适合 API 数据构建、前后端数据交换、数据分析脚本、自动化测试等场景。"
+        ],
+        [
+          "支持多大数据？",
+          "作为浏览器本地工具，支持数千行级别的表格。超大表格可能存在性能问题。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "What format is required for the Markdown table?",
+          "Standard Markdown table: first row header, second row separator (|---|), followed by data rows. Supports any number of columns and rows."
+        ],
+        [
+          "What if headers contain special characters?",
+          "Special characters are automatically replaced with underscores to ensure valid JSON key names. Chinese headers are preserved."
+        ],
+        [
+          "Where can I use the generated JSON?",
+          "Perfect for API data construction, frontend-backend data exchange, data analysis scripts, and automated testing."
+        ],
+        [
+          "How large of a table can be processed?",
+          "As a browser-based tool, it handles thousands of rows. Very large tables may experience performance issues."
+        ]
+      ],
+      "related": [
+        "markdown-table",
+        "markdown-to-html",
+        "json-formatter",
+        "csv-to-json"
+      ],
+      "index": 145
+    },
+    {
+      "slug": "html-to-css-extractor",
+      "category": "dev",
+      "icon": "🎨",
+      "name_zh": "HTML 提取 CSS 选择器",
+      "name_en": "HTML to CSS Extractor",
+      "short_zh": "从 HTML 中提取 CSS 类名、ID 和标签选择器",
+      "short_en": "Extract CSS class names, IDs, and tag selectors from HTML",
+      "keywords_zh": "HTML提取CSS,CSS选择器提取,HTML类名提取,HTML ID提取,HTML标签提取,HTML转CSS,前端开发工具,CSS提取器",
+      "keywords_en": "HTML to CSS extractor, CSS selector extractor, extract CSS classes from HTML, HTML class extractor, CSS class finder, frontend dev tool",
+      "long_zh": "<p>免费的 HTML 转 CSS 选择器提取工具，快速从 HTML 代码中提取所有 CSS 类名、ID 选择器和 HTML 标签。支持三种模式：仅提取类名、仅提取 ID、提取所有选择器。还可自动生成对应的 CSS 骨架代码，方便快速搭建样式文件。</p><p>适合前端开发调试、CSS 重构、HTML 清理和分析场景。所有处理在浏览器本地完成，数据不会上传到任何服务器。</p>",
+      "long_en": "<p>Free HTML to CSS selector extractor. Quickly extract all CSS class names, ID selectors, and HTML tags from your HTML code. Supports three modes: classes only, IDs only, or all selectors. Automatically generates a CSS skeleton for quick styling setup.</p><p>Perfect for frontend development debugging, CSS refactoring, HTML cleanup, and analysis. All processing happens locally in your browser — no data uploaded.</p>",
+      "ui_zh": "<div style=\"margin-bottom:12px\"><label style=\"font-size:13px;font-weight:600\">HTML 代码</label><textarea id=\"h2c-input\" style=\"width:100%;min-height:180px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"<div class=\"container\">&#10;  <h1 id=\"title\" class=\"heading\">Hello</h1>&#10;  <p class=\"description\">World</p>&#10;</div>\"></textarea></div><div style=\"display:flex;flex-wrap:wrap;gap:12px;margin-bottom:12px;align-items:center\"><label style=\"font-size:13px;font-weight:600\">提取模式：</label><label><input type=\"radio\" name=\"h2c-mode\" value=\"all\" checked> 所有选择器</label><label><input type=\"radio\" name=\"h2c-mode\" value=\"classes\"> 仅 CSS 类名</label><label><input type=\"radio\" name=\"h2c-mode\" value=\"ids\"> 仅 ID</label><label><input type=\"radio\" name=\"h2c-mode\" value=\"tags\"> 仅 HTML 标签</label></div><div style=\"display:flex;flex-wrap:wrap;gap:12px;margin-bottom:12px;align-items:center\"><button class=\"btn\" id=\"h2c-extract-btn\">提取</button><button class=\"btn btn-secondary\" id=\"h2c-clear-btn\">清空</button></div><div style=\"margin-top:8px\"><label style=\"font-size:13px;font-weight:600\">提取结果</label><div id=\"h2c-stats\" style=\"font-size:12px;margin-bottom:4px\"></div><textarea id=\"h2c-output\" readonly style=\"width:100%;min-height:200px;font-family:Consolas,monospace;font-size:13px;background:var(--bg)\" placeholder=\"提取的 CSS 选择器和骨架...\"></textarea></div><div style=\"margin-top:8px\"><button class=\"btn btn-secondary\" id=\"h2c-copy-btn\">复制结果</button></div>",
+      "ui_en": "<div style=\"margin-bottom:12px\"><label style=\"font-size:13px;font-weight:600\">HTML Code</label><textarea id=\"h2c-input\" style=\"width:100%;min-height:180px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"<div class=\"container\">&#10;  <h1 id=\"title\" class=\"heading\">Hello</h1>&#10;  <p class=\"description\">World</p>&#10;</div>\"></textarea></div><div style=\"display:flex;flex-wrap:wrap;gap:12px;margin-bottom:12px;align-items:center\"><label style=\"font-size:13px;font-weight:600\">Extract Mode:</label><label><input type=\"radio\" name=\"h2c-mode\" value=\"all\" checked> All Selectors</label><label><input type=\"radio\" name=\"h2c-mode\" value=\"classes\"> Classes Only</label><label><input type=\"radio\" name=\"h2c-mode\" value=\"ids\"> IDs Only</label><label><input type=\"radio\" name=\"h2c-mode\" value=\"tags\"> HTML Tags Only</label></div><div style=\"display:flex;flex-wrap:wrap;gap:12px;margin-bottom:12px;align-items:center\"><button class=\"btn\" id=\"h2c-extract-btn\">Extract</button><button class=\"btn btn-secondary\" id=\"h2c-clear-btn\">Clear</button></div><div style=\"margin-top:8px\"><label style=\"font-size:13px;font-weight:600\">Extracted Result</label><div id=\"h2c-stats\" style=\"font-size:12px;margin-bottom:4px\"></div><textarea id=\"h2c-output\" readonly style=\"width:100%;min-height:200px;font-family:Consolas,monospace;font-size:13px;background:var(--bg)\" placeholder=\"Extracted CSS selectors and skeleton...\"></textarea></div><div style=\"margin-top:8px\"><button class=\"btn btn-secondary\" id=\"h2c-copy-btn\">Copy Result</button></div>",
+      "seo_title_zh": "HTML 提取 CSS 选择器 | 在线 CSS 提取工具 | AI 工具盒子",
+      "seo_title_en": "HTML to CSS Extractor | Online CSS Selector Tool | AI Toolbox",
+      "features_zh": [
+        "从 HTML 中提取所有 CSS 类名",
+        "提取所有 ID 选择器",
+        "提取所有 HTML 标签",
+        "三种提取模式：类名、ID、标签或全部",
+        "自动生成 CSS 骨架代码",
+        "实时提取，输入即结果",
+        "所有处理在浏览器本地完成，零数据上传"
+      ],
+      "features_en": [
+        "Extract all CSS class names from HTML",
+        "Extract all ID selectors",
+        "Extract all HTML tags",
+        "Three extraction modes: classes, IDs, tags, or all",
+        "Auto-generate CSS skeleton code",
+        "Real-time extraction as you type",
+        "All processing runs locally, zero data upload"
+      ],
+      "faq_zh": [
+        [
+          "提取的类名能直接用作 CSS 选择器吗？",
+          "可以。提取的类名和 ID 会以 .classname 和 #id 格式输出，可以直接复制到你的 CSS 文件中使用。"
+        ],
+        [
+          "支持动态加载的 class 吗？",
+          "工具只提取 HTML 字符串中静态的 class 和 id 属性。动态 JavaScript 生成的类名不会被提取。"
+        ],
+        [
+          "CSS 骨架是什么？",
+          "CSS 骨架是根据提取的类名和 ID 自动生成的空 CSS 规则块，方便你快速填充样式。"
+        ],
+        [
+          "数据会泄露吗？",
+          "所有处理完全在浏览器本地完成，你的 HTML 代码不会上传到任何服务器。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "Can I use the extracted class names directly as CSS selectors?",
+          "Yes. Extracted classes and IDs are output as .classname and #id format, ready to copy into your CSS files."
+        ],
+        [
+          "Does it support dynamically loaded classes?",
+          "The tool only extracts static class and id attributes from the HTML string. Dynamically generated classes via JavaScript are not captured."
+        ],
+        [
+          "What is the CSS skeleton?",
+          "The CSS skeleton is a set of empty CSS rule blocks auto-generated from the extracted class names and IDs, ready for you to fill in styles."
+        ],
+        [
+          "Is my data safe?",
+          "All processing is done entirely in your browser. Your HTML code is never uploaded to any server."
+        ]
+      ],
+      "related": [
+        "css-to-js",
+        "html-validator",
+        "html-stripper",
+        "css-property-reference"
+      ],
+      "index": 146
     }
   ]
 }

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>HTML 提取 CSS 选择器 - HTML 提取 CSS 选择器 | 在线 CSS 提取工具 | AI 工具盒子 | AI 工具盒子</title>
+<meta name="description" content="免费在线HTML 提取 CSS 选择器工具，从 HTML 中提取 CSS 类名、ID 和标签选择器。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="HTML提取CSS,CSS选择器提取,HTML类名提取,HTML ID提取,HTML标签提取,HTML转CSS,前端开发工具,CSS提取器">
+<link rel="canonical" href="https://tools.talang.fun/tools/html-to-css-extractor">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/html-to-css-extractor">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/html-to-css-extractor">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/html-to-css-extractor">
+<meta property="og:title" content="HTML 提取 CSS 选择器 - HTML 提取 CSS 选择器 | 在线 CSS 提取工具 | AI 工具盒子 | AI 工具盒子">
+<meta property="og:description" content="免费在线HTML 提取 CSS 选择器工具，从 HTML 中提取 CSS 类名、ID 和标签选择器。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/html-to-css-extractor">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "HTML 提取 CSS 选择器", "description": "免费在线HTML 提取 CSS 选择器工具，从 HTML 中提取 CSS 类名、ID 和标签选择器。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/html-to-css-extractor", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "从 HTML 中提取 CSS 类名、ID 和标签选择器", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/tools/html-to-css-extractor" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🎨</div>
+  <h1>HTML 提取 CSS 选择器</h1>
+  <p>从 HTML 中提取 CSS 类名、ID 和标签选择器</p>
+</div>
+<div class="tool-panel">
+<div style="margin-bottom:12px"><label style="font-size:13px;font-weight:600">HTML 代码</label><textarea id="h2c-input" style="width:100%;min-height:180px;font-family:Consolas,monospace;font-size:13px" placeholder="<div class="container">&#10;  <h1 id="title" class="heading">Hello</h1>&#10;  <p class="description">World</p>&#10;</div>"></textarea></div><div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:12px;align-items:center"><label style="font-size:13px;font-weight:600">提取模式：</label><label><input type="radio" name="h2c-mode" value="all" checked> 所有选择器</label><label><input type="radio" name="h2c-mode" value="classes"> 仅 CSS 类名</label><label><input type="radio" name="h2c-mode" value="ids"> 仅 ID</label><label><input type="radio" name="h2c-mode" value="tags"> 仅 HTML 标签</label></div><div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:12px;align-items:center"><button class="btn" id="h2c-extract-btn">提取</button><button class="btn btn-secondary" id="h2c-clear-btn">清空</button></div><div style="margin-top:8px"><label style="font-size:13px;font-weight:600">提取结果</label><div id="h2c-stats" style="font-size:12px;margin-bottom:4px"></div><textarea id="h2c-output" readonly style="width:100%;min-height:200px;font-family:Consolas,monospace;font-size:13px;background:var(--bg)" placeholder="提取的 CSS 选择器和骨架..."></textarea></div><div style="margin-top:8px"><button class="btn btn-secondary" id="h2c-copy-btn">复制结果</button></div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>免费的 HTML 转 CSS 选择器提取工具，快速从 HTML 代码中提取所有 CSS 类名、ID 选择器和 HTML 标签。支持三种模式：仅提取类名、仅提取 ID、提取所有选择器。还可自动生成对应的 CSS 骨架代码，方便快速搭建样式文件。</p><p>适合前端开发调试、CSS 重构、HTML 清理和分析场景。所有处理在浏览器本地完成，数据不会上传到任何服务器。</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>从 HTML 中提取所有 CSS 类名</li><li>提取所有 ID 选择器</li><li>提取所有 HTML 标签</li><li>三种提取模式：类名、ID、标签或全部</li><li>自动生成 CSS 骨架代码</li><li>实时提取，输入即结果</li><li>所有处理在浏览器本地完成，零数据上传</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">提取的类名能直接用作 CSS 选择器吗？</h3><p>可以。提取的类名和 ID 会以 .classname 和 #id 格式输出，可以直接复制到你的 CSS 文件中使用。</p><h3 style="margin-top:20px;margin-bottom:8px">支持动态加载的 class 吗？</h3><p>工具只提取 HTML 字符串中静态的 class 和 id 属性。动态 JavaScript 生成的类名不会被提取。</p><h3 style="margin-top:20px;margin-bottom:8px">CSS 骨架是什么？</h3><p>CSS 骨架是根据提取的类名和 ID 自动生成的空 CSS 规则块，方便你快速填充样式。</p><h3 style="margin-top:20px;margin-bottom:8px">数据会泄露吗？</h3><p>所有处理完全在浏览器本地完成，你的 HTML 代码不会上传到任何服务器。</p></section>
+<section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/css-to-js" class="tool-card"><div class="icon">🔄</div><h3>CSS 转 JS 转换器</h3><p>将 CSS 样式转换为 React 内联样式对象、CSS-in-JS 对象或 styled-components 语法</p></a><a href="/tools/html-validator" class="tool-card"><div class="icon">🔍</div><h3>HTML 验证器</h3><p>检查 HTML 标签嵌套、重复 ID、弃用标签、可访问性问题和最佳实践</p></a><a href="/tools/html-stripper" class="tool-card"><div class="icon">🧹</div><h3>HTML 标签去除</h3><p>从 HTML 中提取纯文本，去除 HTML 标签和样式</p></a><a href="/tools/css-property-reference" class="tool-card"><div class="icon">🎨</div><h3>CSS 属性参考</h3><p>可搜索的 CSS 属性参考手册，涵盖常用 CSS 属性、值类型、浏览器兼容性</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/html-to-css-extractor.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>
