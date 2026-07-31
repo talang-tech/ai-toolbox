@@ -11369,6 +11369,182 @@
         "css-property-reference"
       ],
       "index": 146
+    },
+    {
+      "slug": "mock-data-generator",
+      "category": "generate",
+      "icon": "🧪",
+      "name_zh": "Mock 数据生成器",
+      "name_en": "Mock Data Generator",
+      "short_zh": "生成逼真的测试数据，支持姓名、邮箱、地址、公司等字段",
+      "short_en": "Generate realistic mock data with names, emails, addresses, companies, and more",
+      "keywords_zh": "Mock数据生成,测试数据生成,假数据生成,模拟数据生成器,数据伪造,测试数据生成器,批量数据生成,随机数据生成",
+      "keywords_en": "mock data generator, test data generator, fake data generator, dummy data generator, random data generator, bulk data generator, test data, sample data",
+      "long_zh": "<p>免费的 Mock 数据生成器，帮助开发者快速生成逼真的测试数据。支持姓名、邮箱、电话、地址、公司、职位、出生日期、ID、社保号、IP 地址、颜色、薪资等多种字段类型。可自由组合字段，选择生成数量，支持 JSON、CSV 和 Markdown 表格三种输出格式。</p><p>适用于软件开发测试、数据库填充、API 开发、UI 原型展示、数据迁移验证等场景。所有数据在浏览器本地生成，不会上传到任何服务器，保证数据安全。</p>",
+      "long_en": "<p>Free Mock Data Generator for developers. Quickly generate realistic test data with support for names, emails, phones, addresses, companies, job titles, dates of birth, IDs, SSNs, IP addresses, colors, salaries, and more. Freely combine fields, choose generation count, and export as JSON, CSV, or Markdown table.</p><p>Ideal for software testing, database seeding, API development, UI prototyping, and data migration validation. All data is generated locally in your browser — no data is ever uploaded.</p>",
+      "ui_zh": "<div style=\"margin-bottom:16px\"><label style=\"font-size:13px;font-weight:600\">选择字段</label><div id=\"mdg-fields\" style=\"display:flex;flex-wrap:wrap;gap:8px;margin-top:8px\"><label><input type=\"checkbox\" value=\"name\" checked> 姓名</label><label><input type=\"checkbox\" value=\"email\" checked> 邮箱</label><label><input type=\"checkbox\" value=\"phone\" checked> 电话</label><label><input type=\"checkbox\" value=\"address\" checked> 地址</label><label><input type=\"checkbox\" value=\"company\"> 公司</label><label><input type=\"checkbox\" value=\"jobTitle\"> 职位</label><label><input type=\"checkbox\" value=\"dateOfBirth\"> 出生日期</label><label><input type=\"checkbox\" value=\"id\"> ID</label><label><input type=\"checkbox\" value=\"ssn\"> 社保号</label><label><input type=\"checkbox\" value=\"creditCard\"> 信用卡</label><label><input type=\"checkbox\" value=\"url\"> 网址</label><label><input type=\"checkbox\" value=\"ip\"> IP 地址</label><label><input type=\"checkbox\" value=\"color\"> 颜色</label><label><input type=\"checkbox\" value=\"salary\"> 薪资</label><label><input type=\"checkbox\" value=\"description\"> 描述</label></div></div><div style=\"display:flex;flex-wrap:wrap;gap:12px;margin-bottom:12px;align-items:center\"><label>数量: <input type=\"number\" id=\"mdg-count\" value=\"10\" min=\"1\" max=\"1000\" style=\"width:80px\"></label><label>格式: <select id=\"mdg-format\"><option value=\"json\">JSON</option><option value=\"csv\">CSV</option><option value=\"markdown\">Markdown 表格</option></select></label><button class=\"btn\" id=\"mdg-generate\">生成</button><button class=\"btn btn-secondary\" id=\"mdg-copy\">复制结果</button></div><div style=\"margin-top:8px\"><label style=\"font-size:13px;font-weight:600\">输出</label><div id=\"mdg-stats\" style=\"font-size:12px;margin-bottom:4px\"></div><textarea id=\"mdg-output\" readonly style=\"width:100%;min-height:300px;font-family:Consolas,monospace;font-size:13px;background:var(--bg)\" placeholder=\"生成的测试数据...\"></textarea></div>",
+      "ui_en": "<div style=\"margin-bottom:16px\"><label style=\"font-size:13px;font-weight:600\">Select Fields</label><div id=\"mdg-fields\" style=\"display:flex;flex-wrap:wrap;gap:8px;margin-top:8px\"><label><input type=\"checkbox\" value=\"name\" checked> Name</label><label><input type=\"checkbox\" value=\"email\" checked> Email</label><label><input type=\"checkbox\" value=\"phone\" checked> Phone</label><label><input type=\"checkbox\" value=\"address\" checked> Address</label><label><input type=\"checkbox\" value=\"company\"> Company</label><label><input type=\"checkbox\" value=\"jobTitle\"> Job Title</label><label><input type=\"checkbox\" value=\"dateOfBirth\"> DOB</label><label><input type=\"checkbox\" value=\"id\"> ID</label><label><input type=\"checkbox\" value=\"ssn\"> SSN</label><label><input type=\"checkbox\" value=\"creditCard\"> Credit Card</label><label><input type=\"checkbox\" value=\"url\"> URL</label><label><input type=\"checkbox\" value=\"ip\"> IP Address</label><label><input type=\"checkbox\" value=\"color\"> Color</label><label><input type=\"checkbox\" value=\"salary\"> Salary</label><label><input type=\"checkbox\" value=\"description\"> Description</label></div></div><div style=\"display:flex;flex-wrap:wrap;gap:12px;margin-bottom:12px;align-items:center\"><label>Count: <input type=\"number\" id=\"mdg-count\" value=\"10\" min=\"1\" max=\"1000\" style=\"width:80px\"></label><label>Format: <select id=\"mdg-format\"><option value=\"json\">JSON</option><option value=\"csv\">CSV</option><option value=\"markdown\">Markdown Table</option></select></label><button class=\"btn\" id=\"mdg-generate\">Generate</button><button class=\"btn btn-secondary\" id=\"mdg-copy\">Copy Result</button></div><div style=\"margin-top:8px\"><label style=\"font-size:13px;font-weight:600\">Output</label><div id=\"mdg-stats\" style=\"font-size:12px;margin-bottom:4px\"></div><textarea id=\"mdg-output\" readonly style=\"width:100%;min-height:300px;font-family:Consolas,monospace;font-size:13px;background:var(--bg)\" placeholder=\"Generated mock data...\"></textarea></div>",
+      "seo_title_zh": "Mock 数据生成器 | 在线测试数据生成工具 | AI 工具盒子",
+      "seo_title_en": "Mock Data Generator | Online Test Data Generator | AI Toolbox",
+      "features_zh": [
+        "支持 15 种字段类型：姓名、邮箱、电话、地址、公司、职位等",
+        "三种输出格式：JSON、CSV、Markdown 表格",
+        "自定义生成数量（1-1000 条）",
+        "一键复制生成的测试数据",
+        "所有数据在浏览器本地生成，零数据上传",
+        "适用于开发测试、数据库填充、原型展示"
+      ],
+      "features_en": [
+        "15 field types: name, email, phone, address, company, job title, etc.",
+        "Three output formats: JSON, CSV, Markdown table",
+        "Customizable count (1-1000 records)",
+        "One-click copy generated data",
+        "All data generated locally in browser, zero upload",
+        "Perfect for dev testing, DB seeding, UI prototyping"
+      ],
+      "faq_zh": [
+        [
+          "Mock 数据生成器的用途是什么？",
+          "用于快速生成测试数据，填充数据库、API 测试、UI 原型展示、数据迁移验证等开发场景。生成的不是真实数据，仅供测试使用。"
+        ],
+        [
+          "支持哪些输出格式？",
+          "支持 JSON、CSV 和 Markdown 表格三种格式。JSON 适合 API 开发，CSV 适合导入电子表格，Markdown 表格适合文档展示。"
+        ],
+        [
+          "最多可以生成多少条数据？",
+          "单次最多生成 1000 条记录。如果需要更多数据，可以多次生成。"
+        ],
+        [
+          "数据会上传到服务器吗？",
+          "不会。所有数据完全在浏览器本地生成，不会上传到任何服务器，保证数据安全。"
+        ],
+        [
+          "生成的电话号码是真实的吗？",
+          "所有电话号码和其他数据都是随机生成的，仅用于测试，不代表真实信息。"
+        ],
+        [
+          "可以自定义生成逻辑吗？",
+          "目前支持内置的 15 种字段类型。如需自定义数据，可以选择 CSV 格式在 Excel 中编辑。"
+        ],
+        [
+          "生成的信用卡号可以用吗？",
+          "信用卡号是随机生成的格式符合的测试号码，不能用于实际支付。仅供测试和演示使用。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "What is Mock Data Generator used for?",
+          "Quickly generate test data for database seeding, API testing, UI prototyping, and data migration verification. Generated data is not real — for testing purposes only."
+        ],
+        [
+          "What output formats are supported?",
+          "JSON, CSV, and Markdown table. JSON for API development, CSV for spreadsheets, Markdown table for documentation."
+        ],
+        [
+          "What is the maximum number of records?",
+          "Up to 1000 records per generation. You can generate multiple times for more data."
+        ],
+        [
+          "Is my data uploaded to servers?",
+          "No. All data is generated locally in your browser. Nothing is uploaded."
+        ],
+        [
+          "Are the generated phone numbers real?",
+          "All data is randomly generated for testing only and does not represent real information."
+        ],
+        [
+          "Can I customize the generation logic?",
+          "Currently supports 15 built-in field types. For custom data, export as CSV and edit in Excel."
+        ],
+        [
+          "Can I use the generated credit card numbers?",
+          "No. They are randomly generated test numbers that match format patterns. Not valid for payments."
+        ]
+      ],
+      "related": [
+        "json-formatter",
+        "csv-to-json",
+        "uuid-generator",
+        "password-generator"
+      ],
+      "index": 147
+    },
+    {
+      "slug": "toml-json-converter",
+      "category": "dev",
+      "icon": "🔄",
+      "name_zh": "TOML JSON 互转",
+      "name_en": "TOML JSON Converter",
+      "short_zh": "TOML 与 JSON 格式双向转换工具",
+      "short_en": "Bidirectional TOML and JSON format converter",
+      "keywords_zh": "TOML转JSON,JSON转TOML,TOML JSON互转,TOML解析器,TOML格式转换,TOML到JSON,配置文件格式转换,toml to json,json to toml",
+      "keywords_en": "TOML to JSON, JSON to TOML, TOML JSON converter, TOML parser, TOML formatter, configuration format converter, toml to json, json to toml",
+      "long_zh": "<p>免费的 TOML 与 JSON 双向转换工具，在两种流行的配置文件格式之间快速转换。TOML 以其简洁易读的语法在 Rust 社区（Cargo.toml）、Python 社区（pyproject.toml）中被广泛使用，而 JSON 则是 Web 开发和 API 领域的事实标准。</p><p>支持标准 TOML 语法：基本键值对、字符串、数字、布尔值、数组、表（[table]）和表数组（[[array]]）。所有处理在浏览器本地完成，数据不会上传到任何服务器。</p>",
+      "long_en": "<p>Free bidirectional TOML and JSON converter. Quickly convert between two popular configuration file formats. TOML is widely used in the Rust ecosystem (Cargo.toml), Python community (pyproject.toml), and more, while JSON is the standard for web development and APIs.</p><p>Supports standard TOML syntax: key-value pairs, strings, numbers, booleans, arrays, tables ([table]), and arrays of tables ([[array]]). All processing happens locally in your browser — no data uploaded.</p>",
+      "ui_zh": "<div style=\"margin-bottom:12px\"><label style=\"font-size:13px;font-weight:600\">转换方向</label><select id=\"tjc-direction\" style=\"margin-left:8px;margin-bottom:12px\"><option value=\"toml-to-json\">TOML → JSON</option><option value=\"json-to-toml\">JSON → TOML</option></select></div><div style=\"margin-bottom:12px\"><label style=\"font-size:13px;font-weight:600\">输入</label><textarea id=\"tjc-input\" style=\"width:100%;min-height:200px;font-family:Consolas,monospace;font-size:13px\"></textarea></div><div style=\"display:flex;flex-wrap:wrap;gap:12px;margin-bottom:12px;align-items:center\"><button class=\"btn\" id=\"tjc-convert\">转换</button><button class=\"btn btn-secondary\" id=\"tjc-swap\">⇄ 互换</button><button class=\"btn btn-secondary\" id=\"tjc-clear\">清空</button></div><div style=\"margin-top:8px\"><label style=\"font-size:13px;font-weight:600\">输出</label><div id=\"tjc-stats\" style=\"font-size:12px;margin-bottom:4px\"></div><textarea id=\"tjc-output\" readonly style=\"width:100%;min-height:200px;font-family:Consolas,monospace;font-size:13px;background:var(--bg)\" placeholder=\"转换结果...\"></textarea></div><div style=\"margin-top:8px\"><button class=\"btn btn-secondary\" id=\"tjc-copy\">复制结果</button></div>",
+      "ui_en": "<div style=\"margin-bottom:12px\"><label style=\"font-size:13px;font-weight:600\">Direction</label><select id=\"tjc-direction\" style=\"margin-left:8px;margin-bottom:12px\"><option value=\"toml-to-json\">TOML → JSON</option><option value=\"json-to-toml\">JSON → TOML</option></select></div><div style=\"margin-bottom:12px\"><label style=\"font-size:13px;font-weight:600\">Input</label><textarea id=\"tjc-input\" style=\"width:100%;min-height:200px;font-family:Consolas,monospace;font-size:13px\"></textarea></div><div style=\"display:flex;flex-wrap:wrap;gap:12px;margin-bottom:12px;align-items:center\"><button class=\"btn\" id=\"tjc-convert\">Convert</button><button class=\"btn btn-secondary\" id=\"tjc-swap\">⇄ Swap</button><button class=\"btn btn-secondary\" id=\"tjc-clear\">Clear</button></div><div style=\"margin-top:8px\"><label style=\"font-size:13px;font-weight:600\">Output</label><div id=\"tjc-stats\" style=\"font-size:12px;margin-bottom:4px\"></div><textarea id=\"tjc-output\" readonly style=\"width:100%;min-height:200px;font-family:Consolas,monospace;font-size:13px;background:var(--bg)\" placeholder=\"Converted result...\"></textarea></div><div style=\"margin-top:8px\"><button class=\"btn btn-secondary\" id=\"tjc-copy\">Copy Result</button></div>",
+      "seo_title_zh": "TOML JSON 互转工具 | 在线格式转换 | AI 工具盒子",
+      "seo_title_en": "TOML JSON Converter | Online Format Converter | AI Toolbox",
+      "features_zh": [
+        "TOML 与 JSON 双向转换",
+        "支持标准 TOML 语法：表、表数组、字符串、数字、布尔值、数组",
+        "一键互换输入输出方向",
+        "一键复制转换结果",
+        "自动识别 TOML 数组和嵌套表结构",
+        "所有处理在浏览器本地完成，零数据上传"
+      ],
+      "features_en": [
+        "Bidirectional TOML to JSON conversion",
+        "Supports standard TOML: tables, arrays of tables, strings, numbers, booleans, arrays",
+        "One-click swap input/output direction",
+        "One-click copy results",
+        "Auto-detects TOML arrays and nested table structures",
+        "All processing runs locally, zero data upload"
+      ],
+      "faq_zh": [
+        [
+          "TOML 和 JSON 有什么区别？",
+          "TOML 语法更简洁易读，专为配置文件设计。JSON 更通用，广泛用于 Web API 和数据交换。TOML 不支持 null 值，JSON 不支持多行字符串（不加转义）。"
+        ],
+        [
+          "支持哪些 TOML 语法？",
+          "支持基本键值对、字符串（单引号和双引号）、数字、布尔值、数组、表（[table]）、表数组（[[array]]）以及内联表。暂不支持多行字符串、日期时间和浮点数特殊格式。"
+        ],
+        [
+          "TOML 在哪些地方使用？",
+          "Rust 的 Cargo.toml、Python 的 pyproject.toml、Ruby 的 Bundler 配置等。随着 Rust 和 Python 生态的发展，TOML 越来越流行。"
+        ],
+        [
+          "转换结果可以保持原样吗？",
+          "TOML 和 JSON 之间有些差异：TOML 不支持 null 值，JSON 不支持多行字符串。转换会尽力保持数据完整性，但部分格式细节可能丢失。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "What is the difference between TOML and JSON?",
+          "TOML has a simpler, more readable syntax designed for configuration files. JSON is more universal and widely used in web APIs and data exchange. TOML doesn't support null values; JSON doesn't support multi-line strings (without escaping)."
+        ],
+        [
+          "What TOML syntax is supported?",
+          "Key-value pairs, strings (single and double quotes), numbers, booleans, arrays, tables ([table]), arrays of tables ([[array]]), and inline tables. Multi-line strings, datetime, and special float formats are not yet supported."
+        ],
+        [
+          "Where is TOML used?",
+          "Rust's Cargo.toml, Python's pyproject.toml, Ruby's Bundler config, and more. TOML is growing in popularity with the Rust and Python ecosystems."
+        ],
+        [
+          "Will the conversion preserve everything?",
+          "There are some differences between TOML and JSON: TOML doesn't support null, JSON doesn't support multi-line strings. Conversion tries to preserve data integrity, but some format details may be lost."
+        ]
+      ],
+      "related": [
+        "yaml-formatter",
+        "json-formatter",
+        "xml-formatter",
+        "json-to-yaml"
+      ],
+      "index": 148
     }
   ]
 }

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>TOML JSON 互转 - TOML JSON 互转工具 | 在线格式转换 | AI 工具盒子 | AI 工具盒子</title>
+<meta name="description" content="免费在线TOML JSON 互转工具，TOML 与 JSON 格式双向转换工具。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="TOML转JSON,JSON转TOML,TOML JSON互转,TOML解析器,TOML格式转换,TOML到JSON,配置文件格式转换,toml to json,json to toml">
+<link rel="canonical" href="https://tools.talang.fun/tools/toml-json-converter">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/toml-json-converter">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/toml-json-converter">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/toml-json-converter">
+<meta property="og:title" content="TOML JSON 互转 - TOML JSON 互转工具 | 在线格式转换 | AI 工具盒子 | AI 工具盒子">
+<meta property="og:description" content="免费在线TOML JSON 互转工具，TOML 与 JSON 格式双向转换工具。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/toml-json-converter">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "TOML JSON 互转", "description": "免费在线TOML JSON 互转工具，TOML 与 JSON 格式双向转换工具。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/toml-json-converter", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "TOML 与 JSON 格式双向转换工具", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/tools/toml-json-converter" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🔄</div>
+  <h1>TOML JSON 互转</h1>
+  <p>TOML 与 JSON 格式双向转换工具</p>
+</div>
+<div class="tool-panel">
+<div style="margin-bottom:12px"><label style="font-size:13px;font-weight:600">转换方向</label><select id="tjc-direction" style="margin-left:8px;margin-bottom:12px"><option value="toml-to-json">TOML → JSON</option><option value="json-to-toml">JSON → TOML</option></select></div><div style="margin-bottom:12px"><label style="font-size:13px;font-weight:600">输入</label><textarea id="tjc-input" style="width:100%;min-height:200px;font-family:Consolas,monospace;font-size:13px"></textarea></div><div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:12px;align-items:center"><button class="btn" id="tjc-convert">转换</button><button class="btn btn-secondary" id="tjc-swap">⇄ 互换</button><button class="btn btn-secondary" id="tjc-clear">清空</button></div><div style="margin-top:8px"><label style="font-size:13px;font-weight:600">输出</label><div id="tjc-stats" style="font-size:12px;margin-bottom:4px"></div><textarea id="tjc-output" readonly style="width:100%;min-height:200px;font-family:Consolas,monospace;font-size:13px;background:var(--bg)" placeholder="转换结果..."></textarea></div><div style="margin-top:8px"><button class="btn btn-secondary" id="tjc-copy">复制结果</button></div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>免费的 TOML 与 JSON 双向转换工具，在两种流行的配置文件格式之间快速转换。TOML 以其简洁易读的语法在 Rust 社区（Cargo.toml）、Python 社区（pyproject.toml）中被广泛使用，而 JSON 则是 Web 开发和 API 领域的事实标准。</p><p>支持标准 TOML 语法：基本键值对、字符串、数字、布尔值、数组、表（[table]）和表数组（[[array]]）。所有处理在浏览器本地完成，数据不会上传到任何服务器。</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>TOML 与 JSON 双向转换</li><li>支持标准 TOML 语法：表、表数组、字符串、数字、布尔值、数组</li><li>一键互换输入输出方向</li><li>一键复制转换结果</li><li>自动识别 TOML 数组和嵌套表结构</li><li>所有处理在浏览器本地完成，零数据上传</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">TOML 和 JSON 有什么区别？</h3><p>TOML 语法更简洁易读，专为配置文件设计。JSON 更通用，广泛用于 Web API 和数据交换。TOML 不支持 null 值，JSON 不支持多行字符串（不加转义）。</p><h3 style="margin-top:20px;margin-bottom:8px">支持哪些 TOML 语法？</h3><p>支持基本键值对、字符串（单引号和双引号）、数字、布尔值、数组、表（[table]）、表数组（[[array]]）以及内联表。暂不支持多行字符串、日期时间和浮点数特殊格式。</p><h3 style="margin-top:20px;margin-bottom:8px">TOML 在哪些地方使用？</h3><p>Rust 的 Cargo.toml、Python 的 pyproject.toml、Ruby 的 Bundler 配置等。随着 Rust 和 Python 生态的发展，TOML 越来越流行。</p><h3 style="margin-top:20px;margin-bottom:8px">转换结果可以保持原样吗？</h3><p>TOML 和 JSON 之间有些差异：TOML 不支持 null 值，JSON 不支持多行字符串。转换会尽力保持数据完整性，但部分格式细节可能丢失。</p></section>
+<section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/yaml-formatter" class="tool-card"><div class="icon">🧾</div><h3>YAML 格式化/校验</h3><p>在线格式化 YAML 配置并检查缩进、冒号和常见语法问题</p></a><a href="/tools/json-formatter" class="tool-card"><div class="icon">{ }</div><h3>JSON 格式化</h3><p>JSON 美化、压缩、校验，错误位置精准定位</p></a><a href="/tools/xml-formatter" class="tool-card"><div class="icon">🧩</div><h3>XML 格式化/压缩</h3><p>在线格式化、校验和压缩 XML，支持本地解析错误提示</p></a><a href="/tools/json-to-yaml" class="tool-card"><div class="icon">📊</div><h3>JSON ↔ YAML 互转</h3><p>JSON 与 YAML 格式相互转换</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/toml-json-converter.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>
