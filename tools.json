@@ -11545,6 +11545,192 @@
         "json-to-yaml"
       ],
       "index": 148
+    },
+    {
+      "slug": "csv-to-html-table",
+      "category": "text",
+      "icon": "📋",
+      "name_zh": "CSV 转 HTML 表格",
+      "name_en": "CSV to HTML Table",
+      "short_zh": "将 CSV 数据转换为整洁的 HTML 表格代码",
+      "short_en": "Convert CSV data to clean HTML table code",
+      "keywords_zh": "CSV转HTML表格,CSV转Table,CSV转HTML代码,CSV表格生成,CSV数据转HTML,在线CSV转换,HTML表格生成器,CSV to HTML table",
+      "keywords_en": "csv to html table, csv to table, csv to html, html table generator, csv converter, html table from csv, csv to html code",
+      "long_zh": "<p>免费的 CSV 转 HTML 表格生成工具，将 CSV 数据一键转换为整洁的 HTML 表格代码。支持多种分隔符（逗号、制表符、分号、竖线），可自定义表格样式（斑马纹、边框），支持紧凑和美化两种输出格式，适合嵌入博客、文档或邮件。</p><p>所有转换在浏览器本地完成，CSV 数据不会被上传到任何服务器。</p>",
+      "long_en": "<p>Free CSV to HTML table converter. Convert your CSV data into clean, ready-to-use HTML table code with one click. Supports multiple delimiters, customizable table styling, and both compact and pretty output formats.</p><p>All conversions happen locally in your browser.</p>",
+      "ui_zh": "<div style=\"margin-bottom:12px;display:flex;gap:12px;flex-wrap:wrap;align-items:center\"><label>分隔符: <select id=\"csv2html-delimiter\"><option value=\",\">逗号 ,</option><option value=\"\\t\">制表符 \\t</option><option value=\";\">分号 ;</option><option value=\"|\">竖线 |</option></select></label><label><input type=\"checkbox\" id=\"csv2html-header\" checked> 首行为表头</label><label>格式: <select id=\"csv2html-format\"><option value=\"pretty\">美化</option><option value=\"compact\">紧凑</option></select></label><label><input type=\"checkbox\" id=\"csv2html-trim\" checked> 去除空格</label></div><div style=\"margin-bottom:12px;display:flex;gap:12px;flex-wrap:wrap;align-items:center\"><label>CSS 类名: <input type=\"text\" id=\"csv2html-class\" placeholder=\"table\" style=\"width:120px\"></label><label><input type=\"checkbox\" id=\"csv2html-striped\"> 斑马纹</label><label><input type=\"checkbox\" id=\"csv2html-bordered\"> 边框</label></div><textarea id=\"csv2html-input\" style=\"min-height:180px;font-family:monospace;font-size:13px\" placeholder=\"粘贴 CSV 数据...\"></textarea><div style=\"margin-top:12px;display:flex;gap:12px;align-items:center;flex-wrap:wrap\"><button class=\"btn\" id=\"csv2html-convert\">转换</button><button class=\"btn btn-secondary\" id=\"csv2html-copy\">复制 HTML</button><button class=\"btn btn-secondary\" id=\"csv2html-download\">下载 .html</button><button class=\"btn btn-secondary\" id=\"csv2html-clear\">清空</button></div><div id=\"csv2html-status\" style=\"margin-top:8px;color:var(--text-dim);font-size:13px\"></div><h3 style=\"margin-top:20px\">预览</h3><div id=\"csv2html-preview\" style=\"min-height:100px;padding:12px;border:1px solid var(--border);border-radius:8px;overflow:auto\"></div>",
+      "ui_en": "<div style=\"margin-bottom:12px;display:flex;gap:12px;flex-wrap:wrap;align-items:center\"><label>Delimiter: <select id=\"csv2html-delimiter\"><option value=\",\">Comma ,</option><option value=\"\\t\">Tab \\t</option><option value=\";\">Semicolon ;</option><option value=\"|\">Pipe |</option></select></label><label><input type=\"checkbox\" id=\"csv2html-header\" checked> Header row</label><label>Format: <select id=\"csv2html-format\"><option value=\"pretty\">Pretty</option><option value=\"compact\">Compact</option></select></label><label><input type=\"checkbox\" id=\"csv2html-trim\" checked> Trim cells</label></div><div style=\"margin-bottom:12px;display:flex;gap:12px;flex-wrap:wrap;align-items:center\"><label>CSS Class: <input type=\"text\" id=\"csv2html-class\" placeholder=\"table\" style=\"width:120px\"></label><label><input type=\"checkbox\" id=\"csv2html-striped\"> Striped</label><label><input type=\"checkbox\" id=\"csv2html-bordered\"> Bordered</label></div><textarea id=\"csv2html-input\" style=\"min-height:180px;font-family:monospace;font-size:13px\" placeholder=\"Paste CSV data...\"></textarea><div style=\"margin-top:12px;display:flex;gap:12px;align-items:center;flex-wrap:wrap\"><button class=\"btn\" id=\"csv2html-convert\">Convert</button><button class=\"btn btn-secondary\" id=\"csv2html-copy\">Copy HTML</button><button class=\"btn btn-secondary\" id=\"csv2html-download\">Download .html</button><button class=\"btn btn-secondary\" id=\"csv2html-clear\">Clear</button></div><div id=\"csv2html-status\" style=\"margin-top:8px;color:var(--text-dim);font-size:13px\"></div><h3 style=\"margin-top:20px\">Preview</h3><div id=\"csv2html-preview\" style=\"min-height:100px;padding:12px;border:1px solid var(--border);border-radius:8px;overflow:auto\"></div>",
+      "related": [
+        "csv-to-markdown",
+        "csv-viewer",
+        "csv-to-json",
+        "html-table-generator",
+        "markdown-table"
+      ],
+      "seo_title_zh": "CSV 转 HTML 表格 | 在线 CSV 生成 HTML 表格工具",
+      "seo_title_en": "CSV to HTML Table | Online CSV to HTML Table Converter",
+      "features_zh": [
+        "一键将 CSV 转换为 HTML 表格代码",
+        "支持多种分隔符：逗号、制表符、分号、竖线",
+        "支持表头/无表头模式",
+        "紧凑和美化两种 HTML 输出格式",
+        "自定义 CSS 类名、斑马纹和边框样式",
+        "实时预览生成的 HTML 表格",
+        "复制或下载 .html 文件",
+        "浏览器本地处理，数据不上传"
+      ],
+      "features_en": [
+        "One-click CSV to HTML table conversion",
+        "Multiple delimiters: comma, tab, semicolon, pipe",
+        "Header/no-header mode",
+        "Compact and pretty HTML output formats",
+        "Custom CSS class, striped and bordered styles",
+        "Live HTML table preview",
+        "Copy or download .html file",
+        "Browser local processing, no upload"
+      ],
+      "faq_zh": [
+        [
+          "支持 Excel 文件直接上传吗？",
+          "不支持直接上传 Excel 文件。请在 Excel 中另存为 CSV 格式，然后将内容粘贴到输入框中。"
+        ],
+        [
+          "生成的 HTML 表格可以直接用吗？",
+          "可以。生成的 HTML 代码包含完整的 table 结构，可以直接复制到网页、博客、邮件模板中使用。"
+        ],
+        [
+          "斑马纹和边框是什么？",
+          "斑马纹是奇偶行不同背景色，边框是表格单元格添加边框线。"
+        ],
+        [
+          "数据安全吗？",
+          "所有处理在浏览器本地完成，CSV 数据不会上传到任何服务器。"
+        ],
+        [
+          "支持大文件吗？",
+          "支持，但超大文件（1MB+）可能影响浏览器性能。"
+        ],
+        [
+          "紧凑和美化格式有什么区别？",
+          "紧凑格式的 HTML 不包含多余的换行和缩进，文件更小。美化格式的 HTML 有缩进，更易读。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "Does it support direct Excel upload?",
+          "Direct Excel upload is not supported. Export your data as CSV from Excel first and paste the content here."
+        ],
+        [
+          "Can I use the generated HTML directly?",
+          "Yes. The generated HTML includes a complete table structure ready to copy into web pages."
+        ],
+        [
+          "What are striped and bordered styles?",
+          "Striped applies alternating row background colors. Bordered adds border lines to table cells."
+        ],
+        [
+          "Is my data safe?",
+          "All processing is done locally in your browser. Your CSV data is never uploaded."
+        ],
+        [
+          "Can I convert large files?",
+          "Yes, but very large files (1MB+) may affect browser performance."
+        ],
+        [
+          "What is the difference between compact and pretty format?",
+          "Compact HTML has no extra whitespace for smaller file size. Pretty HTML has indentation for readability."
+        ]
+      ],
+      "index": 149
+    },
+    {
+      "slug": "json-to-python",
+      "category": "json",
+      "icon": "🐍",
+      "name_zh": "JSON 转 Python 类",
+      "name_en": "JSON to Python Class",
+      "short_zh": "将 JSON 转换为 Python dataclass/class 定义代码",
+      "short_en": "Convert JSON to Python dataclass/class definitions",
+      "keywords_zh": "JSON转Python,JSON转类,JSON转Dataclass,JSON转Python类,JSON to Python,在线JSON转Python,Python类生成器,JSON结构化,JSON转Python代码",
+      "keywords_en": "json to python, json to class, json to dataclass, json to python class, online json to python, python class generator, json to python code, json struct to python",
+      "long_zh": "<p>免费的 JSON 转 Python 类生成器，将 JSON 对象或数组自动转换为 Python 类定义代码。支持 @dataclass 装饰器、类型注解（typing 模块）、蛇形命名、可选字段推断。</p><p>常见应用场景：API 开发、数据解析、代码生成、快速原型。所有处理在浏览器本地完成，数据不会上传到任何服务器。</p>",
+      "long_en": "<p>Free JSON to Python class generator. Automatically convert JSON objects or arrays into Python class definitions. Supports @dataclass decorator, type annotations, snake_case naming, and optional field inference.</p><p>Use cases: API development, data parsing, code generation, rapid prototyping.</p>",
+      "ui_zh": "<div style=\"margin-bottom:12px;display:flex;gap:12px;flex-wrap:wrap;align-items:center\"><label><input type=\"checkbox\" id=\"json2py-dataclass\" checked> @dataclass</label><label><input type=\"checkbox\" id=\"json2py-typing\" checked> 类型注解</label><label><input type=\"checkbox\" id=\"json2py-snake\"> 蛇形命名</label><label><input type=\"checkbox\" id=\"json2py-optional\"> 可选字段</label></div><textarea id=\"json2py-input\" style=\"min-height:200px;font-family:monospace;font-size:13px\" placeholder='{\"name\": \"Alice\", \"age\": 30}'></textarea><div style=\"margin-top:12px;display:flex;gap:12px;align-items:center;flex-wrap:wrap\"><button class=\"btn\" id=\"json2py-convert\">转换</button><button class=\"btn btn-secondary\" id=\"json2py-copy\">复制代码</button><button class=\"btn btn-secondary\" id=\"json2py-clear\">清空</button></div><div id=\"json2py-status\" style=\"margin-top:8px;color:var(--text-dim);font-size:13px\"></div><textarea id=\"json2py-output\" readonly style=\"width:100%;min-height:200px;font-family:Consolas,monospace;font-size:13px;background:var(--bg)\" placeholder=\"生成的 Python 类代码...\"></textarea>",
+      "ui_en": "<div style=\"margin-bottom:12px;display:flex;gap:12px;flex-wrap:wrap;align-items:center\"><label><input type=\"checkbox\" id=\"json2py-dataclass\" checked> @dataclass</label><label><input type=\"checkbox\" id=\"json2py-typing\" checked> Type hints</label><label><input type=\"checkbox\" id=\"json2py-snake\"> snake_case</label><label><input type=\"checkbox\" id=\"json2py-optional\"> Optional fields</label></div><textarea id=\"json2py-input\" style=\"min-height:200px;font-family:monospace;font-size:13px\" placeholder='{\"name\": \"Alice\", \"age\": 30}'></textarea><div style=\"margin-top:12px;display:flex;gap:12px;align-items:center;flex-wrap:wrap\"><button class=\"btn\" id=\"json2py-convert\">Convert</button><button class=\"btn btn-secondary\" id=\"json2py-copy\">Copy Code</button><button class=\"btn btn-secondary\" id=\"json2py-clear\">Clear</button></div><div id=\"json2py-status\" style=\"margin-top:8px;color:var(--text-dim);font-size:13px\"></div><textarea id=\"json2py-output\" readonly style=\"width:100%;min-height:200px;font-family:Consolas,monospace;font-size:13px;background:var(--bg)\" placeholder=\"Generated Python class code...\"></textarea>",
+      "related": [
+        "json-to-go",
+        "json-formatter",
+        "json-to-ts",
+        "json-to-yaml",
+        "json-schema-generator"
+      ],
+      "seo_title_zh": "JSON 转 Python 类 | 在线 JSON 转 Python Dataclass 生成器",
+      "seo_title_en": "JSON to Python Class | Online JSON to Python Dataclass Generator",
+      "features_zh": [
+        "自动将 JSON 转换为 Python 类定义",
+        "支持 @dataclass 装饰器",
+        "支持 Python typing 类型注解",
+        "支持蛇形命名转换",
+        "可选字段推断",
+        "自动处理嵌套对象生成子类",
+        "自动处理数组元素生成 List 类型",
+        "一键复制生成的 Python 代码"
+      ],
+      "features_en": [
+        "Auto-convert JSON to Python class definitions",
+        "Support @dataclass decorator",
+        "Support Python typing type hints",
+        "Support snake_case naming conversion",
+        "Optional field inference",
+        "Auto-generate subclasses for nested objects",
+        "Auto-generate List types for arrays",
+        "One-click copy generated Python code"
+      ],
+      "faq_zh": [
+        [
+          "生成的 Python 类可以直接用吗？",
+          "可以。生成的代码包含完整的类定义和类型注解，直接复制到你的 Python 项目中使用。"
+        ],
+        [
+          "@dataclass 和普通类有什么区别？",
+          "@dataclass 自动生成 __init__、__repr__、__eq__ 等方法，适合数据容器。"
+        ],
+        [
+          "什么是可选字段？",
+          "当 JSON 中某个字段值为 null 时，启用可选字段会将其类型标记为 Optional[Type]，并赋予默认值 None。"
+        ],
+        [
+          "支持嵌套 JSON 吗？",
+          "支持。嵌套的 JSON 对象会自动生成对应的子类。"
+        ],
+        [
+          "数据安全吗？",
+          "所有处理在浏览器本地完成，数据不会上传到任何服务器。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "Can I use the generated Python classes directly?",
+          "Yes. The generated code includes complete class definitions and type annotations."
+        ],
+        [
+          "What is the difference between @dataclass and regular class?",
+          "@dataclass auto-generates __init__, __repr__, __eq__ methods."
+        ],
+        [
+          "What are optional fields?",
+          "When a JSON field value is null, enabling optional fields marks it as Optional[Type] with a default of None."
+        ],
+        [
+          "Does it support nested JSON?",
+          "Yes. Nested JSON objects automatically generate corresponding subclasses."
+        ],
+        [
+          "Is my data safe?",
+          "All processing is done locally in your browser. Your data is never uploaded."
+        ]
+      ],
+      "index": 150
     }
   ]
 }

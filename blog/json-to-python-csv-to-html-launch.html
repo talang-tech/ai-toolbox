@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>JSON 转 Python 与 CSV 转 HTML 表格：Python 开发者的数据转换利器 | AI 工具盒子</title>
+<meta name="description" content="AI Toolbox 新增 JSON 转 Python 类生成器和 CSV 转 HTML 表格工具，本地隐私处理，提高开发效率。">
+<meta name="keywords" content="JSON转Python,CSV转HTML表格,Python类生成器,CSV表格生成,在线开发工具,隐私优先工具箱,AI Toolbox">
+<link rel="canonical" href="https://tools.talang.fun/blog/json-to-python-csv-to-html-launch">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/blog/json-to-python-csv-to-html-launch">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/blog/json-to-python-csv-to-html-launch">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/blog/json-to-python-csv-to-html-launch">
+<meta property="og:title" content="JSON 转 Python 与 CSV 转 HTML 表格：Python 开发者的数据转换利器 | AI 工具盒子">
+<meta property="og:description" content="AI Toolbox 新增 JSON 转 Python 类生成器和 CSV 转 HTML 表格工具，本地隐私处理，提高开发效率。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/blog/json-to-python-csv-to-html-launch">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "JSON 转 Python 与 CSV 转 HTML 表格：Python 开发者的数据转换利器", "description": "AI Toolbox 新增 JSON 转 Python 类生成器和 CSV 转 HTML 表格工具，本地隐私处理，提高开发效率。", "author": {"@type": "Organization", "name": "AI 工具盒子"}, "datePublished": "2026-08-01", "url": "https://tools.talang.fun/blog/json-to-python-csv-to-html-launch"}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/blog/json-to-python-csv-to-html-launch" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<article class="article">
+  <p style="margin-bottom:8px"><a href="/blog/" style="color:var(--muted)">← 返回博客</a></p>
+  <h1>JSON 转 Python 与 CSV 转 HTML 表格：Python 开发者的数据转换利器</h1>
+  <p style="color:var(--muted);margin-bottom:24px">2026-08-01 · 4 分钟阅读</p>
+  <p>开发者日常工作中，数据结构转换是高频但繁琐的环节。今天 AI Toolbox 新增了两款实用工具，帮你省去手写重复代码的时间。</p>
+<h2>JSON 转 Python 类</h2>
+<p>在 Python 项目中处理 API 响应时，最常见的需求就是为 JSON 数据定义对应的 Python 数据模型。</p>
+<p><strong>JSON 转 Python 类生成器</strong> 可以自动完成这个转换：</p>
+<pre><code class="lang-json">
+{
+  "id": 1,
+  "name": "Alice Johnson",
+  "email": "alice@example.com",
+  "isActive": true,
+  "tags": ["developer", "admin"],
+  "profile": {
+    "avatarUrl": "https://example.com/avatar.jpg",
+    "joinDate": "2024-01-15"
+  }
+}
+</code></pre>
+<p>一键生成对应的 Python 代码：</p>
+<pre><code class="lang-python">
+from dataclasses import dataclass
+from typing import List, Optional
+
+@dataclass
+class Profile:
+    avatarUrl: str
+    joinDate: str
+
+@dataclass
+class Root:
+    id: int
+    name: str
+    email: str
+    isActive: bool
+    tags: List[str]
+    profile: Profile
+</code></pre>
+<h3>核心特性</h3>
+<ul>
+<li><strong>@dataclass 支持</strong>：自动生成 <code>__init__</code>、<code>__repr__</code> 等方法</li>
+<li><strong>类型注解</strong>：自动推断 Python typing 类型（<code>List[str]</code>、<code>Optional[int]</code> 等）</li>
+<li><strong>蛇形命名</strong>：驼峰命名自动转换为 Python 风格的 <code>snake_case</code></li>
+<li><strong>可选字段</strong>：为 <code>null</code> 值字段标记 <code>Optional</code>，默认值设为 <code>None</code></li>
+<li><strong>嵌套对象</strong>：自动生成对应的子类</li>
+<li><strong>数组类型</strong>：自动分析数组元素，生成 <code>List[...]</code> 类型</li>
+</ul>
+<p>适合 API 开发、数据解析、快速原型等场景。所有转换在浏览器本地完成，JSON 数据不会上传。</p>
+<h2>CSV 转 HTML 表格</h2>
+<p>另一个高频需求是将 CSV 数据嵌入网页或邮件。<strong>CSV 转 HTML 表格</strong>工具让你告别手动拼接 <code><tr></code> 和 <code><td></code> 标签。</p>
+<h3>使用场景</h3>
+<ul>
+<li><strong>内容创作者</strong>：将 CMS 导出的数据转为 HTML 表格</li>
+<li><strong>邮件营销</strong>：生成兼容邮件客户端的表格 HTML</li>
+<li><strong>数据分析师</strong>：快速将 CSV 分析结果转为 HTML 报告</li>
+<li><strong>开发者</strong>：将数据库查询结果转为 HTML 展示</li>
+</ul>
+<h3>核心特性</h3>
+<ul>
+<li><strong>多种分隔符</strong>：逗号、制表符、分号、竖线</li>
+<li><strong>表头控制</strong>：支持首行为表头 / 无表头模式</li>
+<li><strong>输出格式</strong>：紧凑（文件小）和美化的（可读性高）两种</li>
+<li><strong>样式定制</strong>：可自定义 CSS 类名、斑马纹、边框</li>
+<li><strong>实时预览</strong>：所见即所得</li>
+<li><strong>一键复制或下载</strong>：直接生成 <code>.html</code> 文件</li>
+</ul>
+<h2>本地处理，隐私优先</h2>
+<p>两款工具都遵循 AI Toolbox 的核心理念：<strong>所有处理在浏览器本地完成</strong>。你的数据不会离开设备，无需担心泄露。</p>
+<h2>在线体验</h2>
+<ul>
+<li><a href="/tools/json-to-python">JSON 转 Python 类</a></li>
+<li><a href="/tools/csv-to-html-table">CSV 转 HTML 表格</a></li>
+</ul>
+<p>也欢迎在 GitHub 上 star 或提 <a href="https://github.com/talang-tech/ai-toolbox">Issue</a> 反馈。</p>
+  <section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+</article>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>

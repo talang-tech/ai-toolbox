@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>CSV 转 HTML 表格 - CSV 转 HTML 表格 | 在线 CSV 生成 HTML 表格工具 | AI 工具盒子</title>
+<meta name="description" content="免费在线CSV 转 HTML 表格工具，将 CSV 数据转换为整洁的 HTML 表格代码。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="CSV转HTML表格,CSV转Table,CSV转HTML代码,CSV表格生成,CSV数据转HTML,在线CSV转换,HTML表格生成器,CSV to HTML table">
+<link rel="canonical" href="https://tools.talang.fun/tools/csv-to-html-table">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/csv-to-html-table">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/csv-to-html-table">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/csv-to-html-table">
+<meta property="og:title" content="CSV 转 HTML 表格 - CSV 转 HTML 表格 | 在线 CSV 生成 HTML 表格工具 | AI 工具盒子">
+<meta property="og:description" content="免费在线CSV 转 HTML 表格工具，将 CSV 数据转换为整洁的 HTML 表格代码。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/csv-to-html-table">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "CSV 转 HTML 表格", "description": "免费在线CSV 转 HTML 表格工具，将 CSV 数据转换为整洁的 HTML 表格代码。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/csv-to-html-table", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "将 CSV 数据转换为整洁的 HTML 表格代码", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/tools/csv-to-html-table" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">📋</div>
+  <h1>CSV 转 HTML 表格</h1>
+  <p>将 CSV 数据转换为整洁的 HTML 表格代码</p>
+</div>
+<div class="tool-panel">
+<div style="margin-bottom:12px;display:flex;gap:12px;flex-wrap:wrap;align-items:center"><label>分隔符: <select id="csv2html-delimiter"><option value=",">逗号 ,</option><option value="\t">制表符 \t</option><option value=";">分号 ;</option><option value="|">竖线 |</option></select></label><label><input type="checkbox" id="csv2html-header" checked> 首行为表头</label><label>格式: <select id="csv2html-format"><option value="pretty">美化</option><option value="compact">紧凑</option></select></label><label><input type="checkbox" id="csv2html-trim" checked> 去除空格</label></div><div style="margin-bottom:12px;display:flex;gap:12px;flex-wrap:wrap;align-items:center"><label>CSS 类名: <input type="text" id="csv2html-class" placeholder="table" style="width:120px"></label><label><input type="checkbox" id="csv2html-striped"> 斑马纹</label><label><input type="checkbox" id="csv2html-bordered"> 边框</label></div><textarea id="csv2html-input" style="min-height:180px;font-family:monospace;font-size:13px" placeholder="粘贴 CSV 数据..."></textarea><div style="margin-top:12px;display:flex;gap:12px;align-items:center;flex-wrap:wrap"><button class="btn" id="csv2html-convert">转换</button><button class="btn btn-secondary" id="csv2html-copy">复制 HTML</button><button class="btn btn-secondary" id="csv2html-download">下载 .html</button><button class="btn btn-secondary" id="csv2html-clear">清空</button></div><div id="csv2html-status" style="margin-top:8px;color:var(--text-dim);font-size:13px"></div><h3 style="margin-top:20px">预览</h3><div id="csv2html-preview" style="min-height:100px;padding:12px;border:1px solid var(--border);border-radius:8px;overflow:auto"></div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>免费的 CSV 转 HTML 表格生成工具，将 CSV 数据一键转换为整洁的 HTML 表格代码。支持多种分隔符（逗号、制表符、分号、竖线），可自定义表格样式（斑马纹、边框），支持紧凑和美化两种输出格式，适合嵌入博客、文档或邮件。</p><p>所有转换在浏览器本地完成，CSV 数据不会被上传到任何服务器。</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>一键将 CSV 转换为 HTML 表格代码</li><li>支持多种分隔符：逗号、制表符、分号、竖线</li><li>支持表头/无表头模式</li><li>紧凑和美化两种 HTML 输出格式</li><li>自定义 CSS 类名、斑马纹和边框样式</li><li>实时预览生成的 HTML 表格</li><li>复制或下载 .html 文件</li><li>浏览器本地处理，数据不上传</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">支持 Excel 文件直接上传吗？</h3><p>不支持直接上传 Excel 文件。请在 Excel 中另存为 CSV 格式，然后将内容粘贴到输入框中。</p><h3 style="margin-top:20px;margin-bottom:8px">生成的 HTML 表格可以直接用吗？</h3><p>可以。生成的 HTML 代码包含完整的 table 结构，可以直接复制到网页、博客、邮件模板中使用。</p><h3 style="margin-top:20px;margin-bottom:8px">斑马纹和边框是什么？</h3><p>斑马纹是奇偶行不同背景色，边框是表格单元格添加边框线。</p><h3 style="margin-top:20px;margin-bottom:8px">数据安全吗？</h3><p>所有处理在浏览器本地完成，CSV 数据不会上传到任何服务器。</p><h3 style="margin-top:20px;margin-bottom:8px">支持大文件吗？</h3><p>支持，但超大文件（1MB+）可能影响浏览器性能。</p><h3 style="margin-top:20px;margin-bottom:8px">紧凑和美化格式有什么区别？</h3><p>紧凑格式的 HTML 不包含多余的换行和缩进，文件更小。美化格式的 HTML 有缩进，更易读。</p></section>
+<section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/csv-to-markdown" class="tool-card"><div class="icon">📊</div><h3>CSV 转 Markdown 表格</h3><p>将 CSV 数据快速转换为 Markdown 表格格式，支持预览、复制和下载</p></a><a href="/tools/csv-viewer" class="tool-card"><div class="icon">📈</div><h3>CSV 查看器/转表格</h3><p>解析 CSV/TSV 为表格，可复制 HTML 表格或 JSON</p></a><a href="/tools/csv-to-json" class="tool-card"><div class="icon">🔄</div><h3>CSV ↔ JSON 互转</h3><p>CSV 数据转 JSON 格式，支持分隔符选择、表头配置、嵌套对象生成</p></a><a href="/tools/html-table-generator" class="tool-card"><div class="icon">📊</div><h3>HTML 表格生成器</h3><p>可视化生成 HTML 表格，支持行列增删、表头切换、自定义样式</p></a><a href="/tools/markdown-table" class="tool-card"><div class="icon">📊</div><h3>Markdown 表格生成器</h3><p>将 CSV、TSV 或文本快速转换为 Markdown 格式表格</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/csv-to-html-table.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>
