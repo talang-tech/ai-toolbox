@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>JSON 转 SQL - JSON 转 SQL | 在线 JSON 转 INSERT 语句生成器 | AI 工具盒子</title>
+<meta name="description" content="免费在线JSON 转 SQL工具，将 JSON 数组转换为 SQL INSERT 语句。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="JSON转SQL,JSON转INSERT,JSON批量插入,JSON转数据库,JSON导入数据库,SQL生成器,JSON数据导SQL,JSON to SQL,在线JSON转SQL,数据库迁移工具">
+<link rel="canonical" href="https://tools.talang.fun/tools/json-to-sql">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/json-to-sql">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/json-to-sql">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/json-to-sql">
+<meta property="og:title" content="JSON 转 SQL - JSON 转 SQL | 在线 JSON 转 INSERT 语句生成器 | AI 工具盒子">
+<meta property="og:description" content="免费在线JSON 转 SQL工具，将 JSON 数组转换为 SQL INSERT 语句。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/json-to-sql">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "JSON 转 SQL", "description": "免费在线JSON 转 SQL工具，将 JSON 数组转换为 SQL INSERT 语句。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/json-to-sql", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "将 JSON 数组转换为 SQL INSERT 语句", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/tools/json-to-sql" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🗄</div>
+  <h1>JSON 转 SQL</h1>
+  <p>将 JSON 数组转换为 SQL INSERT 语句</p>
+</div>
+<div class="tool-panel">
+<div style="margin-bottom:12px;display:flex;gap:12px;flex-wrap:wrap;align-items:center"><label>表名: <input type="text" id="json2sql-table" value="my_table" style="width:120px"></label><label>引号: <select id="json2sql-quote"><option value="backtick">反引号 `</option><option value="double">双引号 "</option></select></label><label>NULL处理: <select id="json2sql-null"><option value="null">NULL</option><option value="default">DEFAULT</option></select></label></div><div style="margin-bottom:12px;display:flex;gap:12px;flex-wrap:wrap;align-items:center"><label><input type="checkbox" id="json2sql-batch" checked> 批量插入 (VALUES)</label><label><input type="checkbox" id="json2sql-upsert"> UPSERT (ON CONFLICT)</label><label><input type="checkbox" id="json2sql-key-columns"> 自定义主键列</label><input type="text" id="json2sql-key-columns-input" placeholder="id" style="width:80px" disabled></div><div style="margin-bottom:12px;display:flex;gap:12px;flex-wrap:wrap;align-items:center"><label><input type="checkbox" id="json2sql-drop"> DROP TABLE 前置</label><label><input type="checkbox" id="json2sql-create" checked> 生成 CREATE TABLE</label></div><textarea id="json2sql-input" style="min-height:200px;font-family:monospace;font-size:13px" placeholder='[{"id": 1, "name": "Alice", "age": 30}]'></textarea><div style="margin-top:12px;display:flex;gap:12px;align-items:center;flex-wrap:wrap"><button class="btn" id="json2sql-convert">转换</button><button class="btn btn-secondary" id="json2sql-copy">复制 SQL</button><button class="btn btn-secondary" id="json2sql-clear">清空</button></div><div id="json2sql-status" style="margin-top:8px;color:var(--text-dim);font-size:13px"></div><textarea id="json2sql-output" readonly style="width:100%;min-height:200px;font-family:Consolas,monospace;font-size:13px;background:var(--bg)" placeholder="生成的 SQL 语句..."></textarea>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>免费的 JSON 转 SQL 在线工具，将 JSON 数组或对象快速转换为 SQL INSERT 语句。支持批量插入、CREATE TABLE 自动生成、UPSERT 冲突处理、自定义表名和字段名映射。</p><p>适用场景：数据库迁移、数据导入、API 数据落库、测试数据生成、数据备份。所有处理在浏览器本地完成，数据不会上传到任何服务器。</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>一键将 JSON 数组转换为 SQL INSERT 语句</li><li>支持批量插入 (VALUES) 和单条插入两种模式</li><li>自动生成 CREATE TABLE 语句</li><li>支持 UPSERT (ON CONFLICT DO UPDATE)</li><li>自定义表名、引号风格和 NULL 处理方式</li><li>自动推断字段类型 (INTEGER/REAL/BOOLEAN/TEXT/DATE)</li><li>可选 DROP TABLE 前置语句</li><li>一键复制生成的 SQL 代码</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">生成的 SQL 语句可以直接用吗？</h3><p>可以。生成的 SQL 兼容 PostgreSQL、MySQL、SQLite 等主流数据库。</p><h3 style="margin-top:20px;margin-bottom:8px">支持嵌套 JSON 对象吗？</h3><p>嵌套对象会被展开为扁平字段。</p><h3 style="margin-top:20px;margin-bottom:8px">批量插入和单条插入有什么区别？</h3><p>批量插入将所有数据放在一个 INSERT 语句中，性能更好。</p><h3 style="margin-top:20px;margin-bottom:8px">UPSERT 是什么？</h3><p>UPSERT 即 ON CONFLICT DO UPDATE，当主键冲突时自动更新其他字段。</p><h3 style="margin-top:20px;margin-bottom:8px">数据安全吗？</h3><p>所有处理在浏览器本地完成，数据不会上传到任何服务器。</p></section>
+<section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/json-formatter" class="tool-card"><div class="icon">{ }</div><h3>JSON 格式化</h3><p>JSON 美化、压缩、校验，错误位置精准定位</p></a><a href="/tools/json-to-csv" class="tool-card"><div class="icon">📊</div><h3>JSON 转 CSV</h3><p>将 JSON 数组或对象一键转换为 CSV 表格格式</p></a><a href="/tools/json-to-excel" class="tool-card"><div class="icon">📊</div><h3>JSON 转 Excel</h3><p>将 JSON 数组/对象转换为 Excel (.xlsx) 或 CSV 格式并下载</p></a><a href="/tools/csv-to-sql" class="tool-card"><div class="icon">🗄️</div><h3>CSV 转 SQL INSERT</h3><p>将 CSV 数据转换为 SQL INSERT 语句，支持自定义表名、列映射和批量插入</p></a><a href="/tools/json-to-html" class="tool-card"><div class="icon">📊</div><h3>JSON 转 HTML 表格</h3><p>将 JSON 数据转换为美观的 HTML 表格，支持嵌套对象展开和排序</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/json-to-sql.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>

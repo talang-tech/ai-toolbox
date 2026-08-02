@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>JSON to SQL - JSON to SQL | Online JSON to INSERT Statement Generator | AI Toolbox</title>
+<meta name="description" content="Free online json to sql. Convert JSON array to SQL INSERT statements. Fast, secure, and works in your browser without downloading.">
+<meta name="keywords" content="json to sql, json to insert, json insert generator, json to database, sql generator, json data to sql, json sql converter, online json to sql, database migration, batch insert">
+<link rel="canonical" href="https://tools.talang.fun/en/tools/json-to-sql">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/json-to-sql">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/json-to-sql">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/json-to-sql">
+<meta property="og:title" content="JSON to SQL - JSON to SQL | Online JSON to INSERT Statement Generator | AI Toolbox">
+<meta property="og:description" content="Free online json to sql. Convert JSON array to SQL INSERT statements. Fast, secure, and works in your browser without downloading.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/en/tools/json-to-sql">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "JSON to SQL", "description": "Free online json to sql. Convert JSON array to SQL INSERT statements. Fast, secure, and works in your browser without downloading.", "url": "https://tools.talang.fun/en/tools/json-to-sql", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "Convert JSON array to SQL INSERT statements", "inLanguage": "en", "author": {"@type": "Organization", "name": "AI Toolbox"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/en/" class="logo"><span class="logo-icon">🛠️</span>AI Toolbox</a>
+    <nav class="nav">
+      <a href="/en/">Home</a>
+      <a href="/en/#tools">All Tools</a>
+      <a href="/en/blog/">Blog</a>
+      <a href="/en/about">About</a>
+      <a href="/en/sponsor">Sponsor</a>
+      <a href="https://tools.talang.fun/tools/json-to-sql" class="lang-switch">中文</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🗄</div>
+  <h1>JSON to SQL</h1>
+  <p>Convert JSON array to SQL INSERT statements</p>
+</div>
+<div class="tool-panel">
+<div style="margin-bottom:12px;display:flex;gap:12px;flex-wrap:wrap;align-items:center"><label>Table: <input type="text" id="json2sql-table" value="my_table" style="width:120px"></label><label>Quote: <select id="json2sql-quote"><option value="backtick">Backtick `</option><option value="double">Double "</option></select></label><label>NULL: <select id="json2sql-null"><option value="null">NULL</option><option value="default">DEFAULT</option></select></label></div><div style="margin-bottom:12px;display:flex;gap:12px;flex-wrap:wrap;align-items:center"><label><input type="checkbox" id="json2sql-batch" checked> Batch INSERT</label><label><input type="checkbox" id="json2sql-upsert"> UPSERT</label><label><input type="checkbox" id="json2sql-key-columns"> Key columns</label><input type="text" id="json2sql-key-columns-input" placeholder="id" style="width:80px" disabled></div><div style="margin-bottom:12px;display:flex;gap:12px;flex-wrap:wrap;align-items:center"><label><input type="checkbox" id="json2sql-drop"> DROP TABLE prefix</label><label><input type="checkbox" id="json2sql-create" checked> CREATE TABLE</label></div><textarea id="json2sql-input" style="min-height:200px;font-family:monospace;font-size:13px" placeholder='[{"id": 1, "name": "Alice", "age": 30}]'></textarea><div style="margin-top:12px;display:flex;gap:12px;align-items:center;flex-wrap:wrap"><button class="btn" id="json2sql-convert">Convert</button><button class="btn btn-secondary" id="json2sql-copy">Copy SQL</button><button class="btn btn-secondary" id="json2sql-clear">Clear</button></div><div id="json2sql-status" style="margin-top:8px;color:var(--text-dim);font-size:13px"></div><textarea id="json2sql-output" readonly style="width:100%;min-height:200px;font-family:Consolas,monospace;font-size:13px;background:var(--bg)" placeholder="Generated SQL..."></textarea>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>About this tool</h2>
+  <p>Free online JSON to SQL converter. Transform JSON arrays or objects into SQL INSERT statements instantly. Supports batch inserts, automatic CREATE TABLE generation, UPSERT conflict handling, custom table names, and field name mapping.</p><p>Perfect for database migration, data import, API data persistence, test data generation, and data backup. All processing is done locally in your browser.</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>Key Features</h2><ul><li>One-click JSON to SQL INSERT conversion</li><li>Batch VALUES and individual INSERT modes</li><li>Auto-generate CREATE TABLE statements</li><li>UPSERT (ON CONFLICT DO UPDATE) support</li><li>Custom table name, quote style, and NULL handling</li><li>Auto-infer field types (INTEGER/REAL/BOOLEAN/TEXT/DATE)</li><li>Optional DROP TABLE prefix</li><li>One-click copy generated SQL code</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>Frequently Asked Questions</h2><h3 style="margin-top:20px;margin-bottom:8px">Can I use the generated SQL directly?</h3><p>Yes, the generated SQL is compatible with PostgreSQL, MySQL, SQLite.</p><h3 style="margin-top:20px;margin-bottom:8px">Does it support nested JSON objects?</h3><p>Nested objects are flattened into columns.</p><h3 style="margin-top:20px;margin-bottom:8px">What is the difference between batch and individual INSERT?</h3><p>Batch INSERT puts all data in one statement for better performance.</p><h3 style="margin-top:20px;margin-bottom:8px">What is UPSERT?</h3><p>UPSERT (ON CONFLICT DO UPDATE) updates existing rows on conflict.</p><h3 style="margin-top:20px;margin-bottom:8px">Is my data safe?</h3><p>All processing is done locally in your browser. Your data is never uploaded.</p></section>
+<section class="related"><h3>Related Tools</h3><div class="tools-grid"><a href="/en/tools/json-formatter" class="tool-card"><div class="icon">{ }</div><h3>JSON Formatter</h3><p>Beautify, minify, and validate JSON with precise error location</p></a><a href="/en/tools/json-to-csv" class="tool-card"><div class="icon">📊</div><h3>JSON to CSV Converter</h3><p>Convert JSON arrays or objects to CSV format in one click</p></a><a href="/en/tools/json-to-excel" class="tool-card"><div class="icon">📊</div><h3>JSON to Excel</h3><p>Convert JSON arrays/objects to Excel (.xlsx) or CSV format and download</p></a><a href="/en/tools/csv-to-sql" class="tool-card"><div class="icon">🗄️</div><h3>CSV to SQL INSERT</h3><p>Convert CSV data to SQL INSERT statements with custom table name, column mapping, and batch inserts</p></a><a href="/en/tools/json-to-html" class="tool-card"><div class="icon">📊</div><h3>JSON to HTML Table</h3><p>Convert JSON data into beautiful HTML tables with nested object expansion and sorting</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>Need a private toolbox or custom browser tool?</h2>
+  <p>AI Toolbox can be adapted for internal workflows, private deployment, sponsored categories, or custom privacy-first utilities.</p>
+  <p><a href="/en/sponsor" data-event="conversion_cta_click" data-label="en_partner_custom_tool_cta">View partnership and custom tool options →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/json-to-sql.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI Toolbox · Free online AI & developer tools · <a href='/en/about'>About</a> · <a href='/en/sponsor'>Sponsor</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('Copied!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>

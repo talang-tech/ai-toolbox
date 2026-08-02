@@ -30,7 +30,10 @@
           "md-table-formatter",
           "csv-editor",
           "lorem-ipsum",
-          "html-to-text"
+          "html-to-text",
+          "markdown-to-csv",
+          "markdown-table-to-json",
+          "csv-to-html-table"
         ]
       },
       "dev": {
@@ -109,7 +112,15 @@
           "ip-lookup",
           "xpath-evaluator",
           "css-to-tailwind",
-          "css-media-query-generator"
+          "css-media-query-generator",
+          "cron-to-text",
+          "css-prefixer",
+          "html-sanitizer",
+          "css-unit-converter",
+          "css-box-shadow-generator",
+          "html-to-css-extractor",
+          "toml-json-converter",
+          "css-to-less"
         ]
       },
       "encode": {
@@ -123,7 +134,8 @@
           "rot13-cipher",
           "url-encoder",
           "unicode-converter",
-          "ascii-converter"
+          "ascii-converter",
+          "binary-hex-ascii"
         ]
       },
       "generate": {
@@ -139,7 +151,9 @@
           "slug-generator",
           "emoji-picker",
           "html-to-pdf",
-          "ulid-generator"
+          "ulid-generator",
+          "barcode-generator",
+          "mock-data-generator"
         ]
       },
       "json": {
@@ -163,7 +177,11 @@
           "json-escape",
           "json-to-html",
           "json-to-env",
-          "json-lines"
+          "json-lines",
+          "json-to-markdown",
+          "json-to-excel",
+          "json-to-python",
+          "json-to-sql"
         ]
       },
       "image": {
@@ -178,7 +196,8 @@
           "image-merge",
           "image-resize",
           "image-rotate",
-          "image-watermark"
+          "image-watermark",
+          "color-contrast"
         ]
       },
       "pdf": {
@@ -11731,6 +11750,182 @@
         ]
       ],
       "index": 150
+    },
+    {
+      "slug": "json-to-sql",
+      "category": "json",
+      "icon": "🗄",
+      "name_zh": "JSON 转 SQL",
+      "name_en": "JSON to SQL",
+      "short_zh": "将 JSON 数组转换为 SQL INSERT 语句",
+      "short_en": "Convert JSON array to SQL INSERT statements",
+      "keywords_zh": "JSON转SQL,JSON转INSERT,JSON批量插入,JSON转数据库,JSON导入数据库,SQL生成器,JSON数据导SQL,JSON to SQL,在线JSON转SQL,数据库迁移工具",
+      "keywords_en": "json to sql, json to insert, json insert generator, json to database, sql generator, json data to sql, json sql converter, online json to sql, database migration, batch insert",
+      "long_zh": "<p>免费的 JSON 转 SQL 在线工具，将 JSON 数组或对象快速转换为 SQL INSERT 语句。支持批量插入、CREATE TABLE 自动生成、UPSERT 冲突处理、自定义表名和字段名映射。</p><p>适用场景：数据库迁移、数据导入、API 数据落库、测试数据生成、数据备份。所有处理在浏览器本地完成，数据不会上传到任何服务器。</p>",
+      "long_en": "<p>Free online JSON to SQL converter. Transform JSON arrays or objects into SQL INSERT statements instantly. Supports batch inserts, automatic CREATE TABLE generation, UPSERT conflict handling, custom table names, and field name mapping.</p><p>Perfect for database migration, data import, API data persistence, test data generation, and data backup. All processing is done locally in your browser.</p>",
+      "ui_zh": "<div style=\"margin-bottom:12px;display:flex;gap:12px;flex-wrap:wrap;align-items:center\"><label>表名: <input type=\"text\" id=\"json2sql-table\" value=\"my_table\" style=\"width:120px\"></label><label>引号: <select id=\"json2sql-quote\"><option value=\"backtick\">反引号 `</option><option value=\"double\">双引号 \"</option></select></label><label>NULL处理: <select id=\"json2sql-null\"><option value=\"null\">NULL</option><option value=\"default\">DEFAULT</option></select></label></div><div style=\"margin-bottom:12px;display:flex;gap:12px;flex-wrap:wrap;align-items:center\"><label><input type=\"checkbox\" id=\"json2sql-batch\" checked> 批量插入 (VALUES)</label><label><input type=\"checkbox\" id=\"json2sql-upsert\"> UPSERT (ON CONFLICT)</label><label><input type=\"checkbox\" id=\"json2sql-key-columns\"> 自定义主键列</label><input type=\"text\" id=\"json2sql-key-columns-input\" placeholder=\"id\" style=\"width:80px\" disabled></div><div style=\"margin-bottom:12px;display:flex;gap:12px;flex-wrap:wrap;align-items:center\"><label><input type=\"checkbox\" id=\"json2sql-drop\"> DROP TABLE 前置</label><label><input type=\"checkbox\" id=\"json2sql-create\" checked> 生成 CREATE TABLE</label></div><textarea id=\"json2sql-input\" style=\"min-height:200px;font-family:monospace;font-size:13px\" placeholder='[{\"id\": 1, \"name\": \"Alice\", \"age\": 30}]'></textarea><div style=\"margin-top:12px;display:flex;gap:12px;align-items:center;flex-wrap:wrap\"><button class=\"btn\" id=\"json2sql-convert\">转换</button><button class=\"btn btn-secondary\" id=\"json2sql-copy\">复制 SQL</button><button class=\"btn btn-secondary\" id=\"json2sql-clear\">清空</button></div><div id=\"json2sql-status\" style=\"margin-top:8px;color:var(--text-dim);font-size:13px\"></div><textarea id=\"json2sql-output\" readonly style=\"width:100%;min-height:200px;font-family:Consolas,monospace;font-size:13px;background:var(--bg)\" placeholder=\"生成的 SQL 语句...\"></textarea>",
+      "ui_en": "<div style=\"margin-bottom:12px;display:flex;gap:12px;flex-wrap:wrap;align-items:center\"><label>Table: <input type=\"text\" id=\"json2sql-table\" value=\"my_table\" style=\"width:120px\"></label><label>Quote: <select id=\"json2sql-quote\"><option value=\"backtick\">Backtick `</option><option value=\"double\">Double \"</option></select></label><label>NULL: <select id=\"json2sql-null\"><option value=\"null\">NULL</option><option value=\"default\">DEFAULT</option></select></label></div><div style=\"margin-bottom:12px;display:flex;gap:12px;flex-wrap:wrap;align-items:center\"><label><input type=\"checkbox\" id=\"json2sql-batch\" checked> Batch INSERT</label><label><input type=\"checkbox\" id=\"json2sql-upsert\"> UPSERT</label><label><input type=\"checkbox\" id=\"json2sql-key-columns\"> Key columns</label><input type=\"text\" id=\"json2sql-key-columns-input\" placeholder=\"id\" style=\"width:80px\" disabled></div><div style=\"margin-bottom:12px;display:flex;gap:12px;flex-wrap:wrap;align-items:center\"><label><input type=\"checkbox\" id=\"json2sql-drop\"> DROP TABLE prefix</label><label><input type=\"checkbox\" id=\"json2sql-create\" checked> CREATE TABLE</label></div><textarea id=\"json2sql-input\" style=\"min-height:200px;font-family:monospace;font-size:13px\" placeholder='[{\"id\": 1, \"name\": \"Alice\", \"age\": 30}]'></textarea><div style=\"margin-top:12px;display:flex;gap:12px;align-items:center;flex-wrap:wrap\"><button class=\"btn\" id=\"json2sql-convert\">Convert</button><button class=\"btn btn-secondary\" id=\"json2sql-copy\">Copy SQL</button><button class=\"btn btn-secondary\" id=\"json2sql-clear\">Clear</button></div><div id=\"json2sql-status\" style=\"margin-top:8px;color:var(--text-dim);font-size:13px\"></div><textarea id=\"json2sql-output\" readonly style=\"width:100%;min-height:200px;font-family:Consolas,monospace;font-size:13px;background:var(--bg)\" placeholder=\"Generated SQL...\"></textarea>",
+      "related": [
+        "json-formatter",
+        "json-to-csv",
+        "json-to-excel",
+        "csv-to-sql",
+        "json-to-html"
+      ],
+      "seo_title_zh": "JSON 转 SQL | 在线 JSON 转 INSERT 语句生成器",
+      "seo_title_en": "JSON to SQL | Online JSON to INSERT Statement Generator",
+      "features_zh": [
+        "一键将 JSON 数组转换为 SQL INSERT 语句",
+        "支持批量插入 (VALUES) 和单条插入两种模式",
+        "自动生成 CREATE TABLE 语句",
+        "支持 UPSERT (ON CONFLICT DO UPDATE)",
+        "自定义表名、引号风格和 NULL 处理方式",
+        "自动推断字段类型 (INTEGER/REAL/BOOLEAN/TEXT/DATE)",
+        "可选 DROP TABLE 前置语句",
+        "一键复制生成的 SQL 代码"
+      ],
+      "features_en": [
+        "One-click JSON to SQL INSERT conversion",
+        "Batch VALUES and individual INSERT modes",
+        "Auto-generate CREATE TABLE statements",
+        "UPSERT (ON CONFLICT DO UPDATE) support",
+        "Custom table name, quote style, and NULL handling",
+        "Auto-infer field types (INTEGER/REAL/BOOLEAN/TEXT/DATE)",
+        "Optional DROP TABLE prefix",
+        "One-click copy generated SQL code"
+      ],
+      "faq_zh": [
+        [
+          "生成的 SQL 语句可以直接用吗？",
+          "可以。生成的 SQL 兼容 PostgreSQL、MySQL、SQLite 等主流数据库。"
+        ],
+        [
+          "支持嵌套 JSON 对象吗？",
+          "嵌套对象会被展开为扁平字段。"
+        ],
+        [
+          "批量插入和单条插入有什么区别？",
+          "批量插入将所有数据放在一个 INSERT 语句中，性能更好。"
+        ],
+        [
+          "UPSERT 是什么？",
+          "UPSERT 即 ON CONFLICT DO UPDATE，当主键冲突时自动更新其他字段。"
+        ],
+        [
+          "数据安全吗？",
+          "所有处理在浏览器本地完成，数据不会上传到任何服务器。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "Can I use the generated SQL directly?",
+          "Yes, the generated SQL is compatible with PostgreSQL, MySQL, SQLite."
+        ],
+        [
+          "Does it support nested JSON objects?",
+          "Nested objects are flattened into columns."
+        ],
+        [
+          "What is the difference between batch and individual INSERT?",
+          "Batch INSERT puts all data in one statement for better performance."
+        ],
+        [
+          "What is UPSERT?",
+          "UPSERT (ON CONFLICT DO UPDATE) updates existing rows on conflict."
+        ],
+        [
+          "Is my data safe?",
+          "All processing is done locally in your browser. Your data is never uploaded."
+        ]
+      ],
+      "index": 151
+    },
+    {
+      "slug": "css-to-less",
+      "category": "dev",
+      "icon": "💅",
+      "name_zh": "CSS 转 LESS",
+      "name_en": "CSS to LESS",
+      "short_zh": "将扁平 CSS 转换为嵌套结构的 LESS 代码",
+      "short_en": "Convert flat CSS to nested LESS syntax",
+      "keywords_zh": "CSS转LESS,CSS转Less,Less预处理器,CSS预处理,CSS嵌套,CSS变量转换,CSS to Less,Less转换器,在线CSS转Less,CSS预处理器转换",
+      "keywords_en": "css to less, css to less converter, less preprocessor, css nesting, less variables, convert css to less, online css to less, css preprocessor converter",
+      "long_zh": "<p>免费的在线 CSS 转 LESS 工具，将扁平 CSS 代码转换为嵌套结构的 LESS 代码。自动识别层叠选择器并创建父子嵌套，保留所有 CSS 声明。</p>",
+      "long_en": "<p>Free online CSS to LESS converter. Transform flat CSS code into nested LESS syntax automatically. Intelligently detects cascading selectors and creates parent-child nesting.</p>",
+      "ui_zh": "<textarea id=\"css2less-input\" style=\"min-height:200px;font-family:monospace;font-size:13px\" placeholder='.container { width: 100%; }\n.container .title { font-size: 18px; }'></textarea><div style=\"margin-top:12px;display:flex;gap:12px;align-items:center;flex-wrap:wrap\"><button class=\"btn\" id=\"css2less-convert\">转换</button><button class=\"btn btn-secondary\" id=\"css2less-copy\">复制 LESS</button><button class=\"btn btn-secondary\" id=\"css2less-clear\">清空</button></div><div id=\"css2less-status\" style=\"margin-top:8px;color:var(--text-dim);font-size:13px\"></div><div id=\"css2less-stats\" style=\"margin-top:4px;color:var(--text-dim);font-size:12px\"></div><textarea id=\"css2less-output\" readonly style=\"width:100%;min-height:200px;font-family:Consolas,monospace;font-size:13px;background:var(--bg)\" placeholder=\"生成的 LESS 代码...\"></textarea>",
+      "ui_en": "<textarea id=\"css2less-input\" style=\"min-height:200px;font-family:monospace;font-size:13px\" placeholder='.container { width: 100%; }\n.container .title { font-size: 18px; }'></textarea><div style=\"margin-top:12px;display:flex;gap:12px;align-items:center;flex-wrap:wrap\"><button class=\"btn\" id=\"css2less-convert\">Convert</button><button class=\"btn btn-secondary\" id=\"css2less-copy\">Copy LESS</button><button class=\"btn btn-secondary\" id=\"css2less-clear\">Clear</button></div><div id=\"css2less-status\" style=\"margin-top:8px;color:var(--text-dim);font-size:13px\"></div><div id=\"css2less-stats\" style=\"margin-top:4px;color:var(--text-dim);font-size:12px\"></div><textarea id=\"css2less-output\" readonly style=\"width:100%;min-height:200px;font-family:Consolas,monospace;font-size:13px;background:var(--bg)\" placeholder=\"Generated LESS code...\"></textarea>",
+      "related": [
+        "css-to-scss",
+        "css-formatter",
+        "css-minifier",
+        "css-validator",
+        "css-to-js"
+      ],
+      "seo_title_zh": "CSS 转 LESS | 在线 CSS 转 LESS 嵌套代码工具",
+      "seo_title_en": "CSS to LESS | Online CSS to LESS Converter Tool",
+      "features_zh": [
+        "一键将扁平 CSS 转换为嵌套 LESS",
+        "自动识别层叠选择器创建父子嵌套",
+        "保留所有 CSS 声明和注释",
+        "支持 @media 等 at-rule 保留",
+        "实时统计规则数和字符数",
+        "一键复制生成的 LESS 代码",
+        "浏览器本地处理，数据不上传"
+      ],
+      "features_en": [
+        "One-click flat CSS to nested LESS conversion",
+        "Auto-detect cascading selectors for parent-child nesting",
+        "Preserve all CSS declarations",
+        "Keep @media and other at-rules intact",
+        "Real-time rule and character count",
+        "One-click copy generated LESS code",
+        "Browser local processing, no upload"
+      ],
+      "faq_zh": [
+        [
+          "CSS 和 LESS 有什么区别？",
+          "LESS 是 CSS 预处理器，支持嵌套、变量、混合、函数等特性。"
+        ],
+        [
+          "嵌套规则准确吗？",
+          "工具通过选择器前缀匹配实现嵌套，适用于常见的层级结构。"
+        ],
+        [
+          "转换后的 LESS 可以直接使用吗？",
+          "生成的 LESS 代码语法正确，可直接在支持 LESS 的项目中使用。"
+        ],
+        [
+          "支持 @media 查询吗？",
+          "支持。@media 规则会被保留在顶层。"
+        ],
+        [
+          "数据安全吗？",
+          "所有处理在浏览器本地完成，数据不会上传到任何服务器。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "What is the difference between CSS and LESS?",
+          "LESS is a CSS preprocessor that supports nesting, variables, mixins."
+        ],
+        [
+          "Is the nesting accurate?",
+          "The tool uses selector prefix matching for nesting."
+        ],
+        [
+          "Can I use the generated LESS directly?",
+          "Yes, the generated LESS syntax is correct."
+        ],
+        [
+          "Does it support @media queries?",
+          "Yes, @media rules are preserved at the top level."
+        ],
+        [
+          "Is my data safe?",
+          "All processing is done locally in your browser. Your data is never uploaded."
+        ]
+      ],
+      "index": 152
     }
   ]
 }
