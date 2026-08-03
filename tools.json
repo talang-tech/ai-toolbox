@@ -11926,6 +11926,182 @@
         ]
       ],
       "index": 152
+    },
+    {
+      "slug": "css-to-sass",
+      "category": "dev",
+      "icon": "💅",
+      "name_zh": "CSS 转 SCSS/SASS",
+      "name_en": "CSS to SCSS/SASS",
+      "short_zh": "将扁平 CSS 转换为嵌套结构的 SCSS/SASS 代码",
+      "short_en": "Convert flat CSS to nested SCSS/SASS syntax",
+      "keywords_zh": "CSS转SCSS,CSS转SASS,CSS转Sass,SCSS预处理器,SASS,CSS嵌套,CSS预处理,CSS to SCSS,SCSS转换器,在线CSS转SCSS,LESS转SCSS,SCSS格式化",
+      "keywords_en": "css to scss, css to sass, scss converter, sass preprocessor, css nesting, sass variables, convert css to scss, online css to scss, sass converter, css preprocessing",
+      "long_zh": "<p>免费的在线 CSS 转 SCSS/SASS 工具，将扁平 CSS 代码转换为嵌套结构的 SCSS 或 SASS 代码。自动识别层叠选择器并创建父子嵌套，支持 SCSS 和 SASS 两种语法格式输出。</p><p>适用场景：迁移到 SCSS/SASS 项目、代码重构、CSS 代码组织优化。所有处理在浏览器本地完成，数据不会上传到任何服务器。</p>",
+      "long_en": "<p>Free online CSS to SCSS/SASS converter. Transform flat CSS into nested SCSS or SASS syntax automatically. Detects cascading selectors and creates parent-child nesting. Supports both SCSS (bracketed) and SASS (indented) syntax output.</p><p>Perfect for migrating to SCSS/SASS projects, code refactoring, and CSS organization. All processing is done locally in your browser.</p>",
+      "ui_zh": "<div style=\"margin-bottom:12px;display:flex;gap:16px;flex-wrap:wrap;align-items:center\"><label><input type=\"radio\" name=\"css2sass-syntax\" value=\"scss\" checked> SCSS (带花括号)</label><label><input type=\"radio\" name=\"css2sass-syntax\" value=\"sass\"> SASS (缩进语法)</label></div><textarea id=\"css2sass-input\" style=\"min-height:200px;font-family:monospace;font-size:13px\" placeholder=\".container { width: 100%; }\n.container .title { font-size: 18px; }\n.container .title span { color: red; }\"></textarea><div style=\"margin-top:12px;display:flex;gap:12px;align-items:center;flex-wrap:wrap\"><button class=\"btn\" id=\"css2sass-convert\">转换</button><button class=\"btn btn-secondary\" id=\"css2sass-copy\">复制</button><button class=\"btn btn-secondary\" id=\"css2sass-clear\">清空</button></div><div id=\"css2sass-status\" style=\"margin-top:8px;color:var(--text-dim);font-size:13px\"></div><div id=\"css2sass-stats\" style=\"margin-top:4px;color:var(--text-dim);font-size:12px\"></div><textarea id=\"css2sass-output\" readonly style=\"width:100%;min-height:200px;font-family:Consolas,monospace;font-size:13px;background:var(--bg)\" placeholder=\"生成的 SCSS/SASS 代码...\"></textarea>",
+      "ui_en": "<div style=\"margin-bottom:12px;display:flex;gap:16px;flex-wrap:wrap;align-items:center\"><label><input type=\"radio\" name=\"css2sass-syntax\" value=\"scss\" checked> SCSS (brackets)</label><label><input type=\"radio\" name=\"css2sass-syntax\" value=\"sass\"> SASS (indented)</label></div><textarea id=\"css2sass-input\" style=\"min-height:200px;font-family:monospace;font-size:13px\" placeholder=\".container { width: 100%; }\n.container .title { font-size: 18px; }\n.container .title span { color: red; }\"></textarea><div style=\"margin-top:12px;display:flex;gap:12px;align-items:center;flex-wrap:wrap\"><button class=\"btn\" id=\"css2sass-convert\">Convert</button><button class=\"btn btn-secondary\" id=\"css2sass-copy\">Copy</button><button class=\"btn btn-secondary\" id=\"css2sass-clear\">Clear</button></div><div id=\"css2sass-status\" style=\"margin-top:8px;color:var(--text-dim);font-size:13px\"></div><div id=\"css2sass-stats\" style=\"margin-top:4px;color:var(--text-dim);font-size:12px\"></div><textarea id=\"css2sass-output\" readonly style=\"width:100%;min-height:200px;font-family:Consolas,monospace;font-size:13px;background:var(--bg)\" placeholder=\"Generated SCSS/SASS code...\"></textarea>",
+      "related": [
+        "css-to-less",
+        "css-formatter",
+        "css-minifier",
+        "css-validator",
+        "css-to-js"
+      ],
+      "seo_title_zh": "CSS 转 SCSS/SASS | 在线 CSS 转 SCSS 嵌套代码工具",
+      "seo_title_en": "CSS to SCSS/SASS | Online CSS to SCSS Converter Tool",
+      "features_zh": [
+        "一键将扁平 CSS 转换为嵌套 SCSS/SASS",
+        "自动识别层叠选择器创建父子嵌套",
+        "支持 SCSS (花括号) 和 SASS (缩进) 两种语法",
+        "保留所有 CSS 声明和值",
+        "实时统计规则数和字符数",
+        "一键复制生成的代码",
+        "浏览器本地处理，数据不上传"
+      ],
+      "features_en": [
+        "One-click flat CSS to nested SCSS/SASS conversion",
+        "Auto-detect cascading selectors for nesting",
+        "Supports SCSS (bracketed) and SASS (indented) syntax",
+        "Preserve all CSS declarations",
+        "Real-time rule and character count",
+        "One-click copy generated code",
+        "Browser local processing, no upload"
+      ],
+      "faq_zh": [
+        [
+          "SCSS 和 SASS 有什么区别？",
+          "SCSS 使用花括号 {} 和分号 ;，与 CSS 语法兼容。SASS 使用缩进语法，更简洁。"
+        ],
+        [
+          "嵌套规则准确吗？",
+          "工具通过选择器前缀匹配尝试嵌套，适用于常见的父子层级结构。"
+        ],
+        [
+          "转换后的代码可以直接使用吗？",
+          "生成的 SCSS/SASS 语法正确，可直接在项目中使用。"
+        ],
+        [
+          "支持 @media 等 at-rule 吗？",
+          "支持。@media 等 at-rule 会被保留在顶层。"
+        ],
+        [
+          "数据安全吗？",
+          "所有处理在浏览器本地完成，数据不会上传到任何服务器。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "What is the difference between SCSS and SASS?",
+          "SCSS uses brackets {} and semicolons ;, compatible with CSS. SASS uses indented syntax, more concise."
+        ],
+        [
+          "Is the nesting accurate?",
+          "The tool uses selector prefix matching for nesting, suitable for common parent-child patterns."
+        ],
+        [
+          "Can I use the converted code directly?",
+          "Yes, the generated SCSS/SASS syntax is correct and ready to use."
+        ],
+        [
+          "Does it support @media queries?",
+          "Yes, @media rules are preserved at the top level."
+        ],
+        [
+          "Is my data safe?",
+          "All processing is done locally in your browser. Your data is never uploaded."
+        ]
+      ],
+      "index": 153
+    },
+    {
+      "slug": "html-prettifier",
+      "category": "dev",
+      "icon": "✨",
+      "name_zh": "HTML 格式化/美化",
+      "name_en": "HTML Prettifier/Beautifier",
+      "short_zh": "格式化美化 HTML 代码，支持缩进和空行压缩",
+      "short_en": "Format and beautify HTML code with indentation options",
+      "keywords_zh": "HTML格式化,HTML美化,HTML整理,HTML代码格式化,HTML缩进,HTML beautifier,HTML prettier,在线HTML格式化,HTML代码美化,HTML排版工具,HTML formatter,HTML代码整理",
+      "keywords_en": "html formatter, html beautifier, html prettier, html code formatter, html indentation, html tidy, online html formatter, html beautifier online, format html, html code beautifier, pretty html, html indentation tool",
+      "long_zh": "<p>免费的在线 HTML 格式化/美化工具，将压缩或杂乱的 HTML 代码转换为清晰易读的格式化代码。支持自定义缩进（2空格、4空格、Tab），可选空行压缩功能。</p><p>适用场景：调试 HTML 模板、阅读压缩的 HTML 代码、代码审查、学习 HTML 结构。所有处理在浏览器本地完成，数据不会上传到任何服务器。</p>",
+      "long_en": "<p>Free online HTML prettifier/beautifier. Transform minified or messy HTML code into clean, readable, properly indented output. Supports custom indentation (2 spaces, 4 spaces, Tab) and optional whitespace collapse.</p><p>Perfect for debugging HTML templates, reading minified HTML, code review, and learning HTML structure. All processing is done locally in your browser.</p>",
+      "ui_zh": "<div style=\"margin-bottom:12px;display:flex;gap:16px;flex-wrap:wrap;align-items:center\"><label>缩进: <select id=\"html-prettify-indent\"><option value=\"  \">2 空格</option><option value=\"    \">4 空格</option><option value=\"\\t\">Tab</option></select></label><label><input type=\"checkbox\" id=\"html-prettify-collapse\"> 压缩空行</label></div><textarea id=\"html-prettify-input\" style=\"min-height:200px;font-family:monospace;font-size:13px\" placeholder=\"<div><p>Hello</p><ul><li>Item 1</li><li>Item 2</li></ul></div>\"></textarea><div style=\"margin-top:12px;display:flex;gap:12px;align-items:center;flex-wrap:wrap\"><button class=\"btn\" id=\"html-prettify-format\">格式化</button><button class=\"btn btn-secondary\" id=\"html-prettify-copy\">复制</button><button class=\"btn btn-secondary\" id=\"html-prettify-clear\">清空</button></div><div id=\"html-prettify-status\" style=\"margin-top:8px;color:var(--text-dim);font-size:13px\"></div><div id=\"html-prettify-stats\" style=\"margin-top:4px;color:var(--text-dim);font-size:12px\"></div><textarea id=\"html-prettify-output\" readonly style=\"width:100%;min-height:200px;font-family:Consolas,monospace;font-size:13px;background:var(--bg)\" placeholder=\"格式化后的 HTML...\"></textarea>",
+      "ui_en": "<div style=\"margin-bottom:12px;display:flex;gap:16px;flex-wrap:wrap;align-items:center\"><label>Indent: <select id=\"html-prettify-indent\"><option value=\"  \">2 spaces</option><option value=\"    \">4 spaces</option><option value=\"\\t\">Tab</option></select></label><label><input type=\"checkbox\" id=\"html-prettify-collapse\"> Collapse whitespace</label></div><textarea id=\"html-prettify-input\" style=\"min-height:200px;font-family:monospace;font-size:13px\" placeholder=\"<div><p>Hello</p><ul><li>Item 1</li><li>Item 2</li></ul></div>\"></textarea><div style=\"margin-top:12px;display:flex;gap:12px;align-items:center;flex-wrap:wrap\"><button class=\"btn\" id=\"html-prettify-format\">Format</button><button class=\"btn btn-secondary\" id=\"html-prettify-copy\">Copy</button><button class=\"btn btn-secondary\" id=\"html-prettify-clear\">Clear</button></div><div id=\"html-prettify-status\" style=\"margin-top:8px;color:var(--text-dim);font-size:13px\"></div><div id=\"html-prettify-stats\" style=\"margin-top:4px;color:var(--text-dim);font-size:12px\"></div><textarea id=\"html-prettify-output\" readonly style=\"width:100%;min-height:200px;font-family:Consolas,monospace;font-size:13px;background:var(--bg)\" placeholder=\"Formatted HTML...\"></textarea>",
+      "related": [
+        "html-minifier",
+        "html-validator",
+        "html-to-markdown",
+        "html-to-jsx",
+        "html-to-pug"
+      ],
+      "seo_title_zh": "HTML 格式化/美化 | 在线 HTML 代码格式化工具",
+      "seo_title_en": "HTML Prettifier/Beautifier | Online HTML Code Formatter",
+      "features_zh": [
+        "一键格式化美化 HTML 代码",
+        "支持 2 空格、4 空格、Tab 三种缩进方式",
+        "可选空行压缩，减少空白行",
+        "智能识别内联元素和块级元素",
+        "正确处理注释、自闭合标签、空元素",
+        "实时统计输入/输出大小",
+        "一键复制格式化结果",
+        "浏览器本地处理，数据不上传"
+      ],
+      "features_en": [
+        "One-click HTML code beautification",
+        "Supports 2-space, 4-space, and Tab indentation",
+        "Optional whitespace collapse",
+        "Smart inline vs block element handling",
+        "Proper comment, self-closing, and empty element handling",
+        "Real-time input/output size statistics",
+        "One-click copy formatted result",
+        "Browser local processing, no upload"
+      ],
+      "faq_zh": [
+        [
+          "这个工具和 HTML Minifier 有什么区别？",
+          "HTML Minifier 是压缩 HTML 减少体积，本工具是格式化美化 HTML 使其更易读。两者互补。"
+        ],
+        [
+          "支持哪些 HTML 版本？",
+          "支持 HTML4、HTML5、XHTML。自动识别自闭合标签。"
+        ],
+        [
+          "格式化后的 HTML 会改变功能吗？",
+          "不会。格式化只改变缩进和换行，不会影响 HTML 的功能和语义。"
+        ],
+        [
+          "支持自定义缩进吗？",
+          "支持。你可以选择 2 空格、4 空格或 Tab 缩进。"
+        ],
+        [
+          "数据安全吗？",
+          "所有处理在浏览器本地完成，数据不会上传到任何服务器。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "What is the difference between this and HTML Minifier?",
+          "HTML Minifier compresses HTML to reduce size. This tool beautifies HTML for readability. They complement each other."
+        ],
+        [
+          "Which HTML versions are supported?",
+          "HTML4, HTML5, XHTML are all supported. Self-closing tags are auto-detected."
+        ],
+        [
+          "Does formatting change HTML functionality?",
+          "No. Formatting only changes indentation and line breaks, not functionality."
+        ],
+        [
+          "Can I customize the indentation?",
+          "Yes, you can choose 2-space, 4-space, or Tab indentation."
+        ],
+        [
+          "Is my data safe?",
+          "All processing is done locally in your browser. Your data is never uploaded."
+        ]
+      ],
+      "index": 154
     }
   ]
 }
