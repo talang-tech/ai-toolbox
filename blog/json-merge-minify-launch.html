@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>JSON Merge 与 JSON Minify：两个实用的 JSON 处理新工具 | AI 工具盒子</title>
+<meta name="description" content="AI Toolbox 新增 JSON 深度合并和 JSON 压缩两个实用工具，纯浏览器本地处理，零数据上传。">
+<meta name="keywords" content="">
+<link rel="canonical" href="https://tools.talang.fun/blog/json-merge-minify-launch">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/blog/json-merge-minify-launch">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/blog/json-merge-minify-launch">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/blog/json-merge-minify-launch">
+<meta property="og:title" content="JSON Merge 与 JSON Minify：两个实用的 JSON 处理新工具 | AI 工具盒子">
+<meta property="og:description" content="AI Toolbox 新增 JSON 深度合并和 JSON 压缩两个实用工具，纯浏览器本地处理，零数据上传。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/blog/json-merge-minify-launch">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "JSON Merge 与 JSON Minify：两个实用的 JSON 处理新工具", "description": "AI Toolbox 新增 JSON 深度合并和 JSON 压缩两个实用工具，纯浏览器本地处理，零数据上传。", "author": {"@type": "Organization", "name": "AI 工具盒子"}, "datePublished": "2026-08-04", "url": "https://tools.talang.fun/blog/json-merge-minify-launch"}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/blog/json-merge-minify-launch" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<article class="article">
+  <p style="margin-bottom:8px"><a href="/blog/" style="color:var(--muted)">← 返回博客</a></p>
+  <h1>JSON Merge 与 JSON Minify：两个实用的 JSON 处理新工具</h1>
+  <p style="color:var(--muted);margin-bottom:24px">2026-08-04 · 5 分钟阅读</p>
+  <h1>JSON Merge 与 JSON Minify：两个实用的 JSON 处理新工具</h1>
+<p>在开发工作中，JSON 是最常见的数据交换格式之一。无论是配置文件合并、API 响应处理，还是数据传输优化，JSON 操作的场景无处不在。今天，AI Toolbox 新增了两个专门针对 JSON 处理的新工具：<strong>JSON 合并</strong> 和 <strong>JSON 压缩</strong>。</p>
+<h2>🔗 JSON 合并工具</h2>
+<p>JSON 合并（JSON Merge）工具可以将两个 JSON 对象深度合并为一个。它的核心功能包括：</p>
+<h3>合并策略</h3>
+<ul>
+<li><strong>嵌套对象递归合并</strong>：如果两个对象有相同的键且值都是对象，则递归合并其子属性</li>
+<li><strong>数组合并去重</strong>：数组合并时自动去除重复元素，不会重复追加</li>
+<li><strong>同名键值覆盖</strong>：右侧 JSON 的值会覆盖左侧的对应值</li>
+</ul>
+<h3>适用场景</h3>
+<ul>
+<li><strong>配置文件合并</strong>：将默认配置与环境特定配置合并</li>
+<li><strong>API 响应合并</strong>：合并多个 API 返回的数据</li>
+<li><strong>国际化文件合并</strong>：将基础翻译与覆盖翻译合并</li>
+<li><strong>状态管理</strong>：在前端状态管理中合并对象</li>
+</ul>
+<h3>使用示例</h3>
+<p>假设你有两个 JSON 对象：</p>
+<pre><code class="lang-json">
+// config.default.json
+{
+  "port": 3000,
+  "database": {
+    "host": "localhost",
+    "port": 5432
+  },
+  "features": ["auth", "logging"]
+}
+
+// config.prod.json
+{
+  "database": {
+    "host": "prod-db.example.com",
+    "port": 5432
+  },
+  "features": ["auth", "logging", "analytics"],
+  "cache": {
+    "ttl": 3600
+  }
+}
+</code></pre>
+<p>合并结果：</p>
+<pre><code class="lang-json">
+{
+  "port": 3000,
+  "database": {
+    "host": "prod-db.example.com",
+    "port": 5432
+  },
+  "features": ["auth", "logging", "analytics"],
+  "cache": {
+    "ttl": 3600
+  }
+}
+</code></pre>
+<p><code>database</code> 对象递归合并（<code>host</code> 被覆盖，<code>port</code> 相同），<code>features</code> 数组合并去重，<code>cache</code> 从右侧 JSON 新增。</p>
+<h2>🗜️ JSON 压缩工具</h2>
+<p>JSON 压缩（JSON Minify）工具用于去除 JSON 字符串中的空格、换行和缩进，将美化格式的 JSON 压缩为紧凑格式，显著减小体积。</p>
+<h3>核心功能</h3>
+<ul>
+<li><strong>一键压缩</strong>：去除所有空白字符，生成单行紧凑 JSON</li>
+<li><strong>语法验证</strong>：可选在压缩前验证 JSON 语法，避免操作非法 JSON</li>
+<li><strong>大小对比</strong>：实时显示压缩前后的大小及节省比例</li>
+<li><strong>下载支持</strong>：一键下载为 <code>.json</code> 文件</li>
+</ul>
+<h3>压缩效果</h3>
+<p>对于格式化美观的 JSON 文件，压缩率通常在 <strong>30%~70%</strong> 之间。例如，一个 100KB 的美化 JSON 文件，压缩后可能只有 40KB 左右。</p>
+<h3>适用场景</h3>
+<ul>
+<li><strong>API 请求体优化</strong>：压缩请求体减少网络传输</li>
+<li><strong>数据存储优化</strong>：节省数据库或文件存储空间</li>
+<li><strong>日志记录</strong>：紧凑格式便于日志采集和分析</li>
+<li><strong>前端资源打包</strong>：减小 JSON 配置文件的体积</li>
+</ul>
+<h2>🔒 隐私优先</h2>
+<p>两个工具完全在浏览器本地运行，没有任何数据上传到服务器。你可以放心处理敏感数据，无需担心隐私泄露。</p>
+<h2>🚀 立即使用</h2>
+<p>访问 <a href="https://tools.talang.fun">AI Toolbox</a> 即可体验这两个新工具，完全免费，无需注册。</p>
+<ul>
+<li><a href="https://tools.talang.fun/tools/json-merge">JSON 合并工具</a></li>
+<li><a href="https://tools.talang.fun/tools/json-minify">JSON 压缩工具</a></li>
+</ul>
+<h2>📋 后续计划</h2>
+<p>AI Toolbox 的 JSON 工具箱正在持续扩展，后续计划包括：</p>
+<ul>
+<li>JSON Patch 生成器</li>
+<li>JSON 到 TSV 转换器</li>
+<li>JSON 路径提取器增强</li>
+<li>多 JSON 批量处理</li>
+</ul>
+<p>欢迎关注我们的 <a href="https://github.com/talang-tech/ai-toolbox">GitHub 仓库</a> 提交反馈或贡献代码。</p>
+  <section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+</article>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>

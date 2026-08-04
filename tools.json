@@ -12102,6 +12102,185 @@
         ]
       ],
       "index": 154
+    },
+    {
+      "slug": "json-merge",
+      "category": "json",
+      "icon": "🔗",
+      "name_zh": "JSON 合并",
+      "name_en": "JSON Merge",
+      "short_zh": "深度合并两个 JSON 对象，数组去重合并，支持嵌套对象",
+      "short_en": "Deep merge two JSON objects with array dedup and nested support",
+      "keywords_zh": "JSON合并,JSON merge,JSON合并工具,JSON深度合并,JSON对象合并,JSON合并在线,JSON拼接,JSON combine,json合并工具,json merge online,deep merge json,json对象合并",
+      "keywords_en": "json merge, json deep merge, merge json objects, json combine, deep merge json, json merger, json object merge, json merge online, merge two json, json union, json concatenate, json splice",
+      "long_zh": "<p>免费的在线 JSON 深度合并工具。将两个 JSON 对象合并为一个，支持嵌套对象递归合并、数组合并去重。适用于配置文件合并、API 响应合并、国际化文件合并等场景。</p><p>支持将左侧 JSON 的字段合并到右侧 JSON 中，数组自动去重合并，嵌套对象递归合并，同名键值覆盖。所有处理在浏览器本地完成，数据不会上传到任何服务器。</p>",
+      "long_en": "<p>Free online JSON deep merge tool. Merge two JSON objects into one with recursive nested object merging and array deduplication. Perfect for config file merging, API response merging, i18n file merging, and more.</p><p>Merges left JSON fields into right JSON with array dedup, recursive nested merge, and key overwrite. All processing is done locally in your browser.</p>",
+      "ui_zh": "<div class=\"merge-columns\"><div class=\"merge-col\"><h3>JSON 1 (源)</h3><textarea id=\"json-merge-input1\" style=\"width:100%;min-height:250px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"{&quot;name&quot;: &quot;Alice&quot;, &quot;age&quot;: 30}\"></textarea></div><div class=\"merge-col\"><h3>JSON 2 (目标)</h3><textarea id=\"json-merge-input2\" style=\"width:100%;min-height:250px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"{&quot;age&quot;: 28, &quot;city&quot;: &quot;Beijing&quot;}\"></textarea></div></div><div style=\"margin-top:12px;display:flex;gap:12px;align-items:center;flex-wrap:wrap\"><button class=\"btn\" id=\"json-merge-merge\">合并</button><button class=\"btn btn-secondary\" id=\"json-merge-copy\">复制结果</button><button class=\"btn btn-secondary\" id=\"json-merge-swap\">交换左右</button><button class=\"btn btn-secondary\" id=\"json-merge-clear\">清空</button></div><div id=\"json-merge-status\" style=\"margin-top:8px;color:var(--text-dim);font-size:13px\"></div><div id=\"json-merge-stats\" style=\"margin-top:4px;color:var(--text-dim);font-size:12px\"></div><textarea id=\"json-merge-output\" readonly style=\"width:100%;min-height:250px;font-family:Consolas,monospace;font-size:13px;background:var(--bg)\" placeholder=\"合并后的 JSON...\"></textarea>",
+      "ui_en": "<div class=\"merge-columns\"><div class=\"merge-col\"><h3>JSON 1 (Source)</h3><textarea id=\"json-merge-input1\" style=\"width:100%;min-height:250px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"{&quot;name&quot;: &quot;Alice&quot;, &quot;age&quot;: 30}\"></textarea></div><div class=\"merge-col\"><h3>JSON 2 (Target)</h3><textarea id=\"json-merge-input2\" style=\"width:100%;min-height:250px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"{&quot;age&quot;: 28, &quot;city&quot;: &quot;Beijing&quot;}\"></textarea></div></div><div style=\"margin-top:12px;display:flex;gap:12px;align-items:center;flex-wrap:wrap\"><button class=\"btn\" id=\"json-merge-merge\">Merge</button><button class=\"btn btn-secondary\" id=\"json-merge-copy\">Copy</button><button class=\"btn btn-secondary\" id=\"json-merge-swap\">Swap</button><button class=\"btn btn-secondary\" id=\"json-merge-clear\">Clear</button></div><div id=\"json-merge-status\" style=\"margin-top:8px;color:var(--text-dim);font-size:13px\"></div><div id=\"json-merge-stats\" style=\"margin-top:4px;color:var(--text-dim);font-size:12px\"></div><textarea id=\"json-merge-output\" readonly style=\"width:100%;min-height:250px;font-family:Consolas,monospace;font-size:13px;background:var(--bg)\" placeholder=\"Merged JSON...\"></textarea>",
+      "related": [
+        "json-formatter",
+        "json-diff",
+        "json-validator",
+        "json-sorter",
+        "json-flatten",
+        "json-minify"
+      ],
+      "seo_title_zh": "JSON 合并 | 在线 JSON 深度合并工具",
+      "seo_title_en": "JSON Merge | Online Deep JSON Object Merger",
+      "features_zh": [
+        "深度合并两个 JSON 对象",
+        "嵌套对象递归合并",
+        "数组合并去重，不重复追加",
+        "自动检测并报告 JSON 语法错误",
+        "交换左右输入框，方便对比",
+        "一键复制合并结果",
+        "清晰的状态提示和统计信息",
+        "浏览器本地处理，数据不上传"
+      ],
+      "features_en": [
+        "Deep merge two JSON objects",
+        "Recursive nested object merging",
+        "Array deduplication on merge",
+        "Auto-detects JSON syntax errors",
+        "Swap left/right input for comparison",
+        "One-click copy merge result",
+        "Clear status and statistics",
+        "Browser local processing, no upload"
+      ],
+      "faq_zh": [
+        [
+          "合并规则是什么？",
+          "左侧 JSON 的字段会合并到右侧 JSON 中。如果同一键都存在，且值都是对象则递归合并；如果是数组则合并去重；其他情况右侧值覆盖左侧值。"
+        ],
+        [
+          "支持多级嵌套合并吗？",
+          "支持。嵌套对象会递归合并，深度不限。"
+        ],
+        [
+          "数组怎么合并？",
+          "数组合并后去重，不会重复添加相同元素。基本类型和对象数组都支持。"
+        ],
+        [
+          "和 JSON Diff 有什么区别？",
+          "JSON Diff 是比较两个 JSON 的差异，JSON Merge 是将两个 JSON 合并为一个。"
+        ],
+        [
+          "数据安全吗？",
+          "所有处理在浏览器本地完成，数据不会上传到任何服务器。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "What is the merge strategy?",
+          "Left JSON fields are merged into right JSON. If both have the same key and both values are objects, they merge recursively. If both are arrays, they merge with dedup. Otherwise, the right value overwrites the left."
+        ],
+        [
+          "Does it support nested merging?",
+          "Yes. Nested objects are merged recursively with no depth limit."
+        ],
+        [
+          "How are arrays merged?",
+          "Arrays are merged with deduplication. Duplicate entries are not added twice. Both primitive and object arrays are supported."
+        ],
+        [
+          "What is the difference from JSON Diff?",
+          "JSON Diff compares two JSONs to show differences, JSON Merge combines two JSONs into one."
+        ],
+        [
+          "Is my data safe?",
+          "All processing is done locally in your browser. Your data is never uploaded."
+        ]
+      ],
+      "index": 155
+    },
+    {
+      "slug": "json-minify",
+      "category": "json",
+      "icon": "🗜️",
+      "name_zh": "JSON 压缩",
+      "name_en": "JSON Minify",
+      "short_zh": "压缩 JSON 去除空格换行，减小体积，支持复制和下载",
+      "short_en": "Minify JSON by removing whitespace and newlines to reduce size",
+      "keywords_zh": "JSON压缩,JSON minify,JSON压缩工具,JSON缩小,JSON去空格,JSON瘦身,JSON compact,json压缩在线,json体积优化,JSON格式化,json压缩工具在线,json minify在线",
+      "keywords_en": "json minify, json compress, json compact, json strip whitespace, json shrink, json minimize, json minifier, json size reducer, online json minifier, json compression, json pretty print, json to single line",
+      "long_zh": "<p>免费的在线 JSON 压缩工具。去除 JSON 字符串中的空格、换行和缩进，将美化格式的 JSON 压缩为紧凑格式，显著减小体积。适用于 API 请求体压缩、数据传输优化、存储空间节省等场景。</p><p>支持大 JSON 文件压缩、一键复制压缩结果、下载为 .json 文件。支持从格式化 JSON 到单行紧凑 JSON 的转换。所有处理在浏览器本地完成，数据不会上传到任何服务器。</p>",
+      "long_en": "<p>Free online JSON minifier/compressor. Remove whitespace, newlines, and indentation from JSON strings to create compact single-line JSON. Perfect for API request body optimization, data transfer, and storage reduction.</p><p>Supports large JSON files, one-click copy, and download as .json. All processing is done locally in your browser with zero data upload.</p>",
+      "ui_zh": "<textarea id=\"json-minify-input\" style=\"width:100%;min-height:250px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"{&quot;name&quot;: &quot;Alice&quot;, &quot;age&quot;: 30}\"></textarea><div style=\"margin-top:12px;display:flex;gap:12px;align-items:center;flex-wrap:wrap\"><button class=\"btn\" id=\"json-minify-minify\">压缩</button><button class=\"btn btn-secondary\" id=\"json-minify-copy\">复制结果</button><button class=\"btn btn-secondary\" id=\"json-minify-download\">下载</button><button class=\"btn btn-secondary\" id=\"json-minify-clear\">清空</button><label style=\"margin-left:16px;font-size:13px\"><input type=\"checkbox\" id=\"json-minify-validate\"> 压缩前验证语法</label></div><div id=\"json-minify-status\" style=\"margin-top:8px;color:var(--text-dim);font-size:13px\"></div><div id=\"json-minify-stats\" style=\"margin-top:4px;color:var(--text-dim);font-size:12px\"></div><textarea id=\"json-minify-output\" readonly style=\"width:100%;min-height:250px;font-family:Consolas,monospace;font-size:13px;background:var(--bg)\" placeholder=\"压缩后的 JSON...\"></textarea>",
+      "ui_en": "<textarea id=\"json-minify-input\" style=\"width:100%;min-height:250px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"{&quot;name&quot;: &quot;Alice&quot;, &quot;age&quot;: 30}\"></textarea><div style=\"margin-top:12px;display:flex;gap:12px;align-items:center;flex-wrap:wrap\"><button class=\"btn\" id=\"json-minify-minify\">Minify</button><button class=\"btn btn-secondary\" id=\"json-minify-copy\">Copy</button><button class=\"btn btn-secondary\" id=\"json-minify-download\">Download</button><button class=\"btn btn-secondary\" id=\"json-minify-clear\">Clear</button><label style=\"margin-left:16px;font-size:13px\"><input type=\"checkbox\" id=\"json-minify-validate\" checked> Validate before minify</label></div><div id=\"json-minify-status\" style=\"margin-top:8px;color:var(--text-dim);font-size:13px\"></div><div id=\"json-minify-stats\" style=\"margin-top:4px;color:var(--text-dim);font-size:12px\"></div><textarea id=\"json-minify-output\" readonly style=\"width:100%;min-height:250px;font-family:Consolas,monospace;font-size:13px;background:var(--bg)\" placeholder=\"Minified JSON...\"></textarea>",
+      "related": [
+        "json-formatter",
+        "json-validator",
+        "json-escape",
+        "json-merge",
+        "json-diff"
+      ],
+      "seo_title_zh": "JSON 压缩 | 在线 JSON 压缩工具 | JSON Minify",
+      "seo_title_en": "JSON Minify | Online JSON Compressor/Formatter",
+      "features_zh": [
+        "一键压缩 JSON 去除空格换行",
+        "可选的压缩前语法验证",
+        "实时显示压缩前/后大小和压缩率",
+        "一键复制压缩结果",
+        "下载为 .json 文件",
+        "支持大文件处理",
+        "显示压缩体积节省百分比",
+        "浏览器本地处理，数据不上传"
+      ],
+      "features_en": [
+        "One-click JSON minification",
+        "Optional validation before minify",
+        "Real-time size comparison and compression ratio",
+        "One-click copy result",
+        "Download as .json file",
+        "Supports large files",
+        "Shows size savings percentage",
+        "Browser local processing, no upload"
+      ],
+      "faq_zh": [
+        [
+          "压缩后 JSON 还能用吗？",
+          "压缩仅去除空格和换行，JSON 结构和数据完全不变，可以直接使用。"
+        ],
+        [
+          "压缩率能有多大？",
+          "对于格式化美观的 JSON，压缩率通常在 30%-70% 之间，具体取决于缩进和空行数量。"
+        ],
+        [
+          "和 JSON 格式化有什么区别？",
+          "JSON 格式化是美化 JSON 使其易读，JSON 压缩是去除空格使体积最小。两者是相反的操作。"
+        ],
+        [
+          "支持验证 JSON 语法吗？",
+          "支持。勾选压缩前验证语法，压缩前会先检查 JSON 是否合法，不合法会提示错误。"
+        ],
+        [
+          "数据安全吗？",
+          "所有处理在浏览器本地完成，数据不会上传到任何服务器。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "Can I still use the minified JSON?",
+          "Yes. Minification only removes whitespace and newlines. The JSON structure and data remain unchanged."
+        ],
+        [
+          "How much size reduction can I expect?",
+          "For pretty-printed JSON, compression typically reduces size by 30%-70%, depending on indentation and blank lines."
+        ],
+        [
+          "What is the difference from JSON Formatter?",
+          "JSON Formatter beautifies JSON for readability. JSON Minify removes whitespace to minimize size. They are opposite operations."
+        ],
+        [
+          "Does it validate JSON syntax?",
+          "Yes. Check \"Validate before minify\" to validate JSON syntax before minification. Errors are reported clearly."
+        ],
+        [
+          "Is my data safe?",
+          "All processing is done locally in your browser. Your data is never uploaded."
+        ]
+      ],
+      "index": 156
     }
   ]
 }
