@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>CSS Clip-Path 生成器 - CSS Clip-Path 生成器 - 可视化 CSS 裁剪路径在线工具 | AI 工具盒子 | AI 工具盒子</title>
+<meta name="description" content="免费在线CSS Clip-Path 生成器工具，可视化生成 CSS clip-path 多边形，创建各种形状裁剪效果。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="CSS clip-path,CSS裁剪路径,clip-path生成器,CSS裁剪,CSS形状裁剪,clip-path polygon,clip-path circle,clip-path inset,clip-path精灵,CSS遮罩,在线clip-path生成器,CSS形状生成器,clip-path可视化,前端裁剪工具">
+<link rel="canonical" href="https://tools.talang.fun/tools/css-clip-path-generator">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/css-clip-path-generator">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/css-clip-path-generator">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/css-clip-path-generator">
+<meta property="og:title" content="CSS Clip-Path 生成器 - CSS Clip-Path 生成器 - 可视化 CSS 裁剪路径在线工具 | AI 工具盒子 | AI 工具盒子">
+<meta property="og:description" content="免费在线CSS Clip-Path 生成器工具，可视化生成 CSS clip-path 多边形，创建各种形状裁剪效果。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/css-clip-path-generator">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "CSS Clip-Path 生成器", "description": "免费在线CSS Clip-Path 生成器工具，可视化生成 CSS clip-path 多边形，创建各种形状裁剪效果。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/css-clip-path-generator", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "可视化生成 CSS clip-path 多边形，创建各种形状裁剪效果", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/tools/css-clip-path-generator" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">✂️</div>
+  <h1>CSS Clip-Path 生成器</h1>
+  <p>可视化生成 CSS clip-path 多边形，创建各种形状裁剪效果</p>
+</div>
+<div class="tool-panel">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:20px"><div><label>形状类型:</label><select id="ccp-shape-type" style="width:100%;margin-bottom:12px"><option value="polygon">Polygon（多边形）</option><option value="circle">Circle（圆形）</option><option value="ellipse">Ellipse（椭圆）</option><option value="inset">Inset（内嵌矩形）</option></select><div id="ccp-controls"><div style="margin-bottom:12px"><label>Closest side:</label><select id="ccp-closest" style="width:100%"><option value="closest-side">closest-side</option><option value="farthest-side">farthest-side</option><option value="closest-corner">closest-corner</option><option value="farthest-corner">farthest-corner</option></select></div><div style="margin-bottom:8px"><label>顶点数:</label><input type="range" id="ccp-vertices" min="3" max="12" value="5" style="width:100%"><span id="ccp-vertices-val">5</span></div></div><div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap"><button class="btn" id="ccp-copy">复制 CSS</button><button class="btn btn-secondary" id="ccp-copy-clip">复制 clip-path 值</button></div></div><div><div id="ccp-preview" style="width:100%;height:300px;background:linear-gradient(135deg,#667eea,#764ba2);border-radius:12px;display:flex;align-items:center;justify-content:center;overflow:hidden"><div id="ccp-clip-area" style="width:100%;height:100%;background:linear-gradient(135deg,#f093fb,#f5576c);display:flex;align-items:center;justify-content:center;color:white;font-size:18px;font-weight:bold">AI Toolbox</div></div></div></div><div style="margin-top:16px"><label>CSS 代码:</label><textarea id="ccp-output" readonly style="width:100%;min-height:60px;font-family:Consolas,monospace;font-size:13px;background:var(--bg-light);border:1px solid var(--border);border-radius:8px;padding:10px;box-sizing:border-box"></textarea></div><div style="margin-top:16px"><label>预设形状:</label><div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px"><button class="btn btn-secondary ccp-preset" data-type="polygon" data-value="50% 0%, 0% 100%, 100% 100%">三角形</button><button class="btn btn-secondary ccp-preset" data-type="polygon" data-value="25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%">六边形</button><button class="btn btn-secondary ccp-preset" data-type="polygon" data-value="50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%">五边形</button><button class="btn btn-secondary ccp-preset" data-type="polygon" data-value="0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%">阶梯</button><button class="btn btn-secondary ccp-preset" data-type="polygon" data-value="0% 0%, 100% 0%, 100% 100%, 0% 100%">正方形</button><button class="btn btn-secondary ccp-preset" data-type="circle" data-value="50% 50% at 50% 50%">圆形</button><button class="btn btn-secondary ccp-preset" data-type="ellipse" data-value="50% 50% at 50% 50%">椭圆</button><button class="btn btn-secondary ccp-preset" data-type="inset" data-value="20% round 10%">圆角矩形</button><button class="btn btn-secondary ccp-preset" data-type="polygon" data-value="10% 25%, 35% 25%, 50% 0%, 65% 25%, 90% 25%, 70% 50%, 90% 75%, 65% 75%, 50% 100%, 35% 75%, 10% 75%, 30% 50%">星星</button><button class="btn btn-secondary ccp-preset" data-type="polygon" data-value="0% 15%, 15% 15%, 15% 0%, 85% 0%, 85% 15%, 100% 15%, 100% 85%, 85% 85%, 85% 100%, 15% 100%, 15% 85%, 0% 85%">窗口</button></div></div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>免费的在线 CSS Clip-Path 可视化生成器。通过交互式编辑器实时调整 clip-path 多边形顶点，或从预设形状快速选择，一键生成对应的 CSS 代码。</p><p>支持多种 clip-path 类型：polygon（多边形）、circle（圆形）、ellipse（椭圆）、inset（矩形内嵌）。每种形状都有可视化控制器，拖拽或输入数值即可调整。所有处理在浏览器本地完成，数据不会上传到任何服务器。</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>可视化实时预览 clip-path 裁剪效果</li><li>支持 Polygon / Circle / Ellipse / Inset 四种形状类型</li><li>多边形顶点数量可调（3-12）</li><li>10 种预设形状一键应用</li><li>一键复制完整 CSS 代码或 clip-path 属性值</li><li>渐变背景预览，展示裁剪效果</li><li>浏览器本地处理，无需上传数据</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">clip-path 是什么？</h3><p>CSS clip-path 属性允许你裁剪元素到指定形状，如多边形、圆形、椭圆等，常用于创建独特的视觉设计效果。</p><h3 style="margin-top:20px;margin-bottom:8px">clip-path 浏览器兼容性如何？</h3><p>现代浏览器普遍支持 clip-path，包括 Chrome、Firefox、Safari、Edge。部分旧版浏览器可能需要 -webkit- 前缀。</p><h3 style="margin-top:20px;margin-bottom:8px">polygon 和 circle 有什么区别？</h3><p>Polygon 使用百分比坐标定义任意多边形顶点；Circle 只需要圆心位置和半径，适合圆形裁剪。</p><h3 style="margin-top:20px;margin-bottom:8px">数据会上传到服务器吗？</h3><p>不会。所有处理在浏览器本地完成，无数据上传。</p><h3 style="margin-top:20px;margin-bottom:8px">clip-path 可以用在哪些场景？</h3><p>头像裁剪、图片特效、卡片设计、动画元素、遮罩效果、响应式布局、创意导航。</p></section>
+<section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/css-gradient-generator" class="tool-card"><div class="icon">🌈</div><h3>CSS 渐变生成器</h3><p>在线生成 CSS 线性与径向渐变，实时预览并复制代码</p></a><a href="/tools/css-box-shadow-generator" class="tool-card"><div class="icon">🎨</div><h3>CSS Box Shadow 生成器</h3><p>可视化生成 CSS box-shadow 效果，支持多层阴影叠加和实时预览</p></a><a href="/tools/css-filter-generator" class="tool-card"><div class="icon">🎨</div><h3>CSS 滤镜生成器</h3><p>可视化 CSS filter 生成器，实时预览模糊、亮度、对比度等滤镜效果</p></a><a href="/tools/css-animation" class="tool-card"><div class="icon">🎬</div><h3>CSS 动画生成器</h3><p>在线生成 CSS @keyframes 动画，支持淡入淡出、滑动、弹跳等效果</p></a><a href="/tools/color-converter" class="tool-card"><div class="icon">🎨</div><h3>颜色转换</h3><p>Hex 十六进制颜色码与 RGB 互转，实时预览</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/css-clip-path-generator.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>

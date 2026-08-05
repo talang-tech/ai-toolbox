@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>CSV 去重 - CSV 去重工具 - 在线 CSV 重复行移除 | AI 工具盒子 | AI 工具盒子</title>
+<meta name="description" content="免费在线CSV 去重工具，去除 CSV 中的重复行，支持按列去重和自定义去重策略。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="CSV去重,CSV重复行,CSV去重工具,CSV数据去重,CSV去重在线,CSV去除重复,CSV重复数据清理,CSV数据清洗,excel去重,CSV重复行删除,CSV清理,在线CSV去重,CSV数据去重工具">
+<link rel="canonical" href="https://tools.talang.fun/tools/csv-dedupe">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/csv-dedupe">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/csv-dedupe">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/csv-dedupe">
+<meta property="og:title" content="CSV 去重 - CSV 去重工具 - 在线 CSV 重复行移除 | AI 工具盒子 | AI 工具盒子">
+<meta property="og:description" content="免费在线CSV 去重工具，去除 CSV 中的重复行，支持按列去重和自定义去重策略。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/csv-dedupe">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "CSV 去重", "description": "免费在线CSV 去重工具，去除 CSV 中的重复行，支持按列去重和自定义去重策略。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/csv-dedupe", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "去除 CSV 中的重复行，支持按列去重和自定义去重策略", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/tools/csv-dedupe" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🔍</div>
+  <h1>CSV 去重</h1>
+  <p>去除 CSV 中的重复行，支持按列去重和自定义去重策略</p>
+</div>
+<div class="tool-panel">
+<div style="margin-bottom:12px"><label style="font-size:13px;font-weight:600">输入 CSV</label><textarea id="cdd-input" style="width:100%;min-height:200px;font-family:Consolas,monospace;font-size:13px" placeholder="name,email,role&#10;Alice,alice@test.com,Developer&#10;Bob,bob@test.com,Designer&#10;Alice,alice@test.com,Developer&#10;Charlie,charlie@test.com,Manager&#10;"></textarea></div><div style="margin-bottom:12px;display:flex;flex-wrap:wrap;gap:12px;align-items:center"><label><input type="checkbox" id="cdd-all-cols" checked> 按所有列去重</label><label>指定列索引: <input type="text" id="cdd-col-select" style="width:80px;font-family:monospace" placeholder="0,2" disabled></label></div><div style="margin-bottom:12px;display:flex;flex-wrap:wrap;gap:12px;align-items:center"><label><input type="radio" name="cdd-keep" id="cdd-keep-first" checked> 保留第一条</label><label><input type="radio" name="cdd-keep" id="cdd-keep-last"> 保留最后一条</label><label><input type="checkbox" id="cdd-header" checked> 首行为表头</label></div><div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px"><button class="btn" id="cdd-dedup">去重</button><button class="btn btn-secondary" id="cdd-copy">复制结果</button><button class="btn btn-secondary" id="cdd-clear">清空</button></div><div id="cdd-status" style="margin-top:8px;font-size:13px;color:var(--text-dim)"></div><div id="cdd-stats" style="margin-top:4px;font-size:12px;color:var(--text-dim)"></div><label style="font-size:13px;font-weight:600">去重结果</label><textarea id="cdd-output" style="width:100%;min-height:200px;font-family:Consolas,monospace;font-size:13px;background:var(--bg);" readonly placeholder="去重后的 CSV 将显示在这里..."></textarea>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>免费的在线 CSV 去重工具。快速识别并移除 CSV 数据中的重复行，支持按所有列或指定列去重，灵活选择保留第一条或最后一条重复记录。</p><p>适用于数据清洗、联系人列表去重、日志去重、数据库导入前预处理等场景。支持大文件处理，去重前后统计数据对比一目了然。所有处理在浏览器本地完成，数据不会上传到任何服务器。</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>支持按所有列或指定列去重</li><li>选择保留第一条或最后一条重复记录</li><li>支持首行表头自动识别</li><li>去重前后行数对比统计</li><li>一键复制去重结果</li><li>大文件本地处理，无大小限制</li><li>零数据上传，浏览器本地处理</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">CSV 去重和 CSV 清洗有什么区别？</h3><p>CSV 清洗是全面的数据清理（空格、空行、引号等），CSV 去重专注于移除重复行。通常清洗后去重效果更好。</p><h3 style="margin-top:20px;margin-bottom:8px">按列去重是什么意思？</h3><p>只比较指定的列是否相同，而不比较整行。例如按 email 列去重，即使其他列不同也视为重复。</p><h3 style="margin-top:20px;margin-bottom:8px">保留第一条和保留最后一条有什么区别？</h3><p>保留第一条保留首次出现的记录，保留最后一条用最后一次出现的记录替换之前的。</p><h3 style="margin-top:20px;margin-bottom:8px">数据会上传到服务器吗？</h3><p>不会。所有处理在浏览器本地完成，无数据上传。</p><h3 style="margin-top:20px;margin-bottom:8px">支持多少行数据？</h3><p>没有固定限制，取决于浏览器内存。建议单次处理不超过 10 万行。</p></section>
+<section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/csv-cleaner" class="tool-card"><div class="icon">🧹</div><h3>CSV 清洗</h3><p>修剪空格、去重、移除空行、规范化 CSV 格式</p></a><a href="/tools/csv-editor" class="tool-card"><div class="icon">📊</div><h3>CSV 在线编辑器</h3><p>在线编辑 CSV 数据——可视化表格编辑、增删行列、实时预览</p></a><a href="/tools/csv-to-json" class="tool-card"><div class="icon">🔄</div><h3>CSV ↔ JSON 互转</h3><p>CSV 数据转 JSON 格式，支持分隔符选择、表头配置、嵌套对象生成</p></a><a href="/tools/csv-to-markdown" class="tool-card"><div class="icon">📊</div><h3>CSV 转 Markdown 表格</h3><p>将 CSV 数据快速转换为 Markdown 表格格式，支持预览、复制和下载</p></a><a href="/tools/csv-to-html-table" class="tool-card"><div class="icon">📋</div><h3>CSV 转 HTML 表格</h3><p>将 CSV 数据转换为整洁的 HTML 表格代码</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/csv-dedupe.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>

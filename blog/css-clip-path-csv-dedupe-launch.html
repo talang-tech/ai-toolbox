@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>CSS Clip-Path 生成器与 CSV 去重工具上线 | AI 工具盒子</title>
+<meta name="description" content="AI Toolbox 新增 CSS Clip-Path 可视化生成器和 CSV 去重工具，前端开发者与数据处理用户的新利器。">
+<meta name="keywords" content="">
+<link rel="canonical" href="https://tools.talang.fun/blog/css-clip-path-csv-dedupe-launch">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/blog/css-clip-path-csv-dedupe-launch">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/blog/css-clip-path-csv-dedupe-launch">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/blog/css-clip-path-csv-dedupe-launch">
+<meta property="og:title" content="CSS Clip-Path 生成器与 CSV 去重工具上线 | AI 工具盒子">
+<meta property="og:description" content="AI Toolbox 新增 CSS Clip-Path 可视化生成器和 CSV 去重工具，前端开发者与数据处理用户的新利器。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/blog/css-clip-path-csv-dedupe-launch">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "CSS Clip-Path 生成器与 CSV 去重工具上线", "description": "AI Toolbox 新增 CSS Clip-Path 可视化生成器和 CSV 去重工具，前端开发者与数据处理用户的新利器。", "author": {"@type": "Organization", "name": "AI 工具盒子"}, "datePublished": "2026-08-05", "url": "https://tools.talang.fun/blog/css-clip-path-csv-dedupe-launch"}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/blog/css-clip-path-csv-dedupe-launch" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<article class="article">
+  <p style="margin-bottom:8px"><a href="/blog/" style="color:var(--muted)">← 返回博客</a></p>
+  <h1>CSS Clip-Path 生成器与 CSV 去重工具上线</h1>
+  <p style="color:var(--muted);margin-bottom:24px">2026-08-05 · 5 分钟阅读</p>
+  <h1>CSS Clip-Path 生成器与 CSV 去重工具上线</h1>
+<p>今天，AI Toolbox 迎来了两个新成员：<strong>CSS Clip-Path 生成器</strong>和 <strong>CSV 去重工具</strong>，分别服务于前端开发者和数据处理用户。</p>
+<h2>✂️ CSS Clip-Path 生成器</h2>
+<p>CSS <code>clip-path</code> 属性是前端开发中实现创意裁剪效果的核心工具，但手动编写多边形坐标既繁琐又容易出错。我们的 <strong>CSS Clip-Path 生成器</strong> 让这一切变得简单直观：</p>
+<ul>
+<li><strong>可视化预览</strong>：实时预览裁剪效果，所见即所得</li>
+<li><strong>四种形状类型</strong>：支持 Polygon（多边形）、Circle（圆形）、Ellipse（椭圆）、Inset（内嵌矩形）</li>
+<li><strong>可调顶点数</strong>：多边形顶点从 3 到 12 任意调节，自动生成正多边形</li>
+<li><strong>10 种预设形状</strong>：三角形、六边形、五边形、星星、窗口等一键应用</li>
+<li><strong>一键复制</strong>：复制完整 CSS 代码或单独的 clip-path 属性值</li>
+</ul>
+<h3>使用示例</h3>
+<p>选中「星星」预设后，生成的 CSS 代码：</p>
+<pre><code class="lang-css">
+.clipped-element {
+  clip-path: polygon(10% 25%, 35% 25%, 50% 0%, 65% 25%, 90% 25%, 70% 50%, 90% 75%, 65% 75%, 50% 100%, 35% 75%, 10% 75%, 30% 50%);
+}
+</code></pre>
+<p>放到任何元素上即可实现星星形状裁剪效果，配合渐变背景更加出彩。</p>
+<h2>🔍 CSV 去重工具</h2>
+<p>数据处理中，CSV 重复行是最常见的问题之一。我们的 <strong>CSV 去重工具</strong> 提供了灵活的去重策略：</p>
+<ul>
+<li><strong>按所有列去重</strong>：完整行比较，移除完全相同的行</li>
+<li><strong>按指定列去重</strong>：只比较关键列（如 email、ID）判断是否重复</li>
+<li><strong>保留策略</strong>：选择保留第一条或最后一条重复记录</li>
+<li><strong>表头支持</strong>：自动识别首行表头，不影响数据行去重</li>
+<li><strong>统计对比</strong>：去重前后行数一目了然</li>
+</ul>
+<h3>实际场景</h3>
+<p><strong>联系人列表去重</strong>：导入 CRM 前，按 email 列去重，避免重复导入。</p>
+<pre><code class="lang-csv">
+name,email,role ← 表头
+Alice,alice@test.com,Developer
+Bob,bob@test.com,Designer
+Alice,alice@test.com,Developer ← 重复！按 email 去重后移除
+Charlie,charlie@test.com,Manager
+</code></pre>
+<p>去重后仅保留 3 行数据，清晰且无重复。</p>
+<h2>🌐 隐私优先</h2>
+<p>两个工具都遵循 AI Toolbox 的核心原则——<strong>所有处理在浏览器本地完成</strong>，数据不会上传到任何服务器。你可以放心处理敏感数据，无需担心隐私泄露。</p>
+<h2>🚀 快速访问</h2>
+<ul>
+<li><strong>CSS Clip-Path 生成器</strong>：<a href="https://tools.talang.fun/tools/css-clip-path-generator">https://tools.talang.fun/tools/css-clip-path-generator</a></li>
+<li><strong>CSV 去重工具</strong>：<a href="https://tools.talang.fun/tools/csv-dedupe">https://tools.talang.fun/tools/csv-dedupe</a></li>
+</ul>
+<p>两个工具均已上线，免费使用，无需注册。</p>
+  <section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+</article>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>

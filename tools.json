@@ -33,7 +33,8 @@
           "html-to-text",
           "markdown-to-csv",
           "markdown-table-to-json",
-          "csv-to-html-table"
+          "csv-to-html-table",
+          "csv-dedupe"
         ]
       },
       "dev": {
@@ -120,7 +121,8 @@
           "css-box-shadow-generator",
           "html-to-css-extractor",
           "toml-json-converter",
-          "css-to-less"
+          "css-to-less",
+          "css-clip-path-generator"
         ]
       },
       "encode": {
@@ -12281,6 +12283,178 @@
         ]
       ],
       "index": 156
+    },
+    {
+      "slug": "css-clip-path-generator",
+      "category": "dev",
+      "icon": "✂️",
+      "name_zh": "CSS Clip-Path 生成器",
+      "name_en": "CSS Clip-Path Generator",
+      "short_zh": "可视化生成 CSS clip-path 多边形，创建各种形状裁剪效果",
+      "short_en": "Visual CSS clip-path polygon generator for creating shape clipping effects",
+      "keywords_zh": "CSS clip-path,CSS裁剪路径,clip-path生成器,CSS裁剪,CSS形状裁剪,clip-path polygon,clip-path circle,clip-path inset,clip-path精灵,CSS遮罩,在线clip-path生成器,CSS形状生成器,clip-path可视化,前端裁剪工具",
+      "keywords_en": "css clip-path, clip path generator, css clip path polygon, css clipping, clip path tool, css shape clipper, clip path maker, clip path visualizer, polygon clip path, css clip path online, css clip path generator, css mask, clip path creator, web clipping tool",
+      "long_zh": "<p>免费的在线 CSS Clip-Path 可视化生成器。通过交互式编辑器实时调整 clip-path 多边形顶点，或从预设形状快速选择，一键生成对应的 CSS 代码。</p><p>支持多种 clip-path 类型：polygon（多边形）、circle（圆形）、ellipse（椭圆）、inset（矩形内嵌）。每种形状都有可视化控制器，拖拽或输入数值即可调整。所有处理在浏览器本地完成，数据不会上传到任何服务器。</p>",
+      "long_en": "<p>Free online CSS Clip-Path visual generator. Drag polygon vertices in the interactive editor or pick from preset shapes to instantly generate CSS clip-path code.</p><p>Supports clip-path types: polygon, circle, ellipse, and inset. Each shape type has visual controls for easy adjustment. All processing is done locally in your browser with zero data upload.</p>",
+      "ui_zh": "<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:20px\"><div><label>形状类型:</label><select id=\"ccp-shape-type\" style=\"width:100%;margin-bottom:12px\"><option value=\"polygon\">Polygon（多边形）</option><option value=\"circle\">Circle（圆形）</option><option value=\"ellipse\">Ellipse（椭圆）</option><option value=\"inset\">Inset（内嵌矩形）</option></select><div id=\"ccp-controls\"><div style=\"margin-bottom:12px\"><label>Closest side:</label><select id=\"ccp-closest\" style=\"width:100%\"><option value=\"closest-side\">closest-side</option><option value=\"farthest-side\">farthest-side</option><option value=\"closest-corner\">closest-corner</option><option value=\"farthest-corner\">farthest-corner</option></select></div><div style=\"margin-bottom:8px\"><label>顶点数:</label><input type=\"range\" id=\"ccp-vertices\" min=\"3\" max=\"12\" value=\"5\" style=\"width:100%\"><span id=\"ccp-vertices-val\">5</span></div></div><div style=\"margin-top:12px;display:flex;gap:8px;flex-wrap:wrap\"><button class=\"btn\" id=\"ccp-copy\">复制 CSS</button><button class=\"btn btn-secondary\" id=\"ccp-copy-clip\">复制 clip-path 值</button></div></div><div><div id=\"ccp-preview\" style=\"width:100%;height:300px;background:linear-gradient(135deg,#667eea,#764ba2);border-radius:12px;display:flex;align-items:center;justify-content:center;overflow:hidden\"><div id=\"ccp-clip-area\" style=\"width:100%;height:100%;background:linear-gradient(135deg,#f093fb,#f5576c);display:flex;align-items:center;justify-content:center;color:white;font-size:18px;font-weight:bold\">AI Toolbox</div></div></div></div><div style=\"margin-top:16px\"><label>CSS 代码:</label><textarea id=\"ccp-output\" readonly style=\"width:100%;min-height:60px;font-family:Consolas,monospace;font-size:13px;background:var(--bg-light);border:1px solid var(--border);border-radius:8px;padding:10px;box-sizing:border-box\"></textarea></div><div style=\"margin-top:16px\"><label>预设形状:</label><div style=\"display:flex;flex-wrap:wrap;gap:8px;margin-top:8px\"><button class=\"btn btn-secondary ccp-preset\" data-type=\"polygon\" data-value=\"50% 0%, 0% 100%, 100% 100%\">三角形</button><button class=\"btn btn-secondary ccp-preset\" data-type=\"polygon\" data-value=\"25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%\">六边形</button><button class=\"btn btn-secondary ccp-preset\" data-type=\"polygon\" data-value=\"50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%\">五边形</button><button class=\"btn btn-secondary ccp-preset\" data-type=\"polygon\" data-value=\"0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%\">阶梯</button><button class=\"btn btn-secondary ccp-preset\" data-type=\"polygon\" data-value=\"0% 0%, 100% 0%, 100% 100%, 0% 100%\">正方形</button><button class=\"btn btn-secondary ccp-preset\" data-type=\"circle\" data-value=\"50% 50% at 50% 50%\">圆形</button><button class=\"btn btn-secondary ccp-preset\" data-type=\"ellipse\" data-value=\"50% 50% at 50% 50%\">椭圆</button><button class=\"btn btn-secondary ccp-preset\" data-type=\"inset\" data-value=\"20% round 10%\">圆角矩形</button><button class=\"btn btn-secondary ccp-preset\" data-type=\"polygon\" data-value=\"10% 25%, 35% 25%, 50% 0%, 65% 25%, 90% 25%, 70% 50%, 90% 75%, 65% 75%, 50% 100%, 35% 75%, 10% 75%, 30% 50%\">星星</button><button class=\"btn btn-secondary ccp-preset\" data-type=\"polygon\" data-value=\"0% 15%, 15% 15%, 15% 0%, 85% 0%, 85% 15%, 100% 15%, 100% 85%, 85% 85%, 85% 100%, 15% 100%, 15% 85%, 0% 85%\">窗口</button></div></div>",
+      "ui_en": "<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:20px\"><div><label>Shape Type:</label><select id=\"ccp-shape-type\" style=\"width:100%;margin-bottom:12px\"><option value=\"polygon\">Polygon</option><option value=\"circle\">Circle</option><option value=\"ellipse\">Ellipse</option><option value=\"inset\">Inset</option></select><div id=\"ccp-controls\"><div style=\"margin-bottom:12px\"><label>Closest side:</label><select id=\"ccp-closest\" style=\"width:100%\"><option value=\"closest-side\">closest-side</option><option value=\"farthest-side\">farthest-side</option><option value=\"closest-corner\">closest-corner</option><option value=\"farthest-corner\">farthest-corner</option></select></div><div style=\"margin-bottom:8px\"><label>Vertices:</label><input type=\"range\" id=\"ccp-vertices\" min=\"3\" max=\"12\" value=\"5\" style=\"width:100%\"><span id=\"ccp-vertices-val\">5</span></div></div><div style=\"margin-top:12px;display:flex;gap:8px;flex-wrap:wrap\"><button class=\"btn\" id=\"ccp-copy\">Copy CSS</button><button class=\"btn btn-secondary\" id=\"ccp-copy-clip\">Copy clip-path value</button></div></div><div><div id=\"ccp-preview\" style=\"width:100%;height:300px;background:linear-gradient(135deg,#667eea,#764ba2);border-radius:12px;display:flex;align-items:center;justify-content:center;overflow:hidden\"><div id=\"ccp-clip-area\" style=\"width:100%;height:100%;background:linear-gradient(135deg,#f093fb,#f5576c);display:flex;align-items:center;justify-content:center;color:white;font-size:18px;font-weight:bold\">AI Toolbox</div></div></div></div><div style=\"margin-top:16px\"><label>CSS Code:</label><textarea id=\"ccp-output\" readonly style=\"width:100%;min-height:60px;font-family:Consolas,monospace;font-size:13px;background:var(--bg-light);border:1px solid var(--border);border-radius:8px;padding:10px;box-sizing:border-box\"></textarea></div><div style=\"margin-top:16px\"><label>Presets:</label><div style=\"display:flex;flex-wrap:wrap;gap:8px;margin-top:8px\"><button class=\"btn btn-secondary ccp-preset\" data-type=\"polygon\" data-value=\"50% 0%, 0% 100%, 100% 100%\">Triangle</button><button class=\"btn btn-secondary ccp-preset\" data-type=\"polygon\" data-value=\"25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%\">Hexagon</button><button class=\"btn btn-secondary ccp-preset\" data-type=\"polygon\" data-value=\"50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%\">Pentagon</button><button class=\"btn btn-secondary ccp-preset\" data-type=\"polygon\" data-value=\"0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%\">Stair</button><button class=\"btn btn-secondary ccp-preset\" data-type=\"polygon\" data-value=\"0% 0%, 100% 0%, 100% 100%, 0% 100%\">Square</button><button class=\"btn btn-secondary ccp-preset\" data-type=\"circle\" data-value=\"50% 50% at 50% 50%\">Circle</button><button class=\"btn btn-secondary ccp-preset\" data-type=\"ellipse\" data-value=\"50% 50% at 50% 50%\">Ellipse</button><button class=\"btn btn-secondary ccp-preset\" data-type=\"inset\" data-value=\"20% round 10%\">Round Rect</button><button class=\"btn btn-secondary ccp-preset\" data-type=\"polygon\" data-value=\"10% 25%, 35% 25%, 50% 0%, 65% 25%, 90% 25%, 70% 50%, 90% 75%, 65% 75%, 50% 100%, 35% 75%, 10% 75%, 30% 50%\">Star</button><button class=\"btn btn-secondary ccp-preset\" data-type=\"polygon\" data-value=\"0% 15%, 15% 15%, 15% 0%, 85% 0%, 85% 15%, 100% 15%, 100% 85%, 85% 85%, 85% 100%, 15% 100%, 15% 85%, 0% 85%\">Window</button></div></div>",
+      "related": [
+        "css-gradient-generator",
+        "css-box-shadow-generator",
+        "css-filter-generator",
+        "css-animation",
+        "color-converter"
+      ],
+      "seo_title_zh": "CSS Clip-Path 生成器 - 可视化 CSS 裁剪路径在线工具 | AI 工具盒子",
+      "seo_title_en": "CSS Clip-Path Generator - Visual CSS Clipping Path Online Tool | AI Toolbox",
+      "features_zh": [
+        "可视化实时预览 clip-path 裁剪效果",
+        "支持 Polygon / Circle / Ellipse / Inset 四种形状类型",
+        "多边形顶点数量可调（3-12）",
+        "10 种预设形状一键应用",
+        "一键复制完整 CSS 代码或 clip-path 属性值",
+        "渐变背景预览，展示裁剪效果",
+        "浏览器本地处理，无需上传数据"
+      ],
+      "features_en": [
+        "Visual real-time clip-path preview",
+        "Supports Polygon, Circle, Ellipse, Inset shapes",
+        "Adjustable polygon vertices (3-12)",
+        "10 preset shapes for quick use",
+        "One-click copy CSS or clip-path value",
+        "Gradient background preview for clipping effect",
+        "Browser local processing, no upload"
+      ],
+      "faq_zh": [
+        [
+          "clip-path 是什么？",
+          "CSS clip-path 属性允许你裁剪元素到指定形状，如多边形、圆形、椭圆等，常用于创建独特的视觉设计效果。"
+        ],
+        [
+          "clip-path 浏览器兼容性如何？",
+          "现代浏览器普遍支持 clip-path，包括 Chrome、Firefox、Safari、Edge。部分旧版浏览器可能需要 -webkit- 前缀。"
+        ],
+        [
+          "polygon 和 circle 有什么区别？",
+          "Polygon 使用百分比坐标定义任意多边形顶点；Circle 只需要圆心位置和半径，适合圆形裁剪。"
+        ],
+        [
+          "数据会上传到服务器吗？",
+          "不会。所有处理在浏览器本地完成，无数据上传。"
+        ],
+        [
+          "clip-path 可以用在哪些场景？",
+          "头像裁剪、图片特效、卡片设计、动画元素、遮罩效果、响应式布局、创意导航。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "What is clip-path?",
+          "CSS clip-path lets you clip an element to a basic shape (polygon, circle, ellipse, inset). It's commonly used for creative visual effects."
+        ],
+        [
+          "What is browser compatibility?",
+          "Modern browsers support clip-path: Chrome, Firefox, Safari, Edge. Some older browsers may need the -webkit- prefix."
+        ],
+        [
+          "What's the difference between polygon and circle?",
+          "Polygon uses percentage coordinates for vertices; Circle needs center position and radius."
+        ],
+        [
+          "Is my data uploaded?",
+          "No. All processing happens locally in your browser. No data is uploaded."
+        ],
+        [
+          "Where can I use clip-path?",
+          "Avatar cropping, image effects, card design, animations, masks, responsive layouts, creative navigation."
+        ]
+      ]
+    },
+    {
+      "slug": "csv-dedupe",
+      "category": "text",
+      "icon": "🔍",
+      "name_zh": "CSV 去重",
+      "name_en": "CSV Deduplicate",
+      "short_zh": "去除 CSV 中的重复行，支持按列去重和自定义去重策略",
+      "short_en": "Remove duplicate rows from CSV with column-based dedup and custom strategies",
+      "keywords_zh": "CSV去重,CSV重复行,CSV去重工具,CSV数据去重,CSV去重在线,CSV去除重复,CSV重复数据清理,CSV数据清洗,excel去重,CSV重复行删除,CSV清理,在线CSV去重,CSV数据去重工具",
+      "keywords_en": "csv deduplicate, csv remove duplicates, csv dedup, csv duplicate row remover, csv deduplication, csv clean duplicates, remove duplicate csv rows, csv dedupe tool, online csv dedup, csv data cleaning, csv duplicate finder",
+      "long_zh": "<p>免费的在线 CSV 去重工具。快速识别并移除 CSV 数据中的重复行，支持按所有列或指定列去重，灵活选择保留第一条或最后一条重复记录。</p><p>适用于数据清洗、联系人列表去重、日志去重、数据库导入前预处理等场景。支持大文件处理，去重前后统计数据对比一目了然。所有处理在浏览器本地完成，数据不会上传到任何服务器。</p>",
+      "long_en": "<p>Free online CSV deduplication tool. Quickly identify and remove duplicate rows from CSV data. Supports dedup by all columns or specific columns, with flexible keep-first or keep-last strategy.</p><p>Perfect for data cleaning, contact list dedup, log deduplication, and database pre-processing. Supports large files with before/after comparison stats. All processing is done locally in your browser.</p>",
+      "ui_zh": "<div style=\"margin-bottom:12px\"><label style=\"font-size:13px;font-weight:600\">输入 CSV</label><textarea id=\"cdd-input\" style=\"width:100%;min-height:200px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"name,email,role&#10;Alice,alice@test.com,Developer&#10;Bob,bob@test.com,Designer&#10;Alice,alice@test.com,Developer&#10;Charlie,charlie@test.com,Manager&#10;\"></textarea></div><div style=\"margin-bottom:12px;display:flex;flex-wrap:wrap;gap:12px;align-items:center\"><label><input type=\"checkbox\" id=\"cdd-all-cols\" checked> 按所有列去重</label><label>指定列索引: <input type=\"text\" id=\"cdd-col-select\" style=\"width:80px;font-family:monospace\" placeholder=\"0,2\" disabled></label></div><div style=\"margin-bottom:12px;display:flex;flex-wrap:wrap;gap:12px;align-items:center\"><label><input type=\"radio\" name=\"cdd-keep\" id=\"cdd-keep-first\" checked> 保留第一条</label><label><input type=\"radio\" name=\"cdd-keep\" id=\"cdd-keep-last\"> 保留最后一条</label><label><input type=\"checkbox\" id=\"cdd-header\" checked> 首行为表头</label></div><div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px\"><button class=\"btn\" id=\"cdd-dedup\">去重</button><button class=\"btn btn-secondary\" id=\"cdd-copy\">复制结果</button><button class=\"btn btn-secondary\" id=\"cdd-clear\">清空</button></div><div id=\"cdd-status\" style=\"margin-top:8px;font-size:13px;color:var(--text-dim)\"></div><div id=\"cdd-stats\" style=\"margin-top:4px;font-size:12px;color:var(--text-dim)\"></div><label style=\"font-size:13px;font-weight:600\">去重结果</label><textarea id=\"cdd-output\" style=\"width:100%;min-height:200px;font-family:Consolas,monospace;font-size:13px;background:var(--bg);\" readonly placeholder=\"去重后的 CSV 将显示在这里...\"></textarea>",
+      "ui_en": "<div style=\"margin-bottom:12px\"><label style=\"font-size:13px;font-weight:600\">Input CSV</label><textarea id=\"cdd-input\" style=\"width:100%;min-height:200px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"name,email,role&#10;Alice,alice@test.com,Developer&#10;Bob,bob@test.com,Designer&#10;Alice,alice@test.com,Developer&#10;Charlie,charlie@test.com,Manager&#10;\"></textarea></div><div style=\"margin-bottom:12px;display:flex;flex-wrap:wrap;gap:12px;align-items:center\"><label><input type=\"checkbox\" id=\"cdd-all-cols\" checked> Dedup by all columns</label><label>Column indices: <input type=\"text\" id=\"cdd-col-select\" style=\"width:80px;font-family:monospace\" placeholder=\"0,2\" disabled></label></div><div style=\"margin-bottom:12px;display:flex;flex-wrap:wrap;gap:12px;align-items:center\"><label><input type=\"radio\" name=\"cdd-keep\" id=\"cdd-keep-first\" checked> Keep first</label><label><input type=\"radio\" name=\"cdd-keep\" id=\"cdd-keep-last\"> Keep last</label><label><input type=\"checkbox\" id=\"cdd-header\" checked> Has header row</label></div><div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px\"><button class=\"btn\" id=\"cdd-dedup\">Deduplicate</button><button class=\"btn btn-secondary\" id=\"cdd-copy\">Copy</button><button class=\"btn btn-secondary\" id=\"cdd-clear\">Clear</button></div><div id=\"cdd-status\" style=\"margin-top:8px;font-size:13px;color:var(--text-dim)\"></div><div id=\"cdd-stats\" style=\"margin-top:4px;font-size:12px;color:var(--text-dim)\"></div><label style=\"font-size:13px;font-weight:600\">Result</label><textarea id=\"cdd-output\" style=\"width:100%;min-height:200px;font-family:Consolas,monospace;font-size:13px;background:var(--bg);\" readonly placeholder=\"Deduplicated CSV will appear here...\"></textarea>",
+      "related": [
+        "csv-cleaner",
+        "csv-editor",
+        "csv-to-json",
+        "csv-to-markdown",
+        "csv-to-html-table"
+      ],
+      "seo_title_zh": "CSV 去重工具 - 在线 CSV 重复行移除 | AI 工具盒子",
+      "seo_title_en": "CSV Deduplicate - Remove Duplicate CSV Rows Online | AI Toolbox",
+      "features_zh": [
+        "支持按所有列或指定列去重",
+        "选择保留第一条或最后一条重复记录",
+        "支持首行表头自动识别",
+        "去重前后行数对比统计",
+        "一键复制去重结果",
+        "大文件本地处理，无大小限制",
+        "零数据上传，浏览器本地处理"
+      ],
+      "features_en": [
+        "Dedup by all columns or specific columns",
+        "Choose keep-first or keep-last strategy",
+        "Header row support",
+        "Before/after row count comparison",
+        "One-click copy results",
+        "No file size limits, all local",
+        "Zero data upload, browser local processing"
+      ],
+      "faq_zh": [
+        [
+          "CSV 去重和 CSV 清洗有什么区别？",
+          "CSV 清洗是全面的数据清理（空格、空行、引号等），CSV 去重专注于移除重复行。通常清洗后去重效果更好。"
+        ],
+        [
+          "按列去重是什么意思？",
+          "只比较指定的列是否相同，而不比较整行。例如按 email 列去重，即使其他列不同也视为重复。"
+        ],
+        [
+          "保留第一条和保留最后一条有什么区别？",
+          "保留第一条保留首次出现的记录，保留最后一条用最后一次出现的记录替换之前的。"
+        ],
+        [
+          "数据会上传到服务器吗？",
+          "不会。所有处理在浏览器本地完成，无数据上传。"
+        ],
+        [
+          "支持多少行数据？",
+          "没有固定限制，取决于浏览器内存。建议单次处理不超过 10 万行。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "What's the difference between dedup and CSV cleaning?",
+          "CSV cleaning is general data cleanup (spaces, empty rows, quotes). Dedup focuses on removing duplicate rows. Using cleaner first gives better dedup results."
+        ],
+        [
+          "What does column-based dedup mean?",
+          "Only compare specific columns instead of the entire row. E.g., dedup by email column, rows with same email are considered duplicates."
+        ],
+        [
+          "What's the difference between keep-first and keep-last?",
+          "Keep-first preserves the first occurrence; keep-last replaces it with the last occurrence."
+        ],
+        [
+          "Is my data uploaded?",
+          "No. All processing happens locally in your browser. No data is uploaded."
+        ],
+        [
+          "How many rows can I process?",
+          "No fixed limit, depends on browser memory. Recommended to process under 100K rows at a time."
+        ]
+      ]
     }
   ]
 }
