@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>CSV 分割 - CSV 分割工具 - 在线 CSV 文件分割 | AI 工具盒子 | AI 工具盒子</title>
+<meta name="description" content="免费在线CSV 分割工具，将大型 CSV 文件按行数或份数分割成多个小 CSV 文件。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="CSV分割,CSV拆分,CSV大文件分割,CSV分块,CSV拆分工具,CSV分割在线,CSV分片,CSV行分割,CSV平均分割,CSV分解,CSV分段,在线CSV分割,CSV切割工具,CSV分段保存">
+<link rel="canonical" href="https://tools.talang.fun/tools/csv-splitter">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/csv-splitter">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/csv-splitter">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/csv-splitter">
+<meta property="og:title" content="CSV 分割 - CSV 分割工具 - 在线 CSV 文件分割 | AI 工具盒子 | AI 工具盒子">
+<meta property="og:description" content="免费在线CSV 分割工具，将大型 CSV 文件按行数或份数分割成多个小 CSV 文件。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/csv-splitter">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "CSV 分割", "description": "免费在线CSV 分割工具，将大型 CSV 文件按行数或份数分割成多个小 CSV 文件。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/csv-splitter", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "将大型 CSV 文件按行数或份数分割成多个小 CSV 文件", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/tools/csv-splitter" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">✂️</div>
+  <h1>CSV 分割</h1>
+  <p>将大型 CSV 文件按行数或份数分割成多个小 CSV 文件</p>
+</div>
+<div class="tool-panel">
+<div style="margin-bottom:12px"><label style="font-size:13px;font-weight:600">输入 CSV</label><textarea id="csvs-input" style="width:100%;min-height:200px;font-family:Consolas,monospace;font-size:13px" placeholder="name,email,role&#10;Alice,alice@test.com,Developer&#10;Bob,bob@test.com,Designer&#10;Charlie,charlie@test.com,Manager&#10;Diana,diana@test.com,Analyst&#10;"></textarea></div><div style="margin-bottom:12px;display:flex;flex-wrap:wrap;gap:12px;align-items:center"><label><input type="radio" name="csvs-mode" id="csvs-mode-rows" checked> 按行数分割</label><label><input type="radio" name="csvs-mode" id="csvs-mode-parts"> 按份数分割</label><label>值: <input type="number" id="csvs-split-value" style="width:80px;font-family:monospace" value="100" min="1"></label><label><input type="checkbox" id="csvs-header" checked> 首行为表头</label></div><div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px"><button class="btn" id="csvs-split">分割</button><button class="btn btn-secondary" id="csvs-copy">复制结果</button><button class="btn btn-secondary" id="csvs-clear">清空</button></div><div id="csvs-status" style="margin-top:8px;font-size:13px;color:var(--text-dim)"></div><div id="csvs-stats" style="margin-top:4px;font-size:12px;color:var(--text-dim)"></div><label style="font-size:13px;font-weight:600">分割结果</label><textarea id="csvs-output" style="width:100%;min-height:200px;font-family:Consolas,monospace;font-size:13px;background:var(--bg);" readonly placeholder="分割后的 CSV 将显示在这里..."></textarea>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>免费的在线 <strong>CSV 分割工具</strong>，将大型 CSV 文件按行数或份数分割成多个 CSV 片段。支持保留表头，可选择按每份行数分割或按指定份数均分。</p><p>适用于处理大数据集、数据库批量导入、Excel 行数限制突破、日志文件分片、数据分发等场景。输出结果以注释分隔每个部分，清晰易读。所有处理在浏览器本地完成，数据不会上传到服务器。</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>按行数分割：每份固定行数</li><li>按份数分割：均分为指定份数</li><li>自动保留表头行</li><li>分割统计信息一目了然</li><li>一键复制结果</li><li>大文件本地处理，无大小限制</li><li>零数据上传，浏览器本地处理</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">CSV 分割后每份还保留表头吗？</h3><p>是的，如果勾选了「首行为表头」，每份分割结果都会包含表头行。</p><h3 style="margin-top:20px;margin-bottom:8px">按行数分割和按份数分割有什么区别？</h3><p>按行数分割：每份 X 行，最后一份可能少于 X 行。按份数分割：平均分成 N 份，每份行数尽量相等。</p><h3 style="margin-top:20px;margin-bottom:8px">CSV 分割有什么用？</h3><p>突破 Excel 1048576 行限制、数据库批量导入分片、大数据分发、日志文件分片处理等。</p><h3 style="margin-top:20px;margin-bottom:8px">数据会上传到服务器吗？</h3><p>不会。所有处理在浏览器本地完成，无数据上传。</p><h3 style="margin-top:20px;margin-bottom:8px">支持多大文件？</h3><p>没有固定限制，取决于浏览器内存。建议单次不超过 50 万行。</p><h3 style="margin-top:20px;margin-bottom:8px">分割后如何保存？</h3><p>复制结果到剪贴板，或选中全部内容粘贴到新文件中保存。</p><h3 style="margin-top:20px;margin-bottom:8px">分割会修改原始数据吗？</h3><p>不会。分割只改变文件结构，不修改单元格内容。</p><h3 style="margin-top:20px;margin-bottom:8px">分割后数据会丢失吗？</h3><p>不会。分割只是将数据分成多个部分，总行数不变。</p></section>
+<section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/csv-cleaner" class="tool-card"><div class="icon">🧹</div><h3>CSV 清洗</h3><p>修剪空格、去重、移除空行、规范化 CSV 格式</p></a><a href="/tools/csv-editor" class="tool-card"><div class="icon">📊</div><h3>CSV 在线编辑器</h3><p>在线编辑 CSV 数据——可视化表格编辑、增删行列、实时预览</p></a><a href="/tools/csv-dedupe" class="tool-card"><div class="icon">🔍</div><h3>CSV 去重</h3><p>去除 CSV 中的重复行，支持按列去重和自定义去重策略</p></a><a href="/tools/csv-validator" class="tool-card"><div class="icon">✅</div><h3>CSV 验证器</h3><p>验证 CSV 数据的格式、列数一致性、引号匹配、空值等质量问题</p></a><a href="/tools/csv-to-markdown" class="tool-card"><div class="icon">📊</div><h3>CSV 转 Markdown 表格</h3><p>将 CSV 数据快速转换为 Markdown 表格格式，支持预览、复制和下载</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/csv-splitter.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>
