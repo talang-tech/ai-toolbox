@@ -49,12 +49,12 @@ AI Toolbox 的定位不是 AI 导航站，而是一个 **privacy-first browser t
 
 ---
 
-## Current Tools: 55
+## Current Tools: 165+
 
 | Category | Tools |
 |----------|-------|
 | 📝 Text | Word counter, case converter, text diff, text deduplication, blank-line remover, Chinese lorem ipsum, text sorter, text find & replace |
-| 💻 Developer | JSON formatter, regex tester, timestamp converter, base converter, JWT decoder, JSON ↔ CSV, color converter, HTML entity encoder/decoder, string escape/unescape, JSONPath, URL parser, URL query builder, YAML formatter/validator, XML formatter/minifier, Markdown preview, Markdown to HTML, CSV viewer/table converter, QR decoder, Cron parser, IP subnet calculator |
+| 💻 Developer | JSON formatter, regex tester, timestamp converter, base converter, JWT decoder, JSON ↔ CSV, color converter, HTML entity encoder/decoder, string escape/unescape, JSONPath, URL parser, URL query builder, YAML formatter/validator, XML formatter/minifier, Markdown preview, Markdown to HTML, CSV viewer/table converter, QR decoder, Cron parser, IP subnet calculator, JS minifier/beautifier, CSS minifier/beautifier |
 | 📋 JSON | JSON to TypeScript, JSON to Go struct, JSON ↔ YAML |
 | 🔐 Encode / Convert | Base64, URL encoder/decoder, hash generator |
 | ✨ Generators | Password generator, UUID generator, QR code generator, random string generator |
