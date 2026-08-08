@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>文本对齐 - 文本对齐 - 在线文本两端对齐排版工具 | AI 工具盒子 | AI 工具盒子</title>
+<meta name="description" content="免费在线文本对齐工具，将文本按指定宽度两端对齐，支持填充字符、首行缩进、段落间距等选项。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="文本对齐,文本两端对齐,文字对齐,文本排版,文本填充,代码对齐,文本格式化,段落对齐,对齐工具,在线对齐,文本美化,段落排版,文字填充">
+<link rel="canonical" href="https://tools.talang.fun/tools/text-justify">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/text-justify">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/text-justify">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/text-justify">
+<meta property="og:title" content="文本对齐 - 文本对齐 - 在线文本两端对齐排版工具 | AI 工具盒子 | AI 工具盒子">
+<meta property="og:description" content="免费在线文本对齐工具，将文本按指定宽度两端对齐，支持填充字符、首行缩进、段落间距等选项。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/text-justify">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "文本对齐", "description": "免费在线文本对齐工具，将文本按指定宽度两端对齐，支持填充字符、首行缩进、段落间距等选项。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/text-justify", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "将文本按指定宽度两端对齐，支持填充字符、首行缩进、段落间距等选项", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/tools/text-justify" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">f4d0</div>
+  <h1>文本对齐</h1>
+  <p>将文本按指定宽度两端对齐，支持填充字符、首行缩进、段落间距等选项</p>
+</div>
+<div class="tool-panel">
+<div style="margin-bottom:12px"><label style="font-size:13px;font-weight:600">输入文本</label><textarea id="tj-input" style="width:100%;min-height:200px;font-family:Consolas,monospace;font-size:13px"></textarea></div>
+<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px">
+  <button id="tj-justify" class="btn btn-primary">两端对齐</button>
+  <button id="tj-copy" class="btn">复制</button>
+  <button id="tj-clear" class="btn btn-secondary">清空</button>
+</div>
+<div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:12px;align-items:center">
+  <label style="font-size:13px">宽度 <input type="number" id="tj-width" value="60" min="20" max="200" style="width:60px"></label>
+  <label style="font-size:13px">填充 <input type="text" id="tj-fill" value=" " maxlength="1" style="width:30px"></label>
+  <label style="font-size:13px">缩进 <input type="number" id="tj-indent" value="0" min="0" max="20" style="width:50px"></label>
+  <label style="font-size:13px">间距 <input type="number" id="tj-spacing" value="0" min="0" max="10" style="width:50px"></label>
+  <label style="font-size:13px">对齐 <select id="tj-align" style="font-size:13px">
+    <option value="justify">两端</option>
+    <option value="left">左对齐</option>
+    <option value="right">右对齐</option>
+    <option value="center">居中</option>
+  </select></label>
+  <label style="font-size:13px"><input type="checkbox" id="tj-preserve-breaks" checked> 保留换行</label>
+</div>
+<div style="margin-bottom:8px"><span id="tj-status" style="font-size:13px;color:var(--muted)"></span></div>
+<textarea id="tj-output" style="width:100%;min-height:300px;font-family:Consolas,monospace;font-size:13px" readonly></textarea>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>免费的在线 <strong>文本两端对齐</strong> 工具。支持自定义填充字符、首行缩进、段落间距、多种对齐方式。所有处理在浏览器本地完成。</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>两端对齐排版</li><li>左对齐、右对齐、居中对齐</li><li>自定义填充字符</li><li>首行缩进支持</li><li>段落间距调整</li><li>保留原始换行或自动合并段落</li><li>实时统计</li><li>所有处理在浏览器本地完成</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">什么是文本两端对齐？</h3><p>将文本每行拉伸到指定宽度，词语间加入均匀间距。</p><h3 style="margin-top:20px;margin-bottom:8px">支持中文吗？</h3><p>支持。中文字符被计为两个英文字符宽度。</p></section>
+<section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/text-sort" class="tool-card"><div class="icon">🔤</div><h3>文本排序</h3><p>按字母、数字、长度或自定义规则排序文本行</p></a><a href="/tools/text-dedup" class="tool-card"><div class="icon">🧹</div><h3>文本去重</h3><p>移除重复行，统计移除数量和百分比</p></a><a href="/tools/text-replace" class="tool-card"><div class="icon">🔄</div><h3>文本批量替换</h3><p>批量查找替换文本，支持正则表达式和大小写选项</p></a><a href="/tools/text-statistics" class="tool-card"><div class="icon">📈</div><h3>文本统计与分析</h3><p>深度分析文本：字数、句子、段落、阅读时间、高频词、可读性评分</p></a><a href="/tools/text-diff" class="tool-card"><div class="icon">🔍</div><h3>文本对比</h3><p>对比两段文本的差异，逐行高亮显示</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/text-justify.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>

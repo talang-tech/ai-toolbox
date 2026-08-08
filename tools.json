@@ -12681,6 +12681,134 @@
           "Validator diagnoses issues without modifying data. Cleaner fixes issues. Use validator first, then cleaner."
         ]
       ]
+    },
+    {
+      "slug": "text-justify",
+      "category": "text",
+      "icon": "\u0001f4d0",
+      "name_zh": "文本对齐",
+      "name_en": "Text Justify",
+      "short_zh": "将文本按指定宽度两端对齐，支持填充字符、首行缩进、段落间距等选项",
+      "short_en": "Justify text to a specified width with padding character, first-line indent, paragraph spacing and alignment options",
+      "keywords_zh": "文本对齐,文本两端对齐,文字对齐,文本排版,文本填充,代码对齐,文本格式化,段落对齐,对齐工具,在线对齐,文本美化,段落排版,文字填充",
+      "keywords_en": "text justify, justify text, text alignment, text padding, text formatting, paragraph justify, text width adjust, line wrapping, fill justify, text layout, text align tool, online text justify, text formatter, text padding tool, code alignment, paragraph formatting",
+      "long_zh": "<p>免费的在线 <strong>文本两端对齐</strong> 工具。支持自定义填充字符、首行缩进、段落间距、多种对齐方式。所有处理在浏览器本地完成。</p>",
+      "long_en": "<p>Free online <strong>Text Justify</strong> tool. Supports custom padding characters, first-line indent, paragraph spacing, left/right/center alignment, and more. All processing is done locally.</p>",
+      "ui_zh": "<div style=\"margin-bottom:12px\"><label style=\"font-size:13px;font-weight:600\">输入文本</label><textarea id=\"tj-input\" style=\"width:100%;min-height:200px;font-family:Consolas,monospace;font-size:13px\"></textarea></div>\n<div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px\">\n  <button id=\"tj-justify\" class=\"btn btn-primary\">两端对齐</button>\n  <button id=\"tj-copy\" class=\"btn\">复制</button>\n  <button id=\"tj-clear\" class=\"btn btn-secondary\">清空</button>\n</div>\n<div style=\"display:flex;gap:16px;flex-wrap:wrap;margin-bottom:12px;align-items:center\">\n  <label style=\"font-size:13px\">宽度 <input type=\"number\" id=\"tj-width\" value=\"60\" min=\"20\" max=\"200\" style=\"width:60px\"></label>\n  <label style=\"font-size:13px\">填充 <input type=\"text\" id=\"tj-fill\" value=\" \" maxlength=\"1\" style=\"width:30px\"></label>\n  <label style=\"font-size:13px\">缩进 <input type=\"number\" id=\"tj-indent\" value=\"0\" min=\"0\" max=\"20\" style=\"width:50px\"></label>\n  <label style=\"font-size:13px\">间距 <input type=\"number\" id=\"tj-spacing\" value=\"0\" min=\"0\" max=\"10\" style=\"width:50px\"></label>\n  <label style=\"font-size:13px\">对齐 <select id=\"tj-align\" style=\"font-size:13px\">\n    <option value=\"justify\">两端</option>\n    <option value=\"left\">左对齐</option>\n    <option value=\"right\">右对齐</option>\n    <option value=\"center\">居中</option>\n  </select></label>\n  <label style=\"font-size:13px\"><input type=\"checkbox\" id=\"tj-preserve-breaks\" checked> 保留换行</label>\n</div>\n<div style=\"margin-bottom:8px\"><span id=\"tj-status\" style=\"font-size:13px;color:var(--muted)\"></span></div>\n<textarea id=\"tj-output\" style=\"width:100%;min-height:300px;font-family:Consolas,monospace;font-size:13px\" readonly></textarea>",
+      "ui_en": "<div style=\"margin-bottom:12px\"><label style=\"font-size:13px;font-weight:600\">Input Text</label><textarea id=\"tj-input\" style=\"width:100%;min-height:200px;font-family:Consolas,monospace;font-size:13px\"></textarea></div>\n<div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px\">\n  <button id=\"tj-justify\" class=\"btn btn-primary\">Justify</button>\n  <button id=\"tj-copy\" class=\"btn\">Copy</button>\n  <button id=\"tj-clear\" class=\"btn btn-secondary\">Clear</button>\n</div>\n<div style=\"display:flex;gap:16px;flex-wrap:wrap;margin-bottom:12px;align-items:center\">\n  <label style=\"font-size:13px\">Width <input type=\"number\" id=\"tj-width\" value=\"60\" min=\"20\" max=\"200\" style=\"width:60px\"></label>\n  <label style=\"font-size:13px\">Fill <input type=\"text\" id=\"tj-fill\" value=\" \" maxlength=\"1\" style=\"width:30px\"></label>\n  <label style=\"font-size:13px\">Indent <input type=\"number\" id=\"tj-indent\" value=\"0\" min=\"0\" max=\"20\" style=\"width:50px\"></label>\n  <label style=\"font-size:13px\">Spacing <input type=\"number\" id=\"tj-spacing\" value=\"0\" min=\"0\" max=\"10\" style=\"width:50px\"></label>\n  <label style=\"font-size:13px\">Align <select id=\"tj-align\" style=\"font-size:13px\">\n    <option value=\"justify\">Justify</option>\n    <option value=\"left\">Left</option>\n    <option value=\"right\">Right</option>\n    <option value=\"center\">Center</option>\n  </select></label>\n  <label style=\"font-size:13px\"><input type=\"checkbox\" id=\"tj-preserve-breaks\" checked> Preserve breaks</label>\n</div>\n<div style=\"margin-bottom:8px\"><span id=\"tj-status\" style=\"font-size:13px;color:var(--muted)\"></span></div>\n<textarea id=\"tj-output\" style=\"width:100%;min-height:300px;font-family:Consolas,monospace;font-size:13px\" readonly></textarea>",
+      "related": [
+        "text-sort",
+        "text-dedup",
+        "text-replace",
+        "text-statistics",
+        "text-diff"
+      ],
+      "seo_title_zh": "文本对齐 - 在线文本两端对齐排版工具 | AI 工具盒子",
+      "seo_title_en": "Text Justify - Online Text Alignment Tool | AI Toolbox",
+      "features_zh": [
+        "两端对齐排版",
+        "左对齐、右对齐、居中对齐",
+        "自定义填充字符",
+        "首行缩进支持",
+        "段落间距调整",
+        "保留原始换行或自动合并段落",
+        "实时统计",
+        "所有处理在浏览器本地完成"
+      ],
+      "features_en": [
+        "Full justification",
+        "Left, right, center alignment",
+        "Custom padding character",
+        "First-line indent support",
+        "Paragraph spacing adjustment",
+        "Preserve or auto-merge paragraphs",
+        "Real-time statistics",
+        "All processing in browser"
+      ],
+      "faq_zh": [
+        [
+          "什么是文本两端对齐？",
+          "将文本每行拉伸到指定宽度，词语间加入均匀间距。"
+        ],
+        [
+          "支持中文吗？",
+          "支持。中文字符被计为两个英文字符宽度。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "What is text justification?",
+          "Stretching each line to a specified width by adding even spacing between words."
+        ],
+        [
+          "Does it support Chinese?",
+          "Yes. Chinese characters count as 2 English character widths."
+        ]
+      ]
+    },
+    {
+      "slug": "json-to-zod",
+      "category": "json",
+      "icon": "🔮",
+      "name_zh": "JSON 转 Zod",
+      "name_en": "JSON to Zod",
+      "short_zh": "从 JSON 数据自动生成 Zod 验证 Schema，支持嵌套对象、数组、可选字段和枚举推断",
+      "short_en": "Generate Zod validation schemas from JSON data with nested objects, arrays, optional fields and enum inference",
+      "keywords_zh": "JSON转Zod,Zod Schema生成,JSON转验证Schema,Zod验证,Zod类型,Zod schema生成器",
+      "keywords_en": "json to zod, zod schema generator, json to zod schema, zod validation, zod typescript, generate zod schema from json",
+      "long_zh": "<p>免费的在线 <strong>JSON 转 Zod Schema</strong> 工具，自动从 JSON 数据生成 TypeScript 生态中最流行的验证库 Zod 的 Schema 定义。支持深度嵌套对象、数组、可选字段、联合类型、枚举推断等高级特性。所有处理在浏览器本地完成，数据不会上传到服务器。</p>",
+      "long_en": "<p>Free online <strong>JSON to Zod Schema</strong> generator - automatically creates Zod validation schemas from JSON data. Supports deeply nested objects, arrays, optional fields, union types, and enum inference. All processing is done locally in your browser - no data upload.</p>",
+      "related": [
+        "json-to-ts",
+        "json-validator",
+        "json-schema-validator",
+        "json-formatter",
+        "json-to-yaml"
+      ],
+      "seo_title_zh": "JSON 转 Zod Schema - 在线 Zod 验证 Schema 生成器 | AI 工具盒子",
+      "seo_title_en": "JSON to Zod Schema - Online Zod Validation Generator | AI Toolbox",
+      "features_zh": [
+        "自动推断 JSON 字段类型",
+        "支持深度嵌套对象和数组",
+        "可选字段推断",
+        "枚举值自动推断",
+        "支持 Zod 原生类型",
+        "特殊格式推断",
+        "生成可直接使用的 TypeScript 代码",
+        "零数据上传"
+      ],
+      "features_en": [
+        "Auto-infer JSON field types",
+        "Deeply nested object and array schema",
+        "Optional field inference",
+        "Enum auto-inference",
+        "Supports Zod native types",
+        "Special format inference",
+        "Ready-to-use TypeScript code",
+        "Zero data upload"
+      ],
+      "faq_zh": [
+        [
+          "什么是 Zod？",
+          "Zod 是 TypeScript 优先的 Schema 验证库。"
+        ],
+        [
+          "支持所有类型吗？",
+          "支持最常用类型。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "What is Zod?",
+          "Zod is a TypeScript-first schema validation library."
+        ],
+        [
+          "Supports all types?",
+          "Supports the most common types."
+        ]
+      ],
+      "ui_zh": "<div style=\"margin-bottom:12px\"><label style=\"font-size:13px;font-weight:600\">输入 JSON</label><textarea id=\"j2z-input\" style=\"width:100%;min-height:200px;font-family:Consolas,monospace;font-size:13px\"></textarea></div>\n<div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px\">\n  <button id=\"j2z-generate\" class=\"btn btn-primary\">生成 Zod Schema</button>\n  <button id=\"j2z-copy\" class=\"btn\">复制</button>\n  <button id=\"j2z-clear\" class=\"btn btn-secondary\">清空</button>\n</div>\n<div style=\"display:flex;gap:16px;flex-wrap:wrap;margin-bottom:12px\">\n  <label style=\"font-size:13px\"><input type=\"checkbox\" id=\"j2z-optional\" checked> 可选字段推断</label>\n  <label style=\"font-size:13px\"><input type=\"checkbox\" id=\"j2z-strict\" checked> 使用 z.object({...})</label>\n  <label style=\"font-size:13px\"><input type=\"checkbox\" id=\"j2z-enum\" checked> 推断枚举</label>\n</div>\n<div style=\"margin-bottom:8px\"><span id=\"j2z-status\" style=\"font-size:13px;color:var(--muted)\"></span></div>\n<textarea id=\"j2z-output\" style=\"width:100%;min-height:300px;font-family:Consolas,monospace;font-size:13px\" readonly></textarea>",
+      "ui_en": "<div style=\"margin-bottom:12px\"><label style=\"font-size:13px;font-weight:600\">Input JSON</label><textarea id=\"j2z-input\" style=\"width:100%;min-height:200px;font-family:Consolas,monospace;font-size:13px\"></textarea></div>\n<div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px\">\n  <button id=\"j2z-generate\" class=\"btn btn-primary\">Generate Zod Schema</button>\n  <button id=\"j2z-copy\" class=\"btn\">Copy</button>\n  <button id=\"j2z-clear\" class=\"btn btn-secondary\">Clear</button>\n</div>\n<div style=\"display:flex;gap:16px;flex-wrap:wrap;margin-bottom:12px\">\n  <label style=\"font-size:13px\"><input type=\"checkbox\" id=\"j2z-optional\" checked> Infer optional fields</label>\n  <label style=\"font-size:13px\"><input type=\"checkbox\" id=\"j2z-strict\" checked> Use z.object({...})</label>\n  <label style=\"font-size:13px\"><input type=\"checkbox\" id=\"j2z-enum\" checked> Infer enums</label>\n</div>\n<div style=\"margin-bottom:8px\"><span id=\"j2z-status\" style=\"font-size:13px;color:var(--muted)\"></span></div>\n<textarea id=\"j2z-output\" style=\"width:100%;min-height:300px;font-family:Consolas,monospace;font-size:13px\" readonly></textarea>"
     }
   ]
 }

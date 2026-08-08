@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>JSON 转 Zod - JSON 转 Zod Schema - 在线 Zod 验证 Schema 生成器 | AI 工具盒子 | AI 工具盒子</title>
+<meta name="description" content="免费在线JSON 转 Zod工具，从 JSON 数据自动生成 Zod 验证 Schema，支持嵌套对象、数组、可选字段和枚举推断。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="JSON转Zod,Zod Schema生成,JSON转验证Schema,Zod验证,Zod类型,Zod schema生成器">
+<link rel="canonical" href="https://tools.talang.fun/tools/json-to-zod">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/json-to-zod">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/json-to-zod">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/json-to-zod">
+<meta property="og:title" content="JSON 转 Zod - JSON 转 Zod Schema - 在线 Zod 验证 Schema 生成器 | AI 工具盒子 | AI 工具盒子">
+<meta property="og:description" content="免费在线JSON 转 Zod工具，从 JSON 数据自动生成 Zod 验证 Schema，支持嵌套对象、数组、可选字段和枚举推断。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/json-to-zod">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "JSON 转 Zod", "description": "免费在线JSON 转 Zod工具，从 JSON 数据自动生成 Zod 验证 Schema，支持嵌套对象、数组、可选字段和枚举推断。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/json-to-zod", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "从 JSON 数据自动生成 Zod 验证 Schema，支持嵌套对象、数组、可选字段和枚举推断", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/tools/json-to-zod" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🔮</div>
+  <h1>JSON 转 Zod</h1>
+  <p>从 JSON 数据自动生成 Zod 验证 Schema，支持嵌套对象、数组、可选字段和枚举推断</p>
+</div>
+<div class="tool-panel">
+<div style="margin-bottom:12px"><label style="font-size:13px;font-weight:600">输入 JSON</label><textarea id="j2z-input" style="width:100%;min-height:200px;font-family:Consolas,monospace;font-size:13px"></textarea></div>
+<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px">
+  <button id="j2z-generate" class="btn btn-primary">生成 Zod Schema</button>
+  <button id="j2z-copy" class="btn">复制</button>
+  <button id="j2z-clear" class="btn btn-secondary">清空</button>
+</div>
+<div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:12px">
+  <label style="font-size:13px"><input type="checkbox" id="j2z-optional" checked> 可选字段推断</label>
+  <label style="font-size:13px"><input type="checkbox" id="j2z-strict" checked> 使用 z.object({...})</label>
+  <label style="font-size:13px"><input type="checkbox" id="j2z-enum" checked> 推断枚举</label>
+</div>
+<div style="margin-bottom:8px"><span id="j2z-status" style="font-size:13px;color:var(--muted)"></span></div>
+<textarea id="j2z-output" style="width:100%;min-height:300px;font-family:Consolas,monospace;font-size:13px" readonly></textarea>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>免费的在线 <strong>JSON 转 Zod Schema</strong> 工具，自动从 JSON 数据生成 TypeScript 生态中最流行的验证库 Zod 的 Schema 定义。支持深度嵌套对象、数组、可选字段、联合类型、枚举推断等高级特性。所有处理在浏览器本地完成，数据不会上传到服务器。</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>自动推断 JSON 字段类型</li><li>支持深度嵌套对象和数组</li><li>可选字段推断</li><li>枚举值自动推断</li><li>支持 Zod 原生类型</li><li>特殊格式推断</li><li>生成可直接使用的 TypeScript 代码</li><li>零数据上传</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">什么是 Zod？</h3><p>Zod 是 TypeScript 优先的 Schema 验证库。</p><h3 style="margin-top:20px;margin-bottom:8px">支持所有类型吗？</h3><p>支持最常用类型。</p></section>
+<section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/json-to-ts" class="tool-card"><div class="icon">📊</div><h3>JSON 转 TypeScript</h3><p>一键将 JSON 转换为 TypeScript 接口定义</p></a><a href="/tools/json-validator" class="tool-card"><div class="icon">✅</div><h3>JSON 验证器</h3><p>验证 JSON 语法，高亮定位错误，格式化并显示行号</p></a><a href="/tools/json-schema-validator" class="tool-card"><div class="icon">✓</div><h3>JSON Schema 校验</h3><p>根据 JSON Schema 标准校验 JSON 数据结构，支持 Draft-07</p></a><a href="/tools/json-formatter" class="tool-card"><div class="icon">{ }</div><h3>JSON 格式化</h3><p>JSON 美化、压缩、校验，错误位置精准定位</p></a><a href="/tools/json-to-yaml" class="tool-card"><div class="icon">📊</div><h3>JSON ↔ YAML 互转</h3><p>JSON 与 YAML 格式相互转换</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/json-to-zod.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>New: JSON to Zod Schema Generator & Text Justify Tool | AI Toolbox</title>
+<meta name="description" content="Two new browser-local tools: Generate Zod validation schemas from JSON, and justify text to any width. Privacy-first, no upload.">
+<meta name="keywords" content="json to zod, zod schema generator, text justify, text alignment, new tools, ai toolbox, browser local, typescript validation">
+<link rel="canonical" href="https://tools.talang.fun/en/blog/json-to-zod-text-justify-launch">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/blog/json-to-zod-text-justify-launch">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/blog/json-to-zod-text-justify-launch">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/blog/json-to-zod-text-justify-launch">
+<meta property="og:title" content="New: JSON to Zod Schema Generator & Text Justify Tool | AI Toolbox">
+<meta property="og:description" content="Two new browser-local tools: Generate Zod validation schemas from JSON, and justify text to any width. Privacy-first, no upload.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/en/blog/json-to-zod-text-justify-launch">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "New: JSON to Zod Schema Generator & Text Justify Tool", "description": "Two new browser-local tools: Generate Zod validation schemas from JSON, and justify text to any width. Privacy-first, no upload.", "author": {"@type": "Organization", "name": "AI Toolbox"}, "datePublished": "2026-08-08", "url": "https://tools.talang.fun/en/blog/json-to-zod-text-justify-launch"}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/en/" class="logo"><span class="logo-icon">🛠️</span>AI Toolbox</a>
+    <nav class="nav">
+      <a href="/en/">Home</a>
+      <a href="/en/#tools">All Tools</a>
+      <a href="/en/blog/">Blog</a>
+      <a href="/en/about">About</a>
+      <a href="/en/sponsor">Sponsor</a>
+      <a href="https://tools.talang.fun/blog/json-to-zod-text-justify-launch" class="lang-switch">中文</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<article class="article">
+  <p style="margin-bottom:8px"><a href="/en/blog/" style="color:var(--muted)">← Back to blog</a></p>
+  <h1>New: JSON to Zod Schema Generator & Text Justify Tool</h1>
+  <p style="color:var(--muted);margin-bottom:24px">2026-08-08 · 3 min</p>
+  <p>We're adding two new tools to the AI Toolbox today:</p>
+<h2>🔮 JSON to Zod Schema Generator</h2>
+<p>TypeScript developers, this one's for you. <a href="/tools/json-to-zod">JSON to Zod</a> automatically generates <a href="https://zod.dev">Zod</a> validation schemas from your JSON data.</p>
+<p><strong>Why Zod?</strong> Zod is the most popular TypeScript-first schema validation library. It's used in Next.js, tRPC, Remix, and countless other projects. Writing schemas manually is tedious — this tool gets you 80% of the way there instantly.</p>
+<p><strong>What it handles:</strong></p>
+<ul>
+<li>Nested objects and arrays (any depth)</li>
+<li>Type inference: <code>string</code>, <code>number</code>, <code>boolean</code>, <code>array</code>, <code>object</code></li>
+<li>Optional field detection via <code>null</code> values</li>
+<li>Enum inference from string literals</li>
+<li>Special format detection: <code>.email()</code>, <code>.url()</code>, <code>.uuid()</code>, <code>.datetime()</code></li>
+<li>Strict mode with <code>.strict()</code></li>
+</ul>
+<p><strong>Example:</strong> Paste this JSON:</p>
+<pre><code class="lang-json">
+{
+  "name": "Alice",
+  "email": "alice@example.com",
+  "age": 30,
+  "role": "admin",
+  "tags": ["dev", "design"]
+}
+</code></pre>
+<p>And get:</p>
+<pre><code class="lang-typescript">
+import { z } from 'zod';
+
+export const schema = z.object({
+  name: z.string(),
+  email: z.string().email(),
+  age: z.number().int(),
+  role: z.string(),
+  tags: z.array(z.string()),
+}).strict();
+</code></pre>
+<h2>📐 Text Justify Tool</h2>
+<p><a href="/tools/text-justify">Text Justify</a> formats plain text to a specified width with full justification, left/right/center alignment, custom padding, indent, and paragraph spacing.</p>
+<p><strong>Great for:</strong></p>
+<ul>
+<li>Code comment alignment</li>
+<li>ASCII art tables</li>
+<li>Email body formatting</li>
+<li>Plain text document layout</li>
+<li>Terminal output formatting</li>
+</ul>
+<p><strong>Features:</strong></p>
+<ul>
+<li>Full justification with even word spacing</li>
+<li>Left, right, center alignment</li>
+<li>Custom fill character (space, dot, dash, etc.)</li>
+<li>First-line indent</li>
+<li>Paragraph spacing</li>
+<li>Preserve or auto-merge paragraph breaks</li>
+<li>Real-time line/word/char statistics</li>
+</ul>
+<h2>Why both are browser-local</h2>
+<p>Like all tools in the AI Toolbox, both run entirely in your browser. Your JSON data and text never leave your device. No upload, no tracking, no signup required.</p>
+<h2>What's next?</h2>
+<p>We're working on more JSON-related utilities (JSON to Yup, JSON to Joi) and text formatting tools. Have an idea? <a href="https://github.com/talang-tech/ai-toolbox/issues/new?template=tool_request.yml">Open an issue on GitHub</a>.</p>
+  <section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>Need a private toolbox or custom browser tool?</h2>
+  <p>AI Toolbox can be adapted for internal workflows, private deployment, sponsored categories, or custom privacy-first utilities.</p>
+  <p><a href="/en/sponsor" data-event="conversion_cta_click" data-label="en_partner_custom_tool_cta">View partnership and custom tool options →</a></p>
+</section>
+</article>
+</main>
+<footer class="site-footer">
+  © 2026 AI Toolbox · Free online AI & developer tools · <a href='/en/about'>About</a> · <a href='/en/sponsor'>Sponsor</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('Copied!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>

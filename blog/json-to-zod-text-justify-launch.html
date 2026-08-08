@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>新工具发布：JSON 转 Zod Schema 生成器与文本对齐工具 | AI 工具盒子</title>
+<meta name="description" content="新增两个浏览器本地工具：从 JSON 自动生成 Zod 验证 Schema，以及将文本按指定宽度两端对齐排版。隐私优先，数据不上传。">
+<meta name="keywords" content="JSON转Zod,Zod Schema生成,文本对齐,文本两端对齐,新工具,AI工具盒子,浏览器本地,typescript验证">
+<link rel="canonical" href="https://tools.talang.fun/blog/json-to-zod-text-justify-launch">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/blog/json-to-zod-text-justify-launch">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/blog/json-to-zod-text-justify-launch">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/blog/json-to-zod-text-justify-launch">
+<meta property="og:title" content="新工具发布：JSON 转 Zod Schema 生成器与文本对齐工具 | AI 工具盒子">
+<meta property="og:description" content="新增两个浏览器本地工具：从 JSON 自动生成 Zod 验证 Schema，以及将文本按指定宽度两端对齐排版。隐私优先，数据不上传。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/blog/json-to-zod-text-justify-launch">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "新工具发布：JSON 转 Zod Schema 生成器与文本对齐工具", "description": "新增两个浏览器本地工具：从 JSON 自动生成 Zod 验证 Schema，以及将文本按指定宽度两端对齐排版。隐私优先，数据不上传。", "author": {"@type": "Organization", "name": "AI 工具盒子"}, "datePublished": "2026-08-08", "url": "https://tools.talang.fun/blog/json-to-zod-text-justify-launch"}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/blog/json-to-zod-text-justify-launch" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<article class="article">
+  <p style="margin-bottom:8px"><a href="/blog/" style="color:var(--muted)">← 返回博客</a></p>
+  <h1>新工具发布：JSON 转 Zod Schema 生成器与文本对齐工具</h1>
+  <p style="color:var(--muted);margin-bottom:24px">2026-08-08 · 3 分钟</p>
+  <p>今天 AI 工具盒子新增两个实用工具：</p>
+<h2>🔮 JSON 转 Zod Schema 生成器</h2>
+<p>TypeScript 开发者看过来。<a href="/tools/json-to-zod">JSON 转 Zod</a> 可以从你的 JSON 数据自动生成 <a href="https://zod.dev">Zod</a> 验证 Schema。</p>
+<p><strong>为什么是 Zod？</strong> Zod 是 TypeScript 生态中最流行的 Schema 验证库，被 Next.js、tRPC、Remix 等无数项目使用。手动写 Schema 既繁琐又容易出错——这个工具帮你一步到位。</p>
+<p><strong>支持的特性：</strong></p>
+<ul>
+<li>嵌套对象和数组（任意深度）</li>
+<li>类型推断：<code>string</code>、<code>number</code>、<code>boolean</code>、<code>array</code>、<code>object</code></li>
+<li>可选字段检测（通过 <code>null</code> 值）</li>
+<li>枚举值自动推断</li>
+<li>特殊格式检测：<code>.email()</code>、<code>.url()</code>、<code>.uuid()</code>、<code>.datetime()</code></li>
+<li>严格模式 <code>.strict()</code></li>
+</ul>
+<p><strong>示例：</strong> 粘贴以下 JSON：</p>
+<pre><code class="lang-json">
+{
+  "name": "Alice",
+  "email": "alice@example.com",
+  "age": 30,
+  "role": "admin",
+  "tags": ["dev", "design"]
+}
+</code></pre>
+<p>即可生成：</p>
+<pre><code class="lang-typescript">
+import { z } from 'zod';
+
+export const schema = z.object({
+  name: z.string(),
+  email: z.string().email(),
+  age: z.number().int(),
+  role: z.string(),
+  tags: z.array(z.string()),
+}).strict();
+</code></pre>
+<h2>📐 文本对齐工具</h2>
+<p><a href="/tools/text-justify">文本对齐</a> 将普通文本按指定宽度进行两端对齐排版，支持多种对齐方式和自定义选项。</p>
+<p><strong>适用场景：</strong></p>
+<ul>
+<li>代码注释对齐</li>
+<li>ASCII 艺术表格</li>
+<li>邮件正文格式化</li>
+<li>纯文本文档排版</li>
+<li>终端输出格式化</li>
+</ul>
+<p><strong>功能特点：</strong></p>
+<ul>
+<li>两端对齐、左对齐、右对齐、居中</li>
+<li>自定义填充字符（空格、点、横线等）</li>
+<li>首行缩进</li>
+<li>段落间距调整</li>
+<li>保留或自动合并段落换行</li>
+<li>实时统计行数/词数/字符数</li>
+</ul>
+<h2>为什么两个工具都是浏览器本地处理</h2>
+<p>和 AI 工具盒子的所有工具一样，两者完全在浏览器中运行。你的 JSON 数据和文本不会离开你的设备。无需上传、无需注册、无需追踪。</p>
+<h2>下一步计划</h2>
+<p>我们正在开发更多 JSON 相关工具（JSON 转 Yup、JSON 转 Joi）和文本格式化工具。有想法？<a href="https://github.com/talang-tech/ai-toolbox/issues/new?template=tool_request.yml">在 GitHub 上提 Issue</a>。</p>
+  <section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+</article>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>
