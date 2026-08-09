@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>SemVer 版本比较 - SemVer 版本比较工具 | 在线工具 | AI 工具盒子</title>
+<meta name="description" content="免费在线SemVer 版本比较工具，语义化版本号比较、校验和升级。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="semver,版本号比较,语义化版本,版本号校验,版本号升级,版本排序">
+<link rel="canonical" href="https://tools.talang.fun/tools/semver-compare">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/semver-compare">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/semver-compare">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/semver-compare">
+<meta property="og:title" content="SemVer 版本比较 - SemVer 版本比较工具 | 在线工具 | AI 工具盒子">
+<meta property="og:description" content="免费在线SemVer 版本比较工具，语义化版本号比较、校验和升级。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/semver-compare">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "SemVer 版本比较", "description": "免费在线SemVer 版本比较工具，语义化版本号比较、校验和升级。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/semver-compare", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "语义化版本号比较、校验和升级", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/tools/semver-compare" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🔢</div>
+  <h1>SemVer 版本比较</h1>
+  <p>语义化版本号比较、校验和升级</p>
+</div>
+<div class="tool-panel">
+<div style="display:flex;flex-direction:column;gap:16px"><div class="tool-controls"><div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:12px"><input type="text" id="sv-input" placeholder="1.2.3" style="flex:1;min-width:150px;font-family:monospace;font-size:14px"><button id="sv-validate-btn" class="btn">校验</button><button id="sv-bump-major" class="btn">主版本+</button><button id="sv-bump-minor" class="btn">次版本+</button><button id="sv-bump-patch" class="btn">补丁+</button><button id="sv-bump-prerelease" class="btn">预发布+</button></div><div id="sv-validate-result" style="font-size:14px;padding:8px 12px;border-radius:6px;min-height:24px"></div></div><div class="tool-controls"><h4 style="margin:0 0 8px 0;font-size:14px">比较两个版本</h4><div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center"><input type="text" id="sv-a" placeholder="1.0.0" style="width:130px;font-family:monospace"><span style="font-size:18px;color:var(--text-secondary)">vs</span><input type="text" id="sv-b" placeholder="2.0.0" style="width:130px;font-family:monospace"><button id="sv-compare-btn" class="btn">比较</button></div><div id="sv-compare-result" style="font-size:14px;padding:8px 12px;border-radius:6px;min-height:24px;margin-top:8px"></div></div><div class="tool-controls"><h4 style="margin:0 0 8px 0;font-size:14px">排序版本列表</h4><textarea id="sv-list" style="min-height:120px;font-family:monospace;font-size:13px" placeholder="每行一个版本号，例如：&#10;1.0.0&#10;2.3.1-beta&#10;0.9.0"></textarea><div style="display:flex;gap:10px;margin-top:8px"><button id="sv-sort-asc" class="btn">升序排序</button><button id="sv-sort-desc" class="btn">降序排序</button><button id="sv-sort-copy" class="btn">复制结果</button></div><div id="sv-sort-result" style="font-size:14px;padding:8px 12px;border-radius:6px;min-height:24px;margin-top:8px"></div></div></div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>免费在线语义化版本号（SemVer）工具。支持版本号格式校验、比较大小、排序、主版本/次版本/补丁/预发布版本递增。所有处理在浏览器本地完成，无需上传数据。</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>校验语义化版本格式（X.Y.Z）</li><li>比较两个版本号的大小</li><li>对多个版本号进行升序/降序排序</li><li>递增主版本、次版本、补丁或预发布版本</li><li>一键复制结果</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">什么是 SemVer？</h3><p>SemVer（语义化版本）使用 MAJOR.MINOR.PATCH 格式：主版本号表示不兼容的 API 变更，次版本号表示向下兼容的功能新增，补丁号表示向下兼容的问题修复。</p><h3 style="margin-top:20px;margin-bottom:8px">数据会上传服务器吗？</h3><p>不会。所有处理都在浏览器本地完成，不上传任何数据。</p></section>
+<section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/json-to-zod" class="tool-card"><div class="icon">🔮</div><h3>JSON 转 Zod</h3><p>从 JSON 数据自动生成 Zod 验证 Schema，支持嵌套对象、数组、可选字段和枚举推断</p></a><a href="/tools/regex-tester" class="tool-card"><div class="icon">/.*/</div><h3>正则表达式测试</h3><p>实时测试正则表达式，高亮匹配结果</p></a><a href="/tools/slug-generator" class="tool-card"><div class="icon">🔗</div><h3>URL Slug生成器</h3><p>将标题或短语转换为SEO友好的URL slug</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/semver-compare.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>

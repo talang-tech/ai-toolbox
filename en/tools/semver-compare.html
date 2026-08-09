@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>SemVer Compare - SemVer Compare Tool | Online Tool | AI Toolbox</title>
+<meta name="description" content="Free online semver compare. Semantic versioning validator, comparator, and bumper. Compare, sort, bump, and validate semver strings. Fast, secure, and works in your browser without downloading.">
+<meta name="keywords" content="semver,semantic versioning,version compare,version bump,version validator">
+<link rel="canonical" href="https://tools.talang.fun/en/tools/semver-compare">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/semver-compare">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/semver-compare">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/semver-compare">
+<meta property="og:title" content="SemVer Compare - SemVer Compare Tool | Online Tool | AI Toolbox">
+<meta property="og:description" content="Free online semver compare. Semantic versioning validator, comparator, and bumper. Compare, sort, bump, and validate semver strings. Fast, secure, and works in your browser without downloading.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/en/tools/semver-compare">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "SemVer Compare", "description": "Free online semver compare. Semantic versioning validator, comparator, and bumper. Compare, sort, bump, and validate semver strings. Fast, secure, and works in your browser without downloading.", "url": "https://tools.talang.fun/en/tools/semver-compare", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "Semantic versioning validator, comparator, and bumper. Compare, sort, bump, and validate semver strings.", "inLanguage": "en", "author": {"@type": "Organization", "name": "AI Toolbox"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/en/" class="logo"><span class="logo-icon">🛠️</span>AI Toolbox</a>
+    <nav class="nav">
+      <a href="/en/">Home</a>
+      <a href="/en/#tools">All Tools</a>
+      <a href="/en/blog/">Blog</a>
+      <a href="/en/about">About</a>
+      <a href="/en/sponsor">Sponsor</a>
+      <a href="https://tools.talang.fun/tools/semver-compare" class="lang-switch">中文</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🔢</div>
+  <h1>SemVer Compare</h1>
+  <p>Semantic versioning validator, comparator, and bumper. Compare, sort, bump, and validate semver strings.</p>
+</div>
+<div class="tool-panel">
+<div style="display:flex;flex-direction:column;gap:16px"><div class="tool-controls"><div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:12px"><input type="text" id="sv-input" placeholder="1.2.3" style="flex:1;min-width:150px;font-family:monospace;font-size:14px"><button id="sv-validate-btn" class="btn">Validate</button><button id="sv-bump-major" class="btn">Major+</button><button id="sv-bump-minor" class="btn">Minor+</button><button id="sv-bump-patch" class="btn">Patch+</button><button id="sv-bump-prerelease" class="btn">Pre+</button></div><div id="sv-validate-result" style="font-size:14px;padding:8px 12px;border-radius:6px;min-height:24px"></div></div><div class="tool-controls"><h4 style="margin:0 0 8px 0;font-size:14px">Compare Two Versions</h4><div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center"><input type="text" id="sv-a" placeholder="1.0.0" style="width:130px;font-family:monospace"><span style="font-size:18px;color:var(--text-secondary)">vs</span><input type="text" id="sv-b" placeholder="2.0.0" style="width:130px;font-family:monospace"><button id="sv-compare-btn" class="btn">Compare</button></div><div id="sv-compare-result" style="font-size:14px;padding:8px 12px;border-radius:6px;min-height:24px;margin-top:8px"></div></div><div class="tool-controls"><h4 style="margin:0 0 8px 0;font-size:14px">Sort Version List</h4><textarea id="sv-list" style="min-height:120px;font-family:monospace;font-size:13px" placeholder="One version per line, e.g.:&#10;1.0.0&#10;2.3.1-beta&#10;0.9.0"></textarea><div style="display:flex;gap:10px;margin-top:8px"><button id="sv-sort-asc" class="btn">Sort Asc</button><button id="sv-sort-desc" class="btn">Sort Desc</button><button id="sv-sort-copy" class="btn">Copy Result</button></div><div id="sv-sort-result" style="font-size:14px;padding:8px 12px;border-radius:6px;min-height:24px;margin-top:8px"></div></div></div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>About this tool</h2>
+  <p>Online Semantic Versioning (SemVer) tool. Validate, compare, sort, and bump versions (major/minor/patch/pre-release). Everything runs locally in your browser — no data upload needed.</p>
+</article>
+
+<section class="article" style="margin-top:32px"><h2>Frequently Asked Questions</h2><h3 style="margin-top:20px;margin-bottom:8px">Is data uploaded?</h3><p>No, all processing happens locally in your browser.</p><h3 style="margin-top:20px;margin-bottom:8px">Are large files supported?</h3><p>Yes, as long as browser memory allows.</p></section>
+<section class="related"><h3>Related Tools</h3><div class="tools-grid"><a href="/en/tools/json-to-zod" class="tool-card"><div class="icon">🔮</div><h3>JSON to Zod</h3><p>Generate Zod validation schemas from JSON data with nested objects, arrays, optional fields and enum inference</p></a><a href="/en/tools/regex-tester" class="tool-card"><div class="icon">/.*/</div><h3>Regex Tester</h3><p>Test regex patterns in real-time with highlighted matches</p></a><a href="/en/tools/slug-generator" class="tool-card"><div class="icon">🔗</div><h3>URL Slug Generator</h3><p>Convert titles and phrases into SEO-friendly URL slugs</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>Need a private toolbox or custom browser tool?</h2>
+  <p>AI Toolbox can be adapted for internal workflows, private deployment, sponsored categories, or custom privacy-first utilities.</p>
+  <p><a href="/en/sponsor" data-event="conversion_cta_click" data-label="en_partner_custom_tool_cta">View partnership and custom tool options →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/semver-compare.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI Toolbox · Free online AI & developer tools · <a href='/en/about'>About</a> · <a href='/en/sponsor'>Sponsor</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('Copied!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>
