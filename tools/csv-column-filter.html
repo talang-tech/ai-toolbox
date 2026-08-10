@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>CSV 列选择器 - CSV 列选择器 - 在线 CSV 列筛选与重命名工具 | AI 工具盒子 | AI 工具盒子</title>
+<meta name="description" content="免费在线CSV 列选择器工具，选择、重命名、排序 CSV 列，快速提取需要的列并导出为新的 CSV。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="CSV列选择,CSV列提取,CSV列重命名,CSV列排序,CSV列筛选,CSV列删除,CSV列操作,CSV列过滤,CSV列处理,CSV列调整,CSV列管理,CSV数据提取,CSV列选择器,在线CSV工具,CSV列编辑">
+<link rel="canonical" href="https://tools.talang.fun/tools/csv-column-filter">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/csv-column-filter">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/csv-column-filter">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/csv-column-filter">
+<meta property="og:title" content="CSV 列选择器 - CSV 列选择器 - 在线 CSV 列筛选与重命名工具 | AI 工具盒子 | AI 工具盒子">
+<meta property="og:description" content="免费在线CSV 列选择器工具，选择、重命名、排序 CSV 列，快速提取需要的列并导出为新的 CSV。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/csv-column-filter">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "CSV 列选择器", "description": "免费在线CSV 列选择器工具，选择、重命名、排序 CSV 列，快速提取需要的列并导出为新的 CSV。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/csv-column-filter", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "选择、重命名、排序 CSV 列，快速提取需要的列并导出为新的 CSV", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/tools/csv-column-filter" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">📊</div>
+  <h1>CSV 列选择器</h1>
+  <p>选择、重命名、排序 CSV 列，快速提取需要的列并导出为新的 CSV</p>
+</div>
+<div class="tool-panel">
+<div style="margin-bottom:12px"><label style="font-size:13px;font-weight:600">输入 CSV</label><textarea id="ccf-input" style="width:100%;min-height:180px;font-family:Consolas,monospace;font-size:13px" placeholder="name,email,role,department,salary&#10;Alice,alice@test.com,Developer,Engineering,85000&#10;Bob,bob@test.com,Designer,Creative,72000&#10;Charlie,charlie@test.com,Manager,Engineering,95000"></textarea></div><div style="margin-bottom:12px;display:flex;flex-wrap:wrap;gap:12px;align-items:center"><label>分隔符: <input type="text" id="ccf-delimiter" style="width:40px;font-family:monospace" value="," maxlength="2"></label><label><input type="checkbox" id="ccf-header" checked> 首行为表头</label></div><div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px"><button class="btn" id="ccf-load">加载列</button><button class="btn btn-secondary" id="ccf-copy">复制结果</button><button class="btn btn-secondary" id="ccf-clear">清空</button></div><div id="ccf-status" style="margin-top:8px;font-size:13px;color:var(--text-dim)"></div><div id="ccf-columns" style="margin-top:12px"></div><div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap"><button class="btn" id="ccf-export" disabled>导出选中列</button><button class="btn btn-secondary" id="ccf-select-all">全选</button><button class="btn btn-secondary" id="ccf-deselect-all">取消全选</button></div><label style="font-size:13px;font-weight:600;margin-top:16px;display:block">输出</label><textarea id="ccf-output" style="width:100%;min-height:180px;font-family:Consolas,monospace;font-size:13px;background:var(--bg)" readonly placeholder="处理后的 CSV 将显示在这里..."></textarea>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>免费的在线 <strong>CSV 列选择器</strong>，快速从 CSV 数据中选择、重命名和排序列。上传 CSV 数据后，可视化的列选择界面让你轻松勾选需要的列、调整顺序、重命名列名，然后一键导出处理后的 CSV。</p><p>适用于数据清洗中的列缩减、报表制作时只保留关键字段、API 数据预处理时调整列顺序、数据迁移时重命名列名映射等场景。支持自定义分隔符，支持表头识别。所有处理在浏览器本地完成，数据不会上传到服务器。</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>可视化勾选需要保留的列</li><li>支持拖动调整列顺序</li><li>支持重命名列名</li><li>自定义分隔符</li><li>表头识别与处理</li><li>一键复制或下载结果</li><li>零数据上传，浏览器本地处理</li><li>大文件支持</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">CSV 列选择器能做什么？</h3><p>让你从 CSV 数据中选择需要的列、调整列的顺序、重命名列名，然后导出为新的 CSV 文件。</p><h3 style="margin-top:20px;margin-bottom:8px">支持多少列？</h3><p>没有上限，取决于浏览器内存。通常支持数百列。</p><h3 style="margin-top:20px;margin-bottom:8px">数据会上传到服务器吗？</h3><p>不会。所有处理在浏览器本地完成，无需上传。</p><h3 style="margin-top:20px;margin-bottom:8px">支持自定义分隔符吗？</h3><p>支持。默认为逗号，可改成制表符、分号等。</p><h3 style="margin-top:20px;margin-bottom:8px">可以和 CSV 清洗工具配合使用吗？</h3><p>可以。先用列选择器提取需要的列，再用清洗工具处理数据质量问题。</p></section>
+<section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/csv-cleaner" class="tool-card"><div class="icon">🧹</div><h3>CSV 清洗</h3><p>修剪空格、去重、移除空行、规范化 CSV 格式</p></a><a href="/tools/csv-editor" class="tool-card"><div class="icon">📊</div><h3>CSV 在线编辑器</h3><p>在线编辑 CSV 数据——可视化表格编辑、增删行列、实时预览</p></a><a href="/tools/csv-validator" class="tool-card"><div class="icon">✅</div><h3>CSV 验证器</h3><p>验证 CSV 数据的格式、列数一致性、引号匹配、空值等质量问题</p></a><a href="/tools/csv-splitter" class="tool-card"><div class="icon">✂️</div><h3>CSV 分割</h3><p>将大型 CSV 文件按行数或份数分割成多个小 CSV 文件</p></a><a href="/tools/csv-to-json" class="tool-card"><div class="icon">🔄</div><h3>CSV ↔ JSON 互转</h3><p>CSV 数据转 JSON 格式，支持分隔符选择、表头配置、嵌套对象生成</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/csv-column-filter.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>JSON 转 TOML - JSON 转 TOML - 在线 JSON 到 TOML 格式转换工具 | AI 工具盒子 | AI 工具盒子</title>
+<meta name="description" content="免费在线JSON 转 TOML工具，将 JSON 数据快速转换为 TOML 格式，支持嵌套对象和数组。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="JSON转TOML,JSON到TOML,TOML转换,JSON TO TOML,JSON格式转换,TOML格式,数据格式转换,JSON转TOML工具,配置文件格式,TOML配置,JSON配置文件,TOML在线转换,JSON TOML互转,数据格式转换器">
+<link rel="canonical" href="https://tools.talang.fun/tools/json-to-toml">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/json-to-toml">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/json-to-toml">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/json-to-toml">
+<meta property="og:title" content="JSON 转 TOML - JSON 转 TOML - 在线 JSON 到 TOML 格式转换工具 | AI 工具盒子 | AI 工具盒子">
+<meta property="og:description" content="免费在线JSON 转 TOML工具，将 JSON 数据快速转换为 TOML 格式，支持嵌套对象和数组。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/json-to-toml">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "JSON 转 TOML", "description": "免费在线JSON 转 TOML工具，将 JSON 数据快速转换为 TOML 格式，支持嵌套对象和数组。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/json-to-toml", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "将 JSON 数据快速转换为 TOML 格式，支持嵌套对象和数组", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/tools/json-to-toml" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🔀</div>
+  <h1>JSON 转 TOML</h1>
+  <p>将 JSON 数据快速转换为 TOML 格式，支持嵌套对象和数组</p>
+</div>
+<div class="tool-panel">
+<div style="margin-bottom:12px"><label style="font-size:13px;font-weight:600">输入 JSON</label><textarea id="jtt-input" style="width:100%;min-height:250px;font-family:Consolas,monospace;font-size:13px" placeholder="{&#10;  &quot;title&quot;: &quot;Example&quot;,&#10;  &quot;version&quot;: &quot;1.0.0&quot;,&#10;  &quot;author&quot;: {&quot;name&quot;: &quot;Alice&quot;,&quot;email&quot;: &quot;alice@example.com&quot;},&#10;  &quot;dependencies&quot;: [&quot;lodash&quot;,&quot;express&quot;],&#10;  &quot;settings&quot;: {&quot;debug&quot;: true,&quot;port&quot;: 8080}&#10;}"></textarea></div><div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px"><button class="btn" id="jtt-convert">转换</button><button class="btn btn-secondary" id="jtt-copy">复制结果</button><button class="btn btn-secondary" id="jtt-clear">清空</button></div><div id="jtt-status" style="margin-top:8px;font-size:13px;color:var(--text-dim)"></div><label style="font-size:13px;font-weight:600;margin-top:12px;display:block">TOML 输出</label><textarea id="jtt-output" style="width:100%;min-height:250px;font-family:Consolas,monospace;font-size:13px;background:var(--bg)" readonly placeholder="转换后的 TOML 将显示在这里..."></textarea>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>免费的在线 <strong>JSON 转 TOML</strong> 工具，将 JSON 对象快速转换为 TOML 格式。TOML 是一种广泛应用于配置文件（如 Cargo.toml、pyproject.toml）的格式，以可读性强著称。</p><p>支持嵌套对象、数组、字符串、数字、布尔值、null 等所有 JSON 数据类型。自动识别数组是纯值列表（转为 TOML 内联数组）还是对象数组（转为 TOML 表数组）。所有处理在浏览器本地完成，数据不会上传到服务器。</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>JSON 对象快速转换为 TOML 格式</li><li>支持嵌套对象自动转 TOML 节(section)</li><li>智能识别数组类型（值列表 vs 表数组）</li><li>支持字符串、数字、布尔值、null 等类型</li><li>处理特殊字符自动转义</li><li>一键复制或下载结果</li><li>零数据上传，浏览器本地处理</li><li>支持 TOML v1.0 规范</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">JSON 转 TOML 支持哪些 JSON 类型？</h3><p>支持字符串、数字、布尔值、null、嵌套对象、数组、混合类型数组等所有 JSON 数据类型。</p><h3 style="margin-top:20px;margin-bottom:8px">嵌套对象怎么转换为 TOML？</h3><p>嵌套对象会自动转为 TOML 的节（section）表示，如 a.b.c 会转为 [a.b] 下的 c。</p><h3 style="margin-top:20px;margin-bottom:8px">数组怎么处理？</h3><p>纯值数组（如 [1, 2, 3]）转为 TOML 内联数组；对象数组（如 [{a:1}, {a:2}]）转为 TOML 表数组 [[array]]。</p><h3 style="margin-top:20px;margin-bottom:8px">数据会上传到服务器吗？</h3><p>不会。所有处理在浏览器本地完成，无需上传。</p><h3 style="margin-top:20px;margin-bottom:8px">TOML 和 YAML 有什么区别？</h3><p>TOML 侧重可读性，适合配置文件；YAML 更灵活但语法复杂。两者各有适用场景。</p><h3 style="margin-top:20px;margin-bottom:8px">支持 TOML v1.0 规范吗？</h3><p>是的。输出遵循 TOML v1.0 规范，包括内联表、表数组、多行字符串等特性。</p></section>
+<section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/json-to-yaml" class="tool-card"><div class="icon">📊</div><h3>JSON ↔ YAML 互转</h3><p>JSON 与 YAML 格式相互转换</p></a><a href="/tools/json-to-xml" class="tool-card"><div class="icon">🔀</div><h3>JSON 转 XML</h3><p>将 JSON 数据一键转换为 XML 格式，支持自定义根元素名称和缩进</p></a><a href="/tools/toml-json-converter" class="tool-card"><div class="icon">🔄</div><h3>TOML JSON 互转</h3><p>TOML 与 JSON 格式双向转换工具</p></a><a href="/tools/yaml-to-json" class="tool-card"><div class="icon">🔄</div><h3>YAML 转 JSON</h3><p>将 YAML 配置文件一键转换为 JSON 格式，支持 Docker/K8s 配置</p></a><a href="/tools/json-formatter" class="tool-card"><div class="icon">{ }</div><h3>JSON 格式化</h3><p>JSON 美化、压缩、校验，错误位置精准定位</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/json-to-toml.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>

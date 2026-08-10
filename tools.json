@@ -36,7 +36,8 @@
           "csv-to-html-table",
           "csv-dedupe",
           "csv-validator",
-          "csv-splitter"
+          "csv-splitter",
+          "csv-column-filter"
         ]
       },
       "dev": {
@@ -185,7 +186,8 @@
           "json-to-markdown",
           "json-to-excel",
           "json-to-python",
-          "json-to-sql"
+          "json-to-sql",
+          "json-to-toml"
         ]
       },
       "image": {
@@ -12284,6 +12286,102 @@
       "index": 156
     },
     {
+      "slug": "json-to-toml",
+      "category": "json",
+      "icon": "🔀",
+      "name_zh": "JSON 转 TOML",
+      "name_en": "JSON to TOML",
+      "short_zh": "将 JSON 数据快速转换为 TOML 格式，支持嵌套对象和数组",
+      "short_en": "Convert JSON data to TOML format quickly, supports nested objects and arrays",
+      "keywords_zh": "JSON转TOML,JSON到TOML,TOML转换,JSON TO TOML,JSON格式转换,TOML格式,数据格式转换,JSON转TOML工具,配置文件格式,TOML配置,JSON配置文件,TOML在线转换,JSON TOML互转,数据格式转换器",
+      "keywords_en": "json to toml, convert json to toml, json toml converter, json toml transform, toml format, json format converter, toml config, json to toml online, data format conversion, toml configuration, json toml tool",
+      "long_zh": "<p>免费的在线 <strong>JSON 转 TOML</strong> 工具，将 JSON 对象快速转换为 TOML 格式。TOML 是一种广泛应用于配置文件（如 Cargo.toml、pyproject.toml）的格式，以可读性强著称。</p><p>支持嵌套对象、数组、字符串、数字、布尔值、null 等所有 JSON 数据类型。自动识别数组是纯值列表（转为 TOML 内联数组）还是对象数组（转为 TOML 表数组）。所有处理在浏览器本地完成，数据不会上传到服务器。</p>",
+      "long_en": "<p>Free online <strong>JSON to TOML</strong> converter — transform JSON objects into TOML format quickly. TOML is widely used for configuration files (Cargo.toml, pyproject.toml) and known for its readability.</p><p>Supports nested objects, arrays, strings, numbers, booleans, null, and all JSON data types. Smart detection of value arrays (inline TOML arrays) vs object arrays (TOML table arrays). All processing is done locally in your browser.</p>",
+      "ui_zh": "<div style=\"margin-bottom:12px\"><label style=\"font-size:13px;font-weight:600\">输入 JSON</label><textarea id=\"jtt-input\" style=\"width:100%;min-height:250px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"{&#10;  &quot;title&quot;: &quot;Example&quot;,&#10;  &quot;version&quot;: &quot;1.0.0&quot;,&#10;  &quot;author&quot;: {&quot;name&quot;: &quot;Alice&quot;,&quot;email&quot;: &quot;alice@example.com&quot;},&#10;  &quot;dependencies&quot;: [&quot;lodash&quot;,&quot;express&quot;],&#10;  &quot;settings&quot;: {&quot;debug&quot;: true,&quot;port&quot;: 8080}&#10;}\"></textarea></div><div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px\"><button class=\"btn\" id=\"jtt-convert\">转换</button><button class=\"btn btn-secondary\" id=\"jtt-copy\">复制结果</button><button class=\"btn btn-secondary\" id=\"jtt-clear\">清空</button></div><div id=\"jtt-status\" style=\"margin-top:8px;font-size:13px;color:var(--text-dim)\"></div><label style=\"font-size:13px;font-weight:600;margin-top:12px;display:block\">TOML 输出</label><textarea id=\"jtt-output\" style=\"width:100%;min-height:250px;font-family:Consolas,monospace;font-size:13px;background:var(--bg)\" readonly placeholder=\"转换后的 TOML 将显示在这里...\"></textarea>",
+      "ui_en": "<div style=\"margin-bottom:12px\"><label style=\"font-size:13px;font-weight:600\">Input JSON</label><textarea id=\"jtt-input\" style=\"width:100%;min-height:250px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"{&#10;  &quot;title&quot;: &quot;Example&quot;,&#10;  &quot;version&quot;: &quot;1.0.0&quot;,&#10;  &quot;author&quot;: {&quot;name&quot;: &quot;Alice&quot;,&quot;email&quot;: &quot;alice@example.com&quot;},&#10;  &quot;dependencies&quot;: [&quot;lodash&quot;,&quot;express&quot;],&#10;  &quot;settings&quot;: {&quot;debug&quot;: true,&quot;port&quot;: 8080}&#10;}\"></textarea></div><div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px\"><button class=\"btn\" id=\"jtt-convert\">Convert</button><button class=\"btn btn-secondary\" id=\"jtt-copy\">Copy</button><button class=\"btn btn-secondary\" id=\"jtt-clear\">Clear</button></div><div id=\"jtt-status\" style=\"margin-top:8px;font-size:13px;color:var(--text-dim)\"></div><label style=\"font-size:13px;font-weight:600;margin-top:12px;display:block\">TOML Output</label><textarea id=\"jtt-output\" style=\"width:100%;min-height:250px;font-family:Consolas,monospace;font-size:13px;background:var(--bg)\" readonly placeholder=\"Converted TOML will appear here...\"></textarea>",
+      "related": [
+        "json-to-yaml",
+        "json-to-xml",
+        "toml-json-converter",
+        "yaml-to-json",
+        "json-formatter"
+      ],
+      "seo_title_zh": "JSON 转 TOML - 在线 JSON 到 TOML 格式转换工具 | AI 工具盒子",
+      "seo_title_en": "JSON to TOML - Convert JSON to TOML Format Online | AI Toolbox",
+      "features_zh": [
+        "JSON 对象快速转换为 TOML 格式",
+        "支持嵌套对象自动转 TOML 节(section)",
+        "智能识别数组类型（值列表 vs 表数组）",
+        "支持字符串、数字、布尔值、null 等类型",
+        "处理特殊字符自动转义",
+        "一键复制或下载结果",
+        "零数据上传，浏览器本地处理",
+        "支持 TOML v1.0 规范"
+      ],
+      "features_en": [
+        "Quickly convert JSON objects to TOML format",
+        "Nested objects become TOML sections",
+        "Smart array type detection (value list vs table array)",
+        "Supports strings, numbers, booleans, null",
+        "Automatic special character escaping",
+        "One-click copy or download",
+        "Zero data upload, browser local processing",
+        "TOML v1.0 compliant output"
+      ],
+      "faq_zh": [
+        [
+          "JSON 转 TOML 支持哪些 JSON 类型？",
+          "支持字符串、数字、布尔值、null、嵌套对象、数组、混合类型数组等所有 JSON 数据类型。"
+        ],
+        [
+          "嵌套对象怎么转换为 TOML？",
+          "嵌套对象会自动转为 TOML 的节（section）表示，如 a.b.c 会转为 [a.b] 下的 c。"
+        ],
+        [
+          "数组怎么处理？",
+          "纯值数组（如 [1, 2, 3]）转为 TOML 内联数组；对象数组（如 [{a:1}, {a:2}]）转为 TOML 表数组 [[array]]。"
+        ],
+        [
+          "数据会上传到服务器吗？",
+          "不会。所有处理在浏览器本地完成，无需上传。"
+        ],
+        [
+          "TOML 和 YAML 有什么区别？",
+          "TOML 侧重可读性，适合配置文件；YAML 更灵活但语法复杂。两者各有适用场景。"
+        ],
+        [
+          "支持 TOML v1.0 规范吗？",
+          "是的。输出遵循 TOML v1.0 规范，包括内联表、表数组、多行字符串等特性。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "What JSON types are supported?",
+          "All JSON data types: strings, numbers, booleans, null, nested objects, arrays, and mixed arrays."
+        ],
+        [
+          "How are nested objects handled?",
+          "Nested objects are converted to TOML sections. E.g., a.b.c becomes [a.b] with key c."
+        ],
+        [
+          "How are arrays handled?",
+          "Value arrays like [1, 2, 3] become inline TOML arrays. Object arrays like [{a:1}, {a:2}] become TOML table arrays [[array]]."
+        ],
+        [
+          "Is my data uploaded?",
+          "No. All processing is done locally in your browser."
+        ],
+        [
+          "What's the difference between TOML and YAML?",
+          "TOML prioritizes readability for config files; YAML is more flexible but has complex syntax. Both have their use cases."
+        ],
+        [
+          "Is TOML v1.0 supported?",
+          "Yes. Output follows TOML v1.0 spec, including inline tables, table arrays, and multi-line strings."
+        ]
+      ]
+    },
+    {
       "slug": "css-clip-path-generator",
       "category": "dev",
       "icon": "✂️",
@@ -12676,6 +12774,94 @@
         [
           "What's the difference between CSV Validator and CSV Cleaner?",
           "Validator diagnoses issues without modifying data. Cleaner fixes issues. Use validator first, then cleaner."
+        ]
+      ]
+    },
+    {
+      "slug": "csv-column-filter",
+      "category": "text",
+      "icon": "📊",
+      "name_zh": "CSV 列选择器",
+      "name_en": "CSV Column Filter",
+      "short_zh": "选择、重命名、排序 CSV 列，快速提取需要的列并导出为新的 CSV",
+      "short_en": "Select, rename, reorder CSV columns — extract the columns you need and export as new CSV",
+      "keywords_zh": "CSV列选择,CSV列提取,CSV列重命名,CSV列排序,CSV列筛选,CSV列删除,CSV列操作,CSV列过滤,CSV列处理,CSV列调整,CSV列管理,CSV数据提取,CSV列选择器,在线CSV工具,CSV列编辑",
+      "keywords_en": "csv column selector, csv column filter, csv column extract, csv column rename, csv column reorder, csv column picker, csv column manager, csv column remover, csv column processor, csv column chooser, csv data extract, online csv tool, csv column picker, csv field selector",
+      "long_zh": "<p>免费的在线 <strong>CSV 列选择器</strong>，快速从 CSV 数据中选择、重命名和排序列。上传 CSV 数据后，可视化的列选择界面让你轻松勾选需要的列、调整顺序、重命名列名，然后一键导出处理后的 CSV。</p><p>适用于数据清洗中的列缩减、报表制作时只保留关键字段、API 数据预处理时调整列顺序、数据迁移时重命名列名映射等场景。支持自定义分隔符，支持表头识别。所有处理在浏览器本地完成，数据不会上传到服务器。</p>",
+      "long_en": "<p>Free online <strong>CSV Column Filter</strong> — quickly select, rename, and reorder columns from your CSV data. Upload your CSV, visually pick the columns you need, adjust their order, rename headers, and export the cleaned CSV with one click.</p><p>Perfect for data cleaning column reduction, report generation keeping only essential fields, API data preprocessing column reordering, and data migration column mapping. Supports custom delimiters. All processing is done locally in your browser.</p>",
+      "ui_zh": "<div style=\"margin-bottom:12px\"><label style=\"font-size:13px;font-weight:600\">输入 CSV</label><textarea id=\"ccf-input\" style=\"width:100%;min-height:180px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"name,email,role,department,salary&#10;Alice,alice@test.com,Developer,Engineering,85000&#10;Bob,bob@test.com,Designer,Creative,72000&#10;Charlie,charlie@test.com,Manager,Engineering,95000\"></textarea></div><div style=\"margin-bottom:12px;display:flex;flex-wrap:wrap;gap:12px;align-items:center\"><label>分隔符: <input type=\"text\" id=\"ccf-delimiter\" style=\"width:40px;font-family:monospace\" value=\",\" maxlength=\"2\"></label><label><input type=\"checkbox\" id=\"ccf-header\" checked> 首行为表头</label></div><div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px\"><button class=\"btn\" id=\"ccf-load\">加载列</button><button class=\"btn btn-secondary\" id=\"ccf-copy\">复制结果</button><button class=\"btn btn-secondary\" id=\"ccf-clear\">清空</button></div><div id=\"ccf-status\" style=\"margin-top:8px;font-size:13px;color:var(--text-dim)\"></div><div id=\"ccf-columns\" style=\"margin-top:12px\"></div><div style=\"margin-top:12px;display:flex;gap:8px;flex-wrap:wrap\"><button class=\"btn\" id=\"ccf-export\" disabled>导出选中列</button><button class=\"btn btn-secondary\" id=\"ccf-select-all\">全选</button><button class=\"btn btn-secondary\" id=\"ccf-deselect-all\">取消全选</button></div><label style=\"font-size:13px;font-weight:600;margin-top:16px;display:block\">输出</label><textarea id=\"ccf-output\" style=\"width:100%;min-height:180px;font-family:Consolas,monospace;font-size:13px;background:var(--bg)\" readonly placeholder=\"处理后的 CSV 将显示在这里...\"></textarea>",
+      "ui_en": "<div style=\"margin-bottom:12px\"><label style=\"font-size:13px;font-weight:600\">Input CSV</label><textarea id=\"ccf-input\" style=\"width:100%;min-height:180px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"name,email,role,department,salary&#10;Alice,alice@test.com,Developer,Engineering,85000&#10;Bob,bob@test.com,Designer,Creative,72000&#10;Charlie,charlie@test.com,Manager,Engineering,95000\"></textarea></div><div style=\"margin-bottom:12px;display:flex;flex-wrap:wrap;gap:12px;align-items:center\"><label>Delimiter: <input type=\"text\" id=\"ccf-delimiter\" style=\"width:40px;font-family:monospace\" value=\",\" maxlength=\"2\"></label><label><input type=\"checkbox\" id=\"ccf-header\" checked> First row is header</label></div><div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px\"><button class=\"btn\" id=\"ccf-load\">Load Columns</button><button class=\"btn btn-secondary\" id=\"ccf-copy\">Copy Result</button><button class=\"btn btn-secondary\" id=\"ccf-clear\">Clear</button></div><div id=\"ccf-status\" style=\"margin-top:8px;font-size:13px;color:var(--text-dim)\"></div><div id=\"ccf-columns\" style=\"margin-top:12px\"></div><div style=\"margin-top:12px;display:flex;gap:8px;flex-wrap:wrap\"><button class=\"btn\" id=\"ccf-export\" disabled>Export Selected</button><button class=\"btn btn-secondary\" id=\"ccf-select-all\">Select All</button><button class=\"btn btn-secondary\" id=\"ccf-deselect-all\">Deselect All</button></div><label style=\"font-size:13px;font-weight:600;margin-top:16px;display:block\">Output</label><textarea id=\"ccf-output\" style=\"width:100%;min-height:180px;font-family:Consolas,monospace;font-size:13px;background:var(--bg)\" readonly placeholder=\"Processed CSV will appear here...\"></textarea>",
+      "related": [
+        "csv-cleaner",
+        "csv-editor",
+        "csv-validator",
+        "csv-splitter",
+        "csv-to-json"
+      ],
+      "seo_title_zh": "CSV 列选择器 - 在线 CSV 列筛选与重命名工具 | AI 工具盒子",
+      "seo_title_en": "CSV Column Filter - Select, Rename, Reorder CSV Columns Online | AI Toolbox",
+      "features_zh": [
+        "可视化勾选需要保留的列",
+        "支持拖动调整列顺序",
+        "支持重命名列名",
+        "自定义分隔符",
+        "表头识别与处理",
+        "一键复制或下载结果",
+        "零数据上传，浏览器本地处理",
+        "大文件支持"
+      ],
+      "features_en": [
+        "Visual checkbox selection for columns",
+        "Drag to reorder columns",
+        "Rename columns on the fly",
+        "Custom delimiter support",
+        "Header row recognition",
+        "One-click copy or download",
+        "Zero data upload, browser local processing",
+        "Large file support"
+      ],
+      "faq_zh": [
+        [
+          "CSV 列选择器能做什么？",
+          "让你从 CSV 数据中选择需要的列、调整列的顺序、重命名列名，然后导出为新的 CSV 文件。"
+        ],
+        [
+          "支持多少列？",
+          "没有上限，取决于浏览器内存。通常支持数百列。"
+        ],
+        [
+          "数据会上传到服务器吗？",
+          "不会。所有处理在浏览器本地完成，无需上传。"
+        ],
+        [
+          "支持自定义分隔符吗？",
+          "支持。默认为逗号，可改成制表符、分号等。"
+        ],
+        [
+          "可以和 CSV 清洗工具配合使用吗？",
+          "可以。先用列选择器提取需要的列，再用清洗工具处理数据质量问题。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "What can CSV Column Filter do?",
+          "Select, reorder, rename columns from your CSV data, then export as a new CSV file."
+        ],
+        [
+          "How many columns are supported?",
+          "No limit, depends on browser memory. Usually supports hundreds of columns."
+        ],
+        [
+          "Is my data uploaded?",
+          "No. All processing is done locally in your browser."
+        ],
+        [
+          "Can I use custom delimiters?",
+          "Yes. Default is comma, supports tab, semicolon, etc."
+        ],
+        [
+          "Can I use it with CSV Cleaner?",
+          "Yes. Use Column Filter to extract columns first, then use Cleaner for data quality issues."
         ]
       ]
     },
