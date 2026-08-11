@@ -37,7 +37,9 @@
           "csv-dedupe",
           "csv-validator",
           "csv-splitter",
-          "csv-column-filter"
+          "csv-column-filter",
+          "text-filter",
+          "csv-row-filter"
         ]
       },
       "dev": {
@@ -13134,6 +13136,190 @@
       "ui_zh": "<div class=\"tool-controls\" style=\"max-width:600px;margin:0 auto\"><div style=\"margin-bottom:20px\"><input type=\"password\" id=\"ps-input\" placeholder=\"输入密码检测强度...\" style=\"width:100%;font-size:18px;padding:14px 16px;text-align:center;box-sizing:border-box\"><div style=\"display:flex;align-items:center;gap:12px;margin-top:12px\"><label style=\"font-size:13px;display:flex;align-items:center;gap:6px;cursor:pointer\"><input type=\"checkbox\" id=\"ps-toggle\"> 显示密码</label></div></div><div id=\"ps-strength-bar\" style=\"height:10px;border-radius:5px;background:var(--border);overflow:hidden;margin-bottom:16px\"><div id=\"ps-strength-fill\" style=\"height:100%;width:0%;border-radius:5px;transition:all 0.3s ease\"></div></div><div id=\"ps-label\" style=\"font-size:22px;font-weight:700;text-align:center;margin-bottom:16px\">—</div><div style=\"display:grid;grid-template-columns:1fr 1fr;gap:12px\"><div class=\"stat-card\" style=\"padding:12px;border-radius:8px;background:var(--bg-secondary);text-align:center\"><div style=\"font-size:11px;text-transform:uppercase;color:var(--text-secondary);margin-bottom:4px\">熵值</div><div id=\"ps-entropy\" style=\"font-size:18px;font-weight:700\">—</div></div><div class=\"stat-card\" style=\"padding:12px;border-radius:8px;background:var(--bg-secondary);text-align:center\"><div style=\"font-size:11px;text-transform:uppercase;color:var(--text-secondary);margin-bottom:4px\">字符数</div><div id=\"ps-length\" style=\"font-size:18px;font-weight:700\">0</div></div><div class=\"stat-card\" style=\"padding:12px;border-radius:8px;background:var(--bg-secondary);text-align:center;grid-column:span 2\"><div style=\"font-size:11px;text-transform:uppercase;color:var(--text-secondary);margin-bottom:4px\">离线破解时间估算</div><div id=\"ps-crack-time\" style=\"font-size:18px;font-weight:700\">—</div><div style=\"font-size:12px;color:var(--text-secondary);margin-top:4px\">快速哈希 / 慢速哈希 (bcrypt)</div></div></div><div style=\"margin-top:16px\"><h4 style=\"margin:0 0 8px 0;font-size:14px\">字符组成</h4><div id=\"ps-composition\" style=\"font-size:13px;display:flex;flex-wrap:wrap;gap:12px\"></div></div><div id=\"ps-warnings\" style=\"margin-top:12px\"></div><div style=\"margin-top:16px;display:flex;gap:10px\"><button id=\"ps-copy-btn\" class=\"btn\">复制结果</button><button id=\"ps-clear-btn\" class=\"btn\">清空</button></div></div>",
       "ui_en": "<div class=\"tool-controls\" style=\"max-width:600px;margin:0 auto\"><div style=\"margin-bottom:20px\"><input type=\"password\" id=\"ps-input\" placeholder=\"Type a password to check...\" style=\"width:100%;font-size:18px;padding:14px 16px;text-align:center;box-sizing:border-box\"><div style=\"display:flex;align-items:center;gap:12px;margin-top:12px\"><label style=\"font-size:13px;display:flex;align-items:center;gap:6px;cursor:pointer\"><input type=\"checkbox\" id=\"ps-toggle\"> Show password</label></div></div><div id=\"ps-strength-bar\" style=\"height:10px;border-radius:5px;background:var(--border);overflow:hidden;margin-bottom:16px\"><div id=\"ps-strength-fill\" style=\"height:100%;width:0%;border-radius:5px;transition:all 0.3s ease\"></div></div><div id=\"ps-label\" style=\"font-size:22px;font-weight:700;text-align:center;margin-bottom:16px\">—</div><div style=\"display:grid;grid-template-columns:1fr 1fr;gap:12px\"><div class=\"stat-card\" style=\"padding:12px;border-radius:8px;background:var(--bg-secondary);text-align:center\"><div style=\"font-size:11px;text-transform:uppercase;color:var(--text-secondary);margin-bottom:4px\">Entropy</div><div id=\"ps-entropy\" style=\"font-size:18px;font-weight:700\">—</div></div><div class=\"stat-card\" style=\"padding:12px;border-radius:8px;background:var(--bg-secondary);text-align:center\"><div style=\"font-size:11px;text-transform:uppercase;color:var(--text-secondary);margin-bottom:4px\">Length</div><div id=\"ps-length\" style=\"font-size:18px;font-weight:700\">0</div></div><div class=\"stat-card\" style=\"padding:12px;border-radius:8px;background:var(--bg-secondary);text-align:center;grid-column:span 2\"><div style=\"font-size:11px;text-transform:uppercase;color:var(--text-secondary);margin-bottom:4px\">Estimated Crack Time</div><div id=\"ps-crack-time\" style=\"font-size:18px;font-weight:700\">—</div><div style=\"font-size:12px;color:var(--text-secondary);margin-top:4px\">Fast hash / Slow hash (bcrypt)</div></div></div><div style=\"margin-top:16px\"><h4 style=\"margin:0 0 8px 0;font-size:14px\">Character Composition</h4><div id=\"ps-composition\" style=\"font-size:13px;display:flex;flex-wrap:wrap;gap:12px\"></div></div><div id=\"ps-warnings\" style=\"margin-top:12px\"></div><div style=\"margin-top:16px;display:flex;gap:10px\"><button id=\"ps-copy-btn\" class=\"btn\">Copy Result</button><button id=\"ps-clear-btn\" class=\"btn\">Clear</button></div></div>",
       "name_en": "Password Strength"
+    },
+    {
+      "slug": "text-filter",
+      "category": "text",
+      "icon": "🔍",
+      "name_zh": "文本过滤器",
+      "name_en": "Text Filter (Grep)",
+      "short_zh": "按关键词或正则表达式过滤文本行，快速提取或排除匹配的行，支持大小写和反向匹配",
+      "short_en": "Filter text lines by keyword or regex — quickly extract or exclude matching lines, with case-insensitive and inverse matching",
+      "keywords_zh": "文本过滤,文本筛选,行过滤,grep工具,在线grep,关键词筛选,正则过滤,文本行提取,文本行排除,文本搜索,行匹配,在线文本过滤,文本处理,文本筛选器,文本行过滤",
+      "keywords_en": "text filter, grep online, line filter, keyword filter, regex filter, text search, line matching, extract lines, exclude lines, online grep, text processor, string filter, pattern matcher, text filtering tool, line grep",
+      "long_zh": "<p>免费的在线 <strong>文本过滤器</strong>，类似 grep 但全部在浏览器本地运行。输入文本后，通过关键词或正则表达式快速筛选、提取或排除匹配的行，实时预览过滤结果。</p><p>支持大小写敏感/不敏感切换、反向匹配（排除匹配行）、正则表达式模式。适用于日志分析时的行提取、代码搜索时的快速定位、数据清洗中的行筛选、配置文件的关键行查找等场景。所有处理在浏览器本地完成，数据不会上传到服务器。</p>",
+      "long_en": "<p>Free online <strong>Text Filter (Grep)</strong> — like grep, but runs entirely in your browser. Paste your text, use keywords or regex patterns to filter, extract, or exclude matching lines with real-time preview.</p><p>Supports case-sensitive/insensitive toggle, inverse matching (exclude matches), and regex patterns. Perfect for log analysis line extraction, code search, data cleaning line filtering, and config file key line lookup. All processing is done locally in your browser.</p>",
+      "ui_zh": "<div style=\"margin-bottom:12px\"><label style=\"font-size:13px;font-weight:600\">输入文本</label><textarea id=\"tf-input\" style=\"width:100%;min-height:180px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"每行粘贴一段文本，如日志、配置、数据等&#10;• error: connection timeout at 192.168.1.1&#10;• info: server started on port 8080&#10;• warn: disk usage at 85%&#10;• error: database connection failed&#10;• info: request completed in 120ms\"></textarea></div><div style=\"margin-bottom:12px;display:flex;flex-wrap:wrap;gap:12px;align-items:center\"><label>模式: <input type=\"text\" id=\"tf-pattern\" style=\"width:200px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"关键词或正则表达式\"></label><label style=\"display:flex;align-items:center;gap:6px;cursor:pointer\"><input type=\"checkbox\" id=\"tf-regex\"> 正则</label><label style=\"display:flex;align-items:center;gap:6px;cursor:pointer\"><input type=\"checkbox\" id=\"tf-case\"> 区分大小写</label><label style=\"display:flex;align-items:center;gap:6px;cursor:pointer\"><input type=\"checkbox\" id=\"tf-invert\"> 反向匹配</label></div><div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px\"><button class=\"btn\" id=\"tf-filter\">过滤</button><button class=\"btn btn-secondary\" id=\"tf-copy\">复制结果</button><button class=\"btn btn-secondary\" id=\"tf-clear\">清空</button></div><div id=\"tf-stats\" style=\"margin-top:4px;font-size:13px;color:var(--text-dim)\"></div><label style=\"font-size:13px;font-weight:600;margin-top:12px;display:block\">过滤结果</label><textarea id=\"tf-output\" style=\"width:100%;min-height:180px;font-family:Consolas,monospace;font-size:13px;background:var(--bg)\" readonly placeholder=\"过滤后的行将显示在这里...\"></textarea>",
+      "ui_en": "<div style=\"margin-bottom:12px\"><label style=\"font-size:13px;font-weight:600\">Input Text</label><textarea id=\"tf-input\" style=\"width:100%;min-height:180px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"Paste one line per entry — logs, config, data, etc.&#10;• error: connection timeout at 192.168.1.1&#10;• info: server started on port 8080&#10;• warn: disk usage at 85%&#10;• error: database connection failed&#10;• info: request completed in 120ms\"></textarea></div><div style=\"margin-bottom:12px;display:flex;flex-wrap:wrap;gap:12px;align-items:center\"><label>Pattern: <input type=\"text\" id=\"tf-pattern\" style=\"width:200px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"Keyword or regex pattern\"></label><label style=\"display:flex;align-items:center;gap:6px;cursor:pointer\"><input type=\"checkbox\" id=\"tf-regex\"> Regex</label><label style=\"display:flex;align-items:center;gap:6px;cursor:pointer\"><input type=\"checkbox\" id=\"tf-case\"> Case sensitive</label><label style=\"display:flex;align-items:center;gap:6px;cursor:pointer\"><input type=\"checkbox\" id=\"tf-invert\"> Invert match</label></div><div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px\"><button class=\"btn\" id=\"tf-filter\">Filter</button><button class=\"btn btn-secondary\" id=\"tf-copy\">Copy Result</button><button class=\"btn btn-secondary\" id=\"tf-clear\">Clear</button></div><div id=\"tf-stats\" style=\"margin-top:4px;font-size:13px;color:var(--text-dim)\"></div><label style=\"font-size:13px;font-weight:600;margin-top:12px;display:block\">Filtered Lines</label><textarea id=\"tf-output\" style=\"width:100%;min-height:180px;font-family:Consolas,monospace;font-size:13px;background:var(--bg)\" readonly placeholder=\"Matching lines will appear here...\"></textarea>",
+      "related": [
+        "remove-lines",
+        "text-replace",
+        "text-sort",
+        "text-dedup",
+        "text-statistics"
+      ],
+      "seo_title_zh": "文本过滤器 (Grep) - 在线文本行筛选与搜索工具 | AI 工具盒子",
+      "seo_title_en": "Text Filter (Grep) - Online Line Filter & Search Tool | AI Toolbox",
+      "features_zh": [
+        "关键词或正则表达式过滤",
+        "大小写敏感/不敏感切换",
+        "反向匹配（排除模式匹配行）",
+        "实时过滤结果预览",
+        "显示匹配行数和统计",
+        "一键复制过滤结果",
+        "零数据上传，浏览器本地处理",
+        "支持大文本"
+      ],
+      "features_en": [
+        "Keyword or regex pattern filtering",
+        "Case-sensitive/insensitive toggle",
+        "Inverse match (exclude matching lines)",
+        "Real-time filter preview",
+        "Match count and statistics display",
+        "One-click copy result",
+        "Zero data upload, browser local processing",
+        "Large text support"
+      ],
+      "faq_zh": [
+        [
+          "文本过滤器能做什么？",
+          "按关键词或正则表达式筛选文本行，快速提取需要的行或排除不需要的行。类似 grep 命令的在线版。"
+        ],
+        [
+          "支持正则表达式吗？",
+          "支持。勾选「正则」后可以使用 JavaScript 正则表达式语法，如 \\d+、[a-z]、^error 等。"
+        ],
+        [
+          "反向匹配是什么意思？",
+          "反向匹配会排除所有匹配模式的行，只保留不匹配的行。"
+        ],
+        [
+          "数据会上传到服务器吗？",
+          "不会。所有处理在浏览器本地完成，无需上传。"
+        ],
+        [
+          "和移除行工具有什么区别？",
+          "移除行工具按行号或位置操作，文本过滤器按内容匹配，适合从大量数据中提取特定模式的行。"
+        ],
+        [
+          "可以和其他工具配合使用吗？",
+          "可以。先过滤再排序、去重或统计，非常适合数据分析工作流。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "What can Text Filter do?",
+          "Filter text lines by keyword or regex pattern — quickly extract matching lines or exclude unwanted ones. Like an online grep."
+        ],
+        [
+          "Does it support regex?",
+          "Yes. Enable the Regex option to use JavaScript regex syntax like \\d+, [a-z], ^error, etc."
+        ],
+        [
+          "What is inverse match?",
+          "Inverse match excludes all lines that match the pattern, keeping only non-matching lines."
+        ],
+        [
+          "Is my data uploaded?",
+          "No. All processing is done locally in your browser."
+        ],
+        [
+          "How is this different from Remove Lines?",
+          "Remove Lines operates by line number/position. Text Filter matches by content — ideal for extracting specific patterns from large datasets."
+        ],
+        [
+          "Can I use it with other tools?",
+          "Yes. Filter first, then sort, deduplicate, or analyze — perfect for data analysis workflows."
+        ]
+      ]
+    },
+    {
+      "slug": "csv-row-filter",
+      "category": "text",
+      "icon": "🔎",
+      "name_zh": "CSV 行过滤器",
+      "name_en": "CSV Row Filter",
+      "short_zh": "按列值条件筛选 CSV 行，支持数字比较、文本匹配、多条件组合过滤",
+      "short_en": "Filter CSV rows by column value conditions — supports numeric comparison, text matching, and multi-condition filtering",
+      "keywords_zh": "CSV行过滤,CSV行筛选,CSV条件过滤,CSV数据筛选,CSV行查询,CSV过滤,CSV行选择,CSV数据过滤,CSV条件筛选,CSV查询工具,CSV行提取,CSV行匹配,在线CSV过滤,CSV数据清洗,CSV行处理",
+      "keywords_en": "csv row filter, csv row selector, csv condition filter, csv data filter, csv query, csv filter tool, csv row extraction, csv row matching, online csv filter, csv data cleaning, csv row processor, csv conditional filter, csv query tool",
+      "long_zh": "<p>免费的在线 <strong>CSV 行过滤器</strong>，按列值条件快速筛选 CSV 数据中的行。上传 CSV 后，选择列和条件类型（等于、包含、大于、小于、不为空等），输入值即可实时过滤行。</p><p>支持文本匹配（等于、包含、开头为、结尾为）、数字比较（大于、小于、等于、范围）、空值/非空判断、正则表达式匹配。适用于数据清洗时按条件保留行、数据分析时的子集提取、报表生成时的条件筛选等场景。所有处理在浏览器本地完成，数据不会上传到服务器。</p>",
+      "long_en": "<p>Free online <strong>CSV Row Filter</strong> — filter CSV rows by column value conditions. Load your CSV, pick a column and condition type (equals, contains, greater than, less than, not empty, etc.), enter a value, and filter rows in real time.</p><p>Supports text matching (equals, contains, starts with, ends with), numeric comparison (greater than, less than, equals, range), empty/not-empty check, and regex matching. Perfect for data cleaning condition-based filtering, analysis subset extraction, and report conditional filtering. All processing is done locally in your browser.</p>",
+      "ui_zh": "<div style=\"margin-bottom:12px\"><label style=\"font-size:13px;font-weight:600\">输入 CSV</label><textarea id=\"crf-input\" style=\"width:100%;min-height:150px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"name,age,city,department,salary&#10;Alice,30,Beijing,Engineering,85000&#10;Bob,25,Shanghai,Design,72000&#10;Charlie,35,Beijing,Engineering,95000&#10;Diana,28,Shenzhen,Marketing,65000\"></textarea></div><div style=\"margin-bottom:12px;display:flex;flex-wrap:wrap;gap:12px;align-items:center\"><label>分隔符: <input type=\"text\" id=\"crf-delimiter\" style=\"width:40px;font-family:monospace\" value=\",\" maxlength=\"2\"></label><label><input type=\"checkbox\" id=\"crf-header\" checked> 首行为表头</label></div><div style=\"margin-bottom:12px;padding:14px;background:var(--bg-secondary);border-radius:8px\"><div style=\"display:flex;flex-wrap:wrap;gap:10px;align-items:center\"><label style=\"font-size:13px;font-weight:600\">列: <select id=\"crf-column\" style=\"font-size:13px;padding:4px 8px\"></select></label><label style=\"font-size:13px;font-weight:600\">条件: <select id=\"crf-operator\" style=\"font-size:13px;padding:4px 8px\"><option value=\"equals\">等于</option><option value=\"not-equals\">不等于</option><option value=\"contains\">包含</option><option value=\"starts-with\">开头为</option><option value=\"ends-with\">结尾为</option><option value=\"greater-than\">大于</option><option value=\"less-than\">小于</option><option value=\"greater-equal\">大于等于</option><option value=\"less-equal\">小于等于</option><option value=\"range\">在范围内</option><option value=\"regex\">正则匹配</option><option value=\"empty\">为空</option><option value=\"not-empty\">不为空</option></select></label><label style=\"font-size:13px;font-weight:600\">值: <input type=\"text\" id=\"crf-value\" style=\"width:160px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"过滤值\"></label><button class=\"btn\" id=\"crf-filter\" style=\"padding:6px 16px\">过滤</button></div></div><div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px\"><button class=\"btn btn-secondary\" id=\"crf-copy\">复制结果</button><button class=\"btn btn-secondary\" id=\"crf-clear\">清空</button></div><div id=\"crf-stats\" style=\"margin-top:4px;font-size:13px;color:var(--text-dim)\"></div><label style=\"font-size:13px;font-weight:600;margin-top:12px;display:block\">过滤结果</label><textarea id=\"crf-output\" style=\"width:100%;min-height:180px;font-family:Consolas,monospace;font-size:13px;background:var(--bg)\" readonly placeholder=\"过滤后的行将显示在这里...\"></textarea>",
+      "ui_en": "<div style=\"margin-bottom:12px\"><label style=\"font-size:13px;font-weight:600\">Input CSV</label><textarea id=\"crf-input\" style=\"width:100%;min-height:150px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"name,age,city,department,salary&#10;Alice,30,Beijing,Engineering,85000&#10;Bob,25,Shanghai,Design,72000&#10;Charlie,35,Beijing,Engineering,95000&#10;Diana,28,Shenzhen,Marketing,65000\"></textarea></div><div style=\"margin-bottom:12px;display:flex;flex-wrap:wrap;gap:12px;align-items:center\"><label>Delimiter: <input type=\"text\" id=\"crf-delimiter\" style=\"width:40px;font-family:monospace\" value=\",\" maxlength=\"2\"></label><label><input type=\"checkbox\" id=\"crf-header\" checked> First row is header</label></div><div style=\"margin-bottom:12px;padding:14px;background:var(--bg-secondary);border-radius:8px\"><div style=\"display:flex;flex-wrap:wrap;gap:10px;align-items:center\"><label style=\"font-size:13px;font-weight:600\">Column: <select id=\"crf-column\" style=\"font-size:13px;padding:4px 8px\"></select></label><label style=\"font-size:13px;font-weight:600\">Condition: <select id=\"crf-operator\" style=\"font-size:13px;padding:4px 8px\"><option value=\"equals\">Equals</option><option value=\"not-equals\">Not Equals</option><option value=\"contains\">Contains</option><option value=\"starts-with\">Starts With</option><option value=\"ends-with\">Ends With</option><option value=\"greater-than\">Greater Than</option><option value=\"less-than\">Less Than</option><option value=\"greater-equal\">Greater or Equal</option><option value=\"less-equal\">Less or Equal</option><option value=\"range\">In Range</option><option value=\"regex\">Regex Match</option><option value=\"empty\">Is Empty</option><option value=\"not-empty\">Not Empty</option></select></label><label style=\"font-size:13px;font-weight:600\">Value: <input type=\"text\" id=\"crf-value\" style=\"width:160px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"Filter value\"></label><button class=\"btn\" id=\"crf-filter\" style=\"padding:6px 16px\">Filter</button></div></div><div style=\"display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px\"><button class=\"btn btn-secondary\" id=\"crf-copy\">Copy Result</button><button class=\"btn btn-secondary\" id=\"crf-clear\">Clear</button></div><div id=\"crf-stats\" style=\"margin-top:4px;font-size:13px;color:var(--text-dim)\"></div><label style=\"font-size:13px;font-weight:600;margin-top:12px;display:block\">Filtered Rows</label><textarea id=\"crf-output\" style=\"width:100%;min-height:180px;font-family:Consolas,monospace;font-size:13px;background:var(--bg)\" readonly placeholder=\"Filtered rows will appear here...\"></textarea>",
+      "related": [
+        "csv-column-filter",
+        "csv-cleaner",
+        "csv-editor",
+        "csv-validator",
+        "csv-dedupe"
+      ],
+      "seo_title_zh": "CSV 行过滤器 - 在线 CSV 按条件筛选行工具 | AI 工具盒子",
+      "seo_title_en": "CSV Row Filter - Online CSV Row Filtering Tool | AI Toolbox",
+      "features_zh": [
+        "文本匹配（等于、包含、开头为、结尾为）",
+        "数字比较（大于、小于、等于、范围）",
+        "正则表达式匹配",
+        "空值/非空判断",
+        "自定义分隔符",
+        "支持表头识别",
+        "实时过滤结果预览",
+        "零数据上传，浏览器本地处理"
+      ],
+      "features_en": [
+        "Text matching (equals, contains, starts with, ends with)",
+        "Numeric comparison (greater than, less than, equals, range)",
+        "Regex matching",
+        "Empty/not-empty check",
+        "Custom delimiter support",
+        "Header row recognition",
+        "Real-time filter preview",
+        "Zero data upload, browser local processing"
+      ],
+      "faq_zh": [
+        [
+          "CSV 行过滤器能做什么？",
+          "按列值条件筛选 CSV 行，如提取所有年龄大于30的行，或所有城市包含「北京」的行。"
+        ],
+        [
+          "支持哪些条件类型？",
+          "支持等于、不等于、包含、开头为、结尾为、大于、小于、大于等于、小于等于、范围、正则匹配、为空、不为空。"
+        ],
+        [
+          "数据会上传到服务器吗？",
+          "不会。所有处理在浏览器本地完成，无需上传。"
+        ],
+        [
+          "支持自定义分隔符吗？",
+          "支持。默认为逗号，可改成制表符、分号等。"
+        ],
+        [
+          "可以和列选择器配合使用吗？",
+          "可以。先用行过滤器按条件筛选行，再用列选择器提取需要的列。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "What can CSV Row Filter do?",
+          "Filter CSV rows by column value conditions, e.g., extract all rows where age > 30, or city contains 'Beijing'."
+        ],
+        [
+          "What condition types are supported?",
+          "Equals, not equals, contains, starts with, ends with, greater than, less than, greater or equal, less or equal, range, regex match, empty, not empty."
+        ],
+        [
+          "Is my data uploaded?",
+          "No. All processing is done locally in your browser."
+        ],
+        [
+          "Can I use custom delimiters?",
+          "Yes. Default is comma, supports tab, semicolon, etc."
+        ],
+        [
+          "Can I use it with Column Filter?",
+          "Yes. Use Row Filter to filter by conditions first, then Column Filter to pick the columns you need."
+        ]
+      ]
     }
   ]
 }

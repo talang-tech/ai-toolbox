@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>CSV Row Filter - CSV Row Filter - Online CSV Row Filtering Tool | AI Toolbox | AI Toolbox</title>
+<meta name="description" content="Free online csv row filter. Filter CSV rows by column value conditions — supports numeric comparison, text matching, and multi-condition filtering. Fast, secure, and works in your browser without downloading.">
+<meta name="keywords" content="csv row filter, csv row selector, csv condition filter, csv data filter, csv query, csv filter tool, csv row extraction, csv row matching, online csv filter, csv data cleaning, csv row processor, csv conditional filter, csv query tool">
+<link rel="canonical" href="https://tools.talang.fun/en/tools/csv-row-filter">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/csv-row-filter">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/csv-row-filter">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/csv-row-filter">
+<meta property="og:title" content="CSV Row Filter - CSV Row Filter - Online CSV Row Filtering Tool | AI Toolbox | AI Toolbox">
+<meta property="og:description" content="Free online csv row filter. Filter CSV rows by column value conditions — supports numeric comparison, text matching, and multi-condition filtering. Fast, secure, and works in your browser without downloading.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/en/tools/csv-row-filter">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "CSV Row Filter", "description": "Free online csv row filter. Filter CSV rows by column value conditions — supports numeric comparison, text matching, and multi-condition filtering. Fast, secure, and works in your browser without downloading.", "url": "https://tools.talang.fun/en/tools/csv-row-filter", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "Filter CSV rows by column value conditions — supports numeric comparison, text matching, and multi-condition filtering", "inLanguage": "en", "author": {"@type": "Organization", "name": "AI Toolbox"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/en/" class="logo"><span class="logo-icon">🛠️</span>AI Toolbox</a>
+    <nav class="nav">
+      <a href="/en/">Home</a>
+      <a href="/en/#tools">All Tools</a>
+      <a href="/en/blog/">Blog</a>
+      <a href="/en/about">About</a>
+      <a href="/en/sponsor">Sponsor</a>
+      <a href="https://tools.talang.fun/tools/csv-row-filter" class="lang-switch">中文</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🔎</div>
+  <h1>CSV Row Filter</h1>
+  <p>Filter CSV rows by column value conditions — supports numeric comparison, text matching, and multi-condition filtering</p>
+</div>
+<div class="tool-panel">
+<div style="margin-bottom:12px"><label style="font-size:13px;font-weight:600">Input CSV</label><textarea id="crf-input" style="width:100%;min-height:150px;font-family:Consolas,monospace;font-size:13px" placeholder="name,age,city,department,salary&#10;Alice,30,Beijing,Engineering,85000&#10;Bob,25,Shanghai,Design,72000&#10;Charlie,35,Beijing,Engineering,95000&#10;Diana,28,Shenzhen,Marketing,65000"></textarea></div><div style="margin-bottom:12px;display:flex;flex-wrap:wrap;gap:12px;align-items:center"><label>Delimiter: <input type="text" id="crf-delimiter" style="width:40px;font-family:monospace" value="," maxlength="2"></label><label><input type="checkbox" id="crf-header" checked> First row is header</label></div><div style="margin-bottom:12px;padding:14px;background:var(--bg-secondary);border-radius:8px"><div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center"><label style="font-size:13px;font-weight:600">Column: <select id="crf-column" style="font-size:13px;padding:4px 8px"></select></label><label style="font-size:13px;font-weight:600">Condition: <select id="crf-operator" style="font-size:13px;padding:4px 8px"><option value="equals">Equals</option><option value="not-equals">Not Equals</option><option value="contains">Contains</option><option value="starts-with">Starts With</option><option value="ends-with">Ends With</option><option value="greater-than">Greater Than</option><option value="less-than">Less Than</option><option value="greater-equal">Greater or Equal</option><option value="less-equal">Less or Equal</option><option value="range">In Range</option><option value="regex">Regex Match</option><option value="empty">Is Empty</option><option value="not-empty">Not Empty</option></select></label><label style="font-size:13px;font-weight:600">Value: <input type="text" id="crf-value" style="width:160px;font-family:Consolas,monospace;font-size:13px" placeholder="Filter value"></label><button class="btn" id="crf-filter" style="padding:6px 16px">Filter</button></div></div><div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px"><button class="btn btn-secondary" id="crf-copy">Copy Result</button><button class="btn btn-secondary" id="crf-clear">Clear</button></div><div id="crf-stats" style="margin-top:4px;font-size:13px;color:var(--text-dim)"></div><label style="font-size:13px;font-weight:600;margin-top:12px;display:block">Filtered Rows</label><textarea id="crf-output" style="width:100%;min-height:180px;font-family:Consolas,monospace;font-size:13px;background:var(--bg)" readonly placeholder="Filtered rows will appear here..."></textarea>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>About this tool</h2>
+  <p>Free online <strong>CSV Row Filter</strong> — filter CSV rows by column value conditions. Load your CSV, pick a column and condition type (equals, contains, greater than, less than, not empty, etc.), enter a value, and filter rows in real time.</p><p>Supports text matching (equals, contains, starts with, ends with), numeric comparison (greater than, less than, equals, range), empty/not-empty check, and regex matching. Perfect for data cleaning condition-based filtering, analysis subset extraction, and report conditional filtering. All processing is done locally in your browser.</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>Key Features</h2><ul><li>Text matching (equals, contains, starts with, ends with)</li><li>Numeric comparison (greater than, less than, equals, range)</li><li>Regex matching</li><li>Empty/not-empty check</li><li>Custom delimiter support</li><li>Header row recognition</li><li>Real-time filter preview</li><li>Zero data upload, browser local processing</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>Frequently Asked Questions</h2><h3 style="margin-top:20px;margin-bottom:8px">What can CSV Row Filter do?</h3><p>Filter CSV rows by column value conditions, e.g., extract all rows where age > 30, or city contains 'Beijing'.</p><h3 style="margin-top:20px;margin-bottom:8px">What condition types are supported?</h3><p>Equals, not equals, contains, starts with, ends with, greater than, less than, greater or equal, less or equal, range, regex match, empty, not empty.</p><h3 style="margin-top:20px;margin-bottom:8px">Is my data uploaded?</h3><p>No. All processing is done locally in your browser.</p><h3 style="margin-top:20px;margin-bottom:8px">Can I use custom delimiters?</h3><p>Yes. Default is comma, supports tab, semicolon, etc.</p><h3 style="margin-top:20px;margin-bottom:8px">Can I use it with Column Filter?</h3><p>Yes. Use Row Filter to filter by conditions first, then Column Filter to pick the columns you need.</p></section>
+<section class="related"><h3>Related Tools</h3><div class="tools-grid"><a href="/en/tools/csv-column-filter" class="tool-card"><div class="icon">📊</div><h3>CSV Column Filter</h3><p>Select, rename, reorder CSV columns — extract the columns you need and export as new CSV</p></a><a href="/en/tools/csv-cleaner" class="tool-card"><div class="icon">🧹</div><h3>CSV Cleaner</h3><p>Trim spaces, remove duplicates/empty rows, normalize CSV format</p></a><a href="/en/tools/csv-editor" class="tool-card"><div class="icon">📊</div><h3>CSV Editor</h3><p>Edit CSV data online — visual table editor, add/remove rows/columns, live preview</p></a><a href="/en/tools/csv-validator" class="tool-card"><div class="icon">✅</div><h3>CSV Validator</h3><p>Validate CSV data for format errors, column consistency, quote matching, empty values and quality issues</p></a><a href="/en/tools/csv-dedupe" class="tool-card"><div class="icon">🔍</div><h3>CSV Deduplicate</h3><p>Remove duplicate rows from CSV with column-based dedup and custom strategies</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>Need a private toolbox or custom browser tool?</h2>
+  <p>AI Toolbox can be adapted for internal workflows, private deployment, sponsored categories, or custom privacy-first utilities.</p>
+  <p><a href="/en/sponsor" data-event="conversion_cta_click" data-label="en_partner_custom_tool_cta">View partnership and custom tool options →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/csv-row-filter.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI Toolbox · Free online AI & developer tools · <a href='/en/about'>About</a> · <a href='/en/sponsor'>Sponsor</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('Copied!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>

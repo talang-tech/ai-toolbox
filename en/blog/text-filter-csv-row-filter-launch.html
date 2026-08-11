@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>Text Filter and CSV Row Filter Launched | AI Toolbox</title>
+<meta name="description" content="AI Toolbox adds Text Filter (Grep) and CSV Row Filter — filter text and CSV data efficiently in your browser, no data upload required.">
+<meta name="keywords" content="">
+<link rel="canonical" href="https://tools.talang.fun/en/blog/text-filter-csv-row-filter-launch">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/blog/text-filter-csv-row-filter-launch">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/blog/text-filter-csv-row-filter-launch">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/blog/text-filter-csv-row-filter-launch">
+<meta property="og:title" content="Text Filter and CSV Row Filter Launched | AI Toolbox">
+<meta property="og:description" content="AI Toolbox adds Text Filter (Grep) and CSV Row Filter — filter text and CSV data efficiently in your browser, no data upload required.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/en/blog/text-filter-csv-row-filter-launch">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Text Filter and CSV Row Filter Launched", "description": "AI Toolbox adds Text Filter (Grep) and CSV Row Filter — filter text and CSV data efficiently in your browser, no data upload required.", "author": {"@type": "Organization", "name": "AI Toolbox"}, "datePublished": "2026-08-12", "url": "https://tools.talang.fun/en/blog/text-filter-csv-row-filter-launch"}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/en/" class="logo"><span class="logo-icon">🛠️</span>AI Toolbox</a>
+    <nav class="nav">
+      <a href="/en/">Home</a>
+      <a href="/en/#tools">All Tools</a>
+      <a href="/en/blog/">Blog</a>
+      <a href="/en/about">About</a>
+      <a href="/en/sponsor">Sponsor</a>
+      <a href="https://tools.talang.fun/blog/text-filter-csv-row-filter-launch" class="lang-switch">中文</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<article class="article">
+  <p style="margin-bottom:8px"><a href="/en/blog/" style="color:var(--muted)">← Back to blog</a></p>
+  <h1>Text Filter and CSV Row Filter Launched</h1>
+  <p style="color:var(--muted);margin-bottom:24px">2026-08-12 · 5 min read</p>
+  <h1>Text Filter and CSV Row Filter Launched</h1>
+<p>Today, AI Toolbox adds two data processing tools: <strong>Text Filter (Grep)</strong> and <strong>CSV Row Filter</strong>, covering text and structured data filtering needs.</p>
+<h2>🔍 Text Filter (Grep)</h2>
+<p>If you use grep on the command line to search through logs, you can now do the same right in your browser. Our <strong>Text Filter</strong> brings a fully local grep experience:</p>
+<ul>
+<li><strong>Keyword filtering</strong>: type your search term, instantly filter matching lines</li>
+<li><strong>Regex support</strong>: enable the Regex option for JavaScript regex patterns like <code>^error</code>, <code>\d+\.\d+\.\d+\.\d+</code> for IP matching</li>
+<li><strong>Case control</strong>: toggle case-sensitive matching on/off</li>
+<li><strong>Inverse match</strong>: exclude matching lines — equivalent to grep's <code>-v</code> flag</li>
+<li><strong>Real-time stats</strong>: view total lines, matched lines, and excluded lines</li>
+</ul>
+<h3>Use Cases</h3>
+<p><strong>Log analysis:</strong> Extract all error lines from log files:</p>
+<pre><code class="lang-">
+Pattern: ^error
+Enable Regex and Case sensitive
+→ Keeps only lines starting with "error"
+</code></pre>
+<p><strong>Code search:</strong> Find all function definitions in a code snippet:</p>
+<pre><code class="lang-">
+Pattern: function\s+\w+
+Enable Regex
+→ Extracts all function declarations
+</code></pre>
+<p><strong>Data cleaning:</strong> Exclude lines containing a keyword (inverse match):</p>
+<pre><code class="lang-">
+Pattern: deprecated
+Enable Inverse match
+→ Excludes all lines containing "deprecated"
+</code></pre>
+<h2>🔎 CSV Row Filter</h2>
+<p>We already have CSV Column Filter for selecting columns. But what if you need to filter rows by column value conditions? That's what CSV Row Filter does.</p>
+<h3>13 Condition Types</h3>
+<table><thead><tr>
+<th>Condition</th>
+<th>Description</th>
+<th>Example</th>
+</tr></thead><tbody>
+<tr>
+<td>Equals</td>
+<td>Exact match</td>
+<td>column = "Beijing"</td>
+</tr>
+<tr>
+<td>Not Equals</td>
+<td>Exclude specific value</td>
+<td>column ≠ "test"</td>
+</tr>
+<tr>
+<td>Contains</td>
+<td>Substring match</td>
+<td>column contains "Engineering"</td>
+</tr>
+<tr>
+<td>Starts With</td>
+<td>Prefix match</td>
+<td>column starts with "A"</td>
+</tr>
+<tr>
+<td>Ends With</td>
+<td>Suffix match</td>
+<td>column ends with ".com"</td>
+</tr>
+<tr>
+<td>Greater Than</td>
+<td>Numeric comparison</td>
+<td>age > 30</td>
+</tr>
+<tr>
+<td>Less Than</td>
+<td>Numeric comparison</td>
+<td>age < 18</td>
+</tr>
+<tr>
+<td>Greater or Equal</td>
+<td>Numeric comparison</td>
+<td>score ≥ 60</td>
+</tr>
+<tr>
+<td>Less or Equal</td>
+<td>Numeric comparison</td>
+<td>score ≤ 100</td>
+</tr>
+<tr>
+<td>In Range</td>
+<td>Numeric range</td>
+<td>salary 50000-100000</td>
+</tr>
+<tr>
+<td>Regex Match</td>
+<td>Regex pattern</td>
+<td>match email format</td>
+</tr>
+<tr>
+<td>Is Empty</td>
+<td>Empty value filter</td>
+<td>find empty cells</td>
+</tr>
+<tr>
+<td>Not Empty</td>
+<td>Non-empty filter</td>
+<td>keep rows with values</td>
+</tr>
+</tbody></table>
+<h3>Use Cases</h3>
+<p><strong>Salary filter:</strong> Extract employees with salary between 50000-100000:</p>
+<pre><code class="lang-">
+Column: salary → Condition: In Range → Value: 50000-100000
+</code></pre>
+<p><strong>Department filter:</strong> Keep only Engineering rows:</p>
+<pre><code class="lang-">
+Column: department → Condition: Equals → Value: Engineering
+</code></pre>
+<p><strong>Data cleaning:</strong> Find all records where city is not empty:</p>
+<pre><code class="lang-">
+Column: city → Condition: Not Empty
+</code></pre>
+<h2>Privacy First, Local Processing</h2>
+<p>Both tools follow AI Toolbox's core principle: <strong>all data is processed locally in your browser, never uploaded to a server.</strong> Your logs, CSV data, and code snippets never leave your device.</p>
+<h2>🌐 Related Tools</h2>
+<ul>
+<li><a href="/en/tools/csv-column-filter.html">CSV Column Filter</a> — Select, rename, reorder CSV columns</li>
+<li><a href="/en/tools/csv-cleaner.html">CSV Cleaner</a> — Clean CSV data quality issues</li>
+<li><a href="/en/tools/csv-dedupe.html">CSV Deduplicator</a> — Remove duplicate CSV rows</li>
+<li><a href="/en/tools/csv-editor.html">CSV Editor</a> — Edit CSV data online</li>
+<li><a href="/en/tools/text-replace.html">Text Replace</a> — Batch replace text content</li>
+<li><a href="/en/tools/remove-lines.html">Remove Lines</a> — Remove lines by number or blank lines</li>
+</ul>
+<hr>
+<p>Try it now: <a href="/en/tools/text-filter.html">Text Filter</a> | <a href="/en/tools/csv-row-filter.html">CSV Row Filter</a></p>
+  <section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>Need a private toolbox or custom browser tool?</h2>
+  <p>AI Toolbox can be adapted for internal workflows, private deployment, sponsored categories, or custom privacy-first utilities.</p>
+  <p><a href="/en/sponsor" data-event="conversion_cta_click" data-label="en_partner_custom_tool_cta">View partnership and custom tool options →</a></p>
+</section>
+</article>
+</main>
+<footer class="site-footer">
+  © 2026 AI Toolbox · Free online AI & developer tools · <a href='/en/about'>About</a> · <a href='/en/sponsor'>Sponsor</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('Copied!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>

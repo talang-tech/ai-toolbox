@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>Text Filter (Grep) - Text Filter (Grep) - Online Line Filter & Search Tool | AI Toolbox | AI Toolbox</title>
+<meta name="description" content="Free online text filter (grep). Filter text lines by keyword or regex — quickly extract or exclude matching lines, with case-insensitive and inverse matching. Fast, secure, and works in your browser without downloading.">
+<meta name="keywords" content="text filter, grep online, line filter, keyword filter, regex filter, text search, line matching, extract lines, exclude lines, online grep, text processor, string filter, pattern matcher, text filtering tool, line grep">
+<link rel="canonical" href="https://tools.talang.fun/en/tools/text-filter">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/text-filter">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/text-filter">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/text-filter">
+<meta property="og:title" content="Text Filter (Grep) - Text Filter (Grep) - Online Line Filter & Search Tool | AI Toolbox | AI Toolbox">
+<meta property="og:description" content="Free online text filter (grep). Filter text lines by keyword or regex — quickly extract or exclude matching lines, with case-insensitive and inverse matching. Fast, secure, and works in your browser without downloading.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/en/tools/text-filter">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Text Filter (Grep)", "description": "Free online text filter (grep). Filter text lines by keyword or regex — quickly extract or exclude matching lines, with case-insensitive and inverse matching. Fast, secure, and works in your browser without downloading.", "url": "https://tools.talang.fun/en/tools/text-filter", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "Filter text lines by keyword or regex — quickly extract or exclude matching lines, with case-insensitive and inverse matching", "inLanguage": "en", "author": {"@type": "Organization", "name": "AI Toolbox"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/en/" class="logo"><span class="logo-icon">🛠️</span>AI Toolbox</a>
+    <nav class="nav">
+      <a href="/en/">Home</a>
+      <a href="/en/#tools">All Tools</a>
+      <a href="/en/blog/">Blog</a>
+      <a href="/en/about">About</a>
+      <a href="/en/sponsor">Sponsor</a>
+      <a href="https://tools.talang.fun/tools/text-filter" class="lang-switch">中文</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🔍</div>
+  <h1>Text Filter (Grep)</h1>
+  <p>Filter text lines by keyword or regex — quickly extract or exclude matching lines, with case-insensitive and inverse matching</p>
+</div>
+<div class="tool-panel">
+<div style="margin-bottom:12px"><label style="font-size:13px;font-weight:600">Input Text</label><textarea id="tf-input" style="width:100%;min-height:180px;font-family:Consolas,monospace;font-size:13px" placeholder="Paste one line per entry — logs, config, data, etc.&#10;• error: connection timeout at 192.168.1.1&#10;• info: server started on port 8080&#10;• warn: disk usage at 85%&#10;• error: database connection failed&#10;• info: request completed in 120ms"></textarea></div><div style="margin-bottom:12px;display:flex;flex-wrap:wrap;gap:12px;align-items:center"><label>Pattern: <input type="text" id="tf-pattern" style="width:200px;font-family:Consolas,monospace;font-size:13px" placeholder="Keyword or regex pattern"></label><label style="display:flex;align-items:center;gap:6px;cursor:pointer"><input type="checkbox" id="tf-regex"> Regex</label><label style="display:flex;align-items:center;gap:6px;cursor:pointer"><input type="checkbox" id="tf-case"> Case sensitive</label><label style="display:flex;align-items:center;gap:6px;cursor:pointer"><input type="checkbox" id="tf-invert"> Invert match</label></div><div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px"><button class="btn" id="tf-filter">Filter</button><button class="btn btn-secondary" id="tf-copy">Copy Result</button><button class="btn btn-secondary" id="tf-clear">Clear</button></div><div id="tf-stats" style="margin-top:4px;font-size:13px;color:var(--text-dim)"></div><label style="font-size:13px;font-weight:600;margin-top:12px;display:block">Filtered Lines</label><textarea id="tf-output" style="width:100%;min-height:180px;font-family:Consolas,monospace;font-size:13px;background:var(--bg)" readonly placeholder="Matching lines will appear here..."></textarea>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>About this tool</h2>
+  <p>Free online <strong>Text Filter (Grep)</strong> — like grep, but runs entirely in your browser. Paste your text, use keywords or regex patterns to filter, extract, or exclude matching lines with real-time preview.</p><p>Supports case-sensitive/insensitive toggle, inverse matching (exclude matches), and regex patterns. Perfect for log analysis line extraction, code search, data cleaning line filtering, and config file key line lookup. All processing is done locally in your browser.</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>Key Features</h2><ul><li>Keyword or regex pattern filtering</li><li>Case-sensitive/insensitive toggle</li><li>Inverse match (exclude matching lines)</li><li>Real-time filter preview</li><li>Match count and statistics display</li><li>One-click copy result</li><li>Zero data upload, browser local processing</li><li>Large text support</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>Frequently Asked Questions</h2><h3 style="margin-top:20px;margin-bottom:8px">What can Text Filter do?</h3><p>Filter text lines by keyword or regex pattern — quickly extract matching lines or exclude unwanted ones. Like an online grep.</p><h3 style="margin-top:20px;margin-bottom:8px">Does it support regex?</h3><p>Yes. Enable the Regex option to use JavaScript regex syntax like \d+, [a-z], ^error, etc.</p><h3 style="margin-top:20px;margin-bottom:8px">What is inverse match?</h3><p>Inverse match excludes all lines that match the pattern, keeping only non-matching lines.</p><h3 style="margin-top:20px;margin-bottom:8px">Is my data uploaded?</h3><p>No. All processing is done locally in your browser.</p><h3 style="margin-top:20px;margin-bottom:8px">How is this different from Remove Lines?</h3><p>Remove Lines operates by line number/position. Text Filter matches by content — ideal for extracting specific patterns from large datasets.</p><h3 style="margin-top:20px;margin-bottom:8px">Can I use it with other tools?</h3><p>Yes. Filter first, then sort, deduplicate, or analyze — perfect for data analysis workflows.</p></section>
+<section class="related"><h3>Related Tools</h3><div class="tools-grid"><a href="/en/tools/remove-lines" class="tool-card"><div class="icon">🧹</div><h3>Remove Empty Lines</h3><p>Remove empty lines, trim whitespace, remove consecutive spaces</p></a><a href="/en/tools/text-replace" class="tool-card"><div class="icon">🔄</div><h3>Text Find & Replace</h3><p>Batch find and replace text with regex and case options</p></a><a href="/en/tools/text-sort" class="tool-card"><div class="icon">🔤</div><h3>Text Sorter</h3><p>Sort text lines alphabetically, numerically, by length, or reverse</p></a><a href="/en/tools/text-dedup" class="tool-card"><div class="icon">🧹</div><h3>Text Deduplicator</h3><p>Remove duplicate lines, count lines removed and percentage</p></a><a href="/en/tools/text-statistics" class="tool-card"><div class="icon">📈</div><h3>Text Statistics Analyzer</h3><p>Deep text analysis: characters, sentences, paragraphs, reading time, word frequency, readability score</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>Need a private toolbox or custom browser tool?</h2>
+  <p>AI Toolbox can be adapted for internal workflows, private deployment, sponsored categories, or custom privacy-first utilities.</p>
+  <p><a href="/en/sponsor" data-event="conversion_cta_click" data-label="en_partner_custom_tool_cta">View partnership and custom tool options →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/text-filter.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI Toolbox · Free online AI & developer tools · <a href='/en/about'>About</a> · <a href='/en/sponsor'>Sponsor</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('Copied!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>
