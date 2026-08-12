@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>CSV - TSV 互转 - CSV 转 TSV 互转工具 | 在线 CSV TSV 转换器 | AI 工具盒子</title>
+<meta name="description" content="免费在线CSV - TSV 互转工具，CSV与TSV双向转换，保留引号转义和字段完整性。快速、安全、无需下载，浏览器中直接使用。">
+<meta name="keywords" content="CSV转TSV,TSV转CSV,csv to tsv,tsv to csv,CSV TSV转换器,CSV TSV工具,CSV制表符,TSV逗号分隔,数据格式转换">
+<link rel="canonical" href="https://tools.talang.fun/tools/csv-to-tsv">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/tools/csv-to-tsv">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/tools/csv-to-tsv">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/tools/csv-to-tsv">
+<meta property="og:title" content="CSV - TSV 互转 - CSV 转 TSV 互转工具 | 在线 CSV TSV 转换器 | AI 工具盒子">
+<meta property="og:description" content="免费在线CSV - TSV 互转工具，CSV与TSV双向转换，保留引号转义和字段完整性。快速、安全、无需下载，浏览器中直接使用。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/tools/csv-to-tsv">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "CSV - TSV 互转", "description": "免费在线CSV - TSV 互转工具，CSV与TSV双向转换，保留引号转义和字段完整性。快速、安全、无需下载，浏览器中直接使用。", "url": "https://tools.talang.fun/tools/csv-to-tsv", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": "CSV与TSV双向转换，保留引号转义和字段完整性", "inLanguage": "zh-CN", "author": {"@type": "Organization", "name": "AI 工具盒子"}}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo"><span class="logo-icon">🛠️</span>AI 工具盒子</a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/#tools">所有工具</a>
+      <a href="/blog/">博客</a>
+      <a href="/about">关于</a>
+      <a href="/sponsor">合作</a>
+      <a href="https://tools.talang.fun/en/tools/csv-to-tsv" class="lang-switch">EN</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<div class="tool-header">
+  <div class="icon">🔀</div>
+  <h1>CSV - TSV 互转</h1>
+  <p>CSV与TSV双向转换，保留引号转义和字段完整性</p>
+</div>
+<div class="tool-panel">
+<div style="margin-bottom:12px"><label id="ctt-input-label" style="font-size:13px;font-weight:600">📄 CSV 数据源</label><textarea id="ctt-input" style="width:100%;min-height:200px;font-family:Consolas,monospace;font-size:13px" placeholder="粘贴 CSV 数据..."></textarea></div><div style="display:flex;gap:16px;align-items:center;margin-bottom:12px;flex-wrap:wrap"><label>转换方向: <select id="ctt-mode"><option value="csv-to-tsv">CSV → TSV</option><option value="tsv-to-csv">TSV → CSV</option></select></label><label id="ctt-delimiter-label">CSV 分隔符: <select id="ctt-input-delimiter"><option value=",">逗号 (,)</option><option value="	">制表符 (Tab)</option><option value=";">分号 (;)</option><option value="|">竖线 (|)</option></select></label><label>表头: <select id="ctt-header"><option value="first">首行作表头</option><option value="none">无表头</option></select></label><button class="btn" id="ctt-action-btn">转换</button><button class="btn btn-secondary" id="ctt-swap-btn">🔄 互换</button></div><div id="ctt-status" style="font-size:13px;color:var(--text-dim);margin-bottom:8px"></div><label style="font-size:13px;font-weight:600">转换结果</label><textarea id="ctt-output" readonly style="width:100%;min-height:200px;font-family:Consolas,monospace;font-size:13px" placeholder="转换后的数据将显示在这里..."></textarea><div style="display:flex;gap:12px;margin-top:8px"><button class="btn btn-secondary" id="ctt-copy-btn">📋 复制</button><button class="btn btn-secondary" id="ctt-download-btn">⬇ 下载文件</button></div>
+</div>
+<article class="article" style="margin-top:32px">
+  <h2>关于这个工具</h2>
+  <p>免费的在线 CSV 与 TSV 互转工具。在逗号分隔（CSV）和制表符分隔（TSV）两种格式之间随意切换。</p><ul><li>CSV 到 TSV：将逗号分隔数据转为制表符分隔</li><li>TSV 到 CSV：将制表符分隔数据转为逗号分隔</li><li>支持自定义 CSV 分隔符</li><li>完整保留双引号转义和字段引用</li><li>支持首行表头模式</li><li>一键互换输入输出，快速反向转换</li></ul><p>所有处理在浏览器本地完成，数据不会离开你的设备。</p>
+</article>
+<section class="article" style="margin-top:32px"><h2>主要功能</h2><ul><li>CSV 与 TSV 双向转换</li><li>支持自定义 CSV 分隔符</li><li>完整保留引号转义</li><li>首行表头模式</li><li>一键互换</li><li>一键复制或下载</li><li>本地处理</li><li>Ctrl+Enter 快捷键</li></ul></section>
+<section class="article" style="margin-top:32px"><h2>常见问题</h2><h3 style="margin-top:20px;margin-bottom:8px">CSV 和 TSV 有什么区别？</h3><p>CSV 使用逗号分隔，TSV 使用制表符分隔。</p><h3 style="margin-top:20px;margin-bottom:8px">转换后引号保留吗？</h3><p>工具会根据需要重新加引号。</p><h3 style="margin-top:20px;margin-bottom:8px">支持大文件？</h3><p>5000 行以内可流畅处理。</p><h3 style="margin-top:20px;margin-bottom:8px">互换按钮作用？</h3><p>将输出放回输入并切换方向。</p></section>
+<section class="related"><h3>相关工具</h3><div class="tools-grid"><a href="/tools/csv-to-json" class="tool-card"><div class="icon">🔄</div><h3>CSV ↔ JSON 互转</h3><p>CSV 数据转 JSON 格式，支持分隔符选择、表头配置、嵌套对象生成</p></a><a href="/tools/csv-cleaner" class="tool-card"><div class="icon">🧹</div><h3>CSV 清洗</h3><p>修剪空格、去重、移除空行、规范化 CSV 格式</p></a><a href="/tools/csv-viewer" class="tool-card"><div class="icon">📈</div><h3>CSV 查看器/转表格</h3><p>解析 CSV/TSV 为表格，可复制 HTML 表格或 JSON</p></a><a href="/tools/csv-to-markdown" class="tool-card"><div class="icon">📊</div><h3>CSV 转 Markdown 表格</h3><p>将 CSV 数据快速转换为 Markdown 表格格式，支持预览、复制和下载</p></a><a href="/tools/csv-dedupe" class="tool-card"><div class="icon">🔍</div><h3>CSV 去重</h3><p>去除 CSV 中的重复行，支持按列去重和自定义去重策略</p></a></div></section>
+<section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>需要内部工具箱、私有化部署或定制工具？</h2>
+  <p>AI 工具盒子可以面向团队工作流扩展，支持私有化部署、工具分类赞助和隐私优先的浏览器本地处理工具定制。</p>
+  <p><a href="/sponsor" data-event="conversion_cta_click" data-label="zh_partner_custom_tool_cta">查看合作与定制方式 →</a></p>
+</section>
+<script src="/assets/tools/_utils.js" defer></script>
+
+
+
+<script src="/assets/tools/csv-to-tsv.js" defer></script>
+</main>
+<footer class="site-footer">
+  © 2026 AI 工具盒子 · 免费在线 AI 与开发者工具 · <a href='/about'>关于</a> · <a href='/sponsor'>合作</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('已复制!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>

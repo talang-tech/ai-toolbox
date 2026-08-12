@@ -39,7 +39,9 @@
           "csv-splitter",
           "csv-column-filter",
           "text-filter",
-          "csv-row-filter"
+          "csv-row-filter",
+          "csv-to-tsv",
+          "csv-to-xml"
         ]
       },
       "dev": {
@@ -13318,6 +13320,160 @@
         [
           "Can I use it with Column Filter?",
           "Yes. Use Row Filter to filter by conditions first, then Column Filter to pick the columns you need."
+        ]
+      ]
+    },
+    {
+      "slug": "csv-to-tsv",
+      "category": "text",
+      "icon": "🔀",
+      "name_zh": "CSV - TSV 互转",
+      "name_en": "CSV to TSV Converter",
+      "short_zh": "CSV与TSV双向转换，保留引号转义和字段完整性",
+      "short_en": "Bidirectional CSV/TSV conversion with quote escaping",
+      "keywords_zh": "CSV转TSV,TSV转CSV,csv to tsv,tsv to csv,CSV TSV转换器,CSV TSV工具,CSV制表符,TSV逗号分隔,数据格式转换",
+      "keywords_en": "csv to tsv, tsv to csv, csv tsv converter, convert csv to tsv, csv delimiter converter, data format converter",
+      "long_zh": "<p>免费的在线 CSV 与 TSV 互转工具。在逗号分隔（CSV）和制表符分隔（TSV）两种格式之间随意切换。</p><ul><li>CSV 到 TSV：将逗号分隔数据转为制表符分隔</li><li>TSV 到 CSV：将制表符分隔数据转为逗号分隔</li><li>支持自定义 CSV 分隔符</li><li>完整保留双引号转义和字段引用</li><li>支持首行表头模式</li><li>一键互换输入输出，快速反向转换</li></ul><p>所有处理在浏览器本地完成，数据不会离开你的设备。</p>",
+      "long_en": "<p>Free online CSV to TSV converter. Switch between comma-separated and tab-separated formats.</p><ul><li>CSV to TSV: comma to tab</li><li>TSV to CSV: tab to comma</li><li>Customizable delimiter</li><li>Preserves quoting</li><li>First row as header</li><li>One-click swap</li></ul><p>100% browser-local processing.</p>",
+      "ui_zh": "<div style=\"margin-bottom:12px\"><label id=\"ctt-input-label\" style=\"font-size:13px;font-weight:600\">📄 CSV 数据源</label><textarea id=\"ctt-input\" style=\"width:100%;min-height:200px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"粘贴 CSV 数据...\"></textarea></div><div style=\"display:flex;gap:16px;align-items:center;margin-bottom:12px;flex-wrap:wrap\"><label>转换方向: <select id=\"ctt-mode\"><option value=\"csv-to-tsv\">CSV → TSV</option><option value=\"tsv-to-csv\">TSV → CSV</option></select></label><label id=\"ctt-delimiter-label\">CSV 分隔符: <select id=\"ctt-input-delimiter\"><option value=\",\">逗号 (,)</option><option value=\"\t\">制表符 (Tab)</option><option value=\";\">分号 (;)</option><option value=\"|\">竖线 (|)</option></select></label><label>表头: <select id=\"ctt-header\"><option value=\"first\">首行作表头</option><option value=\"none\">无表头</option></select></label><button class=\"btn\" id=\"ctt-action-btn\">转换</button><button class=\"btn btn-secondary\" id=\"ctt-swap-btn\">🔄 互换</button></div><div id=\"ctt-status\" style=\"font-size:13px;color:var(--text-dim);margin-bottom:8px\"></div><label style=\"font-size:13px;font-weight:600\">转换结果</label><textarea id=\"ctt-output\" readonly style=\"width:100%;min-height:200px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"转换后的数据将显示在这里...\"></textarea><div style=\"display:flex;gap:12px;margin-top:8px\"><button class=\"btn btn-secondary\" id=\"ctt-copy-btn\">📋 复制</button><button class=\"btn btn-secondary\" id=\"ctt-download-btn\">⬇ 下载文件</button></div>",
+      "ui_en": "<div style=\"margin-bottom:12px\"><label id=\"ctt-input-label\" style=\"font-size:13px;font-weight:600\">📄 CSV Data Source</label><textarea id=\"ctt-input\" style=\"width:100%;min-height:200px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"Paste CSV data...\"></textarea></div><div style=\"display:flex;gap:16px;align-items:center;margin-bottom:12px;flex-wrap:wrap\"><label>Direction: <select id=\"ctt-mode\"><option value=\"csv-to-tsv\">CSV → TSV</option><option value=\"tsv-to-csv\">TSV → CSV</option></select></label><label id=\"ctt-delimiter-label\">CSV Delimiter: <select id=\"ctt-input-delimiter\"><option value=\",\">Comma (,)</option><option value=\"\t\">Tab</option><option value=\";\">Semicolon (;)</option><option value=\"|\">Pipe (|)</option></select></label><label>Header: <select id=\"ctt-header\"><option value=\"first\">First row</option><option value=\"none\">No header</option></select></label><button class=\"btn\" id=\"ctt-action-btn\">Convert</button><button class=\"btn btn-secondary\" id=\"ctt-swap-btn\">🔄 Swap</button></div><div id=\"ctt-status\" style=\"font-size:13px;color:var(--text-dim);margin-bottom:8px\"></div><label style=\"font-size:13px;font-weight:600\">Output</label><textarea id=\"ctt-output\" readonly style=\"width:100%;min-height:200px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"Converted data appears here...\"></textarea><div style=\"display:flex;gap:12px;margin-top:8px\"><button class=\"btn btn-secondary\" id=\"ctt-copy-btn\">📋 Copy</button><button class=\"btn btn-secondary\" id=\"ctt-download-btn\">⬇ Download</button></div>",
+      "related": [
+        "csv-to-json",
+        "csv-cleaner",
+        "csv-viewer",
+        "csv-to-markdown",
+        "csv-dedupe"
+      ],
+      "seo_title_zh": "CSV 转 TSV 互转工具 | 在线 CSV TSV 转换器",
+      "seo_title_en": "CSV to TSV Converter | Online CSV TSV Converter Tool",
+      "features_zh": [
+        "CSV 与 TSV 双向转换",
+        "支持自定义 CSV 分隔符",
+        "完整保留引号转义",
+        "首行表头模式",
+        "一键互换",
+        "一键复制或下载",
+        "本地处理",
+        "Ctrl+Enter 快捷键"
+      ],
+      "features_en": [
+        "Bidirectional CSV/TSV conversion",
+        "Customizable delimiter",
+        "Preserves quoting",
+        "First row as header",
+        "One-click swap",
+        "Copy or download",
+        "100% local",
+        "Ctrl+Enter shortcut"
+      ],
+      "faq_zh": [
+        [
+          "CSV 和 TSV 有什么区别？",
+          "CSV 使用逗号分隔，TSV 使用制表符分隔。"
+        ],
+        [
+          "转换后引号保留吗？",
+          "工具会根据需要重新加引号。"
+        ],
+        [
+          "支持大文件？",
+          "5000 行以内可流畅处理。"
+        ],
+        [
+          "互换按钮作用？",
+          "将输出放回输入并切换方向。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "Difference between CSV and TSV?",
+          "CSV uses commas, TSV uses tabs."
+        ],
+        [
+          "Quotes preserved?",
+          "Re-quoted only when needed."
+        ],
+        [
+          "Large files?",
+          "Under 5000 rows works."
+        ],
+        [
+          "Swap button?",
+          "Moves output to input and reverses."
+        ]
+      ]
+    },
+    {
+      "slug": "csv-to-xml",
+      "category": "text",
+      "icon": "📄",
+      "name_zh": "CSV 转 XML",
+      "name_en": "CSV to XML Converter",
+      "short_zh": "CSV 表格数据一键转换为结构化的 XML 文件，支持自定义元素名称",
+      "short_en": "Convert CSV data to structured XML with customizable element names",
+      "keywords_zh": "CSV转XML,CSV转XML在线,csv to xml converter,CSV转XML工具,CSV转XML格式化,CSV表格转XML,数据格式转换,CSV to XML,CSV XML转换",
+      "keywords_en": "csv to xml, csv to xml converter, convert csv to xml, csv to xml online, csv xml converter, tabular data to xml",
+      "long_zh": "<p>免费的在线 CSV 转 XML 工具。将 CSV 表格数据一键转换为格式化的 XML 文档。</p><ul><li>自定义根元素名称（默认 root）</li><li>自定义行元素名称（默认 row）</li><li>支持逗号/制表符/分号/竖线分隔符</li><li>首行作表头，自动生成字段元素名</li><li>无表头模式自动生成 col1, col2...</li><li>自动 XML 转义</li><li>2 空格/4 空格/紧凑缩进可选</li></ul><p>所有处理在浏览器本地完成，数据不会离开你的设备。</p>",
+      "long_en": "<p>Free online CSV to XML converter. Transform CSV data into structured XML.</p><ul><li>Customizable root element name</li><li>Customizable row element name</li><li>Multiple delimiters</li><li>Auto field names from header</li><li>No-header: col1, col2...</li><li>Automatic XML escaping</li><li>Configurable indentation</li></ul><p>100% browser-local processing.</p>",
+      "ui_zh": "<div style=\"margin-bottom:12px\"><label style=\"font-size:13px;font-weight:600\">📄 CSV 数据源</label><textarea id=\"ctx-input\" style=\"width:100%;min-height:200px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"粘贴 CSV 数据...\"></textarea></div><div style=\"display:flex;gap:16px;align-items:center;margin-bottom:12px;flex-wrap:wrap\"><label>分隔符: <select id=\"ctx-delimiter\"><option value=\",\">逗号 (,)</option><option value=\"\t\">制表符 (Tab)</option><option value=\";\">分号 (;)</option><option value=\"|\">竖线 (|)</option></select></label><label>表头: <select id=\"ctx-header\"><option value=\"first\">首行作表头</option><option value=\"none\">无表头</option></select></label><label>缩进: <select id=\"ctx-indent\"><option value=\"2\">2 空格</option><option value=\"4\">4 空格</option><option value=\"compact\">紧凑(一行)</option></select></label><label>根元素: <input id=\"ctx-root-element\" value=\"root\" style=\"width:80px;font-size:13px\"></label><label>行元素: <input id=\"ctx-row-element\" value=\"row\" style=\"width:80px;font-size:13px\"></label><button class=\"btn\" id=\"ctx-action-btn\">转换</button></div><div id=\"ctx-status\" style=\"font-size:13px;color:var(--text-dim);margin-bottom:8px\"></div><label style=\"font-size:13px;font-weight:600\">XML 结果</label><textarea id=\"ctx-output\" readonly style=\"width:100%;min-height:200px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"转换后的 XML 将显示在这里...\"></textarea><div style=\"display:flex;gap:12px;margin-top:8px\"><button class=\"btn btn-secondary\" id=\"ctx-copy-btn\">📋 复制</button><button class=\"btn btn-secondary\" id=\"ctx-download-btn\">⬇ 下载 .xml</button></div>",
+      "ui_en": "<div style=\"margin-bottom:12px\"><label style=\"font-size:13px;font-weight:600\">📄 CSV Data Source</label><textarea id=\"ctx-input\" style=\"width:100%;min-height:200px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"Paste CSV data...\"></textarea></div><div style=\"display:flex;gap:16px;align-items:center;margin-bottom:12px;flex-wrap:wrap\"><label>Delimiter: <select id=\"ctx-delimiter\"><option value=\",\">Comma (,)</option><option value=\"\t\">Tab</option><option value=\";\">Semicolon (;)</option><option value=\"|\">Pipe (|)</option></select></label><label>Header: <select id=\"ctx-header\"><option value=\"first\">First row</option><option value=\"none\">No header</option></select></label><label>Indent: <select id=\"ctx-indent\"><option value=\"2\">2 spaces</option><option value=\"4\">4 spaces</option><option value=\"compact\">Compact</option></select></label><label>Root: <input id=\"ctx-root-element\" value=\"root\" style=\"width:80px;font-size:13px\"></label><label>Row: <input id=\"ctx-row-element\" value=\"row\" style=\"width:80px;font-size:13px\"></label><button class=\"btn\" id=\"ctx-action-btn\">Convert</button></div><div id=\"ctx-status\" style=\"font-size:13px;color:var(--text-dim);margin-bottom:8px\"></div><label style=\"font-size:13px;font-weight:600\">XML Output</label><textarea id=\"ctx-output\" readonly style=\"width:100%;min-height:200px;font-family:Consolas,monospace;font-size:13px\" placeholder=\"Converted XML appears here...\"></textarea><div style=\"display:flex;gap:12px;margin-top:8px\"><button class=\"btn btn-secondary\" id=\"ctx-copy-btn\">📋 Copy</button><button class=\"btn btn-secondary\" id=\"ctx-download-btn\">⬇ Download .xml</button></div>",
+      "related": [
+        "csv-to-json",
+        "csv-to-tsv",
+        "csv-to-markdown",
+        "xml-formatter",
+        "json-to-xml"
+      ],
+      "seo_title_zh": "CSV 转 XML 工具 | 在线 CSV 转 XML 转换器",
+      "seo_title_en": "CSV to XML Converter | Online CSV to XML Tool",
+      "features_zh": [
+        "CSV 一键转换为结构化 XML",
+        "自定义根元素和行元素名称",
+        "支持多种分隔符",
+        "首行表头自动生成字段名",
+        "无表头模式自动生成列名",
+        "自动 XML 转义",
+        "可配置缩进",
+        "一键复制或下载",
+        "浏览器本地处理"
+      ],
+      "features_en": [
+        "One-click CSV to XML",
+        "Customizable element names",
+        "Multiple delimiters",
+        "Auto field names from headers",
+        "No-header: col1, col2...",
+        "Automatic XML escaping",
+        "Configurable indent",
+        "Copy or download .xml",
+        "100% local"
+      ],
+      "faq_zh": [
+        [
+          "支持哪些分隔符？",
+          "逗号、制表符、分号、竖线。"
+        ],
+        [
+          "表头中的特殊字符怎么办？",
+          "工具会自动转义为有效的 XML 名称。"
+        ],
+        [
+          "数据会上传吗？",
+          "不会。全部在浏览器本地处理。"
+        ]
+      ],
+      "faq_en": [
+        [
+          "Supported delimiters?",
+          "Comma, tab, semicolon, pipe."
+        ],
+        [
+          "Special chars in headers?",
+          "Auto-sanitized to valid XML names."
+        ],
+        [
+          "Data uploaded?",
+          "No. All local."
         ]
       ]
     }

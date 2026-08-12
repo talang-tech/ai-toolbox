@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="baidu-site-verification" content="codeva-GefzDJXvPs">
+<title>CSV ↔ TSV Converter and CSV to XML Tools Launched | AI Toolbox</title>
+<meta name="description" content="AI Toolbox adds CSV ↔ TSV converter and CSV to XML tools, filling key data format conversion gaps in your workflow.">
+<meta name="keywords" content="">
+<link rel="canonical" href="https://tools.talang.fun/en/blog/csv-tsv-xml-launch">
+<link rel="alternate" hreflang="zh-CN" href="https://tools.talang.fun/blog/csv-tsv-xml-launch">
+<link rel="alternate" hreflang="en" href="https://tools.talang.fun/en/blog/csv-tsv-xml-launch">
+<link rel="alternate" hreflang="x-default" href="https://tools.talang.fun/blog/csv-tsv-xml-launch">
+<meta property="og:title" content="CSV ↔ TSV Converter and CSV to XML Tools Launched | AI Toolbox">
+<meta property="og:description" content="AI Toolbox adds CSV ↔ TSV converter and CSV to XML tools, filling key data format conversion gaps in your workflow.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tools.talang.fun/en/blog/csv-tsv-xml-launch">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHFBWSPZML"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHFBWSPZML');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "CSV ↔ TSV Converter and CSV to XML Tools Launched", "description": "AI Toolbox adds CSV ↔ TSV converter and CSV to XML tools, filling key data format conversion gaps in your workflow.", "author": {"@type": "Organization", "name": "AI Toolbox"}, "datePublished": "2026-08-13", "url": "https://tools.talang.fun/en/blog/csv-tsv-xml-launch"}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/en/" class="logo"><span class="logo-icon">🛠️</span>AI Toolbox</a>
+    <nav class="nav">
+      <a href="/en/">Home</a>
+      <a href="/en/#tools">All Tools</a>
+      <a href="/en/blog/">Blog</a>
+      <a href="/en/about">About</a>
+      <a href="/en/sponsor">Sponsor</a>
+      <a href="https://tools.talang.fun/blog/csv-tsv-xml-launch" class="lang-switch">中文</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<article class="article">
+  <p style="margin-bottom:8px"><a href="/en/blog/" style="color:var(--muted)">← Back to blog</a></p>
+  <h1>CSV ↔ TSV Converter and CSV to XML Tools Launched</h1>
+  <p style="color:var(--muted);margin-bottom:24px">2026-08-13 · 5 min read</p>
+  <h1>CSV ↔ TSV Converter and CSV to XML Tools Launched</h1>
+<p>Today, AI Toolbox adds two new data format conversion tools: <strong>CSV ↔ TSV Converter</strong> and <strong>CSV to XML Converter</strong>, completing the tabular data conversion toolchain.</p>
+<h2>🔀 CSV ↔ TSV Converter</h2>
+<p>CSV (comma-separated values) and TSV (tab-separated values) are the two most common table formats in data processing. Different tools, databases, and platforms have different preferences — Excel defaults to CSV, PostgreSQL's <code>COPY</code> command favors TSV, and some legacy systems only accept tab-separated input.</p>
+<p>The <strong>CSV ↔ TSV Converter</strong> solves this pain point:</p>
+<ul>
+<li><strong>Bidirectional</strong>: CSV → TSV or TSV → CSV, one-click direction swap</li>
+<li><strong>Custom delimiter</strong>: CSV side supports comma, tab, semicolon, pipe</li>
+<li><strong>Quote escaping</strong>: Preserves CSV double-quote escaping, smart re-quoting</li>
+<li><strong>First row as header</strong>: Header row support</li>
+<li><strong>Swap feature</strong>: Output can be moved back to input for quick iteration</li>
+</ul>
+<h3>Use Cases</h3>
+<p><strong>SQL Import Prep:</strong> Export CSV from Excel, convert to TSV for MySQL's <code>LOAD DATA INFILE</code> or PostgreSQL's <code>COPY</code>:</p>
+<pre><code class="lang-">
+Input CSV:
+name,age,city
+Alice,30,Beijing
+Bob,25,Shanghai
+
+Output TSV:
+name	age	city
+Alice	30	Beijing
+Bob	25	Shanghai
+</code></pre>
+<p><strong>Data Format Bridge:</strong> Convert data to the delimiter format expected by your target tool.</p>
+<h2>📄 CSV to XML</h2>
+<p>XML remains a standard data exchange format for many enterprise systems, configuration files, and APIs. The <strong>CSV to XML Converter</strong> makes tabular data to XML conversion simple:</p>
+<ul>
+<li><strong>Custom element names</strong>: Configurable root element (default: root) and row element (default: row)</li>
+<li><strong>Auto field names</strong>: First row as header auto-generates XML element names</li>
+<li><strong>No-header mode</strong>: Auto-generates col1, col2, ... sequence names</li>
+<li><strong>XML escaping</strong>: <code>&</code>, <code><</code>, <code>></code>, <code>"</code>, <code>'</code> automatically escaped</li>
+<li><strong>Indentation control</strong>: 2 spaces, 4 spaces, or compact output</li>
+</ul>
+<h3>Use Cases</h3>
+<p><strong>System Integration:</strong> Convert database CSV exports to XML for enterprise API consumption:</p>
+<pre><code class="lang-">
+Input CSV:
+id,name,email
+1,Alice,alice@example.com
+2,Bob,bob@example.com
+
+Output XML:
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;root&gt;
+  &lt;row&gt;
+    &lt;id&gt;1&lt;/id&gt;
+    &lt;name&gt;Alice&lt;/name&gt;
+    &lt;email&gt;alice@example.com&lt;/email&gt;
+  &lt;/row&gt;
+  &lt;row&gt;
+    &lt;id&gt;2&lt;/id&gt;
+    &lt;name&gt;Bob&lt;/name&gt;
+    &lt;email&gt;bob@example.com&lt;/email&gt;
+  &lt;/row&gt;
+&lt;/root&gt;
+</code></pre>
+<h2>🌐 Privacy First</h2>
+<p>Both tools process everything <strong>100% locally in your browser</strong> — no data is uploaded to any server. Safe for sensitive data processing.</p>
+<h2>🔗 Try Now</h2>
+<ul>
+<li><a href="/en/tools/csv-to-tsv.html">CSV ↔ TSV Converter</a></li>
+<li><a href="/en/tools/csv-to-xml.html">CSV to XML Converter</a></li>
+</ul>
+  <section class="article" style="margin-top:32px;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:20px">
+  <h2>Need a private toolbox or custom browser tool?</h2>
+  <p>AI Toolbox can be adapted for internal workflows, private deployment, sponsored categories, or custom privacy-first utilities.</p>
+  <p><a href="/en/sponsor" data-event="conversion_cta_click" data-label="en_partner_custom_tool_cta">View partnership and custom tool options →</a></p>
+</section>
+</article>
+</main>
+<footer class="site-footer">
+  © 2026 AI Toolbox · Free online AI & developer tools · <a href='/en/about'>About</a> · <a href='/en/sponsor'>Sponsor</a> · <a href='https://github.com/talang-tech/ai-toolbox'>GitHub</a>
+</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => toast('Copied!'));
+}
+function trackEvent(action, params) {
+  if (typeof gtag !== 'function') return;
+  gtag('event', action, Object.assign({
+    event_category: 'engagement',
+    page_location: window.location.href
+  }, params || {}));
+}
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[data-event]');
+  if (!link) return;
+  trackEvent(link.dataset.event, {
+    event_label: link.dataset.label || link.textContent.trim(),
+    link_url: link.href
+  });
+});
+</script>
+</body>
+</html>
